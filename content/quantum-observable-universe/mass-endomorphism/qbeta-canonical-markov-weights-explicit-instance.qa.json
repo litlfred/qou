@@ -2005,7 +2005,239 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Uses `ring`, not `decide`/`trivial`."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)' presents substantial mathematical content: `CanonicalMarkovWeightsH3` (from [`prop:qbeta-per-block-chi-closed-forms`](qbeta...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.lean is missing, leading to complete divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to wenzl1988, hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.lean is missing, preventing formal verification of the claims in 'Explicit $\\\\sqrt q$-bearing instance of $\\\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)'."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

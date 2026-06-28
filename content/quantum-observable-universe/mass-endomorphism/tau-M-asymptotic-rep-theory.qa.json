@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "727d433b4e88",
-    "ts": "e87f92683843",
+    "ts": "cedd5782821b",
     "lean": "860777419ba2"
   },
   "criteria": {
@@ -1757,21 +1757,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "5cfade514910",
-          "ts": "de60e69d43bd",
-          "lean": "9600cf84fc97"
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.412Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No unused hypotheses are present in the Lean proof.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
@@ -1809,7 +1807,252 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Uses `refine`/`exact`, no `decide`/`trivial`."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' presents substantial mathematical content: [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursio...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Lean formalization and narrative for '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' are in complete agreement.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to kashiwara1990, macdonald1995, habiro2002, jones1985, wenzl1988, hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$\\\\tau_M^{V_\\\\lambda}(\\\\beta) = \\\\mathrm{Tr}\\\\,\\\\rho_\\\\lambda(\\\\beta) \\\\cdot \\\\cos(\\\\alpha_\\\\lambda - b_\\\\lambda\\\\hbar_q^2/2) \\\\cdot \\\\prod_k(1 + c_k^{(\\\\lambda)} u_\\\\lambda^k)$: canonical $u$-ladder of the Markov-traced character' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

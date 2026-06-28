@@ -917,7 +917,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'QOU $\\\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\\\to \\\\mathrm{Frob}_p$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'QOU $\\\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\\\to \\\\mathrm{Frob}_p$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'QOU $\\\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\\\to \\\\mathrm{Frob}_p$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'QOU $\\\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\\\to \\\\mathrm{Frob}_p$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to habiro2002, yekutieli2010, tate1967 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'QOU $\\\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\\\to \\\\mathrm{Frob}_p$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'QOU $\\\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\\\to \\\\mathrm{Frob}_p$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'QOU $\\\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\\\to \\\\mathrm{Frob}_p$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean:79:9: error: unexpected token '/--'; expected 'lemma'"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean:79:9: error: unexpected token '/--'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean:79:9: error: unexpected token '/--'; expected 'lemma', invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.763Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

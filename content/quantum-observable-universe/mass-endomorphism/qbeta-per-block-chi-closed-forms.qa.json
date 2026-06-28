@@ -2004,6 +2004,22 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean proof in content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains a sorry, representing a divergence from the fully claimed narrative.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -2039,6 +2055,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -2071,6 +2104,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -2103,6 +2153,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-vacuous": [
@@ -2135,6 +2202,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean:1"
       }
     ],
     "da-hidden-dof": [
@@ -2167,6 +2251,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-citation-misuse": [
@@ -2199,6 +2300,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -2220,8 +2338,120 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains 'sorry' placeholders, rendering the proof of 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' incomplete."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

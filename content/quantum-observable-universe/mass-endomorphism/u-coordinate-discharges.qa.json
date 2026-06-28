@@ -909,7 +909,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Macdonald coordinate $u = q^2$ discharges — closed-form rational identities replacing $\\\\mathtt{Real.sqrt}$-laden scalar invariants ($b^2 = (u^2+u+1)/(u+1)^2$, $\\\\dim_q^2 V_{(2,1)} = u + 2 + u^{-1}$, etc.)': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Macdonald coordinate $u = q^2$ discharges — closed-form rational identities replacing $\\\\mathtt{Real.sqrt}$-laden scalar invariants ($b^2 = (u^2+u+1)/(u+1)^2$, $\\\\dim_q^2 V_{(2,1)} = u + 2 + u^{-1}$, etc.)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Macdonald coordinate $u = q^2$ discharges — closed-form rational identities replacing $\\\\mathtt{Real.sqrt}$-laden scalar invariants ($b^2 = (u^2+u+1)/(u+1)^2$, $\\\\dim_q^2 V_{(2,1)} = u + 2 + u^{-1}$, etc.)' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Macdonald coordinate $u = q^2$ discharges — closed-form rational identities replacing $\\\\mathtt{Real.sqrt}$-laden scalar invariants ($b^2 = (u^2+u+1)/(u+1)^2$, $\\\\dim_q^2 V_{(2,1)} = u + 2 + u^{-1}$, etc.)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to macdonald1995, hoefsmit1974, wenzl1988 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Macdonald coordinate $u = q^2$ discharges — closed-form rational identities replacing $\\\\mathtt{Real.sqrt}$-laden scalar invariants ($b^2 = (u^2+u+1)/(u+1)^2$, $\\\\dim_q^2 V_{(2,1)} = u + 2 + u^{-1}$, etc.)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Macdonald coordinate $u = q^2$ discharges — closed-form rational identities replacing $\\\\mathtt{Real.sqrt}$-laden scalar invariants ($b^2 = (u^2+u+1)/(u+1)^2$, $\\\\dim_q^2 V_{(2,1)} = u + 2 + u^{-1}$, etc.)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Macdonald coordinate $u = q^2$ discharges — closed-form rational identities replacing $\\\\mathtt{Real.sqrt}$-laden scalar invariants ($b^2 = (u^2+u+1)/(u+1)^2$, $\\\\dim_q^2 V_{(2,1)} = u + 2 + u^{-1}$, etc.)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean:82:2: error: No goals to be solved"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean:82:2: error: No goals to be solved",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean:82:2: error: No goals to be solved, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

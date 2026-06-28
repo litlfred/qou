@@ -1340,7 +1340,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean fails compilation, rendering the verification vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' has logical gaps due to compilation failure in its Lean sibling.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean:1"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean:1 — ../lifting-and-descent/cosimplicial-crossed-groupoid.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "12d352e8a036",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean fails compilation with errors (../lifting-and-descent/cosimplicial-crossed-groupoid.lean:30:13: error: unexpected token 'section'; expected 'lemma'), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let'."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:33.269Z"
+  "updated_at": "2026-06-28T10:51:06.075Z"
 }

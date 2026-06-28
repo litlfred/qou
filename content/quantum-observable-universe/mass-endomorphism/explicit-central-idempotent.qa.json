@@ -1979,7 +1979,253 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Explicit central primitive idempotents $e_\\\\lambda$ via Murphy elements' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/Idempotents.olean' of module Mathlib.RingTheory.Idempotents does not exist"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/Idempotents.olean' of module Mathlib.RingTheory.Idempotents does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/Idempotents.olean' of module Mathlib.RingTheory.Idempotents does not exist, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

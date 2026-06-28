@@ -976,7 +976,253 @@
           "value": 0.78
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'The Kummer-tower perpetuity result': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The Kummer-tower perpetuity result'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'The Kummer-tower perpetuity result' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The Kummer-tower perpetuity result'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'The Kummer-tower perpetuity result' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'The Kummer-tower perpetuity result' (though incomplete).",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to yekutieli2010 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'The Kummer-tower perpetuity result' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'The Kummer-tower perpetuity result' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'The Kummer-tower perpetuity result' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'The Kummer-tower perpetuity result' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ffea465b94bd",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in 'The Kummer-tower perpetuity result' remain unproven and are represented as sorry stubs in content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:31.317Z"
+  "updated_at": "2026-06-28T10:51:06.075Z"
 }

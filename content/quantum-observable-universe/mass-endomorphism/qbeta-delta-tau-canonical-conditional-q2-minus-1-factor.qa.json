@@ -1784,7 +1784,252 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial. Proof is obtain + refine + unfold + rw + ring — genuine structural derivation."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' presents substantial mathematical content: class, encoded as Lean `class CanonicalMarkovWeightsH3` in [`qbeta-per-block-chi...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Lean formalization and narrative for 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are in complete agreement.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to wenzl1988, hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

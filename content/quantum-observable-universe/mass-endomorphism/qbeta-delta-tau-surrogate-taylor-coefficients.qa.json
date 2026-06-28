@@ -1568,7 +1568,239 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' presents substantial mathematical content: [`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.lean is missing, leading to complete divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.lean is missing, preventing formal verification of the claims in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7'."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

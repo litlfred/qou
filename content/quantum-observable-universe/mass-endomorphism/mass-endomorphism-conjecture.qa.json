@@ -938,7 +938,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Mass endomorphism conjecture' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claims in 'Mass endomorphism conjecture' are non-vacuous as they make concrete conjectures about 'In the unified six-term formula ([unified knot mass](#thm:kn...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mass endomorphism conjecture'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Mass endomorphism conjecture' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass endomorphism conjecture'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Lean and narrative statements for 'Mass endomorphism conjecture' are structurally aligned.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to kashaev1997, murakami-murakami2001 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Mass endomorphism conjecture' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Mass endomorphism conjecture' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Mass endomorphism conjecture' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean:124:38: error: invalid binder annotation, type is not a class instance"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean contains compilation errors.",
+        "severity": "minor",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean:124:38: error: invalid binder annotation, type is not a class instance"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.389Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

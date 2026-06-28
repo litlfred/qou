@@ -1569,7 +1569,121 @@
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
       }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "71a933450f8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "71a933450f8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "71a933450f8c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "71a933450f8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "71a933450f8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "71a933450f8c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:35:9: error: failed to synthesize"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:33:51Z"
+  "updated_at": "2026-06-28T10:51:03.753Z"
 }

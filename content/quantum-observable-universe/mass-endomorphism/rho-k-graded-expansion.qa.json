@@ -1340,7 +1340,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$' presents substantial mathematical content: ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\\mathcal{M}(K) = m_e \\cdot \\...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to wenzl1988 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Graded expansion of the categorical density $\\\\rho_K = \\\\rho_K^{\\\\mathrm{LO}} + \\\\rho_K^{\\\\text{single-gen}} + \\\\rho_K^{\\\\text{pair-gen}} + \\\\dots$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:51:57: error: failed to synthesize"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:51:57: error: failed to synthesize",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:51:57: error: failed to synthesize, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.865Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

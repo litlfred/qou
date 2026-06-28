@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean"
   },
   "source_hashes": {
-    "md": "ecb6fe113874",
+    "md": "9d6ff2ade56d",
     "ts": "a7ccebd94c58",
     "lean": "34865669f035"
   },
@@ -877,43 +877,285 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ecb6fe113874",
+          "md": "9d6ff2ade56d",
           "ts": "a7ccebd94c58",
           "lean": "34865669f035"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.941Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Block placement and kind 'definition' match validated structurally for 'Quantum Observable Universe as Direct Limit'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "ecb6fe113874",
+          "md": "9d6ff2ade56d",
           "ts": "a7ccebd94c58",
           "lean": "34865669f035"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:31.262Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean theorem statement in content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean matches the mathematical statement in content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.md.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:1 — Lean file exists"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Quantum Observable Universe as Direct Limit' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Quantum Observable Universe as Direct Limit' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a ([quantum observable universe](#def:quantum-obs...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum Observable Universe as Direct Limit'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Quantum Observable Universe as Direct Limit' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum Observable Universe as Direct Limit'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Quantum Observable Universe as Direct Limit', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Quantum Observable Universe as Direct Limit' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Quantum Observable Universe as Direct Limit' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Quantum Observable Universe as Direct Limit' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:32:29: error: expected token"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9d6ff2ade56d",
+          "ts": "a7ccebd94c58",
+          "lean": "34865669f035"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:32:29: error: expected token",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:32:29: error: expected token, invalidating the claimed formalization."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:31.262Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

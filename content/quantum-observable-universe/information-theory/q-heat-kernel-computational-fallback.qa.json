@@ -835,7 +835,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' presents substantial mathematical content: At the physical substrate value $q_0 \\approx 1.11$, exact enumeration of $H_n(q)...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-computational-fallback.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f54f2dd4326f",
+          "ts": "55abdc31ac4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:27.255Z"
+  "updated_at": "2026-06-28T10:51:03.753Z"
 }

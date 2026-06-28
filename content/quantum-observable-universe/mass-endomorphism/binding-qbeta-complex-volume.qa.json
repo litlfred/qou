@@ -1101,7 +1101,176 @@
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claims in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$' are non-vacuous as they make concrete conjectures about 'the real and imaginary parts of a single complex fibre obser...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts:1"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean uses a class-conjecture pattern, matching the conjectural nature of 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$'.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Complex-volume unification: binding $\\\\mathfrak{E}_{\\\\mathrm{bind}}$ and $\\\\beta$-decay $\\\\mathfrak{Q}_\\\\beta$ are $\\\\operatorname{Re}$/$\\\\operatorname{Im}$ of one $\\\\mathfrak{V}=E_0\\\\,\\\\mathrm{tr}_M((\\\\Pi_{\\\\text{free}}-\\\\mathbf{1})\\\\circ\\\\mathcal{M})$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts:1"
+      }
     ]
   },
-  "updated_at": "2026-06-24T13:22:51Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

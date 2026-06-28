@@ -1097,7 +1097,252 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Remark with interprets:rem:chi-per-irrep-cyclotomic-closed-forms; per-Wedderburn-block Hopf-Jones absorption (qbeta/Markov-trace) squarely in mass-endomorphism scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.' presents substantial mathematical content: Expanding the paper's per-block character closed forms from [`rem:chi-per-irrep-...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to jones1985, wenzl1988, hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Leading-order $\\\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean:37:19: error: unexpected token '}'; expected term"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean:37:19: error: unexpected token '}'; expected term",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean:37:19: error: unexpected token '}'; expected term, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }

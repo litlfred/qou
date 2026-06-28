@@ -913,7 +913,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/descent-involution.lean fails compilation, rendering the verification vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding' has logical gaps due to compilation failure in its Lean sibling.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/descent-involution.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.lean:1"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/descent-involution.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-involution.lean:1 — ../lifting-and-descent/descent-involution.lean:29:14: error: expected token"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "d0ff264aba38"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/descent-involution.lean fails compilation with errors (../lifting-and-descent/descent-involution.lean:29:14: error: expected token), preventing formal verification of the claims in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding'."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:29.322Z"
+  "updated_at": "2026-06-28T10:51:06.075Z"
 }

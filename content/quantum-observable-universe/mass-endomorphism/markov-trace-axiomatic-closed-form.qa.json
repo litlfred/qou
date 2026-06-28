@@ -1550,7 +1550,140 @@
         "reviewed_at": "2026-06-24T12:07:53Z",
         "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean:1"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to jones1987, kassel1995, wenzl1988, kauffman1991 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts:1"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:07:53Z"
+  "updated_at": "2026-06-28T10:51:08.364Z"
 }
