@@ -25,6 +25,8 @@
 -/
 
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import QOU.BraidKnot.ConditionalClasses
 
 namespace QOU.BraidKnot
@@ -116,12 +118,26 @@ the conditional-on-class structure of the main theorem above. -/
 
 namespace QOU.BraidKnot.HoefsmitPipeline.ConditionalAudit
 
-/-- Local stub of the conjecture's axiomatised class.  See the lake-
-    package sibling for the canonical declaration. -/
+/-- Local mirror of the conjecture's axiomatised class.  The canonical
+    declaration lives in
+    `QOU.Archimedean.HyperbolicVolumeTranscendence` and carries the
+    full `no_relation` field over the concrete substrate volumes
+    `Vol(4₁)`, `Vol(5₂)`, `Vol(𝓑₃)`; this local mirror states the same
+    *shape* over abstract reals so the §3b-cond banner audit recognises
+    the conditional-on-class structure without a cross-module import. -/
 class HyperbolicVolumeIndependence : Prop where
-  /-- Conjecture content is the class instance (sorry = conjecture
-      per AGENTS.md §3b). -/
-  holds : True
+  /-- No non-trivial ℚ-monomial relation holds among the three
+      substrate hyperbolic volumes: for any three reals `v₁ v₂ v₃`
+      (the figure-8, `5₂`, and Borromean complement volumes) and any
+      finitely-supported rational coefficient assignment over exponent
+      triples, a vanishing weighted power-sum forces all coefficients
+      to vanish.  Mirrors `HyperbolicVolumeTranscendence.no_relation`. -/
+  no_relation :
+    ∀ (v₁ v₂ v₃ : ℝ) (S : Finset (ℕ × ℕ × ℕ)) (f : ℕ × ℕ × ℕ → ℚ),
+      (∀ ijk, ijk ∉ S → f ijk = 0) →
+      (S.sum fun ijk =>
+        (f ijk : ℝ) * v₁ ^ ijk.1 * v₂ ^ ijk.2.1 * v₃ ^ ijk.2.2) = 0 →
+      ∀ ijk, f ijk = 0
 
 /-- Witness theorem demonstrating the main proposition is conditional
     on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond. -/

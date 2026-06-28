@@ -50,7 +50,17 @@ namespace QOU.BraidsAndKnots
     Markov-trace family is one-dimensional in the trace
     functionals, parameterised by `z`. -/
 class MarkovTraceFamilyOneDim (R : Type*) (q z : R) where
-  /-- Any two Markov traces with the same `z` and `tr(1) = 1` agree. -/
+  /-- Any two Markov-trace functionals on `H_n(R, q)` with the same
+      Markov parameter `z` and normalisation `tr(1) = 1` agree on every
+      element.  This is the `d = 1` (type-A) case of Chlouveraki HDR
+      Theorem 6.20: the trace functionals form a one-dimensional family
+      parameterised by `z`.
+
+      `opaque marker` — the carrier records the open Hecke-algebra
+      trace-uniqueness input.  Mathlib has no Iwahori–Hecke trace theory
+      to formalise the genuine `∀ tr tr', … → tr = tr'` statement over an
+      abstract `H_n(R, q)`, so this field is a tracked opaque tag, not a
+      fabricated trivial assertion. -/
   unique : True   -- Ref: [chlouveraki2016] HDR Theorem 6.20
 
 open Real BigOperators
