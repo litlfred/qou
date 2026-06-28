@@ -356,6 +356,25 @@ if __name__ == "__main__":
               f"all integral: {r['all_integral']}, "
               f"reconstruction: {r['reconstruction_matches']}")
 
+    # Merge-preserve (bean t6ba follow-up): a DEFAULT run (no HABIRO_WITH_DEUTERON
+    # / HABIRO_WITH_A3) computes only p,n.  Writing `results` fresh would CLOBBER
+    # an existing D / T / ³He row, silently regressing the witness below its
+    # richest committed scope and re-breaking `path_b_habiro_mass_probe` (which
+    # calibrates α_M off D).  Load any on-disk witness and preserve entries for
+    # cases this run did not (re)compute; freshly computed cases always win.
+    # Habiro coefficients are exact integers (deterministic), so a preserved
+    # entry never goes stale unless the algorithm itself changes.
+    _out_path = Path(__file__).parent / "habiro-coefficients-atomic.witness.json"
+    if _out_path.exists():
+        try:
+            _prior = json.loads(_out_path.read_text()).get("results", {})
+            for _label, _entry in _prior.items():
+                if _label not in results and "error" not in _entry:
+                    results[_label] = _entry
+                    print(f"  [merge-preserve] kept prior witness entry: {_label}")
+        except (json.JSONDecodeError, OSError):
+            pass  # corrupt/unreadable prior — fall back to a fresh write
+
     witness = {
         "computation": "habiro-coefficients-atomic",
         "description": (
