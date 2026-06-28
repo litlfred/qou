@@ -29,11 +29,6 @@ $$
    $\mathrm{net}(p) = \mathrm{net}(n) = 1 - h/2 = 0$.*
 3. *Form A vanishes: $\mathfrak{Q}_\beta^A = m_e \cdot |q^2-2q-1|(q+1)/(2q^3) = 0$.*
 
-*The value $q = 1 + \sqrt{2}$ is the **β-decay null point**: the
-substrate value at which proton and neutron have equal single-wrap
-Markov traces and free-neutron $\beta^-$ decay vanishes at the
-leading-order (Form A) level.*
-
 ## Derivation
 
 From [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic),

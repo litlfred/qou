@@ -220,7 +220,6 @@ export default chapter({
         // trace-ratio-interpretation.md.
         "trace-ratio-interpretation-table-data",
         "diagrammatic-double-magic-lr-fusion",
-        "diagrammatic-double-magic-lr-fusion-interpretation",
         "double-magic-Ca40-diagram",
         "double-magic-Ca40-diagram-table-data",
         "double-magic-delta-i-bound",
