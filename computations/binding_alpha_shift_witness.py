@@ -15,7 +15,7 @@ Formula
     B(A) = m_e · ρ_0 · α_shift(T(p_A, k_A))
 
 where:
-  m_e        = 0.5109989461 MeV  (CODATA 2018)
+  m_e        = 0.51099895069 MeV (CODATA 2022)
   ρ_0        = B(D) / (m_e · α_shift(T(2,3)))   (dimensionless, deuteron-pinned)
   α_shift(T(p, k)) = k · (p - 1)                 (Lean: `bindingAlphaShift`)
 
@@ -41,8 +41,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-# CODATA 2018
-M_E_MEV = 0.5109989461
+# CODATA 2022 (matches codata_2022_source.M_E_MEV; m_e cancels in the
+# deuteron-pinned B_pred, so this only sets the reported value + ρ_0).
+M_E_MEV = 0.51099895069
 
 # Experimental binding energies, AME 2020 / NIST (MeV)
 B_EXP_MEV: dict[str, float] = {
@@ -179,7 +180,7 @@ def build_witness() -> dict:
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "inputs": {
             "m_e_MeV": M_E_MEV,
-            "m_e_source": "CODATA 2018",
+            "m_e_source": "CODATA 2022",
             "B_experimental_source": "AME 2020 / NIST",
             "alpha_shift_inputs": {
                 "rho_0_dimensionless": round(rho_0, 6),
