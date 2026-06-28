@@ -1,13 +1,5 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-The torus knots embeddable on $\Sigma_4$ form a **complete,
-self-dual basis** for the regular representation of the
-Iwahori--Hecke algebra $H_n(q)$.  The $Q$-value of beta decay is the
-spectral decomposition of the decay operator in this basis.
-The decomposition is **exact and finite** — it terminates at
-degree $2$ because the embeddability bound on $\Sigma_4$ kills
-all higher jets.
-
 ## Corollary (spectral decomposition of the $Q$-value)
 
 *This is a direct consequence of the
@@ -143,10 +135,6 @@ degree $\lfloor 2g/(g-1) \rfloor$.*
    requires genus $\geq 13$ — so the jet bundle over
    $\Sigma_4$ has **exactly three non-zero levels**
    ($k = 0, 1, 2$).
-
-### The six embeddable torus knots on $\Sigma_4$
-
-See [Table 1](#tbl:spectral-decomposition-qvalue-table1-data).
 
 Degree-$1$ knots are already encoded in $\mathcal{Q}_{\mathrm{bare}}$
 through distinct vertex weights ($\mathfrak{p} {}^i\!\oplus_j \mathfrak{p}$, $\mathfrak{n} {}^i\!\oplus_j \mathfrak{n}$, $\mathfrak{p} {}^i\!\oplus_j \mathfrak{n}$ — inter-particle Hopf links with crossing indices $i, j$), so $F = 1$ for shells $1$–$4$.
