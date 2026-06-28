@@ -34,5 +34,7 @@
     "tr_M_at_q0": "1.3317821792991125061382939027504490778795270468692",
     "compute_time_sec": 0.07,
     "cache_path": "/home/user/qou/computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json"
-  }
+  },
+  "convention": "sign-only-crossings",
+  "convention_inferred_by": "chi_convention_audit.py --fix (producer:chi_at_q0_via_matrix_m_mpfr.py)"
 }

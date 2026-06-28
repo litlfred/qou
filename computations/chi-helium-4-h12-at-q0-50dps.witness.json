@@ -280,5 +280,7 @@
       "contribution": "0.00019553093726328507330693419561883270606011588104261",
       "compute_time_sec": 16341.81
     }
-  ]
+  ],
+  "convention": "averaged-crossings",
+  "convention_inferred_by": "chi_convention_audit.py --fix (computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/)"
 }
