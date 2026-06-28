@@ -51,7 +51,9 @@ export default chapter({
       blocks: [
         "intro-pair-production-knot-operators",
         "q-value-transition",
+        "q-value-transition-properties",
         "breit-wheeler-pair-production",
+        "breit-wheeler-pair-production-derivation",
         "breit-wheeler-pair-production-table-data",
         "gamma-gamma-generates-particles",
         "knot-operator-selection",
@@ -221,7 +223,9 @@ export default chapter({
       blocks: [
         "nuclear-stability-decay-intro",
         "beta-decay-skein",
+        "beta-decay-skein-properties",
         "lepton-number-categorical",
+        "lepton-number-categorical-properties",
         "lepton-continuant-recurrence",
         "lepton-continuant-recurrence-novelty",
         "lepton-tower-witness",
