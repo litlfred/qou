@@ -67,9 +67,13 @@ def content(i, j):
     return j - i
 
 
+@lru_cache(maxsize=None)
 def qint(k):
-    """Symmetric q-integer [k]_q = (q^k − q^−k)/(q − q^−1)."""
-    return (q ** k - q ** (-k)) / (q - 1 / q)
+    """Symmetric q-integer [k]_q = (q^k − q^−k)/(q − q^−1), cancelled to a clean Laurent
+    polynomial (so it caches small and evaluates to `k` at q=1 rather than `nan`)."""
+    if k == 1:
+        return sp.Integer(1)
+    return sp.cancel((q ** k - q ** (-k)) / (q - 1 / q))
 
 
 @lru_cache(maxsize=None)
@@ -77,17 +81,20 @@ def qfact(n):
     r = sp.Integer(1)
     for k in range(1, n + 1):
         r *= qint(k)
-    return r
+    return sp.cancel(r)
 
 
 @lru_cache(maxsize=None)
 def dim_q(lam):
-    """Symmetric quantum dimension [n]_q! / ∏_c [h_c]_q (cancelled). `lam` must be a tuple."""
+    """Symmetric quantum dimension [n]_q! / ∏_c [h_c]_q (cancelled). `lam` must be a tuple.
+    Accumulate numerator / denominator separately and divide once, to avoid a deeply nested
+    division tree from `d /= …` in the loop."""
     cj = conj(lam)
-    d = qfact(sum(lam))
+    num = qfact(sum(lam))
+    den = sp.Integer(1)
     for (i, j) in cells(lam):
-        d /= qint(hook(lam, i, j, cj))
-    return sp.cancel(sp.together(d))
+        den *= qint(hook(lam, i, j, cj))
+    return sp.cancel(num / den)
 
 
 @lru_cache(maxsize=None)
