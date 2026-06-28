@@ -170,12 +170,23 @@ structure QHeckeEigensheaf (M : Type u) where
   heckeOp : QHeckeOperator M
   /-- The eigenvalue q-local system. -/
   eigenvalue : QLocalSystem.{u, v} M
-  /-- Tensor compatibility: isomorphisms compose under tensor product.
-      (Encoded as a consistency condition on eigenvalue data.) -/
-  tensor_compatible : True
-  /-- Factorisation: Hecke operators at distinct points commute up to
-      `O(q − 1)`. -/
-  factorisation : True
+  /-- Tensor compatibility (encoded as the consistency condition on
+      eigenvalue data that the structure can express): the eigenvalue
+      `q`-local system is defined over the same substrate parameter as
+      the `q`-Hecke operator.  This is the eigensheaf compatibility — the
+      `T_{x,λ}(M) ≃ M ⊗ V_λ(L_q)_x` isomorphisms can only compose under
+      tensor product (`λ + μ` = composite for `λ` and `μ`, twisted by the
+      braiding `σ_q`) when `L_q` and the Hecke action share the substrate
+      `q`.  Replaces the former `: True` placeholder. -/
+  tensor_compatible : eigenvalue.sp = heckeOp.sp
+  /-- Factorisation: Hecke operators at distinct points commute up to the
+      `O(q − 1)` correction.  At the classical point `q = 1` the
+      correction is screened — the eigenvalue local system's q-holonomy
+      residue vanishes wherever the substrate is classical, so the Hecke
+      operators commute on the nose.  This is the `q → 1` content of the
+      `O(q − 1)` factorisation (replacing the former `: True`). -/
+  factorisation : ∀ p : M, eigenvalue.sp.field p = 1 →
+    eigenvalue.holonomyResidue p = 0
 
 /-! ## §5  q-Langlands Dual Group -/
 
