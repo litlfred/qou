@@ -156,4 +156,40 @@ theorem rowHookProd_cons_mul (a c : ℕ) (r : List ℕ) (hca : c ≤ a) (hr : �
   rw [hsplit2, Finset.prod_range_succ, hgc]
   ring
 
+/-! ## The per-row closed form `rowHookProd a t · D a t = (a + |t|)!` -/
+
+/-- The beta-gap product `D a t = ∏_{j>i}(β_i − β_j)` in divisor-free, recursion-matched form:
+`D a [] = 1`, `D a (c :: r) = (a + 1 − c) · D (a+1) r`.  Each factor is the consecutive beta-gap as
+the row index advances. -/
+def betaGapProd (a : ℕ) : List ℕ → ℕ
+  | [] => 1
+  | c :: r => (a + 1 - c) * betaGapProd (a + 1) r
+
+@[simp] theorem betaGapProd_nil (a : ℕ) : betaGapProd a [] = 1 := rfl
+
+theorem betaGapProd_cons (a c : ℕ) (r : List ℕ) :
+    betaGapProd a (c :: r) = (a + 1 - c) * betaGapProd (a + 1) r := rfl
+
+/-- **Per-row Frame–Robinson–Thrall hook product, divisor-free closed form (sorry-free).** For a
+weakly-decreasing tail `t` with every part `≤ a`,
+
+    rowHookProd a t · betaGapProd a t = (a + |t|)!.
+
+This is `∏_{c ∈ row i} h(i,c) = β_i! / ∏_{j>i}(β_i − β_j)` (the per-row hook product of the
+beta-number HLF) cleared of its denominator.  Proved by induction on the tail via the recursion
+`rowHookProd_cons_mul`; no division, no archimedean input. -/
+theorem rowHookProd_mul_betaGapProd (a : ℕ) (t : List ℕ)
+    (ht : List.Sorted (· ≥ ·) t) (hta : ∀ p ∈ t, p ≤ a) :
+    rowHookProd a t * betaGapProd a t = Nat.factorial (a + t.length) := by
+  induction t generalizing a with
+  | nil => simp [rowHookProd_nil]
+  | cons c r ih =>
+    obtain ⟨hcr, hr⟩ := List.sorted_cons.mp ht
+    have hca : c ≤ a := hta c (List.mem_cons_self ..)
+    have hrc : ∀ p ∈ r, p ≤ c := fun p hp => hcr p hp
+    have hra : ∀ p ∈ r, p ≤ a + 1 := fun p hp => le_trans (hrc p hp) (by omega)
+    rw [betaGapProd_cons, ← mul_assoc, rowHookProd_cons_mul a c r hca hrc,
+      ih (a + 1) hr hra, List.length_cons]
+    congr 1; omega
+
 end QOU.Mathlib.SYTBeta
