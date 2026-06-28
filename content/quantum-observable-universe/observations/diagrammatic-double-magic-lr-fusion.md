@@ -67,7 +67,7 @@ diagonal Wedderburn capacity to absorb crossing energy beyond the
 Coulomb / Casimir / pairing terms already present at $\lambda_Z$
 and $\mu_N$.*
 
-## Why "rigidity"
+## Meaning of "rigidity"
 
 The classical LR rule \cite{ariki1996} typically produces a sum
 over many $\nu$, with multiplicities counting LR tableaux. The

@@ -29,7 +29,7 @@ This is **deconfinement**.  It is not a gradual weakening of the
 confining force — it is a **topological phase transition** where
 the fiber that enforces confinement ceases to exist.
 
-**Why first-order.**
+**First-order character.**
 
 The QGP transition in QCD lattice simulations is first-order for
 three or more light quark flavors.  In QOU, the first-order

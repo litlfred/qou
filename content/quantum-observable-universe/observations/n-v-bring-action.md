@@ -23,7 +23,7 @@ $$
 projector from the universal Frobenius co-Casimir trace
 ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal))
 onto the EW slice.*
-## Why $S_5$, not another finite group
+## Forcing of $S_5$ over other finite groups
 
 The choice of $S_5$ is forced by **three independent structural
 constraints**:
@@ -45,7 +45,7 @@ constraints**:
    the SU$(2)_5$ modular tensor category (the formal
    identification of this MTC as a QOU content block is open).
 
-## What needs to be constructed
+## Constructions required
 
 To upgrade this conjecture to a theorem, the missing categorical
 ingredients are:

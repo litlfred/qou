@@ -49,7 +49,7 @@ which already sees electron and muon as the two leptons whose
 representations fit into the $\mathbb{Z}_5$-graded structure
 of the $\mathcal{X}_5$ substrate.
 
-**What it does not claim.** The proposition does not say tau
+**Scope of the claim.** The proposition does not say tau
 "should not exist" --- it exists, and physics confirms it. It
 says tau's existence requires a different mechanism (symmetry-broken
 embedding) than electron and muon (symmetry-preserving embedding).

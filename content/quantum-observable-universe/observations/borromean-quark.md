@@ -22,7 +22,7 @@ and blue color tubes respectively.  The "up" and "down" quark
 flavours correspond to the crossing orientation of each unknot
 within the Borromean structure.*
 
-**Why Borromean, not Hopf.**
+**Borromean rather than Hopf.**
 
 The Borromean link $\mathcal{B}_3$ has the defining property
 that **no two components are linked, but all three together

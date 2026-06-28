@@ -37,7 +37,7 @@ chiral fibration of Bring's surface loses its elliptic structure
 — the three color tubes $(r, g, b)$ collapse to a degenerate
 configuration where two roots coincide.
 
-**Why the golden ratio?**
+**Origin of the golden ratio.**
 The polynomial $s^2 + s - 1$ is the **minimal polynomial of
 $1/\varphi$ over $\mathbb{Q}$**.  Its appearance in the
 Weierstrass coefficient is not coincidental: the Bring's surface

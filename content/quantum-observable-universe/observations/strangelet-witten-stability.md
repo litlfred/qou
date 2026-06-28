@@ -78,7 +78,7 @@ strange matter is **decisively not** the ground state.
 | Jones polynomial cost | $\lvert J_{\mathfrak{s}}\rvert = 1.176$ | $\lvert J_{\mathfrak{d}}\rvert = 0.960$ | Ordinary ($22\%$ lighter) |
 | Borromean volume | $V_B = 7.328$ (same) | $V_B = 7.328$ (same) | Tie |
 
-**Where strangelets DO exist: neutron star cores.**
+**Location of strangelets: neutron star cores.**
 
 At finite baryon density $\rho$, the Fermi energy $E_F$
 provides additional energy per baryon.  When $E_F$ exceeds the

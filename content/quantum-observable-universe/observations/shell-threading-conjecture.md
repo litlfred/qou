@@ -137,7 +137,7 @@ $$
 
 Both factors are determined by $q$ and the nuclear braid topology.
 
-**What needs to be computed.**
+**Computations required.**
 
 1. **The external modulation $f(m, k, q)$**: write the braid
    word for $\mathcal{N}(6, 8)$ with the converting neutron at

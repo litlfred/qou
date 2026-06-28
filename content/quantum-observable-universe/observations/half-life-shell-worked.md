@@ -39,7 +39,7 @@ $$
   \ell_{\mathrm{net}}(2, 1) = \textstyle\binom{2}{2} - \binom{1}{2} = +1
 $$
 
-**Why the transition is superallowed ($\log ft = 3.05$).**
+**Superallowed character of the transition ($\log ft = 3.05$).**
 The parent $(1, 2)$ and daughter $(2, 1)$ are **mirror nuclei**:
 their Skein polynomials are related by $q \leftrightarrow q^{-1}$
 conjugation. In the Skein algebra of the Hopf link, this means
@@ -119,7 +119,7 @@ The daughter has $n = 7$, which is **not** a magic number. The
 neutron shell is *broken* — one of the four $\mathcal{N}(0,2)$
 pairs has been disrupted by converting a neutron to a proton.
 
-**Why the transition is anomalously slow ($\log ft = 9.04$).**
+**Anomalous slowness of the transition ($\log ft = 9.04$).**
 The beta decay $\mathcal{N}(6, 8) \to \mathcal{N}(7, 7)$ must
 **break a closed sub-link**: one of the neutron pairs in the
 $n = 8$ shell is split. The matrix element for this transition is

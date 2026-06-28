@@ -11,7 +11,7 @@ $H_q(\lambda)$ evaluated on specific partition shapes.*
 [Table: BW terms as Schur-Weyl strata](#tbl:bw-mass-decomposition-dictionary-table-data)
 for the seven-term correspondence.
 
-**What this means operationally.**
+**Operational meaning.**
 *In the categorical picture, the coefficient
 $a_V \approx 15.67\,\mathrm{MeV}$ (BW volume) is forced to equal
 $2[2]_q[7]_q \cdot m_e$ at $q = q_0$, not fit.  The
@@ -22,7 +22,7 @@ measured.  The categorical derivation therefore predicts these
 coefficients without any nuclear-physics input — only the
 substrate parameter $q_0$ and the reference mass $m_e$.*
 
-**What this does **not** say.**
+**Scope of the dictionary.**
 *The dictionary identifies each BW term with an algebraic stratum.
 It does **not** claim that nuclei are well-described by summing
 only these strata: the Schur–Weyl sum includes far more

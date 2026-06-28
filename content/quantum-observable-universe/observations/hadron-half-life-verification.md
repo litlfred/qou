@@ -5,7 +5,7 @@ We verify the half-life framework
 beta-decay lifetimes for representative nuclei spanning the periodic
 table.
 
-## What is computed from $q$ and $\mu_0$
+## Quantities computed from $q$ and $\mu_0$
 
 The half-life formula depends on $q$ (the substrate parameter)
 and $\mu_0$ (the single dimensional scale converting Skein units

@@ -74,7 +74,7 @@ non-zero off-diagonal LR coefficients — is the **$\kappa$-leakage**:
 binding-energy capacity that the saturated $Z = 8$ side cannot
 absorb, and that the frayed $N = 10$ side carries.
 
-## What the diagram shows
+## Diagram content
 
 The diagrammatic illustration in this example block is, schematically:
 

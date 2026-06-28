@@ -32,7 +32,7 @@ satisfy:*
    of a continuous map $\Omega_q \to L(\mathcal{H})$ compatible with
    $\iota_n$.*
 
-**What is established.** Parts (1) and (2) are theorems in the
+**Established results.** Parts (1) and (2) are theorems in the
 asymptotic Plancherel literature. The QOU codebase already carries
 the Féray–Méliot CLT as the typeclass `HasQPlancherelCLT` in
 [`QPlancherel.lean`](/content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean).
@@ -40,7 +40,7 @@ Convergence in measure is therefore part of the existing
 infrastructure; nothing about the *measure-theoretic limit alone*
 is conjectural in QOU.
 
-**What is conjectural.** Part (3) names two separable open problems:
+**Conjectural results.** Part (3) names two separable open problems:
 
 - (3a) *q-deformed Kerov–Vershik.* Extension of the classical
   $q=1$ Thoma-simplex convergence to generic $q$. The variance
