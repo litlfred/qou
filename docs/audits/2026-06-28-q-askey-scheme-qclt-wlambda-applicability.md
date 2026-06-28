@@ -259,6 +259,17 @@ genuine compute lever** and **one speculative** one. Neither is implemented here
 (no compute env in this sandbox; route any implementation through
 `local/compute-author`).
 
+> **Done (2026-06-28):** the lever's first rung is realized — `C(n)` is now
+> **derived analytically** from Identity I via the Plancherel-moment route
+> (`scripts/keystone_wlambda_defect_kerov_derivation.py`, exact `n=2..12`),
+> closing the keystone's deferred "C(n) derivation from the defect ... not yet
+> symbolic" item. From `log W_λ = log(dim²/n!) + (η²/6)[Σ_k(k²−1) −
+> 2Σ_c(h_c²−1)] + …` and `Σ_λ w_λ = 1`, the `h²` coefficient of `1−Z(n)` is
+> `−(1/4)·(1/6)[Σ_k(k²−1) − 2(M(n)−n)]` with `M(n)=n(3n−1)/2` (Identity I),
+> giving `C(n) = −n(n−1)(2n−13)/144` with no Taylor extraction or fit. Higher
+> rungs `c_{2k}(n)` follow from the next log-sinh coefficients × higher
+> Plancherel hook-power-sum moments.
+
 - **Lever (real, modest): Kerov-polynomial / free-cumulant recursion for the
   `W_λ` defect ladder.** Since `W_λ = dim_q²/[n]_q!` is the q-Plancherel measure
   (§2), the defect coefficients `c_{2k}(n)` — the degree-`3k` polynomials the
