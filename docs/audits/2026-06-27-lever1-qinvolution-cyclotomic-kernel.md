@@ -140,6 +140,71 @@ This is the sharp, honest boundary of what the order-2 involution ansatz buys: t
 (`m≤3`, the calibration anchors) is the symmetric q-integer exactly; everything beyond is the
 cyclotomic/Habiro correction, and the monic-order-2 closed form fails from `m=6`.
 
+## Stage 3 — is `S(m)` order-2 q-holonomic? (general non-monic test)
+
+Stage 2 ruled out the *monic* order-2 lift. Stage 3 tests the **general** order-2 q-difference
+operator
+
+```
+  P₂(q, q^m)·S(m) + P₁(q, q^m)·S(m−1) + P₀(q, q^m)·S(m−2) = 0,
+```
+
+with `P_i` bar-symmetric Laurent polynomials in `(q, X:=q^m)` (the `X^{−1}` terms are required —
+e.g. `[m−1]_q = (X−X⁻¹)/(q−q⁻¹)`). Method: bounded-bidegree guess-and-verify with **held-out
+falsification** — fit the coefficients on `m=2..6`, then verify the solved recurrence predicts
+`m=7,8,9` (indices never used in the fit). Compute:
+[`computations/substrate/lever1_qholonomic_kernel_fit.py`](../../computations/substrate/lever1_qholonomic_kernel_fit.py),
+witness [`lever1-qholonomic-kernel-fit.witness.json`](../../computations/substrate/lever1-qholonomic-kernel-fit.witness.json).
+
+**Result — negative, and sharp.** Up to q-degree `±4` and X-degree `3`:
+
+| q-deg | X-deg | unknowns | constraints | fit nullspace | held-out-verified |
+|------:|------:|--------:|-----------:|-------------:|------------------:|
+| ±1 | 1 | 27 | 83 | 0 | 0 |
+| ±2 | 2 | 75 | 133 | 0 | 0 |
+| ±3 | 3 | 147 | 183 | 0 | 0 |
+| ±4 | 3 | 189 | 193 | 18 | **0** |
+
+At every **strongly over-determined** bidegree (≤ q-deg `±3`, where constraints exceed unknowns
+by ≥ 35) the fit nullspace is **empty** — no order-2 recurrence even fits the training set. A
+nullspace appears only at q-deg `±4` where the system is nearly square (189 unknowns vs 193
+constraints), i.e. effectively under-constrained, and **none** of those 18 candidate solutions
+survive the held-out test. So `S(m)` is **not** order-2 q-holonomic of small bidegree: the true
+fibre operator is higher q-shift order (≥3) or has bidegree beyond the swept bound.
+
+## Cross-link — the Q_β `c_k` ladder is in the same state (the `kehn` connection)
+
+The corpus `c_k` state of play
+([`docs/coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md),
+[`docs/audits/2026-06-04-qbeta-ck-holonomic-c11-attempt-verdict.md`](2026-06-04-qbeta-ck-holonomic-c11-attempt-verdict.md),
+[`docs/audits/2026-06-20-qbeta-hahn-exton-kernel-test.md`](2026-06-20-qbeta-hahn-exton-kernel-test.md))
+shows the **same structural verdict** for the Q_β coefficients as this probe finds for the
+binding period:
+
+- **No low-order (q-)holonomic recurrence.** The `c_k` holonomic guess (order ≤2, degree ≤2)
+  found no clean D-finite recurrence; constant-kernel depth ≤4 is refuted; the bare **Hahn–Exton
+  q-Bessel** ratio is *structurally* excluded (empirical `r₂ = c₃/c₂ = +2` lies in the
+  forbidden gap `(0, 3.35)` unreachable for any real `ν`). Exactly parallel to the `S(m)`
+  negative here.
+- **Kernel constrained to depth ≥3 or non-constant q-rational**, with `a₂ = c₂ = −1`,
+  `a₁ = −c₃ = √2·Φ₂` (bar-odd), and a **ζ₄ cyclotomic residue** — a Habiro-ring element.
+- **Cyclotomic everywhere, different localisations.** Binding `D(m)`: `Φ₃/Φ₅/Φ₇`, real-q `ℤ[q]`.
+  Q_β `c_k` kernel: `ζ₄` residue, leading `√2·Φ₂`, ζ-fibre/complex. Q_β `Δa_m`: `Φ₈` (ledger
+  `2026-06-01-qbeta-habiro-followup.md`). All three are the cyclotomic-completion (Habiro) ring;
+  the **localisations differ** (real-q integral vs ζ-fibre), so this is corroboration at the
+  ring-class level — not a claim that the towers are the same element (per #2452 + the AGENTS.md
+  *Im(q) fibre-vs-observable* banner).
+- **Why neither closes by extraction.** The `c_k` extraction precision floor proves only
+  `c_2, c_3` are data-determined; `c_4+` lie below the measured-Q_β noise, so they can come *only*
+  from a framework derivation (the Habiro element). The binding kernel is the parallel
+  derivation-side object: pinning the higher-order / non-monic q-holonomic operator for `S(m)` is
+  the same *kind* of task as constructing the Q_β Habiro element `F(q)`.
+
+**Net:** two independent rungs (binding period `S(m)`; Q_β ladder `c_k`) both (i) resist
+low-order q-holonomic closure and (ii) carry cyclotomic Habiro structure. That is positive
+evidence they are governed by **one Habiro-ring q-difference operator**, evaluated at different
+localisations — the unifying object `s5bb`'s keystone and `kehn`'s closure both need.
+
 ## Why this serves all three levers
 
 - **`z2bn`** (this bean): replaces the falsified C-finite `R(q,x)` with a sharply
