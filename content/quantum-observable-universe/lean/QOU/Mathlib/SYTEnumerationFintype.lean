@@ -255,4 +255,54 @@ theorem isStdFilling_col (l a : List ℕ) (h : isStdFilling l a = true) (hlen : 
   obtain ⟨n, rfl⟩ : ∃ n, i2 = i1 + n + 1 := ⟨i2 - i1 - 1, by omega⟩
   exact isStdFilling_col_aux l a h hlen hl i1 n j hi2 hj
 
+/-! ### The row-major index map and the inverse SYT -/
+
+/-- The row-major flat index of cell `(i,j)`: `(l.take i).sum + j`. -/
+def idx (l : List ℕ) (i j : ℕ) : ℕ := (l.take i).sum + j
+
+/-- Step law for the partial sums of `l`. -/
+theorem take_sum_succ (l : List ℕ) (i : ℕ) (hi : i < l.length) :
+    (l.take (i + 1)).sum = (l.take i).sum + l[i]'hi := by
+  have hsplit : l.take (i + 1) = l.take i ++ [l[i]'hi] := by
+    rw [List.take_succ]; congr; rw [List.getElem?_eq_getElem hi]; rfl
+  rw [hsplit, List.sum_append]; simp
+
+/-- Partial sums of `l` are monotone in the prefix length. -/
+theorem take_sum_mono (l : List ℕ) (i k : ℕ) (h : i ≤ k) :
+    (l.take i).sum ≤ (l.take k).sum := by
+  have hsub : l.take i <+ l.take k := (List.take_prefix_take_left h).sublist
+  exact List.Sublist.sum_le_sum hsub (fun x _ => Nat.zero_le x)
+
+/-- The row-major index of a cell is `< ∑l`. -/
+theorem idx_lt_sum (l : List ℕ) (i j : ℕ) (hi : i < l.length) (hj : j < l[i]'hi) :
+    idx l i j < l.sum := by
+  unfold idx
+  have := take_sum_add_le l i hi
+  omega
+
+/-- The row-major index map is injective on cells: distinct cells get distinct flat indices. -/
+theorem idx_injOn (l : List ℕ) (i1 j1 i2 j2 : ℕ)
+    (hi1 : i1 < l.length) (hj1 : j1 < l[i1]'hi1) (hi2 : i2 < l.length) (hj2 : j2 < l[i2]'hi2)
+    (heq : idx l i1 j1 = idx l i2 j2) : i1 = i2 ∧ j1 = j2 := by
+  unfold idx at heq
+  -- WLOG i1 ≤ i2; rule out i1 < i2 by the gap bound.
+  have key : ∀ x1 y1 x2, (hx1 : x1 < l.length) → y1 < l[x1]'hx1 →
+      x1 < x2 → (l.take x1).sum + y1 < (l.take x2).sum := by
+    intro x1 y1 x2 hx1 hy1 hlt
+    have hstep : (l.take (x1 + 1)).sum = (l.take x1).sum + l[x1]'hx1 := take_sum_succ l x1 hx1
+    have hmono : (l.take (x1 + 1)).sum ≤ (l.take x2).sum := take_sum_mono l (x1 + 1) x2 (by omega)
+    omega
+  rcases lt_trichotomy i1 i2 with h | h | h
+  · have := key i1 j1 i2 hi1 hj1 h; omega
+  · subst h; exact ⟨rfl, by omega⟩
+  · have := key i2 j2 i1 hi2 hj2 h; omega
+
+/-- The entry map equals `a` precomposed with the row-major index, on cells (given `a.length = ∑l`). -/
+theorem entryFn_eq_a_idx (l a : List ℕ) (i j : ℕ) (hi : i < l.length) (hj : j < l[i]'hi)
+    (hlen : a.length = l.sum) :
+    entryFn l a i j = a[idx l i j]'(by rw [hlen]; exact idx_lt_sum l i j hi hj) := by
+  rw [entryFn_eq_getD l a i j hi hj (by rw [hlen]; exact take_sum_add_le l i hi)]
+  rw [getD_of_lt]
+  rfl
+
 end QOU.Mathlib.SYTEnum
