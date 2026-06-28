@@ -14,8 +14,11 @@ Lake package.
 namespace QOU
 
 
-/-- Abstract context for the `orbital_fourier_decomposition` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `orbital_fourier_decomposition` claim —
+    the manuscript-themed typed fields the claim ranges over.  The
+    residual `Prop` is *named* by `orbital_fourier_decomposition`
+    below (§3b: naming a conditional conjecture is not a logical
+    claim), not faked by projecting a `claim_*` field. -/
 class OrbitalFourierDecompositionContext where
   /-- Categorical object / monoidal structure. -/
   CategoricalObj : Type
@@ -29,11 +32,6 @@ class OrbitalFourierDecompositionContext where
   m : ℤ
   /-- Spin quantum number `s : ±1/2`. -/
   s : ℝ
-  /-- Manuscript master identity: `k = 2(n − 1)` ties the global
-      R-I count to the principal quantum number. -/
-  claim_orbital_fourier_decomposition :
-    k = 2 * (n - 1 : ℤ) ∧ ℓ < n ∧ -(ℓ : ℤ) ≤ m ∧ m ≤ (ℓ : ℤ) ∧
-    (s = 1/2 ∨ s = -(1/2))
 
 /-- **Manuscript statement** (full body):
 
@@ -114,14 +112,17 @@ $$
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_orbital_fourier_decomposition := by sorry`
-    placeholder; the `ctx.claim_orbital_fourier_decomposition : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below *names* the residual proposition as a
+    `def … : Prop` over the manuscript context (the master identity
+    `k = 2(n−1)`, the orbital bound `ℓ < n`, the magnetic-number
+    range `−ℓ ≤ m ≤ ℓ`, and the spin dichotomy `s = ±½`).  Naming the
+    conditional conjecture is honest per §3b; an instance discharging
+    it (none here) would be the conjecture, the open state being the
+    absence of one. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts
-theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] :
+def orbital_fourier_decomposition (ctx : OrbitalFourierDecompositionContext) : Prop :=
     ctx.k = 2 * (ctx.n - 1 : ℤ) ∧ ctx.ℓ < ctx.n ∧
     -(ctx.ℓ : ℤ) ≤ ctx.m ∧ ctx.m ≤ (ctx.ℓ : ℤ) ∧
-    (ctx.s = 1/2 ∨ ctx.s = -(1/2)) :=
-  ctx.claim_orbital_fourier_decomposition
+    (ctx.s = 1/2 ∨ ctx.s = -(1/2))
 
 end QOU
