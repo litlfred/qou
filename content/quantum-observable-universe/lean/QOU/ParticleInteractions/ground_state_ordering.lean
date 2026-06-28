@@ -36,37 +36,26 @@ class GroundStateOrderingContext where
   /-- The ground-state ordering at position `k`: `1` = proton,
       `0` = neutron. -/
   ordering : ℕ → ℕ
-  /-- Manuscript sub-claim (i) — Interleaving: for `Z ≤ N` and
-      `A ≥ 4`, protons sit at odd positions `k < 2Z`. -/
-  claim_i_interleaving : Z ≤ N → 4 ≤ A →
-    ∀ k : ℕ, ordering k = if k % 2 = 1 ∧ k < 2 * Z then 1 else 0
-  /-- Manuscript sub-claim (ii) — Tail packing: excess `N − Z`
-      neutrons sit at high positions `k ≥ 2Z` (subsumed by (i)
-      when `Z ≤ N` since the `else` branch assigns neutrons there). -/
-  claim_ii_tail_packing : Z ≤ N → ∀ k : ℕ, 2 * Z ≤ k → k < A → ordering k = 0
-  /-- Manuscript sub-claim (iii) — Boundary correction: for `A ≤ 3`
-      the sorted (all-protons-first) ordering beats interleaving. -/
-  claim_iii_boundary_correction : A ≤ 3 → ∀ k : ℕ, k < Z → ordering k = 1
-  /-- Manuscript sub-claim — eigenvalue identity:
-      `λ_+ · λ_− = −1`. -/
-  claim_vieta_product : lam_plus * lam_minus = -1
 
 /-- **Proposition statement** (from manuscript):
 
 The nuclear ground state ordering for a nucleus with $Z$ protons
 and $N$ neutrons ($A = Z + N$) is determined by:*
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding **names** the conditional conjecture as a `Prop`
+    (pattern C of the vacuity-fix playbook): the context class is the
+    carrier of the transfer-matrix / ordering data, and
+    `ground_state_ordering` is the proposition that interleaving,
+    boundary correction, and the Vieta eigenvalue product hold for that
+    data.  It is *not* asserted (no `theorem … := ⟨ctx.claim_*⟩`
+    self-assuming projection); a discharging instance is the open
+    conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
-theorem ground_state_ordering [ctx : GroundStateOrderingContext] :
+def ground_state_ordering (ctx : GroundStateOrderingContext) : Prop :=
     (ctx.Z ≤ ctx.N → 4 ≤ ctx.A →
       ∀ k : ℕ, ctx.ordering k =
         if k % 2 = 1 ∧ k < 2 * ctx.Z then 1 else 0) ∧
     (ctx.A ≤ 3 → ∀ k : ℕ, k < ctx.Z → ctx.ordering k = 1) ∧
-    ctx.lam_plus * ctx.lam_minus = -1 :=
-  ⟨ctx.claim_i_interleaving, ctx.claim_iii_boundary_correction, ctx.claim_vieta_product⟩
+    ctx.lam_plus * ctx.lam_minus = -1
 
 end QOU.ParticleInteractions
