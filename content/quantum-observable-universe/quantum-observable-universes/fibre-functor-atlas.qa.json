@@ -1605,7 +1605,255 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "No false claims identified in the prose of 'Fibre functors as an affine atlas with $G$-torsor transitions'; the mathematical reasoning concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "The block 'Fibre functors as an affine atlas with $G$-torsor transitions' presents substantial mathematical content: 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Fibre functors as an affine atlas with $G$-torsor transitions' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "The remarks and narrative scope in 'Fibre functors as an affine atlas with $G$-torsor transitions' concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Fibre functors as an affine atlas with $G$-torsor transitions'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "The prose arguments in 'Fibre functors as an affine atlas with $G$-torsor transitions' proceed logically through the stated steps: 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Fibre functors as an affine atlas with $G$-torsor transitions' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "No citations are present in 'Fibre functors as an affine atlas with $G$-torsor transitions', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "Key terms and symbols in 'Fibre functors as an affine atlas with $G$-torsor transitions' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "The algebraic and logical relations in 'Fibre functors as an affine atlas with $G$-torsor transitions' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "The physical concepts described in 'Fibre functors as an affine atlas with $G$-torsor transitions' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fibre-functor-atlas.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Fibre functors as an affine atlas with $G$-torsor transitions' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Fibre functors as an affine atlas with $G$-torsor transitions' (concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

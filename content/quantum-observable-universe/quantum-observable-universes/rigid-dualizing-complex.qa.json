@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean"
   },
   "source_hashes": {
-    "md": "3d72b12762c5",
+    "md": "f29a368a4e01",
     "ts": "584b80145264",
     "lean": "a2cd7c8698e7"
   },
@@ -913,43 +913,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3d72b12762c5",
+          "md": "f29a368a4e01",
           "ts": "584b80145264",
-          "lean": "8b56602f5f8b"
+          "lean": "a2cd7c8698e7"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:34.658Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "Block placement and kind 'definition' match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "3d72b12762c5",
+          "md": "f29a368a4e01",
           "ts": "584b80145264",
-          "lean": "8b56602f5f8b"
+          "lean": "a2cd7c8698e7"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:35.094Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.lean:1",
+        "notes": "The Lean theorem/definition statement in rigid-dualizing-complex.lean matches the mathematical statement in rigid-dualizing-complex.md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.lean:1",
+        "notes": "The mathematical claims in 'Rigid dualizing complex' regarding 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote' are unverified due to compilation errors in the Lean sibling file rigid-dualizing-complex.lean: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "The sibling Lean file rigid-dualizing-complex.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Rigid dualizing complex' (which asserts 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "The prose presents 'Rigid dualizing complex' as verified, but the sibling Lean file rigid-dualizing-complex.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Rigid dualizing complex'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Rigid dualizing complex' due to compilation failure in rigid-dualizing-complex.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.lean:1",
+        "notes": "The Lean sibling rigid-dualizing-complex.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "The citations (yekutieli2015, yekutieli2010, ) in 'Rigid dualizing complex' are consistent with the sources referenced in the text."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "Key terms and symbols in 'Rigid dualizing complex' (e.g. from 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "The algebraic and logical relations in 'Rigid dualizing complex' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.ts:1",
+        "notes": "The physical concepts described in 'Rigid dualizing complex' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.lean:1",
+        "notes": "The Lean sibling rigid-dualizing-complex.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f29a368a4e01",
+          "ts": "584b80145264",
+          "lean": "a2cd7c8698e7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for 'Rigid dualizing complex' (asserting 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist. A competent referee cannot accept this as a verified mathematical claim."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

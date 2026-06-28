@@ -835,7 +835,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "No false claims identified in the prose of '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)'; the mathematical reasoning concerning 'The formal grouplike $\\exp_q \\in G(\\mathcal{H}_q)$' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "The block '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' presents substantial mathematical content: 'The formal grouplike $\\exp_q \\in G(\\mathcal{H}_q)$'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' (which asserts 'The formal grouplike $\\exp_q \\in G(\\mathcal{H}_q)$')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "The remarks and narrative scope in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' concerning 'The formal grouplike $\\exp_q \\in G(\\mathcal{H}_q)$' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "The prose arguments in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' proceed logically through the stated steps: 'The formal grouplike $\\exp_q \\in G(\\mathcal{H}_q)$'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "No Lean sibling required; the narrative of '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "No citations are present in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "Key terms and symbols in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' (e.g. from 'The formal grouplike $\\exp_q \\in G(\\mathcal{H}_q)$') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "The algebraic and logical relations in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "The physical concepts described in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-p-adic.ts:1",
+        "notes": "The derivation steps and formal definitions in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$p$-adic realisations of $\\\\exp_q$ ($\\\\mathbb{Q}_p$ and $\\\\mathbb{C}_p$)' (concerning 'The formal grouplike $\\exp_q \\in G(\\mathcal{H}_q)$') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:37.759Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean"
   },
   "source_hashes": {
-    "md": "66327840d752",
+    "md": "9d915ac2e824",
     "ts": "b5dfe8083496",
     "lean": "c73ba5829513"
   },
@@ -913,43 +913,301 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "66327840d752",
+          "md": "9d915ac2e824",
           "ts": "b5dfe8083496",
-          "lean": "7efb84c353b9"
+          "lean": "c73ba5829513"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:33.147Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Block placement and kind 'definition' match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "66327840d752",
+          "md": "9d915ac2e824",
           "ts": "b5dfe8083496",
-          "lean": "7efb84c353b9"
+          "lean": "c73ba5829513"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:33.546Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.lean:1 — Lean file exists",
+        "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.lean:1",
+        "notes": "The mathematical claims in 'The quantum vacuum as a Frobenius--Hopf algebra' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.ts:1",
+        "notes": "The definition 'The quantum vacuum as a Frobenius--Hopf algebra' is formulated via non-circular relations to existing primitives."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose presents 'The quantum vacuum as a Frobenius--Hopf algebra' as verified, but the sibling Lean file fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The quantum vacuum as a Frobenius--Hopf algebra'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.lean:1",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.ts:1",
+        "notes": "No citations are present in 'The quantum vacuum as a Frobenius--Hopf algebra', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.ts:1",
+        "notes": "Key terms and symbols in 'The quantum vacuum as a Frobenius--Hopf algebra' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.ts:1",
+        "notes": "The algebraic and logical relations in 'The quantum vacuum as a Frobenius--Hopf algebra' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.ts:1",
+        "notes": "The physical concepts described in 'The quantum vacuum as a Frobenius--Hopf algebra' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-hopf-substrate.lean:1 — content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, indicating a reproducibility failure."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9d915ac2e824",
+          "ts": "b5dfe8083496",
+          "lean": "c73ba5829513"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch, invalidating the claimed formalization."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

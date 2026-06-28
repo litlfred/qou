@@ -799,7 +799,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "No false claims identified in the prose of 'Vanishing conditions'; the mathematical reasoning concerning 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "The block 'Vanishing conditions' presents substantial mathematical content: 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Vanishing conditions' (which asserts 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "The remarks and narrative scope in 'Vanishing conditions' concerning 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Vanishing conditions'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "The prose arguments in 'Vanishing conditions' proceed logically through the stated steps: 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Vanishing conditions' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "No citations are present in 'Vanishing conditions', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "Key terms and symbols in 'Vanishing conditions' (e.g. from 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "The algebraic and logical relations in 'Vanishing conditions' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "The physical concepts described in 'Vanishing conditions' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "vanishing-explication.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Vanishing conditions' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Vanishing conditions' (concerning 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:35.540Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

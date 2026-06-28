@@ -781,7 +781,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "No false claims identified in the prose of 'Proof of Volume form from rigidity and symplectic self-duality'; the mathematical reasoning concerning 'Because $\\phi$ is alternating, the pairing' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "The block 'Proof of Volume form from rigidity and symplectic self-duality' presents substantial mathematical content: 'Because $\\phi$ is alternating, the pairing'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Proof of Volume form from rigidity and symplectic self-duality' (which asserts 'Because $\\phi$ is alternating, the pairing')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "The remarks and narrative scope in 'Proof of Volume form from rigidity and symplectic self-duality' concerning 'Because $\\phi$ is alternating, the pairing' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Proof of Volume form from rigidity and symplectic self-duality'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "The prose arguments in 'Proof of Volume form from rigidity and symplectic self-duality' proceed logically through the stated steps: 'Because $\\phi$ is alternating, the pairing'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Proof of Volume form from rigidity and symplectic self-duality' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "No citations are present in 'Proof of Volume form from rigidity and symplectic self-duality', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "Key terms and symbols in 'Proof of Volume form from rigidity and symplectic self-duality' (e.g. from 'Because $\\phi$ is alternating, the pairing') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "The algebraic and logical relations in 'Proof of Volume form from rigidity and symplectic self-duality' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "The physical concepts described in 'Proof of Volume form from rigidity and symplectic self-duality' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "volume-from-rigidity-proof.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Proof of Volume form from rigidity and symplectic self-duality' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Proof of Volume form from rigidity and symplectic self-duality' (concerning 'Because $\\phi$ is alternating, the pairing') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:36.086Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -1340,7 +1340,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.lean:1",
+        "notes": "The mathematical claims in 'Existence of the categorical Fourier transform' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean:45:9: error: Function expected at."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the categorical Fourier transform'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose presents 'Existence of the categorical Fourier transform' as verified, but the sibling Lean file fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the categorical Fourier transform'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.lean:1",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.ts:1",
+        "notes": "No citations are present in 'Existence of the categorical Fourier transform', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.ts:1",
+        "notes": "Key terms and symbols in 'Existence of the categorical Fourier transform' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.ts:1",
+        "notes": "The algebraic and logical relations in 'Existence of the categorical Fourier transform' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.ts:1",
+        "notes": "The physical concepts described in 'Existence of the categorical Fourier transform' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform-exists.lean:1 — content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean:45:9: error: Function expected at",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean fails compilation, indicating a reproducibility failure."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "451cffa78063"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean:45:9: error: Function expected at",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean:45:9: error: Function expected at, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:37.215Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

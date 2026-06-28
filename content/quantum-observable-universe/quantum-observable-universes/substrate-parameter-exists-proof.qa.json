@@ -781,7 +781,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "No false claims identified in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "The argument flow in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "No citations are present in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "Key terms and symbols in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "The algebraic and logical relations in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "The physical concepts described in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.ts:1",
+        "notes": "The derivation steps and formal definitions in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists-proof.md:1 — The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'The braiding c_{V,V} \\colon V \\otimes V \\to V \\otimes V of the QOU' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:38.210Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

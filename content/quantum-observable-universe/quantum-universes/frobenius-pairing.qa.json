@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/frobenius-pairing.lean"
   },
   "source_hashes": {
-    "md": "299b15328408",
+    "md": "27d12f6f61e9",
     "ts": "5e442650695a",
     "lean": "25f9d2297a6c"
   },
@@ -879,43 +879,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "299b15328408",
+          "md": "27d12f6f61e9",
           "ts": "5e442650695a",
           "lean": "25f9d2297a6c"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:17.720Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Block placement and kind match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "299b15328408",
+          "md": "27d12f6f61e9",
           "ts": "5e442650695a",
           "lean": "25f9d2297a6c"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:18.031Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-pairing.lean:1 — Lean file exists",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "The claims in 'Let (\\mathbf{C}, A, \\tau) be a' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "No overclaims: the scope of 'Let (\\mathbf{C}, A, \\tau) be a' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.lean:1",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let (\\mathbf{C}, A, \\tau) be a'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Let (\\mathbf{C}, A, \\tau) be a' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "27d12f6f61e9",
+          "ts": "5e442650695a",
+          "lean": "25f9d2297a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.md:1 — Let (\\mathbf{C}, A, \\tau) be a",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:18.031Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

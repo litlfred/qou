@@ -1338,7 +1338,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "No false claims identified in 'Non-vanishing of $d_q^2$': the formalization compiles successfully without errors."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Non-vanishing of $d_q^2$'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'Non-vanishing of $d_q^2$' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Non-vanishing of $d_q^2$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "The argument flow in 'Non-vanishing of $d_q^2$' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Lean sibling corresponds directly to the narrative claim in 'Non-vanishing of $d_q^2$'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "No citations are present in 'Non-vanishing of $d_q^2$', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "Key terms and symbols in 'Non-vanishing of $d_q^2$' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "The empirical claims in 'Non-vanishing of $d_q^2$' are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.ts:1",
+        "notes": "The physical concepts described in 'Non-vanishing of $d_q^2$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Lean file compiles successfully, confirming reproducibility."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7e507c69f986",
+          "ts": "5df4ac855463",
+          "lean": "e23644e0090d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Non-vanishing of $d_q^2$' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:38.266Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

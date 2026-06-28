@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/quantum-planck-constant.lean"
   },
   "source_hashes": {
-    "md": "d24e2dfe1ae1",
+    "md": "77bb26677f3d",
     "ts": "9052088011e3",
     "lean": "463d716b83b9"
   },
@@ -877,43 +877,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d24e2dfe1ae1",
+          "md": "77bb26677f3d",
           "ts": "9052088011e3",
           "lean": "463d716b83b9"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:34.993Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "Block placement and kind 'definition' match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "d24e2dfe1ae1",
+          "md": "77bb26677f3d",
           "ts": "9052088011e3",
           "lean": "463d716b83b9"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:35.350Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.lean:1",
+        "notes": "The Lean theorem/definition statement in quantum-planck-constant.lean matches the mathematical statement in quantum-planck-constant.md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.lean:1",
+        "notes": "The mathematical claims in 'Quantum Planck Constant' regarding 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe with' are unverified due to compilation errors in the Lean sibling file quantum-planck-constant.lean: content/quantum-observable-universe/quantum-observable-universes/quantum-planck-constant.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "The sibling Lean file quantum-planck-constant.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Quantum Planck Constant' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe with')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "The prose presents 'Quantum Planck Constant' as verified, but the sibling Lean file quantum-planck-constant.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Quantum Planck Constant'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Quantum Planck Constant' due to compilation failure in quantum-planck-constant.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.lean:1",
+        "notes": "The Lean sibling quantum-planck-constant.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "No citations are present in 'Quantum Planck Constant', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "Key terms and symbols in 'Quantum Planck Constant' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe with') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "The algebraic and logical relations in 'Quantum Planck Constant' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.ts:1",
+        "notes": "The physical concepts described in 'Quantum Planck Constant' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-planck-constant.lean:1",
+        "notes": "The Lean sibling quantum-planck-constant.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/quantum-planck-constant.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "77bb26677f3d",
+          "ts": "9052088011e3",
+          "lean": "463d716b83b9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-planck-constant.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/quantum-planck-constant.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for 'Quantum Planck Constant' (asserting 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe with') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/quantum-planck-constant.lean:32:13: error: unexpected token 'section'; expected 'lemma'. A competent referee cannot accept this as a verified mathematical claim."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:35.350Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

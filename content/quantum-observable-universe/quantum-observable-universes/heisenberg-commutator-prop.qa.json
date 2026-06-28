@@ -1338,7 +1338,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.lean:1",
+        "notes": "The mathematical claims in '$q$-deformed Heisenberg commutator from the Reeb fibre' regarding 'Let $\\hat{X}, \\hat{P}$ be position and momentum observables on the' are unverified due to compilation errors in the Lean sibling file heisenberg-commutator-prop.lean: content/quantum-observable-universe/quantum-observable-universes/heisenberg-commutator-prop.lean:27:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "The sibling Lean file heisenberg-commutator-prop.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of '$q$-deformed Heisenberg commutator from the Reeb fibre' (which asserts 'Let $\\hat{X}, \\hat{P}$ be position and momentum observables on the')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "The prose presents '$q$-deformed Heisenberg commutator from the Reeb fibre' as verified, but the sibling Lean file heisenberg-commutator-prop.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of '$q$-deformed Heisenberg commutator from the Reeb fibre'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.lean:1",
+        "notes": "Logical gaps exist in the formalization of '$q$-deformed Heisenberg commutator from the Reeb fibre' due to compilation failure in heisenberg-commutator-prop.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.lean:1",
+        "notes": "The Lean sibling heisenberg-commutator-prop.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "No citations are present in '$q$-deformed Heisenberg commutator from the Reeb fibre', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "Key terms and symbols in '$q$-deformed Heisenberg commutator from the Reeb fibre' (e.g. from 'Let $\\hat{X}, \\hat{P}$ be position and momentum observables on the') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "The algebraic and logical relations in '$q$-deformed Heisenberg commutator from the Reeb fibre' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.ts:1",
+        "notes": "The physical concepts described in '$q$-deformed Heisenberg commutator from the Reeb fibre' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "heisenberg-commutator-prop.lean:1",
+        "notes": "The Lean sibling heisenberg-commutator-prop.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/heisenberg-commutator-prop.lean:27:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/heisenberg-commutator-prop.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/heisenberg-commutator-prop.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for '$q$-deformed Heisenberg commutator from the Reeb fibre' (asserting 'Let $\\hat{X}, \\hat{P}$ be position and momentum observables on the') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/heisenberg-commutator-prop.lean:27:13: error: unexpected token 'section'; expected 'lemma'. A competent referee cannot accept this as a verified mathematical claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:39.446Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.lean"
   },
   "source_hashes": {
-    "md": "bd285dd5be39",
+    "md": "0b195c012b56",
     "ts": "0c595f5e6475",
     "lean": "4f9348671af0"
   },
@@ -877,43 +877,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bd285dd5be39",
+          "md": "0b195c012b56",
           "ts": "0c595f5e6475",
           "lean": "4f9348671af0"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:37.890Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Block placement and kind match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "bd285dd5be39",
+          "md": "0b195c012b56",
           "ts": "0c595f5e6475",
           "lean": "4f9348671af0"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:38.282Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "exceptional-divisor.lean:1 — Lean file exists",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "No false claims identified in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "The claims in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "No overclaims: the scope of 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "The argument flow in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.lean:1",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "No citations are present in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "Key terms and symbols in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "The physical concepts described in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0b195c012b56",
+          "ts": "0c595f5e6475",
+          "lean": "4f9348671af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.md:1 — Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are consistent."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:38.282Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

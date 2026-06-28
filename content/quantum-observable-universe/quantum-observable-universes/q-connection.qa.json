@@ -816,7 +816,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.lean:1",
+        "notes": "The mathematical claims in '$q$-Deformed connection' regarding 'In the archimedean realisation, the categorical $q$-connection' are unverified due to compilation errors in the Lean sibling file q-connection.lean: content/quantum-observable-universe/quantum-observable-universes/q-connection.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "The sibling Lean file q-connection.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of '$q$-Deformed connection' (which asserts 'In the archimedean realisation, the categorical $q$-connection')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "The prose presents '$q$-Deformed connection' as verified, but the sibling Lean file q-connection.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of '$q$-Deformed connection'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.lean:1",
+        "notes": "Logical gaps exist in the formalization of '$q$-Deformed connection' due to compilation failure in q-connection.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.lean:1",
+        "notes": "The Lean sibling q-connection.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "No citations are present in '$q$-Deformed connection', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "Key terms and symbols in '$q$-Deformed connection' (e.g. from 'In the archimedean realisation, the categorical $q$-connection') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "The algebraic and logical relations in '$q$-Deformed connection' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.ts:1",
+        "notes": "The physical concepts described in '$q$-Deformed connection' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-connection.lean:1",
+        "notes": "The Lean sibling q-connection.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/q-connection.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "48e74e38d4f0",
+          "ts": "a6cddf9b812a",
+          "lean": "ac6234487de5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-connection.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-connection.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for '$q$-Deformed connection' (asserting 'In the archimedean realisation, the categorical $q$-connection') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/q-connection.lean:32:13: error: unexpected token 'section'; expected 'lemma'. A competent referee cannot accept this as a verified mathematical claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:35.436Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

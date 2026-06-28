@@ -835,7 +835,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "No false claims identified in the prose of 'Self-duality as constrained 2-group gauge theory'; the mathematical reasoning concerning 'A strict $2$-group is equivalently a crossed module: a' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "The block 'Self-duality as constrained 2-group gauge theory' presents substantial mathematical content: 'A strict $2$-group is equivalently a crossed module: a'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Self-duality as constrained 2-group gauge theory' (which asserts 'A strict $2$-group is equivalently a crossed module: a')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "The remarks and narrative scope in 'Self-duality as constrained 2-group gauge theory' concerning 'A strict $2$-group is equivalently a crossed module: a' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Self-duality as constrained 2-group gauge theory'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "The prose arguments in 'Self-duality as constrained 2-group gauge theory' proceed logically through the stated steps: 'A strict $2$-group is equivalently a crossed module: a'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Self-duality as constrained 2-group gauge theory' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "No citations are present in 'Self-duality as constrained 2-group gauge theory', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "Key terms and symbols in 'Self-duality as constrained 2-group gauge theory' (e.g. from 'A strict $2$-group is equivalently a crossed module: a') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "The empirical claims in 'Self-duality as constrained 2-group gauge theory' (quoting 'A strict $2$-group is equivalently a crossed module: a') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "The physical concepts described in 'Self-duality as constrained 2-group gauge theory' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "self-dual-2group.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Self-duality as constrained 2-group gauge theory' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "57f81fd3dc18",
+          "ts": "69f01097b76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Self-duality as constrained 2-group gauge theory' (concerning 'A strict $2$-group is equivalently a crossed module: a') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:34.631Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

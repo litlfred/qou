@@ -1600,7 +1600,268 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.lean:1",
+        "notes": "The mathematical claims in 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' regarding 'Proposition (chart-swap $U(1)$ equals the Reeb $U(1)$).' are unverified due to compilation errors in the Lean sibling file reeb-u1-chart-swap.lean: content/quantum-observable-universe/quantum-observable-universes/reeb-u1-chart-swap.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Subgroup/Basic.olean' of module Mathlib.GroupTheory.Subgroup.Basic does not exist."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "major",
+        "evidence": "reeb-u1-chart-swap.lean:1",
+        "notes": "The sibling Lean file reeb-u1-chart-swap.lean contains 'sorry' placeholders, rendering the formal verification of 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' (which asserts 'Proposition (chart-swap $U(1)$ equals the Reeb $U(1)$).')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.ts:1",
+        "notes": "The prose presents 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' as verified, but the sibling Lean file reeb-u1-chart-swap.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' due to compilation failure in reeb-u1-chart-swap.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.lean:1",
+        "notes": "The Lean sibling reeb-u1-chart-swap.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.ts:1",
+        "notes": "No citations are present in 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.ts:1",
+        "notes": "Key terms and symbols in 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' (e.g. from 'Proposition (chart-swap $U(1)$ equals the Reeb $U(1)$).') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.ts:1",
+        "notes": "The empirical claims in 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' (quoting 'Proposition (chart-swap $U(1)$ equals the Reeb $U(1)$).') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.ts:1",
+        "notes": "The physical concepts described in 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.lean:1",
+        "notes": "The Lean sibling reeb-u1-chart-swap.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/reeb-u1-chart-swap.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Subgroup/Basic.olean' of module Mathlib.GroupTheory.Subgroup.Basic does not exist."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "major",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/reeb-u1-chart-swap.lean contains 'sorry' placeholders.",
+        "verdict": "open-objection",
+        "referee_argument": "The sibling Lean file reeb-u1-chart-swap.lean contains sorry placeholders, meaning the main result of 'Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\\\mathrm{Aut}(\\\\mathbb{P}(V))$' is unproved and the formalization of 'Proposition (chart-swap $U(1)$ equals the Reeb $U(1)$).' is currently vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

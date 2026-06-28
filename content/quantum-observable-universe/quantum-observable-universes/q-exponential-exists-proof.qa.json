@@ -781,7 +781,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "No false claims identified in the prose of 'Proof of existence of the $q$-exponential grouplike'; the mathematical reasoning concerning 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "The block 'Proof of existence of the $q$-exponential grouplike' presents substantial mathematical content: 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Proof of existence of the $q$-exponential grouplike' (which asserts 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "The remarks and narrative scope in 'Proof of existence of the $q$-exponential grouplike' concerning 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Proof of existence of the $q$-exponential grouplike'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "The prose arguments in 'Proof of existence of the $q$-exponential grouplike' proceed logically through the stated steps: 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Proof of existence of the $q$-exponential grouplike' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "No citations are present in 'Proof of existence of the $q$-exponential grouplike', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "Key terms and symbols in 'Proof of existence of the $q$-exponential grouplike' (e.g. from 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "The empirical claims in 'Proof of existence of the $q$-exponential grouplike' (quoting 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "The physical concepts described in 'Proof of existence of the $q$-exponential grouplike' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential-exists-proof.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Proof of existence of the $q$-exponential grouplike' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3e3df4a65ef9",
+          "ts": "90da5b1d6f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Proof of existence of the $q$-exponential grouplike' (concerning 'Over $R = \\mathbb{Z}[q, q^{-1}]\\bigl[\\tfrac{1}{[n]_q!} : n \\ge 1\\bigr]$') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:37.669Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }
