@@ -44,7 +44,6 @@ the following degenerations occur:*
 
 *In this limit, the finite categorical trace
 $\sum_\lambda \dim_q(V_\lambda) \cdot \mathrm{tr}_{S_\lambda}(\rho(\beta))$
-becomes the standard quantum-mechanical trace
+degenerates to the standard discrete trace
 $\sum_\lambda (2j+1) \cdot \mathrm{tr}_{S_\lambda}(\pi(\beta))$
-over the angular momentum eigenbasis --- precisely the finite-basis
-version of the Feynman path integral.*
+over the finite-dimensional angular momentum eigenbasis of the symmetric group.*
