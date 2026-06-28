@@ -53,9 +53,9 @@ mechanical proofs for Steps 1–3.
 
 **Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction.
 
-**What's still valid:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from  stands.
+**Surviving claims:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from  stands.
 
-**Why the inference failed:** I conflated two different bases of `H_{3A}(q)` — the NF basis (where the Pascal-row shape lives) and the Wedderburn basis (where LP `y_λ` variables live). These are different decompositions of the same algebra; the filtration-shape claim does NOT directly imply Wedderburn-channel reduction.
+**Source of the inference failure:** I conflated two different bases of `H_{3A}(q)` — the NF basis (where the Pascal-row shape lives) and the Wedderburn basis (where LP `y_λ` variables live). These are different decompositions of the same algebra; the filtration-shape claim does NOT directly imply Wedderburn-channel reduction.
 
 The section below is retained as a historical record of the falsified inference; the structural-filtration-shape finding above remains the substantive contribution of this conjecture.
 
