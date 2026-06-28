@@ -169,3 +169,9 @@ import QOU.Conjectures.KnotFactorFrobeniusPairing
 import QOU.Conjectures.WeakSpectralCompleteness
 import QOU.Conjectures.MagicNumbersBring
 import QOU.Conjectures.QuantumLanglandsDual
+
+-- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
+import QOU.Mathlib.PartitionListBridge
+import QOU.Mathlib.StandardYoungTableau
+import QOU.Mathlib.RSKBurnsideTarget
+import QOU.Mathlib.SchenstedInsertion
