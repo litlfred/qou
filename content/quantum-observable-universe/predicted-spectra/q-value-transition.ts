@@ -17,7 +17,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:q-energy",
-    "thm:parity-regime-selection",
+    "conj:q-integer-mass-formula",
   ],
 });

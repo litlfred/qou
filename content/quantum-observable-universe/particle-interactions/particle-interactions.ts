@@ -108,6 +108,7 @@ export default chapter({
         "down-quark",
         "down-quark-properties",
         "quark-antiquark-production",
+        "quark-antiquark-production-reduction",
         "four-term-pair-nucleon",
 
         "four-term-pair-nucleon-table1-data",
@@ -436,7 +437,9 @@ export default chapter({
         "weinberg-angle-categorical",
         "wigner-su4-from-spin-isospin",
         "categorical-proton",
+        "categorical-proton-properties",
         "categorical-neutron",
+        "categorical-neutron-properties",
         "categorical-meson",
         "meson-scale-independence",
         "outro-particle-interactions",
