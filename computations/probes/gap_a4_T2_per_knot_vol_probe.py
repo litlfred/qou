@@ -48,6 +48,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -149,18 +150,16 @@ def main() -> int:
     )
 
     q_0 = mp.mpf(Q_0_50DPS)
-    # `linking_weight_family_a(q) = (3q²+4+3q⁻²)/4` is a trivial algebraic
-    # expression — compute it directly in mpmath at the live working
-    # precision rather than going through sympy substitution + string
-    # round-trip (Copilot + Gemini reviews on PR #1891).
-    lw_q0 = (3 * q_0 ** 2 + 4 + 3 * q_0 ** (-2)) / 4
+    hbar2 = hbar_q_sq(q_0)
+    
+    tau_p_H3 = compute_tau_M_nucleon_H3("p", q_0)
+    tau_n_H3 = compute_tau_M_nucleon_H3("n", q_0)
 
     print("=" * 78)
     print("GAP-A-4 T2 — per-knot Vol(K) convention probe")
     print("=" * 78)
     print(f"  q₀                = {Q_0_50DPS[:18]}...")
-    print(f"  λ_uniform (lw)    = {float(lw_q0):.6f}")
-    print(f"  ℏ_q²              = {float(hbar_q_sq(q_0)):.10f}")
+    print(f"  ℏ_q²              = {float(hbar2):.10f}")
 
     conventions = ["A_phase4_jsj", "B_model_b_small_knot", "C_uniform_borromean"]
 
@@ -177,18 +176,21 @@ def main() -> int:
     for label, Z, N, m_K, conv_vols in LIGHT_SERIES:
         per_atom = {"label": label, "Z": Z, "N": N, "m_K_MeV": str(m_K)}
         print(f"  {label:<4} {Z:>2} {N:>2} ", end="")
+        tr_M_K = closed_form_tau_M(Z, N, q_0, tau_p_H3, tau_n_H3)
         for c in conventions:
             vol = conv_vols[c]
             lam = lambda_empirical(m_K, vol, q_0)
-            lambdas_by_convention[c].append(lam)
+            # The test is whether λ_emp matches tr_M_K, so we track the ratio.
+            ratio = lam / tr_M_K
+            lambdas_by_convention[c].append(ratio)
             per_atom[f"vol_{c}"] = str(vol)
             per_atom[f"lambda_emp_{c}"] = str(lam)
-            print(f"{float(vol):>14.4f} {float(lam):>14.6f} ", end="")
+            per_atom[f"ratio_to_tr_M_{c}"] = str(ratio)
+            print(f"{float(vol):>14.4f} {float(ratio):>14.6f} ", end="")
         print()
         rows.append(per_atom)
 
     w.add_parameter("q_0_50dps", Q_0_50DPS)
-    w.add_parameter("lambda_uniform_at_q0", str(lw_q0))
     w.add_data("discipline", "EXPLORATORY")
     w.add_data("production_wired", False)
     w.add_data("per_atom_per_convention", rows)
@@ -196,7 +198,7 @@ def main() -> int:
     # Per-convention swing (max/min − 1) — the verdict metric
     print()
     print("-" * 78)
-    print(f"  {'convention':<26s} {'min(λ)':>10s} {'max(λ)':>10s} "
+    print(f"  {'convention':<26s} {'min(ratio)':>10s} {'max(ratio)':>10s} "
           f"{'max/min−1':>12s} {'verdict':>20s}")
     print("-" * 78)
 

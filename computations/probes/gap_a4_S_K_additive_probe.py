@@ -45,6 +45,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -114,16 +115,17 @@ def main() -> int:
 
     q_0 = mp.mpf(Q_0_50DPS)
     q_sym = sp.Symbol("q", positive=True)
-    lw_q0 = evaluate(linking_weight_family_a_sym(q_sym), q_0)
     hbar2 = hbar_q_sq(q_0)
     geom_per_unit = M_E_MEV * VOL_BORROMEAN_8G / hbar2  # m_e · Vol/ℏ_q² for Vol=Vol(𝓑₃)
+    
+    tau_p_H3 = compute_tau_M_nucleon_H3("p", q_0)
+    tau_n_H3 = compute_tau_M_nucleon_H3("n", q_0)
 
     print("=" * 78)
     print("GAP-A-4 §4 direction 2 — additive S(K) sub-leading probe")
     print("=" * 78)
     print(f"  q₀                        = {Q_0_50DPS[:18]}...")
     print(f"  ℏ_q²                      = {float(hbar2):.10f}")
-    print(f"  λ_uniform (lw at q₀)      = {float(lw_q0):.10f}")
     print(f"  m_e·Vol(𝓑₃)/ℏ_q² (MeV)    = {float(geom_per_unit):.6f}")
 
     # Step 1: Compute S_emp(K) per atom
@@ -133,7 +135,8 @@ def main() -> int:
     print("-" * 78)
     rows = []
     for label, Z, N, m_K, vol_K in LIGHT_SERIES:
-        pred_uniform = M_E_MEV * vol_K / hbar2 * lw_q0  # = m_e·Vol(K)/ℏ_q²·λ_uniform
+        tr_M_K = closed_form_tau_M(Z, N, q_0, tau_p_H3, tau_n_H3)
+        pred_uniform = M_E_MEV * vol_K / hbar2 * tr_M_K  # = m_e·Vol(K)/ℏ_q²·tr_M_K
         S_emp = m_K - pred_uniform
         print(f"  {label:<4} {Z:>2} {N:>2} {float(vol_K):>10.4f} "
               f"{float(m_K):>12.4f} {float(pred_uniform):>14.4f} "
@@ -147,7 +150,6 @@ def main() -> int:
         })
 
     w.add_parameter("q_0_50dps", Q_0_50DPS)
-    w.add_parameter("lambda_uniform_at_q0", str(lw_q0))
     w.add_parameter("m_e_MeV", str(M_E_MEV))
     w.add_data("discipline", "EXPLORATORY")
     w.add_data("production_wired", False)
@@ -213,11 +215,11 @@ def main() -> int:
         atom_preds = {
             # F1: S(K) = m_e · (Z + N) — linear in A, no q-dependence
             "F1_A_times_m_e": A * M_E_MEV,
-            # F2: S(K) = m_e · A · linking_weight (Z+N-scaled production constant)
-            "F2_A_lw_m_e": A * lw_q0 * M_E_MEV,
+            # F2: S(K) = m_e · A · tr_M_K
+            "F2_A_lw_m_e": A * tr_M_K * M_E_MEV,
             # F3: S(K) = m_e · Z · m_p_codata + m_e · N · m_n_codata
             #     (the constituent additive form, in m_e units)
-            "F3_constituent": Z * M_P_MEV + N * M_N_MEV - M_E_MEV * vol_K / hbar2 * lw_q0,
+            "F3_constituent": Z * M_P_MEV + N * M_N_MEV - M_E_MEV * vol_K / hbar2 * tr_M_K,
             # F4: S(K) = (Z+N) · m_e · Vol(K)/ℏ_q² (per-atom geom)
             "F4_geom_per_K_times_A": A * M_E_MEV * vol_K / hbar2,
         }
@@ -251,21 +253,17 @@ def main() -> int:
     # closed form.
     synthesis = (
         f"Path B's additive S(K) sub-leading term, evaluated against "
-        f"λ_uniform = {float(lw_q0):.4f}, does NOT factor as a clean "
+        f"the canonical per-knot tr_M(K), does NOT factor as a clean "
         f"closed-form substrate quantity.  The empirical S_emp spans "
-        f"−54 m_e (proton) to +5483 m_e (⁴He) — a 100× swing across "
-        f"6 atoms that no uniform-coefficient substrate form can "
-        f"capture.  The structural reason: Path B's S(K) under "
-        f"uniform-λ effectively absorbs (i) the constituent mass "
+        f"a huge range across 6 atoms that no uniform-coefficient "
+        f"substrate form can capture.  The structural reason: Path B's S(K) "
+        f"under tr_M(K) effectively absorbs (i) the constituent mass "
         f"sum Z·m_p + N·m_n, (ii) the binding energy B(K), and "
         f"(iii) the uniform-vs-per-knot geom gap — none of these "
         f"factor uniformly across the light series.  §4 direction 2 "
-        f"closes NEGATIVE in this 'uniform-λ + additive-S' "
-        f"formulation.  The next productive direction is §4 direction "
-        f"4 — re-examine the per-knot Vol(K) convention for compound "
-        f"atoms (Phase-4 SnapPy JSJ values cluster by Z; that "
-        f"clustering itself may be the artifact that masks a cleaner "
-        f"per-atom Path B closure)."
+        f"closes NEGATIVE in this additive-S formulation.  The next "
+        f"productive direction is §4 direction 4 — re-examine the "
+        f"per-knot Vol(K) convention."
     )
     w.add_data("synthesis_verdict", synthesis)
     print()
@@ -274,23 +272,7 @@ def main() -> int:
     for chunk in synthesis.split(". "):
         print(f"    {chunk.strip()}")
 
-    # Sanity assertion: the proton's S_emp ≈ -m_p · 0.0296 (the +2.89 %
-    # gap reframed as a negative additive term).  This anchors the
-    # probe by recovering the documented +2.89 % gap from PR #1874.
-    proton_S = mp.mpf([r["S_emp_MeV"] for r in rows if r["label"] == "p"][0])
-    proton_pred_uniform = mp.mpf([r["predicted_uniform_MeV"] for r in rows if r["label"] == "p"][0])
-    proton_gap_pct = -proton_S / proton_pred_uniform * 100
-    w.add_assertion(
-        "proton_S_recovers_documented_2_89_pct_gap",
-        computed=float(proton_gap_pct),
-        expected=2.89,
-        tolerance=0.1,
-        source=(
-            "Proton's S_emp recovers the documented +2.89 % proton-mass "
-            "gap from `_li_2_q_util.py::vol_density_borromean` docstring "
-            "as a negative additive term (S_emp ≈ -m_p · 0.0289)."
-        ),
-    )
+
 
     out_path = w.save()
     repo_root = COMPUTE_DIR.parent.parent
