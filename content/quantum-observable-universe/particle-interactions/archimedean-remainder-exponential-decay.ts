@@ -10,7 +10,6 @@ export default conjecture({
   },
   uses: [
     "prop:neutron-qvalue-symbolic",
-    "prop:q-beta-spectral-bridge",
   ],
   cites: [
     "jones1985",

@@ -9,7 +9,7 @@ Two convergence mechanisms for the infinite product $Q_\beta^{\text{cat}}$:
 
 1. **Per-knot c(K) brane-tower bound** (Mechanism 1):
      |R_N| ≤ ℏ_q^(2(N+1)) / (1 - ℏ_q²)
-   Imported from `prop:archimedean-remainder-exponential-decay`.
+   Imported from `conj:archimedean-remainder-exponential-decay`.
 
 2. **Inter-knot linking-number locality** (Mechanism 2):
      τ_M(K_1 ⊔ K_2) = τ_M(K_1) · τ_M(K_2) · z^k for unlinked braids
@@ -26,7 +26,7 @@ namespace QOU.BraidKnot
 
 /-! ## Mechanism 1 — per-knot c(K) bound (delegated)
 
-The c(K) bound is fully captured by `prop:archimedean-remainder-
+The c(K) bound is fully captured by `conj:archimedean-remainder-
 exponential-decay`'s Lean stub. We record only the form needed for
 Q_β^cat's per-knot truncation: |R_N| ≤ ℏ_q^(2(N+1)) / (1 - ℏ_q²). -/
 
