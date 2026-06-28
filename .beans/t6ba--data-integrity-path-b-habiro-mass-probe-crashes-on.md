@@ -36,3 +36,27 @@ single-prefactor `α_M` model.
 - Synthesis doc: `docs/audits/2026-06-26-t2t3-trace-invariance-status-synthesis.md` §"Item 3"
 - Producer: `computations/probes/path_b_habiro_mass_probe.py`
 - Witness: `computations/probes/path-b-habiro-mass-probe.witness.json`
+
+## Progress 2026-06-28 (branch claude/ct80-me-codata-dedup-2026-06-28)
+
+**FIXED** (commit e40c0d2a8a): root cause was a bare
+`sp.sympify(entry["a_m"])` / `sp.sympify(denom_str)` in
+`evaluate_habiro_sum` — missing the universal `locals={"check_q": u}`
+binding that every other consumer of these strings uses. `check_q` is
+the coefficient builder's name for the u = q^{1/2} variable; unbound, it
+survived `.subs(u, …)` as a free symbol and crashed the `mp.mpf(str())`
+cast. Added the binding to both the a_m and denom sympify calls.
+
+Verified: probe no longer crashes; p/n rows compute and agree with the
+witness-stored tr_M (✓).
+
+**Observation for follow-up (NOT t6ba):** the input witness
+`habiro/habiro-coefficients-atomic.witness.json` has changed since this
+bean was filed — it now contains ONLY the p/n entries (both carrying
+`check_q`), so the crash now fires on p, not on the A>=3 rows the bean
+described. The heavier atoms (D/T/³He) are absent from the input, so the
+probe's "sub-1% binding at A=3" check can't run until the input witness
+is re-populated with D/T/³He. That re-population is a separate upstream
+concern (a sibling regenerated the input witness). Output witness
+`path-b-habiro-mass-probe.witness.json` NOT re-emitted here (ad-hoc-env
+skew + would lose the D row); canonical CI re-emits.
