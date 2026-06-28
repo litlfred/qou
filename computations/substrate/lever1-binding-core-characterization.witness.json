@@ -1,0 +1,140 @@
+{
+  "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
+  "description": "Lever-1 binding correction non-cyclotomic core R_m: palindromy, q=1/q0 values, irreducibility over Q, cross-m shared factors, degree law.",
+  "bean": "z2bn",
+  "computation": {
+    "script": "computations/substrate/lever1_binding_core_characterization.py",
+    "reads": "computations/substrate/lever1-binding-correction-cyclotomic-structure.witness.json"
+  },
+  "params": {
+    "q0": "1.10997859555733"
+  },
+  "core_analysis": {
+    "m=6": {
+      "deg": 8,
+      "palindromic": "palindromic",
+      "value_at_q1": "28",
+      "value_at_q0": "43.8019219843",
+      "positive_at_q0": true
+    },
+    "m=7": {
+      "deg": 10,
+      "palindromic": "palindromic",
+      "value_at_q1": "16",
+      "value_at_q0": "28.6805240034",
+      "positive_at_q0": true
+    },
+    "m=8": {
+      "deg": 14,
+      "palindromic": "palindromic",
+      "value_at_q1": "34",
+      "value_at_q0": "78.1233470329",
+      "positive_at_q0": true
+    },
+    "m=9": {
+      "deg": 28,
+      "palindromic": "palindromic",
+      "value_at_q1": "1232",
+      "value_at_q0": "6419.76835289",
+      "positive_at_q0": true
+    },
+    "m=10": {
+      "deg": 34,
+      "palindromic": "palindromic",
+      "value_at_q1": "1328",
+      "value_at_q0": "10190.6029182",
+      "positive_at_q0": true
+    },
+    "m=11": {
+      "deg": 46,
+      "palindromic": "palindromic",
+      "value_at_q1": "9024",
+      "value_at_q0": "147867.07748",
+      "positive_at_q0": true
+    }
+  },
+  "all_palindromic": true,
+  "all_positive_at_q1": true,
+  "irreducibility": {
+    "m=6": {
+      "irreducible_over_Q": true,
+      "n_factors": 1,
+      "factors": [
+        [
+          "q**8 + 4*q**7 + 6*q**6 + 2*q**5 + 2*q**4 + 2*q**3 + 6*q**2 + 4*q + 1",
+          1
+        ]
+      ]
+    },
+    "m=7": {
+      "irreducible_over_Q": true,
+      "n_factors": 1,
+      "factors": [
+        [
+          "q**10 - q**9 + 2*q**8 - q**7 + 2*q**5 - q**3 + 2*q**2 - q + 1",
+          1
+        ]
+      ]
+    },
+    "m=8": {
+      "irreducible_over_Q": true,
+      "n_factors": 1,
+      "factors": [
+        [
+          "6*q**14 - 5*q**13 + 8*q**12 - 2*q**11 + 4*q**10 + 2*q**9 - 4*q**8 + 16*q**7 - 4*q**6 + 2*q**5 + 4*q**4 - 2*q**3 + 8*q**2 - 5*q + 6",
+          1
+        ]
+      ]
+    },
+    "m=9": {
+      "irreducible_over_Q": true,
+      "n_factors": 1,
+      "factors": [
+        [
+          "4*q**28 + 13*q**27 + 13*q**26 + 18*q**25 + 22*q**24 + 39*q**23 + 31*q**22 + 43*q**21 + 48*q**20 + 70*q**19 + 55*q**18 + 75*q**17 + 72*q**16 + 82*q**15 + 62*q**14 + 82*q**13 + 72*q**12 + 75*q**11 + 55*q**10 + 70*q**9 + 48*q**8 + 43*q**7 + 31*q**6 + 39*q**5 + 22*q**4 + 18*q**3 + 13*q**2 + 13*q + 4",
+          1
+        ]
+      ]
+    },
+    "m=10": {
+      "irreducible_over_Q": true,
+      "n_factors": 1,
+      "factors": [
+        [
+          "q**34 + 12*q**33 + 6*q**32 + 18*q**31 + 9*q**30 + 37*q**29 + 11*q**28 + 35*q**27 + 27*q**26 + 56*q**25 + 39*q**24 + 49*q**23 + 67*q**22 + 59*q**21 + 79*q**20 + 46*q**19 + 89*q**18 + 48*q**17 + 89*q**16 + 46*q**15 + 79*q**14 + 59*q**13 + 67*q**12 + 49*q**11 + 39*q**10 + 56*q**9 + 27*q**8 + 35*q**7 + 11*q**6 + 37*q**5 + 9*q**4 + 18*q**3 + 6*q**2 + 12*q + 1",
+          1
+        ]
+      ]
+    },
+    "m=11": {
+      "irreducible_over_Q": true,
+      "n_factors": 1,
+      "factors": [
+        [
+          "5*q**46 + 17*q**45 + 30*q**44 + 33*q**43 + 30*q**42 + 48*q**41 + 74*q**40 + 102*q**39 + 97*q**38 + 117*q**37 + 141*q**36 + 192*q**35 + 197*q**34 + 231*q**33 + 236*q**32 + 296*q**31 + 291*q**30 + 332*q**29 + 325*q**28 + 379*q**27 + 361*q**26 + 399*q**25 + 373*q**24 + 412*q**23 + 373*q**22 + 399*q**21 + 361*q**20 + 379*q**19 + 325*q**18 + 332*q**17 + 291*q**16 + 296*q**15 + 236*q**14 + 231*q**13 + 197*q**12 + 192*q**11 + 141*q**10 + 117*q**9 + 97*q**8 + 102*q**7 + 74*q**6 + 48*q**5 + 30*q**4 + 33*q**3 + 30*q**2 + 17*q + 5",
+          1
+        ]
+      ]
+    }
+  },
+  "all_irreducible_over_Q": true,
+  "cross_m_shared_factors": {},
+  "any_shared_factor": false,
+  "core_degrees": {
+    "m=6": 8,
+    "m=7": 10,
+    "m=8": 14,
+    "m=9": 28,
+    "m=10": 34,
+    "m=11": 46
+  },
+  "core_degree_diffs": [
+    2,
+    4,
+    14,
+    6,
+    12
+  ],
+  "verdict": "The growing core R_m is UNIFORMLY PALINDROMIC (q\u21941/q bar-symmetric); R_m(1)\u22600 (all positive); each R_m is IRREDUCIBLE over \u211a; the cores share NO common factor across m (each order brings a genuinely new bar-symmetric core). This pins the binding correction's essential content: a (q\u22121)\u00b2 \u00d7 \u03a6_d cyclotomic tower (Stage 7) times a tower of bar-symmetric, q=1-nonvanishing cores that grow and do not nest \u2014 the genuine cyclotomic-completion (Habiro) residue, not reducible to a single finite element.",
+  "scope": "(a)/(b) per AGENTS.md: palindromy / irreducibility / no-nesting / R_m(1)\u22600 are exact derived facts on the available m=6..11; 'core grows unboundedly / not a single finite element' remains a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data)."
+}
