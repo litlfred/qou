@@ -35,19 +35,6 @@ $\mathfrak{m}_{q,\mathcal{K}}(\mathcal{T}) = \sum_k \alpha_k
 absolutely convergent for any bounded $|\alpha_k|$, with no
 super-exponential divergence at large $n$.*
 
-**Significance for mass-tower computations.**
-
-Plancherel-weight boundedness is the formal reason that the
-log-pairing $\Phi_k$ in
-([universal residue](#prop:plancherel-term-7-formulation)) remains
-$O(10)$ even when individual $\int_{A_\lambda}$ values span
-$\sim 50$ orders of magnitude
-([mass formula validation](#rem:mass-formula-validation)).  The
-Plancherel measure compresses the per-$\lambda$ contributions into
-a probability average, killing the divergence.  Without this
-proposition, the logarithmic-weighting "magic" exploited by
-mass-tower computations would be unjustified.
-
 **Plancherel distribution at $q_0 = 1.109978595554181\ldots$ (50 dps) (small $n$).**
 
 See [Table](#tbl:plancherel-weight-boundedness-table-data).

@@ -737,6 +737,7 @@ export default chapter({
         "mass-coefficient-shadow-price-proof",
         "frobenius-self-duality-forces-lp-dual-extraction",
         "frobenius-self-duality-forces-lp-dual-extraction-proof",
+        "frobenius-self-duality-forces-lp-dual-extraction-interpretation",
       ],
     }),
 
@@ -825,6 +826,7 @@ export default chapter({
         "unified-curvature-rank-mass-formula-table-data",
         "chirality-residue-mass-term",
         "chirality-residue-mass-term-proof",
+        "chirality-residue-mass-term-interpretation",
         "e-infinity-page-identifications",
         "e-infinity-page-identifications-table-data",
         "spectral-sequence-h3-explicit",
@@ -969,6 +971,7 @@ export default chapter({
         "q-character-closes-parity-gap",
         "frobenius-codim-universal",
         "frobenius-codim-universal-proof",
+        "frobenius-codim-universal-interpretation",
         "frobenius-limits-substrate-cost",
         "knot-mass-formula-unified",
         "nuclear-knot-classification",

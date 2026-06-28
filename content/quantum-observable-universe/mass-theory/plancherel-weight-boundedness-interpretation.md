@@ -10,3 +10,16 @@ witness data
 ([`wedderburn-strata-witness.json`](#)) for completeness but the
 canonical $w_\lambda = (\dim V_\lambda)^2/n!$ is what closes
 Plancherel-completeness arguments.
+
+**Significance for mass-tower computations.**
+
+Plancherel-weight boundedness is the formal reason that the
+log-pairing $\Phi_k$ in
+([universal residue](#prop:plancherel-term-7-formulation)) remains
+$O(10)$ even when individual $\int_{A_\lambda}$ values span
+$\sim 50$ orders of magnitude
+([mass formula validation](#rem:mass-formula-validation)).  The
+Plancherel measure compresses the per-$\lambda$ contributions into
+a probability average, killing the divergence.  Without this
+proposition, the logarithmic-weighting "magic" exploited by
+mass-tower computations would be unjustified.
