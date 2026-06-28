@@ -15,7 +15,8 @@ remaining gap, confirming the descent stays OPEN (gated on the Q_β keystone). N
 
 (2) descent gap map — what closing conj:binding-qbeta-complex-volume requires, and what's gated.
 """
-import json, os
+import json
+import os
 
 import sympy as sp
 
@@ -76,8 +77,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "frakV-descent-zeta4-partner-probe.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
+with open(out, "w", encoding="utf-8") as f:
+    json.dump(witness, f, indent=2, ensure_ascii=False)
 
 print(f"V0(η+iπ/2) = {lhs}")
 print(f"partner = −conj V0(η)? {partner_eq_negconj};  = −cosh+i·sinh? {partner_eq_explicit}")
