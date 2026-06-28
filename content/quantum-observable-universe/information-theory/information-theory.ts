@@ -45,6 +45,7 @@ export default chapter({
         "golden-ratio-transport",
         "julia-set-reeb",
         "operational-entropy",
+        "operational-entropy-properties",
         "discrete-planck-step",
         "jet-planck-steps",
 
