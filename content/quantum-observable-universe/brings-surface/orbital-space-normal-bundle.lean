@@ -1,6 +1,6 @@
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic
-import Mathlib.LinearAlgebra.Dimension
+import Mathlib.LinearAlgebra.Dimension.Finrank
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
@@ -37,7 +37,6 @@ namespace QOU
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -79,7 +78,7 @@ theorem orbital_space_dim (n : ℕ) :
 
 /-- Dimension of the orbital space at shell n is n² (alternate form). -/
 theorem orbital_dim_eq_square (n : ℕ) :
-    (OrbitalDecomposition.mk (n := n)).total_dim = n ^ 2 :=
+    ({} : OrbitalDecomposition n).total_dim = n ^ 2 :=
   orbital_space_dim n
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -120,9 +119,9 @@ theorem orbital_dim_eq_square (n : ℕ) :
 -- Ref: [manuscript] Ch. 6, §3 — "The critical step"
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 axiom mode_is_so3_irrep :
-  ∀ (ℓ : ℕ), ∃ (V : Type) [inst_acg : AddCommGroup V] [inst_mod : Module R_q V]
-    [inst_fd : FiniteDimensional R_q V],
-    Module.finrank R_q V = 2 * ℓ + 1
+  ∀ (ℓ : ℕ), ∃ (V : Type) (acg : AddCommGroup V) (mod : @Module R_q V _ acg.toAddCommMonoid),
+    @Module.Finite R_q V _ acg.toAddCommMonoid mod ∧
+    @Module.finrank R_q V _ acg.toAddCommMonoid mod = 2 * ℓ + 1
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §4. Mode cutoff
@@ -130,7 +129,7 @@ axiom mode_is_so3_irrep :
 
 /-- Mode cutoff: ℓ(ℓ+1) ≤ n(n-1) ⟹ ℓ ≤ n-1.
     Proof: contrapositive — if ℓ ≥ n then ℓ(ℓ+1) ≥ n(n+1) > n(n-1). -/
--- theorem mode_cutoff {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n - 1)) :  -- (archimedean; not meaningful over R_q)
+theorem mode_cutoff {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n - 1)) :
     ℓ ≤ n - 1 := by
   by_contra hc
   push_neg at hc
@@ -145,14 +144,14 @@ axiom mode_is_so3_irrep :
   omega
 
 /-- Converse: ℓ ≤ n-1 ⟹ ℓ(ℓ+1) ≤ n(n-1). -/
--- theorem mode_cutoff_conv {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ ≤ n - 1) :  -- (archimedean; not meaningful over R_q)
+theorem mode_cutoff_conv {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ ≤ n - 1) :
     ℓ * (ℓ + 1) ≤ n * (n - 1) := by
   have : ℓ + 1 ≤ n := by omega
   calc ℓ * (ℓ + 1) ≤ (n - 1) * n := Nat.mul_le_mul h this
     _ = n * (n - 1) := by ring
 
 /-- Mode cutoff iff: ℓ(ℓ+1) ≤ n(n-1) ↔ ℓ ≤ n-1. -/
--- theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :  -- (archimedean; not meaningful over R_q)
+theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :
     ℓ * (ℓ + 1) ≤ n * (n - 1) ↔ ℓ ≤ n - 1 :=
   ⟨mode_cutoff hn, mode_cutoff_conv hn⟩
 
@@ -172,20 +171,54 @@ end
 
 This proposition is conditional on the conjecture [`conj:borromean-quark`]
 (see `content/quantum-observable-universe/observations/borromean-quark.lean`
-for the canonical `class BorromeanQuark` declaration).  The local stub
-below mirrors that class name so the §3b-cond audit
-(`content/pipeline/conditional-class-banner-audit.ts`) recognises the
-conditional-on-class structure; downstream consumers should import the
-canonical class from the sibling stub file instead. -/
+for the canonical `class BorromeanQuark` declaration).  The class below
+axiomatises **this file's** conjectural input — the SO(3)-irreducible
+decomposition of the orbital space — and the conditional theorem
+**derives** the dimension law `dim O_n = n²` from that input together with
+the unconditional arithmetic identity `orbital_space_dim` proved above. -/
 
-/-- Local stub of `conj:borromean-quark`'s axiomatised class.
-    See `borromean-quark.lean` (sibling) for the canonical declaration. -/
-class BorromeanQuark : Prop where
-  /-- The conjecture's content is the class instance (sorry = conjecture
-      per AGENTS.md §3b). -/
-  holds : True
+namespace QOU.OrbitalSpaceNormalBundle.ConditionalAudit
 
-/-- Witness theorem: this file's proposition is conditional on
-    `BorromeanQuark` per CLAUDE.md §3b-cond. -/
-def orbital_space_normal_bundle_conditional_on_borromean_quark
-    [_inst : BorromeanQuark] : True := trivial
+/-- **Borromean-quark orbital-decomposition class** (conditional input for
+    `conj:orbital-space-normal-bundle`).
+
+    The conjectural content is the SO(3)-representation-theoretic claim of
+    the sibling `.md` ("the critical step"): because the trefoil
+    `T_{2,3}` orbits the Borromean proton anchor `𝓑₃` and time-averages to
+    a topological `S²`, the orbital space at shell `n` decomposes as
+
+      `O_n ≅ V_0 ⊕ V_1 ⊕ ⋯ ⊕ V_{n-1}`,
+
+    where `V_ℓ` is the SO(3) irreducible of dimension `2ℓ+1`.  The two
+    content-bearing fields encode exactly that decomposition:
+
+    * `orbitalDim` — the dimension functional `n ↦ dim O_n`;
+    * `so3_decomposition` — the conjectural input: `dim O_n` equals the sum
+      over the admitted modes `ℓ = 0, …, n-1` of the SO(3)-irrep dimensions
+      `2ℓ+1`.  This is the Borromean-anchor / SO(3) claim, not the
+      conclusion `n²` (which is *derived* below). -/
+-- Ref: [manuscript] Ch. 6, §3 — "The critical step", conj:borromean-quark
+class BorromeanQuark where
+  /-- The dimension of the orbital space at shell `n`. -/
+  orbitalDim : ℕ → ℕ
+  /-- **Conjectural input.** The orbital dimension at shell `n` is the sum
+      of the SO(3)-irrep dimensions `2ℓ+1` of the admitted modes
+      `ℓ = 0, …, n-1` — i.e. `O_n ≅ ⊕_{ℓ<n} V_ℓ`. -/
+  so3_decomposition :
+    ∀ n : ℕ, orbitalDim n = (range n).sum (fun ℓ => 2 * ℓ + 1)
+
+/-- **Orbital-space dimension law (conditional on `BorromeanQuark`).**
+    Given the Borromean-quark SO(3) decomposition `O_n ≅ ⊕_{ℓ<n} V_ℓ`, the
+    orbital space at shell `n` has dimension `n²`:
+
+      `dim O_n = n²`.
+
+    Derived from the class field `so3_decomposition` (the conjectural
+    input) and the unconditional arithmetic identity `orbital_space_dim`
+    proved above — a genuine equation, not `True`. -/
+-- Ref: [manuscript] Ch. 6, §3, conj:orbital-space-normal-bundle, conj:borromean-quark
+theorem orbital_space_normal_bundle_conditional [inst : BorromeanQuark]
+    (n : ℕ) : inst.orbitalDim n = n ^ 2 := by
+  rw [inst.so3_decomposition, QOU.orbital_space_dim]
+
+end QOU.OrbitalSpaceNormalBundle.ConditionalAudit
