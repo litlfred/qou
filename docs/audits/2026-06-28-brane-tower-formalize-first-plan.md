@@ -125,6 +125,29 @@ factor *for the nucleon*.
 | Q3 resolution: Borromean nucleon | 🟢 `|tr_M(β_Bor)|=0.9986<1` ⇒ all free pairs <q₀, converges ∀Z |
 | Single-pipeline = per-knot Borromean | 🟡 design fixed (§6); validation + ovud-normaliser open |
 
+## 7. Why no distinct *neutron* Borromean trace? (owner) — topology is flavor-blind, and it unifies with Δ_λ
+
+**Answer: the Markov trace is topological; the Borromean link is flavor-blind.** A
+baryon is `𝓑₃(K₀₁,K₀₁,K₀₁)` — proton (uud) and neutron (udd) differ only in the
+quark-flavor *labeling* of the three colour tubes, not in the link *topology*
+(`𝓑₃` is the same link). `tr_M = J_K(q)` is the Jones polynomial — a topological
+invariant — so it **cannot** see flavor: `tr_M(β_Bor)` is identical for p and n.
+This is the **GAP-A-4** proof (p ≡ n ≡ ³He at H₃, bit-for-bit) and the corpus's
+**"isospectral isobars"** framing (`depth-stratified-frobenius-reciprocity.md`,
+"you cannot hear the shape of a drum"). It is *forced*, not an omission.
+
+**Where p/n lives:** the `d→u` flip is a crossing reversal `σ ↔ σ⁻¹` = bar-involution
+`q ↔ q⁻¹` = the bar-ODD `Q_β` channel (`bar-parity-split.md`): `m_n = m_p + Q_β`.
+It reaches binding through the **bond crossing signs** (`z` for σ-bonds pp/pn,
+`z−h` for the σ⁻¹ nn-bond) — so ³H(nn) ≠ ³He(pp), correct.
+
+**Unification with Δ_λ:** the corpus proposes the FR-restricted per-partition
+weight `χ^λ → χ^λ·χ^λ(e_{K*})` (knot-ideal projector) to "break the Jones-only
+degeneracy" by recovering the **hyperbolic-volume** information isobars share.
+That enrichment — the per-λ weight that would distinguish p/n at the trace level
+— **is the Δ_λ** that closes the binding normalization (§4/§6). One missing
+object answers both: distinguish p/n, and close the binding.
+
 **Next action (revised by the §4 refutation):** do NOT author the false bound.
 Instead **(1)** re-express the binding tower over the **Borromean nucleon**
 `β_Bor` (converges ∀Z) and re-validate the deuteron/³He/⁴He binding against AME
