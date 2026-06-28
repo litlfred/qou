@@ -203,6 +203,7 @@ export default chapter({
         "torus-embeddable-completeness-remark",
         "bring-trefoil-cinquefoil-channel",
         "generation-completeness",
+        "generation-completeness-interpretation",
       ],
     }),
     section({

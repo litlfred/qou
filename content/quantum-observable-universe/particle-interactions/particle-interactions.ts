@@ -24,6 +24,7 @@ export default chapter({
         "nuclear-groebner-reduction",
         "nuclear-reduction-algorithm",
         "groebner-shirshov-energy",
+        "groebner-shirshov-energy-interpretation",
         "inductive-gb-reduction",
         "nucleon-ordering-factorization",
         "box-braid-irreducibility",

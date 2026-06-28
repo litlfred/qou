@@ -61,6 +61,7 @@ export default chapter({
             "skein-resolution-obstruction",
             "hecke-satisfies-blitvic-hypothesis",
             "hecke-satisfies-blitvic-hypothesis-proof",
+            "hecke-satisfies-blitvic-hypothesis-interpretation",
             "trace-locality-meets-gs-nonlocality",
             "trace-locality-meets-gs-nonlocality-proof",
             "jones-markov-trace",
@@ -192,6 +193,7 @@ export default chapter({
       blocks: [
         "lepton-meson-parallel-intro",
         "frobenius-lepton-meson-bridge",
+        "frobenius-lepton-meson-bridge-interpretation",
         "hoefsmit-binding-amplitude",
         "meson-em-sinh-closed-form",
         "meson-qcg-fusion-identity",

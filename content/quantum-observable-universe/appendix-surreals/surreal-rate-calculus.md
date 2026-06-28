@@ -71,15 +71,3 @@ $$
 because $\delta^2$ is a *standard real* and $\varepsilon^4$ is
 infinitesimal, so $\delta^2 - \varepsilon^4 > 0$ in
 $\mathbb{R}(\varepsilon)$.  $\square$
-
-**Interpretation.** Item (4) is the mechanism underlying every
-millennium-problem squeeze in Chapter~8 and Chapter~7: the "cost" of
-any standard-scale perturbation (a rogue zero off the critical line,
-a rogue vortex spike, a rogue Collatz trajectory, a rogue oracle
-separation) **strictly exceeds** the available mass-gap dissipation.
-The cost is transfinite, the dissipation is infinitesimal; no cancellation
-is possible in an ordered field.
-
-This is the algebraic content that replaces the informal
-"$O(\varepsilon^{-1})$ exceeds $O(\varepsilon^3)$ as $\varepsilon \to 0$":
-we do not need a limit, only an inequality inside $\mathbf{No}$.

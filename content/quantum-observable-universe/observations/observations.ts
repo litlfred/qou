@@ -140,6 +140,7 @@ export default chapter({
         "pair-skein-mass-formula-proof",
         "flavor-split-substrate",
         "flavor-split-substrate-proof",
+        "flavor-split-substrate-interpretation",
         "dressed-quark-numerology-at-q0",
         // Phase 7 orphan reconnection (2026-05-25):
         "m-tau-knot-prediction",
@@ -255,6 +256,7 @@ export default chapter({
         "cmb-torsion-data",
         "gravity-emergent",
         "gravity-spectral-prefactor",
+        "gravity-spectral-prefactor-interpretation",
         "g-q-closed-form",
         "gravity-emergent-data",
         "topological-defects",
@@ -412,6 +414,7 @@ export default chapter({
         "non-comm-probability-intro",
         "algebraic-gns-embedding",
         "algebraic-gns-embedding-proof",
+        "algebraic-gns-embedding-interpretation",
         "algebraic-gns-embedding-cfs-consequence",
         "non-commutative-probability-dictionary",
         "non-commutative-probability-dictionary-table-data",
