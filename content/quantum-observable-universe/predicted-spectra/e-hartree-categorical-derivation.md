@@ -7,8 +7,7 @@
 > Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 The molecular-binding framework uses the Hartree energy
-$E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale (for example in
-[`hecke_core.py:198`](computations/substrate/hecke_core.py)).
+$E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale.
 This block asks whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke
 structure rather than as an empirical input. The answer reached is a
 **clean conditional theorem**, not a closed one.
@@ -264,9 +263,7 @@ scope:
   constants — the coefficient $c_2$ is conjecturally in
   $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
 - It does **not** override the existing usage of
-  $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ in
-  [`hecke_core.py:198`](computations/substrate/hecke_core.py)
-  as a numerical input — that usage remains an empirical scale pending
+  $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ as a numerical scale pending
   closure of this conjecture.
 
 ## Honest reporting

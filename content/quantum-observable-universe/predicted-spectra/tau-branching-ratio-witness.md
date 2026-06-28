@@ -1,6 +1,6 @@
-The computation `tau-leptonic-decay.py` evaluates both the
-factorized and the product models at $q_0 \approx 1.1100$ and
-compares with the PDG experimental branching ratio.
+Evaluating both the
+factorized and the product models at $q_0 \approx 1.1100$ allows
+comparison with the PDG experimental branching ratio.
 
 ## Weak vertex data
 
