@@ -349,20 +349,26 @@ under the stated `(1 + c_4·b⁴·ℏ_q^8)` factor convention; see the audit
 status. The sign-flipped form `c_4 = -(b² + 1/2)` satisfies (2) with
 residual -0.57 ppb but lacks a derived categorical source.
 -/
-/-- **Theorem** (was previously `qbeta_inductive_categorical_closure_conjecture`
-    axiom). The signature `(inst : …) → True` is trivially
-    discharge-able since the conclusion is `True`.
+/-- **Inductive categorical closure of `c_k`** (named conditional conjecture, §3b).
 
-    Discharged 2026-06-08 (PR #1981): as an existential-shaped
-    statement, the `True` conclusion captures no categorical
-    content — the "inductive categorical closure" claim above is
-    fully carried by the doc and the §3b-cond conditional-class
-    scaffold below (`QbetaC3StructuralFormClass` and friends), NOT
-    by this signature. Preserved as a named theorem to maintain
-    audit visibility of the citation point. -/
+    The conjecture (property (1) above): for every rung `k ≥ 4`, the categorical
+    coefficient `c_k(q)` is **bar-symmetric** under `q ↔ q⁻¹`,
+
+      `∀ k ≥ 4, ∀ q > 0, c_k(q⁻¹) = c_k(q)`,
+
+    consistent with `hoefsmitB_bar_invariant`.  This is the genuine,
+    checkable content of the closure claim (the residual-ceiling property (2)
+    and the no-fit categorical-source property (3) are tracked in the doc).
+
+    Honest disposition: the property is *named* as a `Prop` over the coefficient
+    class — it is **not** asserted (no instance proof is produced; the open
+    state is the absence of a proof term).  This replaces the previous
+    `(inst : …) → True := trivial`, which captured no categorical content. -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder §"Open conjecture (N≥4)"
 def qbeta_inductive_categorical_closure_conjecture
-    (_inst : QBetaPrecisionLadderCoefficients) :
-    True := trivial
+    (inst : QBetaPrecisionLadderCoefficients) : Prop :=
+  ∀ k : ℕ, 4 ≤ k → ∀ q : ℝ, 0 < q →
+    inst.c_k_at_q k q⁻¹ = inst.c_k_at_q k q
 
 /-! ## §3b-cond N=3 structural-form class (mirrors PR #1508)
 

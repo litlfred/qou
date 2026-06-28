@@ -228,23 +228,34 @@ theorem markovTrace_stab_comm
 def IsGeneric (n : ℕ) (q : R) : Prop :=
   ∀ k : ℕ, 2 ≤ k → k ≤ n → q ^ (2 * k) ≠ 1
 
-/-- **Theorem (Wedderburn at generic q).** When `q` is generic,
-    `H_n(q)` is finite-dimensional semisimple over its base field
-    `R`, decomposing as a direct sum of matrix algebras indexed by
-    partitions `λ ⊢ n`.
+/-- **Wedderburn decomposition at generic q** (named conditional conjecture,
+    §3b).  When `q` is generic, `H_n(q)` is finite-dimensional semisimple over
+    `R` and decomposes as a direct sum of matrix algebras indexed by the
+    partitions `λ ⊢ n` (here ranged over by the supplied list `parts`).
 
-    Stated axiomatically; cites `prop:wedderburn-weight-canonical`
-    and `prop:hoefsmit-seminormal-form` from the manuscript. -/
+    Honest disposition: the decomposition is *named* as a `Prop` over the
+    opaque carrier — it asserts the existence of a complete family of pairwise
+    orthogonal central idempotents `{e_λ}` that sum to `1` (the Wedderburn unit
+    resolution).  This is the structural content of semisimplicity; the proof
+    needs Mathlib's matrix-algebra / seminormal-form infrastructure and is the
+    open part (`prop:wedderburn-weight-canonical`, `prop:hoefsmit-seminormal-form`).
+    Replaces the previous `: True := trivial` (vacuous) projection. -/
+-- Ref: [kassel1995] §V.5 — Iwahori–Hecke algebra structure theorem at generic q.
+-- Ref: [manuscript] §prop:wedderburn-weight-canonical
+-- Ref: [manuscript] §prop:hoefsmit-seminormal-form
 def wedderburn_decomposition_generic
-    (_H : IwahoriHeckeAlgebra n R q h_unit)
-    (_h_gen : IsGeneric n q) :
-    True := by
-  -- Ref: [kassel1995] §V.5 — Iwahori–Hecke algebra structure
-  -- theorem at generic q; semisimplicity criterion via [k]_q.
-  -- Ref: [manuscript] §prop:wedderburn-weight-canonical.
-  -- Ref: [manuscript] §prop:hoefsmit-seminormal-form
-  -- (Hoefsmit's seminormal-form Wedderburn realisation).
-  trivial
+    (H : IwahoriHeckeAlgebra n R q h_unit)
+    (_h_gen : IsGeneric n q) (parts : List (List ℕ)) : Prop :=
+  letI : Ring H.carrier := H.ring
+  ∃ e : List ℕ → H.carrier,
+    -- each block is idempotent
+    (∀ lam ∈ parts, e lam * e lam = e lam) ∧
+    -- blocks are pairwise orthogonal
+    (∀ lam ∈ parts, ∀ mu ∈ parts, lam ≠ mu → e lam * e mu = 0) ∧
+    -- blocks are central
+    (∀ lam ∈ parts, ∀ x : H.carrier, e lam * x = x * e lam) ∧
+    -- the idempotents resolve the unit (complete decomposition)
+    (parts.map e).sum = 1
 
 /-! ## Central primitive idempotents and JM elements -/
 
