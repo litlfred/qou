@@ -35,5 +35,3 @@ The remaining $\det \neq 0$ proof (Phase 1b-2) reduces the entire Option E **Pha
 
 - [`def:universal-ilp-algorithm`](universal-ilp-algorithm.md) — consumer of this proposition
 - [`docs/audits/-option-e-crystal-weight-delta-lambda.md`](../../../docs/audits/-option-e-crystal-weight-delta-lambda.md) — full Phase 0/1/2/3/4 Option E workplan
-- [`computations/gram-matrix-dual.py`](../../../computations/gram-matrix-dual.py) — pyhecke numerical Gram (regression guard)
-- [`tools/pyhecke/python/pyhecke/gram.py`](../../../tools/pyhecke/python/pyhecke/gram.py) — canonical NF basis + TR_M definition

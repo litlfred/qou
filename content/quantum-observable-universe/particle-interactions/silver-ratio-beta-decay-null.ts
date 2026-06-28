@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "**Silver-ratio $\\beta$-decay null**: at $q = 1 \\pm \\sqrt{2}$, the categorical $\\beta$-decay $Q$-value vanishes; the Hecke generator $\\sigma$ has eigenvalues = $1 \\pm \\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable",
+    "**Silver-ratio trace degeneracy**: at $q = 1 \\pm \\sqrt{2}$, the Hecke generator $\\sigma$ has eigenvalues = $1 \\pm \\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable",
   uses: ["rem:per-block-hopf-jones-absorption-pattern"],
   cites: [
     "wenzl1988",
@@ -16,7 +16,6 @@ export default proposition({
   tags: [
     "lean-infrastructure",
     "silver-ratio",
-    "beta-decay-null",
     "hecke-quadratic",
     "pell-lucas",
     "categorical-degeneracy",

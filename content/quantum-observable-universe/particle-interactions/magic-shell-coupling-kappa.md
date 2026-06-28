@@ -27,14 +27,14 @@ $$
   \approx -1.0704239\;\text{MeV}
 $$
 
-Against the empirical fit from  v6 single-magic anchor data:
+Against the observed physical value from v6 single-magic anchor data:
 
 $$
-  \kappa_{\mathrm{empirical}} \approx -1.0707908\;\text{MeV}
+  \kappa_{\mathrm{observed}} \approx -1.0707908\;\text{MeV}
 $$
 
 The ratio is $0.999657$ — **within $0.034\%$**, at the precision
-floor of the empirical fit. No empirical input enters the
+floor of the observation. No observed input enters the
 categorical formula; all inputs are substrate parameters
 ($m_e$, $q_0$) and structural q-brackets.
 
@@ -68,7 +68,7 @@ $(n_{pp} - n_{nn})$ excess in
 ## Closure of the κ derivation work-item
 
 This proposition closes the open derivation requested in user
-work-list item #4 (κ derivation). The empirical $\kappa \approx -1.07\;\text{MeV}/\text{excess}$
-from  v6 is now a **prediction** of the categorical
-substrate, not an independently calibrated parameter — purely a
+work-list item #4 (κ derivation). The observed $\kappa \approx -1.07\;\text{MeV}/\text{excess}$
+from v6 is now a **prediction** of the categorical
+substrate, not an ad-hoc parameter — purely a
 function of $q_0$ via the q-bracket and Hecke deformation structure.

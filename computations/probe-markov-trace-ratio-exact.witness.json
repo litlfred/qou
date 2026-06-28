@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-28T16:06:22.073835+00:00",
-  "commitSha": "3ce2d6a33dc6c7fd8dc71a29d1142dd11ec9bc2f",
+  "computedAt": "2026-06-28T23:06:07.225593+00:00",
+  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
   "assertions": [
     {
       "name": "J_i/J_j == tr_M_i/tr_M_j for all pairs at n=2 (q0, <=1e-25)",
@@ -37,11 +37,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 82,
   "computation": "probe-markov-trace-ratio-exact",
   "scriptFile": "probe_markov_trace_ratio_exact.py",
-  "scriptHash": "53b1305eb9a7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6734885e32d8",
+  "scriptCommitSha": "111ec7c5ea9dd42a84900dc36acadb87a41b67ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,10 +49,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Numerical-exact + symbolic cross-check of prop:markov-trace-ratio-exact: Jones values J = C(n,q)*tr_M with C braid-word-independent, so J_i/J_j = tr_M_i/tr_M_j (the normalisation cancels). Canonical engine markov/markov_trace_canonical.tr_M_word; substrate q0.",
   "contentBlock": "prop:markov-trace-ratio-exact",

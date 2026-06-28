@@ -1,20 +1,28 @@
 {
   "engine": "codata_2022_source",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T14:42:16.116070+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-28T23:06:11.102879+00:00",
+  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 180,
   "computation": "cal-3-q-beta",
   "scriptFile": "build_cal_3_q_beta_witness.py",
-  "scriptHash": "a9f518338289",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "b02c594a3392",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "CAL-3 calibration input: free-neutron β-decay Q-value Q_β(n). Per the QOU three-calibration discipline (content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md), Q_β(n) is one of exactly three external inputs to the framework — alongside m_e (CAL-1) and m_μ/m_e (CAL-2) — used to fix the hadronic energy scale E_0 via E_0 = Q_β(n) / |Δ(net)|, where Δ(net) = h(h-2)/2 is the symbolic NF difference between neutron and proton braids. This witness exists so codata_constants.py loads the CAL-3 value from a source-of-truth JSON instead of hardcoding it. Q_β here is the PRIMARY DEFINITION of the input; it must agree (within combined CODATA σ) with the algebraic identity m_n - m_p - m_e computed from the validation witness, but that identity is a CONSISTENCY CHECK, not the definition.",
   "contentBlock": "prop:three-calibration-inputs",

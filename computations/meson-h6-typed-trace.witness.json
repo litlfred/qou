@@ -1,8 +1,8 @@
 {
   "engine": "numpy/f64",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T22:35:31.591867+00:00",
-  "commitSha": "211974b215d8a23eb07bebb1a359ba02fecd7420",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-28T23:06:09.745220+00:00",
+  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
   "assertions": [
     {
       "name": "h6_computed",
@@ -14,31 +14,39 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 178,
   "computation": "meson-h6-typed-trace",
   "scriptFile": "meson_h6_typed_trace.py",
-  "scriptHash": "6cdce46ed766",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4b666891197b",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Full H₆ Wedderburn Markov trace for meson pair (pion vs kaon). |tr_K/tr_π| = 1.070205. Tests (9/5)^n Seifert scaling.",
   "data": {
     "pion": {
       "word_length": 13,
-      "tr_M": -24.809490341350347
+      "tr_M": -24.809490341717286
     },
     "kaon": {
       "word_length": 17,
-      "tr_M": -26.551244610548437
+      "tr_M": -26.551244610939985
     },
     "ratio": {
-      "raw": 1.0702051612199015,
-      "seifert1": 1.9263692901958227,
-      "seifert2": 3.467464722352481,
+      "raw": 1.070205161219855,
+      "seifert1": 1.9263692901957392,
+      "seifert2": 3.467464722352331,
       "target": 3.537118438946828
     }
   }

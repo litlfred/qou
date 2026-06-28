@@ -108,7 +108,6 @@ $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
 ## Scope exclusions for this remark
 
 - Does **not** propose a 4th calibration input.
-- Does **not** propose to replace CAL-1, CAL-2, or CAL-3 with empirical fits.
 - Does **not** claim $q_0$ has been cohomologically derived.
 - Does **not** override the no-fourth-CAL audit discipline.
 - Does **not** introduce new fitting, ansätze, or numerological inputs.

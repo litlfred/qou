@@ -52,25 +52,11 @@ to the entire class of bound-state observables.
   load $G^{-1}$, load $A^*$ from the operator-selection LP, and pair
   $O$ against $T^\vee$ on the active subspace.
 
-## Computational protocol
+## Evaluation protocol
 
-A correct numerical implementation of the master formula requires:
+The rigorous evaluation of the master formula requires:
 
-1. **$G$, $G^{-1}$**: load from
-   `computations/gram-matrix-dual.witness.json`
-   (`gram_matrix`, `gram_inverse` fields).
-2. **Active set + shadow prices**: solve the operator-selection LP for
-   the target bound state via
-   `computations/lp_dual_solver.py::solve_operator_selection_lp`,
-   read `active_set` and `y_star`.
-3. **Observable coefficients $\langle O, b_j\rangle$**: compute the
-   Markov trace $\mathrm{tr}_M(O \cdot b_j)$ for each active $j$.
-4. **Pair**: $\langle O\rangle_T = \sum_{i,j \in A^*} u_i^* (G^{-1})_{ij}
-   \langle O, b_j\rangle$.
-5. **Witness**: emit `gram_matrix`, `gram_inverse`, `lp_active_set`,
-   `shadow_prices` (so the bound-state-observable CI gate passes), and
-   `primal_obj`/`dual_obj`/`duality_gap` (so the LP-dual CI gate passes).
-
-Any witness whose `description` claims to compute a bound-state
-observable but lacks these fields is flagged by
-`computations/bound_state_observable_validator.py`.
+1. **$G$, $G^{-1}$**: Evaluate the Frobenius Gram matrix and its inverse on the NF basis.
+2. **Active set + shadow prices**: Solve the operator-selection linear program for the target bound state to obtain the active set $A^*$ and shadow prices $u_i^* = y_i^*$.
+3. **Observable coefficients $\langle O, b_j\rangle$**: Compute the Markov trace $\mathrm{tr}_M(O \cdot b_j)$ for each active $j$.
+4. **Pair**: $\langle O\rangle_T = \sum_{i,j \in A^*} u_i^* (G^{-1})_{ij} \langle O, b_j\rangle$.

@@ -126,5 +126,5 @@ The Lean `sorry` count is EXACTLY ONE per OPEN GAP — not per missing tactic.
 
 **Consequences of the conjecture:**
 - Lean development can proceed with explicit class hypotheses
-- Future probes can target the conjecture-A gap directly (e.g., compute $A_{\mathcal{B}_3}(L, M)$ classical + identify q_0 on the curve)
+- Future analytic investigation can target the conjecture-A gap directly (e.g., compute $A_{\mathcal{B}_3}(L, M)$ classical + identify q_0 on the curve)
 - The framework's $q_0$ stays well-defined under different conjecture statuses

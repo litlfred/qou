@@ -83,16 +83,4 @@ selector itself.
 
 **Witness**: `confinement-operator-selection.witness.json`.
 
-**Selection-principle support.** The topological selection is verified by
-`computations/probes/b3_brunnian_selection_scope.py` (the closure of
-$(\sigma_0\sigma_1^{-1})^3$ is a nontrivial six-crossing Brunnian
-three-link — pure braid, all pairwise linking numbers $0$, every
-two-sublink the unlink) and
-`computations/probes/b3_brunnian_minimality_enumeration.py` (enumerating
-all pure three-braids of word length $\le 6$: no nontrivial Brunnian link
-below six crossings, and at six crossings the minimal Brunnian links all
-carry the Borromean signature). The refutation of the operator-space
-*minimum-action* selector is recorded in
-`computations/probes/b3_dense_sdp_wedderburn_projector.py` (the dense
-Wedderburn-projector SDP collapses to the minimum-eigenvector of the cost
-operator, which is the mesonic $L_\pm$, never $\mathcal{B}_3$).
+**Selection-principle support.** The topological selection is derived rigorously: the closure of $(\sigma_0\sigma_1^{-1})^3$ is a nontrivial six-crossing Brunnian three-link (pure braid, all pairwise linking numbers $0$, every two-sublink the unlink). Enumeration of all pure three-braids of word length $\le 6$ confirms no nontrivial Brunnian link below six crossings, and at six crossings the minimal Brunnian links all carry the Borromean signature. The refutation of the operator-space *minimum-action* selector is analytic: the dense Wedderburn-projector SDP collapses to the minimum-eigenvector of the cost operator, which is the mesonic $L_\pm$, never $\mathcal{B}_3$.

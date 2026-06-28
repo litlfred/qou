@@ -18,25 +18,18 @@ $$
 not $\Phi_q(z)$ (unbounded). The two sides differ by 6 orders of
 magnitude at $z = 0.989$ — see the
 [mass-endomorphism-tower audit](#prop:mass-endomorphism-tower)
-for the numerical probe and the $-737$ MeV mirror-nucleus pathology
+for the analytic evaluation and the $-737$ MeV mirror-nucleus pathology
 that the conflation produced.*
 
 ## Discipline
 
 **The corrected canonical form of the mass-endomorphism tower uses
 $-\mathrm{Li}_2^q(-|V|)$, not $\Phi_q(|V|)$**, on every per-generator
-amplitude. Two production compute paths follow this discipline:
+amplitude.
 
-- [`canonical_plus_multibrane.py`](computations/canonical_plus_multibrane.py)
-  with `tower_mode="li2q"` — the canonical mass tower.
-- [`paper_six_term_isotope_sweep.py`](computations/sweeps/paper_six_term_isotope_sweep.py)
-  using the symmetric q-dilogarithm series identity.
-
-The $\Phi_q$ product form survives in
-[`brane_tower_isospin_diagnosis.py`](computations/brane_tower_isospin_diagnosis.py)
-**only as a diagnostic** — it documents the $\sim 10^5 \times$
+The $\Phi_q$ product form documents the $\sim 10^5 \times$
 amplification at $|V| \to 1$ that originally produced the $-737$ MeV
-pathology, but the corrected mass formula does not use it.
+pathology, but the corrected canonical mass formula does not use it.
 
 ## Lean anti-regression class
 

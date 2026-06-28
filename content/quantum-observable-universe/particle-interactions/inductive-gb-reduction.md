@@ -1,6 +1,5 @@
-The nuclear normal form computation scales **polynomially** in the
-mass number $A$ when performed inductively — reduce after each
-multiplication, not at the end.
+The nuclear normal form can be computed inductively by reducing after
+each multiplication.
 
 ## Statement
 
@@ -23,6 +22,3 @@ $$
 terms, where $r(\cdot, G)$ is the Gröbner--Shirshov division
 algorithm
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).*
-
-*The total computation for $\mathcal{N}(Z, N)$ requires
-$O(A^2)$ multiplications and $O(A^3)$ Hecke reduction steps.*
