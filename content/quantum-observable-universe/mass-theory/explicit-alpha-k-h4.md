@@ -42,7 +42,7 @@ of $\mathrm{tr}_M$ with a class-function representative $r_k$ that is
 $\chi_\lambda(r_k) = 0$ for every $\lambda \,\vdash\, n$ with
 $\mathrm{depth}(\lambda) < k$.
 
-**Why class-function basis.**  The natural basis for class functions
+**The class-function basis.**  The natural basis for class functions
 on $H_n$ is the set of canonical conjugacy-class representatives
 $\{T_{w_C}\}_C$.  At $H_4$ this is 5-dimensional.  The
 length-restricted (length-$k$ word) approach fails: at $H_4$ the 6
