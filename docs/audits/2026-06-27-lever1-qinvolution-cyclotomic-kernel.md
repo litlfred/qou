@@ -229,6 +229,12 @@ Three exact, parameter-free facts:
    — the `ζ₄` residue** the Q_β `c_k` kernel constraints independently require (constraint set in
    [`2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md`](../scope/2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md)).
 
+The `(q−1)`-order tower (`L₃,L₄ ∼ (q−1)²`, `L₅ ∼ (q−1)⁴`) and the `q=1` classical limit
+`L₂ = ½` are **Lean-certified, sorry-free** (generic `CommRing`, §7c) in
+[`QOU/Mass/BindingQGaussianHabiro.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/BindingQGaussianHabiro.lean)
+(`L3_factor`, `L4_factor`, `L5_factor`, `L2_classical_limit`); the numerator polynomials' provenance
+(that they are the log-coefficients of `Ŝ`) is the symbolic compute, cited in the file.
+
 This is the **explicit binding-side Habiro element in closed form**, constructed from exact
 (non-floor-limited) data. It is **not** the Q_β element `F(q)` — that is a different object, gated
 on the open SW-residue / jet-prolongation keystone `conj:qdifference-kernel-prolongation-symbol`,
