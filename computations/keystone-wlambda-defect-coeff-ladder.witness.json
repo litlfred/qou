@@ -245,5 +245,73 @@
     9
   ],
   "ladder_holds_k_1_2_3": true,
+  "exact_ladder_kerov": {
+    "2": [
+      "1/8",
+      "-3/128",
+      "5/1024"
+    ],
+    "3": [
+      "7/24",
+      "-115/1152",
+      "947/27648"
+    ],
+    "4": [
+      "5/12",
+      "-29/144",
+      "179/1728"
+    ],
+    "5": [
+      "5/12",
+      "-169/720",
+      "1423/8640"
+    ],
+    "6": [
+      "5/24",
+      "-587/5760",
+      "5651/46080"
+    ],
+    "7": [
+      "-7/24",
+      "973/5760",
+      "-311/35840"
+    ],
+    "8": [
+      "-7/6",
+      "161/720",
+      "29/630"
+    ],
+    "9": [
+      "-5/2",
+      "-71/80",
+      "439/945"
+    ],
+    "10": [
+      "-35/8",
+      "-3231/640",
+      "-560543/967680"
+    ],
+    "11": [
+      "-55/8",
+      "-9911/640",
+      "-11705243/967680"
+    ],
+    "12": [
+      "-121/12",
+      "-13409/360",
+      "-927091/15120"
+    ],
+    "13": [
+      "-169/12",
+      "-27989/360",
+      "-3238183/15120"
+    ],
+    "14": [
+      "-455/24",
+      "-848939/5760",
+      "-590255653/967680"
+    ]
+  },
+  "exact_matches_taylor": true,
   "verdict": "LADDER CONFIRMED for k=1,2,3: deg c_{2k}(n) = 3k exactly (degrees [3, 6, 9] = [3,6,9]). Strong structural evidence that EVERY coefficient of the W_\u03bb defect 1\u2212Z(n) is a polynomial in n of degree 3k \u2014 i.e. the geometric index's full heat-kernel expansion is polynomial-in-n, an unbounded family of exact q\u2080-free targets (not just C(n),D(n)). Each closed form interpolated + held-out validated; method validated against proved-exact C(n) (err 0.0). CONJECTURE (k\u22643 evidence) \u2014 a proof should follow from the Identity-I / Plancherel-moment (Kerov-polynomial) structure. No fit; tight 1e-25 rational tol; q\u2080 never used."
 }
