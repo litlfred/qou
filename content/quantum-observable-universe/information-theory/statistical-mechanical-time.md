@@ -15,7 +15,7 @@ terms diverges) produces both thermodynamic equilibrium from
 molecular collisions and continuous time from discrete Reeb
 operations.
 
-**Why $\sim 10$ operations is the crossover.**
+**Crossover at $\sim 10$ operations.**
 At $q = q_0$
 ([local substrate $q$](#prop:local-substrate-q)),
 $t_P \approx 10.1$

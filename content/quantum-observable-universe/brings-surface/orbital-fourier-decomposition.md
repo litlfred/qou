@@ -147,7 +147,7 @@ where $Y_\ell^m$ is the spherical harmonic — the restriction
 of the mode-$\ell$ vibration pattern to the unit sphere
 around the proton.
 
-**Why $V_\ell$ and not some other representation.**  The
+**Identification of the representation as $V_\ell$.**  The
 Fourier mode $\ell$ on $S^1$, transported to $\mathbb{R}^3$
 by the embedding $\varrho$, generates a function on the
 sphere $S^2$ surrounding the proton (the time-averaged orbit

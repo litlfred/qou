@@ -37,7 +37,7 @@ $\mathbf{V}$ with $c_{\mathbf{V},\mathbf{V}}^{\,2}
 \neq \mathrm{id}$, which contradicts the symmetric-group relation.
 $\square$
 
-**Consequence.**  The tensor powers $\mathbf{V}^{\otimes n}$ carry
+**Corollary.**  The tensor powers $\mathbf{V}^{\otimes n}$ carry
 *fractional statistics*: particle exchange acts by a $B_n$-representation
 that distinguishes the braid $\sigma_i$ from its inverse
 $\sigma_i^{-1}$, in contrast with the symmetric-group action seen by

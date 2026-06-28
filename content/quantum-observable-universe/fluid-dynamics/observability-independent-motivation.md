@@ -78,7 +78,7 @@ there exists a nonzero morphism $\phi \colon \mathbf{1} \to
 measurements. The universe would contain a sector invisible
 to any experiment.
 
-**What happens without observability.**
+**Consequences of dropping observability.**
 
 Define a **quantum pre-universe** (QPU) as a quantum universe
 $(\mathbf{C}, A, \tau)$ satisfying all QOU axioms **except**

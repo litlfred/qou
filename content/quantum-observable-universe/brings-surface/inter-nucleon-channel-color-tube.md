@@ -78,7 +78,7 @@ $\mathrm{nn} \mapsto \sigma^{-1}$ via majority opposite-flavor pairs;
 $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}}$ via the bar-symmetric
 mixed-flavor average).
 
-## Why color-tube weighting is the load-bearing missing structure
+## Color-tube weighting as the load-bearing missing structure
 
 The low-isotope sign-flip diagnostic
 ([`low-isotope-sign-flip-diagnostic.witness.json`](../../computations/low-isotope-sign-flip-diagnostic.witness.json),

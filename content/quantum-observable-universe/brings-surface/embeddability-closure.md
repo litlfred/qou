@@ -27,7 +27,7 @@ $\mathcal{G}$.  Then:
 In particular, no generated knot is "dark" — the generation scheme
 is closed under observability.
 
-**Why each operation preserves embeddability.**
+**Preservation of embeddability under each operation.**
 
 *Hopf linking $\ell_H$.*
 The Hopf link $\mathcal{L}_{\mathrm{Hopf}}$ on the exceptional
@@ -86,7 +86,7 @@ descendants ($4_1$, $5_2$) have *lower* genus than their parent
 generators — crossing changes that produce hyperbolic knots from
 torus knots typically decrease the genus.
 
-**Physical consequence.**
+**Physical corollary.**
 The closure of embeddability under generation is the topological
 reason that *all* fundamental particles interact: they all descend
 to the same base manifold $\mathbb{P}(V)$ and hence participate in

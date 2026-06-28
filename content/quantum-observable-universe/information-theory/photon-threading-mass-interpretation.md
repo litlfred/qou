@@ -40,7 +40,7 @@ the braid word to the other.
    units).  Via mass--energy equivalence, the mass is
    $\mathfrak{m}_{\mathfrak{H}} = E_{\mathfrak{H}} \cdot (q-1)^2$.
 
-**Why the photon measures mass.**
+**Mechanism by which the photon measures mass.**
 The photon has no crossings of its own — it is topologically
 trivial ($K = \varnothing$).  But it couples to the gauge field
 ($F_A^+$) because it propagates as exceptional-divisor flux

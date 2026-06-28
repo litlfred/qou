@@ -45,7 +45,7 @@ $$
 so $d \neq \mathrm{eval}(p)$.  Since $p$ was arbitrary,
 $d \notin \mathrm{im}(\mathrm{eval})$. $\square$
 
-**Why $\mathbb{N}$-embedding is necessary.**
+**Necessity of $\mathbb{N}$-embedding.**
 
 The diagonal argument constructs $d$ by evaluating program
 $e(n)$ on input $n$ --- self-application.  This requires:
