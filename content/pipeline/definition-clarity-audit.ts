@@ -172,6 +172,10 @@ const T = {
   /** clarity-defn-misplaced: defining-verb lead-ins in a non-definition block
    *  that has no `defines[]`/`:defterm[…]` marker — softer (minor) signal. */
   misplacedVerbs: 2,
+  /** clarity-remark-single-topic: a remark covering this many or more distinct
+   *  topical sub-sections (`## …` ATX headers / `**Remark (…).**`-style run-in
+   *  headers) is a candidate for splitting into one remark per topic. */
+  remarkTopics: 2,
 };
 
 type Result = "pass" | "fail" | "n/a";
@@ -221,6 +225,7 @@ const CRITERIA = [
   "clarity-grad-style",
   "clarity-rhetorical-header",
   "clarity-defn-misplaced",
+  "clarity-remark-single-topic",
 ] as const;
 type Criterion = (typeof CRITERIA)[number];
 
@@ -877,6 +882,46 @@ function loadBlock(mdPath: string, repoRoot: string): Block | null {
   };
 }
 
+/** clarity-remark-single-topic: a `remark` should interpret ONE topic. A remark
+ *  that bundles several distinct topical sub-sections (multiple `## …` ATX
+ *  headers, or multiple `**Remark (…).**` / `**Topic.**`-style run-in headers)
+ *  is a candidate for splitting into one remark per topic, each `interprets:`
+ *  its parent. High-recall, agent-confirmed (like the other clarity criteria):
+ *  a multi-section remark is a *candidate* — a single-topic remark with an
+ *  incidental "Example" / "Proof sketch" sub-head can be confirmed as-is. */
+/** sub-headers that are ancillary *structure* of a single topic (an example,
+ *  a proof sketch, a pointer list) rather than a distinct topic in their own
+ *  right — excluded from the remark-single-topic count. */
+const ANCILLARY_HEADER =
+  /^(examples?|worked examples?|proof(?:\s+sketch)?|sketch|derivation|references?|cross-?references?|see also|related (?:results?|work)|lean structure|notation|summary|numerical (?:check|verification|example)|sanity check|verification|witness|setup|preliminaries)\b[.:]?$/i;
+
+function checkRemarkSingleTopic(b: Block): Finding {
+  const all = sectionHeaders(b.md);
+  const headers = all.filter((h) => !ANCILLARY_HEADER.test(h.replace(/[*_`]/g, "").trim()));
+  const base = mkFinding(b, "clarity-remark-single-topic");
+  base.metrics = { sectionHeaders: all.length, topicalHeaders: headers.length };
+  // Glossary remarks (Ch 8 terminological wrappers) are not interpretive
+  // remarks — their sub-structure is term-mapping, not multiple topics.
+  if (b.isGlossary) {
+    base.result = "pass";
+    base.evidence = "glossary remark — exempt from single-topic rule";
+    return base;
+  }
+  if (headers.length >= T.remarkTopics) {
+    base.result = "fail";
+    base.severity = headers.length >= 4 ? "major" : "minor";
+    const show = headers
+      .slice(0, 4)
+      .map((h) => `"${h.slice(0, 48)}"`)
+      .join(", ");
+    base.evidence = `remark bundles ${headers.length} topical sub-section${headers.length === 1 ? "" : "s"} (${show}${headers.length > 4 ? ", …" : ""}) — a remark should cover ONE topic; split into separate remark blocks, each \`interprets:\` its parent`;
+  } else {
+    base.result = "pass";
+    base.evidence = `single topic (${headers.length} section-header${headers.length === 1 ? "" : "s"})`;
+  }
+  return base;
+}
+
 function findingsFor(b: Block, only?: Criterion): Finding[] {
   const out: Finding[] = [];
   const want = (c: Criterion) => !only || only === c;
@@ -899,6 +944,9 @@ function findingsFor(b: Block, only?: Criterion): Finding[] {
   }
   if (!MISPLACE_SKIP.includes(b.kind) && want("clarity-defn-misplaced")) {
     out.push(checkDefnMisplaced(b));
+  }
+  if (b.kind === "remark" && want("clarity-remark-single-topic")) {
+    out.push(checkRemarkSingleTopic(b));
   }
   return out;
 }
