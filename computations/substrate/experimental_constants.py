@@ -37,8 +37,11 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 # ── Fundamental constants (CODATA 2022) ─────────────────────────
-
-M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV
+# Source of truth: codata_2022_source.M_E_MEV = 0.51099895069(15) MeV
+# (full 11-sig-fig CODATA-2022). Kept as a float literal here (not an
+# mpf import) so the ~266 importers' float arithmetic / json.dumps stay
+# intact; the prior literal 0.51099895000 was truncated by 3 figs.
+M_E_MEV     = 0.51099895069   # ± 0.00000000015 MeV
 M_E_MEV_ERR = 0.00000000015
 
 # Energy scale for Q-values: κ = m_e / 3
