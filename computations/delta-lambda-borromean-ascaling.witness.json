@@ -1,0 +1,71 @@
+{
+  "schema": "delta-lambda-borromean-ascaling/v1",
+  "description": "Borromean per-braid tower net/target vs canonical sgn(w\u2080)\u00b7dim; A-scaling diagnostic (no fit, no closure).",
+  "tower_net_over_target_spread": 6.1655584950713145,
+  "rows": [
+    {
+      "iso": "D",
+      "A": 2,
+      "B_AME": 2.224573,
+      "B_tower": 2.480295937516178,
+      "tower_net_over_target": 1.114953718091597,
+      "canon_sgn_dim_net_over_target": 0.17085186593588303
+    },
+    {
+      "iso": "T",
+      "A": 3,
+      "B_AME": 8.481821,
+      "B_tower": 4.919025491475729,
+      "tower_net_over_target": 0.5799492221629917,
+      "canon_sgn_dim_net_over_target": 0.2250151160229988
+    },
+    {
+      "iso": "3He",
+      "A": 3,
+      "B_AME": 7.718058,
+      "B_tower": 4.300242950437091,
+      "tower_net_over_target": 0.5571664465902032,
+      "canon_sgn_dim_net_over_target": 0.30378240760528336
+    },
+    {
+      "iso": "4He",
+      "A": 4,
+      "B_AME": 28.295673,
+      "B_tower": 6.387362312165436,
+      "tower_net_over_target": 0.2257363630179581,
+      "canon_sgn_dim_net_over_target": 0.1073728468868487
+    },
+    {
+      "iso": "6Li",
+      "A": 6,
+      "B_AME": 31.994564,
+      "B_tower": 10.51481132572877,
+      "tower_net_over_target": 0.32864368227455043,
+      "canon_sgn_dim_net_over_target": null
+    },
+    {
+      "iso": "12C",
+      "A": 12,
+      "B_AME": 92.161728,
+      "B_tower": 32.64154831230646,
+      "tower_net_over_target": 0.354176826114919,
+      "canon_sgn_dim_net_over_target": null
+    },
+    {
+      "iso": "16O",
+      "A": 16,
+      "B_AME": 127.619,
+      "B_tower": 56.092227337216826,
+      "tower_net_over_target": 0.43952881104864344,
+      "canon_sgn_dim_net_over_target": null
+    },
+    {
+      "iso": "56Fe",
+      "A": 56,
+      "B_AME": 492.254,
+      "B_tower": 685.1145641713874,
+      "tower_net_over_target": 1.3917907506518736,
+      "canon_sgn_dim_net_over_target": null
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+# 2026-06-28 — Δ_λ frontier: the Borromean per-braid tower as a magnitude-adding A-scaling lever
+
+**Branch:** `claude/delta-lambda-borromean-ascaling-2026-06-28`
+**Goal:** Δ_λ binding-closure (Track-A / Option-E)
+**Scope tag:** (a) scope-limited — positions a magnitude-side lever + sharpens the open item to the A-scaling. **No 7th fit-based ansatz; no closure claimed.**
+**Producer:** [`computations/delta_lambda_borromean_ascaling.py`](../../computations/delta_lambda_borromean_ascaling.py)
+**Witness:** `computations/delta-lambda-borromean-ascaling.witness.json`
+**Builds on (same day):** [`2026-06-28-delta-lambda-l1-ceiling-sign-only-prune.md`](2026-06-28-delta-lambda-l1-ceiling-sign-only-prune.md) (the ℓ¹-ceiling sign-only prune), [`2026-06-28-brane-tower-formalize-first-plan.md`](2026-06-28-brane-tower-formalize-first-plan.md) (the Borromean single pipeline, PR #3016 merged).
+
+## Context
+
+Today's ℓ¹-ceiling audit proved (Lean, sorry-free) that **sign-only** Δ_λ
+re-derivations are excluded — the ℓ¹ ceiling of the canonical
+`Δ_λ = sgn(w₀^{S_{λ'}})·dim` term set is 36–59 % of target for every light
+isotope — so a **magnitude-adding** ingredient is *necessary*, and a *flat*
+q-dim convention cannot reproduce binding's A-scaling: "the closure object must
+carry A-/λ-dependent structure that bends the A-scaling" (route ii/iii / a
+structured kernel, e.g. z2bn's q-Gaussian/Habiro EGF).
+
+This diagnostic asks the obvious follow-up: the **Borromean per-braid tower**
+just merged (PR #3016) **is** a structured, zero-parameter magnitude-adding
+kernel (the per-braid Li₂^q tower over the Borromean nucleon `τ=0.9986`). Does it
+bend the A-scaling toward closure?
+
+## Result (fit-free — only reads the tower's output)
+
+`net/target = B_tower / B_AME` (closure ⇒ 1.0):
+
+| iso | A | tower net/target | canonical `sgn·dim` net/target |
+|-----|--:|-----------------:|-------------------------------:|
+| D   | 2 | **1.115** | 0.171 |
+| T   | 3 | 0.580 | 0.225 |
+| ³He | 3 | 0.557 | 0.304 |
+| ⁴He | 4 | 0.226 | 0.107 |
+| ⁶Li | 6 | 0.329 | — |
+| ¹²C | 12 | 0.354 | — |
+| ¹⁶O | 16 | 0.440 | — |
+| ⁵⁶Fe | 56 | 1.392 | — |
+
+**Two findings:**
+
+1. **The per-braid kernel supplies the missing magnitude.** On D/T/³He/⁴He it
+   reaches `1.8–6.5×` higher net/target than the flat `sgn·dim` (D: 1.12 vs
+   0.17). A *structured* kernel demonstrably escapes the sign-only ℓ¹ ceiling —
+   concrete support for today's "magnitude-adding ingredient is necessary."
+   (Caveat: the tower is a different formula — Path A/B trace tower, not a
+   re-weighting of the Path-D `Σ_λ` vector — so this is "an alternative
+   structured kernel reaches closure-grade magnitude," not "re-weights the same
+   vector." The point stands: structure supplies what flat `sgn·dim` lacks.)
+
+2. **But it does NOT close — the A-scaling is still non-uniform.** net/target
+   spread over A is **6.17×** (D over at 1.12, mid under at ⁴He 0.23, ⁵⁶Fe over
+   at 1.39). The per-braid kernel adds magnitude but its effective A-scaling
+   over-binds the extremes and under-binds the middle — it does not bend to a
+   *uniform* +1. So magnitude alone, even structured, is not closure; the
+   A-/λ-shape is still wrong.
+
+## Conclusion (scope (a))
+
+The Borromean per-braid Li₂^q tower is a **genuine magnitude-side lever** for the
+Δ_λ frontier — it joins z2bn (R(q,x) kernel), w5tg (edge-set), thb7 (universal-ρ),
+PROBE-2 (A=4 interface) as a zero-parameter structured kernel that escapes the
+sign-only ceiling. Its **derive-or-refute signature** is sharp and specific: the
+**6.17× A-scaling spread** (over-binds light + ⁵⁶Fe, under-binds A=4–16). The open
+item is unchanged in kind — *which* structured kernel bends the A-scaling to
+uniform closure — but now has one more concrete, falsifiable candidate with a
+measured A-profile, not a fit.
+
+**Not claimed:** closure; a derivation of the tower's A-profile; that the
+per-braid kernel is *the* Δ_λ. The q-dim-convention hidden-DOF caveat from the
+ℓ¹ audit applies — magnitude size alone is a weak discriminator; the A-scaling
+*shape* is the real test, and the tower fails it (non-uniform).
