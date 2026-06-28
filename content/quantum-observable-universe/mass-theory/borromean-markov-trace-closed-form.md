@@ -25,9 +25,4 @@ clean layers:
 | $q^3$ (denominator) | $9/8$ | algebraic ($q = (h + \sqrt{h^2+4})/2$) |
 | $F_{\mathrm{Bor}}$ (combined) | $19/2$ | $11/4$ and $9/8$ via division |
 
-The $h^2$ contribution to the linking weight
-$\mathfrak{w}(\mathcal{B}_3)$ must come from the **normalization
-layer** ($[3]_q! / q^3$), not from the braid character. The
-Canonical Wedderburn $h^2$ coefficient $+3/4$ (per
-`prop:lambda-scale-substrate-form`) is a **Geom-level contribution**,
-structurally independent of the Markov trace.
+The exact vanishing of the $h^2$ term in the trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)$ is an algebraic property of the Borromean rings' Jones polynomial evaluation. In the context of the mass formula, this forces any $h^2$ dependence in the overall amplitude $F_{\mathrm{Bor}}$ to arise strictly from the normalization factor $[3]_q! / q^3$.
