@@ -48,11 +48,13 @@ namespace QOU.BraidKnot
 open Polynomial
 
 /-- Hecke-power coefficient `a_k(h)` defined by the recurrence
-    `a_{k+1} = h · a_k + b_k`, `a_0 = 0`, `a_1 = 1`. -/
+    `a_{k+1} = h · a_k + b_k`, `a_0 = 0`, `a_1 = 1`.  Since `b_{k+1} = a_k`
+    (see `heckePowerB`), the mutual recurrence collapses to the two-term
+    `a_{k+2} = X · a_{k+1} + a_k`. -/
 noncomputable def heckePowerA : ℕ → ℤ[X]
   | 0     => 0
   | 1     => 1
-  | k + 2 => X * heckePowerA (k + 1) + heckePowerB (k + 1)
+  | k + 2 => X * heckePowerA (k + 1) + heckePowerA k
 
 /-- Hecke-power coefficient `b_k(h)` defined by the recurrence
     `b_{k+1} = a_k`, `b_0 = 1`. -/
@@ -73,64 +75,52 @@ noncomputable def protonMarkovCoeffB : ℤ[X] :=
   heckePowerA 7 * heckePowerB 4 + heckePowerB 7 * heckePowerA 4
 noncomputable def protonMarkovCoeffC : ℤ[X] := heckePowerB 7 * heckePowerB 4
 
-/-- **Axiomatic closed form of the Markov trace for the proton word.**
+/-- **Axiomatic closed form of the Markov trace for the proton word —
+    explicit coefficient polynomials.**
 
-    Statement (formal level): in any `ℚ`-algebra homomorphic image of
-    `H_3(q)`, the Markov trace of the atomic-braid word
-    `σ_1^7 σ_2^4` is given by
+    The closed form (`.md` sibling) reads
 
       tr_M(σ_1^7 σ_2^4)(q) =
         protonMarkovCoeffA · z²
       + protonMarkovCoeffB · z
       + protonMarkovCoeffC,
 
-    where `protonMarkovCoeffA, B, C` are the Hecke-power coefficients
-    above (evaluated in `h = q - q⁻¹`) and `z = 1/(q^{1/2} + q^{-1/2})`.
+    where `protonMarkovCoeffA = a_7 a_4`, `protonMarkovCoeffB = a_7 b_4 +
+    b_7 a_4`, `protonMarkovCoeffC = b_7 b_4` are the Hecke-power
+    coefficients (Laurent polynomials in `h = q - q⁻¹`) and
+    `z = 1/(q^{1/2} + q^{-1/2})`.
 
-    Justification (delegated to references):
+    The Hecke-power recurrence (`σ_i^k = a_k σ_i + b_k` with
+    `a_{k+1} = h a_k + b_k`, `b_{k+1} = a_k`, derived by iterating the
+    Hecke quadratic `σ_i² = h σ_i + 1`) determines the three coefficient
+    polynomials **exactly**.  This theorem discharges that exact
+    determination: it states the closed polynomial form of the three
+    proton coefficients in `h = X`,
 
-    • Step 1 (Hecke-power recurrence): direct iterated application of
-      `σ_i² = h σ_i + 1` shows `σ_i^k = a_k σ_i + b_k` with the
-      stated recurrence on `(a_k, b_k)`.
+      A(h) = h^9 + 7h^7 + 16h^5 + 13h^3 + 2h,
+      B(h) = 2h^8 + 12h^6 + 22h^4 + 13h^2 + 1,
+      C(h) = h^7 + 5h^5 + 7h^3 + 3h,
 
-    • Step 2 (basis expansion): `σ_1^7 σ_2^4 = (a_7 σ_1 + b_7)(a_4 σ_2 + b_4)`
-      since `a_k, b_k` are scalars (Laurent polynomials in `q`)
-      and commute with the algebra.
-
-    • Step 3 (`H_3` Markov-trace basis values): tr_M(1)=1, tr_M(σ_1)=
-      tr_M(σ_2)=z, tr_M(σ_1σ_2)=tr_M(σ_2σ_1)=z², tr_M(σ_1σ_2σ_1)=
-      z + h z² (combination of Markov axiom + cyclicity + Hecke
-      quadratic on inner factor).
-
-    • Step 4 (combination): linearity gives the stated formula.
-
-    The Lean formalisation factors through an abstract `MarkovTrace`
-    typeclass on a Hecke-algebra carrier; the proof is a routine
-    `ring` computation once the trace values on the H_3 basis are
-    fixed by the axiom-closure typeclass.
+    and is proved by unfolding the recurrence and `ring`.  The
+    remaining `z`-assembly into the rational Markov trace
+    (`A z² + B z + C`, denominator `q^{10}(q+1)^3`) is the abstract
+    `MarkovTrace`-typeclass step; the **content** the recurrence
+    machinery actually establishes — the three coefficient polynomials
+    — is what this theorem fixes, mirroring the symbolic
+    `markov_trace_atomic_proton_full.py` witness.
 
     Ref: [jones1987] §5; [kassel1995] Theorem III.3.3. -/
-def markovTraceAxiomaticClosedForm :
-    True := by
-  -- This statement is a *signature* placeholder.  The full Lean
-  -- formalisation requires:
-  --   • a `Hecke n q` algebra type carrying the Hecke quadratic;
-  --   • a `MarkovTrace` typeclass with the three axioms;
-  --   • a derivation of the H_3 basis values;
-  --   • the verification, via `ring` after the basis values are
-  --     in scope, that the closed-form expression matches.
-  --
-  -- Once the `Hecke n q` infrastructure is available in Mathlib (or
-  -- locally), this theorem becomes a routine algebraic identity,
-  -- mirroring the sympy `sp.cancel` step in
-  -- `markov_trace_atomic_proton_full.py`.
-  --
-  -- The categorical content is fully captured in the narrative `.md`
-  -- sibling and the witness JSON; the Lean formalisation is gated on
-  -- the `Hecke` typeclass infrastructure (tracked elsewhere).
-  --
-  -- Ref: [jones1987], [kassel1995], [wenzl1988].
-  trivial
+theorem markovTraceAxiomaticClosedForm :
+    protonMarkovCoeffA =
+        X^9 + 7 * X^7 + 16 * X^5 + 13 * X^3 + 2 * X ∧
+    protonMarkovCoeffB =
+        2 * X^8 + 12 * X^6 + 22 * X^4 + 13 * X^2 + 1 ∧
+    protonMarkovCoeffC =
+        X^7 + 5 * X^5 + 7 * X^3 + 3 * X := by
+  refine ⟨?_, ?_, ?_⟩ <;>
+    · simp only [protonMarkovCoeffA, protonMarkovCoeffB, protonMarkovCoeffC,
+        heckePowerA, heckePowerB]
+      ring
 
 /-- Sanity recurrences (smoke-tested, useful for downstream proofs). -/
 theorem heckePower_recurrence_a (k : ℕ) :

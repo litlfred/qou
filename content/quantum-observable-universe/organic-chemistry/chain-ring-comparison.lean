@@ -1,4 +1,6 @@
 import Mathlib.Data.Nat.Basic
+import Mathlib.Algebra.Group.Even
+import Mathlib.Tactic.Common
 
 
 /-!
@@ -32,12 +34,20 @@ theorem benzene_weights :
     (6 - 1 = 5) ∧ (6 / 2 = 3) ∧ (5 - 3 = 2) := by
   omega
 
+/-- The Alexander weight difference between chain and threaded ring.
+    For even N: (N-1) - N/2 = (N-2)/2.  Mirrors the definition in
+    `QOU.Organic.alexanderWeightDifference` (ring-closure-barrier);
+    repeated here so this content-block sibling compiles standalone. -/
+-- Ref: [manuscript] Ch. 10, Proposition: Ring-closure energy barrier
+def alexanderWeightDifference (N : ℕ) : ℕ :=
+  (N - 1) - N / 2
+
 /-- The barrier prediction for even-N rings:
     ΔE ∝ (N-1) - N/2 = (N-2)/2.
     For N=6: ΔE ∝ 2. For N=8: ΔE ∝ 3. Etc. -/
 -- Ref: [manuscript] Ch. 10, Proposition: Predicted vs. observed barrier
 theorem barrier_grows_with_ring_size :
     alexanderWeightDifference 6 < alexanderWeightDifference 8 := by
-  native_decide
+  decide
 
 end QOU.Organic

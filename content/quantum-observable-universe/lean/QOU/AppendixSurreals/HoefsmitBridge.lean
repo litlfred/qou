@@ -156,13 +156,16 @@ theorem hoefsmit_bridge_two :
     simp at h1 h2
     subst h1; subst h2
     congr <;> omega
-  · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1.
-    -- After simp, heq becomes `1 = -1` in ℚ; close via norm_num.
-    simp [hoefsmitDyadic, h1, h2] at heq
-    exact absurd heq (by norm_num)
-  · -- Symmetric: t₁ = (1,1), t₂ = (2,0); heq : -1 = 1 in ℚ.
-    simp [hoefsmitDyadic, h1, h2] at heq
-    exact absurd heq (by norm_num)
+  · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1, so the
+    -- hypothesis `heq : f t₁ = f t₂` reduces to the genuinely false
+    -- numeric equation `(1 : ℚ) = -1`. This contradiction is exactly
+    -- the injectivity content (distinct tableaux ⇒ distinct images);
+    -- `norm_num` discharges the goal from the now-false `heq`.
+    rw [hoefsmitDyadic, hoefsmitDyadic, if_pos h1, if_neg (by omega)] at heq
+    norm_num at heq
+  · -- Symmetric: t₁ = (1,1), t₂ = (2,0); heq reduces to `(-1 : ℚ) = 1`.
+    rw [hoefsmitDyadic, hoefsmitDyadic, if_neg (by omega), if_pos h2] at heq
+    norm_num at heq
   · -- Both row2 = 1: same tableau (1, 1).
     obtain ⟨r1₁, r2₁, sz₁, ord₁⟩ := t₁
     obtain ⟨r1₂, r2₂, sz₂, ord₂⟩ := t₂

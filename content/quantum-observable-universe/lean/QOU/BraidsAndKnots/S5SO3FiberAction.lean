@@ -710,7 +710,7 @@ theorem hopf_generation_selection :
     (icosBranchingMult 1).get! 4 = 0 ∧   -- ℓ=1: H absent
     (icosBranchingMult 2).get! 4 = 1 ∧   -- ℓ=2: H present
     (icosBranchingMult 2).get! 1 = 0 := by  -- ℓ=2: T₁ absent
-  refine ⟨rfl, rfl, ?_, ?_, ?_, ?_⟩ <;> native_decide
+  refine ⟨rfl, rfl, ?_, ?_, ?_, ?_⟩ <;> decide
 
 /-- **The selected irrep has the expected dimension.** The electron generation
     (ℓ=1 → T₁) is 3-dimensional (the chiral color sheets), and the muon

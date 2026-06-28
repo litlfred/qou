@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 
 /-!
@@ -105,18 +106,15 @@ theorem a_8_eq_partition_sum :
   -- match coefficients via `ring`.
   unfold a_8_poly
   rw [show (Finset.Icc 1 5 : Finset ℕ) = {1, 2, 3, 4, 5} from by decide]
-  simp only [Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton,
-    Finset.sum_singleton, show partitionCount 1 = 1 from rfl,
-    show partitionCount 2 = 2 from rfl,
-    show partitionCount 3 = 3 from rfl,
-    show partitionCount 4 = 5 from rfl,
-    show partitionCount 5 = 7 from rfl]
-  -- After reduction the goal becomes:
+  rw [Finset.sum_insert (by decide), Finset.sum_insert (by decide),
+      Finset.sum_insert (by decide), Finset.sum_insert (by decide),
+      Finset.sum_singleton]
+  -- After expanding the explicit sum the goal becomes:
   --   X^4 + 2•X^3 + 3•X^2 + 5•X + C 7
   --     = 1 • X^4 + 2 • X^3 + 3 • X^2 + 5 • X^1 + 7 • X^0
   -- which `ring` closes (smul on ℤ-action coincides with C-mult
   -- on polynomial coefficients).
-  push_cast
+  norm_num [partitionCount]
   ring
 
 /-- **Alternative form (ascending degree).**  Re-indexing the sum
@@ -128,14 +126,10 @@ theorem a_8_eq_partition_sum_ascending :
       ∑ k ∈ Finset.range 5, (partitionCount (5 - k) : ℤ) • X ^ k := by
   unfold a_8_poly
   rw [show (Finset.range 5 : Finset ℕ) = {0, 1, 2, 3, 4} from by decide]
-  simp only [Finset.sum_insert, Finset.mem_insert, Finset.mem_singleton,
-    Finset.sum_singleton,
-    show partitionCount (5 - 0) = 7 from rfl,
-    show partitionCount (5 - 1) = 5 from rfl,
-    show partitionCount (5 - 2) = 3 from rfl,
-    show partitionCount (5 - 3) = 2 from rfl,
-    show partitionCount (5 - 4) = 1 from rfl]
-  push_cast
+  rw [Finset.sum_insert (by decide), Finset.sum_insert (by decide),
+      Finset.sum_insert (by decide), Finset.sum_insert (by decide),
+      Finset.sum_singleton]
+  norm_num [partitionCount]
   ring
 
 /-! ### Bridge to Mathlib's `Nat.Partition`
@@ -173,10 +167,26 @@ canonical partition function. -/
     standard and uncontested.  Resolution is a one-line `decide` once
     Mathlib's `Nat.Partition.fintypeInstance` becomes
     `Decidable`-friendly at small `n`. -/
--- Ref: [andrews1976] §1.1, Table 1 (values of p(n) for n ≤ 200).
--- Ref: [hardy-ramanujan1918] partition function asymptotics.
--- Ref: OEIS A000041 https://oeis.org/A000041
-def partitionCount_eq_fintype_card_partition_small :
-    True := trivial  -- placeholder; see comment above
+theorem partitionCount_eq_fintype_card_partition_small :
+    ∀ n ∈ Finset.Icc 1 5,
+      partitionCount n = Fintype.card (Nat.Partition n) := by
+  -- The genuine Hardy–Ramanujan claim: the local value-table
+  -- `partitionCount` agrees with Mathlib's canonical partition function
+  -- `Fintype.card (Nat.Partition n)` on the five values used by the a_8
+  -- identity, `(p(1),…,p(5)) = (1,2,3,5,7)`.
+  --
+  -- This holds by decidability of the small enumeration, but the kernel
+  -- reduction of `Fintype.card (Nat.Partition n)` is currently stuck
+  -- (`decide` fails — verified): Mathlib's `Nat.Partition` fintype
+  -- instance is not `decide`-friendly at small `n`.  Stated honestly with
+  -- a cited `sorry` pending a uniform `decide`-route; the values
+  -- themselves are standard and uncontested (OEIS A000041).
+  --
+  -- The downstream a_8 identity (`a_8_eq_partition_sum`) does NOT depend on
+  -- this bridge — it goes through `partitionCount` directly.
+  -- Ref: [andrews1976] §1.1, Table 1 (values of p(n) for n ≤ 200).
+  -- Ref: [hardy-ramanujan1918] partition function asymptotics.
+  -- Ref: OEIS A000041 https://oeis.org/A000041
+  sorry
 
 end QOU.BraidKnot.A8Partition
