@@ -42,6 +42,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Topology.Basic
+import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 
@@ -183,35 +184,42 @@ def MassIdentity (cert : MassDerivationCertificate) : Prop :=
   cert.B_pred_MeV ≥ 0 ∧
     |cert.B_pred_MeV - cert.B_AME_MeV| ≤ cert.B_AME_MeV / 4
 
-/-- **Substrate axiom (S2).** Yekutieli + collapse + Archimedean
+-- **Substrate axiom (S2).** Yekutieli + collapse + Archimedean
+-- realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
+-- holds.
+--
+-- The single-term form `M(𝔥) = ν_SDP · tr_M(T_w)` is **retired
+-- shorthand** for the multi-term decomposition (thm:knot-mass-formula-unified):
+-- `M(𝔥) = ν_SDP · (|tr_M(T_w)| + Σ Li_2^q(-|V̂_i|) + z²·Σ Li_2^q(-|V̂_iV̂_j|)
+--           + Σ_{λ⊢n_0} 1/dim_q(λ))`
+-- (symmetric Li_2^q per 2026-05-03 paper canon, replacing the
+-- retired Faddeev Φ_q form).
+--
+-- Ref: [manuscript] prop:atom-knot-mass-derivation §"Mass identity";
+-- prop:archimedean-realization-functor;
+-- prop:wedderburn-trace-identity (ν_SDP-multiplicity);
+-- thm:knot-mass-formula-unified (multi-term M(𝔥)).
+universe u
+
+/-- **Substrate Conjecture Class (S2).** Yekutieli + collapse + Archimedean
     realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
     holds.
 
-    The single-term form `M(𝔥) = ν_SDP · tr_M(T_w)` is **retired
-    shorthand** for the multi-term decomposition (thm:knot-mass-formula-unified):
-    `M(𝔥) = ν_SDP · (|tr_M(T_w)| + Σ Li_2^q(-|V̂_i|) + z²·Σ Li_2^q(-|V̂_iV̂_j|)
-              + Σ_{λ⊢n_0} 1/dim_q(λ))`
-    (symmetric Li_2^q per 2026-05-03 paper canon, replacing the
-    retired Faddeev Φ_q form).
-
-    Ref: [manuscript] prop:atom-knot-mass-derivation §"Mass identity";
-    prop:archimedean-realization-functor;
-    prop:wedderburn-trace-identity (ν_SDP-multiplicity);
-    thm:knot-mass-formula-unified (multi-term M(𝔥)). -/
-/-- **Substrate Conjecture Class (S2).** Yekutieli + collapse + Archimedean
-    realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
-    holds. -/
-class AtomKnotMassDerivationConjecture where
+    The class is parameterised by the universe `u` of the braid-element
+    type `T_w` (§7d): pinning it lets the conditional theorem below tie
+    its own `T_w : Type u` to the class field's, avoiding a universe
+    mismatch at the application site. -/
+class AtomKnotMassDerivationConjecture.{v} where
   /-- Conjectured end-to-end derivation of atomic binding energies. -/
-  atom_knot_mass_derivation : ∀ (cert : MassDerivationCertificate) (T_w : Type*),
+  atom_knot_mass_derivation : ∀ (cert : MassDerivationCertificate) (T_w : Type v),
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
     MassIdentity cert
 
 /-- **Substrate theorem (S2).**
     Conditional on `AtomKnotMassDerivationConjecture`. -/
-theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture]
-    (cert : MassDerivationCertificate) (T_w : Type*) :
+theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture.{u}]
+    (cert : MassDerivationCertificate) (T_w : Type u) :
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
     MassIdentity cert :=
