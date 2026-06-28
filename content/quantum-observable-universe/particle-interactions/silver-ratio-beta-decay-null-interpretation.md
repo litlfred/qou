@@ -1,7 +1,6 @@
 The categorical interpretation: $q = 1 + \sqrt{2}$ is the
-**β-decay null point** — the substrate value at which proton and
-neutron are categorically indistinguishable and free-neutron
-$\beta^-$ decay is forbidden at the leading-order (Form A) level.
+**trace degeneracy point** — the substrate value at which proton and
+neutron are categorically indistinguishable.
 
 > **Bar-symmetry class** (per [`def:bar-involution`](#def:bar-involution)):
 > $h = q - q^{-1}$ is **bar-anti-symmetric** ($\overline h = -h$);
@@ -13,12 +12,7 @@ $\beta^-$ decay is forbidden at the leading-order (Form A) level.
 > Pell-Lucas numbers ($a_n$); $b^2 = 1 - 1/[2]_q^2 = 7/8$ exactly.
 > Both are bar-symmetric.
 
-## SU(2)_L gauge connection
-
-The $\beta$-decay process involves the SU(2)_L weak isospin doublet
-$(u, d)$. The $u \leftrightarrow d$ flavour change is one Weyl-group
-element. At the categorical level, the proton (uud) and neutron (udd)
-differ by exactly one such flip.
+## Silver-mean self-similarity
 
 At the silver-ratio limit, the Hecke quotient $\sigma^2 = 2\sigma + 1$
 recovers the **silver-mean self-similarity**: the two eigenvalues

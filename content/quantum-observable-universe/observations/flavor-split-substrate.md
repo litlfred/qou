@@ -49,7 +49,7 @@ $[2]_q$ multiplicity, and the Skein gap $h_q$ contributes the
 crossing-energy factor.  Two factors of $\hbar_q$ count the two action
 quanta needed to traverse the crossing pair.
 
-**Empirical match (probe `probe_flavor_split_substrate.py`):**
+**Canonical evaluation:**
 
 | Quantity | Substrate formula | Substrate value | CODATA target | Residual |
 |---|---|---|---|---|

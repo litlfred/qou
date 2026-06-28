@@ -1,6 +1,6 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-**Proposition (silver-ratio $\beta$-decay null).**
+**Proposition (silver-ratio trace degeneracy).**
 *Let $q$ be the substrate parameter and $h = q - q^{-1}$ the Hecke
 skein parameter on $H_3(q)$. Then:*
 
@@ -27,7 +27,6 @@ $$
    fixed point**.*
 2. *Proton and neutron single-wrap Markov traces become equal:
    $\mathrm{net}(p) = \mathrm{net}(n) = 1 - h/2 = 0$.*
-3. *Form A vanishes: $\mathfrak{Q}_\beta^A = m_e \cdot |q^2-2q-1|(q+1)/(2q^3) = 0$.*
 
 ## Derivation
 

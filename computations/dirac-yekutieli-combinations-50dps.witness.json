@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:58:27.836526+00:00",
-  "commitSha": "fd4d48f8c49ca622e596910425cd2e96b89e1caf",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-28T23:06:01.852501+00:00",
+  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
   "assertions": [
     {
       "name": "probe_completed",
@@ -14,16 +14,24 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 260,
+  "durationMs": 1795,
   "computation": "dirac-yekutieli-combinations-50dps",
   "scriptFile": "dirac_yekutieli_combinations_50dps.py",
-  "scriptHash": "6327dc25290e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ac51de066f3f",
+  "scriptCommitSha": "ed0bd7b2ce76ba460d322848d2af29aa3277d6eb",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Combines Dirac-weighted linking-weight candidates with Yekutieli per-cell additive structure to test for natural combinations matching Reading-A's -G·h² coefficient.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
@@ -81,9 +89,9 @@
     "m_p_predictions_ppm": {
       "Family A": "29604.991",
       "Reading B (FA+Yek)": "13330.942",
-      "Dirac form alone": "636.72535",
+      "Dirac form alone": "636.7253",
       "Dirac + Yek": "-31988.22",
-      "Linear a·FA+b·Dirac (exact)": "5.6194119",
+      "Linear a·FA+b·Dirac (exact)": "5.6193593",
       "FA + per-cell Yek": "17399.454"
     },
     "verdict": "None of the tested combinations naturally produce -G·h² exactly without fitting. Linear combination requires (a, b) = (-0.0217861, 2.0484) — not recognizable. Reading B (FA + Yek additive) gives -0.166 (Δ = 0.75). Dirac + Yek over-corrects. The structural identity for Reading-A remains unidentified; categorical proof still open."

@@ -135,9 +135,8 @@ class SpinFromSO3Fiber
 
 ## Open R&D
 
-1. **Compute prototype**: extend
-   [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py)
-   from $S_3$-truncated PL integration to full $\mathrm{SO}(3)$
+1. **Analytic extension**: extend
+   from $S_3$-truncated integration to full $\mathrm{SO}(3)$
    spherical-harmonic decomposition on Bring's surface; verify
    $h^4 = -3/4$ at the $\ell = 2$ level.
 2. **D10 to closed** requires the Lean class instance + the

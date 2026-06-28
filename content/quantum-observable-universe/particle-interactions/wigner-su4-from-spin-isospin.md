@@ -198,7 +198,7 @@ BOTH D9 and D10 to be closed first.
 - Magic A$\cdot$8G production rule:
   [`mass_table_ppb.py`](../../computations/mass_table_ppb.py)
   `ATOM_ASSIGN["4He"]`
-- Color-tube infrastructure:
+- Color-tube geometry:
   [`color-tube-coordinates.md`](../archimedean-universe/color-tube-coordinates.md),
   [`color-tube-fibers.md`](../archimedean-universe/color-tube-fibers.md)
 - [Wigner 1937 supermultiplet theory; Elliott SU(3) shell model]

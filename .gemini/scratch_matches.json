@@ -1,0 +1,3142 @@
+{
+  "confinement-sdp.md": [
+    {
+      "line_number": 5,
+      "content": "(`computations/multi_level_sdp.py`,"
+    },
+    {
+      "line_number": 6,
+      "content": "`sdp_cross_channel.py`, `misdp_cross_channel.py`); the LP"
+    }
+  ],
+  "chi-lambda-w0-sign-weighting.md": [
+    {
+      "line_number": 11,
+      "content": "`per-wedderburn-block-ck` probe witness's `c5_match_status` and"
+    },
+    {
+      "line_number": 54,
+      "content": "## Numerical verification"
+    },
+    {
+      "line_number": 57,
+      "content": "( merge, per-Wedderburn-block probe at $q = 1 + \\varepsilon$"
+    },
+    {
+      "line_number": 75,
+      "content": "The probe agent that surfaced this finding referred to"
+    }
+  ],
+  "mass-formula-regime-switching.md": [
+    {
+      "line_number": 98,
+      "content": "$D$ chirality probe `d_chirality_probe.py` verified this: no"
+    },
+    {
+      "line_number": 118,
+      "content": "2. *Max Specht dimension $f^\\lambda = 16$ \u2014 tractable numerically.*"
+    },
+    {
+      "line_number": 155,
+      "content": "this fails by $-353\\%$. Probe `d_chirality_probe.py` tested $13$"
+    },
+    {
+      "line_number": 198,
+      "content": "**Integrated witness table (from `mass_formula_6term.py`).**"
+    }
+  ],
+  "pachner-pentagon-borromean.md": [
+    {
+      "line_number": 140,
+      "content": "1. **Compute prototype**: extend a Pachner-state-sum probe for"
+    }
+  ],
+  "garside-as-compound-flow.md": [
+    {
+      "line_number": 69,
+      "content": "| closed-form ODE per sub-interval | Python-verified (`computations/reeb_flow_garside_closed_form_verification.py`, witness status `verified`) |"
+    }
+  ],
+  "chirality-dual-space-derivation.md": [
+    {
+      "line_number": 64,
+      "content": "Numerical match at $q_0 \\approx 1.11$ confirmed.*"
+    }
+  ],
+  "sigma-shell-from-beta-chain-derivation.md": [
+    {
+      "line_number": 35,
+      "content": "[`hecke_character_symbolic.q_character_on_braid_word`](../../../computations/hecke/hecke_character_symbolic.py).*"
+    },
+    {
+      "line_number": 37,
+      "content": "**Numerical verification \u2014 A_magic = 2 (deuteron).**"
+    }
+  ],
+  "outro-mass-theory.md": [
+    {
+      "line_number": 20,
+      "content": "benchmarks.  Readers focused on the numerical predictions can"
+    }
+  ],
+  "phi-q-categorical-truncation-interpretation.md": [
+    {
+      "line_number": 20,
+      "content": "([`probe_tritium_k_star.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_tritium_k_star.py))"
+    },
+    {
+      "line_number": 55,
+      "content": "$k_\\star \\leq 3$ (since they live in $H_3$). The uniform-$k$ probe"
+    },
+    {
+      "line_number": 56,
+      "content": "([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_phiq_uniform_k.py))"
+    },
+    {
+      "line_number": 57,
+      "content": "shows the Frobenius-paired truncation is far from numerically closed:"
+    },
+    {
+      "line_number": 63,
+      "content": "is a **categorical identity**, not a real-valued numerical identity;"
+    },
+    {
+      "line_number": 66,
+      "content": "numerical equality"
+    }
+  ],
+  "qdifference-kernel-prolongation-symbol.md": [
+    {
+      "line_number": 34,
+      "content": "local monodromy, not searched numerically."
+    }
+  ],
+  "markov-trace-ratio-exact-proof.md": [
+    {
+      "line_number": 15,
+      "content": "[`homflypt_engine.py`](../../computations/homflypt_engine.py)"
+    },
+    {
+      "line_number": 19,
+      "content": "consumers \u2014 [`gram-matrix-dual.py`](../../computations/gram-matrix-dual.py),"
+    },
+    {
+      "line_number": 20,
+      "content": "[`confinement-operator-selection.py`](../../computations/confinement-operator-selection.py),"
+    },
+    {
+      "line_number": 21,
+      "content": "[`lp_dual_solver.py`](../../computations/lp_dual_solver.py) \u2014 the"
+    }
+  ],
+  "alpha-basis-knot-delta-q.md": [
+    {
+      "line_number": 26,
+      "content": "[`delta_q_h_bracket_identity.py`](../../computations/delta_q_h_bracket_identity.py)."
+    }
+  ],
+  "z-eq-n-rho-correction.md": [
+    {
+      "line_number": 25,
+      "content": "Numerical match at $q_0 = 1.10998\\ldots$ for the four atoms in the table"
+    },
+    {
+      "line_number": 26,
+      "content": "([per-atom \u03b4\u03c1 probe](../../../computations/per-atom-rho-deviation.witness.json)):"
+    }
+  ],
+  "frobenius-gram-matrix.md": [
+    {
+      "line_number": 26,
+      "content": "At $q_0 = 1.109978595554181\\ldots$ (50 dps), $hz^2 + z \\approx 0.5514$ (the stale"
+    }
+  ],
+  "spectral-sequence-collapse-proof.md": [
+    {
+      "line_number": 50,
+      "content": "*Numerical pipelines need only enumerate central idempotents $e_\\lambda$,"
+    }
+  ],
+  "explicit-alpha-k-h4.md": [
+    {
+      "line_number": 31,
+      "content": "value $q_0 \\approx 1.110$ to numerical values in"
+    },
+    {
+      "line_number": 33,
+      "content": "verified to numerical precision against the Hoefsmit character matrix"
+    },
+    {
+      "line_number": 57,
+      "content": "numerical inverse is ill-conditioned \u2014 close via the sympy null-space"
+    },
+    {
+      "line_number": 60,
+      "content": "For $H_5$ and $H_6$, all $18$ partitions admit numerical $r_\\lambda$"
+    },
+    {
+      "line_number": 62,
+      "content": "[`r_k_h5_h6_adaptive.py`](#). Symbolic forms for $y_\\lambda$ at"
+    },
+    {
+      "line_number": 69,
+      "content": "[`computations/wedderburn_orthogonal_r_k.py`](#) \u2014"
+    }
+  ],
+  "markov-chain-fluctuations.md": [
+    {
+      "line_number": 41,
+      "content": "(`computations/substrate/hecke_core.py`), which selects the"
+    }
+  ],
+  "q-beta-direction-sanity-gate-proof.md": [
+    {
+      "line_number": 9,
+      "content": "numerical deviations that survive into the more precise \u00a74(a) radius-"
+    }
+  ],
+  "block-multiplicativity-v-free.md": [
+    {
+      "line_number": 27,
+      "content": "Computed via [`per_generator_V_hat_3A`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/computations/mass_at_3A_proper.py)"
+    },
+    {
+      "line_number": 28,
+      "content": "on D, T, ${}^{3}$He at $H_6, H_9, H_9$ respectively (50 dps), as recorded in"
+    },
+    {
+      "line_number": 135,
+      "content": "[`binding_block_multiplicative.py`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/computations/binding_block_multiplicative.py)"
+    }
+  ],
+  "alpha-shift-torus-knot-proof.md": [
+    {
+      "line_number": 35,
+      "content": "[`computations/alpha/alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py)"
+    }
+  ],
+  "wenzl-A-operator.md": [
+    {
+      "line_number": 50,
+      "content": "[`a_operator/A_operator_extract_at_level.py`](../../../computations/a_operator/A_operator_extract_at_level.py),"
+    }
+  ],
+  "intro-cyclotomic-depth-3-trilog.md": [
+    {
+      "line_number": 6,
+      "content": "conjecture from the numerical witnesses."
+    }
+  ],
+  "descended-level-zero.md": [
+    {
+      "line_number": 183,
+      "content": "The fix is not a numerical trick or heuristic: it is the"
+    }
+  ],
+  "quantum-dilogarithm-stratified-proof.md": [
+    {
+      "line_number": 133,
+      "content": "**Open: numerical bound.**"
+    },
+    {
+      "line_number": 134,
+      "content": "The proof above is a Frobenius-paired *equality*, not a numerical"
+    },
+    {
+      "line_number": 137,
+      "content": "with $T_w$. To conclude that the *numerical* mass formula evaluated"
+    }
+  ],
+  "markov-axiom-recursive-ascent.md": [
+    {
+      "line_number": 38,
+      "content": "(`computations/markov/markov_peel.py`) completes"
+    }
+  ],
+  "lr-coefficient-hecke.md": [
+    {
+      "line_number": 58,
+      "content": "The script"
+    },
+    {
+      "line_number": 59,
+      "content": "[`computations/substrate/lr_coefficients.py`](../../computations/substrate/lr_coefficients.py)"
+    },
+    {
+      "line_number": 65,
+      "content": "[`pyhecke.skew_syt.skew_syt_count`](../../tools/pyhecke/python/pyhecke/skew_syt.py)"
+    }
+  ],
+  "gs-graded-markov-trace-existence.md": [
+    {
+      "line_number": 65,
+      "content": "*The numerical values of $\\mathrm{tr}_{M, \\ell}(T_w)$ for the proton,"
+    },
+    {
+      "line_number": 67,
+      "content": "`markov_pipeline_cross_validator.py` and stored under"
+    }
+  ],
+  "y-lambda-closed-form-wenzl-bridge-proof.md": [
+    {
+      "line_number": 28,
+      "content": "## Numerical verification"
+    },
+    {
+      "line_number": 34,
+      "content": "All differences are at numerical precision ($10^{-16}$), confirming the"
+    }
+  ],
+  "crystal-isospin-degeneracy.md": [
+    {
+      "line_number": 11,
+      "content": "[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py),"
+    },
+    {
+      "line_number": 46,
+      "content": "[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)"
+    },
+    {
+      "line_number": 99,
+      "content": "a direct probe of the **curvature** of the flat-transport map"
+    },
+    {
+      "line_number": 113,
+      "content": "[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)"
+    },
+    {
+      "line_number": 115,
+      "content": "[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py).**"
+    },
+    {
+      "line_number": 116,
+      "content": "The script's hardcoded `ATOMS` list treats each nucleon as a"
+    },
+    {
+      "line_number": 152,
+      "content": "for $D$ ($\\sim 10^{-19}$) and small numerical residuals for the"
+    },
+    {
+      "line_number": 184,
+      "content": "[`global_wedderburn_sum_q_hecke_seminormal`](../../../computations/wedderburn_jones_markov.py)"
+    },
+    {
+      "line_number": 201,
+      "content": "$S_{\\mathrm{crystal}}$ values match to within numerical precision"
+    },
+    {
+      "line_number": 202,
+      "content": "(50 dps via"
+    },
+    {
+      "line_number": 203,
+      "content": "[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)).*"
+    }
+  ],
+  "conj-psd-trace-orthogonality.md": [
+    {
+      "line_number": 62,
+      "content": "Per Probe (1) and Probe (1b) in [`docs/audits/-dominant-partition-nucleon-structure.md`](../../../docs/audits/-dominant-partition-nucleon-structure.md):"
+    },
+    {
+      "line_number": 72,
+      "content": "- It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,3,3,3,2,2,2) (the rectangular-form conjecture was [empirically falsified at A=6](../../../docs/audits/-dominant-partition-nucleon-structure.md#gap-narrowing-probe-4c))."
+    },
+    {
+      "line_number": 78,
+      "content": "- [`computations/probe_1_project_4he_on_dominant.py`](../../../computations/probe_1_project_4he_on_dominant.py) \u2014 Probe (1) at A=4"
+    },
+    {
+      "line_number": 79,
+      "content": "- [`computations/probe_1b_li6_orthogonality.py`](../../../computations/probe_1b_li6_orthogonality.py) \u2014 Probe (1b) at A=6"
+    },
+    {
+      "line_number": 80,
+      "content": "- [`computations/probe_4_li6_rectangular_python.py`](../../../computations/probe_4_li6_rectangular_python.py) \u2014 Lanczos LinearOperator framework"
+    },
+    {
+      "line_number": 81,
+      "content": "- [`computations/probe_4c_li6_large_d_scan.py`](../../../computations/probe_4c_li6_large_d_scan.py) \u2014 large-$d_\\lambda$ scan that falsified the rectangular-form conjecture"
+    }
+  ],
+  "mass-tower-syt-cells.md": [
+    {
+      "line_number": 6,
+      "content": "([:refterm[descent]{#descent} rate empirical](#sim:descent-rate-probe)), which"
+    },
+    {
+      "line_number": 60,
+      "content": "([:refterm[descent]{#descent} rate probe](#sim:descent-rate-probe))."
+    },
+    {
+      "line_number": 122,
+      "content": "`computations/hecke/hecke_characters.py`)."
+    },
+    {
+      "line_number": 135,
+      "content": "(`computations/syt_cell_tower.py`) computes"
+    }
+  ],
+  "staircase-corner-hook-proof.md": [
+    {
+      "line_number": 17,
+      "content": "$0.13\\%$ ([`computations/close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/computations/close_321_weinberg_gap.py));"
+    },
+    {
+      "line_number": 20,
+      "content": "([`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/computations/staircase_ew_residual_conjecture.py))."
+    }
+  ],
+  "active-set-trace-concentration.md": [
+    {
+      "line_number": 13,
+      "content": "This concentration is not a numerical artifact; it is a direct structural consequence of the **tensor factorization of the multi-nucleon interface**."
+    }
+  ],
+  "cyclotomic-trilog-imaginary-closed-form.md": [
+    {
+      "line_number": 52,
+      "content": "- Numerical witness (verified at $n = 3, 4, 5, 6, 7, 10, 11, 12, 13$ at 50 dps):"
+    }
+  ],
+  "prop-rigid-monoidal-structural-gap-invariance-proof.md": [
+    {
+      "line_number": 35,
+      "content": "`tr_M_via_wenzl_bridge_mpfr` (50 dps Wenzl bridge).  All three"
+    },
+    {
+      "line_number": 36,
+      "content": "should give the same $|\\tau|$ to 50 dps; the resulting"
+    },
+    {
+      "line_number": 42,
+      "content": "contributions vary by orders of magnitude across the six probe"
+    }
+  ],
+  "q-beta-q-eq-one-shadow-gate-proof.md": [
+    {
+      "line_number": 5,
+      "content": "The $c_3$ anchor is conjectural at the value level (registry \u00a73 records it as `EMPIRICAL \u2014 near-match`, refuted as a real-q fibre element by C1\u2013C2) but **anchored as an integer shadow at q = 1**: it equals the Hopf-link Jones polynomial evaluated at $q = 1$, which is $-2$ in our normalization. A candidate whose $q \\to 1$ limit gives anything other than $-2$ is structurally inconsistent with the registry anchor and is therefore REFUTED at the formalize-first level (before any numerical anchor sweep at $q_0$)."
+    }
+  ],
+  "hecke-generator-poly-reduction.md": [
+    {
+      "line_number": 55,
+      "content": "`computations/chi_monotone_transfer.py`."
+    }
+  ],
+  "intro-wenzl-bridge-cyclotomic.md": [
+    {
+      "line_number": 22,
+      "content": "chapter's most concrete numerical content and is the natural"
+    }
+  ],
+  "habiro-expansion-atomic-proof.md": [
+    {
+      "line_number": 58,
+      "content": "The symbolic pipeline `habiro_coefficients_atomic.py` implements"
+    },
+    {
+      "line_number": 71,
+      "content": "numerical-interpolation pipeline at $q_0 \\approx 1.1100$ to 50"
+    }
+  ],
+  "crystal-isospin-degeneracy-proof.md": [
+    {
+      "line_number": 61,
+      "content": "[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)*"
+    },
+    {
+      "line_number": 86,
+      "content": "[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py),"
+    }
+  ],
+  "archimedean-functor-uniqueness.md": [
+    {
+      "line_number": 198,
+      "content": "No numerical witness is appropriate for a uniqueness claim. The"
+    }
+  ],
+  "explicit-alpha-k-h3-proof.md": [
+    {
+      "line_number": 36,
+      "content": "The vanishing is exact (verified to numerical precision $10^{-16}$ in"
+    },
+    {
+      "line_number": 71,
+      "content": "Numerical evaluation at $q_0 \\approx 1.110$ matches the symbolic"
+    }
+  ],
+  "six-term-mass-formula-complete.md": [
+    {
+      "line_number": 4,
+      "content": "script(s) and witness JSON(s), and current derivation status."
+    },
+    {
+      "line_number": 39,
+      "content": "- *Computation: `crt_markov.py` (witness `crt-markov.witness.json`);"
+    },
+    {
+      "line_number": 40,
+      "content": "`deuteron_first_principles.py` (witness `deuteron-first-principles.witness.json`);"
+    },
+    {
+      "line_number": 41,
+      "content": "`light_isotope_sweep.py` (witness `light-isotope-sweep.witness.json`).*"
+    },
+    {
+      "line_number": 62,
+      "content": "- *Numerical pathology at $q_0$ (documented ):"
+    },
+    {
+      "line_number": 84,
+      "content": "- *Computation: `mass_endomorphism.py`, `crt_markov.py`"
+    },
+    {
+      "line_number": 85,
+      "content": "(`tower_mass_symbolic_eval`), `tower_isotope_absolute.py`"
+    },
+    {
+      "line_number": 124,
+      "content": "- *Computation: `frobenius_partition_sum.py` (witness"
+    },
+    {
+      "line_number": 126,
+      "content": "`hochschild_h3.py` for $H_3(R, q)$ structure.*"
+    },
+    {
+      "line_number": 158,
+      "content": "- *Computation: `ribbon_content_average.py`,"
+    },
+    {
+      "line_number": 159,
+      "content": "`chirality_variants_probe.py`, `d_chirality_probe.py`"
+    },
+    {
+      "line_number": 179,
+      "content": "- *Computation: `gb_residue_tower.py` (first-pass numerical,"
+    },
+    {
+      "line_number": 180,
+      "content": "tiny residues at real q_0 approximation), `habiro_residue_symbolic.py`"
+    },
+    {
+      "line_number": 197,
+      "content": "`term5_aK_audit.py`).  Terms 2 and 3 satisfy it only in the R-side"
+    },
+    {
+      "line_number": 202,
+      "content": "dependent).  Numerical evaluation at $q_0$ amplifies this by $\\sim 10^5$"
+    },
+    {
+      "line_number": 223,
+      "content": "itself a Markov trace.  See `kahler_lift.py` ('s recursion"
+    },
+    {
+      "line_number": 227,
+      "content": "#526.  The current `paper_six_term_isotope_sweep.py` evaluates the"
+    },
+    {
+      "line_number": 228,
+      "content": "literal $\\Phi_q(|\\hat V_i|)$ form, which is the **closed numerical"
+    },
+    {
+      "line_number": 263,
+      "content": "a numerical-interpolation path (`habiro_coefficients_interpolate.py`)"
+    },
+    {
+      "line_number": 264,
+      "content": "is scaffolded: Hoefsmit in `mpmath` at rational sample points, then"
+    },
+    {
+      "line_number": 270,
+      "content": "correction dominates (numerical, requires extending the BW"
+    }
+  ],
+  "flavor-split-habiro-derivation.md": [
+    {
+      "line_number": 3,
+      "content": "To structurally derive (rather than numerically probe) the intrinsic $0.10\\%$ residual for the nucleon flavor split $\\Delta_{pn}$, we must treat the weak $\\beta$-decay insertion precisely as we did the photon vertex in the $\\alpha_{\\text{EM}}$ derivation."
+    }
+  ],
+  "intro-six-term-crystal-isospin-chirality.md": [
+    {
+      "line_number": 2,
+      "content": "chapter's headline numerical prediction: an explicit"
+    }
+  ],
+  "three-halves-structural-factor.md": [
+    {
+      "line_number": 33,
+      "content": "$q_0 \\approx 1.110$ by specialisation; numerical cross-checks at"
+    },
+    {
+      "line_number": 34,
+      "content": "50-dps mpmath verify each identity to $\\leq 10^{-40}$ in the"
+    },
+    {
+      "line_number": 35,
+      "content": "[`tau-amphichiral-sdp-probe.witness.json`](../../../computations/probes/tau-amphichiral-sdp-probe.witness.json)"
+    }
+  ],
+  "borromean-markov-trace-closed-form-proof.md": [
+    {
+      "line_number": 90,
+      "content": ">    `phase5/phase1c_proton_h3_symbolic_decomposition.py`), whose"
+    }
+  ],
+  "frobenius-antipode-unifies-chirality-and-tower.md": [
+    {
+      "line_number": 5,
+      "content": "`alpha_blend_tower.py` \u2014 use the **same algebraic operation**:"
+    },
+    {
+      "line_number": 48,
+      "content": "(`computations/frobenius_antipode_symmetry.py`).**"
+    },
+    {
+      "line_number": 74,
+      "content": "(`computations/alpha/alpha_blend_tower.py`).**"
+    },
+    {
+      "line_number": 129,
+      "content": "- *`computations/frobenius_antipode_symmetry.py`"
+    },
+    {
+      "line_number": 131,
+      "content": "- *`computations/alpha/alpha_blend_tower.py`"
+    },
+    {
+      "line_number": 133,
+      "content": "- *`computations/tower_full_jet_filtration.py`"
+    },
+    {
+      "line_number": 136,
+      "content": "`computations/all_subsets_tower.py`).*"
+    }
+  ],
+  "figure-8-archimedean-illustration.md": [
+    {
+      "line_number": 95,
+      "content": "Bloch-Wigner dilogarithm. The numerical value $:val[Vol_4_1]{precision=6}\\ldots ="
+    }
+  ],
+  "knot-factor-amphicheiral-proof.md": [
+    {
+      "line_number": 55,
+      "content": "[`docs/coordination/i1-probe-author-queue-.md`](../../../../docs/coordination/i1-probe-author-queue-.md)"
+    },
+    {
+      "line_number": 57,
+      "content": "[`computations/probes/knot_factor_amphicheiral_BD_probe.py`](../../../../computations/probes/knot_factor_amphicheiral_BD_probe.py)."
+    }
+  ],
+  "cyclotomic-depth3-dimension-synthesis-proof.md": [
+    {
+      "line_number": 115,
+      "content": "### Numerical PSLQ certification at $K = 5, 7$"
+    },
+    {
+      "line_number": 117,
+      "content": "[`cyclotomic_depth3_dimension_pslq.py`](https://github.com/litlfred/qou/blob/main/computations/cyclotomic_depth3_dimension_pslq.py),"
+    },
+    {
+      "line_number": 130,
+      "content": "same script works); each test takes ~30 seconds at 50 dps."
+    }
+  ],
+  "t-beta-markov-frobenius-collapse-general.md": [
+    {
+      "line_number": 39,
+      "content": "- [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](../../../docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md) \u2014 structural finding + numerical verification at $q_0$."
+    }
+  ],
+  "conj-rho-prefactor-structural.md": [
+    {
+      "line_number": 7,
+      "content": "is currently determined case-by-case as a numerical by-product of"
+    },
+    {
+      "line_number": 41,
+      "content": "The numerically verified rule (see \"Critical structural finding\" below)"
+    },
+    {
+      "line_number": 70,
+      "content": "(with $q_0 = 1.109978595554181\\ldots$ (50 dps)), so $\\dim_q((2,1)) \\approx 2.01$. The"
+    },
+    {
+      "line_number": 112,
+      "content": "The B_3-level numerical evaluation"
+    },
+    {
+      "line_number": 113,
+      "content": "([`computations/rho_prefactor_structural_verifier.py`](https://github.com/litlfred/qou/blob/main/computations/rho_prefactor_structural_verifier.py),"
+    }
+  ],
+  "per-braid-mass-tower.md": [
+    {
+      "line_number": 137,
+      "content": "## Numerical verification"
+    },
+    {
+      "line_number": 140,
+      "content": "[`computations/per_braid_tower.py`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/computations/per_braid_tower.py),"
+    }
+  ],
+  "markov-trace-frobenius-selection.md": [
+    {
+      "line_number": 127,
+      "content": "(`atomic_tr_m_mpfr_50dps.py`), `markov_peel`, the $\\chi$-cache"
+    },
+    {
+      "line_number": 128,
+      "content": "combiner (`canonical_tr_m_via_chi_cache.py`), and the Habiro"
+    }
+  ],
+  "he4-two-row-dominance.md": [
+    {
+      "line_number": 10,
+      "content": "[`mass_at_3A_proper.atom_braid_word_3A(2, 2)`](computations/mass_at_3A_proper.py)."
+    },
+    {
+      "line_number": 65,
+      "content": "[`delta_lambda_2row_stratum_analysis.py`](computations/delta_lambda_2row_stratum_analysis.py),"
+    }
+  ],
+  "interface-knot-markov-z.md": [
+    {
+      "line_number": 78,
+      "content": "- Script: [`computations/delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)"
+    }
+  ],
+  "q-beta-over-e0-classical-vanishing.md": [
+    {
+      "line_number": 32,
+      "content": "scalar** (numerical at $q_0$ \u2014 the affine target $n_{\\text{target}} = S(q_0) \\approx 0.18689$"
+    },
+    {
+      "line_number": 37,
+      "content": "(see [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_1ppq_achieved.py))."
+    }
+  ],
+  "e-infinity-page-identifications.md": [
+    {
+      "line_number": 213,
+      "content": "trace. Currently the $1 + h$ formula is derived numerically"
+    }
+  ],
+  "calibration-algebraic-mass-intro.md": [
+    {
+      "line_number": 1,
+      "content": "_[draft]_ The previous section produced a categorical mass functor that is dimensionless and unfixed in scale. We now insert the minimum data needed to anchor it to physical units. The three inputs are aligned with the three Wedderburn channels of $H_3(R, q)$, so the calibration is structural rather than empirical: each channel takes one anchor, and the rest of the formula is forced. From the anchored mass we then derive the algebraic mass formula, the Hoefsmit seminormal $R$-matrix, the Habiro brane tower, and the quantum-dilogarithm $\\Phi_q$ that compiles the whole chapter's numerical witnesses."
+    },
+    {
+      "line_number": 5,
+      "content": "The body of the section develops the seminormal and convergence machinery. **Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$** (prop), with the figure-eight branching rule, supplies the explicit seminormal forms. The convergence backbone runs through **Hecke convergence bound** (prop), **Markov-trace inductive limit** (prop), and the long $\\mathfrak{Q}_\\beta$ ladder culminating in **$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder** (prop). The Habiro / brane-tower layer is filled in by **Habiro ring** (def), **$\\widehat{Z}$ ring** (def), **Algebraic quantum volume** (def) and its specialisation, together with **Quantum dilogarithm stratified** (def) and **Q-Pochhammer partial product** (def) \u2014 the dilogarithm objects every numerical witness consumes. The realisation functor and its companion blocks package the bridge from the algebraic substrate to numerical evaluation."
+    }
+  ],
+  "torus-knot-delta-q-writhe.md": [
+    {
+      "line_number": 43,
+      "content": "[`rosso_jones_three_strand_delta_q.py`](../../computations/rosso_jones_three_strand_delta_q.py)."
+    }
+  ],
+  "alpha-k-categorical-closure.md": [
+    {
+      "line_number": 105,
+      "content": "## Numerical evidence (substrate level)"
+    },
+    {
+      "line_number": 108,
+      "content": "[`computations/derived_masses.py`](https://github.com/litlfred/qou/blob/main/computations/derived_masses.py)"
+    }
+  ],
+  "kashaev-density-equals-sdp-multiplicity.md": [
+    {
+      "line_number": 60,
+      "content": "[`r5_full_canonical_knot_solver.py`](../../computations/r5_full_canonical_knot_solver.py)"
+    },
+    {
+      "line_number": 85,
+      "content": "[`mass_table_ppb.py`](../../computations/mass_table_ppb.py)"
+    },
+    {
+      "line_number": 86,
+      "content": "script self-declared the density rule $\\rho_F \\in \\{1, 2\\}$ as"
+    },
+    {
+      "line_number": 112,
+      "content": "- $\\rho_F$ \u2014 Kashaev prefactor in `mass_table_ppb.py` (unnamed, compute-only)"
+    },
+    {
+      "line_number": 115,
+      "content": "[`mass_table_ppb.py`](../../computations/mass_table_ppb.py)"
+    },
+    {
+      "line_number": 121,
+      "content": "- [`mass_table_ppb.py`](../../computations/mass_table_ppb.py)"
+    },
+    {
+      "line_number": 124,
+      "content": "- [`predict`](../../computations/mass_table_ppb.py)"
+    }
+  ],
+  "jonquiere-cyclotomic-tate-rationality-proof.md": [
+    {
+      "line_number": 99,
+      "content": "### Numerical verification at 50 dps"
+    },
+    {
+      "line_number": 101,
+      "content": "[`jonquiere_cyclotomic_general.py`](https://github.com/litlfred/qou/blob/main/computations/jonquiere_cyclotomic_general.py),"
+    }
+  ],
+  "h3-markov-wenzl-weights.md": [
+    {
+      "line_number": 126,
+      "content": "> $q$-dependent closed forms above, and numerical reproduction of the"
+    }
+  ],
+  "gb-depth-period-correspondence.md": [
+    {
+      "line_number": 88,
+      "content": "explicit numerical witness in"
+    }
+  ],
+  "explicit-alpha-k-h4-proof.md": [
+    {
+      "line_number": 35,
+      "content": "**Numerical evaluation at $q_0$.**  Hoefsmit characters computed via"
+    },
+    {
+      "line_number": 37,
+      "content": "`computations/hecke/hecke_characters.py`); the $5 \\times 5$"
+    },
+    {
+      "line_number": 49,
+      "content": "verifies to $\\sim 10^{-17}$ numerical precision against the"
+    },
+    {
+      "line_number": 76,
+      "content": "(only the depth-3 term survives).  Both sides agree to numerical"
+    }
+  ],
+  "markov-pair-z2.md": [
+    {
+      "line_number": 29,
+      "content": "(cf. `adjacent-vs-full-probe.witness.json`,"
+    }
+  ],
+  "six-term-per-derivation-weights-proof.md": [
+    {
+      "line_number": 53,
+      "content": "`computations/sweeps/paper_six_term_isotope_sweep.py`"
+    }
+  ],
+  "pn-averaging-uniqueness.md": [
+    {
+      "line_number": 33,
+      "content": "`lambda_scale_refinement_h4_correction_bring.py` is **not purely"
+    },
+    {
+      "line_number": 45,
+      "content": "in `crystal_pole_order.py` (line 318: `pole_t35 == 10`)."
+    },
+    {
+      "line_number": 58,
+      "content": "(modulo the $h_q^4$ correction tracked in the refinement probe)."
+    },
+    {
+      "line_number": 68,
+      "content": "`probe_pn_flavor_asymmetry.py` Scheme 4).  Currently carried as a"
+    },
+    {
+      "line_number": 83,
+      "content": "The closed-form `closed_form_tau_M.py` already exposes the"
+    }
+  ],
+  "vc-as-depth-2-instance.md": [
+    {
+      "line_number": 76,
+      "content": "For an explicit depth-2 numerical witness on the figure-8 knot"
+    }
+  ],
+  "three-calibration-inputs-proof.md": [
+    {
+      "line_number": 10,
+      "content": "1. **Dimensional analysis.** The modulus $q_0$ is pinned numerically by"
+    }
+  ],
+  "demazure-fiber-markov-trace.md": [
+    {
+      "line_number": 132,
+      "content": "## Numerical verification"
+    },
+    {
+      "line_number": 134,
+      "content": "The companion script"
+    },
+    {
+      "line_number": 135,
+      "content": "[`demazure_markov_trace.py`](https://github.com/litlfred/qou/blob/main/computations/demazure_markov_trace.py)"
+    }
+  ],
+  "spectral-sequence-h3-explicit.md": [
+    {
+      "line_number": 202,
+      "content": "$R$ (paper's categorical base ring); no numerical evaluation is required"
+    }
+  ],
+  "q-rogers-pentagon-archimedean.md": [
+    {
+      "line_number": 76,
+      "content": "[`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/computations/pentagon_reduction_li2q.py)"
+    },
+    {
+      "line_number": 80,
+      "content": "ensures the reorganisation is numerically consistent."
+    },
+    {
+      "line_number": 108,
+      "content": "The numerical residual at $u = v = 0.7$ is $2.3 \\times 10^{-3}$ \u2014 the"
+    }
+  ],
+  "y-lambda-closed-form-wenzl-bridge.md": [
+    {
+      "line_number": 65,
+      "content": "candidates in `schur_element_identify.py`)."
+    },
+    {
+      "line_number": 78,
+      "content": "([`schur_element_identify.py`](#)) fails to recover the closed"
+    },
+    {
+      "line_number": 90,
+      "content": "available numerically via MPFR witness) derive symbolically via"
+    },
+    {
+      "line_number": 101,
+      "content": "[`computations/gb_filtration_gauge_invariance_test.py`](#)"
+    },
+    {
+      "line_number": 106,
+      "content": "[`computations/y_lambda_wenzl_bridge_extended.py`](#)"
+    },
+    {
+      "line_number": 126,
+      "content": "the larger ones, but they evaluate correctly via numerical"
+    }
+  ],
+  "binding-scale-catalan-proof.md": [
+    {
+      "line_number": 6,
+      "content": "theorem of hyperbolic geometry, not a numerical approximation."
+    }
+  ],
+  "confinement-nf-structure-forcing.md": [
+    {
+      "line_number": 29,
+      "content": "LP is solved via [`solve_operator_selection_lp`](../../computations/lp_dual_solver.py)"
+    },
+    {
+      "line_number": 57,
+      "content": "- The Frobenius Gram in this probe is taken **diagonal**"
+    },
+    {
+      "line_number": 63,
+      "content": "requires a numerical / interval-arithmetic switch in the symbolic"
+    }
+  ],
+  "two-row-stratum.md": [
+    {
+      "line_number": 75,
+      "content": "The companion probe"
+    },
+    {
+      "line_number": 76,
+      "content": "[`probe_he4_canonical_tr_m_fingerprint.py`](computations/probe_he4_canonical_tr_m_fingerprint.py)"
+    },
+    {
+      "line_number": 84,
+      "content": "[`delta_lambda_2row_stratum_analysis.py`](computations/delta_lambda_2row_stratum_analysis.py)"
+    }
+  ],
+  "gs-residue-at-root-existence.md": [
+    {
+      "line_number": 62,
+      "content": "*The numerical residue values at $q_0 = :val[q_0]{precision=6}\\ldots$ for proton,"
+    },
+    {
+      "line_number": 63,
+      "content": "neutron, deuteron are computed by `term6_full_pole_sum.py` and stored"
+    }
+  ],
+  "isospin-from-canonical-bowtie.md": [
+    {
+      "line_number": 1,
+      "content": "> **CORRECTION NOTE ( surfaced by `verify_isospin_bar_anomaly.py`):**"
+    },
+    {
+      "line_number": 43,
+      "content": "[`_li_2_q_util.flavor_split_subleading`](../../computations/_li_2_q_util.py)."
+    },
+    {
+      "line_number": 54,
+      "content": "[`isotope_record_schema.py`](../../computations/isotope_record_schema.py)),"
+    },
+    {
+      "line_number": 152,
+      "content": "[`_li_2_q_util.flavor_split_subleading`](../../computations/_li_2_q_util.py)"
+    },
+    {
+      "line_number": 154,
+      "content": "[`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py)."
+    },
+    {
+      "line_number": 176,
+      "content": "[`verify_isospin_bar_anomaly.py`](../../computations/verify_isospin_bar_anomaly.py))."
+    },
+    {
+      "line_number": 220,
+      "content": "3. The isospin-Z/2-anti-symmetric residue verification numerical witness"
+    },
+    {
+      "line_number": 258,
+      "content": "flavor split closed form (verified numerically at 305 ppm). -/"
+    },
+    {
+      "line_number": 278,
+      "content": "1. **Author the verification compute script**:"
+    },
+    {
+      "line_number": 279,
+      "content": "`verify_isospin_bar_anomaly.py` \u2014 at $q = q_0$, evaluate the"
+    },
+    {
+      "line_number": 318,
+      "content": "[`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py)"
+    }
+  ],
+  "q-rogers-pentagon-archimedean-proof.md": [
+    {
+      "line_number": 24,
+      "content": "**Numerical evidence** at $q_0 \\approx 1.110$, from"
+    },
+    {
+      "line_number": 25,
+      "content": "[`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/computations/pentagon_reduction_li2q.py)"
+    }
+  ],
+  "staircase-ew-residual.md": [
+    {
+      "line_number": 36,
+      "content": "[`close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/computations/close_321_weinberg_gap.py),"
+    },
+    {
+      "line_number": 48,
+      "content": "[`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/computations/staircase_ew_residual_conjecture.py),"
+    }
+  ],
+  "partition-sum-proton-residual.md": [
+    {
+      "line_number": 84,
+      "content": "2. *The numerical proton-mass calibration itself has uncertainty"
+    },
+    {
+      "line_number": 88,
+      "content": "*Script `computations/frobenius_partition_sum.py`"
+    },
+    {
+      "line_number": 116,
+      "content": "**Numerical witness at $q_0 \\approx 1.11$.**"
+    },
+    {
+      "line_number": 125,
+      "content": "upstream (`kerov_walk_verify.py` confirms the reciprocal-dim"
+    },
+    {
+      "line_number": 131,
+      "content": "identity on the full Wedderburn decomposition. Numerical match"
+    },
+    {
+      "line_number": 136,
+      "content": "*Upstream `tower_isotope_absolute.py` tested whether the same"
+    },
+    {
+      "line_number": 191,
+      "content": "*Witnesses: `deuteron-residual-probe.witness.json`,"
+    },
+    {
+      "line_number": 197,
+      "content": "- [residual_partition_sum.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/residual_partition_sum.py)"
+    },
+    {
+      "line_number": 198,
+      "content": "- [tower_isotope_absolute.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/tower_isotope_absolute.py)"
+    },
+    {
+      "line_number": 199,
+      "content": "- [kerov_walk_verify.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/kerov_walk_verify.py)"
+    }
+  ],
+  "jet-prefix-gb-filtration.md": [
+    {
+      "line_number": 1,
+      "content": "Upstream `pure_hecke_binding.py` and `pure_hecke_binding_prefix.py`"
+    },
+    {
+      "line_number": 94,
+      "content": "*Script `gb_prefix_probe.py` implements a first-pass version"
+    },
+    {
+      "line_number": 151,
+      "content": "3. *What is the numerical verification cost for $A = 3, 4$?*"
+    }
+  ],
+  "q-character-closes-parity-gap.md": [
+    {
+      "line_number": 34,
+      "content": "**Numerical witness at $A = 1$ ($q_0 \\approx 1.11$).**"
+    },
+    {
+      "line_number": 94,
+      "content": "prohibitive.  For $A \\geq 2$ use the **numerical**"
+    },
+    {
+      "line_number": 96,
+      "content": "`computations/hecke/hecke_characters.py`"
+    },
+    {
+      "line_number": 118,
+      "content": "*Script: `computations/hecke/hecke_character_symbolic.py`."
+    },
+    {
+      "line_number": 124,
+      "content": "*Apply the numerical pipeline in"
+    },
+    {
+      "line_number": 125,
+      "content": "`computations/hecke/hecke_characters.py` (full $H_{3A}$"
+    },
+    {
+      "line_number": 128,
+      "content": "numerical Hoefsmit handles the 2$\\times$2 block $b^2$ sign robustly."
+    }
+  ],
+  "categorical-higgs-mechanism.md": [
+    {
+      "line_number": 122,
+      "content": "(Tier A2, this branch). Simple-multiplicity reading numerically"
+    }
+  ],
+  "brane-tower-z-habiro.md": [
+    {
+      "line_number": 23,
+      "content": "$\\Phi_q$ at $z = q_0 \\approx 1.11$. Numerically"
+    },
+    {
+      "line_number": 122,
+      "content": "uniform-depth probe"
+    },
+    {
+      "line_number": 123,
+      "content": "([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_phiq_uniform_k.py))"
+    },
+    {
+      "line_number": 204,
+      "content": "The full probe record \u2014 sweep tables, error magnitudes, and the"
+    },
+    {
+      "line_number": 243,
+      "content": "`z-habiro-increment-probe`, verdict `cauchy-limit-exists-localised`:"
+    }
+  ],
+  "q-beta-c-2-eq-neg-one-structural.md": [
+    {
+      "line_number": 19,
+      "content": "The earlier numerical observation $c_2 \\approx -1$ (PR"
+    },
+    {
+      "line_number": 30,
+      "content": "[`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)"
+    },
+    {
+      "line_number": 34,
+      "content": "## Numerical impact at $q_0$"
+    }
+  ],
+  "hecke-markov-transition-proof.md": [
+    {
+      "line_number": 47,
+      "content": "the numerical evaluation is given in Chapter 7"
+    }
+  ],
+  "lepton-bring-surface-h3-3channel.md": [
+    {
+      "line_number": 157,
+      "content": "- 1 Higgs (figure-eight $4_1$, \"Higgs field / mass mechanism\" per `knot-volumes.py:58`)"
+    },
+    {
+      "line_number": 179,
+      "content": "- Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)"
+    },
+    {
+      "line_number": 180,
+      "content": "- Compute infrastructure: `computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)"
+    },
+    {
+      "line_number": 181,
+      "content": "- T6 closure attempt: `computations/t6_lepton_h3_3channel_convention.py`"
+    }
+  ],
+  "q-beta-c-2-eq-neg-one-structural-proof.md": [
+    {
+      "line_number": 4,
+      "content": "truncation of [`probe_q_beta_operator_valued_N3.py`](https://github.com/litlfred/qou/blob/main/computations/probe_q_beta_operator_valued_N3.py))"
+    }
+  ],
+  "borromean-bloch-group-element.md": [
+    {
+      "line_number": 113,
+      "content": "$\\mathrm{Vol}(\\mathcal{B}_3)$ in [`mass_table_ppb.py`](../../computations/mass_table_ppb.py)),"
+    },
+    {
+      "line_number": 154,
+      "content": "1. **Compute prototype**: at $q = q_0$, numerically evaluate both"
+    }
+  ],
+  "crystal-r-matrix-sub-lemma.md": [
+    {
+      "line_number": 49,
+      "content": "was open for general multidim $\\lambda$ (verified numerically 11/11"
+    },
+    {
+      "line_number": 91,
+      "content": "## Numerical verification (witness)"
+    },
+    {
+      "line_number": 93,
+      "content": "[`computations/crystal_pole_order.py`](../../../computations/crystal_pole_order.py)"
+    }
+  ],
+  "cl3-zeta5-pslq-independence.md": [
+    {
+      "line_number": 14,
+      "content": "*This proposition certifies, via PSLQ at 50 dps with coefficient"
+    },
+    {
+      "line_number": 16,
+      "content": "with any standard weight-3 period. Strong numerical evidence \u2014"
+    },
+    {
+      "line_number": 21,
+      "content": "[`cl3_zeta5_pslq_search.py`](https://github.com/litlfred/qou/blob/main/computations/cl3_zeta5_pslq_search.py),"
+    },
+    {
+      "line_number": 36,
+      "content": "### Numerical certification"
+    },
+    {
+      "line_number": 41,
+      "content": "PSLQ at 50 dps would have found it (with overwhelming probability)."
+    },
+    {
+      "line_number": 59,
+      "content": "So **at the level of accessible numerical certification**, the"
+    },
+    {
+      "line_number": 64,
+      "content": "- 1-dim: $X$ \u2014 *genuinely new*, with strong numerical evidence of"
+    },
+    {
+      "line_number": 78,
+      "content": "2. **Higher PSLQ precision** (e.g., 100+ dps with $10^{12}$"
+    },
+    {
+      "line_number": 79,
+      "content": "coefficient bound) would extend the numerical certification but"
+    },
+    {
+      "line_number": 85,
+      "content": "The current PSLQ result is the **strongest unconditional numerical"
+    }
+  ],
+  "mass-spectrum-generating-function.md": [
+    {
+      "line_number": 52,
+      "content": "the substrate value $q_0 = 1.109978595554181\\ldots$ (50 dps; symbolic"
+    }
+  ],
+  "conj-lepton-tower-h-n-plus-1-branching.md": [
+    {
+      "line_number": 30,
+      "content": "The factor $[3]_q \\cdot [2]_q / [4]_q$ was numerically identified"
+    },
+    {
+      "line_number": 32,
+      "content": "+ [`computations/t6_three_halves_factor_probes.py`](../../../computations/t6_three_halves_factor_probes.py)"
+    },
+    {
+      "line_number": 52,
+      "content": "| m | Lepton | Predicted \u03be_m (corrected indexing m+2) | Numerical at q_0 |"
+    },
+    {
+      "line_number": 116,
+      "content": "All three readings are consistent with the muon (m=2) numerical"
+    },
+    {
+      "line_number": 130,
+      "content": "Numerical verification at $q_0 \\approx 1.110$ (`tau_amphichiral_sdp_probe.py` witness):"
+    },
+    {
+      "line_number": 170,
+      "content": "- [`computations/t6_three_halves_factor_probes.py`](../../../computations/t6_three_halves_factor_probes.py) \u2014 muon empirical probe"
+    },
+    {
+      "line_number": 171,
+      "content": "- [`computations/probes/tau_amphichiral_sdp_probe.py`](../../../computations/probes/tau_amphichiral_sdp_probe.py) \u2014 tau amphichiral q-bracket probe"
+    }
+  ],
+  "p-from-braid-mirror.md": [
+    {
+      "line_number": 106,
+      "content": "1. **Verify numerically** that the Hecke quadratic preserves under P"
+    },
+    {
+      "line_number": 111,
+      "content": "holds (multiply the original by $\\sigma_i^{-2}$). Concrete probe"
+    }
+  ],
+  "hecke-generator-poly-reduction-proof.md": [
+    {
+      "line_number": 24,
+      "content": "$E_2 = \\prod_j (-q^{-1} + d_j)$ used for numerical speed is a corollary that"
+    }
+  ],
+  "chirality-writhe-ribbon-derivation.md": [
+    {
+      "line_number": 116,
+      "content": "**Numerical test at $H_6(R, q)$ (satellite $D$) \u2014 refuted (predicted $a_K = -2.164$ vs paper's $a_D = +1.209$).**"
+    },
+    {
+      "line_number": 117,
+      "content": "*Script `ribbon_content_average.py` computes"
+    },
+    {
+      "line_number": 214,
+      "content": "*`computations/ribbon_content_average.py` +"
+    },
+    {
+      "line_number": 218,
+      "content": "*Script `chirality_variants_probe.py` tested 8 candidate writhe-"
+    }
+  ],
+  "q-beta-c-k-leading-bias-correction-identity-proof.md": [
+    {
+      "line_number": 21,
+      "content": "## Numerical confirmation at $q_0$"
+    },
+    {
+      "line_number": 23,
+      "content": "The probe [`qbeta_ck_truncation_bias_correction_probe.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py)"
+    }
+  ],
+  "crystal-bases-path-a.md": [
+    {
+      "line_number": 6,
+      "content": "[`per_irrep_pole_atom.py`](../../../computations/per_irrep_pole_atom.py)"
+    },
+    {
+      "line_number": 24,
+      "content": "[`crystal_pole_order.py`](../../../computations/crystal_pole_order.py)),"
+    },
+    {
+      "line_number": 46,
+      "content": "[`per_irrep_pole_atom_crystal.py`](../../../computations/per_irrep_pole_atom_crystal.py)"
+    },
+    {
+      "line_number": 57,
+      "content": "[`y_lambda_pole_order_cache.py`](../../../computations/y_lambda_pole_order_cache.py)"
+    },
+    {
+      "line_number": 131,
+      "content": "the budget of `per_irrep_pole_proton_h3.py` adapted to neutron"
+    }
+  ],
+  "geom-bridge-status.md": [
+    {
+      "line_number": 45,
+      "content": "computation (`phi0_normalization_disproof.py`) gives"
+    },
+    {
+      "line_number": 55,
+      "content": "the degeneracy tell of a numerical accident, not a derivation)."
+    }
+  ],
+  "knot-mass-formula-unified.md": [
+    {
+      "line_number": 55,
+      "content": "Markov-invariant. Numerically at $q_0 \\approx 1.110$ this"
+    },
+    {
+      "line_number": 95,
+      "content": "model (`path-b-habiro-mass-probe.witness.json`). None of the"
+    },
+    {
+      "line_number": 108,
+      "content": "(or another structural reformulation) gives the canonical numerical"
+    },
+    {
+      "line_number": 186,
+      "content": "*Numerical values per"
+    },
+    {
+      "line_number": 187,
+      "content": "[`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_term4_conventions.py):*"
+    },
+    {
+      "line_number": 204,
+      "content": "([`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass_formula_6term.py),"
+    },
+    {
+      "line_number": 205,
+      "content": "[`unified_low_isotope_predictor.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/unified_low_isotope_predictor.py))"
+    },
+    {
+      "line_number": 226,
+      "content": "(`residual_partition_sum.py`).*"
+    },
+    {
+      "line_number": 261,
+      "content": "(`computations/bw_chirality_isotopes.py`) gives"
+    },
+    {
+      "line_number": 288,
+      "content": "per upstream `pure_hecke_binding.py`.*"
+    }
+  ],
+  "knot-factor-frobenius-pairing.md": [
+    {
+      "line_number": 171,
+      "content": "- `computations/substrate/hecke_core.py::atom_markov_trace`:"
+    },
+    {
+      "line_number": 174,
+      "content": "- `computations/substrate/hecke_core.py::binding_from_frobenius_pairing`:"
+    }
+  ],
+  "q-pochhammer-partial-product.md": [
+    {
+      "line_number": 115,
+      "content": "## Numerical extraction (for the solver pipeline)"
+    }
+  ],
+  "kashaev-volume-conjecture.md": [
+    {
+      "line_number": 61,
+      "content": "numerical computation is axiomatised so that the algebraic tower"
+    }
+  ],
+  "hoefsmit-V21-cos-symmetrization.md": [
+    {
+      "line_number": 102,
+      "content": "[`probe_q_beta_per_irrep_cos.py`](../../computations/probe_q_beta_per_irrep_cos.py)"
+    }
+  ],
+  "frobenius-codim-universal-proof.md": [
+    {
+      "line_number": 217,
+      "content": "[`computations/phase5/phase5_n8_dim_q_table.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/computations/phase5/phase5_n8_dim_q_table.py);"
+    },
+    {
+      "line_number": 227,
+      "content": "`phase5_n8_dim_q_table.py` script."
+    }
+  ],
+  "pre-archimedean-derivation-chain.md": [
+    {
+      "line_number": 13,
+      "content": "> derivation chain.  The **compute-pipeline mapping** (which script implements"
+    }
+  ],
+  "q-beta-c3-hopf-three-fold-markov.md": [
+    {
+      "line_number": 87,
+      "content": "Per [`probe_q_beta_gamma_gamma_derivation.py`](../../computations/probe_q_beta_gamma_gamma_derivation.py),"
+    }
+  ],
+  "binding-alpha-shift-extension.md": [
+    {
+      "line_number": 133,
+      "content": "`binding_rotation_phase_lead.py`;"
+    },
+    {
+      "line_number": 136,
+      "content": "- the q-Hamiltonian rotational-scale probe"
+    },
+    {
+      "line_number": 137,
+      "content": "(`binding_qhamiltonian_rotational_scale.py`) confirms $\\mu_0 \\approx 1.63$ MeV"
+    }
+  ],
+  "macdonald-hook-telescope.md": [
+    {
+      "line_number": 51,
+      "content": "`y_lambda_macdonald_telescope.py` (every partition closes via"
+    },
+    {
+      "line_number": 52,
+      "content": "`sympy.cancel` to 0) and 191-sample numerical cross-check to"
+    },
+    {
+      "line_number": 116,
+      "content": "## Numerical verification"
+    },
+    {
+      "line_number": 118,
+      "content": "The companion script"
+    },
+    {
+      "line_number": 119,
+      "content": "[`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_macdonald_telescope.py)"
+    },
+    {
+      "line_number": 133,
+      "content": "by the witness's 50-dps precision)."
+    }
+  ],
+  "chirality-residue-mass-term-proof.md": [
+    {
+      "line_number": 26,
+      "content": "**Numerical witness (atomic isotopes).**"
+    },
+    {
+      "line_number": 30,
+      "content": "[`computations/atomic_chirality_residue.py`](#)."
+    },
+    {
+      "line_number": 72,
+      "content": "*Remark.* This proposition is a structural refinement of the unified mass formula. No new analytic content is added; the split exists by inspection.  The numerical witness shows that the chirality channel"
+    }
+  ],
+  "mass-endomorphism-jet-tower.md": [
+    {
+      "line_number": 115,
+      "content": "(see `adjacent-vs-full-probe.witness.json`)."
+    },
+    {
+      "line_number": 130,
+      "content": "[`jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)"
+    },
+    {
+      "line_number": 131,
+      "content": "measurement script confirms `uniform_bound_pass = true` for"
+    }
+  ],
+  "phi-q-categorical-truncation-proof.md": [
+    {
+      "line_number": 118,
+      "content": "**Remaining gap (numerical, not structural).**"
+    },
+    {
+      "line_number": 122,
+      "content": "conclude that the *numerical* mass formula at $q = q_0$ with $\\Phi_q$"
+    },
+    {
+      "line_number": 129,
+      "content": "with $T_w$, but the **uniform numerical bound** on the truncated"
+    },
+    {
+      "line_number": 141,
+      "content": "real-valued numerical evaluation at $|\\hat{V}|\\approx 1$."
+    }
+  ],
+  "qbeta-formalize-first-gates-intro.md": [
+    {
+      "line_number": 44,
+      "content": "any future $F$ that fails a gate is excluded without a numerical search."
+    }
+  ],
+  "he4-channel-active-set.md": [
+    {
+      "line_number": 58,
+      "content": "[`he4-sdp-compositional-probe.witness.json`](computations/he4-sdp-compositional-probe.witness.json).)**"
+    }
+  ],
+  "cl3-zeta5-geometric-realization.md": [
+    {
+      "line_number": 4,
+      "content": "The depth-3 numerical witness"
+    },
+    {
+      "line_number": 62,
+      "content": "> **Update (Numerical refutation)**: A PSLQ numerical experiment on the CS invariants of the seven Bring-natural torus-knot generators $\\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\\}$ reveals that their Chern-Simons invariants are exactly rational (e.g., $\\mathrm{CS}(T(2,5)) = 1/20, \\mathrm{CS}(T(2,3)) = -1/12$). Therefore, their CS invariants cannot be expressed as non-trivial $\\mathbb{Q}$-linear combinations of transcendental numbers like $\\zeta(3)$ and $\\mathrm{Cl}_3(2\\pi/5)$. This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2."
+    },
+    {
+      "line_number": 107,
+      "content": "numerical witness at depth 3, but no geometric image for the"
+    },
+    {
+      "line_number": 116,
+      "content": "script"
+    },
+    {
+      "line_number": 117,
+      "content": "([`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/computations/bring_trilog_zeta5_depth_3.py))"
+    },
+    {
+      "line_number": 120,
+      "content": "computation on a specific knot) and verify equality at 50 dps."
+    }
+  ],
+  "frobenius-limits-substrate-cost.md": [
+    {
+      "line_number": 171,
+      "content": "`kerov_walk_verify.py` ruled out the simplest Kerov random-walk"
+    }
+  ],
+  "t-beta-markov-frobenius-collapse.md": [
+    {
+      "line_number": 73,
+      "content": "\u2014 structural finding + numerical verification at $q_0$."
+    }
+  ],
+  "canonical-braid-interface-composition.md": [
+    {
+      "line_number": 4,
+      "content": "[`mass_at_3A_proper.atom_braid_word_3A`](../../computations/mass_at_3A_proper.py))."
+    },
+    {
+      "line_number": 39,
+      "content": "[`atom_braid_word_3A`](../../computations/mass_at_3A_proper.py);"
+    },
+    {
+      "line_number": 43,
+      "content": "[`interface_composition.py`](../../computations/interface_composition.py)"
+    },
+    {
+      "line_number": 64,
+      "content": "$\\gamma \\approx -1.295$ MeV closes the 4-atom probe set by definition"
+    }
+  ],
+  "q-beta-bar-even-kernel-typeclass.md": [
+    {
+      "line_number": 22,
+      "content": "A future probe author evaluating a candidate $F(q)$ currently has to"
+    },
+    {
+      "line_number": 78,
+      "content": "checks, a probe author writes:"
+    },
+    {
+      "line_number": 88,
+      "content": "with each field hypothesis discharged by the corresponding probe."
+    }
+  ],
+  "two-tier-scaling-pq.md": [
+    {
+      "line_number": 44,
+      "content": "$q_0 = 1.109978595554181\\ldots$ (50 dps) produces a dimensionless real number; converting"
+    }
+  ],
+  "binding-error-amplification-proof.md": [
+    {
+      "line_number": 39,
+      "content": "is numerically hostile: it subjects the small binding signal to the same"
+    }
+  ],
+  "dim-master-pentagon.md": [
+    {
+      "line_number": 57,
+      "content": "2. Verify numerically at $q_0$ that the DIM master Pentagon's"
+    }
+  ],
+  "topological-mass-formula-algebraic-proof.md": [
+    {
+      "line_number": 29,
+      "content": "the numerical mass; multiplication by $\\hbar_q^{-2}$ and"
+    }
+  ],
+  "conj-atom-braid-exterior-algebra.md": [
+    {
+      "line_number": 1,
+      "content": "**Conjecture (atom-braid exterior-algebra structure; partial-closure: verified at $A \\leq 4$, general $A$ open).** *Let `A = Z + N` with $Z \\geq 1$, $N \\geq 0$, and let $T_w(Z, N) \\in B_{3A}$ denote the canonical atom-braid word `atom_braid_word_3A(Z, N)` (`mass_at_3A_proper.py` recipe). Its image in the Iwahori\u2013Hecke algebra $H_{3A}(q)$ under the standard $\\sigma_i \\mapsto T_i$ representation generates a sub-algebra whose GB-NF filtration shape is given by*"
+    },
+    {
+      "line_number": 54,
+      "content": "**Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `\u03c7_\u03bb(T_w)` \u2014 the claimed \"active set $\\leq n^* + 1$\" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction."
+    },
+    {
+      "line_number": 99,
+      "content": "2. The specific structure of `_PROTON_G0 / _PROTON_G1 / _NEUTRON_G0 / _NEUTRON_G1` 3-strand patterns (cf. `mass_at_3A_proper.py`)"
+    },
+    {
+      "line_number": 104,
+      "content": "- [`computations/mass_at_3A_proper.py`](../../../computations/mass_at_3A_proper.py) \u2014 canonical `atom_braid_word_3A` recipe"
+    }
+  ],
+  "q-beta-categorical-precision-ladder.md": [
+    {
+      "line_number": 114,
+      "content": "## Numerical precision ladder"
+    },
+    {
+      "line_number": 116,
+      "content": "Verified at $q_0$ via [`binding_q_target_sweep.py`](../../computations/sweeps/binding_q_target_sweep.py) at 50 dps:"
+    },
+    {
+      "line_number": 137,
+      "content": "From [`audit_delta_S_chain.py`](../../computations/audit_delta_S_chain.py):"
+    }
+  ],
+  "typed-b3-sub-braid-extraction.md": [
+    {
+      "line_number": 44,
+      "content": "This is **empirically verified** via two probe runs:"
+    },
+    {
+      "line_number": 45,
+      "content": "- [`probe_q_beta_cat_per_factor_decomposition.py`](../../computations/q-beta-cat-per-factor-decomposition.witness.json) \u2014 F_3's \u03b5^6 leading coefficient is **exactly** $-3\\sqrt{3}/4 = -2 \\cdot b(1)^3$."
+    },
+    {
+      "line_number": 46,
+      "content": "- [`probe_q_beta_operator_valued_N3.py`](../../computations/q-beta-operator-valued-N3.witness.json) \u2014 empirical residual after N=3 is $-0.0066$ ppm (112$\\times$ tightening), validating the magnitude."
+    },
+    {
+      "line_number": 67,
+      "content": "| **Step C (numerical-equivalence axiom)** | exact arithmetic match | closed (item 2) |"
+    }
+  ],
+  "jet-convergence-classical-limit.md": [
+    {
+      "line_number": 105,
+      "content": "*Numerical verification ($k = 3 \\ldots 9$): the"
+    }
+  ],
+  "frobenius-s-classification-proof.md": [
+    {
+      "line_number": 19,
+      "content": "$m_e$, and binding scale $\\alpha$ are real numerical constants"
+    },
+    {
+      "line_number": 68,
+      "content": "contribution to the categorical mass.  Numerically, since $S$"
+    },
+    {
+      "line_number": 75,
+      "content": "[`computations/wedderburn_3term_inter_only.py`](#)"
+    },
+    {
+      "line_number": 76,
+      "content": "verifies the eigenvalue assignments numerically at $q_0$ and"
+    }
+  ],
+  "flavor-dressed-mass-from-substrate-split.md": [
+    {
+      "line_number": 37,
+      "content": "numerical evaluation at $q = q_0$ and the matching CODATA residual"
+    },
+    {
+      "line_number": 40,
+      "content": "(Observations chapter; per the manuscript convention numerical"
+    }
+  ],
+  "atom-knot-mass-derivation-proof.md": [
+    {
+      "line_number": 17,
+      "content": "small cases by [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py)"
+    }
+  ],
+  "markov-trace-factorization-proof.md": [
+    {
+      "line_number": 46,
+      "content": "trace compute the same algebraic object.  The numerical"
+    }
+  ],
+  "lp-dual-scaling-conjecture.md": [
+    {
+      "line_number": 72,
+      "content": "follow-up (H)). The current probe sweeps $q \\to 1^+$ only;"
+    },
+    {
+      "line_number": 73,
+      "content": "a separate $q \\to 0^+$ probe is needed."
+    },
+    {
+      "line_number": 85,
+      "content": "1. **${}^4\\mathrm{He}$ probe** ($A = 4, |T_3| = 0$, $n = 12$;"
+    }
+  ],
+  "qbeta-c4-from-c3-c8-product-identity.md": [
+    {
+      "line_number": 55,
+      "content": "[`probes/qbeta_c4_structural_product_identities.py`](../../computations/probes/qbeta_c4_structural_product_identities.py))."
+    }
+  ],
+  "cyclotomic-orbit-sum-all-depths-proof.md": [
+    {
+      "line_number": 26,
+      "content": "Verified at 50 dps for $n \\in \\{2, 3, 4, 5\\}$, $N \\in \\{3, 4, 5, 6, 7\\}$"
+    }
+  ],
+  "depth-stratified-frobenius-reciprocity.md": [
+    {
+      "line_number": 79,
+      "content": "[`binding_depth_stratified_knot_weighted.py`](https://github.com/litlfred/qou/blob/main/computations/binding_depth_stratified_knot_weighted.py)"
+    },
+    {
+      "line_number": 193,
+      "content": "([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/computations/compute_atom_chi_rust.py))"
+    },
+    {
+      "line_number": 194,
+      "content": "or the symbolic Hoefsmit pipeline. The script"
+    },
+    {
+      "line_number": 195,
+      "content": "[`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/computations/fr_pullback_k3_test.py)"
+    }
+  ],
+  "sdp-degeneracy-at-metallic-coincidence.md": [
+    {
+      "line_number": 40,
+      "content": "(`computations/two_quark_active_set_mahler_sweep.py`)"
+    },
+    {
+      "line_number": 44,
+      "content": "is the **first non-null result** in a series of five prior numerical"
+    },
+    {
+      "line_number": 79,
+      "content": "(silver only).  For n=3 the empirical probe (with Gram approximation)"
+    }
+  ],
+  "pre-tau-vs-post-tau.md": [
+    {
+      "line_number": 38,
+      "content": "* When a numerical equality bridges the two sides \u2014 e.g. the"
+    },
+    {
+      "line_number": 43,
+      "content": "either side alone. Numerical comparisons of such bridges with"
+    }
+  ],
+  "y-lambda-sign-pattern.md": [
+    {
+      "line_number": 26,
+      "content": "substrate $q_0 = 1.109978595554181\\ldots$ (50 dps), the Jones\u2013Markov block weights"
+    },
+    {
+      "line_number": 38,
+      "content": "[`y_lambda_sdp.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_sdp.py)."
+    },
+    {
+      "line_number": 102,
+      "content": "([`y_lambda_symbolic.py`](#)) gives exact $q$-rational forms,"
+    },
+    {
+      "line_number": 103,
+      "content": "matching the numerical values to machine precision at $q_0$.  All"
+    }
+  ],
+  "conj-im-q-physical-role.md": [
+    {
+      "line_number": 50,
+      "content": "$\\approx 1.010$, radius $\\approx 0.100$ per `q_beta_complex_q_test1_phaseA_v2.py`)."
+    }
+  ],
+  "magic-A-binding-formula.md": [
+    {
+      "line_number": 77,
+      "content": "[`binding-ladder-catalog.py`](../../computations/binding_ladder_catalog.py)"
+    },
+    {
+      "line_number": 84,
+      "content": "## Numerical witness"
+    },
+    {
+      "line_number": 86,
+      "content": "[`computations/binding_alpha_shift_witness.py`](../../computations/binding_alpha_shift_witness.py)"
+    }
+  ],
+  "q-beta-c-k-leading-bias-correction-identity.md": [
+    {
+      "line_number": 2,
+      "content": "the joint-fit numerical extraction of the $\\mathfrak{Q}_\\beta$ precision-ladder"
+    },
+    {
+      "line_number": 40,
+      "content": "truncated at finite order and extracted numerically, would produce. The"
+    },
+    {
+      "line_number": 53,
+      "content": "This proposition's numerical confirmation shows the bias-corrected"
+    }
+  ],
+  "rho-k-h3a-refinement.md": [
+    {
+      "line_number": 60,
+      "content": "[`computations/rho_k_h3a_refinement.py`](computations/rho_k_h3a_refinement.py);"
+    }
+  ],
+  "q-beta-bar-even-kernel-invariant-proof.md": [
+    {
+      "line_number": 14,
+      "content": "(verified in the [`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)"
+    },
+    {
+      "line_number": 30,
+      "content": "[probe-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md)"
+    }
+  ],
+  "qmn-recursive-memoized.md": [
+    {
+      "line_number": 70,
+      "content": "- [`q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/computations/q_mn_canonical.py)"
+    },
+    {
+      "line_number": 76,
+      "content": "- `q_mn_recursive_memoized.py` (this PR / follow-up): wrap"
+    },
+    {
+      "line_number": 113,
+      "content": "- **Implement**: `q_mn_recursive_memoized.py` driver. Mechanical"
+    },
+    {
+      "line_number": 114,
+      "content": "wrapper over existing `q_mn_canonical.py`; estimated 1-day work."
+    }
+  ],
+  "knot-operator-lp-selection.md": [
+    {
+      "line_number": 113,
+      "content": "[`wedderburn_pair_volumes.py`](https://github.com/litlfred/qou/blob/main/computations/wedderburn_pair_volumes.py)"
+    }
+  ],
+  "q-beta-c-k-recursion-from-habiro-q-difference.md": [
+    {
+      "line_number": 63,
+      "content": "| $c_4$ at $1\\,\\mathrm{ppQ}$ | fit (CODATA residual), value $-0.97157$ | [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_1ppq_achieved.py) |"
+    },
+    {
+      "line_number": 65,
+      "content": "| Kernel $R(q,\\xi)$ | structurally constrained: bar-ODD leading $a_1=-c_3$ (carrier $\\kappa_{(2,1)}=(q-1)^3(q+1)/q^2$), period-3/$\\zeta_6$ resonance, $\\sqrt{u}$-to-$u^2$ lift. The $\\zeta_4$ residue is **relaxed** \u2014 the root-of-unity residue program shows neither the content-Casimir $\\mu_\\lambda$ nor the framing $\\cos\\alpha_{\\mathrm{eff}}$ supplies a bar-odd-compatible genuine $\\zeta_4(q)$; it is a $\\sqrt{q}$ double-cover reading of $\\zeta_2$ (bar-fixed $q=-1$) or a post-$\\cos$-wrap archimedean feature, **not** a fibre constraint. | [`habiro_ladder_bridge.py`](https://github.com/litlfred/qou/blob/main/computations/habiro/habiro_ladder_bridge.py), [root-of-unity program audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md) |"
+    },
+    {
+      "line_number": 114,
+      "content": "([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_c_k_recursion_scaffold.py))"
+    }
+  ],
+  "derived-mass-formula-light-isotopes.md": [
+    {
+      "line_number": 30,
+      "content": "**Empirical scorecard at $q_0 = 1.109978595554181\\ldots$ (50 dps):**"
+    }
+  ],
+  "bring-trilog-depth-3-witness.md": [
+    {
+      "line_number": 2,
+      "content": "50-digit numerical witness with functional-equation cross-validation).**"
+    },
+    {
+      "line_number": 23,
+      "content": "### Numerical witness (50-digit precision)"
+    },
+    {
+      "line_number": 25,
+      "content": "Computed via `mpmath.polylog` at `mp.dps = 50` (script"
+    },
+    {
+      "line_number": 26,
+      "content": "[`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/computations/bring_trilog_zeta5_depth_3.py),"
+    },
+    {
+      "line_number": 61,
+      "content": "**Numerically verified** at 50 dps:"
+    },
+    {
+      "line_number": 63,
+      "content": "| Side | Value (50 dps) |"
+    },
+    {
+      "line_number": 72,
+      "content": "independent of `mpmath`'s polylog implementation** \u2014 the functional"
+    },
+    {
+      "line_number": 115,
+      "content": "This is the **first depth-3 numerical witness** for"
+    },
+    {
+      "line_number": 123,
+      "content": "*numerically tightest* graded-Mikusi\u0144ski instance recorded."
+    }
+  ],
+  "lambda-scale-substrate-form.md": [
+    {
+      "line_number": 48,
+      "content": "- [`lambda_scale_all_c_i_family_a.py`](../../computations/lambda_scale_all_c_i_family_a.py) \u2014 the proved Family A closed form."
+    }
+  ],
+  "mass-tower-open-problems-classes.md": [
+    {
+      "line_number": 34,
+      "content": "$h = q - q^{-1}$) is recorded as a paper-empirical ansatz; a numerical"
+    },
+    {
+      "line_number": 35,
+      "content": "probe failed to match against eight candidate writhe-ribbon formulas."
+    }
+  ],
+  "q-integer-mass-formula.md": [
+    {
+      "line_number": 200,
+      "content": "*No intermediate fitting, no free parameters, no numerical"
+    }
+  ],
+  "exterior-square-borromean-proof.md": [
+    {
+      "line_number": 47,
+      "content": "$9 + 36 = 45$; at $q_0 = 1.109978595554181\\ldots$ (50 dps) the q-deformation differs from"
+    },
+    {
+      "line_number": 66,
+      "content": "[`computations/alpha_em_q9_q10_derivation.py`](#) and"
+    },
+    {
+      "line_number": 67,
+      "content": "the dimension formula directly: numerical match to the expected"
+    }
+  ],
+  "three-calibration-inputs.md": [
+    {
+      "line_number": 8,
+      "content": "| ID | Canonical observable | Numerical proxy | What it fixes | DOF of $H^1 = 2W$ |"
+    },
+    {
+      "line_number": 48,
+      "content": "For every numerical observable $\\mathcal{O}$ in the paper \u2014"
+    },
+    {
+      "line_number": 67,
+      "content": "numerically through its proxy $m_\\mu/m_e$). The two dimensional"
+    },
+    {
+      "line_number": 75,
+      "content": "- $q_0$ is a numerical constant *only* via CAL-2; downstream compute"
+    },
+    {
+      "line_number": 77,
+      "content": "the CAL-2 numerical value at the final reporting step"
+    }
+  ],
+  "qbeta-c8-c10-silver-rationals.md": [
+    {
+      "line_number": 28,
+      "content": "SDP-extraction script's own caveat, the c_k values extracted at the"
+    },
+    {
+      "line_number": 65,
+      "content": "- Closed-form derivation probe + witness:"
+    },
+    {
+      "line_number": 66,
+      "content": "`probes/qbeta_c8_c10_closed_form_predictions.py`."
+    },
+    {
+      "line_number": 67,
+      "content": "- Closed-form wiring outcome at $q_0$ (companion empirical probe):"
+    },
+    {
+      "line_number": 68,
+      "content": "`probes/qbeta_closed_form_wiring_n4_to_n10.py`."
+    }
+  ],
+  "operator-valued-combiner-convergence.md": [
+    {
+      "line_number": 77,
+      "content": "[`canonical_tr_m_via_branching.py`](../../../computations/canonical_tr_m_via_branching.py)"
+    },
+    {
+      "line_number": 80,
+      "content": "[`canonical_mass_table_extended.py`](../../../computations/canonical_mass_table_extended.py):"
+    }
+  ],
+  "q-beta-q-eq-one-shadow-gate.md": [
+    {
+      "line_number": 53,
+      "content": "With all four \u00a74 invariants formalized, the formalize-first gate chain is complete; any future $F(q)$ candidate is evaluable as a Lean class-instance attempt rather than as a numerical fit."
+    }
+  ],
+  "tau-all-orders-bridge.md": [
+    {
+      "line_number": 88,
+      "content": "[`tau_all_orders_h6_empirical.py`](../../../computations/probes/tau_all_orders_h6_empirical.py)"
+    }
+  ],
+  "y-lambda-cyclotomic-factorization.md": [
+    {
+      "line_number": 1,
+      "content": "*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data. The $n = 2$ case is formalised faithfully \u2014 both partitions factor through the genuine cyclotomic denominator $D_2 = \\Phi_4\\Phi_8 = (t^2+1)(t^4+1) \\neq 0$; the $n = 3, 4$ denominators are numerically verified for all 18 partitions in the witness and tracked for formalisation.*"
+    },
+    {
+      "line_number": 86,
+      "content": "[`computations/y_lambda_cyclotomic_factor.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_cyclotomic_factor.py)"
+    }
+  ],
+  "per-nucleon-shift-additive-linearity-proof.md": [
+    {
+      "line_number": 25,
+      "content": "([`dp_pole_probe.py`](../../computations/dp_pole_probe.py)),"
+    },
+    {
+      "line_number": 40,
+      "content": "[`per_irrep_pole_proton_h3.py`](../../computations/per_irrep_pole_proton_h3.py)"
+    },
+    {
+      "line_number": 48,
+      "content": "[`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py))"
+    },
+    {
+      "line_number": 52,
+      "content": "[`per_irrep_pole_deuteron_h6.py`](../../computations/per_irrep_pole_deuteron_h6.py)"
+    }
+  ],
+  "mass-ordering-corrected.md": [
+    {
+      "line_number": 4,
+      "content": "the nucleon traces at $q_0 = 1.109978595554181\\ldots$ (50 dps) are:"
+    }
+  ],
+  "plancherel-term-7-formulation-proof.md": [
+    {
+      "line_number": 17,
+      "content": "$q_0 = 1.109978595554181\\ldots$ (50 dps) it deviates from $1$ \u2014 empirically"
+    },
+    {
+      "line_number": 30,
+      "content": "constant (numerically $\\lesssim 2$ at $q_0$ for $n \\leq 12$), giving"
+    },
+    {
+      "line_number": 50,
+      "content": "**Naming note.** *Earlier drafts (and the legacy script"
+    },
+    {
+      "line_number": 51,
+      "content": "`plancherel_term_7.py`) referred to $\\tilde w_\\lambda ="
+    },
+    {
+      "line_number": 65,
+      "content": "**Numerical witness.**"
+    },
+    {
+      "line_number": 66,
+      "content": "[`computations/plancherel_term_7.py`](#) computes"
+    }
+  ],
+  "wedderburn-weight-canonical.md": [
+    {
+      "line_number": 59,
+      "content": "[non-self-conjugate empirical witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe-wedderburn-weight-scheme.witness.json),"
+    },
+    {
+      "line_number": 170,
+      "content": "[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe-wedderburn-weight-scheme.witness.json)"
+    }
+  ],
+  "graded-hecke-energy-truncation-bound.md": [
+    {
+      "line_number": 22,
+      "content": "For numerical evaluation of $\\mathrm{tr}_M(T_w(\\mathcal{B}_K), q_0) ="
+    },
+    {
+      "line_number": 39,
+      "content": "The result also enables **resumable** numerical evaluation: a"
+    },
+    {
+      "line_number": 49,
+      "content": "[`computations/probes/graded_hecke_energy_probe.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/computations/probes/graded_hecke_energy_probe.py)"
+    },
+    {
+      "line_number": 53,
+      "content": "`graded-hecke-energy-probe.witness.json`."
+    }
+  ],
+  "six-term-mass-formula-complete-table-data.md": [
+    {
+      "line_number": 1,
+      "content": "| term | derivation source(s) | computation script | status |"
+    },
+    {
+      "line_number": 3,
+      "content": "| 1 | categorical-mass-markov, Jones-Markov | markov_peel.py + atomic-tr-m-mpfr-50dps.witness.json | TRACE (canonical Markov-invariant) |"
+    },
+    {
+      "line_number": 6,
+      "content": "| 4 | Frobenius co-Casimir (Lean-proved) | frobenius_partition_sum.py | TRACE (Markov-invariant) |"
+    },
+    {
+      "line_number": 7,
+      "content": "| 5 | dual-space symmetric-channel per-crossing | ribbon_content_average.py, chirality_variants_probe.py | TRACE (Markov-invariant within sign list) |"
+    }
+  ],
+  "markov-trace-product-proof.md": [
+    {
+      "line_number": 44,
+      "content": "Numerically at $q_0$: vertex-product $z^3 \\approx 0.1245$"
+    }
+  ],
+  "unified-curvature-rank-mass-formula-proof.md": [
+    {
+      "line_number": 47,
+      "content": "([atomic_chirality_residue.py witness](#)) and dominates the deepest"
+    }
+  ],
+  "habiro-residue-sum-equivalence.md": [
+    {
+      "line_number": 40,
+      "content": "`computations/markov/markov_pipeline_cross_validator.py`.  The"
+    },
+    {
+      "line_number": 57,
+      "content": "`markov_pipeline_cross_validator.py`; output witness"
+    },
+    {
+      "line_number": 68,
+      "content": "`run_pipeline.py` automatically reruns it whenever either input"
+    }
+  ],
+  "mass-volume-factorization.md": [
+    {
+      "line_number": 117,
+      "content": "${}^4\\mathrm{He}$ uses four ($4\\cdot 8G$). The companion probe"
+    }
+  ],
+  "shared-denominator-cusp-holonomy.md": [
+    {
+      "line_number": 163,
+      "content": "bijection cannot be a literal numerical identity"
+    },
+    {
+      "line_number": 171,
+      "content": "content (algebraic poles label cusps) while bounding its *numerical*"
+    }
+  ],
+  "bring-trilog-imaginary-tate-rational-proof.md": [
+    {
+      "line_number": 46,
+      "content": "### Numerical verification at 50 dps"
+    },
+    {
+      "line_number": 48,
+      "content": "Verified by [`kummer_reflection_zeta5.py`](https://github.com/litlfred/qou/blob/main/computations/kummer_reflection_zeta5.py)"
+    },
+    {
+      "line_number": 51,
+      "content": "| Quantity | Value (50 dps) |"
+    },
+    {
+      "line_number": 53,
+      "content": "| Direct: $\\mathrm{Im}\\,\\mathrm{Li}_3(\\zeta_5)$ via `mpmath.polylog` | $0.99220085376959424561524208214724464647120923410832\\ldots$ |"
+    }
+  ],
+  "np-discrepancy-resolution.md": [
+    {
+      "line_number": 2,
+      "content": "*Upstream `residual_probe_pn.py` reports a neutron/proton tower"
+    },
+    {
+      "line_number": 7,
+      "content": "CODATA $939.6$ MeV at full 50-dps symbolic eval), while"
+    },
+    {
+      "line_number": 19,
+      "content": "*The full mass-endomorphism tower at 50-dps symbolic"
+    },
+    {
+      "line_number": 20,
+      "content": "([`mass_endomorphism.py`](../../computations/mass_endomorphism.py),"
+    },
+    {
+      "line_number": 21,
+      "content": "recomputed at 50 dps via sympy + mpmath, no float64):*"
+    },
+    {
+      "line_number": 32,
+      "content": "dps) sits far from the $q_0 = 1.11$ pole of $\\Phi_q$ (distance"
+    },
+    {
+      "line_number": 115,
+      "content": "results (script `light_isotope_sweep.py`):*"
+    },
+    {
+      "line_number": 137,
+      "content": "likely wrong $a_K$ assignment \u2014 `d_chirality_probe.py`"
+    },
+    {
+      "line_number": 154,
+      "content": "- `computations/residual_probe_pn.py` (upstream): raw tower $n/p$ diagnosis"
+    },
+    {
+      "line_number": 155,
+      "content": "- `computations/sweeps/light_isotope_sweep.py`: Term 1 + Frob sweep"
+    },
+    {
+      "line_number": 156,
+      "content": "- `computations/bw_chirality_isotopes.py` (upstream): Term 5 (BW+\u03c7) sweep"
+    },
+    {
+      "line_number": 157,
+      "content": "- `computations/mass_formula_6term.py`: integrated 6-term comparison"
+    },
+    {
+      "line_number": 158,
+      "content": "- `computations/d_chirality_probe.py`: shows paper's D-chirality is wrong"
+    }
+  ],
+  "mn-classical-parity-blind.md": [
+    {
+      "line_number": 11,
+      "content": "*Using `computations/schur_weyl_mn_witness.py`:*"
+    },
+    {
+      "line_number": 77,
+      "content": "*Script: `computations/schur_weyl_mn_witness.py`."
+    },
+    {
+      "line_number": 78,
+      "content": "Uses `murnaghan_nakayama.py` (classical MN recursion) and"
+    },
+    {
+      "line_number": 79,
+      "content": "`schur_weyl_symbolic.py` (global $H_{3A}$ sum with q symbolic)."
+    }
+  ],
+  "alpha-k-derivation-procedure-proof.md": [
+    {
+      "line_number": 64,
+      "content": "[`y_lambda_jones_markov_witness.py`](#).  Each table records:*"
+    },
+    {
+      "line_number": 68,
+      "content": "- *Jones\u2013Markov weight $y_\\lambda$ (numeric at $q_0 = 1.109978595554181\\ldots$ (50 dps));*"
+    },
+    {
+      "line_number": 106,
+      "content": "([`y_lambda_jones_markov_witness.py`](#)) forces sparse Hoefsmit"
+    },
+    {
+      "line_number": 118,
+      "content": "any probe point.  Two reconstruction strategies:"
+    },
+    {
+      "line_number": 121,
+      "content": "Choose $m$ distinct probe values $q_1, \\ldots, q_m$ (e.g.\\"
+    },
+    {
+      "line_number": 122,
+      "content": "$\\{1.02, 1.05, 1.08, 1.11, 1.15\\}$ \u2014 [`crt_markov.py`](#)"
+    },
+    {
+      "line_number": 129,
+      "content": "probe points \u2014 not $5$.  Five probes suffice for: (i) a degree-$4$"
+    },
+    {
+      "line_number": 143,
+      "content": "and $5$ CRT probe points $\\{(q_i, z_i, \\mathbf{y}(q_i))\\}$ for"
+    },
+    {
+      "line_number": 145,
+      "content": "recorded (probe-rebuild cost prohibitive in pure Python; defer to"
+    }
+  ],
+  "mass-element-nf.md": [
+    {
+      "line_number": 92,
+      "content": "at $q_0 = 1.109978595554181\\ldots$ (50 dps)."
+    }
+  ],
+  "mass-side-kernel-formalize-first-gates.md": [
+    {
+      "line_number": 14,
+      "content": "[`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/computations/mass_theory_formalize_first_invariants_probe.py),"
+    },
+    {
+      "line_number": 29,
+      "content": "| (a) | **Anchor-stable** | cross-anchor swing $|w(q_\\mu) - w(q_p)| / |w(q_p)| < 10^{-6}$ | `MassAnchorStableGateClass swing` (where `swing` is the probe-computed magnitude) |"
+    },
+    {
+      "line_number": 32,
+      "content": "| (d) | **Direction sanity** | $|m - \\text{target}| \\le \\text{threshold} \\cdot \\text{target}$ (additive form; substrate target $\\approx 2.46$, the CODATA-implied near-match documented in [`_li_2_q_util.py:298-313`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py)) | `MassDirectionSanityGateClass m_candidate` (where `m_candidate` $= |w(q_0)|$) |"
+    },
+    {
+      "line_number": 39,
+      "content": "> [`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/computations/mass_theory_formalize_first_invariants_probe.py))"
+    },
+    {
+      "line_number": 112,
+      "content": "**No sympy probe.** The mass-side $\\S 4$ $4 \\times 3$ verdict matrix"
+    },
+    {
+      "line_number": 114,
+      "content": "[`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/computations/mass_theory_formalize_first_invariants_probe.py)."
+    }
+  ],
+  "flavor-mass-splitting-bound.md": [
+    {
+      "line_number": 63,
+      "content": "is committed in this revision). The numerical evaluation at $q_0$"
+    }
+  ],
+  "jet-tower-uniform-delta-max.md": [
+    {
+      "line_number": 20,
+      "content": "infrastructure (`unified_lift.py` + the new"
+    },
+    {
+      "line_number": 50,
+      "content": "The measurement script"
+    },
+    {
+      "line_number": 51,
+      "content": "[`computations/jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)"
+    },
+    {
+      "line_number": 53,
+      "content": "`delta_n` per jet level \u2014 see `unified_lift.py` line 158) for"
+    },
+    {
+      "line_number": 75,
+      "content": "(Concrete numerical entries are produced on each run; the"
+    },
+    {
+      "line_number": 139,
+      "content": "support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via `jet_tower_delta_max.py`."
+    }
+  ],
+  "lepton-mass-tower-canonical.md": [
+    {
+      "line_number": 132,
+      "content": "| **B** | Compute $|\\mathrm{tr}_M(K_\\ell)|$ at substrate $q_0$ + tower corrections; fit a functional form for $\\xi_\\ell$ that matches CODATA for all 3 leptons; check consistency | 4-6 hours numerical |"
+    }
+  ],
+  "wenzl-bridge-applicability-qou.md": [
+    {
+      "line_number": 38,
+      "content": "witness at $n = 3, \\ldots, 11$ (193 partitions) to MPFR 50-dps"
+    }
+  ],
+  "meson-kaon-pion-hecke-seifert.md": [
+    {
+      "line_number": 30,
+      "content": "*The numerical value $3.5361$ matches the PDG ratio"
+    }
+  ],
+  "lr-tensor-character-bridge.md": [
+    {
+      "line_number": 148,
+      "content": "[`computations/markov/markov_trace_via_wenzl_lr.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_via_wenzl_lr.py)"
+    },
+    {
+      "line_number": 153,
+      "content": "[`computations/cross_check_trM_wenzl_lr_1ppb.py`](https://github.com/litlfred/qou/blob/main/computations/cross_check_trM_wenzl_lr_1ppb.py)"
+    },
+    {
+      "line_number": 158,
+      "content": "[`computations/wenzl_lr_convention_adapter.py`](https://github.com/litlfred/qou/blob/main/computations/wenzl_lr_convention_adapter.py)"
+    }
+  ],
+  "hecke-1d-irrep-closed-form-character-proof.md": [
+    {
+      "line_number": 60,
+      "content": "Bit-exact at 50 dps for all atoms in $\\{p, n, D, T, {}^{3}\\mathrm{He}\\}$"
+    }
+  ],
+  "phi-q-tower-jsj-bridge.md": [
+    {
+      "line_number": 86,
+      "content": "$\\mathrm{Vol}_{\\mathrm{hyp}}(P)$ numerically with SnapPy. Fast on"
+    },
+    {
+      "line_number": 100,
+      "content": "while JSJ remains the numerical workhorse."
+    }
+  ],
+  "cyclotomic-cl3-orbit-sum-general.md": [
+    {
+      "line_number": 42,
+      "content": "- Numerical witness (verified at $N = 3, 4, 5, 6, 7, 10, 11, 12, 13$ at 50 dps):"
+    }
+  ],
+  "q-beta-radius-of-convergence-gate-proof.md": [
+    {
+      "line_number": 23,
+      "content": "## Numerical anchor (verified)"
+    }
+  ],
+  "commutative-chirality-vanishes-proof.md": [
+    {
+      "line_number": 30,
+      "content": "representation theory. Numerical scan"
+    },
+    {
+      "line_number": 31,
+      "content": "([`commutative_case_diagnostic.py`](#)) confirms that the"
+    }
+  ],
+  "topological-mass-formula-algebraic.md": [
+    {
+      "line_number": 83,
+      "content": "recovers the numerical Archimedean value $\\Phi_1(\\beta)$, but"
+    },
+    {
+      "line_number": 108,
+      "content": "Archimedean numerical value of $\\mathrm{Vol}(K)$ may cite either."
+    }
+  ],
+  "per-nucleon-shift-additive-linearity.md": [
+    {
+      "line_number": 42,
+      "content": "[`mass_endomorphism.proton_cross`/`neutron_cross`](../../computations/mass_endomorphism.py).)"
+    },
+    {
+      "line_number": 52,
+      "content": "[`docs/audits/-ocneanu-cancellation-numerical-verification.md`](../../docs/audits/-ocneanu-cancellation-numerical-verification.md)"
+    },
+    {
+      "line_number": 53,
+      "content": "for the high-precision (200 dps) verification."
+    },
+    {
+      "line_number": 80,
+      "content": "3. **Pole-counting consumer.** [`dp_pole_probe.py`](../../computations/dp_pole_probe.py)"
+    }
+  ],
+  "tower-binding-energy.md": [
+    {
+      "line_number": 16,
+      "content": "[`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/computations/mass_at_3A_proper.py))."
+    },
+    {
+      "line_number": 111,
+      "content": "## Numerical results"
+    }
+  ],
+  "conj-canonical-knot-id-sdp.md": [
+    {
+      "line_number": 81,
+      "content": "Numerical SDP witnesses (stored in"
+    },
+    {
+      "line_number": 82,
+      "content": "`computations/probe-sdp-canonical-paper-formula.witness.json`)"
+    },
+    {
+      "line_number": 92,
+      "content": "([`r5_full_canonical_knot_solver.py`](../../../computations/r5_full_canonical_knot_solver.py),"
+    },
+    {
+      "line_number": 117,
+      "content": "documented in `probe-sdp-canonical-paper-formula.witness.json`)."
+    },
+    {
+      "line_number": 131,
+      "content": "1. The R5-full numerical witness (`R5FullWitness LightNucleus.helium3`)"
+    },
+    {
+      "line_number": 136,
+      "content": "hypothesis upgrading numerical PSD-feasibility to unique-minimizer"
+    },
+    {
+      "line_number": 144,
+      "content": "feasible set, not a numerical certificate), the historical"
+    },
+    {
+      "line_number": 192,
+      "content": "The numerical evidence from"
+    },
+    {
+      "line_number": 217,
+      "content": "numerically* by the R5-minimal verifier"
+    },
+    {
+      "line_number": 218,
+      "content": "([`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/computations/joint_tower_sdp_solver_v2.py))."
+    }
+  ],
+  "wedderburn-bratteli-recursion.md": [
+    {
+      "line_number": 40,
+      "content": "[`computations/y_lambda_bratteli_extract.py`](#) \u2014"
+    }
+  ],
+  "bring-trilog-imaginary-tate-rational.md": [
+    {
+      "line_number": 3,
+      "content": "verified at 50 dps via Kummer reflection).**"
+    },
+    {
+      "line_number": 5,
+      "content": "The depth-3 numerical witness"
+    }
+  ],
+  "mass-tower-deeper-fillers.md": [
+    {
+      "line_number": 57,
+      "content": "- **Wiring follow-up:** `crt_markov.py` currently has no"
+    },
+    {
+      "line_number": 61,
+      "content": "in `markov_weights_symbolic.py`, leave the symbolic version"
+    },
+    {
+      "line_number": 62,
+      "content": "intact for `y_lambda_equivalence_proof.py:60` to consume."
+    }
+  ],
+  "alpha-shift-torus-knot.md": [
+    {
+      "line_number": 27,
+      "content": "The numerical evidence"
+    }
+  ],
+  "plancherel-weight-boundedness-proof.md": [
+    {
+      "line_number": 38,
+      "content": "**Plancherel distribution at $q_0 = 1.109978595554181\\ldots$ (50 dps) (small $n$).**"
+    }
+  ],
+  "partition-sum-proton-residual-table5-data.md": [
+    {
+      "line_number": 1,
+      "content": "| probe | best candidate | residual vs gap |"
+    },
+    {
+      "line_number": 3,
+      "content": "| Deuteron gap (`deuteron_residual_probe.py`) | $(5/2) \\cdot m_e$ at $n = 3$ | $+3.92\\%$ |"
+    }
+  ],
+  "rho-k-h3a-refinement-interpretation.md": [
+    {
+      "line_number": 17,
+      "content": "$q_0 = 1.109978595554181\\ldots$ (50 dps), $[2]_{q_0}^2 \\approx 4.04$, so each level"
+    }
+  ],
+  "cl3-zeta5-orbit-sum-identity-proof.md": [
+    {
+      "line_number": 47,
+      "content": "### Numerical verification at 50 dps"
+    },
+    {
+      "line_number": 49,
+      "content": "[`cl3_zeta5_orbit_sum.py`](https://github.com/litlfred/qou/blob/main/computations/cl3_zeta5_orbit_sum.py),"
+    },
+    {
+      "line_number": 52,
+      "content": "| Quantity | Value (50 dps) |"
+    }
+  ],
+  "interface-knot-markov-z-proof.md": [
+    {
+      "line_number": 49,
+      "content": "### Empirical verification (4 atoms, 50-dps Rust kernel)"
+    },
+    {
+      "line_number": 51,
+      "content": "Computed via [`delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)"
+    }
+  ],
+  "habiro-pochhammer-bridge.md": [
+    {
+      "line_number": 26,
+      "content": "## Numerical verification (proton, $n = 9$)"
+    }
+  ],
+  "delta-q-decoration.md": [
+    {
+      "line_number": 84,
+      "content": "[`computations/delta_q_decoration.py`](computations/delta_q_decoration.py),"
+    },
+    {
+      "line_number": 86,
+      "content": "[`hecke_characters.py`](computations/hecke/hecke_characters.py)."
+    }
+  ],
+  "mass-tower-coefficient-stratification-proof.md": [
+    {
+      "line_number": 20,
+      "content": "[`computations/wedderburn-strata-witness.py`](#)"
+    },
+    {
+      "line_number": 26,
+      "content": "- $\\dim_q V_\\lambda$ at $q_0 = 1.109978595554181\\ldots$ (50 dps, categorical $q$-dim)"
+    }
+  ],
+  "q-beta-direction-sanity-gate.md": [
+    {
+      "line_number": 21,
+      "content": "numerical anchor sweep."
+    },
+    {
+      "line_number": 39,
+      "content": "Lean class-instance attempt rather than as a numerical fit."
+    },
+    {
+      "line_number": 66,
+      "content": "numerical anchor sweep) of the checklist."
+    }
+  ],
+  "habiro-precision-ladder-equivalence.md": [
+    {
+      "line_number": 26,
+      "content": "Planck quantum (categorical; numerical value at the substrate q_0"
+    }
+  ],
+  "jet-tower-convergence.md": [
+    {
+      "line_number": 63,
+      "content": "[`computations/jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)"
+    },
+    {
+      "line_number": 64,
+      "content": "and `unified_lift.py`) the per-level terms for $\\mathrm{D}$,"
+    }
+  ],
+  "confined-knot-binding.md": [
+    {
+      "line_number": 5,
+      "content": "([`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/computations/mass_at_3A_proper.py))"
+    }
+  ],
+  "kashiwara-jones-alternation-interpretation.md": [
+    {
+      "line_number": 120,
+      "content": "Per [`probe_q_beta_c5_c6_multilink.py`](../../computations/probe_q_beta_c5_c6_multilink.py),"
+    }
+  ],
+  "wenzl-qmn-synergy.md": [
+    {
+      "line_number": 8,
+      "content": "`computations/_deprecated/q_mn_canonical.py`,"
+    },
+    {
+      "line_number": 64,
+      "content": "in `depth_resolved_phi_k_hoefsmit.py` can replace its Hoefsmit"
+    },
+    {
+      "line_number": 78,
+      "content": "[`computations/_deprecated/q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/computations/_deprecated/q_mn_canonical.py)"
+    },
+    {
+      "line_number": 81,
+      "content": "[`hecke_characters.chi_lambda_braid`](https://github.com/litlfred/qou/blob/main/computations/hecke/hecke_characters.py),"
+    },
+    {
+      "line_number": 87,
+      "content": "[`computations/y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_wenzl_bridge_extended.py)"
+    },
+    {
+      "line_number": 91,
+      "content": "[`computations/wenzl_qmn_trace_cross_check.py`](https://github.com/litlfred/qou/blob/main/computations/wenzl_qmn_trace_cross_check.py)"
+    }
+  ],
+  "spin-involution-lp-dual-invariance-proof.md": [
+    {
+      "line_number": 111,
+      "content": "[`atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py))"
+    },
+    {
+      "line_number": 135,
+      "content": "[`probe-phiq-pair-knot-markov-trace.witness.json`](../../../computations/probe-phiq-pair-knot-markov-trace.witness.json)"
+    },
+    {
+      "line_number": 143,
+      "content": "\\;=\\; 0.06216177120816107\\ldots \\quad \\text{(50-dps evaluation; algebraic equality via the Hoefsmit seminormal form's $\\sigma_{pp} = \\sigma_{nn}$ identity on the $V_{(2,1)}$ block, independent of dps)}."
+    },
+    {
+      "line_number": 148,
+      "content": "[`probe_phiq_pair_knot_magic_shell.py`](../../../computations/probe_phiq_pair_knot_magic_shell.py)"
+    },
+    {
+      "line_number": 155,
+      "content": "[operator-selection LP dual](../../../computations/lp_dual_solver.py)"
+    },
+    {
+      "line_number": 160,
+      "content": "[brane-tower-z-habiro \u00a7\"Pair-knot magic-shell probe\"](#conj:brane-tower-z-habiro)."
+    }
+  ],
+  "knot-factor-spectral-summary.md": [
+    {
+      "line_number": 21,
+      "content": "hand-fits in `computations/atomic_mass_pipeline.py`"
+    }
+  ],
+  "plancherel-weight-boundedness-interpretation.md": [
+    {
+      "line_number": 7,
+      "content": "$q_0 = 1.109978595554181\\ldots$ (50 dps) for $n = 12$ \u2014 so $\\widetilde{w}$ is **not** a"
+    }
+  ],
+  "hoefsmit-ew-cell-content.md": [
+    {
+      "line_number": 236,
+      "content": "Numerical comparison at $q_0 = 1.109978595554181\\ldots$ (50 dps):"
+    }
+  ],
+  "bring-figure-eight-depth-2-witness.md": [
+    {
+      "line_number": 2,
+      "content": "50-digit numerical witness).**"
+    },
+    {
+      "line_number": 20,
+      "content": "### Numerical witness (50-digit precision)"
+    },
+    {
+      "line_number": 22,
+      "content": "Computed via `mpmath.polylog` at `mp.dps = 50` (script"
+    },
+    {
+      "line_number": 23,
+      "content": "[`gb_depth_period_bring_fig8.py`](https://github.com/litlfred/qou/blob/main/computations/gb_depth_period_bring_fig8.py),"
+    },
+    {
+      "line_number": 71,
+      "content": "The keystone predicts analogous numerical witnesses at every depth:"
+    }
+  ],
+  "chi-lambda-w0-sign-weighting-proof.md": [
+    {
+      "line_number": 79,
+      "content": "selects the same signed combination (numerical verification at"
+    }
+  ],
+  "explicit-alpha-k-h3.md": [
+    {
+      "line_number": 68,
+      "content": "[`computations/alpha/alpha_k_jones_markov_h3.py`](#)"
+    },
+    {
+      "line_number": 72,
+      "content": "verified to numerical precision."
+    }
+  ],
+  "meson-kaon-pion-hecke-seifert-proof.md": [
+    {
+      "line_number": 65,
+      "content": "2. **The numerical match to the PDG ratio** ($\\approx 290$ ppm) is a"
+    }
+  ],
+  "weak-symmetric-normalization.md": [
+    {
+      "line_number": 19,
+      "content": "> framing with N_sym(q_0) = 213.11 numerically pinned from"
+    },
+    {
+      "line_number": 97,
+      "content": "### Numerical evaluation (for cross-checks)"
+    },
+    {
+      "line_number": 99,
+      "content": "At $q_0 \\approx :val[q_0]{precision=6, witness=computations/q-pinning-50-digit.witness.json}$ (50 dps):"
+    }
+  ],
+  "atom-knot-mass-derivation.md": [
+    {
+      "line_number": 49,
+      "content": "[Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)"
+    },
+    {
+      "line_number": 51,
+      "content": "$\\rho_K$ closure; only its numerical instantiation is currently"
+    },
+    {
+      "line_number": 87,
+      "content": "naive numerical substitution of $\\mathrm{Li}_2^q$ at $q = q_0$; the"
+    },
+    {
+      "line_number": 111,
+      "content": "[`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe-sdp-canonical-paper-formula.witness.json):"
+    },
+    {
+      "line_number": 314,
+      "content": "- **Python prototypes** ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py),"
+    },
+    {
+      "line_number": 315,
+      "content": "[`joint_tower_sdp_solver.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/joint_tower_sdp_solver.py),"
+    },
+    {
+      "line_number": 316,
+      "content": "[`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/joint_tower_sdp_solver_v2.py)) \u2014 design-spec"
+    },
+    {
+      "line_number": 327,
+      "content": "### PSD-cone $\\alpha^*$ ranking (Rust R5-minimal, $q_0 = 1.109978595554181\\ldots$, 50 dps)"
+    },
+    {
+      "line_number": 379,
+      "content": "[`computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/main/computations/r5_full_canonical_knot_solver.py)"
+    },
+    {
+      "line_number": 400,
+      "content": "[`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/computations/probe-sdp-canonical-paper-formula.witness.json),"
+    },
+    {
+      "line_number": 407,
+      "content": "[`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/computations/joint_tower_sdp_solver_v2.py)."
+    }
+  ],
+  "joint-galois-braid-action.md": [
+    {
+      "line_number": 83,
+      "content": "**commute**. Numerical evidence: the orbit-sum"
+    }
+  ],
+  "option-e-isospin-test.md": [
+    {
+      "line_number": 3,
+      "content": "[`rho_k_h3a_crystal.py`](../../../computations/rho_k_h3a_crystal.py)"
+    },
+    {
+      "line_number": 22,
+      "content": "$q_0 = 1.109978595554181\\ldots$ (50 dps).  This is the structural Kashiwara weight on"
+    },
+    {
+      "line_number": 26,
+      "content": "The probe forms the $c_\\lambda$-weighted observable"
+    },
+    {
+      "line_number": 49,
+      "content": "to canonical words.  The probe therefore tests the"
+    },
+    {
+      "line_number": 56,
+      "content": "[`option-e-isospin-probe.witness.json`](../../../computations/probes/option-e-isospin-probe.witness.json),"
+    },
+    {
+      "line_number": 58,
+      "content": "[`option_e_isospin_probe.py`](../../../computations/probes/option_e_isospin_probe.py).)*"
+    },
+    {
+      "line_number": 137,
+      "content": "[`rho_k_h3a_crystal.py`](../../../computations/rho_k_h3a_crystal.py)"
+    },
+    {
+      "line_number": 142,
+      "content": "[`rho_k_h3a_crystal.py`](../../../computations/rho_k_h3a_crystal.py)),"
+    },
+    {
+      "line_number": 154,
+      "content": "and re-run the isospin probe.  If $W_{c^{\\mathrm{sym}}}(T) ="
+    }
+  ],
+  "wedderburn-mass-formula.md": [
+    {
+      "line_number": 54,
+      "content": "(`atom_mass_partition.py`) computes all partitions exactly via"
+    }
+  ],
+  "calibration-inputs.md": [
+    {
+      "line_number": 37,
+      "content": "> Numerically the Skein formula closes $m_\\mu/m_e = 206.77$ at"
+    },
+    {
+      "line_number": 96,
+      "content": "production compute ([`derived_masses.py:e_0_full_mev`](https://github.com/litlfred/qou/blob/main/computations/derived_masses.py#L145)),"
+    }
+  ],
+  "alpha-em-categorical-trace.md": [
+    {
+      "line_number": 21,
+      "content": "multiplicative q-rational family was ruled out by the 100-dps 54-element scan;"
+    }
+  ],
+  "derived-mass-formula-light-isotopes-proof.md": [
+    {
+      "line_number": 21,
+      "content": "Numerical evaluation at $q_0 = 1.109978595554181\\ldots$ (50 dps) uses"
+    },
+    {
+      "line_number": 22,
+      "content": "[`computations/derived_only_formula.py`](#)"
+    },
+    {
+      "line_number": 39,
+      "content": "`he3_tighten_pp.py`, `d_tighten_k3.py`, `he4_tighten_doubly_magic.py`),"
+    }
+  ],
+  "joint-tower-sdp-confinement.md": [
+    {
+      "line_number": 151,
+      "content": "[`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py)."
+    }
+  ],
+  "a8-partition-function-identity.md": [
+    {
+      "line_number": 69,
+      "content": "- Empirical source: [`qbeta_habiro_recursion_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/computations/probes/qbeta_habiro_recursion_probe.py)"
+    },
+    {
+      "line_number": 75,
+      "content": "**Mathematical Novelty:** This result records the numerical coincidence that the $a_8$ coefficients $(1,2,3,5,7)$ match the partition numbers $p(1..5)$. It is an empirical Habiro-shell observation rather than a new deductive argument, utilizing standard partition values, with the identity proved formally via ring equivalences."
+    }
+  ],
+  "y-lambda-recipe-from-partition.md": [
+    {
+      "line_number": 38,
+      "content": "Numerically at $q_0 \\approx 1.110$: $X \\approx 1.7203$."
+    },
+    {
+      "line_number": 148,
+      "content": "## Numerical sanity at $q_0 \\approx 1.110$"
+    },
+    {
+      "line_number": 188,
+      "content": "[`computations/y_lambda_recipe_from_partition.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_recipe_from_partition.py)"
+    }
+  ],
+  "mass-endomorphism-tower.md": [
+    {
+      "line_number": 103,
+      "content": "*Numerical probe (`kashaev-integration-identity.witness.json`): the"
+    },
+    {
+      "line_number": 108,
+      "content": "identity does NOT hold numerically.*"
+    },
+    {
+      "line_number": 126,
+      "content": "parameters \u2014 but the integration probe shows the"
+    },
+    {
+      "line_number": 152,
+      "content": "[`canonical_plus_multibrane.py`](computations/canonical_plus_multibrane.py)"
+    },
+    {
+      "line_number": 154,
+      "content": "[`paper_six_term_isotope_sweep.py`](computations/sweeps/paper_six_term_isotope_sweep.py)"
+    },
+    {
+      "line_number": 159,
+      "content": "[`brane_tower_isospin_diagnosis.py`](computations/brane_tower_isospin_diagnosis.py)"
+    },
+    {
+      "line_number": 195,
+      "content": "`brane_tower_plancherel_scaffold.py` for a numerical scaffold; the"
+    },
+    {
+      "line_number": 198,
+      "content": "via `kahler_lift.py` (recursion-fixed)."
+    },
+    {
+      "line_number": 229,
+      "content": "(asymmetric $(q^n - 1)$ vs symmetric $[n]_q$).  Numerical probe"
+    }
+  ],
+  "terms-2-6-higher-operations.md": [
+    {
+      "line_number": 54,
+      "content": "*Direct symbolic computation in `hochschild_h3.py`:*"
+    },
+    {
+      "line_number": 120,
+      "content": "`computations/deformation_cohomology_s3.py`:*"
+    },
+    {
+      "line_number": 320,
+      "content": "*Script `cup_product_tower_probe.py` tested the simplest proxy:"
+    }
+  ],
+  "mass-endomorphism-tower-proof.md": [
+    {
+      "line_number": 45,
+      "content": "*Numerical verification: the integration value matches"
+    }
+  ],
+  "delta-max-uniform-bound.md": [
+    {
+      "line_number": 123,
+      "content": "## Numerical scale"
+    },
+    {
+      "line_number": 160,
+      "content": "For light atoms ($A \\le 16$) at $q_0$, numerical evaluation"
+    },
+    {
+      "line_number": 164,
+      "content": "(cf. `computations/unified_lift.py` with"
+    },
+    {
+      "line_number": 179,
+      "content": "are subadditive), but the numerical prefactor degrades."
+    }
+  ],
+  "wedderburn-bratteli-recursion-proof.md": [
+    {
+      "line_number": 33,
+      "content": "[`y_lambda_bratteli_extract.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_bratteli_extract.py)):"
+    },
+    {
+      "line_number": 96,
+      "content": "$q$ ([Geck--Pfeiffer]).  Sympy and numerical witness agree to"
+    }
+  ],
+  "gs-archimedean-agreement-residue.md": [
+    {
+      "line_number": 26,
+      "content": "`habiro_coefficients_atomic.py` for $(Z=1, N=0,"
+    },
+    {
+      "line_number": 31,
+      "content": "computed by `term6_full_pole_sum.py` from the descended trace"
+    },
+    {
+      "line_number": 59,
+      "content": "*The numerical agreement is empirically certified to machine precision"
+    }
+  ],
+  "q-beta-bar-even-kernel-invariant.md": [
+    {
+      "line_number": 39,
+      "content": "the bar-evenness check before the numerical anchor sweep runs*."
+    },
+    {
+      "line_number": 42,
+      "content": "Before any numerical anchor sweep on a new candidate $F(q)$ / kernel"
+    },
+    {
+      "line_number": 54,
+      "content": "to the refuted-class map \u00a72 and abort the numerical sweep."
+    }
+  ],
+  "curvature-rank-gb-stratification-proof.md": [
+    {
+      "line_number": 58,
+      "content": "[`computations/hecke_knot_ideal_tracker.py`](#) and"
+    },
+    {
+      "line_number": 59,
+      "content": "[`computations/knot_ideals_gb_jet_locations.py`](#)"
+    }
+  ],
+  "atom-knot-mass-derivation-table2-data.md": [
+    {
+      "line_number": 4,
+      "content": "| 1b (GB-filtration certificate) | Python `gb_filtration_jet_tracker.py` (PoC) + Rust `gb_nf_reducer.rs` (R2; 6 unit tests; bit-for-bit match) | \u2713 |"
+    },
+    {
+      "line_number": 9,
+      "content": "| 2 (Markov trace symbolic) | [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py) + [`q_mn_recursive_memoized.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/q_mn_recursive_memoized.py) | \u2713 for $n \\leq 12$ |"
+    },
+    {
+      "line_number": 12,
+      "content": "| 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/mpmath | \u2713 |"
+    },
+    {
+      "line_number": 13,
+      "content": "| 6 (AME comparison) | mass-table-ppb witness + [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/recursive_atom_knot_atlas_render.py) | \u2713 |"
+    }
+  ]
+}
