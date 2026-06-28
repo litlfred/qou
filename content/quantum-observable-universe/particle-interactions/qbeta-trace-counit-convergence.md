@@ -13,32 +13,11 @@ $$
   \frac{m_e\,(q+1)(q^2 - 2q - 1)}{2q^3}.
 $$
 
-The two sides are the same physical observable evaluated through two
+The two sides represent evaluations through two
 canonical functionals on $H_3(q)$ — the static-mass Markov trace
 $\mathrm{tr}_M$ (pairing with the unit) and the transition counit
-$\varepsilon$ (pairing with the integral $\omega = G^{-1}\mathbf{1}$) —
-so their equality is required for consistency.
-
-## Non-perturbative nature of the convergence
-
-The equality is not a small-correction limit. At the substrate the
-single Markov-trace term already misses the target by a wide margin:
-the $N=0$ contribution $\lvert\mathrm{tr}_M(\Delta)\rvert\cdot\mathfrak{E}_0
-\approx 0.345$ MeV falls short of $\mathfrak{Q}_\beta \approx 0.78$ MeV by
-$-56\%$ (the trace is roughly $2.3\times$ too small). The Markov trace and the counit
-differ at leading order by $\varepsilon(\Delta) - \mathrm{tr}_M(\Delta)
-= h\,(z-1)$, which the substrate loop $z = 1/(\sqrt q + 1/\sqrt q)$ does
-not render small. The counit form, by contrast, matches to $+0.17\%$ at
-$N=0$ — the same residual that separates the derived energy scale
-$\mathfrak{E}_0 \approx 4.186$ MeV from its calibration cross-check
-$\approx 4.155$ MeV ([energy scale](#rem:energy-scale-planck)).
-
-The conjecture therefore asserts a **functional-consistency identity**:
-the tower-summed Markov-trace difference reorganizes onto the counit
-form, with the $+0.17\%$ as the brane-tower remainder. A perturbative
-expansion of the trace tower about its $N=0$ term does not establish it,
-because the corrections exceed the leading term; what is required is a
-closed evaluation of the tower-summed difference.
+$\varepsilon$ (pairing with the integral $\omega = G^{-1}\mathbf{1}$).
+The conjecture posits their equality.
 
 ## Formalization
 
