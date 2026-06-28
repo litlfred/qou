@@ -23,55 +23,20 @@ No fit; sympy symbolic exact in q; (a)/(b)-scoped per AGENTS.md.
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sympy as sp
 
-q = sp.Symbol("q", positive=True)
+# Shared, cached Young-diagram / symmetric quantum-dimension machinery (bean z3a2; PR #2952).
+# Replaces the formerly inline qint/qfact/partitions/hooks/dim_q/S — same symbolic results.
+# qfact (symmetric [m]_q!) is the prior `qfact_sym`. The probe-specific qpoch stays local.
+from young_qdim import q, qfact, S  # noqa: E402
 
 
-def qint(k):
-    return (q ** k - q ** (-k)) / (q - 1 / q)
-
-
-def qfact_sym(n):
-    r = sp.Integer(1)
-    for k in range(1, n + 1):
-        r *= qint(k)
-    return r
-
-
-def qpoch(n):  # (q;q)_n = ∏_{k=1}^n (1−q^k)
+def qpoch(n):  # (q;q)_n = ∏_{k=1}^n (1−q^k) — probe-specific; young_qdim has symmetric machinery only
     r = sp.Integer(1)
     for k in range(1, n + 1):
         r *= (1 - q ** k)
     return r
-
-
-def partitions(n):
-    if n == 0:
-        yield []
-        return
-    for first in range(n, 0, -1):
-        for rest in partitions(n - first):
-            if not rest or rest[0] <= first:
-                yield [first] + rest
-
-
-def hooks(lam):
-    conj = [sum(1 for r in lam if r > c) for c in range(lam[0])]
-    return [(row - j) + (conj[j] - i) - 1 for i, row in enumerate(lam) for j in range(row)]
-
-
-def dim_q(lam):
-    d = qfact_sym(sum(lam))
-    for h in hooks(lam):
-        d /= qint(h)
-    return sp.cancel(sp.together(d))
-
-
-def S(m):
-    if m == 0:
-        return sp.Integer(1)
-    return sp.cancel(sp.together(sum(dim_q(l) for l in partitions(m))))
 
 
 MM = 7
@@ -95,7 +60,7 @@ def is_laurent(expr):
 
 
 product_test = {}
-for label, norm in [("symmetric_[m]_q_fact", qfact_sym), ("qAskey_(q;q)_m", qpoch)]:
+for label, norm in [("symmetric_[m]_q_fact", qfact), ("qAskey_(q;q)_m", qpoch)]:
     L = log_coeffs(norm)
     rows = {m: is_laurent(sp.cancel(L[m] * (1 - q ** m))) for m in range(1, MM + 1)}
     all_poly = all(rows.values())
