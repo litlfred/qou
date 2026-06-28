@@ -10,7 +10,7 @@ import { conjecture } from "../../schema/builders";
 // endomorphism` cone) for the audit that flagged this.
 export default conjecture({
   label: "conj:n-v-leading-order-derivation",
-  title: "Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)",
+  title: "Leading-order $N_v = |S_5| \\cdot q_0^{90}$ ($= 120 \\cdot q_0^{90}$)",
   cites: [],
   uses: [
     "conj:n-v-bring-action",
