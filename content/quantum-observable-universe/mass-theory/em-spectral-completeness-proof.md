@@ -1,6 +1,6 @@
 *Proof.*
 The braiding eigenvalue extraction
-([eigenvalue extraction](#prop\:braiding-eigenvalue-extraction))
+([eigenvalue extraction](#prop:braiding-eigenvalue-extraction))
 shows that $c_{A,A}$ satisfies the Hecke minimal polynomial
 
 $$
@@ -26,5 +26,5 @@ singlet identification $V_- \cong \mathbf{1}$ is the standard
 Schur-functor decomposition $A \otimes A = S^2 A \oplus \Lambda^2 A$
 with $\Lambda^2 A \cong \mathbf{1}$ when $A$ is the fundamental of
 $\mathrm{SU}_q(2)$.  Statement (4) is the Wedderburn trace identity
-([Wedderburn trace](#prop\:wedderburn-trace-identity)) at $n = 2$.
+([Wedderburn trace](#prop:wedderburn-trace-identity)) at $n = 2$.
 $\square$

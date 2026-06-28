@@ -36,7 +36,7 @@ in the trace functionals — the conditions
 (c) consistency across the tower
 $H_n \hookrightarrow H_{n+1}$
 together cut out a one-parameter family parameterised by $z$
-([volume normalisation](#thm\:jones-markov-trace)).  The
+([volume normalisation](#thm:jones-markov-trace)).  The
 normalisation $\mathrm{tr}_M(1) = 1$ pins the scale.
 
 *Step 4 (Wenzl bridge supplies the closed form).*  The
@@ -48,7 +48,7 @@ on $g$-Hecke at $z_{\mathrm{GL}} = Q^r(1 - Q)/(1 - Q^r)$ has
 weights $\omega_\lambda(Q) = s_{\lambda, r}(Q)$ given by the
 principal Schur specialisation, where $Q = q^2$.  Combining Steps
 1--3 with this formula yields the Wenzl-bridge closed form
-([prop:y-lambda-closed-form-wenzl-bridge](#prop\:y-lambda-closed-form-wenzl-bridge)):
+([prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge)):
 
 $$
   y_\lambda \;=\;
@@ -64,8 +64,8 @@ $\square$
 
 | Hypothesis                                                            | QOU realisation                                                                                                                   |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Rigid :refterm[braided monoidal category]{#braided-monoidal-category} | $\mathbf{C}$ as the [rigid :refterm[braided monoidal category]{#braided-monoidal-category}](#def\:rigid-monoidal-category) of QOU |
-| Self-dual fundamental object                                          | $A$ as the [fundamental confined particle](#def\:confined-particle), self-dual via $A^* \cong A$ from the antipode                |
-| Fibre functor                                                         | [$\tau \colon \mathbf{C} \to R\text{-mod}$](#prop\:fibre-functor-atlas) realising the state bundle                                |
+| Rigid :refterm[braided monoidal category]{#braided-monoidal-category} | $\mathbf{C}$ as the [rigid :refterm[braided monoidal category]{#braided-monoidal-category}](#def:rigid-monoidal-category) of QOU |
+| Self-dual fundamental object                                          | $A$ as the [fundamental confined particle](#def:confined-particle), self-dual via $A^* \cong A$ from the antipode                |
+| Fibre functor                                                         | [$\tau \colon \mathbf{C} \to R\text{-mod}$](#prop:fibre-functor-atlas) realising the state bundle                                |
 | Tannaka--Krein Hopf algebra                                           | $H = U_q(\mathfrak{sl}_2)$ in the running QOU example                                                                             |
 | $V = \tau(A)$ has $q$-dimension $[2]_q^{\mathrm{symm}}$               | direct from $A$ being the spin-$\tfrac{1}{2}$ representation                                                                      |

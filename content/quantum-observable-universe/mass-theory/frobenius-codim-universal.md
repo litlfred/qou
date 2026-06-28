@@ -13,10 +13,10 @@
   rigid :refterm[monoidal category]{#monoidal-category} of the quantum observable universe —
   i.e., a closed element of $A$ arising as the closure of a braid
   $\beta \in B_n$
-  ([Hecke mass element](#def\:hecke-mass-element)).  Each vortex has
+  ([Hecke mass element](#def:hecke-mass-element)).  Each vortex has
   a Hecke-algebra representative $\sigma_w \in H_n(R, q)$ whose Markov
   trace is the categorical mass
-  ([categorical mass, Markov](#prop\:categorical-mass-markov)).
+  ([categorical mass, Markov](#prop:categorical-mass-markov)).
   In physics: particles (quarks, nucleons, nuclei) are vortices.
 
 * **$C_{\dim_q}$**: the "C" stands for **Casimir** (Lie-algebra /

@@ -8,10 +8,10 @@ This remark collects the six squeezes side by side.
 
 **The common template.** Let $\varepsilon \in \mathrm{Der}(A)$ be the
 Reeb infinitesimal
-([Reeb infinitesimal](#def\:reeb-epsilon))
+([Reeb infinitesimal](#def:reeb-epsilon))
 and $q = 1 + \varepsilon$
-([$q$ from $\varepsilon$](#def\:q-from-epsilon)).  Recall from
-[surreal rate calculus](#prop\:surreal-rate-calculus):
+([$q$ from $\varepsilon$](#def:q-from-epsilon)).  Recall from
+[surreal rate calculus](#prop:surreal-rate-calculus):
 
 $$
   \Delta_q \;\asymp\; \varepsilon^3
@@ -25,7 +25,7 @@ $$
 
 Each problem identifies a *drift* $\delta$ that measures the
 standard-real deviation from the classical stable configuration.
-The [surreal squeeze](#lem\:surreal-squeeze) then delivers the same
+The [surreal squeeze](#lem:surreal-squeeze) then delivers the same
 inequality:
 
 $$
@@ -44,13 +44,13 @@ See [Table 1](#tbl:millennium-unification-table1-data).
 
 The first three rows are *unconditional* surreal translations of
 existing QOU propositions
-([collapse of the quantum gap](#thm\:quantum-gap-collapse),
-[blowup as Yekutieli lifting obstruction](#conj\:blowup-yekutieli),
-[$q$-Collatz](#conj\:q-collatz)).  The fourth row is *conditional*
-on [P vs NP in the QOU](#conj\:p-vs-np-qou).  The fifth row is
-*conditional* on [$q$-BSD](#conj\:q-birch-swinnerton-dyer); the
+([collapse of the quantum gap](#thm:quantum-gap-collapse),
+[blowup as Yekutieli lifting obstruction](#conj:blowup-yekutieli),
+[$q$-Collatz](#conj:q-collatz)).  The fourth row is *conditional*
+on [P vs NP in the QOU](#conj:p-vs-np-qou).  The fifth row is
+*conditional* on [$q$-BSD](#conj:q-birch-swinnerton-dyer); the
 adelic refinement
-([adelic--Tate surreal squeeze](#rem\:adelic-tate-squeeze))
+([adelic--Tate surreal squeeze](#rem:adelic-tate-squeeze))
 localises the fifth row at each prime.  The sixth row is
 *unconditional* once the QOU substrate is posited: the mass gap is
 a categorical invariant of $\mathbf{C}$ with $\ordw(\Delta_q) = -3$,
@@ -63,7 +63,7 @@ the rigid :refterm[braided monoidal category]{#braided-monoidal-category} $\math
 from problem to problem.  The Reeb-period scaling
 $\Omega_q \asymp \varepsilon^{-1}$ is likewise a fixed structural
 invariant of the Reeb derivation $\xi$
-([categorical Reeb derivation](#def\:categorical-reeb-derivation)).
+([categorical Reeb derivation](#def:categorical-reeb-derivation)).
 The *content* of each millennium problem is therefore not the rate
 table — which is common to all six — but the identification of the
 problem-specific drift $\delta$ and the translation of the classical
@@ -82,15 +82,15 @@ instance, Navier--Stokes is the hydrodynamic instance, Collatz is
 the arithmetic instance, P vs NP is the complexity instance, BSD
 is the elliptic-curve instance, and Yang--Mills is the gauge-theory
 instance.  The adelic--Tate framework
-([adelic--Tate surreal squeeze](#rem\:adelic-tate-squeeze))
+([adelic--Tate surreal squeeze](#rem:adelic-tate-squeeze))
 localises each of these at every prime, showing the squeeze is a
 strictly local-global affair.
 
 **Relation to the appendix.** The $\omega$-adic form of each
 squeeze is registered in the
-[body asymptotics catalog](#rem\:body-asymptotics-catalog) under
+[body asymptotics catalog](#rem:body-asymptotics-catalog) under
 the $\ordw$-entry of the corresponding body block, with notation
-following [Big-O via $\ordw$](#rem\:conway-normal-form).  The six remarks
+following [Big-O via $\ordw$](#rem:conway-normal-form).  The six remarks
 above can therefore be read either in the
 "$\delta^2 \cdot \Omega_q > \Delta_q$ in $\mathbb{R}(\varepsilon)$"
 register or in the "$\ordw(\text{cost}) > \ordw(\text{budget})$"

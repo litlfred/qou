@@ -3,7 +3,7 @@ triple $(\mathbf{C}, A, \tau)$ where:
 
 1. $(\mathbf{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
    :refterm[braided monoidal category]{#braided-monoidal-category}
-   ([rigid :refterm[monoidal category]{#monoidal-category}](#def\:rigid-monoidal-category)) with
+   ([rigid :refterm[monoidal category]{#monoidal-category}](#def:rigid-monoidal-category)) with
    braiding $c_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$ — the braiding is required for
    exterior powers $\Lambda^k V$ and need not be symmetric
    ($c^2 \neq \mathrm{id}$ in general);
@@ -39,7 +39,7 @@ triple $(\mathbf{C}, A, \tau)$ where:
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
    a Hopf algebra object in $\mathbf{C}$;
 
-   **(F)** the [Frobenius pairing](#def\:frobenius-pairing)
+   **(F)** the [Frobenius pairing](#def:frobenius-pairing)
    $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ is
    non-degenerate, inducing an isomorphism
    $A \xrightarrow{ \sim } A^{\vee}$;

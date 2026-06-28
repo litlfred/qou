@@ -1,8 +1,8 @@
 The Białynicki-Birula stratification of the brane tower
-([recursive-brane-tower](#def\:recursive-brane-tower),
-[brane-tower-levels](#ex\:brane-tower-levels)) under the :refterm[descent]{#descent}
+([recursive-brane-tower](#def:recursive-brane-tower),
+[brane-tower-levels](#ex:brane-tower-levels)) under the :refterm[descent]{#descent}
 involution $\hat\tau$
-([:refterm[descent]{#descent}-involution](#def\:descent-involution)) yields a spectral
+([:refterm[descent]{#descent}-involution](#def:descent-involution)) yields a spectral
 sequence whose $E_\infty$ page records the *failure* of categorical
 neutrality at each level. This block names the **homological
 condensation** at saturated $n$: the higher pages collapse to zero,
@@ -13,7 +13,7 @@ brane-tower stratification.
 
 Fix a level $n \in \mathbb{N}$ in the brane tower, with associated
 :refterm[descent]{#descent}-graded jet algebra $A_n = A_{n-1} \otimes \Omega^1(A_{n-1})$
-([def:direct-limit-algebra](#def\:direct-limit-algebra)). The
+([def:direct-limit-algebra](#def:direct-limit-algebra)). The
 Białynicki-Birula stratification of $\mathrm{Spec}(A_n)$ under the
 $\mathbb{C}^\times$-action induced by the :refterm[descent]{#descent} involution
 $\hat\tau$ \cite{bialynicki1973} produces a filtration
@@ -24,7 +24,7 @@ $$
 
 with associated graded $\mathrm{gr}_F A_n$. The Gröbner–Shirshov
 spectral sequence
-([prop:gb-spectral-sequence](#prop\:gb-spectral-sequence)) on this
+([prop:gb-spectral-sequence](#prop:gb-spectral-sequence)) on this
 filtration converges to the :refterm[descent]{#descent}-graded algebra:
 
 $$
@@ -37,7 +37,7 @@ The **strict-positive part** $E_\infty^{p, >0}(n)$ measures the
 non-trivial cohomology supported above the $E_2$-collapse line —
 operationally, the obstruction to reading the :refterm[descent]{#descent}-graded trace
 purely from the diagonal
-([prop:graded-trace-residue-split](#prop\:graded-trace-residue-split)).
+([prop:graded-trace-residue-split](#prop:graded-trace-residue-split)).
 
 ## Statement
 
@@ -54,6 +54,6 @@ $$
 
 *Equivalently, the :refterm[descent]{#descent}-graded trace
 $\mathrm{tr}_{M, \ell}$ on $J^\ell / J^{\ell+1}$
-([prop:graded-trace-residue-split](#prop\:graded-trace-residue-split))
+([prop:graded-trace-residue-split](#prop:graded-trace-residue-split))
 is supported entirely on the diagonal at saturated $n$, and the
 brane-tower :refterm[descent]{#descent} residues vanish for $\ell \geq 2$.*

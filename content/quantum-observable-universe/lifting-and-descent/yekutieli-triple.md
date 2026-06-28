@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its
-([recursive brane tower](#def\:recursive-brane-tower)); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
+([recursive brane tower](#def:recursive-brane-tower)); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
 of the underlying site $\mathcal{S}$ trivialising every level of the tower.
 The **Yekutieli triple** at level $n$ over an intersection
 $U_i \cap U_j$ is the datum $(x_{ij}^{(n)}, g_{ij}^{(n)}, a_{ij}^{(n)})$
@@ -20,8 +20,8 @@ where:
 
 The assignment $n \mapsto (x^{(n)}, g^{(n)}, a^{(n)})$ is functorial:
 the
-([jet prolongation](#prop\:jet-prolongation)) sends the triple at level $n$
+([jet prolongation](#prop:jet-prolongation)) sends the triple at level $n$
 to the triple at level $n{+}1$, and the :refterm[descent]{#descent} homomorphism
-$\mathfrak{d}_{n+1}$ ([:refterm[descent]{#descent}](#lem\:descent)) reverses this assignment.
+$\mathfrak{d}_{n+1}$ ([:refterm[descent]{#descent}](#lem:descent)) reverses this assignment.
 In the archimedean realisation, $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j, \mathrm{SU}_{q_n}(2))$ are gauge transition
 functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.

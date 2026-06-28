@@ -7,7 +7,7 @@ the **degree-$2$ fiber** of the chiral fibration — the sector
 governed by the cinquefoil $T_{2,5}^{\sigma}$ ($5$ crossings,
 genus $2$).  This sector is electromagnetically dark: the
 strangelet has $Q = 0$
-([strangelet crossing energy](#prop\:strangelet-crossing-energy)),
+([strangelet crossing energy](#prop:strangelet-crossing-energy)),
 so no photons are exchanged.
 
 The interaction products become electromagnetically visible
@@ -28,7 +28,7 @@ $$
 
 produces an $L_0$ smoothing — a split into an electron (or
 positron) and a neutrino
-([beta decay products](#rem\:linking-relations-table)).
+([beta decay products](#rem:linking-relations-table)).
 The amplitude for each crossing change is $s$.  Two crossing
 changes give the double beta amplitude $s^2$ and rate $s^4$:
 

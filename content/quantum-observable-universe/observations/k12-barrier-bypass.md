@@ -1,5 +1,5 @@
 The Hoefsmit / matrix-evaluation programme
-([prop:magic-numbers-from-q](#prop\:magic-numbers-from-q),
+([prop:magic-numbers-from-q](#prop:magic-numbers-from-q),
 [prop:hoefsmit-seminormal-form](../braids-and-knots/hoefsmit-seminormal-form.md))
 verifies the magic-number ladder at small partition sizes
 $k = 3, \dots, 10$ by direct computation of Wedderburn weights from
@@ -13,7 +13,7 @@ The algebraic refactor analytically bypasses this barrier. The
 homological-condensation conjecture
 ([`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md))
 and the LR-fusion-rigidity conjecture
-([`prop:diagrammatic-double-magic-lr-fusion`](#conj\:diagrammatic-double-magic-lr-fusion))
+([`prop:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
 predict the saturated-shell pattern by *structural* arguments
 about the Białynicki-Birula stratification and the LR-content-sum
 arithmetic on Young's lattice — both of which are *partition-size
@@ -75,7 +75,7 @@ combinatorial objects with the categorical mass support.
 ## Empirical-verification reframing
 
 The historical empirical scorecard
-([prop:magic-numbers-from-q](#prop\:magic-numbers-from-q)) records
+([prop:magic-numbers-from-q](#prop:magic-numbers-from-q)) records
 agreement deltas $+33.2, +20.4, +4.4$ between framework predictions
 and CODATA at $\{2, 8, 20\}$. Under the refactor these deltas are
 **empirical computational verifications** of the homological

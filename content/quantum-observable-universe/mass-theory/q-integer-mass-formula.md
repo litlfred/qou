@@ -90,7 +90,7 @@ relation is approximate in the empirically-fit liquid-drop formula
 
 *The first three recovered coefficients $\lambda_V$, $\lambda_S$,
 $\lambda_C$ are derivable from the per-nucleon channel product
-([per-nucleon channel decomposition](#rem\:per-nucleon-channel-decomposition)).
+([per-nucleon channel decomposition](#rem:per-nucleon-channel-decomposition)).
 The effective binding scale is $\alpha_{\mathrm{eff}} = m_e \times 8G
 \times [3]_q$, where $8G = \mathrm{Vol}(\mathcal{B}_3)$ is the
 Borromean link volume and $[3]_q$ is the nucleon strand count:*
@@ -146,7 +146,7 @@ confining channel.*
 
 *The pairing $\delta_P = [3]_q[7]_q \cdot m_e$ arises from the
 Chebyshev sign alternation in the quotient atom model
-([shell closure conjecture](#conj\:shell-closure-nf-term-count)).
+([shell closure conjecture](#conj:shell-closure-nf-term-count)).
 The $Z$-fold nuclear-electron crossing $(\sigma^{-1})^Z$ reduces
 to $c_Z \sigma + d_Z$ where:*
 
@@ -161,7 +161,7 @@ For odd $Z$: $c_Z > 0$ ($\sigma$-heavy), which creates new
 reduced words and drives $\gamma \geq 3$.  This sign alternation
 IS the pairing mechanism — not Pauli exclusion, but the
 Chebyshev structure of iterated Hecke generators.  The
-[palindromicity conjecture](#conj\:palindromicity-orbital-type)
+[palindromicity conjecture](#conj:palindromicity-orbital-type)
 shows the paired state has Poincaré-dual NF (palindromic
 histogram), confirming the coherence of the exceptional
 divisor intersection form.  The empirical liquid-drop
@@ -171,7 +171,7 @@ to this exact Chebyshev alternation.*
 *The shell correction $\delta_S = [2]_q^2 [3]_q \cdot m_e$ captures
 the distinction between :refterm[exact pairing]{#exact-pairing} ($\gamma = 1$, s-shells)
 and approximate pairing ($\gamma \approx 1.3$, p-shells).
-The [shell closure conjecture](#conj\:shell-closure-nf-term-count)
+The [shell closure conjecture](#conj:shell-closure-nf-term-count)
 identifies the algebraic shell gap: no $Z$ has
 $\gamma \in (1.4, 3.0)$.  At magic-number closures, the
 torus knot $T_{2,m}$ coherence pushes $\gamma$ exactly to 1

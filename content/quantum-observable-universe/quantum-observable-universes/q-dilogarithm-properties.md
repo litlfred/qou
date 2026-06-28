@@ -1,6 +1,6 @@
 This remark collects the R-matrix, base-ring, Habiro, three-context,
 archimedean, $q$-heat, and physical realisations of the
-[$q$-dilogarithm](#def\:q-dilogarithm).
+[$q$-dilogarithm](#def:q-dilogarithm).
 
 **Universal R-matrix interpretation.** The universal R-matrix of
 $U_q(\mathfrak{sl}_2)$ admits the Faddeev--Kashaev factorisation
@@ -30,7 +30,7 @@ $\mathbb{Z}[q^{\pm 1}, (q-q^{-1})^{-1}]$ and the partial sums are
 coherent modulo $((q;q)_m)$ as $m \to \infty$. Thus
 $\mathrm{Li}_2^q(x)$ is accordingly an element of the Habiro ring
 $\widehat{\mathbb{Z}[q]}[\![x]\!]$
-([Habiro ring](#def\:habiro-ring)) of formal power series with
+([Habiro ring](#def:habiro-ring)) of formal power series with
 Habiro-completed coefficients. This is the algebraic home that
 makes "evaluation at any root of unity" well-defined without
 invoking $\mathbb{C}$: the projection $\widehat{\mathbb{Z}[q]} \to
@@ -75,8 +75,8 @@ sometimes called the *Kirillov dilogarithm*. At $q = 1$ this reduces
 to the classical dilogarithm $\mathrm{Li}_2(x) = \sum x^n / n^2$.
 
 **Role in the $q$-heat story.** The Laplace transform
-([categorical Laplace transform](#def\:categorical-laplace)) of the
-$q$-heat kernel ([Peter--Weyl heat kernel](#prop\:q-heat-kernel-peter-weyl))
+([categorical Laplace transform](#def:categorical-laplace)) of the
+$q$-heat kernel ([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl))
 involves the resolvent $(\widehat{\Delta_q} + s)^{-1}$, whose
 contour integral against the spectrum picks up a logarithmic branch
 at each eigenvalue $\lambda_j(q)$. Summing these logarithms over

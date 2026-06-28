@@ -1,10 +1,10 @@
 This remark collects the reconstruction, Wick-rotation, $q$-heat,
 abelian-instance, and base-ring realisations of the
-[categorical Fourier transform](#def\:categorical-fourier).
+[categorical Fourier transform](#def:categorical-fourier).
 
 **Tannakian reconstruction.**  When $G = \mathrm{SU}_q(2)$ and
 $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, the Tannaka--Krein
-reconstruction ([Tannaka--Krein reconstruction](#prop\:tannaka-krein-reconstruction))
+reconstruction ([Tannaka--Krein reconstruction](#prop:tannaka-krein-reconstruction))
 identifies $\mathcal{F}$ with the *Peter--Weyl decomposition*:
 
 $$
@@ -81,9 +81,9 @@ $$
 $$
 
 the $k$-th Lagrange resolvent
-([Lagrange resolvents](#rem\:lagrange-resolvents)).  The Briggs--Klein
-chart ([Briggs--Klein chart](#def\:briggs-klein-chart)) on Bring's
-surface ([smoothness of Bring's surface](#rem\:brings-smoothness))
+([Lagrange resolvents](#rem:lagrange-resolvents)).  The Briggs--Klein
+chart ([Briggs--Klein chart](#def:briggs-klein-chart)) on Bring's
+surface ([smoothness of Bring's surface](#rem:brings-smoothness))
 is built from these DFT coordinates: even where two colour sheets
 $x_i, x_j$ collide (branch points of the projection $\pi$), the
 Fourier components $w_k$ remain pairwise distinct because they

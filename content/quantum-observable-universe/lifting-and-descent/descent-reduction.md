@@ -8,9 +8,9 @@ universe collapse as follows.
    bundle over the $1$-dimensional base whose fibre dynamics are locked
    into a single periodic flow.
 3. *Reeb direction.*  The inverse of the Reeb vector field
-   ([$q$-Reeb vector field](#ex\:q-reeb-vector-field)) becomes the only direction
+   ([$q$-Reeb vector field](#ex:q-reeb-vector-field)) becomes the only direction
    of motion; the horizontal distribution is trivial and no bosonic modes
-   ([algebraic filter](#rem\:algebraic-filter)) survive.
+   ([algebraic filter](#rem:algebraic-filter)) survive.
 
 The :refterm[descent]{#descent} need not terminate here; a further step carries $M_k$ to a
-zero-dimensional base ([:refterm[descent]{#descent} reduction to zero](#rem\:descent-reduction-zero)).
+zero-dimensional base ([:refterm[descent]{#descent} reduction to zero](#rem:descent-reduction-zero)).

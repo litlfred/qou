@@ -1,24 +1,24 @@
 **Proposition (applicability of the Wenzl-bridge formula in QOU).**
 *Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU substrate
-satisfying the [archimedean axioms](#def\:rigid-monoidal-category)
+satisfying the [archimedean axioms](#def:rigid-monoidal-category)
 with self-dual fundamental object $A \in \mathbf{C}$ and fibre
 functor $\tau \colon \mathbf{C} \to R\text{-mod}$
-([fibre functor](#prop\:fibre-functor-atlas)).  Let
+([fibre functor](#prop:fibre-functor-atlas)).  Let
 $H := \mathrm{Aut}^\otimes(\tau)$ be the Tannaka--Krein Hopf algebra
-([Tannaka--Krein](#prop\:tannaka-krein-reconstruction)) and
+([Tannaka--Krein](#prop:tannaka-krein-reconstruction)) and
 $V := \tau(A)$.  Then the Markov trace
 $\mathrm{tr}_M$ on the Iwahori--Hecke algebra $H_n(R, q)$
-([Jones--Markov trace](#thm\:jones-markov-trace)) is uniquely
+([Jones--Markov trace](#thm:jones-markov-trace)) is uniquely
 determined by $(\mathbf{C}, A, \tau)$ up to the normalisation
 $\mathrm{tr}_M(1) = 1$, and equals the closed form
-([Wenzl-bridge $y_\lambda$](#prop\:y-lambda-closed-form-wenzl-bridge)).*
+([Wenzl-bridge $y_\lambda$](#prop:y-lambda-closed-form-wenzl-bridge)).*
 ## Corollaries
 
 1. **No fitting.**  The Wenzl-bridge formula is *the* closed form
    for $y_\lambda$ in QOU; no parameter is chosen to fit observables.
 
 2. **Unique extension to $n \ge 5$.**  The
-   ([procedure](#prop\:alpha-k-derivation-procedure))
+   ([procedure](#prop:alpha-k-derivation-procedure))
    linear-system characterisation gives $y_\lambda$ at finite $n$;
    the Wenzl bridge gives the same $y_\lambda$ in closed form at
    every $n$, and the two characterisations agree by uniqueness

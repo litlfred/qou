@@ -1,4 +1,4 @@
-The [categorical Laplace transform](#def\:categorical-laplace) is the
+The [categorical Laplace transform](#def:categorical-laplace) is the
 unique :refterm[monoidal functor]{#monoidal-functor}
 $(\mathrm{End}_{\mathbf{C}}(A), \ast_q) \to (\mathrm{End}_{\mathbf{C}}(A), \cdot)$
 intertwining convolution with product.  It is characterised as the

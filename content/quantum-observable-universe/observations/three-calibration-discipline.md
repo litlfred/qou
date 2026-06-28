@@ -32,11 +32,11 @@ $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ with $\hbar_q = 1 - q_0^{-1}$
 
 *For every confined hadronic state $X$ the mass functional defined
 by the algebraic-side chain
-([categorical action](#def\:categorical-action),
-[Frobenius pairing](#def\:frobenius-pairing),
-[mass identity](#def\:mass-identity),
-[mass-endomorphism tower](#prop\:mass-endomorphism-tower),
-[Jones–Markov trace](#thm\:jones-markov-trace))
+([categorical action](#def:categorical-action),
+[Frobenius pairing](#def:frobenius-pairing),
+[mass identity](#def:mass-identity),
+[mass-endomorphism tower](#prop:mass-endomorphism-tower),
+[Jones–Markov trace](#thm:jones-markov-trace))
 factors as*
 
 $$
@@ -101,7 +101,7 @@ elsewhere in the paper:
    itself overdetermined: it can equally be
    fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which
    agree on $q_0$ to within 0.3% (per
-   [substrate-consistency window](#prop\:substrate-consistency-window)).
+   [substrate-consistency window](#prop:substrate-consistency-window)).
    In the **Physical-Observations** chapter one may instead anchor
    $q_0$ on a *derived* quantity with smaller experimental error —
    the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb;

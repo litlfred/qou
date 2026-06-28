@@ -1,9 +1,9 @@
 Continuing
-[Yekutieli lifting for SU(2)](#ex\:yekutieli-lifting-su2), we verify all
+[Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-su2), we verify all
 five structural properties of the
-[main theorem](#thm\:qu-to-qou) for $G = \mathrm{SU}(2)$.
+[main theorem](#thm:qu-to-qou) for $G = \mathrm{SU}(2)$.
 
-**Hypotheses.** From the [SU(2) QOU](#ex\:qou-su2), the quantum universe
+**Hypotheses.** From the [SU(2) QOU](#ex:qou-su2), the quantum universe
 is $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with substrate parameter $q$.  Observability holds:
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ because
 $\mathrm{Ad}(\mathrm{SU}(2)) \cong \mathfrak{su}(2)$ has no trivial
@@ -38,16 +38,16 @@ $$
 
 **(3) Perpetual obstruction.**
 From the
-[quantum characteristic classes](#ex\:quantum-characteristic-classes-su2),
+[quantum characteristic classes](#ex:quantum-characteristic-classes-su2),
 $\kappa_0 = 1 \in \mathbb{Z}$ is non-torsion (since $\mathbb{Z}$ is
 torsion-free).  By the
-[Yekutieli lifting analysis](#ex\:yekutieli-lifting-su2), the jet
+[Yekutieli lifting analysis](#ex:yekutieli-lifting-su2), the jet
 corrections at level $n$ are non-negative, so $\kappa_n \geq 1 > 0$ for
 all $n \geq 0$.  The gerbe tower is perpetually obstructed.
 
 **(4) Branch point formula.**
 The projective line object is $\mathbb{P}(V) = \mathbb{CP}^1$
-([projective line for SU(2)](#ex\:projective-line-su2)).  The :refterm[descent]{#descent} map
+([projective line for SU(2)](#ex:projective-line-su2)).  The :refterm[descent]{#descent} map
 $\mathbb{CP}^1 \to \mathbb{CP}^1$ has degree $d = 1$ (the identity
 covering).  The Riemann--Hurwitz formula gives
 
@@ -79,7 +79,7 @@ $p = \infty$ is conjugate via the Weyl group element
 $w \colon e_3 \mapsto -e_3$.
 
 **Conclusion.** All five properties of the
-[main theorem](#thm\:qu-to-qou) are verified for $\mathrm{SU}(2)$.  The
+[main theorem](#thm:qu-to-qou) are verified for $\mathrm{SU}(2)$.  The
 quantum universe $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with observability and the
 Yekutieli lifting condition is a quantum observable universe, with
 :refterm[descent]{#descent} terminating in $1$ step, perpetually obstructed brane tower,

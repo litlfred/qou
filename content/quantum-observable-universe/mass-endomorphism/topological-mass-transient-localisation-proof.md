@@ -2,8 +2,8 @@
 The transient component $\alpha - \hat{\tau}_n(\alpha)$ is annihilated by
 $\hat{\tau}_n$: it lies in
 $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat{\tau}_n$
-([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)).  By the structure of the
-defining boundary ([brane boundary](#def\:brane-boundary)), the support of
+([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)).  By the structure of the
+defining boundary ([brane boundary](#def:brane-boundary)), the support of
 a transient section is contained in a neighbourhood of the boundary
 $\partial \mathcal{S}_n$, which has codimension $\geq 2$ in $\mathcal{S}_n$ (item (1)) and
 whose fibre at each blow-up centre $p_i$ is the exceptional divisor

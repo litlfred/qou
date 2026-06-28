@@ -19,7 +19,7 @@ differential — it is a morphism space in the underlying
 
 **Corollary.**  The QOU axioms (observability, measurability,
 volume constraint) are properties of the
-[substrate line bundle](#def\:substrate-line-bundle) base
+[substrate line bundle](#def:substrate-line-bundle) base
 $(\mathbf{C}, A, \tau)$, not of any particular fibre
 $q \in \mathbb{G}_m$.  They hold uniformly over
 $\mathbb{G}_m$, including at the torsion point $q = 1$ and

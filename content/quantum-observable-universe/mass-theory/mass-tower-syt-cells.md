@@ -1,9 +1,9 @@
 This remark reframes the pair blow-up set $\mathcal{P}_n$
-([jet-brane reformulation](#rem\:mass-endomorphism-jet-tower))
+([jet-brane reformulation](#rem:mass-endomorphism-jet-tower))
 using the Jucys--Murphy (JM) elements and standard Young tableaux
 (SYT). The motivation: empirical probes show the optimal
 $\mathcal{P}_n$ is *all pairs with no distance restriction*
-([:refterm[descent]{#descent} rate empirical](#sim\:descent-rate-probe)), which
+([:refterm[descent]{#descent} rate empirical](#sim:descent-rate-probe)), which
 is most accordingly expressed in the JM / SYT cell basis.
 
 ## Jucys--Murphy elements
@@ -31,7 +31,7 @@ containing the integer $k$ (cell at row $i$, column $j$).
 ## SYT cell reindexing
 
 The pair set $\mathcal{P}_n$ in
-[jet-brane form](#rem\:mass-endomorphism-jet-tower) is accordingly
+[jet-brane form](#rem:mass-endomorphism-jet-tower) is accordingly
 **cell-indexed** via JM:
 
 $$
@@ -57,7 +57,7 @@ in any SYT shape $\lambda \vdash n$. Under this reindexing:
 * **All pairs are on equal footing**: $[L_i, L_j] = 0$ by
  construction. This matches the empirical finding that
  $\beta(d) = 1$ uniformly across distances
- ([:refterm[descent]{#descent} rate probe](#sim\:descent-rate-probe)).
+ ([:refterm[descent]{#descent} rate probe](#sim:descent-rate-probe)).
 
 ## Reformulated mass tower
 
@@ -89,10 +89,10 @@ $$
 with $\mu_T$ = normalised SYT Plancherel weight.
 
 The pair weight $z^2$ in the cross sum matches the generator-indexed
-form of [prop:mass-endomorphism-tower](#prop\:mass-endomorphism-tower)
+form of [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower)
 and is justified universally (all $k_1 < k_2$, not just adjacent
 pairs) by the
-[Markov-trace factorization theorem](#thm\:markov-trace-factorization):
+[Markov-trace factorization theorem](#thm:markov-trace-factorization):
 two successive Markov peels of commuting elements each contribute a
 factor $z$, so $\mathrm{tr}_M(L_{k_1} L_{k_2}) = z^2$. In the JM /
 SYT reindexing this is automatic — $[L_i, L_j] = 0$ makes every pair
@@ -127,7 +127,7 @@ factorization theorem.
 4. Iterate over jet levels $n = 0, 1, \ldots, N$ and sum.
 
 Implementation is stubbed in the
-[multi-level jet sum simulator](#sim\:multi-level-jet-sum).
+[multi-level jet sum simulator](#sim:multi-level-jet-sum).
 
 ## Empirical validation
 
@@ -136,7 +136,7 @@ A first-pass implementation
 $\hat V_k^{\mathrm{JM}}$ for $k = 1, \ldots, 3A$ on the atom braid
 word and assembles the tower of
 equation\~\ref{eq:syt-cell-tower}. Against the scalar all-pairs form
-of [prop:mass-endomorphism-tower](#prop\:mass-endomorphism-tower),
+of [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower),
 with $E_0$ calibrated per path on the proton:
 
 | Atom | scalar all-pairs | JM all-pairs |
@@ -146,7 +146,7 @@ with $E_0$ calibrated per path on the proton:
 | 3He | 60.1% | **0.219%** |
 
 The scalar path suffers a pair-pathology on T and 3He even after
-[mass-endomorphism-tower.md](#prop\:mass-endomorphism-tower)'s
+[mass-endomorphism-tower.md](#prop:mass-endomorphism-tower)'s
 all-pairs form is used; the JM path closes the residual by carrying
 the per-SYT content structure missing from a scalar factorization.
 
@@ -159,7 +159,7 @@ $V_\lambda$), but the *pair-count* and *independence-claim*
 structure may differ, since JM pairs are always commuting and
 have no "adjacent vs far" ambiguity — a distinction now formally
 absorbed into the
-[Markov-trace factorization theorem](#thm\:markov-trace-factorization).
+[Markov-trace factorization theorem](#thm:markov-trace-factorization).
 The T/3He residual closure in the table above suggests the JM
 form is not only a basis change: it captures SYT-content
 correlations that the scalar factorization drops.

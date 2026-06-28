@@ -10,7 +10,7 @@ When $R$ is a field, the simple modules are precisely the irreducible
 representations of the emergent gauge group
 $G = \mathrm{Aut}^{\otimes}(\tau)$.
 
-The [fundamental object](#rem\:fundamental-object-explication) $V$ is
+The [fundamental object](#rem:fundamental-object-explication) $V$ is
 distinguished among the simples by two properties:
 
 1. **Categorical dimension $2$**: $\tau(V)$ is a rank-$2$ free

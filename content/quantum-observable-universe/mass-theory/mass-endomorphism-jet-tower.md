@@ -1,13 +1,13 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-([quantum observable universe](#def\:quantum-observable-universe)) with
+([quantum observable universe](#def:quantum-observable-universe)) with
 substrate parameter $q$ and jet tower
 $A_{n+1} = A_n \otimes \Omega^1(A_n)$
-([recursive brane tower](#def\:recursive-brane-tower)). Let
+([recursive brane tower](#def:recursive-brane-tower)). Let
 $\hat{V}_i^{\mathrm{full},(n)}$ denote the additive Wedderburn
 traced volume at generator $i$ evaluated at jet level $n$.
 
 This remark reframes
-([mass endomorphism tower](#prop\:mass-endomorphism-tower))
+([mass endomorphism tower](#prop:mass-endomorphism-tower))
 in **jet-brane** language.
 
 ## Sufficiency of quadratic terms per jet level
@@ -19,7 +19,7 @@ in the prop: it is the intended content.
 
 $q$ calculations are not linear: the Hecke relation
 $\sigma_i^2 = H_A \sigma_i + 1$ is quadratic, and the pentagon
-identity of $\Phi_q$ ([quantum Bloch group](#def\:quantum-bloch-group))
+identity of $\Phi_q$ ([quantum Bloch group](#def:quantum-bloch-group))
 closes on pairs. **Per jet level**, the transient contribution
 therefore contains:
 
@@ -28,16 +28,16 @@ therefore contains:
  blow-up centres, $i < j$).
 
 The **descended** contribution is **not** summed over jet levels.
-By ([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)) the descended
+By ([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)) the descended
 subalgebra
 $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$ is the
 image of the :refterm[descent]{#descent} involution onto the base level; it carries
 a **single** holonomy contribution from the level-$0$ unknot core
-$\varrho_0$ ([topological mass proof](#prf\:topological-mass), Step 2).
+$\varrho_0$ ([topological mass proof](#prf:topological-mass), Step 2).
 Successive jet prolongations add only transient modes
 $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat\tau_n$ (the modes
 with no pre-image at level $n$, cf.
-([:refterm[descent]{#descent} involution](#def\:descent-involution))). Including a
+([:refterm[descent]{#descent} involution](#def:descent-involution))). Including a
 separate descended product at every jet level would double-count
 the level-$0$ holonomy.
 
@@ -49,7 +49,7 @@ level-$(n{+}1)$ contribution in the tower sum.
 ## Pentagon ascension of higher-order interactions
 
 The quantum dilogarithm satisfies the **pentagon identity**
-([quantum Bloch group](#def\:quantum-bloch-group)): for operators
+([quantum Bloch group](#def:quantum-bloch-group)): for operators
 $u, v$ with $uv = q\,vu$,
 
 $$
@@ -95,7 +95,7 @@ level $n$.
 The pair set is the full set of unordered pairs at every jet level,
 not only adjacent ones — the Markov-trace factorization theorem
 gives weight $z^2$ for every pair $(i, j)$, by the same argument
-([mass endomorphism tower](#prop\:mass-endomorphism-tower) §proof,
+([mass endomorphism tower](#prop:mass-endomorphism-tower) §proof,
 Markov-trace factorization paragraph) used at level $0$. The jet
 ascension argument above lifts that level-$0$ proof to every
 subsequent level.
@@ -117,11 +117,11 @@ cubic terms at level $n$
 ## Remaining open subconjectures
 
 1. **Jet-level sum convergence** — *(conjectural)* path-(b) closure via
- [`conj:jet-tower-uniform-delta-max`](#conj\:jet-tower-uniform-delta-max)
+ [`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max)
  (workplan **P3.4** path (b)). A geometric-series tail bound
  has been proved conditional on uniform boundedness of
  $\Delta^{(n)}$
- ([brane-tower tail bound](#prop\:jet-tower-convergence)):
+ ([brane-tower tail bound](#prop:jet-tower-convergence)):
  if $|\Delta^{(n)}| \leq \Delta_{\max}$ for all $n$, then the
  $N$-term truncation error is
  $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
@@ -132,30 +132,30 @@ cubic terms at level $n$
  D, T, ${}^{3}$He across $n = 1, \dots, 7$. The path-(a) proof from
  GS spectral-sequence $E_2$-collapse remains open.
 2. **Pentagon $\to$ uv-commutation** — *(resolved)* by
- [`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace).
+ [`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace).
  The traced volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$
  are scalar polynomials and commute by definition; the pentagon
  identity in its operator form does not apply to scalars. The
  ascension argument's rigorous content is Markov-trace
  factorization
- ([thm:markov-trace-factorization](#thm\:markov-trace-factorization))
+ ([thm:markov-trace-factorization](#thm:markov-trace-factorization))
  plus the brane-tower's $q$-graded jet ascension between
  adjacent levels — which is where the operator pentagon $uv =
    q\,vu$ does apply (on inter-level lifts $\widehat U_i$,
  $\widehat V_j$).
 3. **:refterm[Descent]{#descent} involution on pairs / pair-formula sharpness** — *(resolved)*
  resolved by
- [`lem:tower-pair-equality-fixed-level`](#lem\:tower-pair-equality-fixed-level).
+ [`lem:tower-pair-equality-fixed-level`](#lem:tower-pair-equality-fixed-level).
  The level-$n$ pair contribution $z^2 \sum_{(i, j) \in
    \mathcal{P}_n} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)$ is an
  **exact equality**, not an upper bound — the pentagon-bound
  framing was vacuous (per item 2 above the pentagon doesn't apply
  to scalar $\hat V$'s), and the Markov-pair identity
- ([prop:markov-pair-z2](#prop\:markov-pair-z2)) is itself an
+ ([prop:markov-pair-z2](#prop:markov-pair-z2)) is itself an
  equality. The empirical residual to CODATA at light atoms
  ($\sim 0.5$–$0.9\%$) reflects incomplete tower truncation
  (level $\ge 1$ contributions), not a sharpness gap in the
  level-$n$ formula. The remaining open piece is the uniform
  $\Delta_{\max}$ bound for the truncation-error formula
- ([prop:jet-tower-convergence](#prop\:jet-tower-convergence)),
+ ([prop:jet-tower-convergence](#prop:jet-tower-convergence)),
  tracked as workplan **P3.4** (item 1 above).

@@ -1,13 +1,13 @@
 > **Summary.** Finite-time NS blowup is identified with a finite obstruction level $n^*$ in the brane tower at which a velocity field ceases to lift (the Yekutieli lifting obstruction).
 > A counter-example is encoded by the cohomological address $(v_0, T^*, \Sigma, n^*, \kappa_{n^*})$, with the singular set $\Sigma$ controlled by local cohomology at the unit defect $z=1$.
 
-The [regularity breakdown](#conj\:regularity-breakdown) at $q = 1$
+The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$
 is a **cohomological obstruction** in the
-[Yekutieli lifting](#prop\:yekutieli-lifting) framework.
+[Yekutieli lifting](#prop:yekutieli-lifting) framework.
 
 ## Yekutieli tower and regularity
 
-The [recursive brane tower](#def\:recursive-brane-tower)
+The [recursive brane tower](#def:recursive-brane-tower)
 $\{A_n\}_{n \geq 0}$ with jet prolongations
 $A_n \hookrightarrow A_{n+1}$ produces a sequence of central
 extensions of gerbes
@@ -21,7 +21,7 @@ $$
 
 each carrying an obstruction class
 $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$
-([quantum characteristic classes](#def\:quantum-characteristic-classes)).
+([quantum characteristic classes](#def:quantum-characteristic-classes)).
 A velocity field $v$ on the state bundle $\mathcal{S}$ is
 **smooth** (infinitely differentiable) if and only if it lifts
 through the entire tower — i.e. $v$ admits a compatible
@@ -66,7 +66,7 @@ ceases to lift.  The blowup is localised at this level:
 * **Below $n^*$**: the velocity is smooth and lifts perfectly.
 * **At $n^*$**: the obstruction class $\kappa_{n^*}$ is nonzero
   — the twisted 2-cocycle condition
-  ([:refterm[descent]{#descent} condition](#prop\:descent-condition)) fails.
+  ([:refterm[descent]{#descent} condition](#prop:descent-condition)) fails.
 * **Above $n^*$**: the solution does not exist in those gerbes.
 
 ## Cohomological address of a counter-example

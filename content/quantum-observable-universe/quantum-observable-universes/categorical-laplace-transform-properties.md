@@ -1,6 +1,6 @@
 This remark collects the base-ring, three-context, and $q$-heat
 realisations of the
-[categorical Laplace transform](#def\:categorical-laplace).
+[categorical Laplace transform](#def:categorical-laplace).
 
 **Base-ring independence.**  Because $\exp_q(-s\cdot)$ is defined
 abstractly as a grouplike of $\mathcal{H}_q$ — not as a convergent series —
@@ -20,8 +20,8 @@ $\mathbb{Q}_p$ the integral is replaced by a sum over Frobenius
 orbits, but $\mathcal{L}$ itself is unchanged.
 
 **Three-context behaviour.**  Paralleling $\exp_q$
-([finite-field obstruction](#rem\:q-exp-finite-field-obstruction),
-[$p$-adic $\exp_q$](#rem\:q-exp-p-adic)):
+([finite-field obstruction](#rem:q-exp-finite-field-obstruction),
+[$p$-adic $\exp_q$](#rem:q-exp-p-adic)):
 
 * **$\mathbb{F}_p$.**  $\mathcal{L}$ becomes a finite sum over the
   grouplike spectrum $\mathrm{Spec}_{\mathbb{F}_p}(G(\mathcal{H}_q))$, which is
@@ -41,7 +41,7 @@ orbits, but $\mathcal{L}$ itself is unchanged.
   Laplace transform.
 
 **Role in the $q$-heat story.**  The $q$-heat equation
-([$q$-heat equation](#def\:q-heat-equation)) $\partial_t u = -\Delta_q u$
+([$q$-heat equation](#def:q-heat-equation)) $\partial_t u = -\Delta_q u$
 is turned by $\mathcal{L}$ into a spectral equation: differentiation
 in $t$ maps to multiplication by $s$ (plus initial data), so
 
@@ -53,6 +53,6 @@ $$
 
 yielding the *resolvent of the $q$-Laplacian*,
 $\hat{u}(s) = (s + \widehat{\Delta_q})^{-1} u_0$
-([$q$-resolvent](#def\:q-resolvent)).  The heat kernel is
+([$q$-resolvent](#def:q-resolvent)).  The heat kernel is
 the inverse Laplace of the resolvent, and lives in the archimedean
 realisation.

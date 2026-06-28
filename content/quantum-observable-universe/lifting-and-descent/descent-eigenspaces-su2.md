@@ -1,5 +1,5 @@
-Continuing the [:refterm[descent]{#descent} involution for SU(2)](#ex\:descent-involution-su2),
-we compute the [:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces) of $\hat{\tau}$
+Continuing the [:refterm[descent]{#descent} involution for SU(2)](#ex:descent-involution-su2),
+we compute the [:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces) of $\hat{\tau}$
 on $\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$.
 
 **The splitting.** The idempotent $\hat{\tau}$ splits the $6$-dimensional

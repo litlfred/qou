@@ -56,7 +56,7 @@ contributions:
 The electromagnetic charge of a knot $K$ is its $q$-writhe, the
 antisymmetric crossing count under the crossing reversal involution
 $\sigma$
-([antiparticle crossing reversal](#prop\:antiparticle-crossing-reversal)):
+([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
 
 $$
   Q_q(K) =  [w(K)]_q
@@ -70,7 +70,7 @@ combinatorial: a finite sum of $\pm 1$ values, $q$-deformed.
 
 *Layer 2: Coupling strength (singlet idempotent).*
 The two-strand spectral completeness theorem
-([completeness](#thm\:em-spectral-completeness)) decomposes the
+([completeness](#thm:em-spectral-completeness)) decomposes the
 braiding into central idempotents:
 
 $$
@@ -89,19 +89,19 @@ $$
 $$
 
 This is the **bare gauge coupling**: by uniqueness of the singlet
-([completeness corollary](#thm\:em-spectral-completeness)), it is
+([completeness corollary](#thm:em-spectral-completeness)), it is
 the *full* scalar exchange amplitude — there is no second EM-like
 channel to add.  It is a unit in $R$, with no transcendental
 content.
 
 *Layer 3: Force-carrier complexity (Bring-forced denominator).*
 By the genus-$4$ uniqueness theorem
-([Bring uniqueness](#prop\:force-carrier-bring-uniqueness)), the
+([Bring uniqueness](#prop:force-carrier-bring-uniqueness)), the
 force-carrier sector of any Bring-supported QOU is *exactly* the
 two-element set $\{T_{2,9}, T_{3,5}\}$ — no choice is being made.
 Their categorical $q$-dimensions are $\dim_q T_{2,9} = [9]_q$ and
 $\dim_q T_{3,5} = [10]_q$, both elements of $R$.  The strong/weak
-labelling ([force identification](#rem\:force-knot-identification))
+labelling ([force identification](#rem:force-knot-identification))
 selects which knot mediates which sector but does not affect the
 product $[9]_q \cdot [10]_q$, which is the categorical complexity
 of the entire force-carrier object.  The electromagnetic coupling
@@ -133,11 +133,11 @@ Every ingredient lives in the commutative ring $R$:
   integral.
 * The coupling $q^{-1} \in R^\times$ is the singlet idempotent's
   squared $\tau$-trace — by spectral completeness
-  ([completeness](#thm\:em-spectral-completeness)) the *only*
+  ([completeness](#thm:em-spectral-completeness)) the *only*
   scalar two-strand amplitude.
 * The normalisation $[9]_q \cdot [10]_q \in R$ is the categorical
   complexity of the *unique* genus-$4$ torus pair — by Bring
-  uniqueness ([Bring uniqueness](#prop\:force-carrier-bring-uniqueness))
+  uniqueness ([Bring uniqueness](#prop:force-carrier-bring-uniqueness))
   the *only* available denominator.
 * The spatial dependence (Coulomb $1/r^2$) is added by the
   Green's function of the base manifold, external to

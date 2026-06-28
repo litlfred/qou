@@ -6,8 +6,8 @@ each exposing different structure:
 | Form                                                                                                                                       | Inputs                                                                       | Status                                                                                                 |
 | :----------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
 | **(GB-NF)** $\mathcal{M} = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert$     | $m_e$, $\mathcal{B}_K$, $q_0$, $\rho_K$                                            | algebraic; $\rho_K$ currently empirical                                                                |
-| **(constituent)** $\mathcal{M} = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e + \alpha \sum_i \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert$ | $m_e$, **$m_{\mathfrak{p}}$, $m_{\mathfrak{n}}$ (CODATA)**, $\mathcal{B}_K$, $q_0$ | $0.18\%$ mean error, $Z\!=\!1\!\dots\!20$ ([Wedderburn mass](#thm\:wedderburn-mass-formula))           |
-| **(six-term spectral)** $\mathcal{M} = T_1 + T_2 + T_3 + T_4 + T_5 + T_6$                                                                  | $m_e$, $\mathcal{B}_K$, $q_0$, $E_0$ (proton calibration)                          | $25\%$ under-prediction at ${}^4\mathrm{He}$ ([unified mass formula](#thm\:knot-mass-formula-unified)) |
+| **(constituent)** $\mathcal{M} = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e + \alpha \sum_i \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert$ | $m_e$, **$m_{\mathfrak{p}}$, $m_{\mathfrak{n}}$ (CODATA)**, $\mathcal{B}_K$, $q_0$ | $0.18\%$ mean error, $Z\!=\!1\!\dots\!20$ ([Wedderburn mass](#thm:wedderburn-mass-formula))           |
+| **(six-term spectral)** $\mathcal{M} = T_1 + T_2 + T_3 + T_4 + T_5 + T_6$                                                                  | $m_e$, $\mathcal{B}_K$, $q_0$, $E_0$ (proton calibration)                          | $25\%$ under-prediction at ${}^4\mathrm{He}$ ([unified mass formula](#thm:knot-mass-formula-unified)) |
 
 The (GB-NF) form is the **abstract algebraic statement**; the
 other two are concrete evaluations that fix $\rho_K$ via different
@@ -16,7 +16,7 @@ calibration data.
 ## The categorical density factor $\rho_K$
 
 By the categorical-mass identity
-([categorical mass = Markov](#prop\:categorical-mass-markov)):
+([categorical mass = Markov](#prop:categorical-mass-markov)):
 $\mathfrak{m}_{q,K} = \lvert\!\operatorname{tr}_M(\rho(\mathcal{B}_K))\!\rvert$
 is the **dimensionless** mass ratio. To obtain MeV, one multiplies
 by a calibration factor with the dimensions of energy. The
@@ -50,7 +50,7 @@ The (GB-NF) form makes the **algebraic** structure manifest: $\mathcal{B}_K$
 reduces to a unique normal form $\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)$ in
 $H_n(q_0)$, and its Markov trace is computable directly from braid
 data alone. The categorical-density derivation lives in
-[graded ρ\_K expansion](#prop\:rho-k-graded-expansion):
+[graded ρ\_K expansion](#prop:rho-k-graded-expansion):
 
 $$
   m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)| \cdot \rho_K
@@ -77,11 +77,11 @@ The single-gen binding correction $\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\
 (where $\overline{\,\cdot\,}$ is the Hecke bar-involution $q \leftrightarrow q^{-1}$;
 at the archimedean specialization with real $q_0$ and real $\hat V_i$,
 this equals $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$)
-with $\alpha = m_e \cdot 8G$ ([binding scale](#prop\:binding-scale-catalan))
+with $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan))
 takes ρ\_K to $0.18\%$ mean accuracy across $Z = 1..20$
-([atomic braid mass](#prop\:atomic-braid-mass)). The pair-gen and
+([atomic braid mass](#prop:atomic-braid-mass)). The pair-gen and
 higher pieces require the proper Wedderburn-coupling structure
-(open work; see [graded ρ\_K expansion](#prop\:rho-k-graded-expansion)).
+(open work; see [graded ρ\_K expansion](#prop:rho-k-graded-expansion)).
 
 **Mirror-pair check** (T and ${}^3\mathrm{He}$, both $A=3$, $n=9$
 strands): the categorical density factors $\rho_K(T) / \rho_K({}^3\mathrm{He}) = 1.9853$
@@ -98,7 +98,7 @@ $m_{\mathfrak{n}}/m_e \approx 1838.68$ from $H_3(q_0)$ data alone.
 Once these anchors are categorically self-determined, the
 constituent decomposition plus binding correction recovers atomic
 masses to sub-percent across the full $A = 1..20$ range
-([Wedderburn mass](#thm\:wedderburn-mass-formula)). The six-term
+([Wedderburn mass](#thm:wedderburn-mass-formula)). The six-term
 spectral form is the current best candidate; empirically with
 proton calibration it recovers $m_{\mathfrak{p}}$ by construction
 but predicts $m_{\mathfrak{n}}$ to only $4.9\%$
@@ -119,9 +119,9 @@ categorically but the per-nucleon shift exponents
 $\mathrm{shift}_{\mathfrak{n}} = 16$ for `include_inter=False`) are
 characterised only via integer-LP. The clean torus-knot limit
 $\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$ is proved
-([torus-knot pole order](#prop\:alpha-shift-torus-knot)) and powers
+([torus-knot pole order](#prop:alpha-shift-torus-knot)) and powers
 the multiplicative-chain identity for $\alpha_{EM}^{-1}$
-([$\alpha_{EM}$ chain](#prop\:alpha-em-shift-multiplicative-chain)),
+([$\alpha_{EM}$ chain](#prop:alpha-em-shift-multiplicative-chain)),
 but the atomic-braid case carries a strand-context-dependent profile
 $(1, 4, 0, 0, 1, 0)$ for the per-crossing shift contributions whose
 categorical origin is open. The atomic-shift coefficients
@@ -195,7 +195,7 @@ parameterised by different calibration data:
 
 The propositional content carried by (GB-NF) — that the atomic mass
 factors through the Gröbner–Shirshov quotient — is what makes the
-:refterm[descent]{#descent} in [categorical mass = Markov](#prop\:categorical-mass-markov)
+:refterm[descent]{#descent} in [categorical mass = Markov](#prop:categorical-mass-markov)
 applicable: the trace depends only on the braid class modulo the
 PBW relations.
 

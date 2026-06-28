@@ -1,6 +1,6 @@
 **Remark (no exhaustive positivity proof needed).**
 *The categorical mass scalars produced by the
-[mass identity](#def\:mass-identity) are values of the observation
+[mass identity](#def:mass-identity) are values of the observation
 functor $\tau$ on graded projective KLR modules
 \cite{khovanovlauda2009, brundankleshchev2009}.  By construction
 $\tau$ takes the graded Euler characteristic, so each coefficient
@@ -17,9 +17,9 @@ $$
 **structurally** non-negative integers; an explicit positivity
 argument per coefficient is unnecessary.  Coefficients that vanish
 correspond to summands that lie in the
-[:refterm[cemetery group]{#cemetery-group}](#def\:cemetery-group), which the engine drops
+[:refterm[cemetery group]{#cemetery-group}](#def:cemetery-group), which the engine drops
 during traversal — see
-[cemetery-group emergence](#conj\:cemetery-group-emergence).*
+[cemetery-group emergence](#conj:cemetery-group-emergence).*
 
 *The polynomial $\tau(\mathfrak{M}_K) = P_K(q)$ is therefore the
 **mass-spectrum generating function** of $K$: each term $c_d q^d$ is
@@ -28,6 +28,6 @@ a mass component indexed by **graded Hecke energy** $d$ with
 scalar is a functorial composition (decategorification, then
 evaluation at the substrate $q_0$, then dimensional anchor), not an
 identity — see [mass-spectrum generating
-function](#rem\:mass-spectrum-generating-function) for the full
+function](#rem:mass-spectrum-generating-function) for the full
 $\mathfrak{M}_K \to P_K(q) \to \mathfrak{m}_{\mathcal{K}} \approx m_0 \cdot |P_K(q_0)|$
 pipeline.*

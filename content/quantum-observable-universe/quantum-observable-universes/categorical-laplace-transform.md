@@ -1,7 +1,7 @@
 Fix a quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$
 with Markov trace
 $\mathrm{tr}_M \colon \mathrm{End}_{\mathbf{C}}(A) \to \mathbf{1}_{\mathbf{C}}$
-([adjoint trace](#rem\:adjoint-trace)).  Let $\mathcal{H}_q$ be the convolution
+([adjoint trace](#rem:adjoint-trace)).  Let $\mathcal{H}_q$ be the convolution
 Hopf algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under the
 $q$-deformed convolution $\ast_q$.
 
@@ -28,7 +28,7 @@ $$
 
 No integral sign appears: the pairing is the Frobenius pairing
 supplied by the rigid monoidal structure
-([fibre-functor rigidity](#rem\:fibre-functor-rigidity)).
+([fibre-functor rigidity](#rem:fibre-functor-rigidity)).
 
 **Defining property (monoidality).**  $\mathcal{L}$ intertwines
 $q$-convolution with pointwise product,

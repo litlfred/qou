@@ -1,5 +1,5 @@
 The jet-tower mass formula
-([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower))
+([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower))
 contains a pair contribution
 
 $$
@@ -20,7 +20,7 @@ audit GAP 17b by replacing the bound with an equality.
 *Let $n \in \mathbb{N}$ be a brane jet level and let
 $\mathcal{P}_n = \{(i, j) : 0 \le i < j\}$ be the full set of
 unordered pair blow-up centres at jet level $n$
-([rem:mass-endomorphism-jet-tower §$\mathcal{P}_n$ all-pairs](#rem\:mass-endomorphism-jet-tower)).
+([rem:mass-endomorphism-jet-tower §$\mathcal{P}_n$ all-pairs](#rem:mass-endomorphism-jet-tower)).
 Then the pair contribution at level $n$ is the **exact** value*
 
 $$
@@ -37,7 +37,7 @@ inequality.*
 
 The original "upper bound" framing came from the pentagon-ascension
 argument. By
-[`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace)
+[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace)
 (P3.2), the pentagon identity in its operator form does **not** apply
 to scalar traced volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$;
 it applies only to inter-level operator lifts. Hence the pentagon
@@ -46,7 +46,7 @@ contribution. The bound was vacuous to begin with.
 
 The actual algebraic content of the pair contribution is the
 **Markov-pair identity**
-[`prop:markov-pair-z2`](#prop\:markov-pair-z2):
+[`prop:markov-pair-z2`](#prop:markov-pair-z2):
 
 $$
   \mathrm{tr}_M\!\bigl(\sigma_i \sigma_j\bigr) \;=\; z^2
@@ -57,7 +57,7 @@ which is an exact equality (proved by Markov peel, no inequality
 involved). Lifting this from raw braid generators $\sigma_i$ to
 traced volumes $\hat V_i^{(n)}$ via the algebraic-quantum-volume
 factorization
-([`def:algebraic-quantum-volume`](#def\:algebraic-quantum-volume)) and
+([`def:algebraic-quantum-volume`](#def:algebraic-quantum-volume)) and
 the Markov-trace factorization theorem
-([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization))
+([`thm:markov-trace-factorization`](#thm:markov-trace-factorization))
 preserves the equality at every jet level $n$.

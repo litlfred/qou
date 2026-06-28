@@ -24,7 +24,7 @@ $$
 Equivalently, $\exp_q$ is the unique element of $\mathcal{H}_q$ with
 $\mathcal{L}_q^{-1}[(1 - s)_q^{-1}] = \exp_q$, where $\mathcal{L}_q$ is
 the categorical Laplace transform
-([categorical Laplace transform](#def\:categorical-laplace)).
+([categorical Laplace transform](#def:categorical-laplace)).
 
 **Universal property.**  $\exp_q$ is the *free grouplike* on one
 primitive generator $x$ (the infinitesimal of the Reeb flow
@@ -62,7 +62,7 @@ admits a grouplike.  In particular $\exp_q$ exists abstractly over
 $\mathbb{F}_p$, $\mathbb{Q}_p$, and $\mathbb{Z}[q, q^{-1}]$ as an
 element of the formal Hopf algebra, independently of any convergent
 power-series representation
-([finite-field obstruction for $\exp_q$](#rem\:q-exp-finite-field-obstruction)).
+([finite-field obstruction for $\exp_q$](#rem:q-exp-finite-field-obstruction)).
 
 **Native algebraic home: the Habiro ring.**  The Taylor coefficients
 of $\exp_q$ are rational functions of $q$ whose denominators are
@@ -70,7 +70,7 @@ products of $[n]_q$ — i.e. cyclotomic factors. The partial sums are
 therefore coherent modulo the Habiro ideal $((q;q)_m)$, and $\exp_q$
 acts as a grouplike in the formal-power-series ring
 $\widehat{\mathbb{Z}[q]}[\![x]\!]$ over the Habiro ring
-([Habiro ring](#def\:habiro-ring)). Evaluation at any root of unity
+([Habiro ring](#def:habiro-ring)). Evaluation at any root of unity
 $\zeta_n$ is the cyclotomic-projection
 $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_n(q)$ — purely
 algebraic, no analytic continuation required.
@@ -78,7 +78,7 @@ algebraic, no analytic continuation required.
 **Archimedean realisation.**  Over $\mathbb{C}$ (or any field of
 characteristic zero where the Jackson factorials $[n]_q!$ are
 invertible), $\exp_q$ is represented by a convergent Taylor series
-([Taylor series of $\exp_q$](#prop\:q-exponential-taylor)).  This is an
+([Taylor series of $\exp_q$](#prop:q-exponential-taylor)).  This is an
 *additional* fact about the $\mathbb{C}$-realisation of the abstract
 grouplike — not its defining property.
 
@@ -86,5 +86,5 @@ grouplike — not its defining property.
 Reeb flow*: the unique Hopf-algebra element whose action on the
 substrate coordinate $Z$ produces the $q$-deformed rotation
 $\mathcal{L}_\xi Z = J\hbar_q Z$
-([substrate radial coordinate](#prop\:substrate-radial-coordinate)).
+([substrate radial coordinate](#prop:substrate-radial-coordinate)).
 The Planck step $t_P(q) = q/(q-1)$ is one full $\exp_q$-orbit.

@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-([quantum observable universe](#def\:quantum-observable-universe)) and let
+([quantum observable universe](#def:quantum-observable-universe)) and let
 $\{A_n\}_{n \geq 0}$ be its
-([recursive brane tower](#def\:recursive-brane-tower)).  Since $\mathbf{C}$ is a
+([recursive brane tower](#def:recursive-brane-tower)).  Since $\mathbf{C}$ is a
 $R$-linear rigid :refterm[monoidal category]{#monoidal-category}, the Frobenius--Hopf object $A$
 admits a categorical trace
 $\mathrm{tr} \colon \mathrm{End}_{\mathbf{C}}(A) \to R$ (cf.\ \cite{stolz-teichner-2012})
@@ -40,6 +40,6 @@ $$
 $$
 
 where $\lVert \cdot \rVert$ is the norm on $R$ induced by the
-[Frobenius pairing](#def\:frobenius-pairing).  The mass measures the resistance of the
+[Frobenius pairing](#def:frobenius-pairing).  The mass measures the resistance of the
 Frobenius--Hopf structure to transporting the cycle $\varrho$ through
 the comultiplication.

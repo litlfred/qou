@@ -3,7 +3,7 @@
 > form below is **STRUCTURALLY WRONG** per the inline SUPERSEDED
 > note (lines 28-51). The correct dimensional factor is the
 > operator-valued $A^\lambda_{\mu, \nu}(I)$ from
-> [`prop:hecke-branching-trace-decomposition`](#prop\:hecke-branching-trace-decomposition);
+> [`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition);
 > the corrected graded expansion is [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
 > The corrected canonical form of the mass tower uses
 > $-\mathrm{Li}_2^q(-|\hat V_i|)$ in place of $\Phi_q(|\hat V_i|)$
@@ -15,15 +15,15 @@
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$
-([quantum observable universe](#def\:quantum-observable-universe)).
+([quantum observable universe](#def:quantum-observable-universe)).
 Let $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
-([three-invariant mass formula](#sec\:atomic-braid-mass)).
+([three-invariant mass formula](#sec:atomic-braid-mass)).
 
 ### Algebraic form
 
 Via the Kashaev volume--density reading
-([Kashaev volume--density](#rem\:kashaev-volume-density)), the tower
+([Kashaev volume--density](#rem:kashaev-volume-density)), the tower
 admits a compact algebraic statement: *for every braid
 $\beta \in B_{n}$ with $n - 1$ generators,*
 
@@ -38,16 +38,16 @@ $$
 $$
 
 *where $\rho_{q} = 1/\hbar_{q}^{2}$ is the substrate density
-([quantum Planck constant](#def\:quantum-planck-constant)) and*
+([quantum Planck constant](#def:quantum-planck-constant)) and*
 
 **SUPERSEDED.** *The substrate-only ansatz
 $\rho_q = 1/\hbar_q^2 \approx 102$ is **structurally wrong**: it is
 braid-class-independent, but the categorical density $\rho_K$
 varies $\sim 30\times$ across atoms ($A = 1$ to $A = 3$;
-[graded ρ\_K expansion](#prop\:rho-k-graded-expansion)). The
+[graded ρ\_K expansion](#prop:rho-k-graded-expansion)). The
 correct dimensional factor is the **operator-valued**
 $A^\lambda_{\mu, \nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)$
-from [hecke branching trace decomp](#prop\:hecke-branching-trace-decomposition),
+from [hecke branching trace decomp](#prop:hecke-branching-trace-decomposition),
 which depends on the specific braid through its LR-block decomposition.
 The iterated $(Z+N)$-factor extension to atomic braids — explicitly
 replacing the scalar Wedderburn-volume tower with the operator-trace
@@ -55,7 +55,7 @@ form — is stated in [`prop:mass-tower-operator-valued`](mass-tower-operator-va
 (authored as the Stage-1 unblock).
 The graded expansion
 $\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
-([prop:rho-k-graded-expansion](#prop\:rho-k-graded-expansion))
+([prop:rho-k-graded-expansion](#prop:rho-k-graded-expansion))
 replaces the $\rho_q$ ansatz with a categorically-derived series
 where the LO piece is the constituent-mass ratio (Markov
 multiplicativity, \[Wenzl 1988] Theorem 5) and the single-gen
@@ -77,7 +77,7 @@ $$
 
 *with each $\mathrm{Vol}_{q}^{(S)}(\beta) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$
 a Markov trace over the transfer-matrix chain supported on $S$
-([Markov trace product](#thm\:markov-trace-product)), and
+([Markov trace product](#thm:markov-trace-product)), and
 $z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.*
 
 Every per-generator contribution is a finite Laurent polynomial in $q$;
@@ -90,7 +90,7 @@ expanded form below.
 
 Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
-([quantum Bloch group](#def\:quantum-bloch-group)).
+([quantum Bloch group](#def:quantum-bloch-group)).
 
 **Kashaev-integration-identity audit (added).**
 *The proof step claims*
@@ -129,7 +129,7 @@ reduce to $\alpha \cdot \ln|V|$ either.*
 
 *Both forms above are concrete evaluations of the abstract GB-NF
 statement
-([atomic mass via GB-NF](#prop\:atomic-mass-gb-nf))
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
 $\mathcal{M}(K) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$.
 The substrate density $\rho_q = 1/\hbar_q^2$ above is a substrate-only
 ansatz for the categorical density $\rho_K$; empirically
@@ -215,7 +215,7 @@ $$
 $$
 
 *where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter
-([Jones--Markov trace](#thm\:jones-markov-trace)) and
+([Jones--Markov trace](#thm:jones-markov-trace)) and
 $\mathrm{Li}_2^q$ is the symmetric q-dilogarithm
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$ with
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
@@ -235,15 +235,15 @@ incompatible with isospin symmetry at $q_0$
 
 *The three sums correspond to the three types of blow-up centre
 in the brane tower
-([topological decomposition](#thm\:topological-mass)):*
+([topological decomposition](#thm:topological-mass)):*
 
 1. *The **descended term** $\lvert\prod \hat{V}_i^{\mathrm{full}}\rvert$ is the
    base-level **regular-representation (Wedderburn) trace** — the trace of the
    left-multiplication endomorphism
-   ([Hecke mass element](#def\:hecke-mass-element)) — distinct from the
+   ([Hecke mass element](#def:hecke-mass-element)) — distinct from the
    single-channel Jones--Markov trace $\prod \hat{V}_i^{\mathrm{std}}$ of the
    categorical-mass reading
-   ([categorical mass as Markov trace](#prop\:categorical-mass-markov)).*
+   ([categorical mass as Markov trace](#prop:categorical-mass-markov)).*
 2. *Each **single-generator blow-up** at generator $i$ contributes
    $\Phi_q(\lvert\hat{V}_i\rvert)$.  (The Markov weight
    $\mathrm{tr}_M(\sigma_i) = z$ is already absorbed into the
@@ -256,7 +256,7 @@ in the brane tower
 
 *The weight $z^2$ holds for every pair $(i, j)$ with $i < j$ by
 the Markov-trace factorization theorem
-([Markov trace factorization](#thm\:markov-trace-factorization)):
+([Markov trace factorization](#thm:markov-trace-factorization)):
 for adjacent generators ($\lvert i - j\rvert = 1$) it reduces
 $\sigma_i\sigma_j$ via the Hecke braid relation and applies the
 Markov property $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$;
@@ -272,7 +272,7 @@ coordinate $\hat{V}_i\hat{V}_j$.*
 ($\lvert i - j\rvert = 1$) reduces via the Yang--Baxter relation
 to $\sigma_j\sigma_i\sigma_j$ and does not contribute an independent
 order-3 centre; such triple interactions ascend to the next jet
-level ([jet-tower reformulation](#rem\:mass-endomorphism-jet-tower))
+level ([jet-tower reformulation](#rem:mass-endomorphism-jet-tower))
 rather than appearing as explicit cubic terms.*
 ## Application to the proton--electron mass ratio
 
@@ -303,7 +303,7 @@ $$
 
 The proton's $11$ crossings (from the $4$-channel production vertex
 $\gamma\gamma \to \mathfrak{q}\bar{\mathfrak{q}}$,
-[photon channel chain](#rem\:photon-channel-wedderburn-chain)) produce
+[photon channel chain](#rem:photon-channel-wedderburn-chain)) produce
 spectral coordinates near $1$, where $\Phi_q$ diverges.  The
 electron's $3$ crossings produce $\hat{V}_e \approx 0.594$, well
 below the singularity.  The mass ratio is:
@@ -352,13 +352,13 @@ action.
 truncated at subset size $|S| \leq 2$.  Higher subset sizes
 $|S| \geq 3$ are accessible — but only on the archimedean side of
 $\tau \colon R \hookrightarrow \mathbb{C}$ — via the
-([jet-GB-PL correspondence](#prop\:jet-gb-pl-correspondence)).
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence)).
 The $|S| = 3$ contribution corresponds to the simultaneous product
 of three colour-sheet prolongations on the color-tube cubic
-([baryon product from Alt](#prop\:baryon-product-from-alt)), which
+([baryon product from Alt](#prop:baryon-product-from-alt)), which
 under the fibre functor becomes the baryon Picard–Lefschetz period
 $\Pi^{(3)}$
-([SW-period thimble equivalence](#prop\:sw-period-thimble-equivalence)).
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).
 Higher $|S| \geq 4$ contributions correspond to higher-jet bundles
 $J^p\mathcal{S}$ for $p \geq 4$ and their PL evaluations.*
 

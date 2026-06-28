@@ -20,7 +20,7 @@ closure, replacing the *ad hoc* shell-model selection rule.
 ## Relation to the Hoefsmit / matrix-evaluation programme
 
 The Hoefsmit seminormal form
-([prop:hoefsmit-seminormal-form](#prop\:hoefsmit-seminormal-form))
+([prop:hoefsmit-seminormal-form](#prop:hoefsmit-seminormal-form))
 gives explicit matrices for $\sigma_i$ on each $V_\lambda$, with the
 full-twist eigenvalue $q^{c(\lambda)}$ recoverable by direct
 multiplication. Numerical verification at $k = 3, \dots, 10$ confirms
@@ -35,13 +35,13 @@ at $n \in \{50, 82, 126\}$ then follows without resort to matrices.
 ## Locality assumption: dropped
 
 Earlier formulations
-([atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation))
+([atom-knot-mass-derivation](#prop:atom-knot-mass-derivation))
 treated $\Phi_n$ as a *local* object — defined per-vortex and
 combined by tensor product. In that setting "screening" or "local
 trivialisation" was needed to explain shell closure. The refactor
 drops the locality assumption: $\Phi_n$ is the **global section** of
 the mass functor over $\mathbf{C}$
-([rem:phi-n-global-section](#rem\:phi-n-global-section)). A
+([rem:phi-n-global-section](#rem:phi-n-global-section)). A
 non-trivial full-twist action would propagate unbounded ribbon /
 framing flux through the brane tower; finite observable mass forces
 **global topological neutrality** at saturation.
@@ -79,9 +79,9 @@ including $\{50, 82, 126\}$ where matrix-evaluation is unavailable.
 The downstream cone (per the
 [ conjecture-cones audit](../../../docs/audits/conjecture-cones.md))
 is anticipated to include
-[`prop:magic-numbers-from-q`](#prop\:magic-numbers-from-q) and the
+[`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q) and the
 shell-closure portion of the BW formula
-([`thm:wedderburn-mass-formula`](#thm\:wedderburn-mass-formula)).
+([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)).
 Per §3b the upgrade of these to fully provable status requires
 either a derivation of this conjecture or its retention as a
 class-axiomatised input to a conditional theorem.

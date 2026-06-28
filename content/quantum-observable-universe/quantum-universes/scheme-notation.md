@@ -12,8 +12,8 @@ written with their base ring $R$ explicit:
 When the base ring is clear from context, we may write
 $\mathrm{SU}_2$ for $\mathrm{SU}_2(R)$ and $\mathbb{P}^1$
 for $\mathbb{P}^1(R)$.  The category-theoretic definitions
-([quantum universe](#def\:quantum-universe),
-[quantum observable universe](#def\:quantum-observable-universe))
+([quantum universe](#def:quantum-universe),
+[quantum observable universe](#def:quantum-observable-universe))
 are formulated over an arbitrary commutative ring $R$ and
 specialise to any base by substitution.  A reader working
 over $\mathbb{Z}_p$, $\mathbb{F}_q$, or $\mathbb{C}$ reads

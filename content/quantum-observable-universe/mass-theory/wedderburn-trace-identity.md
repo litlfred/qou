@@ -21,7 +21,7 @@ and $[n]_q! = [1]_q [2]_q \cdots [n]_q$.*
 This identity determines the partition of the total Markov weight
 among the irreducible representations.  In the :refterm[descent]{#descent} decomposition
 of the mass endomorphism
-([BW as :refterm[descent]{#descent}](#prop\:mass-categorical-descent)), each partition
+([BW as :refterm[descent]{#descent}](#prop:mass-categorical-descent)), each partition
 $\lambda$ contributes a weight proportional to
 $\dim_q(\lambda)^2 / [n]_q!$ to the total binding energy.
 

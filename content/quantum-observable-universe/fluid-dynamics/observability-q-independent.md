@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def\:quantum-observable-universe) and let
+[QOU](#def:quantum-observable-universe) and let
 $\mathcal{Q}_M = M \times \mathbb{G}_m$ be the
-[substrate line bundle](#def\:substrate-line-bundle).  Let
+[substrate line bundle](#def:substrate-line-bundle).  Let
 $q_1, q_2 \colon M \to \mathbb{G}_m$ be any two substrate
 sections.
 

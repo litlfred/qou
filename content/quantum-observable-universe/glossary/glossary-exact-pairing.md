@@ -15,5 +15,5 @@ and $X$ a *:refterm[left dual]{#left-dual}* of $Y$.
 Import: `Mathlib.CategoryTheory.Monoidal.Rigid.Basic`.
 Fields: `evaluation`, `coevaluation`, `evaluation_coevaluation'`,
 `coevaluation_evaluation'`.
-See also [def:snake-identity](#def\:snake-identity) for the formal
+See also [def:snake-identity](#def:snake-identity) for the formal
 statement used in this paper.

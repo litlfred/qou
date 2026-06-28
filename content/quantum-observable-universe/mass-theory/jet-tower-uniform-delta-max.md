@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 The brane-tower convergence proposition
-([prop:jet-tower-convergence](#prop\:jet-tower-convergence))
+([prop:jet-tower-convergence](#prop:jet-tower-convergence))
 gives a geometric tail bound for the mass series
 $\mathfrak{m}(\varrho) = \mathfrak{m}^{(0)}(\varrho) +
 \sum_{n \ge 1} \hbar_q^{2n} \cdot \Delta^{(n)}(\varrho)$
@@ -76,7 +76,7 @@ T       3         <empirical> <empirical>      (yes)
 witness JSON is the canonical record.)
 
 The empirical observation
-([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)
+([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower)
 §"Open subconjecture 1") that
 $|\hbar_q^{2n}\,\Delta^{(n)}|
   \le |\hbar_q^{2(n-1)}\,\Delta^{(n-1)}| \cdot \hbar_q^2$
@@ -103,7 +103,7 @@ is itself conjectural until the uniform bound is established.
 The current scoreboard:
 
 * *(provable)* The geometric tail bound itself is *proved* in
-  [prop:jet-tower-convergence](#prop\:jet-tower-convergence) §Proof
+  [prop:jet-tower-convergence](#prop:jet-tower-convergence) §Proof
   — assuming the bound on $\Delta^{(n)}$ as a hypothesis.
 * *(conjectural)* The uniform bound on $\Delta^{(n)}$ is conjectural (this
   block).
@@ -138,7 +138,7 @@ empirical motivation citable.
 **Status: conjectural** under AGENTS.md §3b, with strong empirical
 support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via `jet_tower_delta_max.py`.
 The downstream cone of this conjecture includes
-[prop:jet-tower-convergence](#prop\:jet-tower-convergence) — but
+[prop:jet-tower-convergence](#prop:jet-tower-convergence) — but
 that proposition's *statement* is provable in pure analysis (the
 conditional geometric-tail bound is unconditional once the
 hypothesis holds). Only the *unconditional* application of the

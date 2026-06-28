@@ -398,10 +398,10 @@ line $|\alpha_i| = q^{1/2}$ — so the Riemann hypothesis holds in a
 QOU.  The Tannaka–Krein reconstruction closes the loop back to the
 symmetry group of [*Quantum Universes*](#chap:qu).
 
-The [Glossary](#chap\:glossary) maps paper terminology to Mathlib
-declarations, the [Knot-Periodic Table](#app\:knot-periodic-table)
+The [Glossary](#chap:glossary) maps paper terminology to Mathlib
+declarations, the [Knot-Periodic Table](#app:knot-periodic-table)
 collects the elements with their knot assignments, and the
-[Index of Definitions](#app\:index-definitions) provides a
+[Index of Definitions](#app:index-definitions) provides a
 searchable reference.  One object ties the book's hardest results
 together: the Yekutieli obstruction class $\kappa_n \in H^2(S, B)$
 of [*Lifting and Descent*](#chap:torsion) — the precise measure of

@@ -5,7 +5,7 @@ no analytic limits, no fitting, and no empirical nuclear-physics constants
 enter until the Archimedean realization functor is applied at the very end.
 
 The three pre-approved calibration inputs are
-([rem:calibration-inputs](#rem\:calibration-inputs)):
+([rem:calibration-inputs](#rem:calibration-inputs)):
 
 See [Table 1](#tbl:pre-archimedean-derivation-chain-table1-data).
 
@@ -25,7 +25,7 @@ See [Table 1](#tbl:pre-archimedean-derivation-chain-table1-data).
 
 Let $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
 observable universe
-([def:quantum-observable-universe](#def\:quantum-observable-universe)).
+([def:quantum-observable-universe](#def:quantum-observable-universe)).
 The :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$ has objects (strands) and
 morphisms (braid generators $\sigma_i$); the braiding
 $c_{X,Y}: X \otimes Y \to Y \otimes X$ satisfies the Yang--Baxter
@@ -39,7 +39,7 @@ $$
 $$
 
 by the braid-action-tensor proposition
-([prop:braid-action-tensor](#prop\:braid-action-tensor)):
+([prop:braid-action-tensor](#prop:braid-action-tensor)):
 the braid generator $\sigma_i$ acts on strand $i$ and $i+1$ via the
 $R$-matrix $R_{i,i+1} \in \mathrm{End}_\mathbf{C}(V^{\otimes n})$.
 
@@ -94,13 +94,13 @@ $\mathrm{tr}_M(\rho(\beta_K)) = \sum_\lambda y_\lambda \chi_\lambda$.
 On each Wedderburn block $\lambda$ the boundary holonomy has eigenvalues
 $e^{\pm i\theta_\lambda}$ whenever $|\chi_\lambda / d_\lambda| \leq 1$
 (the unit-modulus / rotation regime,
-[prop:unit-modulus-eigenvalue](#prop\:unit-modulus-eigenvalue)); the
+[prop:unit-modulus-eigenvalue](#prop:unit-modulus-eigenvalue)); the
 **$q$-Reeb phase** $\theta_\lambda = \arccos(\chi_\lambda / d_\lambda)$
 is the boundary parallel-transport angle.  The per-crossing version is
 the eigenvalue split
 $(\lambda_+, \lambda_-) = (q, -q^{-1}) = (\cosh\lambda + \sinh\lambda,\;
 \cosh\lambda - \sinh\lambda)$ with $\lambda = \ln q$
-([prop:crossing-energy-decomposition](#prop\:crossing-energy-decomposition)):
+([prop:crossing-energy-decomposition](#prop:crossing-energy-decomposition)):
 the symmetric $\cosh\lambda$ part is the curvature-free transport and the
 antisymmetric $\sinh\lambda$ part is the curvature defect.
 
@@ -131,7 +131,7 @@ $\beta'$ are related by:
 Jones (1987) proved that the Jones--Markov trace
 $\mathrm{tr}_M \colon \bigcup_n H_n(q) \to R$ is the **unique trace**
 invariant under both Markov moves
-([thm:jones-markov-trace](#thm\:jones-markov-trace)).  This identifies
+([thm:jones-markov-trace](#thm:jones-markov-trace)).  This identifies
 knot invariants with Hecke-algebra traces unambiguously:
 
 $$
@@ -146,14 +146,14 @@ $$
 The Bring surface $\Sigma_4$ (genus 4, automorphism group $S_5$) has
 Euler characteristic $\chi(\Sigma_4) = -6$.  The Descartes condition
 $\chi(A) = -6$ on the Frobenius--Hopf algebra $A$
-([def:frobenius-hopf-substrate](#def\:frobenius-hopf-substrate))
+([def:frobenius-hopf-substrate](#def:frobenius-hopf-substrate))
 identifies $H_3(R, q)$ as the relevant Hecke algebra:
 
 * Dimension: $\dim H_3(q) = 6$ (exactly 6 basis elements in the
   seminormal representation, 6 independent crossing operators).
 * The six basis elements $\{1, \sigma_0, \sigma_1, L_+, L_-, \gamma\}$
   in Gröbner--Shirshov normal form
-  ([prop:spectral-sequence-h3-explicit](#prop\:spectral-sequence-h3-explicit))
+  ([prop:spectral-sequence-h3-explicit](#prop:spectral-sequence-h3-explicit))
   correspond bijectively to the six independent curvature insertions
   on $\Sigma_4$.
 
@@ -162,7 +162,7 @@ The $\chi = -6$ condition determines the particle content
 there are no adjustable parameters at this stage.
 
 The $x_5$-Bring weight identification
-([prop:x5-bring-weight-identification](#prop\:x5-bring-weight-identification))
+([prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification))
 and the Prym-Jacobian :refterm[descent]{#descent} make this concrete:
 the $Z_5$ automorphism group of the Bring curve $x_5$ acts on
 $H_3(q)$ partitions via the Prym decomposition, selecting exactly the
@@ -196,7 +196,7 @@ $$
 $$
 
 where the weights $y_\lambda \in R$ are the Wenzl-bridge coefficients
-([prop:alpha-k-derivation-procedure](#prop\:alpha-k-derivation-procedure)).
+([prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure)).
 These weights are **uniquely determined** by the Markov property: the
 linear system $\sum_\lambda \chi_\lambda(w_\mu) y_\lambda = z^{n - \ell(\mu)}$
 is invertible at generic $q$ by Schur--Weyl--Hecke duality.
@@ -208,7 +208,7 @@ No free parameters arise; the $y_\lambda$ are $q$-rational, no fitting.
 
 The Jones--Markov trace $\int_A \colon A \to R$ is the Frobenius
 integral on the symmetric Frobenius algebra structure of $H_n(R, q)$
-([def:frobenius-hopf-substrate](#def\:frobenius-hopf-substrate)).
+([def:frobenius-hopf-substrate](#def:frobenius-hopf-substrate)).
 The Frobenius pairing
 
 $$
@@ -240,14 +240,14 @@ $$
 
 derived from the Kauffman framing formula applied to the twist
 endomorphism $\varTheta$ on irreducibles
-([prop:chirality-writhe-ribbon-derivation](#prop\:chirality-writhe-ribbon-derivation)).
+([prop:chirality-writhe-ribbon-derivation](#prop:chirality-writhe-ribbon-derivation)).
 
 ***
 
 ## Step 7 — Gröbner--Shirshov basis filtration
 
 The Gröbner--Shirshov basis for $H_{n_0}(q)$
-([prop:gb-spectral-sequence](#prop\:gb-spectral-sequence)) induces a
+([prop:gb-spectral-sequence](#prop:gb-spectral-sequence)) induces a
 filtration on $H_{n_0}(q)$ by Coxeter length $\ell(w)$:
 
 $$
@@ -257,7 +257,7 @@ $$
 
 The associated graded $\mathrm{gr}_\bullet H_{n_0}(q)$ forms the
 $E_1$-page of the GB spectral sequence.  By
-[prop:spectral-sequence-collapse](#prop\:spectral-sequence-collapse),
+[prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse),
 this spectral sequence **collapses at $E_2$** for semisimple $H_n(q)$
 at generic $q$:
 
@@ -268,7 +268,7 @@ at generic $q$:
   (no further relations beyond braid + Hecke).
 
 The $E_\infty$-page identification
-([prop:e-infinity-page-identifications](#prop\:e-infinity-page-identifications))
+([prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications))
 recovers the Wedderburn decomposition:
 
 $$
@@ -295,7 +295,7 @@ Yekutieli's picture:
   (word, grade, jet-position) triples per term.
 
 The jet-convergence result
-([conj:jet-convergence-classical-limit](#prop\:jet-convergence-classical-limit))
+([conj:jet-convergence-classical-limit](#prop:jet-convergence-classical-limit))
 shows that the jet tower converges to the classical limit as
 $q \to 1$, confirming the finite-slice picture is algebraically
 consistent with the semiclassical approximation.
@@ -330,13 +330,13 @@ $$
 $$
 
 The $0.75\%$ discrepancy is the brane tower correction
-([prop:atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation)).
+([prop:atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)).
 The hadronic calibration fixes $\mathfrak{E}_0$ exactly; the leptonic
 expression is an approximation valid to the single-level accuracy.
 
 3. **Mass identity.**  After applying the Archimedean realization
    functor $\Phi_\mathrm{arch}$
-   ([def:archimedean-realization-functor](#def\:archimedean-realization-functor)):
+   ([def:archimedean-realization-functor](#def:archimedean-realization-functor)):
 
 $$
   \boxed{
@@ -350,9 +350,9 @@ $$
 
 where $\rho \in \mathbb{Z}_{>0}$ is the SDP multiplicity of $T_w$'s
 Wedderburn solution, $\mathrm{tower}(T_w)$ is the brane-tower
-correction ([conj:brane-tower-z-habiro](#conj\:brane-tower-z-habiro)),
+correction ([conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro)),
 and $\mathrm{tr}_M(C_{\dim_q})$ is the Frobenius co-Casimir trace
-([thm:frobenius-codim-universal](#thm\:frobenius-codim-universal)).
+([thm:frobenius-codim-universal](#thm:frobenius-codim-universal)).
 
 ***
 
@@ -360,8 +360,8 @@ and $\mathrm{tr}_M(C_{\dim_q})$ is the Frobenius co-Casimir trace
 
 The canonical Hecke element $T_w$ for a confined particle $\mathfrak{H}$
 is selected by the joint mass-tower confinement SDP
-([prop:confinement-sdp](#prop\:confinement-sdp),
-[prop:atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation)).
+([prop:confinement-sdp](#prop:confinement-sdp),
+[prop:atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)).
 The SDP minimizes the Frobenius residual
 
 $$
@@ -382,7 +382,7 @@ extends the identification to $A \leq 60$.
 **canonical knot identification for $^2$H, $^3$H, $^3$He**
 from first principles (without matching to historical hyperbolic
 volumes) is an open problem
-([conj:canonical-knot-id-sdp](#conj\:canonical-knot-id-sdp)).
+([conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp)).
 
 ***
 
@@ -393,12 +393,12 @@ canonical-atom Markov trace to a single closed form:
 
 1. **Interface factor (exact)**, $\mathrm{tr}_M(\mathcal{B}_K) / \mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) = z^{p_+(K)} \cdot (z-h)^{p_-(K)}$,
    from the Markov axiom + Hecke skein
-   ([`prop:interface-knot-markov-z`](#prop\:interface-knot-markov-z)).
+   ([`prop:interface-knot-markov-z`](#prop:interface-knot-markov-z)).
 2. **Vacuum factor (exact)**, $\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) = \mathrm{tr}_M^3(\mathcal{B}_p)^Z \cdot \mathrm{tr}_M^3(\mathcal{B}_n)^N$,
    from Wenzl's disjoint Markov-trace multiplicativity ([wenzl1988] §1.7);
    the per-Z step on the constit side then reduces to
    $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$
-   ([`prop:constit-factor-tau-M-proton-identity`](#prop\:constit-factor-tau-M-proton-identity)).
+   ([`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity)).
 
 Combining the two:
 
@@ -413,7 +413,7 @@ at a p-$\ast$ boundary, with no residuals.  This is the substrate-derived
 "per-Z step factor" at the full $\mathrm{tr}_M$ level, complementing
 the $|\Delta_\lambda^*|$-level conjecture
 $\alpha \approx [3]_q^2 \cdot \cosh(h)$ of
-[`conj:alpha-cosh-h-z-step-correction`](#conj\:alpha-cosh-h-z-step-correction).
+[`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction).
 
 ***
 
@@ -431,7 +431,7 @@ $$
 $$
 
 The symbolic NF computation
-([prop:neutron-qvalue-symbolic](#prop\:neutron-qvalue-symbolic))
+([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic))
 gives the free-neutron $Q$-value without any additional calibration:
 
 $$
@@ -443,7 +443,7 @@ $$
 
 so $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \times \mathfrak{E}_0$ **by construction
 (this is an ansatz, not derived from the per-braid mass formula
-[`prop:per-braid-mass-tower`](#prop\:per-braid-mass-tower); the
+[`prop:per-braid-mass-tower`](#prop:per-braid-mass-tower); the
 unweighted $\mathrm{net}$ sum is not the same quantity as the
 Markov-trace weighted sums of the mass tower. See
 [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md))**.

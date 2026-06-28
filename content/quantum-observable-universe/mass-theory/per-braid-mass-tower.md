@@ -1,12 +1,12 @@
 **Proposition (per-braid mass tower — full jet-level form).**
 *Let $W \in B_{3A}$ be the atomic braid of a nucleus $(Z, N)$,
 $\mathrm{tr}_M$ the Markov trace on $H_{3A}(q)$
-([Jones–Markov trace](#thm\:jones-markov-trace)), $\Phi_q$ the
+([Jones–Markov trace](#thm:jones-markov-trace)), $\Phi_q$ the
 quantum dilogarithm, $z = 1/(q^{1/2} + q^{-1/2})$ the Markov
 weight, and $\mathcal{S}^{(n)}_\ell$ the depth-$\ell$ stratum of
 $W$ at jet level $n$ in the recursive brane tower
 $A_{n+1} = A_n \otimes \Omega^1(A_n)$
-([recursive brane tower](#def\:recursive-brane-tower)). The mass
+([recursive brane tower](#def:recursive-brane-tower)). The mass
 functional decomposes as*
 
 $$
@@ -26,12 +26,12 @@ $$
 $$
 
 *where $R_N$ is the geometric-series tail bound from
-([brane-tower tail bound](#prop\:jet-tower-convergence)):
+([brane-tower tail bound](#prop:jet-tower-convergence)):
 $|R_N| \leq \Delta_{\max}\,\hbar_q^{2(N+1)}/(1 - \hbar_q^{2})$,
-per the [jet-tower remark](#rem\:mass-endomorphism-jet-tower).
+per the [jet-tower remark](#rem:mass-endomorphism-jet-tower).
 Triple-or-higher interactions at level $n$ ascend via the
 pentagon identity to pairs/singletons at level $n+1$
-([pentagon UV commutation](#prop\:pentagon-uv-commutation)) and
+([pentagon UV commutation](#prop:pentagon-uv-commutation)) and
 are already captured by the level-$(n+1)$ sum.*
 
 **Three structural features:**
@@ -40,7 +40,7 @@ are already captured by the level-$(n+1)$ sum.*
   $\mathcal{A}^{\mathrm{desc}}_n = \mathrm{im}\,\hat\tau_n$ is the
   image of the :refterm[descent]{#descent} involution; including a separate descended
   product at every jet level would double-count
-  ([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)).
+  ([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)).
 * Each level $n$ contributes **only singletons and pairs**
   (quadratic closure per level via the pentagon identity).
 * $\mathcal{S}^{(n)}_2 = \{(\xi, \xi') : \xi \neq \xi'\}$ is
@@ -56,14 +56,14 @@ are already captured by the level-$(n+1)$ sum.*
 |          $2$ | $\{(\beta_N, \beta_{N'}) : N \neq N'\}$ | $\binom{A}{2}$ | Per-nucleon-pair sub-braids (6-strand $H_6$ each, with inter-nucleon coupling) |
 
 *All sub-braid Markov traces are computed via the proper $H_{3A}$
-Schur–Weyl path ([prop:schur-weyl-mass-decomposition](#prop\:schur-weyl-mass-decomposition)),
+Schur–Weyl path ([prop:schur-weyl-mass-decomposition](#prop:schur-weyl-mass-decomposition)),
 ensuring $|\mathrm{tr}_M(\xi)| < q$ at $q = q_0$ (the $\Phi_q$
 convergence radius).*
 
 ## Supersession of the per-generator form
 
 The earlier statement
-([mass-endomorphism-tower](#prop\:mass-endomorphism-tower)) summed
+([mass-endomorphism-tower](#prop:mass-endomorphism-tower)) summed
 over **per-generator** terms $\hat V_i^{\text{full}}$ — one per
 braid letter $\sigma_i$:
 
@@ -100,8 +100,8 @@ improvements:
 2. **Stratification matches algebraic JSJ.** $\mathcal{S}_\ell$
    coincides with the depth-$\ell$ summands of the
    $J^\bullet$-graded stratification of $H_{3A}(q)$
-   ([gb-spectral-sequence](#prop\:gb-spectral-sequence),
-   [graded-trace-residue-split](#prop\:graded-trace-residue-split)).
+   ([gb-spectral-sequence](#prop:gb-spectral-sequence),
+   [graded-trace-residue-split](#prop:graded-trace-residue-split)).
    The per-braid tower is the explicit content of the algebraic
    JSJ at the level of mass.
 
@@ -180,8 +180,8 @@ along the $\mathcal{S}_\bullet$ stratification; the descended
 term gives the level-0 part, the single tower the level-1
 correction, the pair tower the level-2 correction. Higher-level
 corrections (triples, $\ldots$) are absorbed by pentagon-ascension
-([pentagon-uv-commutation](#prop\:pentagon-uv-commutation),
-[mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)).
+([pentagon-uv-commutation](#prop:pentagon-uv-commutation),
+[mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower)).
 
 The conjecture is open; the per-braid tower up to level 2 is
 empirically validated by the witness above.

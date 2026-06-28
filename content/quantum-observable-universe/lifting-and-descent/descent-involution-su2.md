@@ -1,5 +1,5 @@
-Continuing the [jet prolongation for SU(2)](#ex\:jet-prolongation-su2),
-we construct the [:refterm[descent]{#descent} involution](#def\:descent-involution) on
+Continuing the [jet prolongation for SU(2)](#ex:jet-prolongation-su2),
+we construct the [:refterm[descent]{#descent} involution](#def:descent-involution) on
 $\mathrm{End}_{\mathbf{C}}(A_1)$ where
 $A_1 = J^1\mathcal{O}(\mathrm{SU}(2))$.
 
