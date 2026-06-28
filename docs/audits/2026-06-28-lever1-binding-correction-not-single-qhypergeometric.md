@@ -100,3 +100,28 @@ generating function `C(z) = Σ_{m≥3} L_m z^m`) in the Habiro basis `(q;q)_n = 
 whether the basis coefficients stabilise / follow a single rule across `m` (the canonical Habiro-ring
 fingerprint), rather than searching for a finite q-difference operator that Stages 3–6 have now shown
 does not exist at low order.
+
+## Cross-reference — the merged Hahn–Exton q-Bessel claim (#3000), re-scoped
+
+PR #3000 (merged to `main` 2026-06-28, same bean `z2bn`) adds to
+`content/quantum-observable-universe/lean/QOU/QBeta/QBesselContiguityRecurrence.lean` a
+`lever1_habiro_closed_form` theorem plus a docstring asserting that the lever-1 correction `D(m)`
+*"contiguity is governed identically by the Hahn–Exton q-Bessel ratio … two localizations of the same
+q-difference operator."*
+
+- **The Lean theorem is sound and not in dispute.** `lever1_habiro_closed_form` is a *conditional*
+  (it assumes the q-Bessel recurrence `D(k+1)·((1−q^{k+1})(1−a q^k)) = −q^k·D(k)` as a hypothesis
+  `hrec` and concludes the product form). It is a sorry-free alias of `qbessel_coeff_closed_form`; it
+  does **not** assert that `D(m)` actually satisfies that recurrence.
+- **The docstring's identity claim is over-scoped — refuted by this Stage-6 probe.** The probe tests
+  exactly that recurrence as the *literal contiguity template* `r_k = −q^k/[(1−q^{k+1})(1−a q^k)]`
+  (one parameter `a`), and it **fails held-out**: no single `a` fit on `m=4,5` reproduces `m=6,7,8`.
+  Stages 7–9 add that `D(m)` is a product of **pairwise-coprime irreducible** cores (not a single
+  q-hypergeometric element), and the merged 2026-06-20 Hahn–Exton audit independently *structurally*
+  excludes the bare Hahn–Exton ratio for the parallel `c_k` (`r₂ = +2` in the forbidden gap).
+- **Re-scope (per the AGENTS.md (a)/(b) discipline):** the Hahn–Exton form is a correct
+  **shared-Habiro-ring-class analogy** (both objects live in the cyclotomic completion, with `ζ₄`
+  residues), **not** a literal contiguity identity for `D(m)`. The owner-merged conditional theorem
+  stands; its docstring should be read as the ring-class connection, not as "`D(m)` satisfies the
+  single-parameter q-Bessel recurrence." A docstring correction on `QBesselContiguityRecurrence.lean`
+  is the clean follow-up (held pending owner direction, since #3000 is owner-authored and merged).
