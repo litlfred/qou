@@ -5,7 +5,9 @@ catalogues every particle interaction together with its $\Delta$
 operator and composition rules. These actions, catalogues, and rules
 are collected below.
 
-## Action on the Gröbner--Shirshov ideal
+## Transfer-matrix operator algebra and interaction catalogue
+
+### Action on the Gröbner--Shirshov ideal
 
 The transfer matrix acts on the Iwahori--Hecke algebra element
 $a\sigma_i + b$ (the Gröbner--Shirshov-reduced chain at generator
@@ -41,7 +43,7 @@ The product of $k$ transfer matrices at generator $\sigma_i$
 gives the full chain reduction $M_i = \prod_{j} T_j(q)$, and
 the Markov-traced volume is $\hat{V}_i = z \cdot (M_i)_{11} + (M_i)_{21}$.
 
-## The operator algebra
+### The operator algebra
 
 Transfer matrices compose: if strands $K_1$, $K_2$, $K_3$
 cross in sequence at generator $\sigma_i$, the combined
@@ -69,13 +71,13 @@ eliminated by the Hecke relation ($T^2 = (q - q^{-1})T + 1$).
 The transfer matrix product $M_i(q)$ is the **quotient** — the
 element surviving after modding out $I_i$.
 
-## Interaction catalogue
+### Interaction catalogue
 
 Every particle interaction corresponds to a transfer matrix.
 The **interaction type** is determined by the knot types of
 the two strands at the crossing:
 
-### Nuclear interactions (quark-level, Level 1)
+#### Nuclear interactions (quark-level, Level 1)
 
 | Interaction | $K_1$ | $K_2$ | $T(q)$ | Physical |
 |-------------|-------|-------|--------|----------|
@@ -83,7 +85,7 @@ the two strands at the crossing:
 | $\mathfrak{d}\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $T_{2,3}^{\sigma}$ | $T_{nn}$ | neutron-neutron |
 | $\mathfrak{u}\mathfrak{d}$ | $T_{2,3}$ | $T_{2,3}^{\sigma}$ | $T_{\mathrm{mix}}$ | proton-neutron binding |
 
-### Electromagnetic interactions (electron-level)
+#### Electromagnetic interactions (electron-level)
 
 | Interaction | $K_1$ | $K_2$ | Physical |
 |-------------|-------|-------|----------|
@@ -91,7 +93,7 @@ the two strands at the crossing:
 | $e$-$e$ | $T_{2,3}$ | $T_{2,3}$ | Electron-electron repulsion |
 | $\gamma$-$e$ | $\varnothing$ | $T_{2,3}$ | Photon absorption/emission |
 
-### Photon-electron transfer matrix
+#### Photon-electron transfer matrix
 
 The photon ($\varnothing$, empty knot) crossing with the electron
 ($T_{2,3}$, trefoil) gives:
@@ -121,7 +123,7 @@ proton-proton matrix.**  This is because $J_{\varnothing}(q) = 1$
 contributes no deformation — the crossing is purely determined
 by the electron.
 
-### Shell transitions as R-I moves
+#### Shell transitions as R-I moves
 
 Photon absorption promotes an electron from shell $n$ to
 shell $n+1$.  In the transfer matrix language, this is a
@@ -180,7 +182,7 @@ This gives the photon energy for shell transitions — a
 geometric series in the eigenvalue $\lambda_+$ of the
 photon-electron transfer matrix.
 
-## Interaction as Δ operator
+### Interaction as Δ operator
 
 Any interaction that changes the crossing type from
 $(K_1, K_2) \to (K_1', K_2')$ is encoded by the
@@ -209,7 +211,7 @@ For photon absorption, the operator is not a difference but
 an **extension**: a new transfer matrix factor $T_{\gamma e}$
 is appended to the chain, increasing the color degree by $1$.
 
-## Composition rules
+### Composition rules
 
 **Sequential interactions** (two interactions in sequence at
 the same generator):

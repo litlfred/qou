@@ -6,7 +6,9 @@ the knot/link's standard diagram (TikZ), its braid word in
 $B_n$, and where it enters the binding pipeline. For per-particle
 context see [knot-particle-dictionary](#rem:knot-particle-dictionary).
 
-## Trivial: the unknot
+## Binding-knot diagrams
+
+### Trivial: the unknot
 
 The unknot $0_1 = T_{1,0}$ is a single unknotted circle —
 the trivial element of every braid group. It carries
@@ -32,7 +34,7 @@ so its bare mass vanishes. Two disjoint roles:
 \end{tikzpicture}
 ```
 
-## Hopf link (the "bowtie")
+### Hopf link (the "bowtie")
 
 The Hopf link $L2a1 = T(2, 2)$ is the simplest non-trivial
 link: two circles linked once. Its braid word
@@ -60,7 +62,7 @@ The full torus-link family $T(2, 2k)$ supplies the
 electroweak bosons: $T(2,2)$ gluon, $T(2,4)$ $W$, $T(2,6)$
 $Z$, $T(2,8)$ Higgs.
 
-## Trefoil $3_1 = T(2,3)$
+### Trefoil $3_1 = T(2,3)$
 
 The trefoil knot is the simplest non-trivial knot, and the
 canonical **electron** identity. Its braid word
@@ -84,7 +86,7 @@ fixes the leptonic mass quantum.
 The torus-knot family $T(2, 2k+1)$ extends to muon
 $T(2,5)$, tau $T(2,7)$, and beyond.
 
-## Figure-eight $4_1$ — the mass mechanism
+### Figure-eight $4_1$ — the mass mechanism
 
 The figure-eight $4_1$ is the smallest hyperbolic knot
 ($\mathrm{Vol}(4_1) \approx 2.0299$, the CAL-2 calibration
@@ -110,7 +112,7 @@ $q \mapsto q^{-1}$). This is what selects $4_1$ as the
 \end{tikzpicture}
 ```
 
-## Borromean rings $\mathcal{B}_3 = 6^3_2$
+### Borromean rings $\mathcal{B}_3 = 6^3_2$
 
 The Borromean rings are three mutually linked circles such
 that **removing any one frees the other two** — no two of
@@ -143,11 +145,11 @@ actual over/under crossing pattern alternates so that no
 two rings are individually linked. See KnotInfo entry
 $L6a4$ — also known as the three-component Brunnian link.)
 
-## Cross-reference table
+### Cross-reference table
 
 See [Table 1](#tbl:binding-knots-visual-inventory-table1-data).
 
-## Higher-order links (in mass-table-ppb pipeline)
+### Higher-order links (in mass-table-ppb pipeline)
 
 The zero-parameter Kashaev law $B = \rho_F \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$
 in [`mass_table_ppb.py`](../../../computations/mass_table_ppb.py)

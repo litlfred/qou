@@ -11,7 +11,9 @@ first infinite surreal. The sum has well-ordered support
 (Hahn-series convention). This embeds $\mathbf{No}$ into the
 Hahn field $\mathbb{R}((\omega^{\mathbf{No}}))$ [@ehrlich2012].
 
-## Leading exponent, leading coefficient
+## Conway normal form and the asymptotic dictionary
+
+### Leading exponent, leading coefficient
 
 For $x \neq 0$ define
 
@@ -37,7 +39,7 @@ ring $\mathcal{O}$ of finite surreals
 | $x$ finite non-inf. | $\ordw(x) = 0$ | $\mathrm{st}(x) \neq 0$ |
 | $x$ infinite | $\ordw(x) > 0$ | $x \notin \mathcal{O}$ |
 
-## Dictionary: Big-O / little-o $\leftrightarrow$ leading exponent
+### Dictionary: Big-O / little-o $\leftrightarrow$ leading exponent
 
 Classical asymptotic notation aligns — indeed, it *is* a
 leading-exponent statement in disguise.
@@ -53,7 +55,7 @@ $f, g$ in the Hahn field):
 | $f \sim g$ | $\ordw(f) = \ordw(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
 | $f = g + O(h)$ | $\ordw(f - g) \leq \ordw(h)$ | $f \equiv g \pmod{\preceq h}$ |
 
-## Advantages over classical Big-O
+### Advantages over classical Big-O
 
 Classical Big-O has three well-known pathologies:
 
@@ -84,7 +86,7 @@ The surreal valuation replaces these with:
  are both negative infinite, but at *different birthdays*,
  distinguishing functions that classical Big-O cannot.
 
-## Example rewrites
+### Example rewrites
 
 ```
 classical:  f(x) = x² + 5x + O(1)  as x → ∞
@@ -97,7 +99,7 @@ classical:  ∫₀¹ e^{-x/ε} dx ∼ ε  as ε → 0⁺
 surreal:    ∫₀¹ e^{-x/ε} dx ≃ ε   (leading exponent and leading coeff agree)
 ```
 
-## Significance for QOU
+### Significance for QOU
 
 Three uses specific to the main paper:
 
@@ -119,7 +121,7 @@ Three uses specific to the main paper:
  specific leading exponent; matching counterterms to divergences
  becomes: match leading exponents.
 
-## Suggested notational convention
+### Suggested notational convention
 
 For the appendix, use $\preceq, \prec, \asymp, \simeq$ uniformly.
 The main paper can adopt this as a *macro-level* convention in a

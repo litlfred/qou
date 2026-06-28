@@ -4,7 +4,9 @@ provides the algebraic framework for understanding shell
 closure, the Pauli factor, and the odd-odd pairing deficit
 in the Gröbner--Shirshov normal form.
 
-## The $\mu_2$ torsion as Pauli evaluation
+## Kummer-tower shell closure
+
+### The $\mu_2$ torsion as Pauli evaluation
 
 The alternating trace of the NF evaluates each word $w$ at the
 alternating eigenvalue $(-q^{-1})^{\ell(w)}$:
@@ -32,7 +34,7 @@ $$
 measures the **$\mu_2$-torsion content** of the NF — how much of the
 amplitude lives in the alternating (antisymmetric) channel.
 
-## Shell closure as Kummer divisibility
+### Shell closure as Kummer divisibility
 
 The Kummer reduction at level $n$
 ([Kummer filtration](#rem:kummer-filtration-obstruction)):
@@ -57,7 +59,7 @@ For the nuclear braid:
 - **Doubly magic**: both the proton and neutron obstructions
   vanish simultaneously at the same Kummer level.
 
-## The pairing deficit as $\mu_2$ obstruction
+### The pairing deficit as $\mu_2$ obstruction
 
 For **odd-odd nuclei** (both $Z$ and $N$ odd): $\chi(A)$ is odd at
 the relevant level, so $\kappa_0 \bmod 2 \neq 0$ — the obstruction
@@ -78,7 +80,7 @@ This gives the algebraic formula for the **pairing correction** $I_{10}$
 factor for odd-odd nuclei is the ratio of $\mu_2$-torsion content
 between the even-even and odd-odd configurations at the same $A$.
 
-## Computational complexity
+### Computational complexity
 
 The Kummer framework suggests that the Pauli witness computation
 should scale as $O(A^3)$:
@@ -105,7 +107,7 @@ With quotient-during-construction (v6), the effective complexity
 is $O(A^3)$ — cubic in the mass number.  This makes nuclei up to
 $A = 40$ (${}^{40}\mathrm{Ca}$, doubly magic) tractable in minutes.
 
-## Symbolic witnesses
+### Symbolic witnesses
 
 The symbolic engine (v7, exact in $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ where
 $\check{q} = q^{1/2}$ is the spinor information rate) produces Laurent polynomial witnesses for

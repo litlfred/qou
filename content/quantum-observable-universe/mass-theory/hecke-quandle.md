@@ -1,4 +1,6 @@
-## The quandle axioms as Reidemeister moves
+## The Hecke quandle and its relevance to the mass formula
+
+### The quandle axioms as Reidemeister moves
 
 A **quandle** $(Q, \triangleright)$ is a set $Q$ with a binary
 operation $\triangleright : Q \times Q \to Q$ satisfying three
@@ -20,7 +22,7 @@ ambient isotopic as oriented knots. The knot quandle is therefore
 a **complete invariant** of oriented prime knots — strictly more
 powerful than any polynomial invariant (HOMFLYPT, Jones, Alexander).
 
-## The Hecke quandle $Q_H(q)$
+### The Hecke quandle $Q_H(q)$
 
 The Hecke algebra's quadratic relation
 $\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$) defines a natural quandle
@@ -42,7 +44,7 @@ It deforms the **permutation quandle** $Q_H(1) = (S_n, \text{conjugation})$
 at $q = 1$ and recovers the **dihedral quandle** $R_n$ at
 $q = -1$ (roots of unity).
 
-## Flavour-parameterised quandle
+### Flavour-parameterised quandle
 
 The QOU mass formula uses **averaged crossings**
 $I = \sigma - (h/2) \cdot 1$ whose coefficient $h/2$ depends on
@@ -71,9 +73,9 @@ are studied in the literature as
 parameterisation is a specific instance where the parameter space
 is the $\mathrm{SU}(3)_{\mathrm{flavour}}$ representation.
 
-## Relevance of quandles to the mass formula
+### Relevance of quandles to the mass formula
 
-### 1. Completeness beyond polynomials
+#### 1. Completeness beyond polynomials
 
 The knot quandle is a **complete invariant** (Joyce's theorem) —
 it distinguishes knots that share the same HOMFLYPT, Jones, and

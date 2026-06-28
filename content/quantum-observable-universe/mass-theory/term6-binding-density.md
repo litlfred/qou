@@ -18,7 +18,9 @@ spectral-sequence stratum contribution
 $\alpha, \beta$ are calibration coefficients fit to the AME panel,
 and $\delta_M(Z, N)$ is an operator-level magic-shell enhancement.*
 
-## Term 6 explicit form
+## Term 6 binding density
+
+### Term 6 explicit form
 
 The level-$3$ stratum contribution per
 [`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence)'s
@@ -44,7 +46,7 @@ See [Table 1](#tbl:term6-binding-density-table1-data).
 so $T_6$ is computed with four atom-independent traces
 (one per triple-type) plus the four binomial coefficients.
 
-## $A^3$ normalization
+### $A^3$ normalization
 
 The $A^3$ in the denominator is canonical: $T_6$ counts triples
 ($\sim \binom{A}{3} \sim A^3 / 6$), so $T_6 / A^3$ is the
@@ -53,7 +55,7 @@ binding-energy-per-nucleon dimensions. This normalization arises
 **before** any AME data; it follows from the combinatorial
 structure of the level-$3$ stratum.
 
-## Magic-shell correction $\delta_M$
+### Magic-shell correction $\delta_M$
 
 The operator-level magic correction adds binding at doubly-magic
 shells per
@@ -78,7 +80,7 @@ At heavier doubly-magic atoms ($^{40}\!\mathrm{Ca}$, $^{56}\!\mathrm{Ni}$),
 $\delta_M \to 0$: the smooth $T_6/A^3$ formula already absorbs
 the magic enhancement at large $A$.
 
-## Empirical calibration
+### Empirical calibration
 
 Fit on the 16-atom panel D, 3He, 3H, 4He, 6Li, 7Li, 9Be, 12C,
 16O, 20Ne, 24Mg, 28Si, 32S, 40Ca, 48Ca, 56Ni, 58Ni against AME
@@ -100,7 +102,7 @@ See [Table 2](#tbl:term6-binding-density-table2-data).
 
 Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Term6-scaling-heavy.witness.json).
 
-## Structurally derived content
+### Structurally derived content
 
 * The **shape** $\alpha \cdot T_6/A^3 + \beta + \delta_M$ follows
   from
@@ -112,7 +114,7 @@ Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Te
   traces is structurally derived from the Hecke-trace
   factorization theorem.
 
-## Empirical content (not yet derived)
+### Empirical content (not yet derived)
 
 * The **values** $\alpha = 339.4$ MeV and $\beta = 1.14$ MeV
   are **calibrated** to the AME panel. A categorical derivation

@@ -15,7 +15,9 @@ three into a single §3b-cond hypothesis, and a consistency theorem
 `three_substantive_fillers_synthesis_consistent` showing the
 synthesis is structurally well-formed.
 
-## (1) `BlochGroup F` — concrete carrier
+## The three filler constructions
+
+### (1) `BlochGroup F` — concrete carrier
 
 The Lean file gives a **structural carrier** for the Bloch group:
 
@@ -37,7 +39,7 @@ files can reference, leaving the substantive content as
 `HasBlochGroup F` instance closure — a Mathlib-contribution-sized
 task isolating exactly what's missing.
 
-## (2) Pentagon identity for $\mathrm{Cl}_2$
+### (2) Pentagon identity for $\mathrm{Cl}_2$
 
 The 5-term identity for $\mathrm{Cl}_2$ is the imaginary-part
 projection of the standard $\mathrm{Li}_2$ pentagon. Stated as
@@ -57,7 +59,7 @@ sine-series rearrangement infrastructure. We provide:
  showing the pentagon is consistent with the boundary lemma
  $\mathrm{Cl}_2(0) = 0$ (by definition, $5 \cdot \mathrm{Cl}_2(0) = 0$).
 
-## (3) Faddeev-Kashaev quasi-classical limit
+### (3) Faddeev-Kashaev quasi-classical limit
 
 The convergence
 
@@ -76,7 +78,7 @@ This file adds:
  (holds by definition at $x = 0$ since both sides are identically zero
  there).
 
-## Content fully closed by this file
+### Content fully closed by this file
 
 The three §3b-cond class hooks are now formally available with
 named carrier infrastructure for downstream usage. None of the
@@ -89,7 +91,7 @@ single §3b-cond hypothesis that downstream blocks can take in
 their `[Instance]` lists; the consistency theorem confirms the
 synthesis is structurally well-formed.
 
-## Remaining content
+### Remaining content
 
 After this file, the open content is exactly:
 

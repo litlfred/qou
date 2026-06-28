@@ -22,7 +22,9 @@ The crossing type at each generator $\sigma_i$ depends on the
 quark flavours of the two strands: $\mathfrak{u}\text{-}\mathfrak{u}$ (positive), $\mathfrak{d}\text{-}\mathfrak{d}$
 (negative), or $\mathfrak{u}\text{-}\mathfrak{d}$ (mixed).
 
-## The $T_{3,5}$ weak vertex
+## The $\beta$-decay Skein operation
+
+### The $T_{3,5}$ weak vertex
 
 The weak interaction is mediated by the torus knot $T_{3,5}$
 ([force identification](#rem:force-knot-identification)), whose
@@ -50,7 +52,7 @@ appears as the coupling at each crossing of the $T_{3,5}$ braid.
 The full vertex factor is **not** $s^2$ (single crossing) but
 the Markov trace $\mathcal{W}(q)$ of all $10$ crossings.
 
-## The $10$-crossing budget
+### The $10$-crossing budget
 
 When the $T_{3,5}$ braid is inserted at the converting quark,
 it introduces $10$ crossings into the nuclear braid word. These
@@ -69,7 +71,7 @@ contribution to the $Q$-value
 ([transition energy](#def:Q-value-transition)) — the single-crossing
 approximation misses $6$ of these $7$ crossings.
 
-## Crossing partition and the Skein relation
+### Crossing partition and the Skein relation
 
 The $10$ crossings of $T_{3,5}$ are partitioned by the
 Gröbner--Shirshov reduction: $3$ form the electron trefoil, $0$ form the
@@ -86,7 +88,7 @@ $$
 The accumulated effect of $10$ such relations (not $1$) determines
 the transition amplitude.
 
-## The $\mathbb{Z}/2$ symmetry
+### The $\mathbb{Z}/2$ symmetry
 
 $\beta^-$ and $\beta^+$ are related by the involution
 $q \mapsto q^{-1}$ on the Iwahori--Hecke algebra, which acts as:
@@ -113,7 +115,7 @@ When $\mu_a \neq \mu_b$ (i.e., $\mu_{\mathfrak{u}} \neq \mu_{\mathfrak{d}}$), th
 are distinct: the asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba} = (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the
 **weak asymmetry** that drives the $Q$-value.
 
-## The lepton pair from $T_{3,5}$ decomposition
+### The lepton pair from $T_{3,5}$ decomposition
 
 The $T_{3,5}$ braid $(\sigma_1 \sigma_2)^5$ decomposes under
 Gröbner--Shirshov reduction into the lepton pair plus reduction residue.
@@ -132,7 +134,7 @@ $$
   \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
 $$
 
-## The $Q$-value (10-crossing)
+### The $Q$-value (10-crossing)
 
 The transition energy is the difference in categorical actions
 between parent and daughter, now accounting for all $10$
@@ -176,7 +178,7 @@ $$
    \times  (\text{pair Skein scale})
 $$
 
-## Insufficiency of the single-crossing approximation
+### Insufficiency of the single-crossing approximation
 
 The previous single-crossing approximation captured only $1$
 of the $10$ crossings in the weak vertex. This explains:

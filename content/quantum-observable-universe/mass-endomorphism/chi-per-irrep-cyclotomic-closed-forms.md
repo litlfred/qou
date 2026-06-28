@@ -9,7 +9,9 @@ generalizations": this block extends [`rem:chi-v3-closed-form-proof`](#rem:chi-v
 to all three Wedderburn blocks of $H_3(q)$, exposing the
 **unified cyclotomic-factor pattern**.
 
-## Three closed forms
+## The three per-irrep character-difference closed forms
+
+### Three closed forms
 
 For the canonical typed-$\mathbf{B}_3$ braids
 $\mathcal{B}_p$ (uud, $6\sigma + 3\sigma^{-1} + 2\ \mathrm{averaged}$)
@@ -30,7 +32,7 @@ $$
 All three have the common prefactor $-\frac{(q^2 - 1)}{4 \cdot q^{?}}$
 where the denominator power is $1, 3, 5$ for $\lambda = (3), (2,1), (1,1,1)$.
 
-## Cyclotomic factorisation
+### Cyclotomic factorisation
 
 See [Table 1](#tbl:chi-per-irrep-cyclotomic-closed-forms-table1-data).
 
@@ -53,7 +55,7 @@ $\Phi_8(q) = q^4+1$.
 
    The denominator exponent is $p = 3 - \frac{2}{3} c(\lambda)$, mapping $c \in \{3, 0, -3\}$ to $p \in \{1, 3, 5\}$ exactly.
 
-## Origin of the V_(2,1) closed form
+### Origin of the V_(2,1) closed form
 
 V_(2,1) is the **2-dimensional Hoefsmit irrep**. Each typed crossing
 acts as a 2$\times$2 matrix on the SYT basis $\{v_{T_1}, v_{T_2}\}$:
@@ -72,7 +74,7 @@ sympy.factor`, yields $-(q^4+1)(q^2-1)/(4q^3)$ — the closed form above.
 The probe `probe_per_wedderburn_block_ck.py` performs this symbolic
 computation; the witness file records the result bit-exactly.
 
-## Literature pointers
+### Literature pointers
 
 - **Cyclotomic Hecke algebras at depth $n$**: Ariki-Koike algebras and
   their representations carry cyclotomic structure tied to the
@@ -89,13 +91,13 @@ computation; the witness file records the result bit-exactly.
   difference is a probe finding suggestive of a deeper
   hook-content-formula derivation.
 
-## Lean theorems exported
+### Lean theorems exported
 
 All proved by `field_simp + ring` after unfolding (sorry-free):
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).
 
-## Compute wiring
+### Compute wiring
 
 Probe `probe_per_wedderburn_block_ck.py` (witness:
 `per-wedderburn-block-ck.witness.json`) computes the symbolic

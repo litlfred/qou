@@ -7,7 +7,9 @@ The two are linked by a functorial composition: a categorical
 generating function whose evaluation at the substrate parameter
 $q_0$ collapses to the observed scalar.*
 
-## The polynomial as generating function, not a number
+## The polynomial as mass-spectrum generating function
+
+### The polynomial as generating function, not a number
 
 Let $\mathfrak{M}_K$ denote the stable highest-weight KLR module
 \cite{khovanovlauda2009, brundankleshchev2009} associated to the
@@ -30,7 +32,7 @@ decorative: an unbounded module would yield an infinite power series
 (formally an infinite mass tower); the bound truncates this to a
 genuine Laurent polynomial.
 
-## Interpretation of the polynomial: spectrum, not a single value
+### Interpretation of the polynomial: spectrum, not a single value
 
 Each term $c_d q^d$ of $P_K(q)$ has an independent physical reading:
 
@@ -46,7 +48,7 @@ Read this way, $P_K(q)$ is the **mass spectrum** of $K$ — a partition
 function over its internal homological slices. The terms are *mass
 components*; their sum (after evaluation) is the macroscopic mass.
 
-## Functorial equivalence via substrate evaluation
+### Functorial equivalence via substrate evaluation
 
 The macroscopic, measurable mass is the **evaluation** of $P_K(q)$ at
 the substrate value $q_0 = 1.109978595554181\ldots$ (50 dps; symbolic
@@ -82,7 +84,7 @@ isomorphism information), $\mathrm{ev}_{q_0}$ is specialisation
 unified knot-mass formula), and
 $m_0\,|\cdot|$ is unit conversion.
 
-## Significance of the distinction
+### Significance of the distinction
 
 Conflating the polynomial with the mass produces three failure modes:
 
@@ -101,7 +103,7 @@ Conflating the polynomial with the mass produces three failure modes:
    The polynomial is the topological engine; the scalar is its
    output at the operating point of our universe.
 
-## Authoring guidance
+### Authoring guidance
 
 When stating mass results in `.md` or `.lean`:
 

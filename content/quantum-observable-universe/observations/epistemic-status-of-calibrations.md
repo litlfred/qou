@@ -18,7 +18,9 @@ a numerological substitution. The forbidden clauses of
 the three existing CALs without changing how many CALs the framework
 admits.
 
-## CAL-1 ($m_e$) — unit choice + cohomological period
+## Epistemic status of the calibration inputs
+
+### CAL-1 ($m_e$) — unit choice + cohomological period
 
 CAL-1 plays two distinct roles:
 
@@ -34,7 +36,7 @@ conversion factor $m_e(\text{MeV})/m_e(\text{natural}) \approx 4.57
 \times 10^{-3}$ MeV per natural unit — a unit choice, not a
 fundamental constant.
 
-## CAL-2 ($m_\mu/m_e$) — substrate $q_0$ pin (self-referential)
+### CAL-2 ($m_\mu/m_e$) — substrate $q_0$ pin (self-referential)
 
 CAL-2 fixes $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.
 Per the audit
@@ -64,7 +66,7 @@ research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$
 fixed-point, categorical endomorphism fixed-point).
 
-## CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) and the CAL-2 proxy $\mathfrak{Q}_\beta$ — conditional net-ansatz
+### CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) and the CAL-2 proxy $\mathfrak{Q}_\beta$ — conditional net-ansatz
 
 **CAL-3 is $\mathfrak{D}_\pi$, the pion decay width** (proxy: the
 charged-pion mass $m_\pi$ — the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$
@@ -96,7 +98,7 @@ $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
   with the $N=3$ rung $= J_{\mathrm{Hopf}}(q=1) = -2$ already
   beating the L2 100$\times$ target by ~24%.
 
-## Summary table
+### Summary table
 
 | CAL | Pinned quantity | Cohomological derivation candidate | Status |
 |---|---|---|---|
@@ -105,7 +107,7 @@ $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
 | CAL-3 | $m_\pi$ (meson scale; orthogonal class) | independent of $(m_e,q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | **genuine independent input** |
 | *(derived)* | $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open** (derivation status of $\mathfrak{Q}_\beta$, not a CAL) |
 
-## Scope exclusions for this remark
+### Scope exclusions for this remark
 
 - Does **not** propose a 4th calibration input.
 - Does **not** propose to replace CAL-1, CAL-2, or CAL-3 with empirical fits.
@@ -117,7 +119,7 @@ It is a structural clarification: the framework's *cohomological*
 status is more advanced than the *calibration* status, and the gap
 between them is a recognised open research direction.
 
-## Significance
+### Significance
 
 The 3-CAL discipline is rhetorically powerful: it claims the
 Standard Model's 19 free parameters reduce to 3. The accounting
@@ -128,7 +130,7 @@ factor) plus cohomologically-derived $q_0$ and cohomologically-
 derived hadronic-sector residual. This is the *direction*, not a
 redefinition of the discipline.
 
-## See also
+### See also
 
 - [`rem:calibration-inputs`](#rem:calibration-inputs) — canonical 3-CAL remark with formulas
 - [`prop:three-calibration-inputs`](#prop:three-calibration-inputs) — proposition form with Wedderburn alignment

@@ -119,6 +119,7 @@ export default chapter({
         "neutron-proton-mass-splitting",
         "photon-channel-wedderburn-chain",
         "mass-formula-validation",
+        "mass-formula-validation-ba-from-q",
 
         "mass-formula-validation-table1-data",
         "mass-formula-validation-table2-data",

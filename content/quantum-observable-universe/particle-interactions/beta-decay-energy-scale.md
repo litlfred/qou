@@ -21,7 +21,9 @@ $\mathfrak{E}_0^{(N=0)}$ / $\mathfrak{E}_0^{\text{full}}$ symbol convention
 and the [collisions note](../notation/notation-collisions.md) for why
 $\mathfrak{E}_0$ is **not** $\mathfrak{Q}_\beta(n)$.
 
-## Linearity
+## Energy scale of the normal form
+
+### Linearity
 
 The transition $\Delta = \mathrm{NF}(\mathfrak{n}) -
 \mathrm{NF}(\mathfrak{p})$ equals $\mathrm{NF}(\mathfrak{n} -
@@ -29,7 +31,7 @@ The transition $\Delta = \mathrm{NF}(\mathfrak{n}) -
 the Gröbner--Shirshov basis — a linear map on the 6-dimensional
 vector space $H_3(q)$.
 
-## Derivation (typed crossings)
+### Derivation (typed crossings)
 
 From the witness (`free-neutron-decay.witness.json`, typed crossings):
 
@@ -126,7 +128,7 @@ Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
 net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to
 keep $\mathfrak{E}_0 > 0$.
 
-## NF$_+$ / NF$_-$ decomposition
+### NF$_+$ / NF$_-$ decomposition
 
 Each nucleon's NF splits into positive and negative coefficient
 sums:
@@ -143,7 +145,7 @@ the typed-crossing effect: the $d$-$d$ crossing in neutron
 $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ shifts the Hopf link
 coefficient below zero.
 
-## Observable vs virtual: $Q_{\geq 2}$
+### Observable vs virtual: $Q_{\geq 2}$
 
 Terms of word length $\ell \geq 2$ (Hopf links $L_\pm$ and trefoil
 $e^-$) are topologically non-trivial and therefore **observable**.
@@ -164,7 +166,7 @@ $$
   =  58.5\% \text{of}\mathfrak{Q}_\beta.
 $$
 
-## Energy scale scenarios
+### Energy scale scenarios
 
 | Scenario | $|\Delta|$ | $\mathfrak{E}_0$ (MeV) | $\mathfrak{E}_0 / \mathfrak{m}_e$ |
 |:---|---:|---:|---:|
@@ -173,7 +175,7 @@ $$
 | Positive $|\Delta\mathrm{NF}_+|$ | $0.07563$ | $10.345$ | $20.244$ |
 | Leptonic $|\Delta\nu| + |\Delta e^-|$ | $0.10302$ | $7.594$ | $14.861$ |
 
-## Full energy budget
+### Full energy budget
 
 Each of the six NF terms contributes
 $\Delta_i \times \mathfrak{E}_0$ to the total decay energy.
@@ -194,7 +196,7 @@ $\mathfrak{E}_0$ budget uses the sign convention
 $\Delta_i \times \mathfrak{E}_0 \times (-\mathrm{sgn}\Delta_{\mathrm{net}})$
 to give $Q > 0$.)
 
-## The $L_+$ dominance (typed crossings)
+### The $L_+$ dominance (typed crossings)
 
 With typed crossings, the single largest contributor is
 $\Delta(L_+) = -0.1090$, giving $+0.453 \text{MeV}$ — larger
@@ -216,7 +218,7 @@ $$
   +0.782 \text{MeV}.
 $$
 
-## Physical interpretation
+### Physical interpretation
 
 Beta decay pays down the neutron's leptonic debt.  With typed
 crossings, the process

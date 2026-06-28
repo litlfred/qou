@@ -14,7 +14,9 @@ error: $\delta Q/Q \approx (M/Q) \times (\delta M/M)$.
 At $k = 11$: $Q(n \to {}^1\mathrm{H}) = 0.782$ MeV ($0.00\%$),
 $Q({}^3\mathrm{H} \to {}^3\mathrm{He}) = 0.01823$ MeV ($-2.1\%$).
 
-## Crossing-level decomposition
+## Properties of the $Q$-value transition
+
+### Crossing-level decomposition
 
 The parent and daughter normal forms $\mathcal{N}(p,n)$
 and $\mathcal{N}(p+1, n-1)$ differ at exactly $|\delta p|$
@@ -41,7 +43,7 @@ $$
 (dropping $\mathfrak{S}_q(\nu^{\sigma}) = 0$ since the unknot has trivial
 action).
 
-## Classical limit and the $q$-anomaly
+### Classical limit and the $q$-anomaly
 
 **Warning.** Classical energy conservation is **not** assumed.
 
@@ -94,7 +96,7 @@ This anomaly does NOT vanish in general. It is a genuine
 physical effect of the $q$-deformation, not a computational
 artefact.
 
-## Structure of the $q$-anomaly
+### Structure of the $q$-anomaly
 
 The $q$-anomaly arises from the non-commutativity of the
 Iwahori--Hecke algebra. When the Skein crossing change converts one
@@ -139,7 +141,7 @@ giving a correction $\delta_q / Q \sim 5\%$.
 This is the **same correction** that brings the tritium
 half-life prediction from 13 yr to 12.4 yr (vs observed 12.32 yr).
 
-## $Q$ is NOT conserved
+### $Q$ is NOT conserved
 
 The $q$-anomaly $\delta_q$ means that $Q$ defined
 as the action difference is NOT equal to the sum of kinetic
@@ -167,7 +169,7 @@ $$
 Note: the daughter is evaluated at the **shifted** $q$, not the
 original. This is the $q$-analogue of energy conservation.
 
-## Limits
+### Limits
 
 | $q$ | Regime | $Q$ | $\delta_q$ |
 |-----|--------|:---:|:---:|
@@ -175,7 +177,7 @@ original. This is the $q$-analogue of energy conservation.
 | the substrate $q$ | Our universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
 | $q \to \infty$ | Deep-quantum | $\to \infty$ | $\to \infty$ |
 
-## $q$-Momentum
+### $q$-Momentum
 
 The $q$-momentum ([q-momentum](#def:q-momentum)) satisfies
 a similar non-conservation. Classically:

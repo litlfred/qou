@@ -6,7 +6,9 @@ viewed through different lenses: the Hecke algebra $H_n(R, q)$
 is simultaneously an algebra of braid-group representations
 and a space of stochastic transition operators.
 
-## Overview: SYT paths on the Young graph
+## The Hecke algebra as a Markov chain
+
+### Overview: SYT paths on the Young graph
 
 Fix an irrep $\lambda \vdash n$.  In the Hoefsmit seminormal
 form ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)),
@@ -91,7 +93,7 @@ antisymmetric Boltzmann weights of the classical chain.  SYT
 paths on the Young graph are therefore the **quantum sample
 space**, and the Markov chain of §2 is its classical shadow.
 
-### Jucys--Murphy / SYT cell reindexing
+#### Jucys--Murphy / SYT cell reindexing
 
 In the same SYT basis, the Jucys--Murphy elements
 $L_k = \sigma_{k-1}\cdots \sigma_1 \sigma_1 \cdots \sigma_{k-1}$ act diagonally
@@ -107,11 +109,11 @@ developed there).  The amplitude-to-probability passage above
 is therefore also a passage from the **generator indexing** of
 the chain to the **cell indexing** of the Young graph paths.
 
-## Dictionary
+### Dictionary
 
 See [Table](#tbl:hecke-markov-interpretation-table-data).
 
-## Non-local correlations from local transitions
+### Non-local correlations from local transitions
 
 The memorylessness condition (iii) coexists with non-trivial
 correlations.  In the Markov chain, each step depends only on
@@ -131,7 +133,7 @@ representation-theoretic: they are consequences of the
 constraints that $H_n(R, q)$ imposes on any consistent
 assignment of transition probabilities.
 
-## Planck steps
+### Planck steps
 
 Each step of the Markov chain is one Hecke evaluation --- one
 braid crossing resolved into its symmetric or antisymmetric
@@ -147,7 +149,7 @@ any $q > 1$, $p_+ > p_-$ and the entropy is strictly less than
 $\ln 2$: the $q$-deformation away from the fair coin reduces
 the information content per crossing.
 
-## ASEP as the continuous-time limit
+### ASEP as the continuous-time limit
 
 In the continuous-time limit, the Markov chain becomes the
 **asymmetric simple exclusion process** (ASEP) with hopping
@@ -174,7 +176,7 @@ probability measure on $S_n$ that weights each permutation
 by $q$ raised to its number of inversions
 \cite{diaconis-ram2000}.
 
-## Corollaries
+### Corollaries
 
 The product factorization
 ([product factorization](#thm:markov-trace-product)) is exact

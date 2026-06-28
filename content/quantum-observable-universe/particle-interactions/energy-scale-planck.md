@@ -5,7 +5,9 @@ scale: it is the energy of one Hecke reduction step — the
 cost of resolving a single $\sigma_i^2 \to h\sigma_i + \mathbf{1}$
 in physical units.
 
-## Derived form (single Hecke tick)
+## The $E_0$ energy scale
+
+### Derived form (single Hecke tick)
 
 $$
   \boxed{
@@ -36,7 +38,7 @@ $$
 That is $\sigma_{E_0} \approx 5.7 \times 10^{-8}$ MeV — completely
 negligible at the keV scale of β-decay observables.
 
-## Calibration-cross-check (NOT used for predictions)
+### Calibration-cross-check (NOT used for predictions)
 
 A historical "calibrated $E_0$" definition used CAL-3 ($\mathfrak{Q}_\beta$)
 as input via $E_0^{(\text{cal})} = \mathfrak{Q}_\beta^{\text{CODATA}}
@@ -52,7 +54,7 @@ in $\mathfrak{Q}_\beta$ prediction. Per the structural bound
 ([`per-braid-mass-tower.md`](#prop:per-braid-mass-tower)) this is
 $O(\hbar_q^2/(1 - \hbar_q^2)) \approx 1\%$ at $N=0$.
 
-## Physical meaning
+### Physical meaning
 
 $$
   m_e \cdot c_q^2 \cdot \hbar_q
@@ -79,7 +81,7 @@ $h = q - q^{-1}$ in Skein units) plus an identity strand
 (photon release).  The physical energy cost of this step is
 $E_0$.
 
-## Calibration by free neutron decay
+### Calibration by free neutron decay
 
 The free neutron decay $n \to p + e^- + \bar\nu_e$ is the
 simplest process that exercises a single Hecke step in the
@@ -94,7 +96,7 @@ This is analogous to measuring the speed of light by timing
 the simplest electromagnetic process: we need one clean
 measurement to set the scale, and every other speed follows.
 
-## The three calibration inputs in Planck units
+### The three calibration inputs in Planck units
 
 Using the three $q$-constants $c_q$, $\hbar_q$, $t_P$
 (all determined by $q_0$ alone), the categorical

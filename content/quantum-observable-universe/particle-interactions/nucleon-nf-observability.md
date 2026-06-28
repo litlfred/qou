@@ -6,7 +6,9 @@ differs between neutron and proton.  We classify each term by
 **word length** $\ell$ and **observability** — whether the
 corresponding knot/link is topologically non-trivial.
 
-## The six NF terms
+## Observability structure of the nucleon normal form
+
+### The six NF terms
 
 | Particle | Word | Knot/Link | $\ell$ | Neutron $\mathfrak{n}$ | Proton $\mathfrak{p}$ | Observable? |
 |:---:|:---:|:---:|:---:|---:|---:|:---:|
@@ -19,7 +21,7 @@ corresponding knot/link is topologically non-trivial.
 
 Numerical values at $q_0 \approx 1.1100$ (typed crossings).
 
-## Sign patterns
+### Sign patterns
 
 With typed crossings, the sign patterns are:
 
@@ -32,7 +34,7 @@ The neutron's $L_+$ sign flip is the key effect of typed crossings:
 the $d$-$d$ crossing in neutron $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$
 shifts the $\sigma_0\sigma_1$ coefficient below zero.
 
-## Observability criterion
+### Observability criterion
 
 A braid word of length $\ell$ is **observable** when the
 corresponding knot or link is topologically non-trivial:
@@ -55,7 +57,7 @@ corresponding knot or link is topologically non-trivial:
   the trefoil knot — the simplest non-trivial knot.  This is
   the electron $e^-$.
 
-## Positive coefficients: observable vs virtual
+### Positive coefficients: observable vs virtual
 
 The positive terms split into two classes:
 
@@ -75,7 +77,7 @@ $L_- = \sigma_1\sigma_0$ (both), which are bound states of
 two linked rings.  Note that $L_+$ is **negative** for the
 neutron — the typed $d$-$d$ crossing turns it into a debt.
 
-## Location of $\sigma_1$: the color tube fiber
+### Location of $\sigma_1$: the color tube fiber
 
 The generator $\sigma_1$ exchanges strands $1$ and $2$ in the
 $3$-strand braid — the crossing between the second and third quark
@@ -99,7 +101,7 @@ algebraic expression of **color confinement**: the dominant
 dynamics is internal to the color tube, invisible from the
 spacetime base.
 
-## Linearity of the normal form
+### Linearity of the normal form
 
 The transition $\Delta_i = \mathrm{coeff}_i(\mathfrak{n}) -
 \mathrm{coeff}_i(\mathfrak{p})$ is itself the normal form of the
@@ -114,7 +116,7 @@ $$
   \mathrm{NF}(\mathfrak{n}) - \mathrm{NF}(\mathfrak{p}).
 $$
 
-## Sign pattern and beta decay
+### Sign pattern and beta decay
 
 The negative terms in each nucleon represent **leptonic debt** —
 topological content that must be supplied by (or released to) the

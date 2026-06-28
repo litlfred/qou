@@ -20,7 +20,9 @@ have been demoted to conjectures pending derivation:
 | Form A (CS) | $\cdot(1+\delta_{CS}+\kappa\,\delta_{CS}^2)$ with $\kappa=1.722$ | $-4.0\times 10^{-7}$ | Conj.; $\kappa$ unproved (Lean `sorry`); $\kappa \approx 1.888$ needed for exact match |
 | Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+6.7\times 10^{-9}$ | Conj.; PSLQ-empirical; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
 
-## Audit failure of both prior attempts
+## The open $1.55 \times 10^{-3}$ correction
+
+### Audit failure of both prior attempts
 
 **Form A's $\kappa$ is wrong.** The Witten-1988 Gram-determinant
 identification gives $\kappa \approx 1.722$, but matching CODATA at $q_0$
@@ -46,7 +48,7 @@ start.
 Form A and Form B agree only at $q = q_0$; at every other $q$ they give
 different values for $1/\alpha$, confirming that they are not the same
 function of $q$ and that Form B's match is single-point fit.
-## Ruled-out derivation paths
+### Ruled-out derivation paths
 
 Four computational paths to close the $1.55 \times 10^{-3}$ correction
 have been tried and **ruled out** (or shown not to be expressible as
@@ -71,7 +73,7 @@ correction in any natural q-arithmetic basis at low degree.
 See [`alpha-em-correction-derivation-attempts.witness.json`](#) for
 the full attempt log.
 
-## Insufficiency of block-diagonal Gram deformations
+### Insufficiency of block-diagonal Gram deformations
 
 A natural ansatz (cf. external review note, May 2026) is to deform the
 Gram matrix by a *framing correction* $\mathcal{A}$ induced by a chiral
@@ -137,7 +139,7 @@ anomalies): identify the precise Bloch-group class on Bring's
 surface, and lift the next-order $\alpha/(4\pi)$ term to a higher
 Bloch group $B_n(\mathbb{C})$.
 
-## Implications
+### Implications
 
 Either:
 
@@ -160,7 +162,7 @@ Until one of these is resolved, the canonical statement remains the
 bare formula with the $-0.155\%$ residual documented as an open
 problem.
 
-## Promising lead: additive QED-style correction
+### Promising lead: additive QED-style correction
 
 After the closed-form $q$-rational ansätze were ruled out, an
 *additive* form emerged with a striking numerical match:

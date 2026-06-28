@@ -1,7 +1,9 @@
 The Gröbner--Shirshov normal form computation has three distinct
 complexity regimes, requiring different algorithmic strategies.
 
-## The three regimes
+## Gröbner--Shirshov NF computation strategy
+
+### The three regimes
 
 **Regime 1: Transfer matrix ($O(A^2)$).**
 The optimal NF $\{\mathbf{1}, \sigma_0, \ldots, \sigma_{A-2}\}$
@@ -27,7 +29,7 @@ ${}^9\mathrm{Be}$).  The full expansion gives the raw histogram
 and palindromic structure, but is not needed for any physical
 observable.
 
-## Inductive quotient chaining
+### Inductive quotient chaining
 
 The key optimisation: at each strand boundary, apply I$_{9}$
 (chain collapse) and accumulate the **Pauli data** of stripped
@@ -47,7 +49,7 @@ witness is the **sum** of accumulated (stripped) and kept
 before stripping, survivors get double-counted when they
 contribute to subsequent strands.
 
-## The bottleneck: strand 8
+### The bottleneck: strand 8
 
 For all nuclei with $A > 8$, the computation follows a
 characteristic pattern:
@@ -69,9 +71,9 @@ The bottleneck is always the **last crossing of a large strand**
 produce the most new terms).  Peak memory occurs at the moment
 before stripping.
 
-## Optimisation strategies
+### Optimisation strategies
 
-### Monomial ordering (LenLex)
+#### Monomial ordering (LenLex)
 
 The engine uses length-lexicographic ordering: shorter words
 reduce first (Hecke lowers degree), then lex order within the
@@ -80,14 +82,14 @@ for the Iwahori--Hecke algebra because the Hecke relation
 $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ is the only
 degree-changing rule.
 
-### Junction-only reduction
+#### Junction-only reduction
 
 When appending $\sigma_k$ to a reduced word $w$, only the
 **junction** (last 2–3 characters of $w \cdot \sigma_k$) needs
 checking.  The prefix $w$ was already reduced.  This reduces
 the per-word reduction cost from $O(\ell)$ to $O(1)$ amortised.
 
-### Separated reduction pools
+#### Separated reduction pools
 
 Terms are split into **stable** (fully reduced, never rescanned)
 and **Open** (needs checking).  Each reduction produces new
@@ -95,7 +97,7 @@ pending terms; stable terms are moved once and never revisited.
 When a pending term collides with a stable term, the merged
 result goes back to pending for re-checking.
 
-### Batch quotient stripping ($O(A \cdot L_{\max})$)
+#### Batch quotient stripping ($O(A \cdot L_{\max})$)
 
 The I$_{9}$ strip processes all terms at each length level in one
 pass, from longest to shortest.  At length $\ell$: collect all
@@ -103,7 +105,7 @@ terms whose prefix (length $\ell - 1$) exists; remove them in
 batch.  This is $O(n)$ per length level, $O(n \cdot L_{\max})$
 total — compared to $O(n^2)$ for the one-at-a-time approach.
 
-### Mid-crossing stripping
+#### Mid-crossing stripping
 
 For very large strands, the quotient strip fires **within**
 a crossing multiplication (not just at strand boundaries) when
@@ -112,7 +114,7 @@ the exponential blowup from adjacent generator cascading
 (e.g., 3 consecutive n–n crossings would produce $8\times$ terms
 without mid-crossing stripping).
 
-### Pattern discovery during construction
+#### Pattern discovery during construction
 
 At each strand boundary, the engine reports the **most frequent
 suffix patterns** (sub-words appearing in many terms).  These
@@ -121,7 +123,7 @@ High-frequency patterns that persist across strands indicate
 universal structural operations that could be added to the
 quotient ideal, further reducing term counts.
 
-## Scalability
+### Scalability
 
 | $A$ | Strategy | Time | Memory | Coefficients |
 |:---:|----------|-----:|-------:|:------------:|

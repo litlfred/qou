@@ -6,7 +6,9 @@ content, however, finds that most of these obstructions are
 *not triggered* by the main paper. This remark records which
 obstructions genuinely bite and which are only apparent.
 
-## 0. An audit, not an axiomatisation
+## The obstruction audit
+
+### 0. An audit, not an axiomatisation
 
 The obvious shortcut — "axiomatise a single integration operator
 on $\mathbf{No}$ and use it everywhere" — is closed off by a
@@ -40,7 +42,7 @@ the use lifts to $\mathbf{No}$ on the CEF-positive side
 (algebraic / transserial) or whether it requires a
 custom workaround. The audit below is that exercise.
 
-## 1. Lebesgue measure: one genuine use, no others
+### 1. Lebesgue measure: one genuine use, no others
 
 A text search for Lebesgue, Haar, and Hausdorff measures across
 the content objects returns only a handful of matches, almost
@@ -56,7 +58,7 @@ in the mass formula. The mass formula itself — Hoefsmit $\to$
 Markov trace $\to$ Jones $\to$ substrate value $\to$ categorical mass —
 never integrates.
 
-## 2. Hilbert-space completion: stylistic, not load-bearing
+### 2. Hilbert-space completion: stylistic, not load-bearing
 
 Only one block in the content objects writes down a Hilbert-
 space completion: `knot-eigenbasis-complete-proof.md` (part 3 of
@@ -92,7 +94,7 @@ Consequence: the Hilbert obstruction is only an obstruction to
 with physical Hilbert spaces). The current paper survives without
 it.
 
-## 3. Genuine obstructions that remain
+### 3. Genuine obstructions that remain
 
 Three narrow obstructions do bite:
 
@@ -122,7 +124,7 @@ Three narrow obstructions do bite:
    [classical limit as standard-part](#conj:classical-limit-stpart)),
    which is an *exact substitute*, not a weakening.
 
-## 4. Things that look like obstructions but are not
+### 4. Things that look like obstructions but are not
 
 For bookkeeping, the following were considered and ruled out as
 obstructions after audit:
@@ -144,7 +146,7 @@ obstructions after audit:
   used only in knot-complement discussion and Möbius energy
   setup; not load-bearing for the mass formula.
 
-## 5. Revised summary
+### 5. Revised summary
 
 See [Table 2](#tbl:analytic-obstructions-table2-data).
 

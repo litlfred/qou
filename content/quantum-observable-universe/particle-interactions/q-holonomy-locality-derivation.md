@@ -7,7 +7,7 @@ content: cross-talk between two lifted crossings measures the
 curvature of a flat connection on a punctured surface, and
 flatness implies factorization.
 
-## Setup — the KZ connection
+### Setup — the KZ connection
 
 Let $X_n := \{(w_1, \ldots, w_n) \in \mathbb{C}^n : w_i \neq w_j\}$
 be the configuration space of $n$ distinct complex points.  The
@@ -34,7 +34,7 @@ Moreover the monodromy representation of $\pi_1(X_n / S_n) = B_n$
 on $V^{\otimes n}$ coincides with the quantum-group R-matrix
 representation of $U_q(\mathfrak{sl}_2)$.
 
-## Applying to the mass endomorphism
+### Applying to the mass endomorphism
 
 Model each crossing $c$ of an atomic braid as a puncture in the
 configuration space $X_n$.  A lifted crossing inserts a
@@ -73,7 +73,7 @@ The factorization is read off from flatness as follows:
 The scalar obstruction — the only failure mode — would be a
 non-abelian monodromy, ruled out by flatness.
 
-## Failure of flatness
+### Failure of flatness
 
 Flatness is equivalent to the **semisimplicity** of the braided
 tensor category of $U_q(\mathfrak{sl}_2)$-representations:
@@ -91,7 +91,7 @@ tensor category of $U_q(\mathfrak{sl}_2)$-representations:
   Descartes curve $\mathcal{E}_q$ itself becomes singular,
   so $z_q$ is undefined and locality is vacuous.
 
-## The substrate as the locality window
+### The substrate as the locality window
 
 At the pinned substrate parameter $q_0 \approx 1.11$, real and
 generic:
@@ -111,7 +111,7 @@ $q = e^{i \pi / 3}$ (level $\ell = 3$) that Plancherel weights
 for higher representations are exponentially suppressed — locality
 holds to extremely high order in $1/\ell_*$.
 
-## Corollary — exponential mass scaling
+### Corollary — exponential mass scaling
 
 Combining locality (this remark) with the
 [crossing-graded expansion](#conj:crossing-graded-mass-expansion),

@@ -10,7 +10,9 @@ for such blow-up events, treating the mathematical "infinity" not as
 a breakdown but as the moment where the classical approximation
 $q = 1$ reverts to the underlying quantum substrate $q > 1$.
 
-## Physical meaning of a blow-up
+## Physical signatures of the NS blow-up
+
+### Physical meaning of a blow-up
 
 At a finite-time singularity $T^\ast$ of the classical NS flow, the
 velocity gradient $|\nabla u|$ diverges in any $L^2_q$-bound sense.
@@ -27,9 +29,9 @@ In the QOU substrate interpretation:
   braided monoidal substrate.  The fluid briefly reveals its
   knot-theoretic interior.
 
-## Predicted physical signatures
+### Predicted physical signatures
 
-### A. Turbulence intermittency
+#### A. Turbulence intermittency
 
 Standard homogeneous-isotropic turbulence exhibits fat-tailed
 velocity-increment distributions ("intermittency") that Kolmogorov
@@ -47,7 +49,7 @@ in surreal-order notation
 ([Big-O via $\ordw$](#rem:conway-normal-form)); classical intermittency
 exponents are the standard parts of these surreal orders.
 
-### B. High-energy astrophysical matter creation
+#### B. High-energy astrophysical matter creation
 
 In the knot-braid particle model of
 [particle interactions](#chap:particle-interactions), particles are
@@ -64,7 +66,7 @@ vacuum modes into matter:
   ratio tracks the $q$-Hecke branching of
   [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding).
 
-### C. CMB non-Gaussianities
+#### C. CMB non-Gaussianities
 
 If the inflationary epoch traversed a regime where classical NS
 regularity failed (an "early cosmological blow-up"), the CMB would
@@ -79,7 +81,7 @@ carry topological defects as **scars of substrate reversion**:
 - **Cross-correlation with $q$-torsion data** already recorded in
   [CMB $q$-torsion](#rem:cmb-q-torsion).
 
-### D. Laboratory-accessible probes
+#### D. Laboratory-accessible probes
 
 - **BEC vortex reconnection events**
   ([BEC vortex data](#rem:bec-vortex-data)):
@@ -90,7 +92,7 @@ carry topological defects as **scars of substrate reversion**:
   exponents should match the surreal-order predictions of §A above
   to leading standard-part order.
 
-## Quantitative handles
+### Quantitative handles
 
 The four predicted signatures each have a specific QOU data row
 already registered in Chapter~7.  The table below pins each
@@ -110,7 +112,7 @@ particular, finite intermittency exponents inconsistent with any
 surreal-order scaling would disconfirm the NS-blowup reading of
 [NS surreal bound](#rem:ns-surreal-bound).
 
-## Physical finiteness of the mathematical blow-up
+### Physical finiteness of the mathematical blow-up
 
 In classical PDE theory, blow-up means $|\nabla u| \to \infty$.  In
 the QOU framework this does not mean "the universe contains an
@@ -124,7 +126,7 @@ comparison under the standard-part map only in regions where the
 cascade has been re-absorbed.  **Blow-up is the failure of the
 standard-part map to commute with the time evolution.**
 
-## Relation to the other millennium problems
+### Relation to the other millennium problems
 
 The same substrate-reversion mechanism underlies every physical
 manifestation of the millennium squeeze

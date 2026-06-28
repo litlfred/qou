@@ -7,7 +7,9 @@ established in
 and
 ([crystal-limit sign-flip invariance](#prop:crystal-isospin-degeneracy)).
 
-## Setup
+## The isospin-invariance probe and its result
+
+### Setup
 
 The Option E weight is the principal $q$-specialisation of the
 Schur polynomial,
@@ -34,7 +36,7 @@ over the **canonical $\bowtie_K$-coupled atomic word**
 $\mathcal{B}_K = \texttt{atom\_braid\_word\_3A}(Z, N)$ for
 $K \in \{D, T, {}^3\mathrm{He}\}$.
 
-## Non-triviality of the test
+### Non-triviality of the test
 
 The canonical T and ${}^3\mathrm{He}$ words differ in *interface
 type*, not just generator signs:
@@ -50,7 +52,7 @@ to canonical words.  The probe therefore tests the
 [Hopf-antipode mechanism](#prop:spin-involution-lp-dual-invariance)
 at the $c_\lambda$-weight level.
 
-## Result — Option E breaks Hopf-antipode invariance
+### Result — Option E breaks Hopf-antipode invariance
 
 *(Witness:
 [`option-e-isospin-probe.witness.json`](../../../computations/probes/option-e-isospin-probe.witness.json),
@@ -78,7 +80,7 @@ witness records this as the (passing) assertion
 **true by construction** when the split is large.  See *Status*
 below for the rationale.
 
-## Structural reason for the invariance breaking
+### Structural reason for the invariance breaking
 
 The Hopf antipode $S$ acts on Wedderburn blocks as the
 *transpose-partition involution*
@@ -112,7 +114,7 @@ transpose-asymmetric weighting and cannot be $S$-invariant — even
 when $\mathcal{B}_K$ and $\beta_{K^*}$ (mirror partner) realise the same
 Hopf-orbit on the Markov-trace pairing.
 
-## Refinement of the mirror-isobar EM-localisation theorem
+### Refinement of the mirror-isobar EM-localisation theorem
 
 This refines but does **not** falsify
 [mirror-isobar EM-localisation](#rem:isospin-mass-split-em-localisation),
@@ -142,7 +144,7 @@ must be tracked to the *non-Markov-trace* part of the formula
 [`rho_k_h3a_crystal.py`](../../../computations/rho_k_h3a_crystal.py)),
 not to the structural $c_\lambda \cdot \chi^\lambda$ kernel.
 
-## Recommendation (open follow-up)
+### Recommendation (open follow-up)
 
 Define the symmetrised Option E weight
 

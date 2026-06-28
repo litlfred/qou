@@ -6,7 +6,9 @@ collects the complete set of building blocks: their classical
 knot names, visual conventions, Jones polynomials, hyperbolic
 volumes, and the energy (mass) each contributes.
 
-## Visual convention
+## Inventory of building-block knots
+
+### Visual convention
 
 - **Solid** (filled ●) = particle (positive time orientation)
 - **Outlined** (hollow ○) = antiparticle (negative time / mirror)
@@ -17,7 +19,7 @@ $\sigma_i \mapsto \sigma_i^{-1}$.  For chiral knots this
 produces a distinct knot type; for amphichiral knots
 ($0_1$, $4_1$) it returns the same knot.
 
-## Table 1: Fundamental knots (single-component, torus-embeddable)
+### Table 1: Fundamental knots (single-component, torus-embeddable)
 
 See [Table 1](#tbl:building-block-knots-table1-data).
 
@@ -25,7 +27,7 @@ See [Table 1](#tbl:building-block-knots-table1-data).
 They contribute no bare mass from hyperbolic volume.  Their
 mass arises entirely from **crossing energy** at $q \neq 1$.
 
-## Table 2: Derived knots (from Skein operations on generators)
+### Table 2: Derived knots (from Skein operations on generators)
 
 See [Table 2](#tbl:building-block-knots-table2-data).
 
@@ -36,18 +38,18 @@ mass mechanism
 ([cohomological embedding](#prop:cohomological-embedding)):
 it couples to every knot-particle with crossings $> 0$.
 
-## Table 3: Links (multi-component, for force carriers and composites)
+### Table 3: Links (multi-component, for force carriers and composites)
 
 See [Table 3](#tbl:building-block-knots-table3-data).
 
-## Table 4: Antiparticle completion
+### Table 4: Antiparticle completion
 
 Every particle has an antiparticle obtained by the mirror
 operation $\sigma$.  For completeness:
 
 See [Table 4](#tbl:building-block-knots-table4-data).
 
-## Mass from knot energy
+### Mass from knot energy
 
 The mass of a knot $K$ is:
 
@@ -72,7 +74,7 @@ energy at each self-crossing.
 - **Links** ($> 1$ component): the linking number contributes
   additional inter-component crossing energy (binding).
 
-## Jones polynomial at $q = q_0$
+### Jones polynomial at $q = q_0$
 
 See [Table 5](#tbl:building-block-knots-table5-data).
 
@@ -82,7 +84,7 @@ component count.  At $q = q_0$, the polynomial
 encodes the $q$-deformation of the knot's contribution
 to the categorical action.
 
-## Table 5: Categorical action at $q = q_0$
+### Table 5: Categorical action at $q = q_0$
 
 The categorical action $\mathfrak{S}_q(K) = \mathrm{tr}_\tau(\rho(\mathcal{B}_K))$
 decomposes into a hyperbolic volume term and a crossing energy

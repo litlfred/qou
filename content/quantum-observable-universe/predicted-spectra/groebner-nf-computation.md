@@ -12,7 +12,9 @@ Laurent polynomial in the substrate parameter $q$, and the
 support $\mathrm{supp} \subset S_A$ consists of reduced words in
 the symmetric group.
 
-## Content of the NF
+## The normal-form computation and its quotient ideals
+
+### Content of the NF
 
 Each reduced word $w$ of length $\ell(w)$ represents a configuration
 of $\ell(w)$ **simultaneously active crossings** in the nuclear braid.
@@ -39,7 +41,7 @@ nuclei computed ($A \leq 12$):
  degree $\ell$ to degrees $\ell - 1$ and $\ell - 2$, with the
  $\sigma$-coefficient scaling by $q - q^{-1} \approx 0.209$.
 
-## Quotient ideals: reducing $A!$ to $A$
+### Quotient ideals: reducing $A!$ to $A$
 
 The raw NF has up to $|S_A| = A!$ terms. Two quotient ideals
 reduce this to exactly $A$ terms — the **optimal Gröbner--Shirshov basis** —
@@ -86,7 +88,7 @@ neutron–neutron ($d = -(q - q^{-1})$) and proton–neutron ($d = -(q - q^{-1})
 crossings. The valley of stability condition $N \geq Z - 1$ ensures
 at least one $d \neq 0$ crossing at every generator.
 
-## The histogram: universal in $A$
+### The histogram: universal in $A$
 
 The **term-count histogram** $h(\ell) = \#\{w : |w| = \ell\}$
 counts how many reduced words appear at each length. This histogram
@@ -104,7 +106,7 @@ Pascal's triangle. The palindromicity of the histogram polynomial
 (verified for all $A \leq 7$) reflects the Poincaré duality of the
 Bruhat order on the support.
 
-## The weight distribution: where pairing lives
+### The weight distribution: where pairing lives
 
 While the histogram is $A$-universal, the **weight distribution**
 $W(\ell)$ depends on $(Z, N)$. At the same $A$:
@@ -126,7 +128,7 @@ $\mathbf{1}$ term anchors the $I_9$ chain at that position. When
 unpaired (odd occupancy), only the $\sigma$ term exists — the chain
 anchor is weaker, and the total amplitude is reduced.
 
-## The Pauli factor: multi-generator phenomenon
+### The Pauli factor: multi-generator phenomenon
 
 The **alternating trace** $\mathrm{tr}_{\mathrm{alt}} = \sum_w c_w
 \cdot (-q^{-1})^{\ell(w)}$ evaluates each word at the alternating
@@ -149,7 +151,7 @@ share these eigenvalues. The irrep separation requires the
 **multi-generator interaction** — how $\sigma_0$ and $\sigma_1$ act
 together — which is exactly the content of the full Gröbner--Shirshov NF.
 
-## The $6 \times 6$ transfer matrix: no shortcut
+### The $6 \times 6$ transfer matrix: no shortcut
 
 we expect that enlarging the transfer matrix from $2 \times 2$
 to $6 \times 6$ (acting on the full $H_3(q)$ basis
@@ -205,7 +207,7 @@ The $H_3(q)$ Pauli factor (from $3$-strand irrep decomposition)
 is $F_{\mathrm{Pauli}} = 0.6382$. The $A$-strand values differ
 because they capture the full multi-generator interaction, not the $3$-strand projection.
 
-## Streaming pattern discovery
+### Streaming pattern discovery
 
 During the inductive construction, the quotient ideals $I_8$ and
 $I_9$ strip terms at each strand boundary. Before stripping, the

@@ -6,7 +6,9 @@ $\mathcal{P}_n$ is *all pairs with no distance restriction*
 ([:refterm[descent]{#descent} rate empirical](#sim\:descent-rate-probe)), which
 is most accordingly expressed in the JM / SYT cell basis.
 
-## Jucys--Murphy elements
+## SYT / Jucys--Murphy reindexing of the mass tower
+
+### Jucys--Murphy elements
 
 For $H_n(R, q)$ with generators $\sigma_1, \ldots, \sigma_{n-1}$, the
 **Jucys--Murphy (JM) elements** are
@@ -28,7 +30,7 @@ $$
 where $c_T(k) = j - i$ is the content of the cell of $T$
 containing the integer $k$ (cell at row $i$, column $j$).
 
-## SYT cell reindexing
+### SYT cell reindexing
 
 The pair set $\mathcal{P}_n$ in
 [jet-brane form](#rem\:mass-endomorphism-jet-tower) is accordingly
@@ -59,7 +61,7 @@ in any SYT shape $\lambda \vdash n$. Under this reindexing:
  $\beta(d) = 1$ uniformly across distances
  ([:refterm[descent]{#descent} rate probe](#sim\:descent-rate-probe)).
 
-## Reformulated mass tower
+### Reformulated mass tower
 
 Using JM / SYT cells, the per-jet-level contribution becomes:
 
@@ -99,7 +101,7 @@ SYT reindexing this is automatic — $[L_i, L_j] = 0$ makes every pair
 structurally equivalent to the far-commuting case covered by the
 factorization theorem.
 
-## Advantages
+### Advantages
 
 1. **All pairs automatic.** $[L_i, L_j] = 0$ gives a symmetric
  pair sum with no adjacent/far distinction — consistent with the
@@ -114,7 +116,7 @@ factorization theorem.
  The jet tower $\{A_n\}$ is built by box additions; the mass
  tower sums contributions at each addition.
 
-## Implementation path
+### Implementation path
 
 1. Compute $L_k$ seminormal eigenvalues $q^{2 c_T(k)}$ per SYT
  (already available via
@@ -129,7 +131,7 @@ factorization theorem.
 Implementation is stubbed in the
 [multi-level jet sum simulator](#sim\:multi-level-jet-sum).
 
-## Empirical validation
+### Empirical validation
 
 A first-pass implementation
 (`computations/syt_cell_tower.py`) computes
@@ -150,7 +152,7 @@ The scalar path suffers a pair-pathology on T and 3He even after
 all-pairs form is used; the JM path closes the residual by carrying
 the per-SYT content structure missing from a scalar factorization.
 
-## Open question
+### Open question
 
 Does the SYT-cell form reproduce the generator-indexed form at
 each $n$, or only up to a :refterm[descent]{#descent} involution? Naively the two

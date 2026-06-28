@@ -16,7 +16,9 @@ through $k = 4$:
 The user's observation: *"weird we switch back and forth between Kashiwara
 and Jones."* This remark captures the structural origin of the alternation.
 
-## Two moduli spaces meeting at Markov closure
+## The Kashiwara--Jones alternation
+
+### Two moduli spaces meeting at Markov closure
 
 The Kashiwara and Jones contributions arise from **different moduli spaces**
 that the τ_M observable straddles:
@@ -34,7 +36,7 @@ sits at the **crossroads**: it computes the Markov closure of a typed braid,
 which simultaneously lives in $H_n(q)$ (Kashiwara side) and produces an
 invariant of $\widehat\beta$ (Jones side).
 
-## Parity rule: even $k$ $\to$ Kashiwara, odd $k$ $\to$ Jones
+### Parity rule: even $k$ $\to$ Kashiwara, odd $k$ $\to$ Jones
 
 The structural rule (empirically validated through $k = 4$):
 
@@ -59,7 +61,7 @@ The mechanism:
   decategorification per AGENTS.md §7b), the Jones value is an integer,
   contributing the inter-block coefficient.
 
-## The "GeomK with jet-order twist" interpretation
+### The "GeomK with jet-order twist" interpretation
 
 The user's intuition: *"something like $\mathrm{Geom}(K)$ but maybe more
 twisted due to jet order / filtration and quadratic"* — yes, this is
@@ -94,7 +96,7 @@ with the Kashiwara $b$ and Jones invariants of the $k$-fold Markov closure
 appearing in $F_k$. The "twist" by jet order is via $\hbar_q^{2k}$;
 the "quadratic" structure is the Hecke relation $\sigma_i^2 = h\sigma_i + 1$.
 
-## Hyperbolic vs torus operators
+### Hyperbolic vs torus operators
 
 The user's intuition extends to operator-type dependence:
 
@@ -115,7 +117,7 @@ The closure is **hyperbolic** ($\mathrm{Vol}(\mathcal{B}_3) \approx 7.328$);
 its sub-link structure (Hopf at 3-fold closure, full Borromean at higher
 orders) drives the Jones contributions in the precision ladder.
 
-## Breakdown of the alternating pattern at $c_5, c_6$
+### Breakdown of the alternating pattern at $c_5, c_6$
 
 Per [`probe_q_beta_c5_c6_multilink.py`](../../computations/probe_q_beta_c5_c6_multilink.py),
 the empirical $c_5, c_6$ don't fit simple integer Jones values or simple

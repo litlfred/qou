@@ -4,7 +4,9 @@ electroweak boson mass measurements, deriving a
 **zero-free-parameter** formula for the vertex substrate
 perturbation $\delta q$ at each collider experiment.
 
-## The vertex $\delta q$ formula
+## Electroweak boson masses from vertex $\delta q$
+
+### The vertex $\delta q$ formula
 
 The CODATA substrate $q_0$
 ([local substrate $q$](#prop:local-substrate-q)) is measured in
@@ -65,7 +67,7 @@ Every quantity on the right is determined:
 
 See [Table 1](#tbl:w-boson-mass-discrepancy-table1-data).
 
-## Predictions for each production channel
+### Predictions for each production channel
 
 **Table 1: Forward-predicted $\delta q$ and mass shifts.**
 
@@ -80,7 +82,7 @@ $$
   \cdot m.
 $$
 
-## CDF–LHC discrepancy
+### CDF–LHC discrepancy
 
 The CDF~II experiment collided **protons with antiprotons**
 ($pp^{\sigma}$) at $\sqrt{s} \approx 1.96$ TeV.  $W$ bosons were
@@ -114,7 +116,7 @@ CDF has the **weakest** detector magnetic field
 $B$-field as the cause.  The signal is in the **production
 vertex**, not the detection environment.
 
-## Higgs boson: multi-experiment comparison
+### Higgs boson: multi-experiment comparison
 
 The Higgs ($T(2,8)$, genus $3$) is produced via **gluon--gluon
 fusion** through a top-quark loop — a QCD process with
@@ -138,7 +140,7 @@ See [Table 3](#tbl:w-boson-mass-discrepancy-table3-data).
 
 See [Table 4](#tbl:w-boson-mass-discrepancy-table4-data).
 
-## Inferred $\delta q$ per experiment
+### Inferred $\delta q$ per experiment
 
 The backward-inferred $\delta q$ is obtained by inverting:
 $\delta q / q_0 = (\delta m / m) / (\partial \ln m / \partial \ln q)$ with sensitivity $9.62$.  These values **restate the
@@ -156,7 +158,7 @@ See [Table 5](#tbl:w-boson-mass-discrepancy-table5-data).
 
 See [Table 6](#tbl:w-boson-mass-discrepancy-table6-data).
 
-## Correlation analysis
+### Correlation analysis
 
 Four patterns are tested against the forward prediction:
 
@@ -187,13 +189,13 @@ ATLAS and CMS show opposite Run~1-to-Run~2 shifts, consistent
 with Higgs threshold production ($\sqrt{\hat{s}} \approx m_H$)
 being independent of beam energy.
 
-## Summary
+### Summary
 
 **Table 6: QOU predictions at the CODATA substrate $q_0$.**
 
 See [Table 7](#tbl:w-boson-mass-discrepancy-table7-data).
 
-## Experimental tests
+### Experimental tests
 
 1. **CDF vs.\ LHC $W$ mass.**  The $pp^{\sigma}$-vs-$pp$ split is
    the cleanest test: the formula predicts $\delta m_W(pp^{\sigma})
