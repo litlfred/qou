@@ -17,22 +17,29 @@ namespace QOU.BraidKnot
 /-- Abstract context for the `wigner2_coefficient` claim — manuscript-themed
     typed fields below; sub-claims encode (i) the per-generator-trace
     identity, (ii) the BW coefficient closed form, and (iii) the explicit
-    `λ = [3,2,1]` evaluation. -/
-class Wigner2CoefficientContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
+    `λ = [3,2,1]` evaluation.
+
+    **Base ring (§7c).** The substrate parameter `q`, the Hecke parameter
+    `h = q - q⁻¹`, the per-generator trace, the BW coefficient `C_λ`, and
+    the Plancherel weight `w_λ` are rational functions of `q`; the two
+    sub-claims (`per_gen_trace = h/2`, `C_λ = w_λ·h/2`) are field identities
+    (`q⁻¹`, `/2`, `±`, `·`; no `Real.*`, no ordering). The context is
+    therefore stated over a generic field `(R : Type*) [Field R]`. -/
+class Wigner2CoefficientContext (R : Type*) [Field R] where
+  /-- Substrate parameter `q : R`. -/
+  q : R
   /-- Hecke parameter `h = q - q⁻¹`. -/
-  h : ℝ
+  h : R
   h_eq : h = q - q⁻¹
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
   /-- For each self-conjugate partition `λ`, the per-generator average trace
       `⟨tr σ_g⟩_λ = tr(σ_g^{(λ)}) / dim(λ)`. -/
-  per_gen_trace : PartitionIdx → ℝ
+  per_gen_trace : PartitionIdx → R
   /-- The BW coefficient indexed by partition. -/
-  C_lam : PartitionIdx → ℝ
+  C_lam : PartitionIdx → R
   /-- The classical Plancherel weight `w_lam = (dim V_λ)² / n!`. -/
-  w_lam : PartitionIdx → ℝ
+  w_lam : PartitionIdx → R
   /-- Manuscript sub-claim (i): for every self-conjugate `λ` and every
       generator `g`, the per-generator trace equals `h / 2`. -/
   claim_i_per_generator_trace :
@@ -114,7 +121,7 @@ of shape $\lambda$.  Under this involution:
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts
-def wigner2_coefficient [ctx : Wigner2CoefficientContext] :
+def wigner2_coefficient {R : Type*} [Field R] [ctx : Wigner2CoefficientContext R] :
     (∀ lam : ctx.PartitionIdx, ctx.per_gen_trace lam = ctx.h / 2) ∧
     (∀ lam : ctx.PartitionIdx, ctx.C_lam lam = ctx.w_lam lam * ctx.h / 2) :=
   ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩
