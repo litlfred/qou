@@ -1,6 +1,6 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-The nuclear binding energy decomposes as a **sum of generator
+The canonical trace decomposes as a **sum of generator
 volumes** — one for each braid generator $\sigma_i$ in $B_A$.
 Each generator's volume is computed by a transfer matrix product
 whose terms organize as a **jet expansion in the nucleon count**,
@@ -86,8 +86,8 @@ $$
   \sum_{i=0}^{A-2} 2^{k_i}
 $$
 
-which is exponential.  But the **transfer matrix product computes
-the exact answer** (the $k_i$-jet) in exactly $k_i$ steps — one
+which is exponential.  However, the transfer matrix product computes
+the algebraic trace in exactly $k_i$ steps — one
 per crossing.  The total across all generators:
 
 $$
@@ -100,16 +100,14 @@ $$
   \binom{A}{2}
 $$
 
-This is **exact** — not an approximation.  No terms are dropped.
-Every jet order is included.  The transfer matrix product
-computes $\binom{A}{2}$ steps, and this number has physical
-meaning: it is the number of nucleon pairs in the nucleus.
+The transfer matrix product
+requires $\binom{A}{2}$ algebraic steps, which corresponds to the number of nucleon pairs.
 
 ## Beta decay as the 1-jet variation
 
 Single beta decay ($\beta^{\pm}$) changes one nucleon type.
-The energy variation $\delta E$ is the **first jet** (first
-variation) of the energy functional in the nucleon-type
+The trace variation $\delta E$ is the **first jet** (first
+variation) of the volume functional in the nucleon-type
 variable $\tau_p \in \{\mathfrak{p}, \mathfrak{n}\}$:
 
 $$
@@ -128,7 +126,7 @@ crossing change at one nucleon.
 **Double beta decay** ($2\beta$) changes two nucleons
 simultaneously.  If nucleons at positions $p_1$ and $p_2$
 (with $p_1 < p_2$) both convert $\mathfrak{n} \to \mathfrak{p}$,
-the energy variation has a **cross-term**:
+the trace variation has a **cross-term**:
 
 $$
   \delta^2 E
@@ -203,7 +201,7 @@ $$
 $$
 
 where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
-The nuclear energy decomposes as:
+The canonical trace decomposes as:
 
 $$
   \tfrac{1}{2}\ln\bigl(\mathrm{tr}(\mathcal{N}) \cdot \overline{\mathrm{tr}(\mathcal{N})}\bigr) =
@@ -224,52 +222,12 @@ $$
 $$
 
 where $k_i = A - i - 1$ is the number of crossings.  This is
-the energy removed by the Hecke relation — the "resolved"
+the trace contribution removed by the Hecke relation — the "resolved"
 crossings.  The total ideal volume
 $V^I = \sum_i V_i^I = \binom{A}{2} - E$ measures how much of
 the naive crossing count is absorbed by double-crossing
 resolutions.
 
-## Computational verification
-
-| Nucleus | $A$ | $\binom{A}{2}$ | $E(\mathrm{parent})$ | $E(\mathrm{daughter})$ | $\Delta E$ |
-|---------|-----|:-:|---------------------|----------------------|-----------|
-| ${}^{2}\mathrm{H}$ | 2 | 1 | $1.174$ | $1.000$ | $-0.174$ |
-| ${}^{3}\mathrm{H}$ | 3 | 3 | $2.728$ | $2.466$ | $-0.263$ |
-| ${}^{4}\mathrm{He}$ | 4 | 6 | $4.136$ | $3.794$ | $-0.342$ |
-| ${}^{6}\mathrm{Li}$ | 6 | 15 | $8.054$ | $7.567$ | $-0.486$ |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | $47.171$ | $43.810$ | $-3.361$ |
-| ${}^{60}\mathrm{Co}$ | 60 | 1770 | $38{,}863$ | $35{,}813$ | $-3{,}050$ |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $8.25 \times 10^{13}$ | $7.62 \times 10^{13}$ | $-6.24 \times 10^{12}$ |
-
-All $\Delta E$ are negative — the daughter has lower energy.
-The computation requires exactly $\binom{A}{2}$ transfer matrix
-multiplications (including ${}^{210}\mathrm{Bi}$: 21,945 steps,
-instant).
-
-## Generator volume profile: ${}^{14}\mathrm{C}$ vs ${}^{14}\mathrm{N}$
-
-Generators $\sigma_7$ through $\sigma_{12}$ have **identical
-volumes** in both nuclei — only generators $\sigma_0$ through
-$\sigma_6$ differ (the 1-jet support of the single beta decay).
-
-| Generator | $k_i$ | $V_i({}^{14}\mathrm{C})$ | $V_i({}^{14}\mathrm{N})$ | $\Delta V_i$ |
-|:---------:|:---:|:-----------------------:|:-----------------------:|:------------:|
-| $\sigma_0$ | 13 | $5.970$ | $5.616$ | $-0.354$ |
-| $\sigma_1$ | 12 | $5.485$ | $5.150$ | $-0.335$ |
-| $\sigma_2$ | 11 | $4.823$ | $4.540$ | $-0.283$ |
-| $\sigma_3$ | 10 | $4.476$ | $4.201$ | $-0.275$ |
-| $\sigma_4$ | 9 | $3.887$ | $3.661$ | $-0.226$ |
-| $\sigma_5$ | 8 | $3.664$ | $3.436$ | $-0.228$ |
-| $\sigma_6$ | 7 | $4.603$ | $2.943$ | $-\mathbf{1.660}$ |
-| $\sigma_7$--$\sigma_{12}$ | 6--1 | identical | identical | $0$ |
-
-Generator $\sigma_6$ — the converting neutron's own generator —
-has the **largest volume change** ($-1.660$, nearly half the total
-$\Delta E$).  Its color degree is $k_6 = 7$: it sees 7 crossings
-with downstream nucleons, ALL of which change type when the
-neutron converts to a proton.  This is the highest color degree
-at the converting position.
 
 ## Connection to the Reeb decomposition
 
@@ -288,7 +246,7 @@ to one more nucleon entering the interaction region.
 
 Hence the generator volume decomposition is the **discrete
 analogue of the jet bundle of the canonical action** $\mathfrak{S}_q$
-over the nuclear configuration space.  The 1-jet gives single
-beta decay; the 2-jet gives double beta decay; the full
-$\infty$-jet gives the exact energy — all computed by the same
+over the nuclear configuration space.  The 1-jet captures single
+beta decay changes; the 2-jet captures double beta decay changes; the full
+$\infty$-jet recovers the exact algebraic trace — all computed by the same
 $\binom{A}{2}$ transfer matrix steps.
