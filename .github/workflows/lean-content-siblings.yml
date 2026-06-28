@@ -120,7 +120,10 @@ jobs:
             echo "::warning::lean toolchain unavailable — skipping content-sibling compile check"
             exit 0
           fi
-          mathlib_oleans=$(find content/quantum-observable-universe/lean/.lake/packages/mathlib \
+          # Root Lake workspace: the restore lands oleans under $REPO_ROOT/.lake
+          # (NOT the QOU package subdir), matching lean-cache-restore.sh's own
+          # success count.
+          mathlib_oleans=$(find .lake/packages/mathlib \
                             -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
           if [ "${mathlib_oleans:-0}" -lt 2000 ]; then
             echo "::warning::olean cache unavailable (${mathlib_oleans:-0} mathlib oleans) — skipping content-sibling compile check"
