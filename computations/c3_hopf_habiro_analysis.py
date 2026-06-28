@@ -46,6 +46,13 @@ def main():
     b_sq = (h**2 + 3) / (h**2 + 4)
 
     wb = WitnessBuilder("c3-hopf-habiro-analysis", engine="mpmath")
+    # Wire to the c_3 ↔ Hopf-link categorical prop. NOTE the tiered framing
+    # (AGENTS.md c_k banner): this prop is the *near-match* identification
+    # c_3 = J_Hopf(q=1) = -2 (classical limit), NOT a Taylor-exact claim.
+    # The witness measures the near-match residual (c_3 actual = -2.0097 vs
+    # -2; c_3 = J - hbar^2 closes it to 0.004%), so it supports the
+    # near-match prop, never c_3-as-Taylor-exact.
+    wb.set_content_block("prop:q-beta-c3-hopf-three-fold-markov")
     wb.set_description(
         "c_3 vs Hopf Jones evaluation and Habiro series. "
         "c_3 = J-hbar^2 at 0.004% (best model). "

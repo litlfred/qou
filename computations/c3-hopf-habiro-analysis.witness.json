@@ -35,6 +35,7 @@
     "truncation_bound": "1e-50"
   },
   "description": "c_3 vs Hopf Jones evaluation and Habiro series. c_3 = J-hbar^2 at 0.004% (best model). J_Hopf(q_0) = -[2]_q at 0.058%. b^2 = (h^2+3)/(h^2+4) exact (shared denominator with tr_M).",
+  "contentBlock": "prop:q-beta-c3-hopf-three-fold-markov",
   "data": {
     "c3_candidates": {
       "c3_actual": "-2.0097397609790155",
