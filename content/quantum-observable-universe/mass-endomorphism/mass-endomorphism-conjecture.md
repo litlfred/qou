@@ -113,7 +113,7 @@ operations per Planck time. The first brane level alone
 provides $74\%$ of the electron mass; the remaining
 $26\%$ comes from higher jet prolongations.
 
-## What is known
+## Established results
 
 **Step 1 (Categorical $\to$ Markov, proved).**
 $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$.
@@ -171,7 +171,7 @@ specialisation of the same Habiro element — not through roots
 of unity, but through direct evaluation at the substrate
 parameter.
 
-## What $\Phi_{\mathrm{mass}}$ would need to encode
+## Encoding requirements for $\Phi_{\mathrm{mass}}$
 
 The brane tower $\{A_n\}$ provides the categorical version of
 $N \to \infty$: each brane level $n$ contributes a transient

@@ -58,7 +58,7 @@ Testing this is the next concrete R&D step: extend
 `probe_per_wedderburn_block_ck.py` from n=3 to n=4 with the
 canonical typed-B_4 braid recipe.
 
-## Why this matters
+## Significance
 
 If the conjecture holds at all $n$, it provides a **structural
 prediction** for the per-irrep contribution to $\tau_M$ as a function

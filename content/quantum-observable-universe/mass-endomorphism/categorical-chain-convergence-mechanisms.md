@@ -75,7 +75,7 @@ The **inner product** (per linked cluster) is finite by Mechanism 1.
 The **outer product** (over linked-cluster pairs) is finite because
 **most pairs are unlinked** — no contribution.
 
-## Why this works in the QOU framework
+## Mechanism in the QOU framework
 
 The categorical analog of **asymptotic freedom**:
 

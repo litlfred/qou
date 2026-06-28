@@ -1,4 +1,4 @@
-## Why "condensation"
+## Terminology: "condensation"
 
 The vanishing $E_\infty^{p, >0}(n) = 0$ means that *every* higher
 :refterm[descent]{#descent} residue collapses onto the diagonal: there are no

@@ -40,7 +40,7 @@ each per-block character satisfies $\chi_\lambda(q) = (q^2 - 1) \cdot P_\lambda(
 for $q > 0$. Substituting and factoring out $(q^2 - 1)$ from the
 weighted sum gives the claim. The Lean proof is a direct substitution
 plus ring identity. $\square$
-## What this block does NOT establish
+## Limitations of this block
 
 - **A concrete instance of `CanonicalMarkovWeightsH3`.** The canonical
   $\sqrt q$-bearing Wenzl weights are still open at the formalisation
