@@ -146,23 +146,34 @@ theorem qbessel_second_kind_coeff_closed_form (q a : K) (c : ℕ → K)
   rw [qbesselSecondKindRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
   linear_combination hrec n
 
-/-- 
-**Lever-1 Fibre Kernel Habiro Element.**
-The correction to the binding period `S(m)` relative to the order-2 q-involution 
-skeleton is the cyclotomic Habiro sequence `D(m)`. This sequence's contiguity is 
-governed identically by the Hahn-Exton q-Bessel ratio `qbesselRatio`. 
+/--
+**Lever-1 Fibre Kernel — Hahn-Exton contiguity ratio (shared Habiro-ring class).**
+The correction to the binding period `S(m)` relative to the order-2 q-involution
+skeleton is the cyclotomic Habiro sequence `D(m)`. This alias names the Hahn-Exton
+q-Bessel ratio `qbesselRatio` for use in the conditional product form below.
 
-This alias explicitly establishes the connection between the Lever-1 binding 
-structure and the Q_β `c_k` coefficient ladder, confirming they are two 
-localizations (archimedean and ζ-fibre) of the same q-difference operator.
+SCOPE (per `docs/audits/2026-06-28-lever1-binding-correction-not-single-qhypergeometric.md`):
+`D(m)` shares the *Hahn-Exton / Habiro-ring class* with the Q_β `c_k` ladder — both
+are cyclotomic-completion objects with `ζ₄` residues — but this is a shared-CLASS
+analogy, NOT a literal contiguity identity. `D(m)` does **not** satisfy the
+single-parameter Hahn-Exton recurrence: the literal contiguity template was tested
+with held-out-`m` falsification and FAILS (no single `a` fit on `m=4,5` predicts
+`m=6,7,8`), and `D(m)` factors as a product of pairwise-coprime irreducible
+bar-symmetric cores of growing degree (Stages 7-9), not a single q-hypergeometric
+element. The bare Hahn-Exton ratio is likewise structurally excluded for the parallel
+`c_k` (2026-06-20 audit, `r₂ = +2` in the forbidden gap). So `lever1HabiroRatio` is
+the q-Bessel ratio re-exported as the class representative, not a claim that `D(m)` is
+governed by it.
 -/
 def lever1HabiroRatio (q a : K) (k : ℕ) : K :=
   qbesselRatio q a k
 
-/-- 
-**Lever-1 Kernel Product Form.** 
-Since the Lever-1 correction ratio matches Hahn-Exton, the product form of the 
-Habiro element trivially inherits the `qbessel_coeff_closed_form` structure.
+/--
+**Lever-1 Kernel Product Form (CONDITIONAL).**
+*If* a sequence `D` satisfies the Hahn-Exton q-Bessel recurrence `hrec` for some `(q, a)`,
+*then* it has the q-Bessel product form. This is a sound conditional alias of
+`qbessel_coeff_closed_form`; it does NOT assert that the binding correction `D(m)`
+satisfies `hrec` (it does not — held-out falsified, see `lever1HabiroRatio` scope note).
 -/
 theorem lever1_habiro_closed_form (q a : K) (D : ℕ → K)
     (hD : ∀ k, (1 - q ^ (k + 1)) * (1 - a * q ^ k) ≠ 0)
