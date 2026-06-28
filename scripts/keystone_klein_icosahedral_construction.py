@@ -109,6 +109,49 @@ def a5_triple():
     return None
 
 
+def klein_resolvent():
+    """Klein's icosahedral invariant forms on ℙ(V) (coordinate w, dehomogenised)
+    and the icosahedral equation = the resolvent / the quotient map to S²(2,3,5).
+    Exact integer-polynomial arithmetic (no rounding)."""
+    from collections import defaultdict
+
+    def addp(*ps):
+        r = defaultdict(int)
+        for p in ps:
+            for d, c in p.items():
+                r[d] += c
+        return {d: c for d, c in r.items() if c}
+
+    def scal(p, k):
+        return {d: c * k for d, c in p.items()}
+
+    def mulp(p, q):
+        r = defaultdict(int)
+        for d1, c1 in p.items():
+            for d2, c2 in q.items():
+                r[d1 + d2] += c1 * c2
+        return {d: c for d, c in r.items() if c}
+
+    def powp(p, n):
+        r = {0: 1}
+        for _ in range(n):
+            r = mulp(r, p)
+        return r
+
+    f = {11: 1, 6: 11, 1: -1}                                   # 12 vertices, deg 12
+    H = {20: -1, 15: 228, 10: -494, 5: -228, 0: -1}             # 20 faces, deg 20
+    T = {30: 1, 25: 522, 20: -10005, 10: -10005, 5: -522, 0: 1}  # 30 edges, deg 30
+    syz = addp(powp(T, 2), powp(H, 3), scal(powp(f, 5), -1728))
+    checks = {
+        "Klein syzygy T²+H³=1728·f⁵": syz == {},
+        "degree consistency 2·30=3·20=5·12=60": (2 * 30 == 60 and 3 * 20 == 60 and 5 * 12 == 60),
+        "f pentad-relative-invariant (exps≡1 mod5)": {d % 5 for d in f} == {1},
+        "H pentad-invariant (exps≡0 mod5)": {d % 5 for d in H} == {0},
+        "T pentad-invariant (exps≡0 mod5)": {d % 5 for d in T} == {0},
+    }
+    return checks
+
+
 def main():
     print("== Klein icosahedral construction on ℙ(V) (ε = e^{2πi/5}) ==")
     ok = True
@@ -120,9 +163,15 @@ def main():
     print(f"  c2 = {c2}  = (1 2)(3 4), order 2")
     print(f"  c3 = {c3}  = (0 2 4),   order 3")
     print(f"  c2∘c3 = {prod} = (0 1 2 3 4), order 5")
-    assert ok, "Klein construction relations failed"
-    print("\nVERDICT: icosahedral-angle (2,3,5) generators with c2·c3 = ζ₅ pentad "
-          "EXIST (group core discharged); residual = ℙ(V)/A₅ ≅ S²(2,3,5) keystone base.")
+    print("\n== Klein resolvent: icosahedral forms + the quotient map ℙ(V)→S²(2,3,5) ==")
+    for k, v in klein_resolvent().items():
+        print(f"  {'OK ' if v else 'FAIL'}  {k}")
+        ok = ok and v
+    print("  I(w) = H(w)³/(1728·f(w)⁵) is A₅-invariant (deg 0) = the quotient map;")
+    print("  branch values I=(∞,0,1) at (f=0 vertices, H=0 faces, T=0 edges) of cone orders (5,3,2).")
+    assert ok, "Klein construction / resolvent relations failed"
+    print("\nVERDICT: single-ℙ(V) icosahedral Möbius action realized via Klein's resolvent,")
+    print("pentad-anchored (c2·c3 = ζ₅ = S); quotient ℙ(V)/A₅ = S²(2,3,5) keystone base.")
 
 
 if __name__ == "__main__":
