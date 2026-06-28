@@ -305,6 +305,15 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
                    if (alpha and tr_free_val is not None) else None)
     B_can0 = (alpha * (tr_free_val - tr_atom_val)
               if tr_free_val is not None else None)
+    # CANONICAL single-pipeline binding: the convergent per-knot BORROMEAN tower
+    # (shares τ with F_Bor / bean ovud; converges ∀Z, unlike the atom-word above
+    # which diverges the Li₂^q pair for Z≥2). This is the production m_can.
+    try:
+        from borromean_binding_recompute import borromean_binding
+        _bb = borromean_binding(Z, N)
+        B_can_bor = _bb["B_tower"]
+    except Exception:
+        B_can_bor = None
     # ---- exact p(3A) trace (capped) — VALIDATOR of the chain + the bar-
     #   involution entanglement split. Computed only when n=3A ≤ max_strands;
     #   |chain − exact| ≈ 1e-13.
@@ -342,7 +351,7 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame, "M_atom_AME": m_atom_ame, "sigma_atom": sigma_atom,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
-            "B_lin": B_lin, "B_can0": B_can0,
+            "B_lin": B_lin, "B_can0": B_can0, "B_can_bor": B_can_bor,
             "tr_free": tr_free_val, "tr_atom": tr_atom_val,
             "B_sym": B_sym, "B_sym_exact": B_sym_exact, "chain_resid": chain_resid,
             "B_qCLT": B_qCLT,
@@ -392,7 +401,8 @@ def _print_legend() -> None:
 |---|---|
 | `M_meas` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n. **Comparison target only — appears in NO predicted formula.** |
 | `σ_exp (ppb)` | experimental 1σ on the mass = σ_B / M_meas × 10⁹ |
-| `m_can⁰` | **CANONICAL derived mass, brane-tower level 0**: `m_can⁰ = m_unbnd,can − B_can⁰`, `B_can⁰ = E₀·Δtr_M = α·(\|tr_M_free\| − \|tr_M_atom\|)`. PURE Markov trace × m_e — **zero AME, zero CODATA nucleon mass**; the only inputs are CAL-1 (m_e, the MeV unit) and CAL-2 (q₀). The ⁰ marks the n=0 descended term of the per-braid brane tower; higher Φ_q levels add O(ℏ_q²)/level. |
+| `m_can` | **CANONICAL derived mass — the single Borromean per-knot pipeline** (`borromean_binding_recompute.borromean_binding`): `m_can = m_unbnd,can − B_tower`, the convergent per-braid brane tower over the Borromean nucleon trace `τ=\|tr_M(β_Bor)\|=0.9986<1` (shares τ with `F_Bor` / bean `ovud`; converges ∀Z). Pure Markov × m_e; zero AME/CODATA beyond CAL-1/CAL-2. Does NOT close to AME — the Δ_λ frontier (right shape, wrong per-λ normalization). |
+| `m_can⁰` | brane-tower **level 0** on the atom-word trace: `m_unbnd,can − E₀·Δtr`. Comparison only — its higher Li₂^q tower diverges for Z≥2 (atom-word `tr_p>1`); the Borromean `m_can` is the canonical one. |
 | `m_qCLT` | colour-weighted q-CLT bound mass `m_unbnd,can − B_qCLT_fac` (the A→∞ statistical extrapolation; also pure Markov trace) |
 | `err m_can⁰ (ppb)` | mass error (m_can⁰ − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; ~0 for p anchor; genuine prediction for n) |
 | `err m_qCLT (ppb)` | same, for the colour-weighted q-CLT binding |
@@ -546,9 +556,9 @@ def main(argv=None) -> int:
           f"m_n,can = {mn_can:.3f} MeV ({(mn_can/mn_-1)*100:+.3f}%) — "
           f"m_μ-anchored F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (matches CODATA; m_n the "
           f"genuine prediction).")
-    print("| iso | A | M_meas | σ_exp (ppb) | m_can⁰ | m_qCLT | "
-          "err m_can⁰ (ppb) | err m_qCLT (ppb) |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | M_meas | σ_exp (ppb) | m_can | m_can⁰ | m_qCLT | "
+          "err m_can (ppb) | err m_qCLT (ppb) |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
@@ -565,8 +575,9 @@ def main(argv=None) -> int:
             b = r[bkey]
             return ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
         print(f"| {r['name']} | {r['A']} | {_fmt(m_meas,9,1)} | {_sci(s_ppb,11,2)} "
-              f"| {_fmt(_can('B_can0'),9,1)} | {_fmt(_can('B_qCLT_fac'),9,1)} "
-              f"| {_sci(_err_ppb('B_can0'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
+              f"| {_fmt(_can('B_can_bor'),9,1)} | {_fmt(_can('B_can0'),9,1)} "
+              f"| {_fmt(_can('B_qCLT_fac'),9,1)} "
+              f"| {_sci(_err_ppb('B_can_bor'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
 
     # 1c. ATOMIC mass comparison — the framework predicts NUCLEAR masses; add the
     #   electron shell (Z·m_e − B_el(Z)) to compare against the RAW AME neutral-
