@@ -1256,6 +1256,25 @@
         "severity": "minor",
         "evidence": "p4-universality.md:29: \"The critical exponent α = 4/3 is a heuristic derivation imported from physical arguments (Kolmogorov scaling); here it is framed as a universality-class invariant ... recasts the scaling behavior as an intrinsic topological property of the background category.\"",
         "notes": "An interpretive / motivational paragraph (provenance of α=4/3, 'framed as', 'recasts ... as an intrinsic topological property') is inserted between the Claim and the formal Argument inside the proposition block; .ts has no interprets: companion remark to hold it. Should be split into a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "8c5356d237cd",
+          "ts": "66c065437466"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T16:34:33.000Z",
+        "reviewed_sha": "a4ee56c45c24b7546adeba6c599ed5aa42ef5ff2",
+        "notes": "Stale flag / already addressed: interpretation lives in the dedicated rem:p4-universality-interpretation block. The flagged phrases ('framed as', 'recasts ... as an intrinsic topological property') are not present in the current statement .md.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -2104,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:55:41.531Z"
+  "updated_at": "2026-06-28T16:34:33.000Z"
 }

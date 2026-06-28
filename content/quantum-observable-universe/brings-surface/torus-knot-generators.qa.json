@@ -1307,6 +1307,26 @@
         "severity": "minor",
         "evidence": "torus-knot-generators.md:38-75: '**Physical interpretation.** 1. **Lepton generations.** ... 2. **Quark sector.** ... 3. **Saturation.** ... 4. **Hyperbolic knots are derived.** ... **Remark on the cutoff.**'",
         "notes": "The proposition block carries an extensive 'Physical interpretation' section (lepton generations, quark sector, saturation, hyperbolic-knots-derived) plus a 'Remark on the cutoff' — substantive physical-meaning/downstream-consequence prose appended after the statement+proof. No companion `interprets:` remark holds it; the .ts lists only proofs[] and uses[]. This interpretation is mislocated inside the provable block and should move to a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T16:34:33.000Z",
+        "reviewed_sha": "a4ee56c45c24b7546adeba6c599ed5aa42ef5ff2",
+        "notes": "Stale flag / already addressed: the physical interpretation (lepton generations, quark sector, saturation, hyperbolic knots) lives in the dedicated rem:torus-knot-generators-interpretation block; the proposition .md now carries only the claim + genus bound. Flag describes pre-split content.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -2029,5 +2049,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:55:40.081Z"
+  "updated_at": "2026-06-28T16:34:33.000Z"
 }

@@ -144,6 +144,7 @@ export default chapter({
         "descartes-knot-eigenbasis",
         "descartes-elliptic-curve",
         "descartes-elliptic-curve-proof",
+        "descartes-elliptic-curve-interpretation",
       ],
     }),
     section({
@@ -182,6 +183,7 @@ export default chapter({
         "torus-knot-generators-interpretation",
         "embeddability-closure",
         "embeddability-closure-table-data",
+        "embeddability-closure-interpretation",
         "genus-from-hecke-completeness",
         "genus-from-hecke-completeness-proof",
         "chebyshev-degree-genus",
