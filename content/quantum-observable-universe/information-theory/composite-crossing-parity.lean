@@ -7,7 +7,6 @@
   reduces to Z mod 2.
 -/
 import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.Parity
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Omega
 import Mathlib.Tactic.NormNum
@@ -97,15 +96,3 @@ theorem iodine_odd : compositeCrossingNumber 53 74 % 2 = 1 := by
   rw [crossing_parity_eq_Z]; norm_num
 
 end QOU.Information
-
-
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
-
-namespace QOU.CompositeCrossingParity.ConditionalAudit
-
-class BorromeanQuark : Prop where
-  holds : True
-
-def composite_crossing_parity_g2_conditional [_inst : BorromeanQuark] : True := trivial
-
-end QOU.CompositeCrossingParity.ConditionalAudit
