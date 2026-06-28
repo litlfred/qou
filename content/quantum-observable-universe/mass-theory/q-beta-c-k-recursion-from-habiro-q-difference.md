@@ -63,14 +63,14 @@ where $c_4 = -0.97157$ was a fit).
 | $c_4$ at $1\,\mathrm{ppQ}$ | fit (CODATA residual), value $-0.97157$ | [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_1ppq_achieved.py) |
 | $c_5, \ldots, c_8$ | not derived | open |
 | Kernel $R(q,\xi)$ | structurally constrained: bar-ODD leading $a_1=-c_3$ (carrier $\kappa_{(2,1)}=(q-1)^3(q+1)/q^2$), period-3/$\zeta_6$ resonance, $\sqrt{u}$-to-$u^2$ lift. The $\zeta_4$ residue is **relaxed** — the root-of-unity residue program shows neither the content-Casimir $\mu_\lambda$ nor the framing $\cos\alpha_{\mathrm{eff}}$ supplies a bar-odd-compatible genuine $\zeta_4(q)$; it is a $\sqrt{q}$ double-cover reading of $\zeta_2$ (bar-fixed $q=-1$) or a post-$\cos$-wrap archimedean feature, **not** a fibre constraint. | [`habiro_ladder_bridge.py`](https://github.com/litlfred/qou/blob/main/computations/habiro/habiro_ladder_bridge.py), [root-of-unity program audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md) |
-| Habiro element $F(q)$ | **identified (structural analog)** | mirroring α_EM `[2]_q(1-h²α)` |
+| Habiro element $F(q)$ | **identified (structural analog)** | mirroring $\alpha_{EM}$ $[2]_q(1-h^2\alpha)$ |
 
 ## Contents of this content block
 
 - A formal Lean structure
   `CKRecursion R` capturing the depth $d$ + kernel $\{a_j\}$ data
   ([`q-beta-c-k-recursion-from-habiro-q-difference.lean`](q-beta-c-k-recursion-from-habiro-q-difference.lean)).
-- A method `applyRecursion : (Fin depth → R) → R` that performs one
+- A method `applyRecursion : (Fin depth -> R) -> R` that performs one
   step of the recursion given the last $d$ values of the $c_k$
   sequence.
 - The **parity-alternation theorem** `esymm_bar_parity` (sorry-free):
@@ -104,12 +104,12 @@ where $c_4 = -0.97157$ was a fit).
   integral domain) $\Phi_n$ is self-reciprocal —
   $\operatorname{reverse}(\Phi_n) = \Phi_n$, equivalently
   $\Phi_n(1/q)\,q^{\varphi(n)} = \Phi_n(q)$ — subsuming **all** the explicit and
-  prime cases above, including every composite $d$ (4, 8, 9, …). Mathlib carries
+  prime cases above, including every composite $d$ (4, 8, 9, $\ldots$). Mathlib carries
   no cyclotomic palindrome lemma; this is proved here by strong induction on the
   divisor product $\prod_{d \mid n}\Phi_d = X^n - 1$ (peeling $d=1$ for the
   anti-palindrome sign, the inductive hypothesis on $1 < d < n$, then cancelling
-  the nonzero proper-divisor product), with the eval form following via
-  `eval₂_reverse_mul_pow`.
+  the nonzero proper-divisor product), with the evaluation form following
+  from the corresponding polynomial `reverse` lemma.
 - A companion compute scaffold
   ([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_c_k_recursion_scaffold.py))
   demonstrating the recursion machinery on toy depth-1 and depth-2
@@ -136,11 +136,11 @@ predictor.
 
 ### The q-Bessel identification of $F$ (fibre-level)
 
-The partition function $Z_q$ above **is**, at the fibre level, a **Hahn–Exton
+The partition function $Z_q$ above **is**, at the fibre level, a **Hahn--Exton
 q-Bessel function** — the matrix coefficient of the quantum motion group
 $E_q(2)$, i.e. the $\mathrm{SU}_q(2)\to E_q(2)$ contraction limit of the
 substrate (PR [#2279](https://github.com/litlfred/qou/pull/2279);
-Vaksman–Korogodsky 1989, Koelink 1994 \cite{koelink1994}). Concretely, the
+Vaksman--Korogodsky 1989, Koelink 1994 \cite{koelink1994}). Concretely, the
 ladder coefficients $c_k$ are its q-Bessel power-series coefficients, obeying
 the first-order q-recurrence $c_k(1-q^k)(1-q^{\nu+k}) = -q^{k-1}c_{k-1}$ —
 equivalently the **second-order q-difference equation** (the q-Bessel
