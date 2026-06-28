@@ -19,7 +19,9 @@ double-Hopf, etc.
 | $c_5$ | $\approx -395.4$ | $-J_{\mathrm{Borromean}} = +8$ (50$\times$ off in scale and sign) |
 | $c_6$ | $\approx -45{,}485$ | $J_{\mathrm{Hopf}} \cdot J_{\mathrm{Borromean}} = 16$ (3000$\times$ off) |
 
-## Contents of this block
+## Multi-link Jones values at $q=1$ as candidate $c_5/c_6$ inputs
+
+### Contents of this block
 
 This is **infrastructure, not closure**. The Lean module
 `QOU.BraidKnot.multi_link_jones_q1_extension` exports:
@@ -48,7 +50,7 @@ This is **infrastructure, not closure**. The Lean module
    **explicitly flagged as exploratory placeholders, not closure
    values**.
 
-## Failure of the simple multi-link pattern
+### Failure of the simple multi-link pattern
 
 Three structural hypotheses for the 50–3000$\times$ mismatch:
 
@@ -68,7 +70,7 @@ Three structural hypotheses for the 50–3000$\times$ mismatch:
    coupling, a Mostow rigidity gap correction, or a non-trivial
    Habiro residue contribution may enter only at orders $k \geq 5$.
 
-## Concrete next probe
+### Concrete next probe
 
 Test whether the **per-Wedderburn-block contribution at $k = 5, 6$**
 matches empirical when properly weighted by the $q$-deformed

@@ -9,7 +9,9 @@ by its compatibility with the Frobenius-Hopf substrate axioms across
 *every* sub-tensor-factor of $A^{\otimes n}$, not by an additive
 combination of local pieces.
 
-## Necessity of dropping locality
+## $\Phi_n$ as a global section, not a local combination
+
+### Necessity of dropping locality
 
 Local trivialisation — "screening" — was the framework's earlier
 explanation of shell closure: that something local at each vortex
@@ -37,7 +39,7 @@ This is precisely the
 statement, and it is the structural reason a non-trivial action
 *cannot* coexist with finite mass at saturated $n$.
 
-## The categorical-functor view
+### The categorical-functor view
 
 In the language of monoidal functors, $\Phi_n$ is
 
@@ -60,7 +62,7 @@ section, rather than a colimit of local pieces, forces the
 substrate-level constraint that the central action vanishes at
 saturated $n$.
 
-## Implications for the conjecture
+### Implications for the conjecture
 
 [`conj:mass-endomorphism`](#conj\:mass-endomorphism) (the open
 problem of finding a closed-form NF for $\Phi_{\mathrm{mass}}$) is

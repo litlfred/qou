@@ -5,7 +5,9 @@ $H_n(R, q)$ acting on the exceptional divisor
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([exceptional divisor](#def:exceptional-divisor)).
 
-## Polarisation states as Hecke generators
+## The Breit--Wheeler vertex on the exceptional divisor
+
+### Polarisation states as Hecke generators
 
 The exceptional divisor $\mathcal{S}_p$ is the $\mathbb{P}^1(\mathbb{C})$
 fibre of the state bundle $\mathcal{S}$ at a brane point $p$.  Its
@@ -31,7 +33,7 @@ polarised photon is a superposition of these two eigenstates, with
 the polarisation angle $\psi$ encoded in the ratio $v_1/v_2 \in
 \mathcal{S}_p$.
 
-## The pair-creation vertex
+### The pair-creation vertex
 
 The two-photon state $\gamma_1 \otimes \gamma_2$ is a word in
 $H_n(R, q)$.  Three cases arise depending on the relative polarisation:
@@ -82,7 +84,7 @@ $\xi_q$ on the Reeb bundle $\mathcal{R}_p$: it supplies the third
 crossing $\sigma_0$ from the contact structure of $S^3$, at a cost
 of one unit of Reeb charge $1/[2]_q$.
 
-## Polarisation selection rule
+### Polarisation selection rule
 
 The vertex vanishes unless the two photons occupy **distinct**
 polarisation patches of $\mathbb{P}^1(\mathbb{C})$:

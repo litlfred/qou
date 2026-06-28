@@ -55,7 +55,7 @@ valid for every $q > 0$ (pure Perron--Frobenius for positive
 operators), with the rate controlled by the spectral gap
 $\mu_\lambda - \mu_\lambda^{(2)}$ and exponential in $N$.
 
-## Operational layer: geometric rate on physical predictions
+### Operational layer: geometric rate on physical predictions
 
 The composite of outer and inner chains feeds into the
 Wedderburn mass formula, whose empirical error on stable nuclei

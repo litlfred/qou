@@ -51,7 +51,7 @@ $$
   = -\frac{q^5 + q^3 - q - q^{-1}}{4}.
 $$
 
-## ε^k pattern at q = 1 + ε
+### ε^k pattern at q = 1 + ε
 
 The closed form splits as
 
@@ -73,7 +73,7 @@ $$
 
 This matches the probe output `+1/4, -1/4, +1/4, ...` for $k = 6, 7, 8, ...$ exactly.
 
-## Lean theorems exported
+### Lean theorems exported
 
 See [Table: Lean theorems for $\chi_{V_3}$](#tbl:chi-v3-closed-form-proof-table-data).
 | `chi_V3_difference_decomposition` | split into polynomial part + geometric part |

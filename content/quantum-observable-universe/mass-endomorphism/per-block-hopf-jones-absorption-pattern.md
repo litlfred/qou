@@ -11,7 +11,9 @@ pattern in the $\varepsilon^1$ leading-order coefficients:
 | $V_{(2,1)}$ | $-\dfrac{(q^4+1)(q^2-1)}{4q^3}$ | $-1$ | half ($= J_{\text{Hopf}}(q{=}1)/2$) |
 | $V_{(1,1,1)}$ | $-\dfrac{(q^2+1)^2(q^2-1)}{4q^5}$ | $\mathbf{-2}$ | **full** ($= J_{\text{Hopf}}(q{=}1)$) |
 
-## Structural interpretation
+## Dimension-scaled per-block Hopf-Jones absorption
+
+### Structural interpretation
 
 Each block is **linear in $\hbar_q = (q-1)/q$ at leading order** —
 factoring out the common $(q^2-1) = q(q+1)\hbar_q$:
@@ -36,7 +38,7 @@ sign) absorbs the **full Hopf-Jones value** $-2$; the 2-dimensional
 standard rep $V_{(2,1)}$ absorbs **half**, $-1$. The 2D
 character-formula scaling by $\dim(V_\lambda)$ explains the halving.
 
-## Connection to $c_3 = -2 = J_{\text{Hopf}}(q{=}1)$
+### Connection to $c_3 = -2 = J_{\text{Hopf}}(q{=}1)$
 
 [`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov)
 derives the global precision-ladder coefficient
@@ -72,7 +74,7 @@ a probability measure). The Markov-trace direct compute at $q_0$ gives
 $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$ (consistent with the
 $y_\lambda(q_0) \cdot \chi_\lambda(q_0)$ sum).
 
-## Significance
+### Significance
 
 The per-block Hopf-Jones absorption pattern is the **structural
 foundation** for extending [Fact 3](#prop:q-beta-c3-hopf-three-fold-markov)
