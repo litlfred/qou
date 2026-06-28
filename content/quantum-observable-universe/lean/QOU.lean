@@ -179,3 +179,4 @@ import QOU.Mathlib.StandardYoungTableau
 import QOU.Mathlib.RSKBurnsideTarget
 import QOU.Mathlib.SchenstedInsertion
 import QOU.Mathlib.SYTEnumeration
+import QOU.Mathlib.SYTEnumerationBridge
