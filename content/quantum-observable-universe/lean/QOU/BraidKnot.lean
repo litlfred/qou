@@ -5,6 +5,7 @@ import QOU.BraidKnot.WLambdaDefectSubleadingD
 import QOU.BraidKnot.WLambdaDefectLadderE
 import QOU.BraidKnot.IdentityIContentDecomposition
 import QOU.BraidKnot.IdentityIPlancherelInstances
+import QOU.BraidKnot.InterfaceOperatorBlockDiagonal
 import QOU.BraidKnot.KeystoneC2ContentTranspose
 import QOU.BraidKnot.KeystoneC2DimTranspose
 import QOU.BraidKnot.KeystoneC2QDimTranspose
