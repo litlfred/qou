@@ -89,4 +89,124 @@ theorem dimHLF_single (a : ℕ) : dimHLF [a] = 1 := by
   have hsz : sz [a] = a := by simp [sz]
   rw [hsz, Nat.div_self (Nat.factorial_pos a)]
 
+/-! ## Reusable product helpers for the two-row case -/
+
+/-- Split a `range a` product at `b ≤ a` into the `[0,b)` prefix and the `[b,a)` tail. -/
+theorem prod_range_split (a b : ℕ) (hab : b ≤ a) (f : ℕ → ℕ) :
+    ((List.range a).map f).prod
+      = ((List.range b).map f).prod * ((List.range' b (a - b)).map f).prod := by
+  rw [← List.prod_append, ← List.map_append]
+  congr 1
+  rw [List.range_eq_range', List.range_eq_range']
+  have h : List.range' 0 b ++ List.range' (0 + b) (a - b) = List.range' 0 (b + (a - b)) :=
+    List.range'_append_1
+  simp only [Nat.zero_add] at h
+  have hb : b + (a - b) = a := by omega
+  rw [h, hb]
+
+/-- The descending tail product `∏_{j ∈ [b,a)} (a − j) = (a − b)!`. -/
+theorem prod_range'_descending (a b : ℕ) (_hab : b ≤ a) :
+    ((List.range' b (a - b)).map (fun j => a - j)).prod = Nat.factorial (a - b) := by
+  rw [List.range'_eq_map_range, List.map_map]
+  have hcomp : ((fun j => a - j) ∘ (fun k => b + k)) = (fun k => (a - b) - k) := by
+    funext k; simp only [Function.comp_apply]; omega
+  rw [hcomp]
+  exact prod_range_descending (a - b)
+
+/-- Divisor-free ascending product: `(∏_{j < b} (N − j)) · (N − b)! = N!` for `b ≤ N`.
+The `b` largest descending factors of `N!` times the rest. -/
+theorem prod_desc_mul_factorial (N : ℕ) : ∀ b ≤ N,
+    ((List.range b).map (fun j => N - j)).prod * Nat.factorial (N - b) = Nat.factorial N := by
+  intro b
+  induction b with
+  | zero => intro _; simp
+  | succ m ih =>
+    intro hb
+    rw [List.range_succ, List.map_append, List.prod_append]
+    simp only [List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one]
+    have hm : m ≤ N := by omega
+    have hfac : (N - m) * Nat.factorial (N - (m + 1)) = Nat.factorial (N - m) := by
+      have hsucc : N - m = (N - (m + 1)) + 1 := by omega
+      rw [hsucc, Nat.factorial_succ]
+    rw [mul_assoc, hfac]
+    exact ih hm
+
+/-! ## Two-row HLF: closed-form hook product `prodHooks [a,b]` -/
+
+/-- Row-1 hook product of `[a,b]` (`a ≥ b`): cell `j < b` of the second row has hook
+`(b − j) + (colLen j − 1) − 1 = b − j` (since `j < b ⟹ colLen = 2`), so the product is `b!`. -/
+theorem prodHooks_pair_row1 (a b : ℕ) (hab : b ≤ a) :
+    ((List.range b).map (fun j => ((b - j) + (colLen [a, b] j - 1) - 1))).prod
+      = Nat.factorial b := by
+  have hbody : ∀ j ∈ List.range b,
+      ((b - j) + (colLen [a, b] j - 1) - 1) = b - j := by
+    intro j hj
+    rw [List.mem_range] at hj
+    rw [colLen_pair a b j hab]
+    simp [hj]
+  rw [List.map_congr_left hbody]
+  exact prod_range_descending b
+
+/-- Row-0 hook product of `[a,b]` (`a ≥ b`) in divisor-free form:
+`(∏_{j} h(0,j)) · (a + 1 − b)! = (a+1)! · (a − b)!`.  The row-0 hooks split as
+`a + 1 − j` for `j < b` and `a − j` for `b ≤ j < a`; the first block contributes the
+descending product `(a+1)!/(a+1−b)!`, the second `(a − b)!`. -/
+theorem prodHooks_pair_row0_mul (a b : ℕ) (hab : b ≤ a) :
+    ((List.range a).map (fun j => ((a - j) + (colLen [a, b] j - 0) - 1))).prod
+        * Nat.factorial (a + 1 - b)
+      = Nat.factorial (a + 1) * Nat.factorial (a - b) := by
+  -- rewrite the body using colLen_pair: for j < b it is a+1-j, for b ≤ j < a it is a-j
+  rw [prod_range_split a b hab]
+  -- prefix product (j < b): body = a + 1 - j
+  have hpre : ∀ j ∈ List.range b,
+      ((a - j) + (colLen [a, b] j - 0) - 1) = (a + 1) - j := by
+    intro j hj
+    rw [List.mem_range] at hj
+    rw [colLen_pair a b j hab]
+    have : j < a := lt_of_lt_of_le hj hab
+    simp only [hj, if_true, Nat.sub_zero]
+    omega
+  -- tail product (b ≤ j < a, i.e. j ∈ range' b (a-b)): body = a - j
+  have htail : ∀ j ∈ List.range' b (a - b),
+      ((a - j) + (colLen [a, b] j - 0) - 1) = a - j := by
+    intro j hj
+    rw [List.mem_range'] at hj
+    obtain ⟨hjb, hja⟩ := hj
+    have hja' : j < a := by omega
+    rw [colLen_pair a b j hab]
+    have hnb : ¬ j < b := by omega
+    simp only [hnb, if_false, hja', if_true, Nat.sub_zero]
+    omega
+  rw [List.map_congr_left hpre, List.map_congr_left htail]
+  rw [prod_range'_descending a b hab]
+  -- now (∏_{j<b}(a+1-j)) * (a-b)! * (a+1-b)! = (a+1)! * (a-b)!
+  rw [mul_assoc, mul_comm (Nat.factorial (a - b)) (Nat.factorial (a + 1 - b)),
+    ← mul_assoc]
+  have hN : ((List.range b).map (fun j => (a + 1) - j)).prod * Nat.factorial (a + 1 - b)
+      = Nat.factorial (a + 1) := by
+    have := prod_desc_mul_factorial (a + 1) b (by omega)
+    simpa using this
+  rw [hN]
+
+/-- **Two-row hook product, divisor-free closed form (sorry-free).** For `a ≥ b ≥ 1`,
+`prodHooks [a,b] · (a + 1 − b)! = (a+1)! · (a − b)! · b!`.  This is the Frame–Robinson–Thrall
+hook product on a two-row shape, the denominator of the ballot-number dimension
+`dimHLF [a,b] = (a+b)! · (a+1−b)! / ((a+1)! · (a−b)! · b!)` (equivalently the standard
+`(a+b)!·(a−b+1)/((a+1)·a!·b!)`). -/
+theorem prodHooks_pair_mul (a b : ℕ) (hab : b ≤ a) (_hb : 1 ≤ b) :
+    prodHooks [a, b] * Nat.factorial (a + 1 - b)
+      = Nat.factorial (a + 1) * Nat.factorial (a - b) * Nat.factorial b := by
+  have hdecomp : prodHooks [a, b]
+      = ((List.range a).map (fun j => ((a - j) + (colLen [a, b] j - 0) - 1))).prod *
+        (((List.range b).map (fun j => ((b - j) + (colLen [a, b] j - 1) - 1))).prod) := by
+    unfold prodHooks
+    simp only [List.length_cons, List.length_nil, List.range_succ,
+      List.range_zero, List.map_cons, List.map_nil, List.map_append, List.prod_cons,
+      List.prod_nil, List.prod_append, List.getD_cons_zero, List.getD_cons_succ]
+    ring_nf
+  rw [hdecomp, prodHooks_pair_row1 a b hab]
+  -- (row0 * b!) * (a+1-b)! = row0 * (a+1-b)! * b!
+  rw [mul_assoc, mul_comm (Nat.factorial b) (Nat.factorial (a + 1 - b)), ← mul_assoc,
+    prodHooks_pair_row0_mul a b hab]
+
 end QOU.Mathlib.SYTHookRows
