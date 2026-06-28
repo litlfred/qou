@@ -292,6 +292,19 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
     #   for small L (B_sym = α(s + s²/2 + …)).
     B_lin = alpha * (1.0 - math.exp(-B_sym / alpha)) if alpha else 0.0
+    # ---- m_can⁰: brane-tower LEVEL-0 binding. The per-braid brane tower
+    #   (per-braid-mass-tower.md) has descended (n=0) term |tr_M(W)|, so its
+    #   binding is B_can⁰ = E₀·Δtr_M = α·(|tr_M_free| − |tr_M_atom|) — the
+    #   absolute trace difference (≡ binding_canonical), NOT the log B_sym.
+    #   PURE Markov trace: tr_free = exp(−m_sym_free/α) factorizes over GB
+    #   components (cheap, all A); tr_atom = tr_free·exp(−B_sym/α) from the
+    #   closed-form chain. ZERO AME / CODATA beyond the CAL-1 m_e unit (in α)
+    #   and CAL-2 q₀. Higher Φ_q tower levels (B_can_tower) add O(ℏ_q²)/level.
+    tr_free_val = math.exp(-m_sym_free / alpha) if alpha else None
+    tr_atom_val = (tr_free_val * math.exp(-B_sym / alpha)
+                   if (alpha and tr_free_val is not None) else None)
+    B_can0 = (alpha * (tr_free_val - tr_atom_val)
+              if tr_free_val is not None else None)
     # ---- exact p(3A) trace (capped) — VALIDATOR of the chain + the bar-
     #   involution entanglement split. Computed only when n=3A ≤ max_strands;
     #   |chain − exact| ≈ 1e-13.
@@ -329,7 +342,8 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame, "M_atom_AME": m_atom_ame, "sigma_atom": sigma_atom,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
-            "B_lin": B_lin,
+            "B_lin": B_lin, "B_can0": B_can0,
+            "tr_free": tr_free_val, "tr_atom": tr_atom_val,
             "B_sym": B_sym, "B_sym_exact": B_sym_exact, "chain_resid": chain_resid,
             "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
@@ -376,11 +390,12 @@ def _print_legend() -> None:
 
 | Header | Meaning |
 |---|---|
-| `M_meas` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n |
+| `M_meas` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n. **Comparison target only — appears in NO predicted formula.** |
 | `σ_exp (ppb)` | experimental 1σ on the mass = σ_B / M_meas × 10⁹ |
-| `m_lin` / `m_sym` / `m_qCLT_fac` | canonical bound mass m_X = m_unbnd,can − B_X for each binding form |
-| `err m_sym (ppb)` | mass error (m_sym − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; 0 for p anchor; genuine prediction for n) |
-| `err m_qCLT_fac (ppb)` | same, for the colour-weighted q-CLT binding |
+| `m_can⁰` | **CANONICAL derived mass, brane-tower level 0**: `m_can⁰ = m_unbnd,can − B_can⁰`, `B_can⁰ = E₀·Δtr_M = α·(\|tr_M_free\| − \|tr_M_atom\|)`. PURE Markov trace × m_e — **zero AME, zero CODATA nucleon mass**; the only inputs are CAL-1 (m_e, the MeV unit) and CAL-2 (q₀). The ⁰ marks the n=0 descended term of the per-braid brane tower; higher Φ_q levels add O(ℏ_q²)/level. |
+| `m_qCLT` | colour-weighted q-CLT bound mass `m_unbnd,can − B_qCLT_fac` (the A→∞ statistical extrapolation; also pure Markov trace) |
+| `err m_can⁰ (ppb)` | mass error (m_can⁰ − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; ~0 for p anchor; genuine prediction for n) |
+| `err m_qCLT (ppb)` | same, for the colour-weighted q-CLT binding |
 
 **Calibration anchors — principled (ideal) vs experimental pin**
 
@@ -531,27 +546,27 @@ def main(argv=None) -> int:
           f"m_n,can = {mn_can:.3f} MeV ({(mn_can/mn_-1)*100:+.3f}%) — "
           f"m_μ-anchored F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (matches CODATA; m_n the "
           f"genuine prediction).")
-    print("| iso | A | M_meas | σ_exp (ppb) | m_lin | m_sym | m_qCLT_fac "
-          "| err m_sym (ppb) | err m_qCLT_fac (ppb) |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | M_meas | σ_exp (ppb) | m_can⁰ | m_qCLT | "
+          "err m_can⁰ (ppb) | err m_qCLT (ppb) |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
         m_meas = (mu - r["B_AME"]) if r["B_AME"] is not None else mu  # measured mass
         s = r["sigma_AME"]
         s_ppb = (s / m_meas * 1e9) if (s and m_meas) else None
-        # canonical bound mass per form X: m_X = mu_can − B_X
+        # CANONICAL bound mass per form X: m_X = mu_can − B_X (zero AME/CODATA
+        # beyond CAL-1 m_e + CAL-2 q₀; M_meas is the SEPARATE comparison target).
         def _can(bkey):
             b = r[bkey]
             return (mu_can - b) if b is not None else None
-        # mass error (ppb): (m_X − M_meas)/M_meas · 10⁹ for the two production forms
+        # mass error (ppb): (m_X − M_meas)/M_meas · 10⁹
         def _err_ppb(bkey):
             b = r[bkey]
             return ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
         print(f"| {r['name']} | {r['A']} | {_fmt(m_meas,9,1)} | {_sci(s_ppb,11,2)} "
-              f"| {_fmt(_can('B_lin'),9,1)} | {_fmt(_can('B_sym'),9,1)} "
-              f"| {_fmt(_can('B_qCLT_fac'),9,1)} "
-              f"| {_sci(_err_ppb('B_sym'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
+              f"| {_fmt(_can('B_can0'),9,1)} | {_fmt(_can('B_qCLT_fac'),9,1)} "
+              f"| {_sci(_err_ppb('B_can0'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
 
     # 1c. ATOMIC mass comparison — the framework predicts NUCLEAR masses; add the
     #   electron shell (Z·m_e − B_el(Z)) to compare against the RAW AME neutral-
@@ -581,17 +596,18 @@ def main(argv=None) -> int:
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "
           "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
-    print("| iso | A | B_AME | σ_exp (ppb) | B_lin | B_sym | B_qCLT_fac "
-          "| err sym | err qCLT_fac |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_qCLT_fac "
+          "| err can⁰ | err sym | err qCLT_fac |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
+        e_can0 = _err(r["B_AME"], r["B_can0"])
         e_sym = _err(r["B_AME"], r["B_sym"])
         e_qclt_fac = _err(r["B_AME"], r["B_qCLT_fac"])
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
-              f"| {_fmt(r['B_lin'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} |")
+              f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
+              f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} |")
 
     # chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
     val = [(r["name"], r["chain_resid"]) for r in rows
