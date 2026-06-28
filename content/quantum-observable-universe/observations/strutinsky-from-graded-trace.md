@@ -34,7 +34,7 @@ $$
 | Gaussian smoothing width | Filtration step $J^\ell / J^{\ell+1}$ granularity |
 | Magic-number enhancement | Rectangular-partition spike in $w_\lambda(q_0)$ |
 
-**Why the analogy is exact, not just suggestive.**
+**Exactness of the analogy.**
 *The Strutinsky smoothing procedure averages $\rho(E)$ over an
 energy window chosen to span several major shells; this is
 equivalent to projecting onto the filtration quotient
@@ -47,7 +47,7 @@ Strutinsky prescription is therefore not a calculational trick:
 it is the unique decomposition of the trace dictated by the
 filtered-algebra structure.*
 
-**What this buys.**
+**Corollaries.**
 *Two practical consequences:*
 
 1. *Strutinsky's method — smooth plus shell — is **forced by the

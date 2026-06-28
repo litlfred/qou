@@ -55,7 +55,7 @@ $G$ as its universal prefactor.  The two viewpoints are dual — CR
 geometry is the substrate face, the Plancherel residue is the
 categorical face.
 
-**Consequences.**
+**Corollaries.**
 
 1. *No fitting.* $G$ is not an independent parameter; it is the
    prefactor $\alpha/8m_e$ from the spectral tail.  Its numerical

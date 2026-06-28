@@ -6,7 +6,7 @@ internal degrees of freedom (the quark flavour assignments) that
 can rearrange via R-I embedding moves while preserving the
 Borromean link type.
 
-**Can the electron beta-decay?**
+**Stability of the electron against beta decay.**
 
 No — and the reason is topological, not energetic.  The electron
 is the trefoil $T_{2,3}$: an **elementary** knot with no internal
@@ -28,7 +28,7 @@ lepton number and charge.  There is no lighter charged lepton, and
 the neutrino (unknot $T_{1,0}$) has zero crossing energy and zero
 mass — it cannot absorb the electron's topological charge.
 
-**Electrons survive to heat death.**
+**Electron survival to heat death.**
 
 In the observable era ($1 < q < \infty$), the
 [time reversal barrier](#rem:time-reversal-energy-barrier)

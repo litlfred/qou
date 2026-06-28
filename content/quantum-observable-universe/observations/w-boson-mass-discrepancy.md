@@ -80,7 +80,7 @@ $$
   \cdot m.
 $$
 
-## Why CDF differs from ATLAS and CMS
+## CDF–LHC discrepancy
 
 The CDF~II experiment collided **protons with antiprotons**
 ($pp^{\sigma}$) at $\sqrt{s} \approx 1.96$ TeV.  $W$ bosons were
