@@ -4,6 +4,8 @@
 --      published version.
 -- Hecke normal form in H_n(q) via Groebner-Shirshov canonical basis
 
+import Mathlib.Tactic
+
 /-- The 6-element NF basis for H₃(q), indexed by Fin 6.
     {γ, σ₀, σ₁, L₊, L₋, e⁻} biject with S₃. -/
 inductive NFBasis3 where
