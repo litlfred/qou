@@ -108,7 +108,7 @@ theorem P_plus_Q (m : ℕ) (η : ℝ) :
 theorem P_minus_Q (m : ℕ) (η : ℝ) :
     P_m m η - Q_m m η = Real.exp (-((2 * m + 1) * η)) / (2 * Real.cosh η) := by
   unfold P_m Q_m
-  rw [div_sub_div_eq_sub_div, ← Real.cosh_sub_sinh]
+  rw [div_sub_div_same, ← Real.cosh_sub_sinh]
 
 /-! ## Per-particle tanh ladder (PR #1153 finding)
 
@@ -138,13 +138,20 @@ noncomputable def η_substrate : ℝ := Real.log 1.10997859555418057528159407960
 noncomputable def EM_channel_ratio (m : ℕ) : ℝ :=
   Real.tanh ((2 * m + 1) * η_substrate)
 
+/-- `sinh` is positive on positive reals (derived from `sinh x = (eˣ - e⁻ˣ)/2`
+    and strict monotonicity of `exp`). -/
+private theorem sinh_pos_of_pos {x : ℝ} (hx : 0 < x) : 0 < Real.sinh x := by
+  rw [Real.sinh_eq]
+  have h : Real.exp (-x) < Real.exp x := Real.exp_lt_exp.mpr (by linarith)
+  exact div_pos (by linarith) (by norm_num)
+
 /-- The per-particle EM-channel ratio is positive at substrate
     (since η_substrate > 0 and tanh is positive for positive input). -/
 theorem EM_channel_ratio_pos (m : ℕ) (h_eta : 0 < η_substrate) :
     0 < EM_channel_ratio m := by
   unfold EM_channel_ratio
-  apply Real.tanh_pos.mpr
-  positivity
+  rw [Real.tanh_eq_sinh_div_cosh]
+  exact div_pos (sinh_pos_of_pos (by positivity)) (Real.cosh_pos _)
 
 /-- The EM-channel ratios are monotonically increasing in m
     (since tanh is monotone increasing and (2m+1)·η_0 grows with m). -/
@@ -152,11 +159,18 @@ theorem EM_channel_ratio_monotone (m m' : ℕ) (h_lt : m < m')
     (h_eta_pos : 0 < η_substrate) :
     EM_channel_ratio m < EM_channel_ratio m' := by
   unfold EM_channel_ratio
-  apply Real.tanh_lt_tanh
-  have : (2 * m + 1 : ℝ) < 2 * m' + 1 := by
-    have : (m : ℝ) < m' := Nat.cast_lt.mpr h_lt
-    linarith
-  nlinarith [h_eta_pos]
+  rw [Real.tanh_eq_sinh_div_cosh, Real.tanh_eq_sinh_div_cosh,
+    div_lt_div_iff₀ (Real.cosh_pos _) (Real.cosh_pos _)]
+  have hAB : (2 * (m : ℝ) + 1) * η_substrate < (2 * (m' : ℝ) + 1) * η_substrate := by
+    have hmm : (m : ℝ) < m' := Nat.cast_lt.mpr h_lt
+    nlinarith [h_eta_pos]
+  have key : Real.sinh ((2 * (m' : ℝ) + 1) * η_substrate) * Real.cosh ((2 * (m : ℝ) + 1) * η_substrate)
+           - Real.sinh ((2 * (m : ℝ) + 1) * η_substrate) * Real.cosh ((2 * (m' : ℝ) + 1) * η_substrate)
+           = Real.sinh ((2 * (m' : ℝ) + 1) * η_substrate - (2 * (m : ℝ) + 1) * η_substrate) := by
+    rw [Real.sinh_sub]; ring
+  have hp : 0 < Real.sinh ((2 * (m' : ℝ) + 1) * η_substrate - (2 * (m : ℝ) + 1) * η_substrate) :=
+    sinh_pos_of_pos (sub_pos.mpr hAB)
+  linarith [key, hp]
 
 /-! ## Cross-reference: Borromean (NOT torus) Q = 0
 
