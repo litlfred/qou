@@ -47,4 +47,4 @@ which is a skein difference (not a single-braid Markov trace).
 
 ## Lean formalization
 
-The companion Lean `meson_scale_independence` states the scale-independence claim and defers its proof via `sorry` (`-- Ref: [manuscript]`).
+The companion Lean `meson_scale_independence` encodes the geometric core of the obstruction: the Hopf-link complement (meson binding topology) has hyperbolic volume $0$ while the Borromean complement (baryon) has positive volume, so the volume-scaling map $m_\mathfrak{e}\cdot\mathrm{Vol}(K)\cdot\rho/\hbar_q^2$ sends the meson's geometric scale to $0$ independently of $(m_\mathfrak{e}, q_0)$. The absolute scale therefore enters only through the independent calibration CAL-3 ($\mathfrak{D}_\pi$). The Lean is sorry-free.
