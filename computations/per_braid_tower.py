@@ -15,10 +15,23 @@ Mass functional (binding context → symmetric Li_2^q, bar-invariant, per
           + z² · Σ_{(ξ,ξ')∈S₂} g(|tr_M(ξ ξ')|)            [pairs]
           + (higher jet levels, O(ℏ_q²) tail)
 
-with g(x) = −Li_2^q(−x), z = 1/(q^{1/2}+q^{-1/2}). Binding is the
-difference B = E₀·(𝔪_free − 𝔪_atom): the SINGLETON (per-nucleon) terms
-CANCEL identically (the nucleons are unchanged bound-vs-free), so only the
-descended Δtr_M and the PAIR terms survive.
+with z = 1/(q^{1/2}+q^{-1/2}). The dilogarithm sign is DERIVED from the
+categorical action (not chosen) — `bar-parity-split.md`:
+  * binding = bar-EVEN (cosh, σ-fixed) part of the trace; Li_2^q is already
+    bar-symmetric ([n]_q is q↦q⁻¹-invariant) ⇒ it sits in the binding channel;
+  * the argument sign is the Hecke ANTISYMMETRIC eigenvalue −q⁻¹ (antipode
+    S(σ)=σ⁻¹, Hecke (σ−q)(σ+q⁻¹)=0), so the canonical term is
+        g(x) = −Li_2^q(−x).
+  The bare +Li_2^q(+x) (compute_t2_t3_from_vols helper) is NOT the binding
+  projection; it is retained here only as a cross-check (`pos_arg`).
+
+Binding is the difference B = E₀·(𝔪_free − 𝔪_atom): the SINGLETON
+(per-nucleon) terms CANCEL identically (the nucleons are unchanged
+bound-vs-free), so only the descended Δtr_M and the PAIR terms survive. The
+A=2 pair is INCLUDED — the ℓ=0 descended functional |tr_M(W)| and the ℓ=2
+pair functional z²·g(|tr_M(W)|) are DISTINCT functionals of the same braid,
+not a double-count (the prop's double-count carve-out is about repeating the
+|tr_M| descended product per level, not the dilog pair term).
 
     B_can⁰  = E₀·Δtr_M = E₀·(|tr_M_free| − |tr_M_atom|)   [level 0, headline]
     B_tower = B_can⁰ + E₀·z²·Σ_pairs (g(tr_free_pair) − g(tr_atom_pair))
