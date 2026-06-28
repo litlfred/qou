@@ -70,11 +70,11 @@ crossing conventions parameterised by
 $\mathrm{SO}(3) / S_3$ — a 3-dimensional manifold minus the
 discrete quotient.
 
-**What the pipeline uses:** only the $S_3$ subgroup — the six
+**Pipeline inputs:** only the $S_3$ subgroup — the six
 discrete basis operators. The averaged crossing
 $I = \sigma - (h/2) \cdot 1$ averages over the $S_3$ orbit.
 
-**What the pipeline does NOT use:** the continuous
+**Pipeline exclusions:** the continuous
 $\mathrm{SO}(3) / S_3$ rotations. These would give:
 
 1. **Continuous families of Gram matrices** $G(\theta)$
