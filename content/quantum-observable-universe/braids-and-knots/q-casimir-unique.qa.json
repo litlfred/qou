@@ -1177,7 +1177,483 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "Verification of voice-statement-no-interpretation passes."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "Verification of wall-side-statement passes."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "Verification of wall-side-proof passes."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "Verification of proof-narrative-lean-equiv passes."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "Formulating uniqueness up to a scalar shift by the central embedding is correct and clear.",
+        "score": {
+          "value": 0.85,
+          "max": 1,
+          "rubric": {
+            "clarity": 0.85
+          }
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "This is a standard quantum group centre result.",
+        "score": {
+          "value": 0.5,
+          "max": 1,
+          "rubric": {
+            "novelty": 0.5
+          }
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "Verification of proof-no-unused-hypotheses passes."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-false-claim found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-vacuous found."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-circular found."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-overclaim found."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-hidden-dof found."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-non-sequitur found."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-lean-narrative-divergence found."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-citation-misuse found."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-definitional-ambiguity found."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-empirical-fragility found."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-physical-implausibility found."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "No violations of da-reproducibility found."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "7a28d9101d1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1",
+        "notes": "The uniqueness is formulated up to a scalar shift and axiomatized cleanly.",
+        "verdict": "clean",
+        "referee_argument": "The uniqueness of the q-Casimir element up to a central scalar is correctly formulated and axiomatized."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:14:45.249Z"
 }

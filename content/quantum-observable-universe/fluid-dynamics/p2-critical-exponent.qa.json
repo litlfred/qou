@@ -949,7 +949,305 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-false-claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "notes": "No vacuity detected in the block."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "notes": "No overclaims detected for da-overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-hidden-dof."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "notes": "The referenced Lean file is missing, leading to complete divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-citation-misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-definitional-ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-empirical-fragility."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-physical-implausibility."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1 — import { conjecture } from \"../../schema/builders\";",
+        "notes": "No issues found for da-reproducibility."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.md:1 — **Conjecture (assuming [`conj:regularity-breakdown`](#conj:regularity-breakdown)).**",
+        "notes": "Referee verdict: open-objection.",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling QOU.FluidDynamics.CriticalExponent referenced in the TS file is missing from the codebase, preventing verification."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:14:48.180Z"
 }

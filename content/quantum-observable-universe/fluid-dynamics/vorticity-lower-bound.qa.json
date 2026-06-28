@@ -1065,6 +1065,27 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean:1",
+        "notes": "The proof does not rely on trivial True stubs."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1177,7 +1198,472 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md:1 — **Proposition (conditional on",
+        "notes": "Statement is written in standard, scholarly mathematical and physics voice."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean:1 — Lean file exists",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean:1 — sorry placeholder present",
+        "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean:1 — sorry present",
+        "notes": "The Lean proof is a structural stub, which does not fully capture the narrative proof."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "notes": "Proof strategy is outlined in markdown but Lean proof is incomplete.",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "notes": "Connecting fluid dynamics and Navier-Stokes singularities to topological/categorical quantum universes is highly novel.",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean:1",
+        "notes": "No unused hypotheses detected."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-false-claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "notes": "The Lean sibling contains 'sorry' placeholders and proves nothing of interest."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "notes": "No overclaims detected for da-overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-hidden-dof."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-citation-misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-definitional-ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-empirical-fragility."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-physical-implausibility."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1 — import { proposition } from \"../../schema/builders\";",
+        "notes": "No issues found for da-reproducibility."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
+          "lean": "4dca98811132"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:48.180Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md:1 — **Proposition (conditional on",
+        "notes": "Referee verdict: open-objection.",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:14:48.180Z"
 }

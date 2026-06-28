@@ -914,7 +914,331 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:478 — def StandardPart   :=",
+        "notes": "The Lean file only defines StandardPart as trivial and does not formalize the surreal numbers or the map itself."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-false-claim found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-vacuous found."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-circular found."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "The text claims that exact active-partition factorization and the Q-CLT statistical limit share the same macroscopic limit under standard-part without providing a rigorous proof."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-hidden-dof found."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-non-sequitur found."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:478 — def StandardPart   :=",
+        "notes": "The Lean file only defines StandardPart as trivial and does not formalize the functorial standard part mapping on categories described in the markdown."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-citation-misuse found."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-definitional-ambiguity found."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-empirical-fragility found."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-physical-implausibility found."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "No violations of da-reproducibility found."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean:1",
+        "notes": "There is a major divergence between the markdown narrative and the Lean stub.",
+        "verdict": "open-objection",
+        "referee_argument": "The standard-part functor and its claimed commutativity with the Q-CLT limit are not formalized in Lean, where StandardPart is defined merely as trivial."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:14:45.249Z"
 }

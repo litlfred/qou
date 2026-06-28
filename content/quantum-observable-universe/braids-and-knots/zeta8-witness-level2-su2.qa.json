@@ -1067,6 +1067,27 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative already documents the Lean sorry deferral in its '## Lean formalization' section (cites Wenzl 1987 / Jones 1987 / Witten 1989); narrative<->Lean consistent -- prior fail was stale."
+      },
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:5219 — sorry",
+        "notes": "Key evaluations (qPoch_seven_eq_eight and qInt_four_eq_zero) are sorried in Lean."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1197,7 +1218,460 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "Verification of voice-statement-no-interpretation passes."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "Verification of wall-side-statement passes."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:5219 — sorry",
+        "notes": "The theorems qPoch_seven_eq_eight and qInt_four_eq_zero are sorried in the Lean code."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "The structure of the proofs is clear, but two key steps are sorried.",
+        "score": {
+          "value": 0.7,
+          "max": 1,
+          "rubric": {
+            "clarity": 0.7
+          }
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "The mathematical identities are cyclotomic calculations.",
+        "score": {
+          "value": 0.65,
+          "max": 1,
+          "rubric": {
+            "novelty": 0.65
+          }
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "Verification of proof-no-unused-hypotheses passes."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-false-claim found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-vacuous found."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-circular found."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-overclaim found."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-hidden-dof found."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-non-sequitur found."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:5219 — sorry",
+        "notes": "Key proofs are sorried and the Wenzl annihilator is only represented as a stub in Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-citation-misuse found."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-definitional-ambiguity found."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-empirical-fragility found."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-physical-implausibility found."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "No violations of da-reproducibility found."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1",
+        "notes": "Multiple major sorries in the Lean file.",
+        "verdict": "open-objection",
+        "referee_argument": "Key algebraic facts, including (\\zeta_8; \\zeta_8)_7 = 8 and [4]_q = 0, are left unproven (marked as sorry) in the Lean file, and the Wenzl annihilator is only represented as a stub."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:14:45.249Z"
 }

@@ -1190,7 +1190,483 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "Verification of voice-statement-no-interpretation passes."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "Verification of wall-side-statement passes."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:2140 — theorem HasReconciliation : True := by trivial",
+        "notes": "The Lean proof is trivial on True and does not formalize the actual reconciliation described in the markdown."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:2140 — theorem HasReconciliation : True := by trivial",
+        "notes": "The Lean code does not formalize the trace factorization and GS properties described in the markdown, proving only True."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "The proof is a vacuous True statement.",
+        "score": {
+          "value": 0.4,
+          "max": 1,
+          "rubric": {
+            "clarity": 0.4
+          }
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "The conceptual discussion is interesting, but the formal proof is trivial.",
+        "score": {
+          "value": 0.4,
+          "max": 1,
+          "rubric": {
+            "novelty": 0.4
+          }
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "Verification of proof-no-unused-hypotheses passes."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-false-claim found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:2140 — theorem HasReconciliation : True := by trivial",
+        "notes": "The Lean proof is vacuous since it only proves True."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-circular found."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-overclaim found."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-hidden-dof found."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-non-sequitur found."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:2140 — theorem HasReconciliation : True := by trivial",
+        "notes": "The Lean code proves True, failing to formalize any of the trace factorization or GS normal form details from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-citation-misuse found."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-definitional-ambiguity found."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-empirical-fragility found."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-physical-implausibility found."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "No violations of da-reproducibility found."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean:1",
+        "notes": "The Lean code is vacuous and does not verify the narrative.",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean theorem HasReconciliation is stated vacuously as True and proved via trivial, offering no formal verification of the claimed reconciliation between Markov trace locality and GS non-locality."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:14:45.249Z"
 }

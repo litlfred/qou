@@ -1065,6 +1065,27 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "f722260a2da4",
+          "ts": "74f46e5cee25",
+          "lean": "577d6e46a35c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:14:45.249Z",
+        "reviewed_sha": "602eb61bd750411c8b090fa7eb1daf142dd76167",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:6008 — axiom descartes_knot_eigenbasis_axiom",
+        "notes": "The instantiation theorem descartes_knot_eigenbasis is proven via a postulated axiom rather than by constructing the components from the Descartes data."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1633,5 +1654,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T01:05:35.459Z"
+  "updated_at": "2026-06-28T01:14:45.249Z"
 }
