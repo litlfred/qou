@@ -1,9 +1,9 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Every relation in the QU/QUO presentation
-([vertex algebra relations](#prop\:vertex-algebra-relations)) lifts to
+([vertex algebra relations](#prop:vertex-algebra-relations)) lifts to
 the jet bundle $J^n(A) = A_n$ via the brane tower
-([recursive brane tower](#def\:recursive-brane-tower)).  The jet
+([recursive brane tower](#def:recursive-brane-tower)).  The jet
 prolongation $L_{-1}\colon A_n \to A_{n+1}$ promotes each
 level-$n$ Iwahori--Hecke algebra $H^{(n)}(q)$ to a level-$(n{+}1)$ Hecke
 algebra $H^{(n+1)}(q)$, and the :refterm[descent]{#descent} involution
@@ -228,7 +228,7 @@ entirely determined by level $n$.
 ### D-4: Bosonic vs fermionic modes
 
 The :refterm[descent]{#descent} eigenspaces
-([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)) separate
+([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)) separate
 modes by statistics:
 
 * **Bosonic (longitudinal)**: $w \in \mathcal{A}^{\mathrm{desc}}_{n+1}$

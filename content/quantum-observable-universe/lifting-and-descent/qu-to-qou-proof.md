@@ -1,4 +1,4 @@
-[Yekutieli lifting](#prop\:yekutieli-lifting) establishes that the constructed
+[Yekutieli lifting](#prop:yekutieli-lifting) establishes that the constructed
 brane tower satisfies the Yekutieli lifting condition.  We prove each
 structural property in turn.
 
@@ -39,4 +39,4 @@ At a branch point $p$, the Krull dimension of the centre is $0$, so the
 base is a point.  The QOU data reduces to the fiber: the Frobenius--Hopf
 algebra $A$ at parameter $q(p)$, with the involution
 $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ of
-[fibre adjoint involution](#prop\:fiber-adjoint-involution).  $\square$
+[fibre adjoint involution](#prop:fiber-adjoint-involution).  $\square$

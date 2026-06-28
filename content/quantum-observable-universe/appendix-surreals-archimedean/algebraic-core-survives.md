@@ -21,7 +21,7 @@ $\mathbf{No}$:
    closed field of characteristic zero.
 
 2. **Hoefsmit seminormal form**
-   ([Hoefsmit seminormal form](#prop\:hoefsmit-seminormal-form)).
+   ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
    The matrix entries of $\rho_\lambda(\sigma_i)$ are rational
    functions in $q$ with coefficients in $\mathbb{Z}$. The
    eigenvalues $q$ (symmetric channel) and $-q^{-1}$
@@ -44,7 +44,7 @@ $\mathbf{No}$:
    in $q$ and lift field-polymorphically.
 
 6. **Rigid :refterm[monoidal category]{#monoidal-category} axioms**
-   ([rigid :refterm[monoidal category]{#monoidal-category}](#def\:rigid-monoidal-category)).
+   ([rigid :refterm[monoidal category]{#monoidal-category}](#def:rigid-monoidal-category)).
    The axioms of a strict rigid :refterm[monoidal category]{#monoidal-category} (associator,
    unitors, left/right duals, evaluation/coevaluation) are
    categorical identities, not analytic conditions.
@@ -137,7 +137,7 @@ interpretations wherever we choose $q \in \mathbf{No}$.
 The break from $\mathbb{R}$ to $\mathbf{No}$ only becomes
 non-trivial at the last step: when a categorical quantity is
 compared to a *measured* real number, a standard-part must be
-taken ([classical limit as standard-part](#conj\:classical-limit-stpart)).
+taken ([classical limit as standard-part](#conj:classical-limit-stpart)).
 
 This observation is the foundation for the appendix's central
 move: the substrate parameter $q$ can be taken in $\mathbf{No}$

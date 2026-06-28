@@ -2,7 +2,7 @@
 
 The Hecke mass element
 $\Phi_{\mathrm{mass}}(\beta) \in H_3(R, q)$
-([Hecke mass element](#def\:hecke-mass-element)) has a
+([Hecke mass element](#def:hecke-mass-element)) has a
 specific normal form structure determined by the **word
 length filtration** on the NF basis.
 

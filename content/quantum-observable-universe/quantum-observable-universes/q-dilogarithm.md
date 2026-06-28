@@ -1,6 +1,6 @@
-Beyond the grouplike $\exp_q$ ([$q$-exponential](#def\:q-exponential))
+Beyond the grouplike $\exp_q$ ([$q$-exponential](#def:q-exponential))
 and its primitive inverse $\log_q$
-([$q$-logarithm](#def\:q-logarithm)), the $q$-shuffle Hopf algebra
+([$q$-logarithm](#def:q-logarithm)), the $q$-shuffle Hopf algebra
 $\mathcal{H}_q$ admits a canonical *level-2* element — the $q$-dilogarithm —
 obtained by iterating the primitive structure once.
 

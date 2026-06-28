@@ -1,12 +1,12 @@
 In the quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$,
 the **speed of light** is the ratio of spatial to temporal information
 transfer within a light cone
-([light cone](#rem\:light-cone-affine)). It is a derived, $q$-dependent
+([light cone](#rem:light-cone-affine)). It is a derived, $q$-dependent
 quantity --- not a postulated constant and not by definition $1$.
 
 **The $q$-connection decomposition.**
 The archimedean $q$-connection
-([$q$-connection](#ex\:q-connection)) splits the gauge potential
+([$q$-connection](#ex:q-connection)) splits the gauge potential
 into horizontal (spatial) and vertical (Reeb/temporal) components:
 
 $$
@@ -35,7 +35,7 @@ $$
 $$
 
 This is the contact affine coordinate
-([contact affine chart](#def\:contact-affine-chart)):
+([contact affine chart](#def:contact-affine-chart)):
 $Z = \alpha_H / (\iota_\xi\alpha)$ evaluated on the
 $q$-connection, measuring the ratio of horizontal spatial diffusion
 to vertical quantum spin.
@@ -91,7 +91,7 @@ Reeb ticks.
 
 **Connection to the contact affine chart.**
 The light cone of an affine chart
-([light cone](#rem\:light-cone-affine)) is the locus $|Z| = c_q$:
+([light cone](#rem:light-cone-affine)) is the locus $|Z| = c_q$:
 the boundary where horizontal diffusion exactly matches vertical
 advance. Inside the cone ($|Z| < c_q$), spatial signals arrive
 within one Reeb circuit. Outside ($|Z| > c_q$), the signal
@@ -120,7 +120,7 @@ units of base-manifold distance.
 The total information transferred across the causal boundary per
 Planck time is the product of the speed of light (fibres correlated
 per tick) and the operational entropy per fibre
-([operational entropy](#def\:operational-entropy)):
+([operational entropy](#def:operational-entropy)):
 
 $$
   \mathfrak{B}(q)

@@ -1,7 +1,7 @@
 ## Derived computation method
 
 The calculations in this appendix use the three-invariant mass
-formula ([Theorem](#thm\:wedderburn-mass-formula)) with all
+formula ([Theorem](#thm:wedderburn-mass-formula)) with all
 quantities derived from $q_0$ and $m_e$.  No AME2020 binding
 energies are used as input.
 
@@ -18,7 +18,7 @@ configurations.
 **Step 2.** Insert $Z$ electrons by greedy minimisation of
 $\Phi_1$: for each electron, try all positions in the current
 ordering and choose the one with lowest $\Phi_1$.  This produces
-the atomic braid ordering ([atomic braid](#def\:atomic-braid))
+the atomic braid ordering ([atomic braid](#def:atomic-braid))
 with ep pairs.
 
 **Step 3.** For each generator $i$ of the atomic braid
@@ -59,6 +59,6 @@ Fitted parameters: **none**.
 The Python implementation is in
 `computations/atom_mass_combined.py`.  The Rust
 Gröbner–Shirshov engine
-([reduction methods](#rem\:groebner-reduction-methods)) computes
+([reduction methods](#rem:groebner-reduction-methods)) computes
 exact normal forms and $F_{\mathrm{Pauli}}$ certificates.  All
 witness files are committed to the repository.

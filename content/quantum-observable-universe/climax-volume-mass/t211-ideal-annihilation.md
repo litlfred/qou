@@ -5,7 +5,7 @@ is the **first excluded generator** — the knot that would
 produce a fourth lepton generation if embeddable.  The
 algebraic mechanism is the Chebyshev overflow in the
 genus-filtration ideal $\mathfrak{I}_4 = (u^5)$
-([genus-filtration ideal](#prop\:genus-filtration-ideal)):
+([genus-filtration ideal](#prop:genus-filtration-ideal)):
 the Hecke coefficient $a_{11}(u) = u^5 + 9u^4 + \cdots$
 has degree $5 > 4$, so $a_{11} \in (u^5)$.
 
@@ -38,7 +38,7 @@ But the cohomological constraints kill it:
 
 The separation is clean: the Iwahori--Hecke algebra sees no genus
 bound; the Chebyshev degree
-([genus-filtration ideal](#prop\:genus-filtration-ideal)) is
+([genus-filtration ideal](#prop:genus-filtration-ideal)) is
 the polynomial certificate for membership in the spectral
 filter.
 
@@ -74,7 +74,7 @@ at any level.
 
 The shell structure is governed by the transfer matrix
 eigenvalues $\lambda_\pm$ of $T_{\gamma e}(q)$
-([shell structure eigenvalues](#prop\:shell-structure-eigenvalues)).
+([shell structure eigenvalues](#prop:shell-structure-eigenvalues)).
 The torus knot $T_{2,11}$ has:
 
 $$
@@ -88,7 +88,7 @@ $$
   — flat, no energy separation, no sub-shells.
 * **No shell-transition levels**: zero effective crossings on $\Sigma_4$,
   so it cannot push a spin-orbit level across a gap
-  ([shell-transition knot](#prop\:shell-transition-knot)).
+  ([shell-transition knot](#prop:shell-transition-knot)).
 * **Null force operator**: the $(2,11)$ channel contributes the
   identity factor to the spectral decomposition — a
   multiplicative ghost.
@@ -125,7 +125,7 @@ This is a **crystallographic obstruction at the group level**:
 $11$-fold rotational symmetry is incompatible with the
 $5$-sheet Bring surface, just as $5$-fold symmetry is
 incompatible with a lattice
-([fivefold symmetry](#rem\:fivefold-symmetry)).
+([fivefold symmetry](#rem:fivefold-symmetry)).
 
 | Knot       |    Cyclic sym.    | Embeds in $S_5$? | Genus $\leq 4$? |        Status       |
 | ---------- | :---------------: | :--------------: | :-------------: | :-----------------: |
@@ -146,16 +146,16 @@ symmetry.
 of $T_{2,3}$ and $T_{2,5}$ at the top of the embedding table
 acquires a representation-theoretic origin under the weight
 identification of
-[prop:x5-bring-weight-identification](#prop\:x5-bring-weight-identification).
+[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification).
 Passing to the hyperelliptic quintic $\mathcal{X}_5$ of
-[thm:hyperelliptic-z5-classification](#thm\:hyperelliptic-z5-classification),
+[thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification),
 the non-trivial $\mathbb{Z}_5$-isotypical part of
 $H^1(\mathcal{X}_5, \mathbb{Q})$ is exactly the 4-dim character
 sum $\chi_1 \oplus \chi_2 \oplus \chi_3 \oplus \chi_4$, and the
 Seifert surface of $T_{2,5}$ fills this representation
 completely ($g(T_{2,5}) = 2 = \dim_{\mathbb{C}} J(\mathcal{X}_5)$),
 while $T_{2,3}$ occupies a 2-dim sub-isotype.  See
-[rem:weight-identification-consequences](#rem\:weight-identification-consequences)
+[rem:weight-identification-consequences](#rem:weight-identification-consequences)
 for details.
 
 ***

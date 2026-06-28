@@ -1,7 +1,7 @@
 ## Regularity as lifting
 
 **Regularity as lifting.**
-The [q-NS solution](#thm\:q-ns-wellposedness) $v_q(t)$ is smooth
+The [q-NS solution](#thm:q-ns-wellposedness) $v_q(t)$ is smooth
 for $q > 1$ because the exponential damping of high modes ensures
 $v_q$ has exponentially decaying Fourier coefficients, which
 guarantees all Yekutieli obstruction classes vanish:
@@ -18,7 +18,7 @@ any polynomial, so $v_q$ lifts through the tower to all levels.
 ## Local cohomology and topological selection
 
 **The local cohomology connection.**
-The [local cohomology group](#def\:local-cohomology-group)
+The [local cohomology group](#def:local-cohomology-group)
 $H^1_{\mathfrak{m}_1}(A)$ at the unit defect $z = 1$ measures
 precisely the obstruction to extending sections across the
 singularity.  At $q = 1$, the defect locus $\{z = 1\}$ is the
@@ -41,7 +41,7 @@ is separated from the unit, and $H^1_{\mathfrak{m}_1}(A) = 0$
 — no obstruction, hence regularity.
 
 **The :refterm[descent]{#descent} condition and vortex reconnection.**
-The [twisted 2-cocycle condition](#prop\:descent-condition)
+The [twisted 2-cocycle condition](#prop:descent-condition)
 
 $$
   d(g_{ijk}^{(n)}) = a_{ij}^{(n)} \cdot g_{ijk}^{(n)}
@@ -51,7 +51,7 @@ $$
 fails at the singular set $\Sigma$ because the transition
 functions $g_{ij}^{(n)}$ develop discontinuities there.  In the
 fluid picture, these discontinuities correspond to
-[vortex reconnection](#rem\:vortex-reconnection) events where the
+[vortex reconnection](#rem:vortex-reconnection) events where the
 divisor topology changes.  The obstruction class $\kappa_{n^*}$
 measures the total topological change at $\Sigma$: it is the
 net "reconnection charge" — the signed count of reconnection

@@ -1,6 +1,6 @@
 **Proposition (conditional on [`conj:classical-limit-stpart`](#conj:classical-limit-stpart) — classical limit).**
 *In the $q \to 1$ limit of the categorical trace
-([Feynman transition amplitude](#prop\:feynman-categorical-trace)),
+([Feynman transition amplitude](#prop:feynman-categorical-trace)),
 the following degenerations occur:*
 
 1. **(Hecke $\to$ symmetric group.)**
@@ -8,12 +8,12 @@ the following degenerations occur:*
    $(T - 1)(T + 1) = 0$, i.e.\ $T^2 = 1$.  The Iwahori--Hecke algebra
    $H_n(R, q)$ degenerates to the group algebra $k[S_n]$ of the symmetric
    group
-   ([Hecke algebra from braiding](#rem\:hecke-algebra-from-braiding)).*
+   ([Hecke algebra from braiding](#rem:hecke-algebra-from-braiding)).*
 
 2. **(Markov trace $\to$ flat character trace.)**
    *The Jones--Markov trace parameter
    $z = (q - 1)/(q^{1/2} + q^{-1/2})^2 \to 0$
-   ([Jones--Markov trace](#thm\:jones-markov-trace)),
+   ([Jones--Markov trace](#thm:jones-markov-trace)),
    and the Markov trace $\mathrm{tr}_M$ on $H_n(R, q)$ degenerates to
    the augmentation map
    $\varepsilon \colon k[S_n] \to k$ sending every group element to $1$.*
@@ -25,7 +25,7 @@ the following degenerations occur:*
    imposing $\sigma_i^2 = 1$ on the braid word.  The $q$-energy
    reduces to $\mathfrak{E}_1 = \mathfrak{S}_1$ because the rotational and
    translational terms vanish with $\hbar_q = 1 - q^{-1} \to 0$
-   ([$q$-energy](#def\:q-energy)).*
+   ([$q$-energy](#def:q-energy)).*
 
 4. **(Eigenbasis collapse.)**
    *The Jones polynomial $J_K(1) = 1$ for every knot $K$, so the

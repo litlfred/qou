@@ -28,7 +28,7 @@ $n \in \mathbb{N}$ write
  :refterm[monoidal category]{#monoidal-category}, related to the Hecke-mass element
  $\Phi_{\mathrm{mass}}$ by
  $\Phi_{\mathrm{mass}}(\beta) = (\tau \otimes \cdots \otimes \tau) \circ \Phi_n \circ \rho(\beta)$
- ([Hecke mass element](#def\:hecke-mass-element));
+ ([Hecke mass element](#def:hecke-mass-element));
 * $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ for the seven
  observed nuclear magic numbers.
 
@@ -37,9 +37,9 @@ $n \in \mathbb{N}$ write
 **Proposition (Conjecture — categorical neutrality of saturated
 shells).**
 *Let $\mathbf{C}$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category} satisfying the
-QOU substrate axioms ([Frobenius–Hopf substrate](#def\:frobenius-hopf-substrate))
+QOU substrate axioms ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate))
 and let $\Phi_n$ be the categorical mass endomorphism at level $n$
-([mass-endomorphism conjecture](#conj\:mass-endomorphism)). Then for
+([mass-endomorphism conjecture](#conj:mass-endomorphism)). Then for
 every $n \in \mathfrak{M}$ the full-twist
 $\Delta_n^2$ acts as the identity on $\Phi_n$:*
 

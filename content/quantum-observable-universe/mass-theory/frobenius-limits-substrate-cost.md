@@ -1,6 +1,6 @@
 **Remark.**
 *The Frobenius co-Casimir trace
-([universal Frobenius co-dimension](#thm\:frobenius-codim-universal))*
+([universal Frobenius co-dimension](#thm:frobenius-codim-universal))*
 
 $$
   \tau(C_{\dim_q}^{H_n(R, q)}) \;=\; \sum_{\lambda \,\vdash\, n} \frac{1}{\dim_q(\lambda)}
@@ -76,7 +76,7 @@ done.  Candidates and what they would require:*
    $m_e \cdot \tau(C_{\dim_q})$ to create any vortex.  No such
    argument has been constructed in this paper.*
 3. *Entropic-gravity analog (following
-   [entropic gravity](#rem\:entropic-gravity)): would need
+   [entropic gravity](#rem:entropic-gravity)): would need
    a holographic boundary computation yielding
    $\tau(C_{\dim_q})$ from an area law.*
 
@@ -88,7 +88,7 @@ limit structure is real; the physical reading is a conjecture.*
 
 *Where $\tau(C_{\dim_q})$ is vortex-independent substrate cost,
 the **brane tower**
-([mass endomorphism tower](#prop\:mass-endomorphism-tower))*
+([mass endomorphism tower](#prop:mass-endomorphism-tower))*
 
 $$
   \sum_i \Phi_q(|\hat V_i^{\mathrm{full}}|)
@@ -121,9 +121,9 @@ up to the Frobenius bound.*
 the Hecke-algebra transfer matrices: $\Phi_q$, $[k]_q$,
 $z = 1/(q^{1/2} + q^{-1/2})$, and intermediate $\hat V_i$.  The
 only calibration that enters the unified mass formula
-([unified knot mass](#thm\:knot-mass-formula-unified)) is $m_e$
+([unified knot mass](#thm:knot-mass-formula-unified)) is $m_e$
 (equivalently $E_0$ via $\beta$-decay, or $m_\mu/m_e$ via
-[local substrate](#prop\:local-substrate-q)).*
+[local substrate](#prop:local-substrate-q)).*
 
 *Derived substrate constants — $\hbar_q = (q-1)/q$, $c_q = 1/(q-1)$,
 $G_q$, $\eta_q$, $\chi_q$ — are all **functions of $q$ alone**,

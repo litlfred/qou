@@ -6,7 +6,7 @@ as "from Bring's surface — not derived". This block names the
 **algebraic claim** that explicates that footnote: each magic
 value is the rank of a distinguished $S_5$-stable period sub-
 lattice on Bring's surface
-([`def:brings-coordinate-ring`](#def\:brings-coordinate-ring))
+([`def:brings-coordinate-ring`](#def:brings-coordinate-ring))
 that closes a shell under the categorical :refterm[descent]{#descent} operator.
 
 This is workplan task **P1.4** path-(b): the conjecture provides
@@ -17,7 +17,7 @@ computation) is deferred.
 
 Let $\mathcal{B}$ be Bring's curve of genus $4$ with coordinate
 ring $\mathcal{O}_q(\mathcal{B})$
-([`def:brings-coordinate-ring`](#def\:brings-coordinate-ring))
+([`def:brings-coordinate-ring`](#def:brings-coordinate-ring))
 and $S_5$-action by algebra automorphisms.  The integer
 homology $H_1(\mathcal{B}, \mathbb{Z})$ has rank $2g = 8$ and
 carries a natural symplectic pairing under which $S_5$ acts.
@@ -28,7 +28,7 @@ isomorphism.  Each isomorphism class has a canonical rank, given
 by the dimension of the underlying $\mathbb{Q}[S_5]$-submodule.
 
 The **categorical :refterm[descent]{#descent} operator**
-$\hat\tau$ ([:refterm[descent]{#descent} involution](#def\:descent-involution)) acts
+$\hat\tau$ ([:refterm[descent]{#descent} involution](#def:descent-involution)) acts
 on the brane tower's level-$n$ jet algebra; restricting to the
 level-$0$ Reeb-orbit chart of Bring's surface gives an action on
 $H_1(\mathcal{B}, \mathbb{Z})$ that commutes with the $S_5$-action.

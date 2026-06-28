@@ -1,12 +1,12 @@
 *Proof.*
 The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
-([Hecke mass element](#def\:hecke-mass-element)) decomposes via the
+([Hecke mass element](#def:hecke-mass-element)) decomposes via the
 :refterm[descent]{#descent} involution into descended and transient contributions.  The
 transient trace localises to blow-up centres $p$ in the brane tower
-([topological decomposition](#thm\:topological-mass)); integrating the
+([topological decomposition](#thm:topological-mass)); integrating the
 $q$-deformed expansion flow $\ln_q(1+t)/t$ along the radial
 coordinate of the Briggs--Klein chart
-([Briggs--Klein chart](#def\:briggs-klein-chart)) over each resolved
+([Briggs--Klein chart](#def:briggs-klein-chart)) over each resolved
 defect $E_i \cong \mathbb{P}^1(\mathbb{C})$ yields the symmetric
 q-dilogarithm:
 
@@ -61,7 +61,7 @@ with spectral coordinate $\prod_{i\in S}\hat{V}_i$ and Markov
 weight $z^{|S|}$; triples and higher generator subsets are not
 independent at level $n$ (they ascend to jet level $n+1$ via the
 pentagon closure of $\Phi_q$, see
-[quantum Bloch group](#def\:quantum-bloch-group)).  The independent
+[quantum Bloch group](#def:quantum-bloch-group)).  The independent
 order-1 and order-2 subsets enumerate exactly the singleton and
 pair sums above.
 
@@ -83,5 +83,5 @@ the same transient support as the adjacent pair.  Higher-order
 subsets of size $\geq 3$ are similarly subsumed — not into level-$n$
 singletons and pairs, but into the level-$(n{+}1)$ jet contribution
 via the pentagon identity of the quantum dilogarithm (for the
-explicit ascension see [jet-tower reformulation](#rem\:mass-endomorphism-jet-tower)).
+explicit ascension see [jet-tower reformulation](#rem:mass-endomorphism-jet-tower)).
 $\square$

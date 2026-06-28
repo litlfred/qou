@@ -1,8 +1,8 @@
 The mass $\mathfrak{m}(\varrho)$ of a vortex in any quantum observable universe
-([mass identity](#def\:mass-identity)) decomposes as a sum of a descended
+([mass identity](#def:mass-identity)) decomposes as a sum of a descended
 holonomy contribution and finitely many transient contributions localised
 at the exceptional divisors of the brane boundary
-([brane boundary](#def\:brane-boundary)):
+([brane boundary](#def:brane-boundary)):
 
 $$
   \mathfrak{m}(\varrho)
@@ -14,15 +14,15 @@ $$
 $$
 
 where $\Phi_q(z_i)$ is the quantum dilogarithm
-([quantum dilogarithm](#cor\:quantum-dilogarithm)) evaluated at the
+([quantum dilogarithm](#cor:quantum-dilogarithm)) evaluated at the
 $i$-th blow-up centre $z_i$, and $\varrho_0$ is the unknot core of $\varrho$.
 
 ## Relationship to the proved theorem
 
 The analogous decomposition for morphisms supported along the
 *recursive brane tower*
-([recursive brane tower](#def\:recursive-brane-tower)) has been proved as
-[Topological Decomposition of Mass](#thm\:topological-mass). That theorem
+([recursive brane tower](#def:recursive-brane-tower)) has been proved as
+[Topological Decomposition of Mass](#thm:topological-mass). That theorem
 uses the :refterm[descent]{#descent} involution $\hat\tau_n$ and Frobenius categorical traces
 to split $\mathfrak{m}(\varrho)$ into descended and transient parts.
 

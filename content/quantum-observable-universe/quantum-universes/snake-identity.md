@@ -40,7 +40,7 @@ two commutative diagrams:
 These identities express the fact that $(\mathrm{ev}, \mathrm{coev})$
 exhibit $V^{\vee}$ as a :refterm[right dual]{#right-dual} of $V$ (equivalently, that the pair
 forms an :defterm[exact pairing]{#exact-pairing} in the sense of
-[`CategoryTheory.ExactPairing`](#rem\:glossary-exact-pairing)). The
+[`CategoryTheory.ExactPairing`](#rem:glossary-exact-pairing)). The
 terminology "snake" comes from the graphical calculus, where the
 composites trace out an S-shaped curve that straightens to a vertical
 line.

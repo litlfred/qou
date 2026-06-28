@@ -1,6 +1,6 @@
 The paper's chirality factors $\{1 + h,\ 1 - h^2,\ (1 - h^2)^2\}$
 for $\{D,\ T/^3{\rm He},\ {}^4{\rm He}\}$
-([figure-eight BW coefficients](#prop\:six-term-mass-formula-complete))
+([figure-eight BW coefficients](#prop:six-term-mass-formula-complete))
 arise from a "Frobenius-norm-deviation" argument that upstream
 commits describe but do not fully derive. This proposition
 formalises the chirality factor as a **Frobenius self-pairing**
@@ -10,7 +10,7 @@ that definition.
 **Definition (Frobenius self-pairing chirality).**
 *Let $(A, \tau)$ be a self-dual Frobenius algebra (e.g., the Hecke
 algebra $H_n(R, q)$ under Markov trace
-([Jones–Markov trace](#thm\:jones-markov-trace))), and let
+([Jones–Markov trace](#thm:jones-markov-trace))), and let
 $\beta \in A$ be a braid word. Let $\beta^* \in A$ denote the
 image of $\beta$ under the algebra **antipode** (the anti-involution
 $\sigma_i \mapsto \sigma_i^{-1}$, reverse word order). Define the
@@ -84,7 +84,7 @@ moments** when the braid is viewed as a morphism $\varrho: \mathbf{1}
 \to A$ (closure operation), not as an abstract algebra element.*
 
 *Paper's derivation
-([figure-eight BW coefficients](#prop\:six-term-mass-formula-complete)
+([figure-eight BW coefficients](#prop:six-term-mass-formula-complete)
 §Proof) uses the Fricke trace relation*
 
 $$
@@ -128,7 +128,7 @@ $\{1+h, 1-h^2, (1-h^2)^2\}$ await a uniform categorical proof.*
  algebra with antipode — not the Hecke case.*
 2. *A categorical framing that ties chirality to the **same**
  Frobenius structure producing the co-Casimir residual
- ([Frobenius universal](#thm\:frobenius-codim-universal)).*
+ ([Frobenius universal](#thm:frobenius-codim-universal)).*
 3. \*A clear path to the missing derivation: ribbon-category closure
  * writhe identification.\*
 

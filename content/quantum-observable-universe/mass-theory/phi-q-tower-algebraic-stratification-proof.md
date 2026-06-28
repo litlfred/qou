@@ -8,7 +8,7 @@
    skein smoothing.*
 
 2. **The mass formula sums over levels.** Per the
-   [mass endomorphism tower](#prop\:mass-endomorphism-tower)
+   [mass endomorphism tower](#prop:mass-endomorphism-tower)
    formula, the categorical mass equals
    \$\bigl\lvert\prod\_i \hat V\_i\bigr\rvert + \sum\_{i} \Phi\_q(|\hat V\_i|)
    * z^2 \sum\_{(i,j)} \Phi\_q(|\hat V\_i \hat V\_j|)$.
@@ -17,7 +17,7 @@
 
 3. **No level $\geq 3$ contribution at fixed jet level $n$.** Per
    pentagon ascension
-   ([jet-tower remark](#rem\:mass-endomorphism-jet-tower) §"Pentagon
+   ([jet-tower remark](#rem:mass-endomorphism-jet-tower) §"Pentagon
    ascension"), any would-be order-3 contribution
    $\Phi_q(|\hat V_i \hat V_j \hat V_k|)$ rewrites via the pentagon
    identity as a product of order-$\leq 2$ factors at level $n$
@@ -26,7 +26,7 @@
 
 4. **Each summand is in $\mathbb{Z}[q^{\pm 1/2}]$.** $\hat V_S$ is a
    Laurent polynomial in $q^{1/2}$ with integer coefficients
-   ([algebraic quantum volume](#def\:algebraic-quantum-volume)); the
+   ([algebraic quantum volume](#def:algebraic-quantum-volume)); the
    quantum dilogarithm $\Phi_q$ is given as a formal product
    $\prod_{n \geq 0} (1 - q^n \cdot x)$ in $\mathbb{Z}[q]\![[x]\!]$
    and reduces to a polynomial when truncated at the GB-filtration
@@ -38,7 +38,7 @@ $\square$
 ## Relation to the JSJ archimedean bridge
 
 The conjecture
-[Φ$_q$-tower JSJ archimedean bridge](#conj\:phi-q-tower-jsj-bridge)
+[Φ$_q$-tower JSJ archimedean bridge](#conj:phi-q-tower-jsj-bridge)
 states that under $\tau_{\mathrm{arch}}$ each algebraic stratum $S$
 maps to a JSJ piece of $\widehat\beta$, with the algebraic value
 $\Phi_q(|\hat V_S|)$ τ-realising to $\rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S)$.

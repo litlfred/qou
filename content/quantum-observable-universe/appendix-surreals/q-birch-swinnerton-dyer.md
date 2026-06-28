@@ -1,7 +1,7 @@
 **Conjecture ($q$-BSD).**
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with substrate
 parameter $q$ and Descartes elliptic curve
-$\mathcal{E}_q$ ([Descartes elliptic curve](#prop\:descartes-elliptic-curve)).
+$\mathcal{E}_q$ ([Descartes elliptic curve](#prop:descartes-elliptic-curve)).
 Define the **categorical Mordell--Weil group** as the abelian group of
 $\mathbf{1}$-rational points:
 
@@ -18,7 +18,7 @@ $r_q := \mathrm{rank}\mathcal{E}_q(\mathbf{1})$.
 
 **Categorical determination of the rank.**
 The Tannaka--Krein equivalence
-([reconstruction](#thm\:tannaka-krein-isomorphism)) identifies
+([reconstruction](#thm:tannaka-krein-isomorphism)) identifies
 $\mathbf{C} \simeq \mathrm{Rep}(G)$, so the categorical
 Mordell--Weil group is the $G$-invariant subspace:
 
@@ -41,7 +41,7 @@ critically on the categorical axioms:
 **Proof that $r_q = 0$ in the Descartes QOU.**
 The Descartes elliptic curve $\mathcal{E}_q$ is a color
 fiber of the color fibration
-([color elliptic](#prop\:color-elliptic)), so $\mathrm{SU}(2)$
+([color elliptic](#prop:color-elliptic)), so $\mathrm{SU}(2)$
 acts non-by definition on it. The first cohomology
 $H^1(\mathcal{E}_q) \cong \mathbb{C}^2$ is two-dimensional
 (genus $1$). The only two-dimensional irreducible
@@ -73,7 +73,7 @@ categorically determined as a color fiber.
 
 **The substrate family over $\mathbb{P}^1$.**
 The substrate parameter $q$ is a section of $\mathbb{G}_m$
-([substrate $\mathbb{G}_m$ torsion](#rem\:substrate-gm-torsion)).
+([substrate $\mathbb{G}_m$ torsion](#rem:substrate-gm-torsion)).
 The $q$-BSD conjecture is a statement about a family of
 $L$-functions parametrised by $\mathbb{G}_m$, and its behavior
 at the boundary and torsion points of $\mathbb{P}^1$ reveals
@@ -101,7 +101,7 @@ dimensions $[2j+1]_q > 0$. The $q$-BSD data is:
 
 **(II) $\mathbb{G}_m$ torsion: roots of unity $q = \zeta_n$.**
 At the torsion points
-([root-of-unity truncation](#prop\:root-of-unity-truncation)),
+([root-of-unity truncation](#prop:root-of-unity-truncation)),
 the representation category truncates to finitely many
 simple objects $V_0, V_{1/2}, \ldots, V_{(n-2)/2}$, forming
 a **modular tensor category** (Chern--Simons TQFT at level
@@ -123,7 +123,7 @@ $n$). The $q$-BSD data undergoes a phase transition:
  an infinite product.
 
 * **The Kummer obstruction**
- ([Kummer specialisation](#prop\:ns-kummer-specialisation))
+ ([Kummer specialisation](#prop:ns-kummer-specialisation))
  controls the behavior: $\kappa_0 \bmod n = 0$ iff
  $n \mid \chi(A)$. For $\chi(A) = -6$, the obstruction
  vanishes only at $n \in \{1, 2, 3, 6\}$ and persists
@@ -148,7 +148,7 @@ At the boundary of $\mathbb{P}^1$:
 **The $q$-deformed $L$-function.**
 The Frobenius eigenvalues $\alpha_1, \ldots, \alpha_8$ of the local
 $q$-zeta function
-([local $q$-zeta](#def\:local-q-zeta-function)) act on $H^1(\mathcal{B})$,
+([local $q$-zeta](#def:local-q-zeta-function)) act on $H^1(\mathcal{B})$,
 the first étale cohomology of Bring's curve. The elliptic fiber
 $\mathcal{E}_q \hookrightarrow \mathcal{B}$ is a genus-$1$ sub-curve,
 The restriction of Frobenius to
@@ -248,7 +248,7 @@ the Tamagawa numbers.
 
 **Kummer tower and the $q \to 1$ obstruction.**
 The Kummer exact sequence
-([Kummer specialisation](#prop\:ns-kummer-specialisation))
+([Kummer specialisation](#prop:ns-kummer-specialisation))
 
 $$
 1 \to \mu_n \to \mathbb{G}_m
@@ -272,7 +272,7 @@ tower, the $q$-BSD formula carries non-trivial arithmetic
 content that cannot be cancelled by torsion.
 
 The parallel with the NS obstruction
-([NS Kummer](#prop\:ns-kummer-specialisation)) is exact:
+([NS Kummer](#prop:ns-kummer-specialisation)) is exact:
 
 | Millennium problem | $q$-scale | Classical limit $q \to 1$ | Obstruction |
 | ---------------------- | ---------------------------------- | ---------------------------------------- | --------------------------------------------------- |

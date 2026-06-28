@@ -1,6 +1,6 @@
 The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ of the
 categorical action
-([categorical action](#def\:categorical-action)) is not a single
+([categorical action](#def:categorical-action)) is not a single
 knot operator: it is an element of a **vector space** that
 decomposes over the irreducible representations of $H_n(q)$.
 This decomposition, combined with the Frobenius self-duality
@@ -14,14 +14,14 @@ given interaction and with what weights.
 realisation $H_r(q)$, and let
 $\{\tau(r_i, s_i)\}_{i=1}^{6}$ be the embeddable torus knots on
 $\Sigma_4$
-([cohomological embedding](#prop\:cohomological-embedding)).
+([cohomological embedding](#prop:cohomological-embedding)).
 Let $\gamma_1, \gamma_2 \in H_3(q)$ be two incoming particle
 states.*
 
 **(i) Spectral decomposition of the mediating endomorphism.**
 *The physics endomorphism $\Phi$ decomposes via Schur
 orthogonality
-([RJ canonical inner product](#prop\:rj-canonical-inner-product))
+([RJ canonical inner product](#prop:rj-canonical-inner-product))
 as:*
 
 $$
@@ -78,7 +78,7 @@ there exists a unique minimal-norm supply that satisfies it.*
 **(iv) Minimum-action selection.**
 *Among all $\Phi \in \mathrm{End}(A)$ compatible with the
 on-shell condition $\star_q F_\nabla = F_\nabla$
-([instanton on-shell](#rem\:instanton-on-shell)), the physical
+([instanton on-shell](#rem:instanton-on-shell)), the physical
 interaction selects the $\Phi$ minimizing the categorical
 action $|\mathfrak{S}| = |\mathrm{tr}(\Phi)|$.  The dominant
 channel is the irrep $\lambda_*$ with largest

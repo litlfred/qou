@@ -1,10 +1,10 @@
 Discrete time at the Planck scale
-([discrete Planck step](#rem\:discrete-planck-step)) gives
+([discrete Planck step](#rem:discrete-planck-step)) gives
 the universe discrete mathematics for free.  The iteration
 $f_q(z) = z^2 + c(q)$ at each Planck step is a polynomial
 map on a finite set — combinatorics, not analysis.  The
 Toffoli braid $P_{7,6}(q)$
-([Toffoli transfer matrix](#prop\:toffoli-transfer-matrix))
+([Toffoli transfer matrix](#prop:toffoli-transfer-matrix))
 is a rational function of the substrate parameter $q$ with
 a factor $(q - 1)$ in its numerator.  This means:
 
@@ -12,7 +12,7 @@ a factor $(q - 1)$ in its numerator.  This means:
 * The combinatorial structure that makes reversible
   computation possible is present at every value of $q$.
 * As the universe cools from the Big Bang ($q \to \infty$)
-  to our epoch ($q = q_0$, [local substrate $q$](#prop\:local-substrate-q)), the amplitude decreases but
+  to our epoch ($q = q_0$, [local substrate $q$](#prop:local-substrate-q)), the amplitude decreases but
   **never vanishes**.
 
 This is why computers can be built from stones, from beads
@@ -42,7 +42,7 @@ reduces the amplitude $P_{7,6}$ and stretches the Planck
 step $t_P(q) = q/(q-1)$.
 
 At $q = q_0$
-([local substrate $q$](#prop\:local-substrate-q)):
+([local substrate $q$](#prop:local-substrate-q)):
 
 $$
   P_{7,6}(q_0) = +0.0495, \qquad

@@ -110,7 +110,7 @@ tower-direction puzzle sits a more fundamental gap: the relation
 $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
 derive the framework's $\mathfrak{Q}_\beta$ prediction is itself an **ansatz**,
 not derived from the canonical per-braid mass formula
-[`prop:per-braid-mass-tower`](#prop\:per-braid-mass-tower).
+[`prop:per-braid-mass-tower`](#prop:per-braid-mass-tower).
 The unweighted $\mathrm{net}$ sum is structurally different
 from the Markov-trace weighted sums of the mass tower. The +0.17%
 match (single-tick form) could be (a) genuine truncation residual

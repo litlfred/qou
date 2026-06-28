@@ -1,4 +1,4 @@
-The Laplace transform ([categorical Laplace transform](#def\:categorical-laplace))
+The Laplace transform ([categorical Laplace transform](#def:categorical-laplace))
 pairs against the *real* exponential grouplike $\exp_q(-s\cdot)$.  Its
 companion pairs against the *unitary* grouplike $\exp_q(i\xi\cdot)$ — a
 second grouplike of the same Hopf algebra $\mathcal{H}_q$, distinguished only by

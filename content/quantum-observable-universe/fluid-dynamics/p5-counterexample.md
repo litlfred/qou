@@ -1,6 +1,6 @@
 Consider the $q \to 1$ limit of solutions to the
-[q-NS equation](#def\:q-navier-stokes), using the
-[Yekutieli tower](#def\:recursive-brane-tower) to identify the
+[q-NS equation](#def:q-navier-stokes), using the
+[Yekutieli tower](#def:recursive-brane-tower) to identify the
 homological stratum where blowup occurs.
 
 **The initial data.**
@@ -32,10 +32,10 @@ The separation $d$ is measured in units of the Planck length
 $\ell_q = (q-1)/q$.
 
 **Phase 1: q-deformed evolution ($q > 1$).**
-For $q > 1$, the [q-NS well-posedness](#thm\:q-ns-wellposedness)
+For $q > 1$, the [q-NS well-posedness](#thm:q-ns-wellposedness)
 guarantees a unique smooth global solution.  The two filaments
 approach, interact, and the outcome is determined by the
-[Hecke relation](#rem\:braid-fluid):
+[Hecke relation](#rem:braid-fluid):
 
 * With probability amplitude $q/(q+q^{-1})$: **pass-through**
   (symmetric channel).  The filaments continue past each other.
@@ -86,10 +86,10 @@ intersection curve, which is 1-dimensional.
 
 **Claim 2 (Obstruction level).**
 $n^* = 2$ — the blowup occurs at the second level of the
-[brane tower](#def\:recursive-brane-tower).
+[brane tower](#def:recursive-brane-tower).
 
 *Reason:* From the
-[Yekutieli analysis](#conj\:blowup-yekutieli), $n^*$ is
+[Yekutieli analysis](#conj:blowup-yekutieli), $n^*$ is
 determined by the Sobolev regularity at blowup.  Anti-parallel
 vortex collision produces a velocity field with bounded
 $L^2$ norm but unbounded vorticity, placing it in $H^s$ with
@@ -112,7 +112,7 @@ where $\mathrm{lk}(\varrho_1, \varrho_2)$ is the linking number
 of the two filaments (an integer) and $[\mathcal{B}]$ is the
 fundamental class of the band sheaf.
 
-*Reason:* The [:refterm[descent]{#descent} condition](#prop\:descent-condition) fails
+*Reason:* The [:refterm[descent]{#descent} condition](#prop:descent-condition) fails
 at $\Sigma$ because the transition functions $g_{ij}^{(2)}$ of
 the second jet prolongation acquire a discontinuity proportional
 to the linking number.  The linking number is a topological
@@ -120,7 +120,7 @@ invariant — it does not depend on the approach geometry but
 only on the knot type of the filament pair.
 
 **Claim 4 (Local cohomology).**
-The [local cohomology](#def\:local-cohomology-group) at the
+The [local cohomology](#def:local-cohomology-group) at the
 collision point $p \in \Sigma$ satisfies
 
 $$

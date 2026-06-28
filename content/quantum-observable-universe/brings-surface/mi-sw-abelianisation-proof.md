@@ -2,7 +2,7 @@ The proof proceeds in three steps.
 
 *Step 1: Abelianisation of the connection.*
 By
-([Cartan reduction recovers the SW differential](#lem\:mi-sw-abelianisation-cartan)),
+([Cartan reduction recovers the SW differential](#lem:mi-sw-abelianisation-cartan)),
 the connection on the exceptional divisor $\mathcal{S}_c$ reduces to its
 Cartan component $A^0 = X\, dz = \lambda_{\mathrm{SW}}$.
 
@@ -23,7 +23,7 @@ yields the absolute value of the period.
 At vertical degree $n = 0$ the Killing-form projection onto $J^0$
 recovers the base differential $\lambda_{\mathrm{SW}}^{(0)} = X\, dz$
 and the electron period $a_D^{(e)}$.  At vertical degree $n \geq 1$ the
-([jet prolongation](#prop\:jet-prolongation)) lifts the
+([jet prolongation](#prop:jet-prolongation)) lifts the
 connection to $J^n E$, replacing $X\, dz$ with the $n$-th prolonged
 differential $\lambda_{\mathrm{SW}}^{(n)}$: the $1$-jet component is
 $dX$ (the implicit derivative of the color tube

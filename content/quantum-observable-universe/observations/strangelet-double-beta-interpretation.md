@@ -3,7 +3,7 @@
 The Skein amplitude $s \approx 0.104$ is numerically
 indistinguishable from the EM/strong ratio
 $\tanh(\ln q) \approx 0.104$
-([crossing energy decomposition](#prop\:crossing-energy-decomposition)).
+([crossing energy decomposition](#prop:crossing-energy-decomposition)).
 This is not a coincidence: both measure the **antisymmetric
 channel** of the $R$-matrix braiding.  Each crossing change
 couples the degree-$2$ fiber to the degree-$1$ fiber through
@@ -31,7 +31,7 @@ $$
 
 The intermediate knot is the **figure-eight** $4_1$ — the
 amphichiral knot identified with the Higgs mass mechanism
-([building block knots](#rem\:building-block-knots)).  Its
+([building block knots](#rem:building-block-knots)).  Its
 Jones polynomial at $q = q_0$ is $J(4_1) = 1.033$, close
 to $1$ (the unknot value).  The intermediate state is
 "almost trivial" — a fleeting Higgs-like excitation between

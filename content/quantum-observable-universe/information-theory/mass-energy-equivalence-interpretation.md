@@ -41,7 +41,7 @@ At $q = q_0$: $\mathfrak{m}_{e^-} = 3 q_0 \times 0.01203 \approx 0.0401$ (in Ree
 
 **Pair creation reinterpreted.**
 The pair production threshold
-([pair creation energy](#rem\:pair-creation-energy)) becomes:
+([pair creation energy](#rem:pair-creation-energy)) becomes:
 
 $$
   E_{\gamma}  \geq 
@@ -57,7 +57,7 @@ $|E_{e^-}| + |E_{e^+}| = 3q + 3q^{-1} = 3(q + q^{-1}) = 6\cosh(\ln q) \approx 6.
 **Archimedean realisation.**
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's
 nonabelian multiplicative integral \[yekutieli2015]
-([mass over $\mathbb{C}$](#ex\:mass-identity-C)), and
+([mass over $\mathbb{C}$](#ex:mass-identity-C)), and
 $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes
 
 $$

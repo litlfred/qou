@@ -5,14 +5,14 @@ so $\mathrm{End}_{H_r(q)}(V^{\otimes r})$ decomposes as
 $\bigoplus_\lambda \mathrm{End}(V_\lambda)$ by the Wedderburn
 theorem.  The Markov trace projects onto each component with
 weight $d_\lambda(q)$ by Schur orthogonality
-([RJ inner product](#prop\:rj-canonical-inner-product)).
+([RJ inner product](#prop:rj-canonical-inner-product)).
 
 **(ii)** The categorical action
 $\mathfrak{S} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A = \mathrm{tr}(\Phi)$
 is linear in $\Phi$.  Substituting the spectral decomposition
 (i) and using the identification
 $\mathrm{tr} = \mathrm{tr}_M$ (archimedean :refterm[descent]{#descent},
-[RJ interpretation](#rem\:rj-inner-product-interpretation))
+[RJ interpretation](#rem:rj-inner-product-interpretation))
 gives the stated sum over channels.
 
 **(iii)** The Frobenius pairing

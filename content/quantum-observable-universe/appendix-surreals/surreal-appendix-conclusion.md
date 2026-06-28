@@ -39,12 +39,12 @@ answers. A partial list:
    $\varepsilon$-flexibility is illusory and the main paper loses
    nothing by ignoring it. We conjecture the flexibility is
    *real* when the ground ring is not a field
-   ([infinitesimal Frobenius](#conj\:infinitesimal-frobenius)),
+   ([infinitesimal Frobenius](#conj:infinitesimal-frobenius)),
    but a proof or counterexample is outstanding.
 
 6. **Kashaev as a surreal statement.** The reformulation
    $\mathrm{st}\bigl(2 \pi \log |J_K(q_\omega, \omega)|/\omega\bigr) = \mathrm{Vol}(S^3 \setminus K)$
-   ([Kashaev surreal](#conj\:kashaev-surreal)) is equivalent to the
+   ([Kashaev surreal](#conj:kashaev-surreal)) is equivalent to the
    classical conjecture modulo the meaning of $q_\omega$. Its
    value, if any, is separating the algebraic (Hecke/Markov)
    content from the transcendental (dilogarithm, hyperbolic

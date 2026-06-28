@@ -4,7 +4,7 @@
 Let $\beta$ be a braid on $n$ strands with $c$ crossings,
 $L = \hat{\beta}$ its closure, and
 $\mathcal{R}(L)$ the Skein resolution tree
-([Skein Turing machine](#rem\:skein-turing-machine)).  Fix a
+([Skein Turing machine](#rem:skein-turing-machine)).  Fix a
 polynomial bound $p(c) = c^d$.
 
 **Definition (polynomial observable subcategory).**
@@ -27,7 +27,7 @@ Markov trace restricted to $\mathcal{R}_{p(c)}$ — in at most
 $p(c)$ Planck steps.  This is the computational analog of the
 observable subcategory
 $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
-([observable subcategory](#def\:observable-subcategory)): the
+([observable subcategory](#def:observable-subcategory)): the
 nodes of the resolution tree from which the degree-$0$ answer
 $P_L(q)$ is polynomial-time accessible.
 
@@ -63,7 +63,7 @@ This is the locus in the resolution tree where every
 polynomial-time degree-$0$ section vanishes — the exact
 analog of the jet horizon
 $\mathcal{H} = V(\mathfrak{h})$
-([jet horizon](#def\:jet-horizon)), with the brane tower
+([jet horizon](#def:jet-horizon)), with the brane tower
 replaced by the resolution tower and the Frobenius algebra
 replaced by the Iwahori--Hecke algebra.
 
@@ -95,7 +95,7 @@ $$
 
 *For the QOU at substrate parameter $q_0 \in
 \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$
-(non-torsion, [substrate $\mathbb{G}_m$-torsion](#rem\:substrate-gm-torsion)):*
+(non-torsion, [substrate $\mathbb{G}_m$-torsion](#rem:substrate-gm-torsion)):*
 
 *There exists a family of braids
 $\{L_N = \hat{\beta}_N\}_{N \geq 1}$ with $c_N = 3N$ crossings

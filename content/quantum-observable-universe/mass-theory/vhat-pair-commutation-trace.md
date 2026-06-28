@@ -1,5 +1,5 @@
 The jet-tower mass formula
-([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower))
+([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower))
 contains a "pentagon ascension" argument that non-rigorously invokes the
 quantum-dilogarithm pentagon identity
 $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$ —
@@ -30,7 +30,7 @@ $$
 
 with $a_i, b_i \in \mathbb{Z}[q^{\pm 1/2}]$ determined by the
 braid word and the Hecke normal form
-([def:algebraic-quantum-volume](#def\:algebraic-quantum-volume)).
+([def:algebraic-quantum-volume](#def:algebraic-quantum-volume)).
 
 **Lemma (pair commutation at traced-volume level).**
 *For any two indices $i, j$ — adjacent or non-adjacent —*

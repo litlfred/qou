@@ -89,7 +89,7 @@ self-duality.*
 **GB-filtration (confinement) decomposition.**
 *When $A = H_n(R, q)$ is filtered by the confinement filtration
 $J^\bullet(q)$
-([confinement level](#def\:confinement-level)), the partitions
+([confinement level](#def:confinement-level)), the partitions
 $\lambda$ sort by level
 $\ell(\lambda) = \mathrm{height}(\lambda) - 1$.  The Frobenius
 co-Casimir trace decomposes*
@@ -138,7 +138,7 @@ $$
 
 *This is the **universal derivation** of the proton
 $(5/2) \cdot m_e$ residual
-([proton residual](#prop\:partition-sum-proton-residual)) and its
+([proton residual](#prop:partition-sum-proton-residual)) and its
 extensions to nuclear bindings.  The specific value
 $\tau(C_{\dim_q})$ depends on the algebra $A$ (hence on the
 vortex content), but the **structural form** — trace of the
@@ -162,13 +162,13 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
   $\varrho_{\mathfrak{n}}$ or any other trefoil-like vortex.
   Vortex-dependent corrections (e.g. chirality factors
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
-  ([figure-eight BW coefficients](#prop\:six-term-mass-formula-complete))
+  ([figure-eight BW coefficients](#prop:six-term-mass-formula-complete))
   or knot-factor Frobenius pairings per
-  ([knot-factor Frobenius pairing](#conj\:knot-factor-frobenius-pairing))
+  ([knot-factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
   — are separate structural terms beyond $\tau(C_{\dim_q})$.*
 
 *The unified mass formula
-([unified knot mass](#thm\:knot-mass-formula-unified)) therefore has
+([unified knot mass](#thm:knot-mass-formula-unified)) therefore has
 three tiers:*
 
 1. *Vortex-specific: descended $|\mathrm{tr}_M(\sigma_w)|$ and brane

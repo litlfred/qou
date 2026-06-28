@@ -2,7 +2,7 @@
 The projection $\hat{\tau}_n(\alpha)$ lies in
 $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\hat{\tau}_n$, which is
 isomorphic to the level-$n$ section algebra via the ascent embedding
-$\ell_n$ ([:refterm[descent]{#descent} involution](#def\:descent-involution)).  The surface
+$\ell_n$ ([:refterm[descent]{#descent} involution](#def:descent-involution)).  The surface
 $\Sigma$ with $\partial\Sigma = \varrho$ decomposes under the topological
 blow-up as $\Sigma = \Sigma_0 \cup \bigcup_{i=1}^N D_i$, where
 $\Sigma_0$ is a disc spanning the unknot core $\varrho_0$ and each

@@ -222,7 +222,7 @@ The conjecture has two independent claims:
    depend on $n_\star$. The analytic prerequisite — that the infinite
    product $\Phi_q(z) = \prod_{k\geq 1}(1-q^{-k}z)^{-1}$ is a
    well-defined positive real on $|z| < q$ — is now **proved** as
-   [convergence of the quantum dilogarithm](#prop\:quantum-dilog-convergence)
+   [convergence of the quantum dilogarithm](#prop:quantum-dilog-convergence)
    (Lean `QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable`,
    sorry-free): the convergence half of the conjecture is a theorem, so the
    $z$-Habiro Cauchy limit has a well-defined analytic target.

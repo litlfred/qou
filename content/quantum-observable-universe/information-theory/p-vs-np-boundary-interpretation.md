@@ -36,13 +36,13 @@ See [Table 1](#tbl:p-vs-np-boundary-table1-data).
 
 2. **Cohomological.**  The Skein resolution obstruction
    $\kappa_c^{\mathrm{comp}}(L, q) \neq 0$
-   ([Skein resolution obstruction](#def\:skein-resolution-obstruction)).
+   ([Skein resolution obstruction](#def:skein-resolution-obstruction)).
    The Yekutieli class obstructs the lift from polynomial
    depth to full resolution.
 
 3. **Information-theoretic.**  The effective tree size after
    interference exceeds the polynomial bandwidth budget
-   ([bandwidth bound](#prop\:p-bandwidth-bound)):
+   ([bandwidth bound](#prop:p-bandwidth-bound)):
    $I(\mathrm{poly}(c)) < c \cdot \log 3$ $q$-bits.
 
 All three are equivalent: the ideal is non-trivial iff the
@@ -52,7 +52,7 @@ saturated.
 **Connection to quantum computation.**
 
 The :refterm[descent]{#descent} involution $\hat{\tau}$
-([quantum universality](#conj\:quantum-computational-universality))
+([quantum universality](#conj:quantum-computational-universality))
 acts on the boundary.  At a root of unity $q_k$:
 
 $$

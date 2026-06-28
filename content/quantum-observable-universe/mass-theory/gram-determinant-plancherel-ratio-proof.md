@@ -8,7 +8,7 @@ $$
   \frac{\dim_q V_\lambda \cdot \dim V_\lambda}{[n]_q!}
 $$
 
-([Gram-spectral connection](#rem\:gram-matrix-spectral-connection)).
+([Gram-spectral connection](#rem:gram-matrix-spectral-connection)).
 The classical limit $q \to 1$ replaces $\dim_q \to \dim$ and $[n]_q!
 \to n!$.  For the 2-knot $(\beta_s, \beta_w)$ configuration, the
 relevant determinant projects onto the rank-$2$ sublattice spanned

@@ -1,6 +1,6 @@
 *Existence.*
-By [QU-to-QOU lifting](#thm\:qu-to-qou) and
-[genus-maximal :refterm[descent]{#descent}](#prop\:genus-maximal-descent), the base curve is a smooth
+By [QU-to-QOU lifting](#thm:qu-to-qou) and
+[genus-maximal :refterm[descent]{#descent}](#prop:genus-maximal-descent), the base curve is a smooth
 genus-$4$ curve $\Sigma$ with $\chi(\Sigma) = -6$.
 The Hurwitz bound gives $\lvert\mathrm{Aut}(\Sigma)\rvert \leq 252$;
 among genus-$4$ curves, Bring's surface achieves the maximum

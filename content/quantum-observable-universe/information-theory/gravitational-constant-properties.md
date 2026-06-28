@@ -1,4 +1,4 @@
-The [gravitational constant $G_q$](#def\:gravitational-constant) is
+The [gravitational constant $G_q$](#def:gravitational-constant) is
 derived from the categorical structure of the
 $q$-Yang--Mills--Levi action, not from semiclassical entropy-area
 relations.  The key ingredient is the **in-progress braid content**
@@ -10,9 +10,9 @@ values at $q_0$, and the Hausdorff-dimension prediction.
 
 **The variational origin of $G$.**
 The field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
-([GR substrate geometry](#rem\:gr-substrate-geometry)) arises from
+([GR substrate geometry](#rem:gr-substrate-geometry)) arises from
 varying the $q$-Yang--Mills--Levi functional
-([$q$-YM-Levi](#def\:q-yang-mills-levi))
+([$q$-YM-Levi](#def:q-yang-mills-levi))
 
 $$
   \mathfrak{S}_q[A, \varTheta]
@@ -30,7 +30,7 @@ content of the brane tower at each fibre**.
 **In-progress braids: sections that gravitate.**
 At any fibre over a point $p \in M$, the jet tower
 $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$
-([jet-Planck steps](#rem\:jet-planck-steps)) carries sections at
+([jet-Planck steps](#rem:jet-planck-steps)) carries sections at
 every level.  In one Planck time, $n_R(q) \approx 10$ jet
 prolongations complete.  But the tower does not stop at level
 $n_R$: **braids with crossing number $c > n_R$ are partially
@@ -68,7 +68,7 @@ $$
 where $\eta_q^{(k)}$ is the entropy contributed by sections at jet
 level $k$.  The sum converges because sections at level $k$ are
 exponentially suppressed by the :refterm[descent]{#descent} involution $\hat{\tau}_k$
-([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)): the transient
+([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)): the transient
 component at each level has support localised to exceptional
 divisors of codimension $\geq 2$.
 
@@ -91,7 +91,7 @@ $$
 
 where the exponent $2k$ reflects that the codimension-$2$
 localisation of transient sections
-([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)) projects onto a
+([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)) projects onto a
 surface, and the surface area at level $k$ scales as the
 **square** of the displacement $\hbar_q^k$.  Summing the geometric
 series:
@@ -104,7 +104,7 @@ $$
 
 **Exact algebraic closure.**
 With the corrected operational entropy $\eta_q = (2q-1)/q^3$
-([operational entropy](#def\:operational-entropy)) and
+([operational entropy](#def:operational-entropy)) and
 $1 - \hbar_q^2 = (2q-1)/q^2$, the series evaluates to
 
 $$
@@ -128,7 +128,7 @@ $$
 $$
 
 where $c_q = 1/(q-1)$ is the speed of light
-([speed of light](#def\:information-speed-of-light)) and
+([speed of light](#def:information-speed-of-light)) and
 $\hbar_q = (q-1)/q$.  Converting to Planck units:
 
 $$
