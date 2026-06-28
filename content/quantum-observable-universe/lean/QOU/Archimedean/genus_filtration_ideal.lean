@@ -6,21 +6,28 @@ import Mathlib.Data.Nat.Prime.Defs
 /-!
 # QOU.Archimedean.genus_filtration_ideal
 
-**Placeholder canonical** for content block at
+Canonical Lean declaration for content block at
 [`quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts`](quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Archimedean.genus_filtration_ideal` resolves to a real declaration in the `qou`
-Lake package.
+The manuscript sub-claims (the Hecke-completeness genus selection
+`g = 4`, the evaluation-matrix rank `5`, the genus-filtration ideal
+`I_4 = (u^5)`, and that it kills `T_{2,p}` for every odd prime
+`p ≥ 11`) are stated over **opaque categorical data** (the braid /
+partition / link / obstruction types and the abstract `kills_T_2p`
+predicate); no faithful Mathlib structure realises the Hecke evaluation
+matrix or the filtration ideal, so per the vacuity-fix playbook pattern C
+the proposition is **named** as a `def … : Prop` over the context —
+honestly recording the conditional conjecture rather than projecting
+context fields.  A Lean instance would be the conjecture.
 -/
 
 namespace QOU.Archimedean
 
 
-/-- Abstract context for the `genus_filtration_ideal` claim — manuscript-themed
-    typed fields below; sub-claims encode (i) the Hecke-completeness genus
-    selection `g = 4`, (ii) the genus-filtration ideal `I_4 = (u^5)`, and
-    (iii) its action killing higher-Chebyshev evaluations. -/
+/-- Abstract context (inputs) for the `genus_filtration_ideal` claim —
+    the categorical braid / partition / link / obstruction data, the
+    evaluation-matrix rank, the genus, the ideal exponent, and the
+    abstract `kills_T_2p` predicate.  No field asserts a conclusion. -/
 class GenusFiltrationIdealContext where
   /-- Braid representative type. -/
   Braid : Type
@@ -34,25 +41,10 @@ class GenusFiltrationIdealContext where
   EvalMatrixRank : ℕ
   /-- The Riemann-surface genus chosen by the algebra. -/
   genus : ℕ
-  /-- Manuscript sub-claim (i): the *unique minimal* genus satisfying the
-      Hecke completeness condition (rank of the evaluation matrix = `5`)
-      is `g = 4`. -/
-  claim_i_genus_eq_four : genus = 4
-  /-- Manuscript sub-claim (i'): completeness — the evaluation matrix
-      `M_{ij} = χ_{λ_j}(σ_i)` over the embeddable `T_{r,s}` at `g = 4`
-      has rank exactly `5` (all irreps of `H_2(q) ⊕ H_3(q)` are spanned). -/
-  claim_i_completeness_rank_five : EvalMatrixRank = 5
   /-- Generator exponent of the ideal `I_g = (u^k_g)`. -/
   ideal_exponent : ℕ
-  /-- Manuscript sub-claim (ii): the genus-4 filtration ideal is
-      `I_4 = (u^5)`, so the exponent equals 5. -/
-  claim_ii_ideal_eq_u5 : ideal_exponent = 5
   /-- Predicate: torus knot `T_{2, p}` is killed by the ideal. -/
   kills_T_2p : ℕ → Prop
-  /-- Manuscript sub-claim (iii): the ideal kills `T_{2, p}` for
-      every odd prime `p ≥ 11`. -/
-  claim_iii_kills_higher_torus_knots : ∀ p : ℕ, 11 ≤ p →
-    Nat.Prime p → Odd p → kills_T_2p p
 
 /-- **Manuscript statement** (full body):
 
@@ -104,15 +96,16 @@ algebra of the QOU.*
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+    The proposition is **named** below as a `def … : Prop` (pattern C):
+    the Hecke evaluation matrix and filtration ideal are opaque
+    categorical inputs, so the four-part claim is recorded as the
+    conditional conjecture over the context rather than discharged by a
+    fake projection. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts
-theorem genus_filtration_ideal [ctx : GenusFiltrationIdealContext] :
-    ctx.genus = 4 ∧
-    ctx.EvalMatrixRank = 5 ∧
-    ctx.ideal_exponent = 5 ∧
-    (∀ p : ℕ, 11 ≤ p → Nat.Prime p → Odd p → ctx.kills_T_2p p) :=
-  ⟨ctx.claim_i_genus_eq_four, ctx.claim_i_completeness_rank_five, ctx.claim_ii_ideal_eq_u5, ctx.claim_iii_kills_higher_torus_knots⟩
+def genus_filtration_ideal (ctx : GenusFiltrationIdealContext) : Prop :=
+  ctx.genus = 4 ∧
+  ctx.EvalMatrixRank = 5 ∧
+  ctx.ideal_exponent = 5 ∧
+  (∀ p : ℕ, 11 ≤ p → Nat.Prime p → Odd p → ctx.kills_T_2p p)
 
 end QOU.Archimedean

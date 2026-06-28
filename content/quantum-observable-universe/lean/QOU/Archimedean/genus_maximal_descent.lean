@@ -1,59 +1,54 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Tactic
 
 /-!
 # QOU.Archimedean.genus_maximal_descent
 
-**Placeholder canonical** for content block at
+Canonical Lean declaration for content block at
 [`quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts`](quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Archimedean.genus_maximal_descent` resolves to a real declaration in the `qou`
-Lake package.
+The `lean.ref` URI `qou:QOU.Archimedean.genus_maximal_descent` resolves to
+`genus_maximal_descent` below.
+
+The genus value is **derived**, not projected (pattern B): the Descartes
+condition `χ(A) = −6` and Riemann–Roch (`2(1 − g) = χ`) together *force*
+`g = 4` by integer arithmetic.  The genuine open input is the
+Riemann–Roch identity itself, carried as an explicit hypothesis on the
+categorical Euler characteristic; the genus is then computed from it.
+The Hurwitz automorphism bound `|Aut(Σ_g)| ≤ 84(g − 1)` is the standard
+Hurwitz theorem and is carried as a named hypothesis.
 -/
 
 namespace QOU.Archimedean
 
+/-- Riemann–Roch on the descent curve `M₀`: `χ = 2(1 − g)` for the
+    categorical Euler characteristic `χ` and the genus `g`.  This is the
+    genuine geometric input — given it, the genus is determined. -/
+theorem genus_of_riemann_roch {χ : ℤ} {g : ℕ}
+    (hrr : χ = 2 * (1 - (g : ℤ))) (hdescartes : χ = -6) : g = 4 := by
+  have : (2 : ℤ) * (1 - (g : ℤ)) = -6 := by rw [← hrr, hdescartes]
+  have hg : (g : ℤ) = 4 := by linarith
+  exact_mod_cast hg
 
-/-- Abstract context for the `genus_maximal_descent` claim — manuscript-themed
-    typed fields below; `claim_i` / `claim_ii` carry the two main assertions. -/
-class GenusMaximalDescentContext where
-  /-- Categorical object `A` of the Descartes universe `(C, A, τ)`. -/
-  CategoricalObj : Type
-  /-- The fibre functor `τ : C → Vect`. -/
-  Functor : Type → Type
-  /-- The Riemann surface `M_0` obtained by geometric descent. -/
-  RiemannSurface : Type
-  /-- The genus of `M_0`. -/
-  genus : ℕ
-  /-- Manuscript sub-claim (i): under the descent, `M_0` is a compact Riemann
-      surface of genus exactly `4` — `genus = 4`. -/
-  claim_i_genus_eq_four : genus = 4
-  /-- Order of the automorphism group of `Σ_g`. -/
-  aut_order : ℕ
-  /-- Manuscript sub-claim (ii): Hurwitz bound `|Aut(Σ_g)| ≤ 84(g − 1)`. -/
-  claim_ii_hurwitz_bound : aut_order ≤ 84 * (genus - 1)
+/-- **Genus from maximal descent** (manuscript claims (i)–(ii)).
 
-/-- **Manuscript statement** (full body):
+Let `(C, A, τ)` be a quantum observable universe satisfying the Descartes
+condition `χ(A) = −6`.  If geometric descent produces a compact
+one-complex-dimensional base `M₀`, then Riemann–Roch `χ = 2(1 − g)`
+forces the genus `g = 4` — the maximal genus consistent with the Hurwitz
+bound `|Aut(Σ_g)| ≤ 84(g − 1) = 252`.
 
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe satisfying the
-Descartes condition $\chi(A) = -6$
-([Descartes condition](#def\:archimedean-condition)).  If the geometric descent
-produces a compact one-complex-dimensional base $M_0$, then $M_0$ is a
-Riemann surface of genus $g = 4$.
+* (i) the genus is `4` — **derived** from `χ = −6` via Riemann–Roch;
+* (ii) the Hurwitz bound `aut_order ≤ 84 (g − 1)` holds (the standard
+  Hurwitz theorem, carried as the hypothesis `hhurwitz`).
 
-More precisely: the categorical Euler characteristic
-$\mathrm{tr}(\mathrm{id}_A) = -6$ determines the topological type of the
-base curve.  Under the fibre functor $\tau$ of any archimedean realisation,
-Riemann--Roch on $M_0$ forces $2(1 - g) = -6$, hence $g = 4$.  This is the
-maximal genus consistent with the Hurwitz bound
-$|\mathrm{Aut}(\Sigma)| \leq 84(g - 1) = 252$.
-
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+`χ`, the categorical Euler characteristic, and the Riemann–Roch identity
+are the genuine inputs; the genus value is computed, not assumed. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts
-theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :
-    ctx.genus = 4 ∧ ctx.aut_order ≤ 84 * (ctx.genus - 1) :=
-  ⟨ctx.claim_i_genus_eq_four, ctx.claim_ii_hurwitz_bound⟩
+theorem genus_maximal_descent {χ : ℤ} {g aut_order : ℕ}
+    (hrr : χ = 2 * (1 - (g : ℤ))) (hdescartes : χ = -6)
+    (hhurwitz : aut_order ≤ 84 * (g - 1)) :
+    g = 4 ∧ aut_order ≤ 84 * (g - 1) :=
+  ⟨genus_of_riemann_roch hrr hdescartes, hhurwitz⟩
 
 end QOU.Archimedean
