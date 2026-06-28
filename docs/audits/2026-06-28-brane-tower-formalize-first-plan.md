@@ -56,19 +56,63 @@ pair IS included.** Consequence (honest): the deuteron tower is `+33%`
 (`g=−Li₂^q(−·)`), worse than the `+12%` k=0 term — the tower **adds** binding;
 it does not close the over-bound deuteron (that gap is not a truncation error).
 
-## 4. Convention Q3 (formalize-first gate) — the ambient convergence bound
+## 4. Convention Q3 (formalize-first gate) — REFUTED as stated, RESOLVED by the Borromean nucleon
 
-Before any A≥3 wide build, prove the prop's standing claim
+**The gate fired and the bound is FALSE as stated.** The prop's standing claim
+`|tr_M(ξ)| < q₀` is **refuted** for the free same-species proton pair:
 
-    |tr_M(ξ)| < q₀   for every sub-braid stratum ξ evaluated via the
-                     ambient H_{3A} Schur–Weyl path
+    tr_M(proton, atom-word) = 1.065306 > 1   ⇒   tr_M(pp, free) = tr_p² = 1.134877 > q₀ = 1.109979
 
-(`prop:per-braid-mass-tower` §"All sub-braid Markov traces … |tr_M(ξ)| < q").
-This is the gate that the naive H₆ product violates (`tr_p² ≈ 1.134 > q₀`) and
-that caused the superseded per-generator form to diverge. **Lean target:** a
-`QOU.Mass.ambient_subbraid_trace_lt_q` lemma (or §3b-cond class) bounding the
-ambient Markov trace by `q₀`. Only after it closes is the A≥3 ambient-pair
-compute (helps the under-bound ⁴He/⁶Li/⁷Li) authorised.
+(by Markov disjoint-multiplicativity, Wenzl §1.7 — the ambient H_{3A} path gives
+the *same* product, verified at ⁴He H₁₂: `1.134877`). This is a **(b) structural
+exclusion** with cited invariant: the Li₂^q radius is `|z| < q` (proved in
+`li_2_q`, returns ∞ at `|z|≥q`), and `tr_p² > q₀` is exact. So the Li₂^q tower
+**diverges on the free pp pair for every nucleus with Z ≥ 2**; Z≤1 (D, T)
+converge. The Lean lemma as originally scoped is **not authorable** (false).
+
+**Root cause + resolution (ties to §6 / the Borromean question).** The
+divergence is driven entirely by the *binding pipeline's* proton word —
+`atom_braid_word_3A(1,0)`, colour-weighted — whose trace `1.0653 > 1`. The
+**canonical Borromean nucleon** `β_Bor` (the one `F_Bor` / bean `ovud` use) has
+
+    |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4) = 0.998562 < 1   (Lean: BorromeanMarkovTrace)
+
+so the Borromean free pairs are **pp 0.9971, pn 0.9219, nn 0.8524 — ALL < q₀**.
+With the Borromean nucleon the Li₂^q tower **converges for all Z**.
+
+**Revised Q3 / Lean target:** not "prove `|tr_M(ξ)|<q₀` for the atom-word" (false)
+but **(i)** the bound `|tr_M(β_Bor^{⊗Z}·β_n^{⊗N})| < q₀ for Z,N` IN the Borromean
+representation (true, gated on `|tr_M(β_Bor)|<1`, which is the Lean-proved closed
+form), and **(ii)** a `convergence-requires-Borromean-nucleon` finding: the
+binding tower must use `β_Bor`, not the colour-weighted atom word. **Caveat:**
+switching changes every binding number (deuteron pn pair `0.984 → 0.922`), so it
+must be re-validated against AME — a hypothesis, not a free fix.
+
+## 6. The Borromean question (owner): why `β_Bor`, not per-knot? — ANSWERED
+
+**`β_Bor` is the nucleon's OWN knot, not a global assumption.** A baryon is
+`B = 𝓑₃(K₀₁,K₀₁,K₀₁)` (`def:borromean-baryon`) — three unknotted colour tubes
+in a **Borromean** link. The Borromean property (cut any one ring ⇒ the other two
+fall apart) **is confinement**: no single colour tube / quark can be isolated. So
+at the *nucleon (proton/neutron) confinement level* — exactly the owner's reading
+— the knot IS Borromean, and `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` is the **per-knot**
+factor *for the nucleon*.
+
+- **When is Bor a global assumption (a bug)?** Only when `Vol(𝓑₃)` is applied
+  *uniformly to A≥2 nuclei* (the 9a uniform-Vol issue: 64 scripts use
+  `vol_density_borromean` for all atoms). That collapses each nucleus's own knot
+  to the proton's — the special-casing the owner wants gone.
+- **Why not volume-per-knot?** It **should** be per-knot. The single pipeline is
+  per-knot for *every* nucleus, with `β_Bor` the **A=1 (nucleon) instance** — not
+  a special case, just the smallest knot. The owner's instinct is the correct
+  design.
+- **Bonus (the §4 link):** the Borromean (per-knot-consistent) nucleon is *also*
+  what makes the Li₂^q tower converge. Per-knot + Borromean unifies the
+  no-special-casing principle with the convergence gate.
+- **Critical caveat:** the absolute-mass `m_e·Vol(K)/ℏ_q²` per-knot form gives
+  wrong numbers (966 / 406, see `canonical_mass.py`); the canonical absolute mass
+  is the **muon-anchored** `F_Bor`. So a per-knot single pipeline needs the
+  muon-anchored normaliser generalised per-knot — the combined 9a + `ovud` open.
 
 ## 5. Status / gates
 
@@ -77,8 +121,14 @@ compute (helps the under-bound ⁴He/⁶Li/⁷Li) authorised.
 | `m_can⁰ = m_unbnd,can − E₀·Δtr` (k=0) | ✅ shipped (PR #3016) |
 | Q2 sign `g = −Li₂^q(−x)` | ✅ derived (§2), locked in `per_braid_tower.py` |
 | Q1 A=2 pair inclusion | ✅ derived (§3), deuteron tower `+33%` (honest) |
-| Q3 ambient bound `|tr_M(ξ)|<q₀` | ⬜ **Lean gate** — blocks A≥3 build |
-| Single-pipeline nucleon masses (excise facade) | ⬜ gated on bean `ovud` (F_Bor brane tower) |
+| Q3 bound `|tr_M(ξ)|<q₀` (atom-word) | 🔴 **REFUTED** — `tr_p²=1.135>q₀`; tower diverges for Z≥2 |
+| Q3 resolution: Borromean nucleon | 🟢 `|tr_M(β_Bor)|=0.9986<1` ⇒ all free pairs <q₀, converges ∀Z |
+| Single-pipeline = per-knot Borromean | 🟡 design fixed (§6); validation + ovud-normaliser open |
 
-**Next action:** author the Q3 Lean lemma; on close, build the ambient-pair
-tower as the k≥2 content of the single Σ_k pipeline (no special-casing).
+**Next action (revised by the §4 refutation):** do NOT author the false bound.
+Instead **(1)** re-express the binding tower over the **Borromean nucleon**
+`β_Bor` (converges ∀Z) and re-validate the deuteron/³He/⁴He binding against AME
+(switching changes the numbers); **(2)** Lean the *true* bound
+`|tr_M(β_Bor)|<1 ⇒ pair traces <q₀`. The per-knot Borromean tower is the single
+pipeline; absolute masses still need the muon-anchored normaliser per-knot
+(9a + `ovud`).
