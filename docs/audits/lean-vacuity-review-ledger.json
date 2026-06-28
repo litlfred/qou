@@ -1,0 +1,349 @@
+{
+  "$schema": "lean-vacuity-review/v1",
+  "updated_at": "2026-06-28T02:00:00Z",
+  "entries": {
+    "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean::StandardHeckeWoronowicz::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 254,
+      "verdict": "needs-agent",
+      "file_sha": "d5b72d8e2370"
+    },
+    "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean::PontryaginDualCoxeterCharacter::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 121,
+      "verdict": "needs-agent",
+      "file_sha": "d411ab4a8756"
+    },
+    "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean::BorromeanQuark::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 247,
+      "verdict": "needs-agent",
+      "file_sha": "800365aee7af"
+    },
+    "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean::BorromeanQuark::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 183,
+      "verdict": "needs-agent",
+      "file_sha": "3b81c71853fb"
+    },
+    "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.lean::LocalShadowOrdering::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 23,
+      "verdict": "needs-agent",
+      "file_sha": "fb15672fd7f5"
+    },
+    "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.lean::NSRegularQOU::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 9,
+      "verdict": "needs-agent",
+      "file_sha": "9f4dc238dec5"
+    },
+    "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean::NPProblem::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 64,
+      "verdict": "needs-agent",
+      "file_sha": "e383a6d19ff3"
+    },
+    "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean::qHeatKernelPeterWeyl::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "def-disguised-true",
+      "line": 82,
+      "verdict": "needs-agent",
+      "file_sha": "71a933450f8c"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 267,
+      "verdict": "legit",
+      "file_sha": "5dd637d71e12",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0\u22651, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (\u00a73b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean::HyperbolicVolumeIndependence.implies_single_irrational::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 499,
+      "verdict": "legit",
+      "file_sha": "79eeb4de80bb",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0\u22651, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (\u00a73b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean::HasPentagonRelation::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 67,
+      "verdict": "needs-agent",
+      "file_sha": "4b6d7dc04c0b"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean::HasBlochGroup::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 78,
+      "verdict": "needs-agent",
+      "file_sha": "4b6d7dc04c0b"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean::Cl_2_PentagonHolds::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 100,
+      "verdict": "needs-agent",
+      "file_sha": "4b6d7dc04c0b"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean::FaddeevKashaevQuasiClassicalLimit::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 137,
+      "verdict": "needs-agent",
+      "file_sha": "4b6d7dc04c0b"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean::hecke_deg_monic::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 97,
+      "verdict": "legit",
+      "file_sha": "1ec9f4e7e360",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0\u22651, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (\u00a73b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean::substrateGap_of_uniform_gapValue::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 204,
+      "verdict": "legit",
+      "file_sha": "aaf41243710f",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0\u22651, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (\u00a73b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean::A5Irrep.reebCasimir_not_injective::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 60,
+      "verdict": "legit",
+      "file_sha": "081b2a56dbc4",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0\u22651, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (\u00a73b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/Conjectures/KnotFactorFrobeniusPairing.lean::KnotFactorFrobeniusPairing::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 5,
+      "verdict": "needs-agent",
+      "file_sha": "700732263f22"
+    },
+    "content/quantum-observable-universe/lean/QOU/Conjectures/MagicNumbersBring.lean::MagicNumbersBring::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 5,
+      "verdict": "needs-agent",
+      "file_sha": "b6df0187012d"
+    },
+    "content/quantum-observable-universe/lean/QOU/Conjectures/QuantumLanglandsDual.lean::QuantumLanglandsDual::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 5,
+      "verdict": "needs-agent",
+      "file_sha": "80f1c000a9a2"
+    },
+    "content/quantum-observable-universe/lean/QOU/Conjectures/ShellTransitionKnot.lean::ShellTransitionKnot::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 5,
+      "verdict": "needs-agent",
+      "file_sha": "1d6868b34fd9"
+    },
+    "content/quantum-observable-universe/lean/QOU/Conjectures/WeakSpectralCompleteness.lean::WeakSpectralCompleteness::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 5,
+      "verdict": "needs-agent",
+      "file_sha": "e2dc407dd22d"
+    },
+    "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean::zero_not_isAlgebraicallyPrime::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 149,
+      "verdict": "legit",
+      "file_sha": "ff5e15bdd6e0",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0\u22651, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (\u00a73b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/IwahoriHecke/TypeA.lean::ReverseLimitQToInfinity::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 137,
+      "verdict": "needs-agent",
+      "file_sha": "9d7f58df24d9"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
+      "category": "proof-no-decide-masking",
+      "pattern": "native_decide",
+      "line": 267,
+      "verdict": "needs-agent",
+      "file_sha": "0aa015d1bcbf"
+    },
+    "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean::Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 81,
+      "verdict": "legit",
+      "file_sha": "362fa5288152",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0\u22651, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (\u00a73b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean::StrongDualityPair::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 126,
+      "verdict": "needs-agent",
+      "file_sha": "df1cb21247cc"
+    },
+    "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean::CategoricalMobiusEnergy::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 92,
+      "verdict": "needs-agent",
+      "file_sha": "5c5f5e42cf31"
+    },
+    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean::QHeckeEigensheaf::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 168,
+      "verdict": "needs-agent",
+      "file_sha": "8de5e8ba686f"
+    },
+    "content/quantum-observable-universe/lean/QOU/QuantumBloch/pentagon_uv_commutation.lean::claim_iii_eigenvalue_specialisation::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 17,
+      "verdict": "needs-agent",
+      "file_sha": "44a87e3c1539"
+    },
+    "content/quantum-observable-universe/lean/QOU/QuantumBloch/pentagon_uv_commutation.lean::claim_iv_operator_lift_transient::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 25,
+      "verdict": "needs-agent",
+      "file_sha": "44a87e3c1539"
+    },
+    "content/quantum-observable-universe/lean/QOU/Substrate/ColorAntisymmetric.lean::FermiColorSinglet::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 80,
+      "verdict": "needs-agent",
+      "file_sha": "0fd51d619d27"
+    },
+    "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean::PairGenCanonical::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 56,
+      "verdict": "needs-agent",
+      "file_sha": "453502e1bdc9"
+    },
+    "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean::MassFormula::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 129,
+      "verdict": "needs-agent",
+      "file_sha": "28df5114dd19"
+    },
+    "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean::HyperbolicVolumeIndependence::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 121,
+      "verdict": "needs-agent",
+      "file_sha": "b71ee2b59807"
+    },
+    "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean::IsDemazureSubCrystal::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 74,
+      "verdict": "needs-agent",
+      "file_sha": "0db121b9e9a2"
+    },
+    "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean::HasBlochGroupQuotient::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 106,
+      "verdict": "needs-agent",
+      "file_sha": "0db121b9e9a2"
+    },
+    "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean::Cl_2_PentagonIdentity::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 128,
+      "verdict": "needs-agent",
+      "file_sha": "0db121b9e9a2"
+    },
+    "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean::BorromeanQuark::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 144,
+      "verdict": "needs-agent",
+      "file_sha": "492b59a00e50"
+    },
+    "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::MarkovTraceFamilyOneDim::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 52,
+      "verdict": "needs-agent",
+      "file_sha": "e057bcbb2f25"
+    },
+    "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.lean::CPTD6D7D8Closure::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 25,
+      "verdict": "needs-agent",
+      "file_sha": "1bb13957ce1d"
+    },
+    "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean::SymmetricCrystalPairProduction::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 167,
+      "verdict": "needs-agent",
+      "file_sha": "eebe516e5768"
+    },
+    "content/quantum-observable-universe/particle-interactions/geom-universality.lean::HyperbolicVolumeIndependence::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 192,
+      "verdict": "needs-agent",
+      "file_sha": "bf429eae5836"
+    },
+    "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean::BorromeanQuark::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 254,
+      "verdict": "needs-agent",
+      "file_sha": "704c5929d112"
+    },
+    "content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean::BorromeanQuark::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 55,
+      "verdict": "needs-agent",
+      "file_sha": "279762605569"
+    }
+  }
+}
