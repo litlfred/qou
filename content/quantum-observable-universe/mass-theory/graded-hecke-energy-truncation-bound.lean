@@ -115,12 +115,7 @@ theorem graded_hecke_energy_finite_support
   -- We want: k > c.level ∨ k < 0
   rcases lt_or_ge k 0 with hneg | hpos
   · exact Or.inr hneg
-  · refine Or.inl ?_
-    have h_gt : k > (c.level : ℤ) := by
-      by_contra h_le
-      push_neg at h_le
-      exact h_out hpos h_le
-    exact h_gt
+  · exact Or.inl (h_out hpos)
 
 /-- **Computational corollary.**  Numerical evaluation of
     `tr_M(T_w(β_K), q_0) = P_K(q_0)` only requires enumerating the
