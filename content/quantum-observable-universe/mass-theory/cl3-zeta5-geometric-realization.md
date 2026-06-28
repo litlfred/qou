@@ -98,7 +98,7 @@ most directly compatible with the existing knot-theoretic framework;
 Candidate 1 is the cleanest from the period-theoretic side;
 Candidate 3 is most general.
 
-### What this gets us
+### Consequences of an explicit identification
 
 Identifying *any one* of the three candidates explicitly would:
 

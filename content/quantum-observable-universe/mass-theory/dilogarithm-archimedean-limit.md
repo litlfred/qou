@@ -64,7 +64,7 @@ This discharges the uniform-Riemann-sum requirement (gap 1 below) as a
 theorem; the conjectural content is therefore confined to the substrate
 continuation $q \to 1^+$ (gaps 2–3).
 
-## Why it is conjectural
+## Conjectural status
 
 The rigorous statement requires:
 

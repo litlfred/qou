@@ -133,7 +133,7 @@ sign-flip proposition does not apply directly.  The legacy
 disjoint-product witness used by `term7_alpha5_crystal_derivation`
 artificially erases this isospin asymmetry.
 
-## Consequences
+## Corollaries
 
 **Term 7 is isospin-blind at the crystal limit, even in the legacy
 disjoint-product convention.** The current

@@ -70,7 +70,7 @@ factor must come from cross-block coupling (e.g. via the
 $\sigma_1$ matrix elements that mix the 2-dimensional $V_{(2,1)}$
 into the per-block-diagonal sum).
 
-## Why $w_0$ and not $-I$
+## The role of $w_0$ versus $-I$
 
 The probe agent that surfaced this finding informally referred to
 the weighting as "character $\chi_\lambda(-I)$." In the symmetric

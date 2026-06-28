@@ -93,7 +93,7 @@ contribution to the binding $B(\mathfrak{H})$ uniformly across atoms,
 not just for the single atom whose GB filtration depth happens to
 match.*
 
-## What this conjecture would buy
+## Consequences of the conjecture
 
 If true, the conjecture:
 
@@ -106,7 +106,7 @@ If true, the conjecture:
    single open computation reduces from "find the right Φ_q
    regularization" to "identify $n_\star$ from substrate data".
 
-## The open part: $n_\star$
+## The open component: $n_\star$
 
 The level-selection rule $n_\star$ is **the open part**. Candidate
 structural inputs:
@@ -209,7 +209,7 @@ The sibling [`brane-tower-z-habiro.lean`](brane-tower-z-habiro.lean)
 records the six refutations as witness-driven theorems combined in
 `nStar_all_probed_forms_refuted`.
 
-## What survives the closure
+## Surviving claims after the closure attempts
 
 The conjecture has two independent claims:
 

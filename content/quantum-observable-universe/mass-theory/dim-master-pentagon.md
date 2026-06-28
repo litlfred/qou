@@ -23,7 +23,7 @@ used elsewhere in the QOU framework:*
 *The DIM master Pentagon is therefore the **unified algebraic
 ancestor** of all five Pentagon manifestations in the framework.*
 
-## Why this matters
+## Significance
 
 The five Pentagon manifestations are currently treated separately
 in the framework. D17 conjectures they are **specialisations of a

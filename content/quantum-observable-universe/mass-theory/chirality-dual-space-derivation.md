@@ -63,7 +63,7 @@ See [Table 2](#tbl:chirality-dual-space-derivation-table2-data).
 $\{1+h, 1-h^2, (1-h^2)^2\}$ for $\{D, T/^3\mathrm{He}, ^4\mathrm{He}\}$.
 Numerical match at $q_0 \approx 1.11$ confirmed.*
 
-**Why "dual space".**
+**The dual-space formulation.**
 
 *The pairing $\tau_\lambda(\sigma) - \tau_\lambda(\sigma^{-1})$ is
 the **Frobenius-dual pairing** of the deviation $\sigma - \sigma^{-1}$

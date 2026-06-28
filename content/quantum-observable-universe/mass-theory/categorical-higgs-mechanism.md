@@ -104,7 +104,7 @@ where $e_X^{(\rm Hoefsmit)}$ is the appropriate Hoefsmit-pattern
 projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
 [`crossing-energy.md`](#def:crossing-energy).
 
-### What this skeleton needs
+### Requirements for completing the skeleton
 
 1. **Rigorous definition of $\mathrm{Lk}_R$** as a categorical
    operation in a ribbon $\mathbf{C}$ —

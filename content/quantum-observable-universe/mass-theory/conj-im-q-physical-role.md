@@ -15,7 +15,7 @@ testable against a specific observable class. Identifying
 which (if any) is the correct physical interpretation is open
 work.*
 
-## What Im(q) is NOT
+## Exclusions for Im(q)
 
 Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
 - The EM / $P_{\mathrm{skew}}$ channel (this is a real-q mechanism)
@@ -73,7 +73,7 @@ representations describe their non-Hermitian dynamics? Most decay
 widths in the Standard Model have categorical interpretations open
 in the QOU framework.
 
-## Why none is currently proved
+## Obstacles to a current proof
 
 Each candidate requires an observable the framework does not yet
 provide:

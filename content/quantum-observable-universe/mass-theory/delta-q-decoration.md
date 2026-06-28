@@ -26,7 +26,7 @@ $$
 is the trace of $b$ acting in the seminormal-basis representation
 $\rho_\lambda : H_n(q) \to \mathrm{End}(V_\lambda)$.*
 
-### Why the :defterm[q-dimension layer]{#q-dimension-layer} matters
+### Significance of the :defterm[q-dimension layer]{#q-dimension-layer}
 
 The Markov trace $\mathrm{tr}_M : H_n(q) \to R$ is the
 characteristic invariant used in operator-selection LP

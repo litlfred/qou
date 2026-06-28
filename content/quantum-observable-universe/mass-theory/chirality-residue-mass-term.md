@@ -46,7 +46,7 @@ sum by the predicate $c_\lambda = 0$ (chirality) vs $c_\lambda \neq 0$
 yields the displayed split immediately; no analytic claim is required
 beyond the unified-formula proposition. $\square$
 
-**Why $c_\lambda = 0$ is the correct chirality marker.**
+**The chirality marker $c_\lambda = 0$.**
 
 *By the q-Dirac operator construction
 ([cite q-Dirac scanner witness](#)), the q-deformed second-order

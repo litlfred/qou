@@ -45,7 +45,7 @@ This is a **PSLQ certificate**, not a proof. Standard interpretation:
  (extremely unlikely for natural mathematical relations,
  which typically have small coefficients).
 
-### What this implies for B1
+### Implications for B1
 
 Combined with [`prop:cl3-zeta5-orbit-sum-identity`](#prop:cl3-zeta5-orbit-sum-identity)
 + [`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational):

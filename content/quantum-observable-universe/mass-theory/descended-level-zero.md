@@ -110,7 +110,7 @@ traced volumes. The desc term entering at each jet level is
 therefore **the same object**, not a new per-level contribution.
 $\square$
 
-## Why summing it per level is a double count
+## Per-level summation as a double count
 
 If the tower sum were written as
 

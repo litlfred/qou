@@ -51,7 +51,7 @@ $$
          \dim_q^2 V_\mu \cdot \chi^\mu(e_{K_k^*})}.
 $$
 
-### Why FR
+### Categorical content of the FR refinement
 
 The Frobenius integral $\int_{A_\lambda} \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$
 at low curvature-rank "factors through specific hyperbolic-knot
@@ -206,7 +206,7 @@ at $q = 1$) reduces to standard Frobenius reciprocity for $S_n$ —
 provable in Mathlib via `Representation.induced` and
 `Representation.restricted`.
 
-### Why this is "the final key"
+### Role as the final structural ingredient
 
 Per the structural narrative on  and
 [`docs/audits/-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-variance-per-depth-diagnosis.md):
