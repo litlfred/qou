@@ -172,6 +172,23 @@ constraints), i.e. effectively under-constrained, and **none** of those 18 candi
 survive the held-out test. So `S(m)` is **not** order-2 q-holonomic of small bidegree: the true
 fibre operator is higher q-shift order (≥3) or has bidegree beyond the swept bound.
 
+## Stage 4 — order-3 is also negative
+
+Raising the q-shift order to 3 (`Σ_{j=0}^{3} P_j(q,q^m) S(m−j) = 0`, same bar-symmetric
+guess-and-verify, fit `m=3..8`, held-out `m=9,10,11`;
+[`lever1_qholonomic_order3_fit.py`](../../computations/substrate/lever1_qholonomic_order3_fit.py),
+witness [`lever1-qholonomic-order3-fit.witness.json`](../../computations/substrate/lever1-qholonomic-order3-fit.witness.json))
+gives **the same negative**: the fit nullspace is **0 at every bidegree** up to q-deg `±3`,
+X-deg `3` (196 unknowns vs 316 constraints — strongly over-determined), for **both** order-2
+(re-run as regression with the extended `S(0..11)` data) **and** order-3. No recurrence even
+fits the training set.
+
+**Conclusion across Stages 0–4.** The binding period `S(m)=Σ_{λ⊢m} dim_q(λ)` is **not**
+q-holonomic of small order (≤3) and bidegree — there is no finite q-difference operator of that
+size. What survives is the **exact cyclotomic structure** of Stage 1: the q-involution skeleton
+(seed-exact) plus the `(q−1)²·Φ_d` Habiro correction tower. The fibre kernel is a genuine
+cyclotomic-completion (Habiro-ring) object, not a low-order recurrence.
+
 ## Cross-link — the Q_β `c_k` ladder is in the same state (the `kehn` connection)
 
 The corpus `c_k` state of play
