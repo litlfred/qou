@@ -129,15 +129,31 @@ theorem reverse_limit_q_to_infinity_structural
 
 /-! ## §3b-cond compatibility shim
 
-Downstream blocks that take `[ReverseLimitQToInfinity]` as a class
-hypothesis continue to compile via the default instance below;
-its substantive content is `reverse_limit_q_to_infinity_structural`
-above. -/
+Downstream blocks that take `[ReverseLimitQToInfinity R q]` as a class
+hypothesis continue to compile via the instance below; its
+substantive content is `reverse_limit_q_to_infinity_structural`
+above (not a `True` marker). -/
 
-class ReverseLimitQToInfinity where
-  /-- The bar-image structural identity holds. -/
-  bar_image_quadratic_holds : Prop := True
+/-- **Conjecture-closure carrier for `conj:reverse-limit-q-to-infinity`
+    (algebraic fragment).** The single field encodes the bar-image
+    structural identity itself: under the bar involution `q ↦ q⁻¹` the
+    Hecke quadratic at `q⁻¹` equals `q⁻¹` times a re-scaling of the
+    quadratic at `q`, for every `X`. An instance over a nonzero `q : R`
+    is discharged from `reverse_limit_q_to_infinity_structural`; the
+    full categorical bar (canonical-basis level) is Sprint 5 scope. -/
+class ReverseLimitQToInfinity (R : Type v) [Field R] (q : R) where
+  /-- The bar-image structural identity holds for all `X`. -/
+  bar_image_quadratic_holds :
+    ∀ X : R, (X^2 - (q⁻¹ - 1) * X - q⁻¹) =
+      q⁻¹ * (q * X^2 - (1 - q) * X - 1)
 
-instance : ReverseLimitQToInfinity where
+/-- The carrier is inhabited at any nonzero `q` by the proved
+    structural identity — the conjecture's algebraic fragment is
+    closed, not assumed. -/
+instance instReverseLimitQToInfinity
+    {R : Type v} [Field R] (q : R) [NeZero q] :
+    ReverseLimitQToInfinity R q where
+  bar_image_quadratic_holds :=
+    reverse_limit_q_to_infinity_structural q (NeZero.ne q)
 
 end QOU.IwahoriHecke.TypeA
