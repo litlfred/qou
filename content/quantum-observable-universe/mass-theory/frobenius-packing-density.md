@@ -25,7 +25,7 @@ by the Frobenius pairing on the ambient Iwahori-Hecke algebra
 $H_{3A}(q)$: specifically, by **which Wedderburn blocks are
 populated** by the atomic link configuration.
 
-## The packing dictionary
+### The packing dictionary
 
 The Frobenius form of $H_n(q)$ is the Markov trace
 $\mathrm{tr}_M \colon H_n(q) \to \mathbb{C}$, whose Wedderburn
@@ -52,7 +52,7 @@ that block carries.  At $n = 3$ the three blocks are:
 | std | $(2, 1)$ | mixed / propagator channel |
 | alt | $(1, 1, 1)$ | antiparticle channel (eigenvalue $-q^{-1}$) |
 
-## The two-density rule
+### The two-density rule
 
 An atomic link $\mathcal{K}$ populates a subset of blocks
 $\Lambda(\mathcal{K}) \subseteq \{\text{sym}, \text{std}, \text{alt}, \ldots\}$.
@@ -78,7 +78,7 @@ threshold $2 m_e$ is the $\gamma \gamma$ pair-creation energy — the
 point at which vacuum fluctuations physically populate the alt
 channel.
 
-## Topological triggers for alt saturation
+### Topological triggers for alt saturation
 
 Whether the alt block is activated is a **topological** property of
 the atomic link, driven by multi-component entanglement:
@@ -98,7 +98,7 @@ the atomic link, driven by multi-component entanglement:
   alt content is absorbed into the clusters and the bond itself
   reverts to $\rho_F = m_e$.
 
-## Packing vs volume
+### Packing vs volume
 
 The Frobenius picture recasts mass as literal *packing*: the
 Plancherel weights $w_\lambda(q)$ define a measure on the

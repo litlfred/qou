@@ -17,11 +17,13 @@ coupling). This block formalises the claim that these closed forms
 are **derivable outputs** of four algebraic reduction rules, not
 phenomenological identifications.
 
-## The four reduction rules
+## The four-rule $c_k$ extraction
+
+### The four reduction rules
 
 See [Table 1](#tbl:ck-extraction-from-algebraic-rules-table1-data).
 
-## The extraction function
+### The extraction function
 
 The Lean module exports
 ```
@@ -33,7 +35,7 @@ word:
 
 See [Table 2](#tbl:ck-extraction-from-algebraic-rules-table2-data).
 
-## Per-order agreement
+### Per-order agreement
 
 The Lean theorems
 `ckFromReduction_eq_c1`, $\ldots$, `ckFromReduction_eq_c4` discharge each
@@ -43,7 +45,7 @@ agreement equality by `rfl` against the inline coefficients used in
 The synthesis theorem `ckFromReduction_matches_ladder` records the
 joint statement under all four class instances.
 
-## Significance of the reframing
+### Significance of the reframing
 
 The earlier framing (alternating Kashiwara $\times$ Jones at even/odd $k$)
 captured the *empirical pattern* but underspecified the *derivation*.
@@ -62,7 +64,7 @@ The class skeleton makes each rule a **separate instance** to discharge,
 turning the c_k extraction into a structured Lean-engineering programme
 rather than a single open conjecture.
 
-## Open R&D
+### Open R&D
 
 - Replace the `True` ansatz fields with the substantive matrix
   identities they encode (`yb_cubic` $\leftarrow$ Hoefsmit YB cubic; `hecke_quad`

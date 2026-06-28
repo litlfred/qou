@@ -90,7 +90,7 @@ Alexander polynomials. For the mass formula, this means:
   crossing rule applies where" — exactly the data the mass
   formula needs beyond the topological polynomial.
 
-### 2. Coloring count as a state-counting invariant
+#### 2. Coloring count as a state-counting invariant
 
 The **quandle coloring number** $\mathrm{Col}_Q(K) = |\mathrm{Hom}(Q(K), Q)|$
 counts the number of quandle homomorphisms from the knot quandle
@@ -109,7 +109,7 @@ counts the number of distinct $(u, d, s)$ flavour assignments
 that give topologically inequivalent braid closures — this IS the
 baryon multiplet.
 
-### 3. Quandle cocycle invariants for the Gram matrix
+#### 3. Quandle cocycle invariants for the Gram matrix
 
 The **quandle cocycle invariant** (Carter-Jelsovsky-Kamada-Langford-
 Saito 2003) assigns weights from a 2-cocycle $\phi : Q \times Q \to A$
@@ -132,7 +132,7 @@ it is an optimisation over quandle-cocycle invariants. The quandle
 framework gives the Gram matrix a REPRESENTATION-THEORETIC
 interpretation beyond the Hecke-algebra computation.
 
-## Directions opened by the quandle framework
+### Directions opened by the quandle framework
 
 1. **Non-polynomial invariants for the mass formula.** The quandle
    coloring number and cocycle invariants are strictly finer than
