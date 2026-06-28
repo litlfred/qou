@@ -7,6 +7,8 @@
 -- Canonical declaration lives in: lean/QOU/MotivesArchimedean.lean
 -- This sibling is a documentation-mirror of the QOU library declaration.
 
+import Mathlib.Data.Real.Basic
+
 namespace QOU.BraidsKnots
 
 /-- The **archimedean realization functor** R_top.
