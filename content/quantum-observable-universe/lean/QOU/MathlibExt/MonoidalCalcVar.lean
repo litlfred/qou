@@ -54,14 +54,20 @@ universe u v
 
 open CategoryTheory MonoidalCategory
 
-/-- **Action functional** as a typeclass: a real-valued ("scalar")
-    map from `Hom (𝟙_ C) (𝟙_ C)` to ℝ that absorbs the variational
-    structure. Stated abstractly so concrete categories supply
-    their own action. -/
-class HasAction (C : Type u) [Category.{v} C] [MonoidalCategory C]
+/-- **Action functional** as a typeclass: a scalar-valued map from
+    `Hom (𝟙_ C) (𝟙_ C)` to a coefficient ring `R` that absorbs the
+    variational structure. Stated abstractly so concrete categories
+    supply their own action.
+
+    **Base ring (§7c).** The action codomain is a generic
+    `{R : Type*}` — nothing in this skeleton performs an archimedean
+    operation on the action value (no ordering, no `Real.*`), so the
+    `ℝ` specialisation would be gratuitous. A concrete instance at a
+    real-analytic category supplies `(R := ℝ)`. -/
+class HasAction (R : Type*) (C : Type u) [Category.{v} C] [MonoidalCategory C]
     [Preadditive C] where
   /-- The action functional. -/
-  action : ((𝟙_ C) ⟶ (𝟙_ C)) → ℝ
+  action : ((𝟙_ C) ⟶ (𝟙_ C)) → R
 
 /-- **Variational data** — three components of a Lagrangian
     decomposition: gravity, gauge, matter, each as a morphism
