@@ -124,6 +124,27 @@ def has_double_root_at_1(expr):
     return p.eval(1) == 0 and p.diff(q).as_poly(q).eval(1) == 0
 all_have_qm1_sq = all(has_double_root_at_1(Dm[m]) for m in range(2, MMAX + 1) if Dm[m] != 0)
 
+# --- The exact order-2 INVOLUTION-FORM kernel coefficient W(m) = (S(m)-S(m-1))/S(m-2),
+#     the q-deformation of the classical "(m-1)" in I(m)=I(m-1)+(m-1)I(m-2). If W(m) were a
+#     clean polynomial in q^m, S would be order-2 q-holonomic in monic (coeff-1-on-S(m-1))
+#     form. It is NOT: W(m) is seed-exact [m-1]_q at m=2,3, then a q-RATIONAL whose denominator
+#     is the partition-sum S(m-2) -- so the monic order-2 q-holonomic lift does not close. ---
+Wm = {m: sp.cancel((Sm[m] - Sm[m - 1]) / Sm[m - 2]) for m in range(2, MMAX + 1)}
+Wm_factored = {m: sp.factor(Wm[m]) for m in range(2, MMAX + 1)}
+W_seed_exact = bool(
+    sp.simplify(Wm[2] - qint_sym(1)) == 0 and sp.simplify(Wm[3] - qint_sym(2)) == 0
+)
+# W(m) is a Laurent polynomial in q (no partition-sum denominator) only at the seed:
+def is_laurent_poly_in_q(expr):
+    den = sp.denom(sp.cancel(expr))
+    # pure q-power denominator (q^k) => Laurent poly; anything else => genuine q-rational
+    return sp.Poly(den, q).is_monomial
+W_laurent = {m: bool(is_laurent_poly_in_q(Wm[m])) for m in range(2, MMAX + 1)}
+# First m where W(m) acquires a genuine partition-sum (non-monomial) denominator, i.e. stops
+# being a Laurent polynomial in q -- the point past which no monic order-2 q-holonomic lift
+# with Laurent-poly coefficient can hold.
+W_first_nonlaurent = next((m for m in range(2, MMAX + 1) if not W_laurent[m]), None)
+
 # Numeric eval at q0 (proton-pinned package q0) for residual magnitudes
 mp.mp.dps = 50
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
@@ -157,6 +178,13 @@ results = {
         f"m={m}": str(Dm_factored[m]) for m in range(2, MMAX + 1)
     },
     "correction_D_all_have_double_root_at_q1": bool(all_have_qm1_sq),
+    # The exact order-2 involution-form kernel coefficient W(m)=(S(m)-S(m-1))/S(m-2).
+    "kernel_W_factored": {f"m={m}": str(Wm_factored[m]) for m in range(2, MMAX + 1)},
+    "kernel_W_seed_exact_qinteger": bool(W_seed_exact),  # W(2)=[1]_q, W(3)=[2]_q
+    "kernel_W_is_laurent_poly_in_q": {
+        f"m={m}": W_laurent[m] for m in range(2, MMAX + 1)
+    },  # Laurent through m=5, then partition-sum denominator
+    "kernel_W_first_nonlaurent_m": W_first_nonlaurent,  # m=6: monic order-2 lift stops being polynomial
 }
 
 assertions = {
@@ -166,6 +194,8 @@ assertions = {
     "H1a_asym_qinvolution_exact": bool(H1a_exact),
     "H1b_toppower_qinvolution_exact": bool(H1b_exact),
     "correction_D_double_root_at_q1_all_m": bool(all_have_qm1_sq),
+    "kernel_W_seed_exact_qinteger_m2_m3": bool(W_seed_exact),
+    "kernel_W_acquires_partition_sum_denominator": bool(W_first_nonlaurent is not None),
 }
 any_kernel = H1_exact or H1a_exact or H1b_exact
 all_passed = bool(q1_ok)  # the gate is the q=1 sanity; kernel match is the FINDING
