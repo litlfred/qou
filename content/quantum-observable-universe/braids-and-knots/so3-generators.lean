@@ -27,10 +27,9 @@ namespace QOU
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+noncomputable def q_param : R_q := LaurentPolynomial.T 1
+noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **SO(3) generator data**: rotation matrices from the adjoint map. -/
 -- Ref: [manuscript] Chapter 4
@@ -46,7 +45,7 @@ structure So3Generators where
 
 /-- R_β is the π-rotation about e₁: diag(1, -1, -1). -/
 -- Ref: [manuscript] Chapter 4
-def R_beta_matrix : Matrix (Fin 3) (Fin 3) R_q :=
+noncomputable def R_beta_matrix : Matrix (Fin 3) (Fin 3) R_q :=
   !![1, 0, 0; 0, -1, 0; 0, 0, -1]
 
 /-- R_β² = I by direct computation. -/
