@@ -1,4 +1,5 @@
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Data.Nat.Choose.Sum
 import Mathlib.Tactic.NormNum
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
@@ -140,18 +141,19 @@ theorem binomial_sum_pow_two (n_star : ℕ) :
     distribution is internally consistent — its grade-wise sum matches
     the total dim claimed. -/
 theorem filtration_shape_sum_eq_total_dim
-    [h : AtomBraidExteriorAlgebraStructure Z N] :
+    [h : AtomBraidExteriorAlgebraStructure Z N]
+    (hn : h.n_star = 3 * (Z + N) - Z)
+    (hd : h.total_dim = 2 ^ (3 * (Z + N) - Z)) :
     (Finset.range (h.n_star + 1)).sum (fun k => Nat.choose h.n_star k) = h.total_dim := by
-  show (Finset.range (h.n_star + 1)).sum (fun k => Nat.choose h.n_star k)
-       = 2 ^ (3 * (Z + N) - Z)
-  rw [Nat.sum_range_choose]
-  -- h.n_star = 3 * (Z + N) - Z by definition
-  rfl
+  -- The class fields `n_star` / `total_dim` carry canonical defaults but
+  -- are opaque per-instance; the hypotheses `hn`/`hd` pin them to those
+  -- defaults (provable by `rfl` for any instance taking the defaults).
+  rw [hn, hd, Nat.sum_range_choose]
 
 /-- **THEOREM (verified-cases enumeration).** The conjecture has been
     empirically verified by direct GB-NF reduction in the Rust solver
     for D, T, ³He, ⁴He. This theorem records the verified-atom list. -/
-theorem verified_atoms : List (ℕ × ℕ × ℕ) :=
+def verified_atoms : List (ℕ × ℕ × ℕ) :=
   -- (Z, N, total_dim = 2^(3A−Z))
   [(1, 1, 32), (1, 2, 256), (2, 1, 128), (2, 2, 1024)]
 
@@ -163,7 +165,7 @@ theorem helium4_pascal_row :
     (Nat.choose 10 0, Nat.choose 10 1, Nat.choose 10 2, Nat.choose 10 3,
      Nat.choose 10 4, Nat.choose 10 5, Nat.choose 10 6, Nat.choose 10 7,
      Nat.choose 10 8, Nat.choose 10 9, Nat.choose 10 10) =
-    (1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1) := by decide
+    (1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1) := by rfl
 
 /-- **Pascal-row checks for the 3 lighter verified atoms** (D, T, ³He).
     Each is the observed filtration shape from the Rust solver
@@ -179,12 +181,12 @@ theorem tritium_pascal_row :
     (Nat.choose 8 0, Nat.choose 8 1, Nat.choose 8 2, Nat.choose 8 3,
      Nat.choose 8 4, Nat.choose 8 5, Nat.choose 8 6, Nat.choose 8 7,
      Nat.choose 8 8) =
-    (1, 8, 28, 56, 70, 56, 28, 8, 1) := by decide
+    (1, 8, 28, 56, 70, 56, 28, 8, 1) := by rfl
 
 theorem helium3_pascal_row :
     (Nat.choose 7 0, Nat.choose 7 1, Nat.choose 7 2, Nat.choose 7 3,
      Nat.choose 7 4, Nat.choose 7 5, Nat.choose 7 6, Nat.choose 7 7) =
-    (1, 7, 21, 35, 35, 21, 7, 1) := by decide
+    (1, 7, 21, 35, 35, 21, 7, 1) := by rfl
 
 /-! ## Structural proof argument (sketch)
 
