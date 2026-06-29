@@ -1007,7 +1007,415 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is the boxed closed form; Significance/Asymptotic sections are clearly separated."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:cyclotomic-depth-3-trilog; Im Li_3 at roots of unity on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is an analytic identity about Im Li_3 over C; this is genuinely an archimedean/analytic chapter object (trilog, π^3), ℝ/C appropriate — no gratuitous-ring issue."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof body is the sibling -proof block; statement block only."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "lean.ref CyclotomicTrilogImaginary.closed_form_holds; the boxed Im Li_3(ζ_n)=(n-1)(n-2)π^3/(3n^3) is the claim; consistent at statement level."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Conclusion is the substantive closed form for all n≥1; not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Concrete analytic identity, not a class-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Closed form is non-trivial (verified n=3..13 at 50 dps); not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No False premise; Kummer reflection is a genuine identity."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "n≥1 generality used; no idle hypotheses at statement level."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof not in this block; nothing to assess for decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Formula verified: n=2 gives Im Li_3(-1)=0 (✓, Li_3(-1)=-3ζ(3)/4 real); asymptotic (n-1)(n-2)/(3n^3)≈1/(3n) matches stated π^3/(3n); witness n=3..13 at 50 dps."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Non-vacuous: a general closed form generalising the ζ_5 case to all n, with Tate-rationality consequence."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Generalises the ζ_5 result via Kummer reflection; no self-reference."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Tate-rationality (lies in π^3·Q) and the Beilinson-quotient vanishing are correct consequences, not overstated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No free parameter; closed form in n only."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Tate-rational ⇒ projects to zero under Beilinson regulator quotient is a valid inference."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement matches lean.ref decl; no statement-level divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "bloch2000/zagier1986 are the standard references for polylog regulators/Tate rationality; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "ζ_n primitive root, Li_3, Beilinson regulator quotient P_3/Tate all clear; n≥1 explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Verified at 50 dps for 9 values of n; exact closed form, not a fragile fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Pure number-theoretic identity."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness cyclotomic-trilog-imaginary.witness.json (mpmath, verified n=3..13 @50dps) backs the closed form; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2ed279cc4226",
+          "ts": "a58dc31b5281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Clean, verifiable closed-form result with correct Tate-rationality consequence. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

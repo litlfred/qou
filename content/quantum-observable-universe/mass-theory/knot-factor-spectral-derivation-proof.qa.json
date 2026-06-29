@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof of knot-factor spectral form in sec:plancherel-knot-factor-mass-tower; on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Block-diagonal Gram in central-idempotent basis with G_{λμ}=δ·dim_q V·dim V/[n]_q! is the standard Plancherel/Markov structure; expansion to the displayed sum is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "A genuine (if terse) derivation reducing the knot factor to the chirality-restricted specialisation of the unified mass functional."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Cites Gram-spectral connection + unified mass formula as upstream; no circular dependency."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Modest 'expand and substitute' proof; claims only the depth-stratified specialisation, no broader assertion."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Steps follow: block-diagonal Gram ⇒ expand β,β* ⇒ substitute ⇒ displayed sum = restricted unified functional."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof block with no Lean sibling; the formalization lives with the parent prop."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Internal cross-refs only (Gram-spectral, unified mass formula); used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "e_λ, dim_q, [n]_q! standard; chirality projection cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Pure algebraic derivation, no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No backing witness in this proof block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fb9f029d1fbd",
+          "ts": "542d41d31311"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sound terse proof. Strongest objection: it is a one-paragraph sketch leaning entirely on the Gram block-diagonality and the unified mass formula; a referee would want the e_λ-expansion shown explicitly, but the cited results carry it."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

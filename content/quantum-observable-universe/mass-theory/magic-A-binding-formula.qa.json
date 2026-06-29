@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Theorem statement is the bare conditional formula; the regime-dispatch discussion and rho_F derivation are in clearly separated sections / authorNotes."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Doubly-magic binding sits in sec:hoefsmit-he4-magic-a-binding; on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Stated over R for MeV comparison; the opening note explicitly invokes the AGENTS §7c archimedean-specialisation carve-out (8G, MeV are archimedean)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean theorem `magic_A_binding_formula` is generic `[Field R]`; the R specialisation is only at the numerical comparison, no archimedean machinery proving an algebraic identity."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean `magic_A_binding_formula` states B Z N = rho_F·m_e·A·8G for doubly-magic (Z,N) via the §3b-cond class, matching the narrative conditional theorem."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Signature carries the class hypothesis + isDoublyMagic; conclusion is the formula, not weakened; no injected False."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.lean:128: \"hMA.formula Z N hZN\"",
+        "notes": "The theorem is a direct projection of the class field `formula` (which carries the conclusion). This is the §3b-cond pattern and is disclosed, but the class field IS the conclusion shape rather than genuine sub-hypotheses; borderline self-assuming. Downgraded to warn since rho_F is an honest axiomatized substrate input."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Conclusion is the substantive binding equality, not True/rfl; auxiliary dispatch theorems (he4_dispatches) use `decide` on genuinely-decidable magic-set membership."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No False/contradictory premise; isDoublyMagic is satisfiable (he4_is_doubly_magic proved)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "hZN and the class hypothesis are both used in `hMA.formula Z N hZN`."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "`decide` only on isMagic/bindingRegime finite-disjunction dispatch (genuinely decidable, justified), not on the core binding theorem."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "8G = Vol(L6a4) = Vol(Borromean) and chi(genus-4)=-6 type structure are correctly stated; B(4He)=2·m_e·4·8G≈29.956 MeV checks against the stated 8G≈7.3277."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Non-vacuous: the formula and the regime-dispatch theorems carry real content (idempotent dispatch, A-scaling)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "rho_F=2 is consumed as an axiomatized input (structurally answered by kashaev-density=SDP-multiplicity per audit), not back-fitted to 28.296 MeV — indeed the prediction MISSES by +5.9%, evidence against back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "+5.9% miss for 4He stated honestly; rho_F derivation explicitly flagged as not-closed in-proposition (consumed via §3b-cond class)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.md:78: \"rho_F = 2 ... derivation of the integer 2 ... is not closed in this proposition\"",
+        "notes": "rho_F is a per-regime substrate prefactor consumed as a class hypothesis. The authorNotes route it to conj:kashaev-density-equals-sdp-multiplicity (rho_F=nu_SDP), so it is corpus-grounded, not a free 4th calibration; but rho_F(4He)=2 remains numerically unverified (SDP solver extension open), so it is a partially-undischarged DOF. Warn, not fail."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Regime split (doubly-magic vs alpha-shift) is justified via diagrammatic-double-magic-lr-fusion (single self-conjugate Specht module ⇒ no Wedderburn channel); coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean class + theorem match the .md conditional formula; the dispatch theorems (he4→DoublyMagic, T/3He/D→AlphaShift) are consistent with the narrative regime table."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "jones1987/wenzl1988 cited for the Hecke/Wedderburn machinery; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Magic set, doubly-magic, 8G, rho_F all defined/cross-linked; isMagic is concrete."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Single +5.9% comparison vs 28.296 MeV is honest (not cherry-picked precision); witness binding-alpha-shift-witness quantifies the 80x gap-closure vs alpha-shift's -79%."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Binding energy in MeV, correct units; 29.956 vs 28.296 MeV is physically reasonable order; no conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness binding-alpha-shift-witness.json + magic_A_formula.py cited; values consistent with prose approximations."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "abec37c5bce9",
+          "ts": "a8e5e52b7642",
+          "lean": "f702f135d236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sound §3b-cond conditional theorem. Strongest objection: rho_F=2 for 4He is an axiomatized-then-unverified prefactor (nu_SDP(4He) numerically open), so the +5.9% headline rests on an input that is structurally-justified but not yet SDP-confirmed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

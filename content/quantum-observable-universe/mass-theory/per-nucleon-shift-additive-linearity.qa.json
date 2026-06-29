@@ -1007,7 +1007,419 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proposition states the additive-linearity recurrence + closed form shift=18Z+21N+1; generator-decomposition and open items are clearly separated sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:spectral-sequence-chirality-confinement-per-nucleon-shift; per-nucleon shift exponent on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is about the Markov-trace denominator shift exponent (integer combinatorics over H_{3A}(q)); generic-algebraic, no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "lean.ref validation 'not_checked'; proof is the additive-linearity induction described in the .md, not an archimedean argument; no -proof block in this batch to assess separately."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "lean.ref per_nucleon_shift_additive_linearity; statement (recurrence + closed form) is the claim; validation not_checked but no statement-level divergence asserted."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Closed-form shift=18Z+21N+1 is the substantive conclusion; not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The shift formula is derived from per-nucleon generator-count + cancellation, not a class-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "shift=18Z+21N+1 is a non-trivial witness-verified (A=2..6) claim, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Z,N≥1 (A≥2) premise is genuine; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Base case shift(D)=40 + both recurrences are used to fix the closed form; no idle hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No decide-masking signal in the narrative; the witness does the per-A verification."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "shift=18Z+21N+1 with increments 18 (proton), 21 (neutron), base 40 is self-consistent (18+21+1=40); witness 5/5 assertions pass, cross-validated for 5Li."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Substantive closed-form shift exponent + 12-generator-per-nucleon decomposition; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "shift derived from generator count + Ocneanu cancellation, then verified against independent witnesses; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The cancellation counts (3, 1.5) and the -1/12 leading-coefficient are flagged as open (closed-form derivation prohibitive beyond A=2); honestly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "per-nucleon-shift-additive-linearity.md:62: \"per-new-nucleon cancellation values (3, 1.5) are derived from σ^2-adjacency counting plus Ocneanu averaging ... closed-form expression remains open\"",
+        "notes": "The cancellation values 3 and 1.5 (giving increments 18, 21) are obtained from σ^2-adjacency + Ocneanu averaging but the closed form is open beyond A=2; the half-integer 1.5 for neutron is empirically fit-to-table at present. Not a free calibration (it reproduces 5 atoms), but the derivation is incomplete, so the (3, 1.5) split has the flavor of a partially-fitted structural input. Warn."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Per-nucleon +12 generators + cancellation ⇒ increments 18/21 ⇒ closed form follows; coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "validation:not_checked; no Lean over-claim. Statement is the shift formula; no divergence asserted."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No external cites; Ocneanu-weighting reference is internal audit-doc based."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "D(u) form, shift exponent, canonical pppnnn ordering, generator census all specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "per-nucleon-shift-additive-linearity.md:50: \"approximately -1/12 for neutron standalone (precision-limited at high-A in the existing float-precision Hoefsmit pipeline)\"",
+        "notes": "The closed form is verified on only 6 atoms (A=2..6), and the companion -1/12 leading-coefficient is float-precision-limited for neutron / high-A. The shift formula itself is integer-exact and robust, but the half-integer cancellation + -1/12 evidence is precision-fragile beyond A=2. Warn (the core shift claim is sound; the companion claims are fragile)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Algebraic shift-exponent claim; no direct physical observable (D(u) is a trace denominator)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness per-nucleon-shift-derivation.witness.json (5/5 pass) + cross-validation against term6-residues-at-roots for 5Li; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "89b6bf7af6b5",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Solid integer-exact shift formula verified on 6 atoms. Strongest objection: the per-nucleon cancellation split (3, 1.5) lacks a closed-form derivation (open beyond A=2) and the companion -1/12 coefficient is float-precision-limited — the structural shift claim is robust, the micro-derivation is not yet closed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

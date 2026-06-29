@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof in sec:alpha-k-procedure; confinement SDP existence/duality on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Compact spectrahedron + bounded objective ⇒ attained min; Slater ⇒ strong duality + complementary slackness is standard convex SDP duality, correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Genuine 3-step convex-duality proof sketch; the scalar-LP-as-diagonal-restriction connection is substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Uses standard convex duality + Slater hypothesis (ctx.slaterStrictFeasible); no circular assumption."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Labeled 'Proof (sketch)'; explicitly states the Lean defers the conic-duality step via sorry pending a Mathlib SDP API. Honest about the formalization gap."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No free parameter; the trace-normalization n_target and PSD cone are fixed."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "compact + bounded ⇒ attained; Slater ⇒ strong duality; block-decoupling ⇒ LP collapse — each step is a valid convex-analysis inference."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The .md states the Lean encodes ConfinementSDPData + states confinement_sdp conditional on slaterStrictFeasible with the conic-duality step a sorry; consistent (no claim the Lean fully proves it)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "boyd-vandenberghe-2004 §5.9 correctly cited for conic strong duality / complementary slackness."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Spectrahedron, Slater strict feasibility, shadow prices y_λ*≥0, complementary slackness all defined; the LP/SDP dual fields match the AGENTS contract."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Existence/duality proof; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Convex-optimization existence claim; no direct physical observable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No backing witness in this proof block; pure convex-analysis argument."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Standard, correct convex-duality proof sketch, honest about the Lean sorry (Mathlib SDP API gap). No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

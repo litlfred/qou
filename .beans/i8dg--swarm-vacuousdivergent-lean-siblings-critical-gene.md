@@ -29,3 +29,7 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 28, mass-theory)
 - frobenius-self-duality-forces-lp-dual-extraction.lean:5-23 (all-sorry stub; drops non-degenerate/symmetric hyp)
 - pn-averaging-uniqueness.lean:170-174 (proves StandardNorm only; BarInvariant + ColorFlavorCompatible binders unused; pn_averaging_unique_via_weight sibling fixes but not referenced)
+
+## More instances (batch 29, mass-theory)
+- curvature-rank-gb-stratification.lean:26-28,58 (self-assuming antisymm of its two inclusion fields; richer FilteredAlgebra sibling not the resolved ref)
+- joint-tower-sdp-confinement.lean:106 (SDP constraints -> trivial proxies; theorem := its own hypothesis; design-spec framing)

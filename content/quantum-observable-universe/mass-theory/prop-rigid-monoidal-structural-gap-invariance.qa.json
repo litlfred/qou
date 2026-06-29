@@ -1050,7 +1050,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is the convention-independence claim for Delta_cat; the Type-B-folding unification discussion is in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:kashiwara-jones-quantum-dilog; rigid-monoidal Markov-trace convention-invariance on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "prop-rigid-monoidal-structural-gap-invariance.lean:60: \"markov_trace : α → ℝ\"",
+        "notes": "The categorical Markov-trace invariant is intrinsically generic-ring content but the Lean models it over ℝ (markov_trace, regularizer, Delta_cat all : ℝ). Per §7c this is a borderline gratuitous-ℝ on an algebraic invariant; B_AME/Delta_cat are archimedean so ℝ is defensible. Warn."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Downstream theorems (trace_convention_independence, structural_gap_convention_independent) are pure rewrites of a class field, no archimedean machinery (linarith/IVT) proving an algebraic fact."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean class RigidMonoidalStructuralGapInvariance + structural_gap_convention_independent matches the narrative convention-independence claim; §3b-cond conditional pattern."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Downstream theorems carry the class as an explicit [R:...] hypothesis; conclusion is the genuine convention-independence, not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "structural_gap_convention_independent DERIVES from convention_factorisation (the class axiomatizes the hypothesis 'every convention factors through tau', and the theorem derives gap-equality) — genuine derivation, not a projection of its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Conclusion (B_AME - c·|tr β| equal across conventions) is substantive; not True/rfl. The `canonical` skeleton instance sets categorical_trace≡0 with a §3b-cond `sorry`, but that is the conjectural axiom, not a trivial-true masking of the downstream theorems."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No False premise; the class hypothesis is satisfiable (the skeleton instance inhabits it modulo the §3b-cond sorry)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The class instance R is used via R.convention_factorisation in each downstream theorem."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No decide; proofs are `rw`/`rfl` on the class fields, justified."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Markov-trace uniqueness (Jones 1985, Wenzl 1988) up to z is a true theorem; convention-independence follows correctly from it."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "prop-rigid-monoidal-structural-gap-invariance.lean:236: \"categorical_trace _ := (0 : ℝ)\"",
+        "notes": "The canonical §3b instance is explicitly tautological (categorical_trace≡0, sorry in convention_factorisation), so the downstream theorems are unconditional only modulo a content-free skeleton. This is the disclosed §3b-cond canonical-skeleton pattern (not a hidden vacuity), but the instance itself carries no conjectural content — warn, per the trivial-skeleton workplan it cites."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No circularity; convention-independence is derived from Markov-trace uniqueness, not assumed as its own conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Block flags itself conjectural at the falsifiable-prediction level; the categorical Steps 1-3 are correctly attributed to established results."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No hidden parameter; the point is that conventions vary only the NON-categorical regularizer, which cancels."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Unification of findings (1)-(3) via S-invariance is coherent; each row maps to a stated categorical fact."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean theorems match the .md; the §3b-cond skeleton sorry is the disclosed conjectural axiom (Jones-Wenzl uniqueness), consistent with the narrative 'conjectural at falsifiable-prediction level'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "jones1985/wenzl1988/kassel1995 cited for Markov-trace uniqueness; correct attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Markov parameter z=1/(sqrt q+1/sqrt q), M1-M3 axioms, Type-B folding all defined/cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness rigid_monoidal_gap_invariance_check verifies two independent symbolic routes agree to 1e-40 and corrects a prior invalid z^3 trace (authorNotes); robust, not fit-noise."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Z↔N binding symmetry (tau(sigma_pp)=tau(sigma_nn)) is consistent with the AME-confirmed near-degeneracy; no implausible physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness re-pointed to a corrected producer (authorNotes 2026-06-12); the prior z^3 producer was retired with a regression guard. Reproducible and self-correcting."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "238cbf39e9a1",
+          "ts": "a91390d9a2e4",
+          "lean": "c3d71d2ebc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sound conditional unification. Strongest objection: the canonical Lean instance is a content-free skeleton (categorical_trace≡0 + sorry), so the 'unconditional downstream theorems' are unconditional only relative to a tautological witness — the genuine Jones-Wenzl discharge is still pending."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

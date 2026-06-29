@@ -816,7 +816,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Remark in sec:parity-classification-discrepancy-partition-sum-proton interpreting thm:knot-mass-formula-unified; n/p discrepancy on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Q_β=|Δ(net)|·E_0=(2-h)h/2·m_e/(q_0(q_0-1))≈0.7836 MeV vs CODATA 0.7823 (+0.17%) is consistent with the AGENTS cheat-sheet Q_β≈0.784 MeV (0.17%); pole-distance asymmetry framing is internally coherent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Substantive interpretive remark documenting the per-nucleon tower failure mode and the clean difference prediction; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Q_β treated as a PREDICTION from CAL-1+CAL-2 (not input); the per-nucleon failure is honestly reported, not back-fitted away."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "EXEMPLARY honesty: neutron undershoots by -62.9%, raw Δm has WRONG SIGN, only the |Δ(net)| difference is clean (+0.17%); the +1.31 keV residual is explicitly attributed to N=0 brane-tower truncation, not noise. No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Uses only CAL-1+CAL-2; Q_β is a derived prediction. No 4th calibration smuggled."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Pole-distance asymmetry ⇒ per-nucleon mass failure ⇒ work at the difference level is a coherent chain; the 6-term cancellation accounting is consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Remark with no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Internal cross-refs (three-calibration-discipline, mass-endomorphism-tower, frobenius-codim-universal, brane-tower-z-habiro) used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "np-discrepancy-resolution.md:20: \"recomputed at 50 dps via sympy + exact algebraic structures, no exact precision\"",
+        "notes": "Phrasing 'exact representation symbolic ... no exact precision' and 'the canonical formalism' placeholders are confusing (the script names are elided); the numerical regime (50 dps symbolic) is recoverable but the source scripts are 'the formal derivation' placeholders. Minor legibility/sourcing issue."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "np-discrepancy-resolution.md:52: \"vs CODATA 0.7823 MeV — +0.17% / +1.31 keV residual\"",
+        "notes": "The 0.17% Q_β difference-prediction is muon-q_0-anchored at N=0 truncation; per AGENTS the proton-re-pinned L2 dashboard measures Q_β at ~1279 ppb and the Habiro-exact 5.7 ppb was pre-re-pin. The +0.17% here is the honest N=0 result and is correctly framed as truncation (the block says so), but a referee should note it is the muon-anchored figure, not the current proton-pin dashboard value. Warn."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The block flags the raw per-nucleon masses as wrong-sign/implausible and explicitly does NOT present them as predictions — it routes to the difference. No implausible claim is endorsed."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Q_β formula reproducible from q_0; the per-isotope error table is sourced to named (if placeholder-labeled) sweeps; values consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6dc2c2a3167d",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Model-honest R&D remark: discloses the -62.9% neutron failure and wrong-sign raw Δm, presents only the clean +0.17% difference prediction. Strongest objection: the +0.17% Q_β is the muon-anchored N=0 figure, not the current proton-pin dashboard value (~1279 ppb) — a staleness caveat a referee would flag."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

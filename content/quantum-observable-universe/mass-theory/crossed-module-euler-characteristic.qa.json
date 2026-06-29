@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:10.357Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof not in this block; no decide visible to assess."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -45,6 +60,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Single-statement proposition: the h^2 trace = -12 = dim(V)·chi(Σ_4); no interpretive prose embedded."
       }
     ],
     "fit-section-chapter": [
@@ -64,6 +94,21 @@
         "reviewed_at": "2026-06-22T02:57:04.910Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:mass-bridge-orphan-reconnect (geometric face, pentagon/volume bridges); crossed-module h^2 trace on-scope."
       }
     ],
     "wall-side-statement": [
@@ -82,6 +127,21 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is an algebraic trace identity over the quaternion rep; integers -12,-6,2 are exact, no archimedean leak."
       }
     ],
     "wall-side-proof": [
@@ -101,6 +161,21 @@
         "reviewed_at": "2026-06-22T02:57:05.691Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof body is in the sibling -proof block; this is the statement block."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -120,6 +195,21 @@
         "reviewed_at": "2026-06-22T02:57:06.005Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "lean.ref qou:QOU.BraidKnot.CrossedModuleEulerCharacteristic; statement is the trace=dim·chi identity (proof in sibling). No statement-level divergence visible."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -356,6 +446,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Conclusion is the substantive -12 trace identity; not weakened."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -409,6 +514,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement block; the trace identity is a concrete computation, not a class-field projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -445,6 +565,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "trace=-12 is a non-trivial computed value, not a tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -498,6 +633,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Q_8 crossed-module map and Borromean braid are well-defined; no False premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -551,6 +701,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Crossing signs s_k, quaternion images c_k, dim(V)=2 all feed the trace; no idle hypotheses."
       }
     ],
     "da-false-claim": [
@@ -569,6 +734,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Arithmetic verified: chi(Σ_4)=2-2·4=-6; dim(V)·chi=2·(-6)=-12 matches the traced sum claim."
       }
     ],
     "da-vacuous": [
@@ -586,6 +766,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Non-vacuous numerical-categorical identity backed by witness hecke-crossed-module-q8."
       }
     ],
     "da-circular": [
@@ -604,6 +799,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "-12 is computed from the Q_8 trace; the chi(Σ_4)=-6 identification is geometric, not back-fitted."
       }
     ],
     "da-overclaim": [
@@ -621,6 +831,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Claims only the conditional h^2 trace identity (conditional on prop:quaternion-from-hecke-eigenspaces); appropriately scoped."
       }
     ],
     "da-hidden-dof": [
@@ -639,6 +864,21 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No free parameter; crossing signs and quaternion images are fixed by Φ_0."
       }
     ],
     "da-non-sequitur": [
@@ -657,6 +897,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Identification -12=dim·chi is an exact equality, not an inferential leap."
       }
     ],
     "da-citation-misuse": [
@@ -675,6 +930,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No external cites; internal structure self-consistent."
       }
     ],
     "da-definitional-ambiguity": [
@@ -693,6 +963,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Q_8 map (σ_1→i, σ_2→j), V=C^2 fundamental, Σ_4 genus-4 Bring surface all specified."
       }
     ],
     "da-empirical-fragility": [
@@ -711,6 +996,21 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Exact integer identity (-12), witness-verified; not a tuned numerical near-match."
       }
     ],
     "da-physical-implausibility": [
@@ -729,6 +1029,21 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Algebraic/topological identity; no direct physical observable."
       }
     ],
     "da-reproducibility": [
@@ -746,6 +1061,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness hecke-crossed-module-q8.witness.json (status verified) backs the -12 value."
       }
     ],
     "da-referee-verdict": [
@@ -798,6 +1128,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9d8814d2672",
+          "ts": "184752838afe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement matches the lean.ref decl name; no divergence detectable at statement level."
       }
     ],
     "voice-status-leak": [
@@ -1798,5 +2143,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

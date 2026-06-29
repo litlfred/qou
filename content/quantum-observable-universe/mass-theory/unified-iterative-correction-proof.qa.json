@@ -26,6 +26,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof in sec:substrate-binding-setup; unified LP-dual iterative correction on-scope."
       }
     ],
     "da-false-claim": [
@@ -43,6 +58,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "H_q((2,2))=[3]_q·[2]_q^2 verified (hooks {3,2,2,1}); LP-dual shadow-price + Frobenius-reciprocity telescoping structure is internally consistent."
       }
     ],
     "da-vacuous": [
@@ -60,6 +90,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Substantive: unifies 3 legacy binding mechanisms into one LP-dual accumulator with explicit algorithm; not content-free."
       }
     ],
     "da-circular": [
@@ -77,6 +122,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Shadow prices from mass-coefficient-shadow-price (independent LP-dual); no target back-fit — the residual between paths is explicitly the unabsorbed remainder."
       }
     ],
     "da-overclaim": [
@@ -94,6 +154,23 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "unified-iterative-correction-proof.md:83: \"one symbolic algorithm with zero fitted parameters and no special-case branches\"",
+        "notes": "'Zero fitted parameters / no special cases' is a strong claim; the proof does derive each term from shadow prices, but the 3-mechanism specialisation table and the K_max-truncation residual mean the 'unified' formula's accuracy still depends on truncation order. The claim is defensible (parameters are derived) but the 'unified, no special case' framing slightly overstates given the per-A dominance differences. Warn."
       }
     ],
     "da-hidden-dof": [
@@ -111,6 +188,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "C_λ=m_e·H_q(λ) is the universal partition-algebra constant (no nuclear data); K_max is a truncation order, not a fitted DOF."
       }
     ],
     "da-non-sequitur": [
@@ -128,6 +220,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Telescoping of per-step log-trace differences ⇒ closed-form B_λ follows; Kerov/Feray-Meliot give the Markov-chain + CLT interpretation, coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -145,6 +252,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proof block; formalization with parent prop."
       }
     ],
     "da-citation-misuse": [
@@ -162,6 +284,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "kerov1996 (q-hook walk) and feray-meliot2012 (q-Plancherel CLT) correctly invoked for the Markov-chain transition kernel and O(1/√A) convergence respectively."
       }
     ],
     "da-definitional-ambiguity": [
@@ -179,6 +316,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "C_λ, S_λ, u_λ*, H_q(λ), the algorithm pseudocode all defined; the three legacy mechanisms are explicitly specialised."
       }
     ],
     "da-empirical-fragility": [
@@ -196,6 +348,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness mass-qvalue-by-level (1H..208Pb, restartable, per-step rows); the path-discrepancy is reported as the residual, not as a tuned success."
       }
     ],
     "da-physical-implausibility": [
@@ -213,6 +380,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Binding-energy MeV via shadow prices; O(1/√A) convergence is physically reasonable; no conservation violation."
       }
     ],
     "da-reproducibility": [
@@ -230,6 +412,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Witness mass-qvalue-by-level.witness.json named with restartable per-step rows; reproducible."
       }
     ],
     "da-referee-verdict": [
@@ -247,6 +444,21 @@
         "reviewed_at": "2026-06-28T22:31:00.405Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Coherent LP-dual unification with a clean algorithm. Strongest objection: the 'zero fitted parameters / no special cases' framing is slightly oversold given the explicit per-A mechanism-dominance table and K_max-dependent residual — but parameters are genuinely derived."
       }
     ],
     "voice-status-leak": [
@@ -1002,5 +1214,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

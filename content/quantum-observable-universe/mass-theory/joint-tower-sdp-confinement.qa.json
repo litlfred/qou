@@ -1048,7 +1048,455 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is the SDP design specification (find/such-that program); SDP-variables and constraints sections are structural elaboration, not physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:alpha-k-procedure-atom-knot-mass; joint-tower SDP confinement on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "SDP over Q-valued coefficients of H_{n_0}(q_0); the q_0 evaluation is a substrate constant, the program is algebraic (Wedderburn PSD); no improper archimedean leak in the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean sibling uses ℝ for PosDef matrices (standard for SDP feasibility); the trivial-proxy theorems use no archimedean machinery proving an algebraic identity."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "joint-tower-sdp-confinement.lean:103: \"def JointTowerSdpFeasible (sdp) : Prop := sdp.registry ≠ []\" + line 106 \"joint_tower_sdp_feasible ... := h_nonempty\"",
+        "notes": "The .md asserts a substantial SDP (per-block Wedderburn PSD ρ_λ(T_w)⪰0, GB-filtration grading, jet-order, cross-level embedding consistency). The Lean replaces EVERY constraint with a trivial proxy (WedderburnBlockPositivity:=n_0≥1, CrossLevelConsistency:=codomain≥domain, JointTowerSdpFeasible:=registry≠[]) and proves feasibility := h_nonempty (the theorem IS its hypothesis). The Lean establishes nothing the .md's SDP claims."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "joint-tower-sdp-confinement.lean:40: \"WedderburnBlockPositivity ... := vars.n_0 ≥ 1\"",
+        "notes": "Provable-kind block (proposition) whose Lean downgrades genuine SDP positivity to n_0≥1 well-formedness proxies. The .md does say 'design specification' and delegates existence to prop:confinement-sdp, mitigating an integrity-violation reading, but the Lean's joint_tower_sdp_feasible is a hypothesis-projection, not a discharge of the stated constraints."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "joint-tower-sdp-confinement.lean:106: \"theorem joint_tower_sdp_feasible (sdp) (h_nonempty : sdp.registry ≠ []) : JointTowerSdpFeasible sdp := h_nonempty\"",
+        "notes": "The feasibility theorem reduces to its own hypothesis (JointTowerSdpFeasible:=registry≠[], proved by h_nonempty). Honestly disclosed ('genuine feasibility-of-system claim requires the SDP solver'), so warn not fail, but it is a hypothesis-as-conclusion projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "joint-tower-sdp-confinement.lean:103: \"JointTowerSdpFeasible ... := sdp.registry ≠ []\"",
+        "notes": "Not literally `:True`, but 'feasibility' is defined as the trivial predicate registry≠[], so joint_tower_sdp_feasible discharges a near-vacuous goal. Captured more precisely by proof-narrative-lean-equiv; warn here."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No False premise; the structures are inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "h_nonempty is used (it IS the proof). Constraint fields are bundled into JointTowerSdp; not unused per se."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No decide; the issue is trivial-proxy definitions, not decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The SDP design (Wedderburn-block PSD, filtration sparsity, cross-level embedding H_{12}↪H_{18} for D⊂4He) is a coherent and correct specification; existence delegated to prop:confinement-sdp."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "joint-tower-sdp-confinement.lean:50: \"GbFiltrationGrading ... := vars.filtration_cutoff ≤ 2 * vars.n_0\"",
+        "notes": "The Lean content is a set of well-formedness proxies (n_0≥1, cutoff≤2n_0, list≠[]) standing in for the genuine SDP constraints; the operative theorem is near-vacuous. Honestly labeled as 'the genuine check is handled by the SDP solver', so warn — the .md statement itself is substantive, the Lean encoding is the vacuous part."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No circularity; the SDP is a forward design spec, existence cited to prop:confinement-sdp."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The .md does NOT claim the Lean proves feasibility — 'Existence is asserted by prop:confinement-sdp'; the Lean docstrings disclaim the proxies. No overclaim in the narrative."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "SDP variables c_{H,w}∈Q are explicit; filtration cutoff reduces them; no hidden continuous DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Filtration sparsity ⇒ polynomial effective variable count; cross-level consistency via canonical embedding — coherent reasoning."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "joint-tower-sdp-confinement.lean:41: \"WedderburnBlockPositivity ... := vars.n_0 ≥ 1\"",
+        "notes": "Material divergence: the .md's SDP (ρ_λ(T_w)⪰0 per block, cross-level embedding equality) is replaced in Lean by n_0≥1 / codomain≥domain / registry≠[] proxies; the Lean proves a near-trivial well-formedness statement, not the .md's confinement SDP. The narrative is far stronger than the resolved Lean — a real proof-statement-integrity divergence (mitigated only by the explicit 'design specification' framing)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Internal refs (confined-particle, confinement-sdp, atom-knot-mass-derivation) used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Registry R, ρ_λ block projection, π embedding, GB-filtration grading, jet-order all defined; the H_12↪H_18 example clarifies the embedding."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Design specification; no numerical near-match claimed (the gb-filtration-jet-order witness is structural)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Algebraic SDP design; no direct physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "joint-tower-sdp-confinement.md:31: \"gb-filtration-jet-order.witness.json\" on branch claude/mass-units-bridge-followups",
+        "notes": "The cited witness URL points to a feature branch (claude/mass-units-bridge-followups), not main; a reader on main may not resolve it. Minor reproducibility/link-currency concern."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "41f3e7207d02",
+          "ts": "a23555cd6def",
+          "lean": "73455b60c120"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "joint-tower-sdp-confinement.lean:106: \"theorem joint_tower_sdp_feasible (sdp) (h_nonempty : sdp.registry ≠ []) : JointTowerSdpFeasible sdp := h_nonempty\"",
+        "notes": "Rollup: substantive narrative SDP spec, but the operative Lean is a near-vacuous well-formedness stub whose feasibility theorem equals its hypothesis."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

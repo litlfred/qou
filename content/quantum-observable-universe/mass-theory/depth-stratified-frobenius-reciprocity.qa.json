@@ -857,7 +857,253 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Conjecture in sec:mass-application-trace-operator-lemmas; depth-stratified FR ideal restriction on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "χ_{4_1}((2,1))=2-[3]_q is consistent (and [2]_q^2-[3]_q=1 verified); Frobenius reciprocity for Z(H_3)↪Z(H_n) is correctly invoked; the conjecture is honestly conjectural."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Substantive conjecture with explicit FR-pullback weight formula; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "K_3*=4_1 is empirically selected by variance reduction AND independently by the Fricke-trace derivation (chirality-from-frobenius-self-pairing); cross-checked, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "EXEMPLARY (a)/(b) discipline: the originally-asserted K_3*=6_1 is recorded as FALSIFIED (regresses to 1.878×), corrected to 4_1 (1.551×, +14.8%); two simple weight refinements explicitly falsified; K_1*,K_2* left open. Scope-limited, no structural overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "depth-stratified-frobenius-reciprocity.md:138: \"k = 1, 2: open — the distinguished knots are NOT named\"",
+        "notes": "The conjecture introduces three distinguished knots K_1*,K_2*,K_3* as additional structural inputs to the mass formula; if true it 'closes' binding via (m_e,q_0,Q_β) + the three knots. K_3*=4_1 is doubly-justified, but K_1*,K_2* are unconstrained open choices — a latent few-knot DOF that the block flags openly. Warn (disclosed, not smuggled)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "FR pullback through the knot-ideal central projector e_{K_k*} is a coherent categorical mechanism; the 'hear more than Jones' framing follows from the enrichment argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "DepthStratifiedFrobeniusReciprocity.lean:8: \"At k = 3: K_3* = 6_1 (chirality channel)\" + line 48 \"chirality_ideal_6_1 ... knot_label := \\\"6_1\\\"\"",
+        "notes": "The .md CORRECTS K_3* to 4_1 and records 6_1 as FALSIFIED (regresses variance), but the Lean library file still hard-codes K_3*=6_1 (DepthStratifiedFrobeniusReciprocity.lean:8,48-51). The Lean carries the refuted constant — stale relative to the corrected narrative. Conjecture so proof-* don't apply, but the Lean disagrees with the .md on the load-bearing distinguished knot."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "frobenius1898/macdonald1995/lewin1981 correctly cited for Frobenius reciprocity, symmetric functions, and polylogarithms respectively."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "FR-restricted weight ~w_λ^{(K_k*)}, central projector e_{K_k*}, depth(λ), Z(H_3)↪Z(H_n) inclusion all defined; existence requirements enumerated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "depth-stratified-frobenius-reciprocity.md:22: \"K_3* = 4_1 ... best variance reduction at 1.551× (+14.8% vs 1.82× baseline)\"",
+        "notes": "The K_3*=4_1 support rests on a single variance-ratio improvement (1.82→1.551) over 4 atoms (D,T,3He,4He), with 6_1 and two other forms falsified on the same small set. The improvement is real and corpus-grep-honest, but it is a modest +14.8% on a 4-point bench — empirically thin, as the block's own 'partially supported at k=3' wording concedes. Warn."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Knot-ideal-restricted Wedderburn weighting as a binding mechanism is internally consistent; no measurement contradiction asserted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "depth-stratified-frobenius-reciprocity.ts:22: \"status: \\\"experimental\\\"\"",
+        "notes": "Witness binding-depth-stratified-knot-weighted is marked status:experimental; the .md (K_3*=4_1) and the Lean (K_3*=6_1) disagree on the distinguished knot, so reproducing the headline 1.551× requires the corrected 4_1 producer, not the stale Lean constant. Warn (cross-source inconsistency on the load-bearing value)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cd3375aed728",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Well-disciplined conjecture (6_1 falsified→4_1 corrected, two weight forms falsified, K_1*/K_2* open). Strongest objection: the Lean sibling still hard-codes the REFUTED K_3*=6_1 (DepthStratifiedFrobeniusReciprocity.lean:8,48), contradicting the corrected .md — the formalization needs to be synced to 4_1, and the +14.8% support is on a 4-atom bench."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

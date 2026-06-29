@@ -1046,7 +1046,423 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proposition states the H_3 3-channel V_hat closed form; the lepton-mapping speculation and T6 caveat are in clearly separated sections / authorNotes."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:phi-q-lepton-mass-tower; lepton V_hat convention on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is the algebraic V_hat formula; Lean is generic `[Field R]`; q_0 numerics are in a Verification subsection, not the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean proof `hecke_ab_correct`/`lepton_V_hat_electron_formula` uses only `ring`/`induction` over generic R; no archimedean machinery proving the algebraic identity."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean `lepton_V_hat_h3_3channel` = W_1D·q^n + W_STD·(z·a_n+b_n) + W_1D·(-q^{-1})^n matches the boxed .md formula; electron m=1 expansion theorem matches."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Signatures unchanged; W weights, Hecke recursion, Markov-traced std channel all faithfully encoded."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No class-field projection; `hecke_ab_correct` is a genuine induction; `lepton_V_hat_electron_formula` unfolds + ring."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Conclusions are substantive algebraic identities (sigma^n = a_n·sigma+b_n; V_hat expansion), not tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Hypothesis hh: sigma^2 = h·sigma+1 is the genuine Hecke quadratic, satisfiable; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "hh used in the succ step; hh_def (h=q-q^{-1}) is present in the electron-formula theorem signature but the identity holds for the abstract h — minor, the statement is still correct."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No decide/trivial masking; `ring`/`simp [hecke_ab]` are appropriate."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "q-arithmetic checks: [2]_q≈2.0109, [3]_q!≈6.12, W_sym=W_alt=1/[3]_q!≈0.1634, W_std=[2]_q^2/[3]_q!≈0.6607 all consistent; electron V_hat≈0.586 vs paper 0.594 (1.3% rounding)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Substantive: a closed-form V_hat formula proved by induction, verified numerically."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Electron V_hat is computed from the formula and matches the independently-published paper convention (0.594); no back-fit of the formula to the target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The block does NOT claim lepton masses close — it explicitly records the 99% shortfall and that the missing 152≈(3/2)/h_q^2 factor is the SUPERSEDED scalar density; honest scope-limited reporting (matches da-refuted (a) discipline)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No hidden DOF in the algebraic identity; the missing 152 factor is flagged as a known SUPERSEDED-rho_q implication, not smuggled in."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Bring-surface nucleon analogy is framed as analogy/conjecture, not a logical inference; the V_hat derivation steps are valid."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "wenzl1988/jones1987 cited for Hecke Plancherel weights; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "lepton-bring-surface-h3-3channel.md:179: \"`tools/pyhecke/python/pyhecke/the formal derivation:156`\"",
+        "notes": "Several cross-references read 'the formal derivation' / 'the canonical formalism' as placeholder text replacing concrete script names (e.g. constants.py:156), making the V_HAT_ELECTRON source ambiguous to a reader. Minor sourcing/legibility issue, not a math defect."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The numerical match (electron 0.586 vs 0.594) is honest and the non-closing mass ratios are disclosed, not cherry-picked; no hidden cross-anchor swing claimed as success."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Block does not assert a physical mass prediction; it documents that the convention alone does NOT reproduce CODATA lepton ratios — no implausible physical claim made."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "q_0≈1.10998 numerics reproduce ([2]_q, [3]_q!, W's, z); the V_hat algebra is exact and re-derivable; no stale-witness signal beyond the placeholder script names."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0372c96cecf3",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sound algebraic identity, honestly scoped. Strongest objection: the speculative NF-diamond↔particle-content mapping section is loose (e.g. counting Higgs/photon into dim H_3=6) and conjectural — but it is explicitly labeled conjectural and not load-bearing for the proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

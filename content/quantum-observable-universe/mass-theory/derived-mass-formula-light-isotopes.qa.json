@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proposition states the formula + sub-percent reproduction; the under-binding discussion is a clearly-labeled separate finding."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:mass-formula-derivation-commutative-chirality-vanishes; derived light-isotope mass formula on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The mass formula is an archimedean (MeV) statement by nature; ℝ in the Lean is appropriate (Z·m_p+N·m_n+... are physical masses)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean proofs (free_proton_exact etc.) use `simp`/`ring` on the formula; the archimedean masses justify ℝ; no algebraic identity proved by archimedean-only machinery improperly."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "derived-mass-formula-light-isotopes.md:27: \"reproduces the atomic masses ... to sub-percent accuracy\"",
+        "notes": "The .md's headline claim is empirical sub-percent reproduction across A=2..7; the Lean only encodes the formula and proves free-nucleon edge cases + np-splitting algebra. The empirical accuracy is in tables/witness, not Lean — standard pattern, so warn (not fail): the Lean is a faithful partial formalization, not a divergent weaker statement of the same claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Formula signature (Z·m_p+N·m_n+Z·m_e+α(Φ_1-2[3]_qΦ_2+H_A^2Φ_3)+Δ_W+Δ_T1) faithfully encoded; conclusions are genuine equalities."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Theorems compute the formula on concrete (Z,N); no class-field-as-conclusion projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "free_proton_exact (=m_p+m_e), np_splitting_exact (=m_n-m_p) are substantive non-trivial equalities, not True/rfl tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Φ=0 hypothesis for free nucleons is the genuine inter-gen-direct convention (free nucleons have Φ=0), satisfiable; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "hΦ used to zero the correction term; hp/hn used in np_splitting; no idle hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Proofs use simp/ring/Nat.choose unfolding on genuine goals; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Δm_{n-p}=1.293332 MeV matches CODATA; H_q((2,2))=[3]_q·[2]_q^2 hook product is correct (hooks {3,2,2,1})."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Substantive derived mass formula with empirical scorecard; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Terms are derived (α=m_e·8G, Φ_i from transfer-matrix chains, Δ_W from Wigner pairing); the under-binding miss (30-76%) is evidence against back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sub-percent claim is for atomic MASSES (dominated by Z·m_p+N·m_n); the BINDING under-prediction (30-76%) is disclosed as a structural open gap, not hidden."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "derived-mass-formula-light-isotopes.md:22: \"Δ_{T=1} ... natural T=1 isovector extension\"",
+        "notes": "Δ_T1 is a 'natural extension' reusing the (2,2) partition and 1/A normalisation; it is derived-by-analogy from Δ_W rather than from an independent calibration, so it is not a new fitted DOF — but 'natural extension' is the kind of soft justification a referee would probe. Warn, not fail: it reuses existing structure, no free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Each term's origin is cited (binding-scale-catalan, wigner-np-pairing); no unsupported step."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Lean faithfully encodes the formula + free-nucleon cases; the empirical sub-percent claim is appropriately table/witness-level, not falsely claimed proved in Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Internal cross-refs (binding-scale-catalan, wigner-np-pairing, frobenius-s-classification) used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "α, Φ_1,2,3, Δ_W, Δ_T1, n_pp, n_nn all defined with formulas; inter-nucleon generator positions specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The atomic-mass sub-percent is robust (mass dominated by constituents); the block honestly separates the fragile binding (30-76% miss) from the robust mass claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "MeV masses, correct units; np-splitting +1.293 MeV correct sign/magnitude; under-binding is acknowledged physics gap not a violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Scorecard at q_0=1.109978595554181 (50 dps) with tables; consistent with the formula."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2e41df8ab979",
+          "ts": "3bca650a9df1",
+          "lean": "f51d7edb4f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Honest derived formula: sub-percent masses (robust), 30-76% under-binding disclosed. Strongest objection: the 'sub-percent accuracy' headline is somewhat trivially met since atomic mass is dominated by Z·m_p+N·m_n; the real test (binding) misses badly — but the block states this plainly."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }

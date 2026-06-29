@@ -1046,7 +1046,455 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is the boxed stratification identity + spectral-sequence decomposition; the non-abelian Stokes 'consequence' is a one-line corollary, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sits in sec:spectral-sequence-chirality-confinement; curvature-rank GB stratification on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Statement is generic-ring algebraic (J^r/J^{r+1} of H_n(R,q)); no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Sibling Lean FilteredAlgebra proofs use ideal/lattice lemmas over [CommRing R]; library lean is generic; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "curvature_rank_gb_stratification.lean:58: \"def curvature_rank_gb_stratification [ctx : ...] : ∀ r, ctx.quotient_set r = {T_w | ctx.rank_T_w T_w = r} := ... Set.Subset.antisymm (ctx.quotient_subset_rank r) (ctx.rank_subset_quotient r)\"",
+        "notes": "The lean.ref-target library decl PROVES the boxed identity only by combining two class fields (`quotient_subset_rank` + `rank_subset_quotient`) that ARE the two directions of that very identity. The genuine stratification content (that GB-quotient = rank-r set) is assumed as class hypotheses, not derived. The substantive sibling .lean (FilteredAlgebra) is NOT the resolved ref. Lean proves nothing the .md claims."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "curvature_rank_gb_stratification.lean:9: \"The full Lean statement and proof are pending; this stub exists so the lean.ref URI resolves\"",
+        "notes": "The block is kind:proposition but its lean.ref resolves to a self-described placeholder stub whose 'theorem' is an antisymm of self-assuming class fields. The provable-kind signature's claimed content is not genuinely discharged."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "critical",
+        "evidence": "curvature_rank_gb_stratification.lean:26: \"quotient_subset_rank : ∀ r, quotient_set r ⊆ {T_w | rank_T_w T_w = r}\" + line 28 reverse inclusion",
+        "notes": "Textbook self-assuming projection: the class carries BOTH directions of the conclusion as fields, and `curvature_rank_gb_stratification := Set.Subset.antisymm (field1) (field2)` just projects them. Per AGENTS §3b-cond non-degeneracy + proof-no-self-assuming-projection, the class must axiomatize hypotheses, not the conclusion. Here it axiomatizes the conclusion itself."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "curvature_rank_gb_stratification.lean:58: \"Set.Subset.antisymm (ctx.quotient_subset_rank r) (ctx.rank_subset_quotient r)\"",
+        "notes": "Not literally `: True`, but vacuously discharged from class fields equal to the conclusion's two halves — content-free in the proof-no-trivial-true spirit (no hypothesis-using work done). Flagged as warn since the deeper issue is captured by proof-no-self-assuming-projection."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No False premise; the class is (trivially) satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Both class fields are used (one per inclusion direction)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No decide; the issue is self-assuming projection, not decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "The narrative stratification identity (J^r/J^{r+1} = rank-r words) is a reasonable/true structural claim for a GB-filtered Hecke algebra; the defect is the Lean discharge, not the math statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "curvature_rank_gb_stratification.lean:58: \":= Set.Subset.antisymm (ctx.quotient_subset_rank r) (ctx.rank_subset_quotient r)\"",
+        "notes": "The operative (lean.ref) formalization is a self-assuming projection: both inclusions are class fields, the 'proof' combines them. The genuine content is assumed. (The richer sibling FilteredAlgebra .lean is real but is not what the ref resolves to.)"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Narrative is not circular; the defect is vacuity in the Lean encoding (captured above), not a back-fit in the math."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "minor",
+        "evidence": "curvature-rank-gb-stratification.ts:7: \"validation: \\\"not_checked\\\"\"",
+        "notes": "The block presents as a proposition with a Lean ref, but the ref is a placeholder stub (self-assuming). A reader could over-read the formalization status; validation:'not_checked' partly mitigates. Warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No free parameter; r ranges over ℕ."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Narrative consequence (Stokes residue at depth ℓ = rank-ℓ words) follows from the stratification identity if granted."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "curvature_rank_gb_stratification.lean:53: \"theorem ... : ctx.holds := by sorry placeholder (the actual claim type sits on the context class)\"",
+        "notes": "The Lean (ref target) proves a vacuous antisymm of self-assuming fields, NOT the .md's stratification + spectral-sequence-page claims. The narrative is materially stronger/different than what the resolved Lean establishes — the core proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Internal cross-refs (hecke-curvature-2-cocycle, curvature-rank, gb-spectral-sequence) used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Curvature-rank r(T_w), GB filtration J^r, E_r pages all defined/cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Pure structural claim; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "Algebraic claim; no physical observable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7dc0de8e0178",
+          "ts": "d6c7e49c7e58",
+          "lean": "2bac5c9c8ec6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:30:04.723Z",
+        "reviewed_sha": "4fd3af019762d751d9cb1cf9a5627c2508cd403e",
+        "severity": "major",
+        "evidence": "curvature_rank_gb_stratification.lean:58: \"Set.Subset.antisymm (ctx.quotient_subset_rank r) (ctx.rank_subset_quotient r)\"",
+        "notes": "Rollup: the operative Lean is a self-assuming-projection stub; narrative is fine but its claimed formalization is vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:30:04.723Z"
 }
