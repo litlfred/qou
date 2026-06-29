@@ -27,6 +27,8 @@ export default chapter({
         "knot-periodic-table",
         "recursive-atom-knot-atlas",
         "recursive-atom-knot-atlas-interpretation",
+        "recursive-atom-knot-atlas-sdp-uniqueness-wiring",
+        "recursive-atom-knot-atlas-open-problems",
       ],
     }),
     section({
@@ -35,6 +37,7 @@ export default chapter({
       blocks: [
         "knot-centric-table-intro",
         "knot-centric-table",
+        "knot-centric-table-visualization-spec",
 
         "knot-centric-table-table1-data",
         "knot-centric-table-table2-data",
