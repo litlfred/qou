@@ -63,10 +63,12 @@ representation theory, and QOU's *specific* crystals do not generically apply:
   Using them requires the chemical lattice to carry those root systems — the
   unjustified step.
 
-**Open (non-numerological) research question:** is there a class of reactions
-whose stoichiometric fiber is the weight space of a QOU-relevant crystal? If so,
-Kashiwara operators give a free connected enumerator for that class. Not a
-result; a question.
+**Forward research question — resolved in §4:** is there a class of reactions
+whose stoichiometric fiber is the weight space of a QOU-relevant crystal? Answer:
+**no for generic chemistry** (missing-shape obstruction), **yes exactly for the
+metathesis / double-displacement class** (independent cation+anion conservation →
+type-A contingency-table crystal), but that class is already easy and the
+q-deformation adds nothing. Full analysis + verified demo in §4.
 
 ---
 
@@ -155,7 +157,52 @@ the known spin-adaptation, not surpass it.
 
 ---
 
-## 4. Verdict
+## 4. Forward question: which reaction class IS a QOU-relevant crystal?
+
+§1b left an open, non-numerological question: is there a class of reactions
+whose stoichiometric fiber is the weight space of a crystal, so that Kashiwara
+operators give a free connected Markov basis? Resolved precisely.
+
+**The obstruction (generic chemistry: NO).** A crystal `B(λ)` is "fixed *shape*
+λ, varying *content*"; its weight space `B(λ)_μ` is "fixed shape AND fixed
+content." Chemical conservation `Nx = b` fixes the **content/weight** μ (the
+element budget) but supplies **no shape** (no root system). So a generic chemical
+fiber, mapped to "words of content μ," is the *full* weight space
+`⊕_λ K_{λμ} B(λ)_μ` — many highest-weight sources, no single connected crystal.
+The Kashiwara structure that would help requires a shape, and distinguishable
+molecules carry no non-abelian symmetry to supply one.
+
+**The positive sub-case (metathesis / double-displacement: YES, exactly).** When
+a reaction conserves cations and anions **independently** — double displacement,
+ion exchange, salt metathesis — the fiber acquires the missing structure. A state
+is a contingency table `T[i,j]` = moles of salt `(cation_i)(anion_j)`; the two
+conservation laws are row sums (cation budget) and column sums (anion budget).
+This is the transportation polytope = **type-A crystal of contingency tables**
+(RSK / Danilov–Koshevoy), and:
+
+- the **Markov basis is the 2×2 swap** `T[i,j]±1, T[k,l]±1, T[i,l]∓1, T[k,j]∓1`;
+- each swap **is an elementary balanced metathesis** — e.g.
+  `AgNO₃ + NaCl → AgCl + NaNO₃` (verified mass-balanced: every swap conserves
+  both ion budgets);
+- adjacent-row swaps are Bender–Knuth involutions realizing the type-A Kashiwara
+  operators; the fiber is connected by them (Markov-basis property).
+
+Verified ([`2026-06-29-rdm-sdp-demo/metathesis_crystal.py`](2026-06-29-rdm-sdp-demo/metathesis_crystal.py)):
+the `r=c=[1,1,1]` fiber = 6 permutation matrices = `|Weyl(A₂)| = 3!`; the
+`r=[2,1,1], c=[1,2,1]` fiber (7 tables) is connected by swaps and every swap is
+mass-balanced.
+
+**Caveat — present but not accelerating.** This class is exactly where the
+formula matrix is totally unimodular, so enumeration is *already* easy (the 2×2
+swaps are the whole basis; no Gröbner needed). The crystal **explains** the
+tractability; it does not speed up an otherwise-hard problem. And QOU's
+**q-deformation adds nothing**: the q-grading weights tables by a statistic
+(`q^{inv}` / charge) with no chemical meaning. So the honest landing is: the
+crystal/representation-theory connection to chemistry is **real but classical
+(q=1) and confined to the already-easy metathesis class** — the same verdict as
+§3, reached from the enumeration side rather than the energy side.
+
+## 5. Verdict
 
 **QOU's compute optimizations do not transfer to chemistry, for principled
 (not incidental) reasons:**
