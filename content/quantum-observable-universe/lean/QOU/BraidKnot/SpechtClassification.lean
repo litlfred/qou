@@ -199,13 +199,83 @@ noncomputable instance instFintypePartitionIndex (n : ℕ) : Fintype (PartitionI
 
 /-- The index set of irreducibles has the same cardinality as the partitions of
 `n` — immediate from the equiv.  (Sorry-free: it is `Fintype.card_congr` of the
-stubbed equiv, no extra content.) -/
+now-proved `partitionEquivYoungIndex`, no extra content.) -/
 theorem card_partitionIndex (n : ℕ) :
     Fintype.card (PartitionIndex n) = Fintype.card (Nat.Partition n) :=
   (Fintype.card_congr (partitionEquivYoungIndex n)).symm
 
 /-! ## 2. `S^μ` as an `S_n`-representation -/
 
+/-! ### Helper lemmas for `specht_smul_mem` (the `S_n`-stability proof) -/
+
+omit [CharZero k] in
+/-- Conjugation `σ · σ⁻¹` carries `colStab t` into `colStab (σ • t)`. -/
+theorem conj_mem_colStab_fwd {μ : YoungDiagram} (σ : Perm (Fin (Specht.nOf μ)))
+    (t : Tableau μ) (π : Perm (Fin (Specht.nOf μ))) (hπ : π ∈ colStab t) :
+    σ * π * σ⁻¹ ∈ colStab (σ • t) := by
+  rw [mem_colStab] at hπ ⊢
+  rw [colPattern_smul, mul_smul, mul_smul, inv_smul_smul, hπ]
+
+omit [CharZero k] in
+/-- Conjugation `σ⁻¹ · σ` carries `colStab (σ • t)` back into `colStab t`. -/
+theorem conj_mem_colStab_bwd {μ : YoungDiagram} (σ : Perm (Fin (Specht.nOf μ)))
+    (t : Tableau μ) (ρ : Perm (Fin (Specht.nOf μ))) (hρ : ρ ∈ colStab (σ • t)) :
+    σ⁻¹ * ρ * σ ∈ colStab t := by
+  rw [mem_colStab] at hρ ⊢
+  rw [colPattern_smul] at hρ
+  rw [mul_smul, mul_smul, hρ, inv_smul_smul]
+
+/-- The conjugation bijection `C_t ≃ C_{σ•t}`, `π ↦ σπσ⁻¹`.  It witnesses that the
+column stabilizers of `t` and `σ • t` are conjugate subgroups, the reindexing used
+to push `rep σ` through a polytabloid. -/
+noncomputable def conjStabEquiv {μ : YoungDiagram} (σ : Perm (Fin (Specht.nOf μ)))
+    (t : Tableau μ) : (colStab t) ≃ (colStab (σ • t)) where
+  toFun π := ⟨σ * (π : Perm (Fin (Specht.nOf μ))) * σ⁻¹, conj_mem_colStab_fwd σ t π π.2⟩
+  invFun ρ := ⟨σ⁻¹ * (ρ : Perm (Fin (Specht.nOf μ))) * σ, conj_mem_colStab_bwd σ t ρ ρ.2⟩
+  left_inv π := by
+    apply Subtype.ext
+    show σ⁻¹ * (σ * (π : Perm (Fin (Specht.nOf μ))) * σ⁻¹) * σ = (π : Perm (Fin (Specht.nOf μ)))
+    rw [mul_assoc, mul_assoc, inv_mul_cancel, mul_one, ← mul_assoc, inv_mul_cancel, one_mul]
+  right_inv ρ := by
+    apply Subtype.ext
+    show σ * (σ⁻¹ * (ρ : Perm (Fin (Specht.nOf μ))) * σ) * σ⁻¹ = (ρ : Perm (Fin (Specht.nOf μ)))
+    rw [mul_assoc, mul_assoc, mul_inv_cancel, mul_one, ← mul_assoc, mul_inv_cancel, one_mul]
+
+omit [CharZero k] in
+/-- **`rep σ` permutes polytabloids: `σ · e_t = e_{σ•t}`.**  The linear action sends
+the polytabloid of `t` to the polytabloid of `σ • t`, via `map_sum`/`map_zsmul`
+(`rep` is `k`-linear) + `rep_of`, reindexing the column-stabilizer sum along the
+conjugation bijection `conjStabEquiv` (sign is conjugation-invariant in `ℤˣ`, and
+`(σπσ⁻¹) • (σ•t) = σ • (π•t)`).  This is the heart of `S_n`-stability. -/
+theorem rep_polytabloid {μ : YoungDiagram} (σ : Perm (Fin (Specht.nOf μ)))
+    (t : Tableau μ) :
+    Mtab.rep (k := k) μ σ (polytabloid (k := k) t) = polytabloid (k := k) (σ • t) := by
+  rw [polytabloid, map_sum]
+  simp only [map_zsmul, Mtab.rep_of]
+  rw [polytabloid]
+  refine Fintype.sum_equiv (conjStabEquiv σ t) _ _ (fun π => ?_)
+  show (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ)
+        • Mtab.of (k := k) (σ • ((π : Perm (Fin (Specht.nOf μ))) • t))
+      = (Equiv.Perm.sign ((conjStabEquiv σ t π : colStab (σ • t)) : Perm (Fin (Specht.nOf μ))) : ℤ)
+        • Mtab.of (k := k)
+            (((conjStabEquiv σ t π : colStab (σ • t)) : Perm (Fin (Specht.nOf μ))) • (σ • t))
+  have hsign :
+      Equiv.Perm.sign ((conjStabEquiv σ t π : colStab (σ • t)) : Perm (Fin (Specht.nOf μ)))
+        = Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) := by
+    show Equiv.Perm.sign (σ * (π : Perm (Fin (Specht.nOf μ))) * σ⁻¹)
+        = Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ)))
+    rw [map_mul, map_mul, map_inv,
+        mul_comm (Equiv.Perm.sign σ) (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ)))),
+        mul_assoc, mul_inv_cancel, mul_one]
+  have htab :
+      ((conjStabEquiv σ t π : colStab (σ • t)) : Perm (Fin (Specht.nOf μ))) • (σ • t)
+        = σ • ((π : Perm (Fin (Specht.nOf μ))) • t) := by
+    show (σ * (π : Perm (Fin (Specht.nOf μ))) * σ⁻¹) • (σ • t)
+        = σ • ((π : Perm (Fin (Specht.nOf μ))) • t)
+    rw [mul_smul, mul_smul, inv_smul_smul, ← mul_smul]
+  rw [hsign, htab]
+
+omit [CharZero k] in
 /-- **`S^μ` is `S_n`-stable.**  The Specht submodule is invariant under the
 permutation action `Specht.Mtab.rep`: this is what makes the restricted
 representation `spechtRep` below well-formed.  It holds because `rep σ` permutes
@@ -214,8 +284,16 @@ theorem specht_smul_mem (μ : YoungDiagram) (σ : Perm (Fin (Specht.nOf μ)))
     (x : Mtab (k := k) μ) (hx : x ∈ SpechtSubmodule (k := k) μ) :
     Mtab.rep μ σ x ∈ SpechtSubmodule (k := k) μ := by
   -- Ref: [sagan2001] §2.3 (the column-group signed sum e_t spans S^μ and
-  -- σ • e_t = ± e_{σ • t}, so S^μ is S_n-stable); brick-3 target.
-  sorry
+  -- σ • e_t = e_{σ • t} via colStab conjugation, so S^μ is S_n-stable).
+  rw [SpechtSubmodule] at hx ⊢
+  induction hx using Submodule.span_induction with
+  | mem y hy =>
+      obtain ⟨t, rfl⟩ := hy
+      rw [rep_polytabloid]
+      exact Submodule.subset_span ⟨σ • t, rfl⟩
+  | zero => rw [map_zero]; exact Submodule.zero_mem _
+  | add y z _ _ hy hz => rw [map_add]; exact Submodule.add_mem _ hy hz
+  | smul a y _ hy => rw [map_smul]; exact Submodule.smul_mem _ a hy
 
 /-- **`S^μ` as a representation of `S_n`.**  The restriction of `Specht.Mtab.rep μ`
 to the stable submodule `S^μ`, packaged as a genuine
@@ -233,6 +311,7 @@ noncomputable def spechtRep (μ : YoungDiagram) :
     refine LinearMap.ext fun x => Subtype.ext ?_
     simp only [LinearMap.restrict_apply, map_mul, Module.End.mul_apply]
 
+omit [CharZero k] in
 @[simp] theorem spechtRep_apply_coe (μ : YoungDiagram) (σ : Perm (Fin (Specht.nOf μ)))
     (x : SpechtSubmodule (k := k) μ) :
     ((spechtRep (k := k) μ σ x : SpechtSubmodule (k := k) μ) : Mtab (k := k) μ)
