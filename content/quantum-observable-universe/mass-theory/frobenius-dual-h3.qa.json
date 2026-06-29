@@ -875,7 +875,277 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Frobenius dual on H_3(q) NF basis is mass-theory/Frobenius-pairing content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Definition is over generic CommRing R (Lean variable {R}[CommRing R]); Gram matrix / dual algebraic, no archimedean construct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "K^∨=Σ c_i(G⁻¹)_{ij}b_j with ⟨K^∨,b_j⟩=c_j is correct (G⁻¹G=I); Lean frobeniusDual_pairing proves (c ᵥ* G⁻¹) ᵥ* G = c sorry-free."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Genuine construction with proved defining property; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "'unique by non-degeneracy of G' is correctly justified (G⁻¹G=I)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No free parameter; dual determined by G."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Pairing computation ⟨K^∨,b_j⟩=Σ c_i(G⁻¹)_{ik}G_{kj}=c_j follows from G⁻¹G=I."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean frobeniusDual + frobeniusDual_pairing (with IsUnit G.det) matches the .md definition and defining property."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "kassel1995 (Quantum Groups) appropriate for Frobenius/Hecke pairing."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Gram matrix, NF basis, Frobenius pairing all defined; 'unique' is genuinely justified, not asserted."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Pure definition; no numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Algebraic definition; no physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No witness; standard linear algebra, Lean-verified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a25dfcd58d0c",
+          "ts": "cd9dc121b28f",
+          "lean": "4e869861cecd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Exemplary definition block."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

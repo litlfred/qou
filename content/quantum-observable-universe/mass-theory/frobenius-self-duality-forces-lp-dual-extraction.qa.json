@@ -1050,7 +1050,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.md:7: \"the Observation Frame Obs_τ(a) := τ(a·-) extracts the shadow-price representative of every observable\"",
+        "notes": "The statement bundles the LP/shadow-price interpretation ('extracts the shadow-price representative') into the proposition; the bare algebraic claim is 'Markov trace is non-degenerate symmetric ⇒ Frobenius ⇒ self-dual', the rest is interpretation that belongs in a remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Frobenius self-duality forcing LP-dual extraction is mass-theory/LP-dual content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is over H_n(R,q) generic ring; Frobenius pairing is algebraic, no archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean proof is entirely sorry; no archimedean-vs-algebraic content to judge."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.lean:12,16,23: observationFrame:=sorry, frobeniusSelfDualityMap:=sorry, theorem ... := sorry",
+        "notes": "Both maps are sorry-defined and the theorem (their equality + bijectivity) is sorry; the Lean expresses essentially nothing of the narrative's non-degenerate-symmetric-pairing ⇒ Frobenius-self-duality content — it asserts two undefined functions are equal and bijective."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.lean:5-7: \"class FrobeniusTraceAlgebra ... algebra : Type ... trace : algebra → R\"",
+        "notes": "The Lean signature does not encode the narrative's key hypothesis (NON-DEGENERATE SYMMETRIC trace); FrobeniusTraceAlgebra only records a bare trace, so the theorem statement is weaker than the proposition's claim even before the sorry."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Not a projection; it is a sorry stub."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Conclusion is not True/x=x; it is a (sorry'd) equality+bijectivity claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No false premise; just unproven (sorry)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Sorry proof; no hypothesis usage to assess (and the non-degeneracy hypothesis is absent from the signature)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No decide; the proof is an explicit sorry, not masked."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The narrative claim (non-degenerate symmetric trace ⇒ Frobenius algebra ⇒ self-dual) is mathematically standard and true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.lean:12-23: two defs := sorry and theorem := sorry",
+        "notes": "The Lean formalisation is content-free: observationFrame and frobeniusSelfDualityMap are both sorry, so the theorem proves nothing (sorry over undefined maps). For a proposition block flatly asserting an established result, the formalisation is a pure stub."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.md:1-9: flat 'Proposition.' with no status note",
+        "notes": "The .md states the proposition flatly as if established, while the Lean is entirely sorry and omits the non-degeneracy hypothesis; a reader would take it as proved. The underlying math is true, but presenting an all-sorry formalisation as a settled proposition over-claims its formal status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Narrative reasoning (Frobenius ⇒ self-dual ⇒ primal/dual same space) is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.lean:19-23 vs frobenius-self-duality-forces-lp-dual-extraction.md:1-9",
+        "notes": "The Lean proves nothing (sorry) and drops the non-degenerate-symmetric hypothesis from FrobeniusTraceAlgebra; the narrative presents a complete proposition. Substantive divergence between an established-sounding statement and an empty stub formalisation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No external cites in this block to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.md:7: \"the primal LP variable x ∈ H_n and the dual LP variable u ∈ H_n^* live in the same space\"",
+        "notes": "'Observation Frame Obs_τ' and the LP primal/dual identification are asserted without defining the LP whose duals these are within the block; the link to the operator-selection LP is implicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Algebraic structure claim; no physical assertion."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No witness; standard algebra."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "59a63a25f4b8",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "notes": "True statement, but the formalisation is vacuous and the .md gives no status caveat."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

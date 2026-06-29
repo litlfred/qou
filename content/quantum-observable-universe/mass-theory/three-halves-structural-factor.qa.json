@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is the five q-bracket identities; 'Role in the framework' interpretation is separate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lepton-tower q-bracket closure identities are mass-theory content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Identities are over a generic field R with q≠0; symmetric q-integers, no archimedean construct (specialisation to q_0 noted as downstream)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean proofs are field_simp;ring over [Field R]; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "All five .md identities map to the lean theorems (three_plus_h_sq_eq_bracket3, two_plus_h_sq_times_bracket2_eq_bracket4, three_halves_factor_eq_q_brackets, bracket6_eq_bracket2_bracket3_times_one_plus_h_sq, bracket5_bracket3_div_bracket6)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Signatures carry the genuine identities with the necessary nonzero side-conditions made explicit."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Proofs are ring computations, not field projections."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Non-trivial q-integer identities; verified by hand (3+h²=[3]_q, (2+h²)[2]_q=[4]_q both correct)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Side-conditions (q≠0, denominators≠0) are genuine, not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "hq is used by field_simp; div_eq_div_iff consumes the denominator-nonzero hyps."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Uses field_simp;ring, not decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Hand-verified: 3+h²=q²+1+q⁻²=[3]_q; (2+h²)[2]_q=[4]_q; the [6]_q and ξ_3 reductions are field_simp;ring-proved over a field."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Substantive q-bracket family identities, not tautologies."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Pure algebra; the lepton-mass closure application is downstream, not back-fitted into the identities."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "three-halves-structural-factor.md:52: \"closes m_τ/m_e via Vol(10_43)/ℏ_q² to +0.79% of CODATA\"",
+        "notes": "The proved core is the algebraic identities, but the 'Role' section attaches them to lepton-mass closures (muon 0.034%, tau +0.79%) where the knot identification (10_43 'candidate') is conjectural; the identities are exact but their physical use rests on unproven knot choices. Identities themselves are not overclaimed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No free parameter in the identities; q-brackets fully determined by q."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Each identity is a self-contained algebraic equality."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean theorems match the .md identities one-to-one, sorry-free."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No external cites in the .md; internal conj/prop links appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "h, [n]_q symmetric q-integer, ξ_m all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "three-halves-structural-factor.md:52: \"closes m_τ/m_e ... to +0.79% of CODATA\"",
+        "notes": "The tau closure at +0.79% rests on a candidate knot (10_43) selected as 'best amphichiral hyperbolic' — a search over knots makes the 0.79% match weaker evidence than the muon's; the identities are exact but the closure number is fit-sensitive to the knot choice."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "q-bracket lepton-tower family is consistent with the framework's lepton-mass scheme; no broken physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Witness tau-amphichiral-sdp witness named with ≤1e-40 cross-checks; Lean identities reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "40c6546269eb",
+          "ts": "b418b683ea7c",
+          "lean": "74835a14da3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Sound algebraic proposition; physical application appropriately flagged as candidate-dependent."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

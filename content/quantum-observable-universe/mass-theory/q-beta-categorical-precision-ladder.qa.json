@@ -1007,7 +1007,421 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The boxed formula is the statement; tier/truncation discussion is appropriately separated and follows the c_k discipline."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Q_β precision ladder is mass-theory content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Formula uses cos(...) and ℏ_q — genuinely archimedean (evaluation at substrate q_0 for a MeV observable), so ℝ is appropriate, not a leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No narrative Proof. block and no sibling .lean; archimedean evaluation is the intended regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder.ts:10: title shows \"(1 + (b^2 + 1/2) b^4 ℏ_q^8)\" vs .md:29-30 boxed \"(1 - 2 b^4·b^4 ℏ_q^8)(1-(b^2+1/2)b^5 ℏ_q^10)\"",
+        "notes": "No sibling .lean (lean.ref not_checked); separately, the .ts title's c_4/c_5 form is stale vs the .md body's superseded forms — a self-consistency drift between manifest and narrative."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No Lean signature to weaken; narrative formula carries the genuine ladder."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No sibling Lean proof."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No Lean proof to check for tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No Lean proof."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No Lean proof."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No Lean proof."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No false claim: c_2=-1 proved-exact, c_k≥3 explicitly labelled near-matches; formula is a convergent truncation series."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Substantive precision-ladder content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Q_β^A baseline is from neutron-qvalue-symbolic; ladder corrections are categorical primitives (b, J_Hopf), not back-fitted to Q_β CODATA."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Exemplary tiered framing: 'a near-match that beats the experimental target is a genuine result AND not a derivation; both facts reported.' Sub-ppb labelled Subgoal-2 conditional on the Habiro upgrade."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Coefficients reduced to two declared primitives (b, J_Hopf); the c_4=c_3·b^4, c_5=c_3²·3+b forms are openly flagged as undeived near-matches, not hidden fits."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Truncation-order error analysis (~2.07 digits/rung) is standard."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "jones1985/wenzl1988/kashiwara1990/hoefsmit1974 appropriate for the invoked primitives."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder.ts:10 vs q-beta-categorical-precision-ladder.md:29",
+        "notes": "The c_4/c_5 ladder term differs between the .ts title and the .md boxed formula (old (b^2+1/2)b^4 vs superseded -2·b^4·b^4); a reader cannot tell which is canonical without the audit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Cross-anchor swing is DISCLOSED (c_3: -2.010 muon vs -2.069 m_p-pin), N=4→N=5 non-monotonicity flagged as the near-match signature — the opposite of hidden fragility."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Q_β prediction near CODATA at the documented residual; no broken units/conservation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder.ts:36: \"status: experimental\"",
+        "notes": "Witnesses (q-beta-operator-valued-N3, delta-S-chain-audit) named and the block carries the SUPERSEDED-by-Habiro banner; the precision numbers predate the Habiro identification so some tabulated residuals may be stale vs the current production path. Marked experimental, so disclosed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3943339c978f",
+          "ts": "5680407e03ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Well-disciplined; minor manifest drift."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

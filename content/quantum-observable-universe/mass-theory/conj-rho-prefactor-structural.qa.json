@@ -892,7 +892,268 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "SDP multiplicity ρ structural rule (GAP-A-4) is mass-theory content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Stated as conjecture; the .md openly reports the B_3-level FALSIFICATION of the naive ρ=round[dim_q(λ*)] rule and the required n_0=3A refinement — self-correcting, not a false assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "conj-rho-prefactor-structural.lean:152-153,156-158: \"q_int_placeholder ... := fun _ => (rho : ℝ)\" makes rho_eq_qdim |rho-rho|≤1/2 trivially true",
+        "notes": "The Lean class's central inequality rho_eq_qdim (|ρ - q_int d_λ*| ≤ 1/2) is discharged by every instance via a placeholder q_int that ignores d_λ* and returns ρ, so the substantive 'ρ ≈ [d_λ*]_q' content is vacuously satisfied. Honestly disclosed in the lean docstring ('discharged vacuously for general q — but ONLY at q=1 is this the true categorical statement'); conjecture block, so warn."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No circularity; ρ is read from SDP witnesses, the rule proposed is structural (dominant λ*)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Heuristic-vs-verified clearly separated; the naive rule is explicitly FALSIFIED at braid strand count and re-scoped to n_0=3A — exemplary (a)-scope handling."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "conj-rho-prefactor-structural.md:76-81: ρ rule case-splits hook special-case vs round[dim_q], plus 'orthogonal-copy count' alternative",
+        "notes": "Multiple competing ρ rules (round[dim_q], hook special-case ρ=1, orthogonal-copy count) coexist unresolved, and ρ_star=3 vs historical ρ=1/2 are reconciled only by invoking different 'structural quantities'. The freedom to pick which rule/quantity matches each atom is a soft hidden DOF — flagged openly as obligation-3 open work."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The n_0=3A refinement argument (proton/³He Markov-equivalent at H_3 ⇒ must embed via binding K) is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "conj-rho-prefactor-structural.lean:275-282: \"rho_eq_qdim_via_canonical_knot ... := h.rho_eq_qdim\"",
+        "notes": "rho_eq_qdim_via_canonical_knot is a thin projection of the class field rho_eq_qdim, which is itself vacuously satisfied by the placeholder q_int; the .md presents it as 'closes GAP-A-4 conditional on GAP-A-1', stronger than the vacuous Lean delivers. Conjecture + disclosed placeholder ⇒ warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Internal prop/witness links; hook-length-derived SYT counts (5,8,48) decide-proved, correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "conj-rho-prefactor-structural.md:176-194: ρ_star=3 (witness) vs historical ρ=1/2 reconciled via 'different structural quantity'",
+        "notes": "ρ is given multiple incompatible readings (round[dim_q], hook-special-case, orthogonal-copy count, SDP ρ_star) without a single canonical definition; the deuteron's ρ flips between 1 (historical) and 3 (R5-full witness) depending on the cost wiring. 'The unique structural ρ' is not yet pinned."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "dim_q((2,1))≈2.011 etc. are exact q_0 evaluations; the rounding question and ρ_star discrepancies are reported transparently, not cherry-picked."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "ρ as a Wedderburn-multiplicity / orthogonal-copy count is a reasonable structural quantity; no broken physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Witnesses (rho-prefactor-structural-verifier, binding-k-solver, r5-full-canonical-knot-solver) named; SYT counts independently decide-verified in Lean."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "acb1d445f763",
+          "ts": "e99c0c135162",
+          "lean": "c604d9f62e6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "notes": "Honest conjecture with self-correction; the Lean's key inequality is vacuously discharged via a placeholder (disclosed), and ρ lacks a single canonical definition."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

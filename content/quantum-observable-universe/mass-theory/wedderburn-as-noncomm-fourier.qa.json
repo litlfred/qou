@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is the Peter-Weyl/Plancherel identification; the 'renaming, not new content' note correctly disclaims novelty."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Wedderburn/Fourier reading of the Markov trace is mass-theory content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "wedderburn-as-noncomm-fourier.lean:36-47: NonCommFourierData fields tr/chi/dim/weight all typed ℝ",
+        "notes": "The algebraic Wedderburn/Peter-Weyl content is generic-ring, but the Lean structure hardcodes ℝ for tr, chi, dim, weight with no archimedean construct requiring it — a §7c base-ring leak (should be generic {R}/{ℂ}). Minor since it's the abstract-interface file."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "peter_weyl_decomposition proof is a field projection (no archimedean tactic)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean decomposition field (tr β = Σ weight·chi/dim) matches the .md spectral expansion tr_M(β)=Σ w_λ χ_λ(β)/d_λ."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is the genuine decomposition; not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "wedderburn-as-noncomm-fourier.lean:88: \"peter_weyl_decomposition ... := F.decomposition β\"",
+        "notes": "The theorem is a verbatim projection of the IsInverseFourier.decomposition class field, whose type IS the theorem's conclusion. This is the §3b conditional-class re-export pattern (honestly disclosed: 'we state the decomposition as a typeclass-style field; concrete instances supply the proof'), so it's the legitimate carrier idiom rather than a disguised vacuity — but structurally it is a self-assuming projection, downgraded to warn."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Conclusion is a real weighted-sum identity, not True; the class field carries genuine content (a finite Nodup-indexed sum)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No false premise; dim_ne_zero is the semisimplicity hypothesis."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "F.decomposition is used; the data fields feed the sum."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The Peter-Weyl/Plancherel identification for semisimple H_n(q) is correct; root-of-unity caveat handled."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Block openly declares it is a renaming with no new content; this is honest exposition, not vacuity passed off as substance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No circularity; cites Peter-Weyl/Plancherel."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "'No new physics / renaming not new content' explicitly disclaims any claim beyond the standard formula."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Fourier dictionary table is a faithful analogy, not a logical leap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean and .md state the same decomposition; the Lean axiomatises it as a class field consistent with the 'instances supply the proof' note."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "jones1987/kassel1995/fulton1997 appropriate for Markov trace / Hecke / Young tableaux."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Spectrum, Plancherel measure, character all mapped; semisimplicity scope explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Conceptual reframing; no physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No witness; standard theorem."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bcad7aebaf38",
+          "ts": "16b20dd7ebaa",
+          "lean": "5a85aabe849b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Acceptable expository proposition with minor Lean hygiene nits."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

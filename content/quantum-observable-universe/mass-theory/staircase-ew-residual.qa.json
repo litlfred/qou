@@ -857,7 +857,254 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Staircase EW-residual q^{1/(2k-1)} eigenvalue-ratio conjecture is mass/electroweak-theory content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Conjecture (eigenvalue ratio = q^{1/(2k-1)}); k=3 closes cot θ_W to 0.13%, k=4 verified pairwise; corner-hook = 2k-1 is a cited lemma. Stated as conjecture."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Content-bearing conjecture with explicit spectral predicate; not an empty marker."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Corner-hook identification is structural; the ratio is read from the Hoefsmit matrix, not fitted to cot θ_W."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "staircase-ew-residual.md:41-50: k=4 verified via a pairwise ratio e[254]/e[188] after the top eigenvalue is degenerate",
+        "notes": "The k≥2 'for every k' claim is empirically supported only at k=3 and (via a hand-picked pairwise eigenvalue ratio) k=4, with k=2 untestable. The k=4 verification switches to a specific pair [254]/[188] because the predicted top-ratio degenerates to 1.0 — a post-hoc pair selection that weakens 'for every k≥2' as a uniform claim. Conjecture status mitigates."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "staircase-ew-residual.md:43: \"verified instead via a pairwise ratio e[254]/e[188] = 1.01357 ≈ q^{1/7}\"",
+        "notes": "At k=4 the choice of which eigenvalue pair realises the ratio (indices 254, 188 out of dim 768) is not pinned by the conjecture statement, introducing a selection freedom; without a rule for the pair, the agreement (0.14%) has a hidden combinatorial DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Corner-hook → q^{1/(2k-1)} ratio is internally consistent with the Hoefsmit eigenvalue structure."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Hypothesis-only class StaircaseEWResidual with no global instance, predicate stated in HoefsmitRepresentation terms — matches the .md conjecture; honest §3b-cond."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Internal lemma/prop links (Hoefsmit, corner-hook); no external citation misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "staircase-ew-residual.md:9: \"β_EW ⋈_K^minimal ∈ H_{n_k}(q) be the canonical electroweak braid word\"",
+        "notes": "The 'canonical electroweak braid word' β_EW and the ⋈_K^minimal coupling are invoked as canonical but defined elsewhere; at k=2 the word 'collapses to length-0', signalling the construction's definition is regime-sensitive and not fully pinned in-block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "staircase-ew-residual.md:43: \"e[254]/e[188] = 1.01357 ≈ q^{1/7} = 1.01502 (relative error 0.14%)\"",
+        "notes": "Two-point empirical support (k=3 at 0.13%, k=4 at 0.14% via a selected pair) with k=2 untestable; the k=4 match relies on a post-hoc eigenvalue-pair pick, so the empirical evidence for the 'every k' conjecture is thin. Disclosed and labelled conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Weinberg-angle residual interpretation is consistent with the cot θ_W reading; no broken physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Witnesses (close-321-weinberg-gap, staircase-ew-residual audit) named with GitHub blob links."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "950a2d04b3ea",
+          "ts": "7503102f478a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "notes": "Plausible conjecture but the k=4 evidence has post-hoc pair selection; worth pinning the eigenvalue-pair rule."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

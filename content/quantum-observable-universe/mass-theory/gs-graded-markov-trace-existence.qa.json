@@ -894,7 +894,263 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Graded Markov trace on the GS confinement filtration is mass-theory content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Existence of a descended trace on the associated graded is mathematically reasonable; stated as conjecture for the Lean realisation."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "gs-graded-markov-trace-existence.lean:19-20: \"class GsGradedMarkovTraceExistence where holds : Prop\"",
+        "notes": "The Lean conjecture carrier is a thin 'holds : Prop' field (content-free marker per §3b-tax proof-no-empty-prop-carrier pattern); the substantive content lives only in the .md and in the gb-residue-spectral-sum instances. As a conjecture block this is disclosed, but the carrier under-encodes the claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Narrative correctly separates 'rigorous over any ring' (math) from 'conjectural Lean realisation'; lists three explicit promotion obligations."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Filtration-preserving ⇒ descends to associated graded is correct categorical reasoning."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "gs-graded-markov-trace-existence.lean:19: carrier 'holds : Prop' vs the .md's structured tr_{M,ℓ} existence claim",
+        "notes": "Lean carrier asserts much less than the .md (an opaque holds:Prop vs the descent-existence statement); the real content is the gradedTrace field on GBResidueSpectralSum elsewhere."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No external citations misused; internal prop links only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Filtration, associated graded, descent, levelBound all defined or linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Habiro-side agreement to 1e-9 across atoms is a cross-method consistency check, not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No standalone physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Witness markov-pipeline-cross-validation.witness.json named with tolerance."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2c45ff506287",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Acceptable conjecture; carrier could be strengthened."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

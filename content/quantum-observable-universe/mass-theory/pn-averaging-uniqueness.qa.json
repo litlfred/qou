@@ -1046,7 +1046,456 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.md:9: \"closing the cheat-sheet open audit finding (Phase 5q, line 128)\"",
+        "notes": "Statement embeds author-tracking/audit-status prose ('closing the cheat-sheet open audit finding') that belongs in authorNotes, not the proposition statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "p-n interface averaging on H_3A(q) is core mass-theory content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is over H_3A(R,q) generic ring with bar-invariance; no gratuitous ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean proof is over [Field R], funext+rw; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "evidence": "pn-averaging-uniqueness.lean:174: \"rw [hN.norm q, hN'.norm q]\" — proof of pn_averaging_unique uses only StandardNorm",
+        "notes": "Narrative (.md:1-10) claims uniqueness follows from THREE hypotheses (bar-invariance + color-flavor compat + standard norm); the registered Lean theorem pn_averaging_unique derives it from StandardNorm alone — the other two binders are decorative, so Lean proves a weaker/more trivial statement than the narrative advertises."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Signature carries the real hypotheses; the issue is they go unused, not that the conclusion was weakened to a tautology."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Not a projection of a field equal to the conclusion; uses StandardNorm.norm rewriting both sides to z."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Conclusion σ_pn = σ_pn' is non-trivial (function equality), though near-trivially forced by StandardNorm."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "evidence": "pn-averaging-uniqueness.lean:170-173: \"[BarInvariant R σ_pn] [ColorFlavorCompatible R σ_pn] ... [BarInvariant R σ_pn'] [ColorFlavorCompatible R σ_pn']\"",
+        "notes": "pn_averaging_unique declares BarInvariant and ColorFlavorCompatible instance binders for both functionals but the proof (rw via StandardNorm only) uses none of them; four unused instance hypotheses indicate the proven statement is weaker than intended."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The uniqueness claim is true (StandardNorm alone forces it); not a false statement, only over-advertised provenance."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:174: \"rw [hN.norm q, hN'.norm q]\"",
+        "notes": "pn_averaging_unique is near-vacuous: once StandardNorm pins both to the same z, equality is immediate; the structural hypotheses contribute nothing. (pn_averaging_unique_via_weight is the substantive one but is not the .ts lean.ref.)"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No back-fitting; the q^10 derivation chain routes through prop:alpha-shift-torus-knot, not a fitted target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "evidence": "pn-averaging-uniqueness.md:8: \"the canonical p-n averaging is uniquely determined by these three structural hypotheses\"",
+        "notes": "Narrative claims the three hypotheses jointly force uniqueness; the registered Lean shows StandardNorm alone suffices, so 'determined by these three' overstates the role of bar-invariance and color-flavor compatibility (which are unused)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No undisclosed calibration; the empirical Bring-weighted alternative is openly flagged as open math."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.md:8: \"Hence the canonical p-n averaging is uniquely determined by these three structural hypotheses\"",
+        "notes": "The 'hence' conflates the substantive via-weight uniqueness with the trivial via-norm one; the registered theorem's logic does not actually use (a)/(b)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "evidence": "pn-averaging-uniqueness.lean:167 vs .md:1-10",
+        "notes": "Registered lean.ref pn_averaging_unique proves a weaker (StandardNorm-only) statement than the .md's three-hypothesis claim; the genuinely-three-hypothesis content lives in pn_averaging_unique_via_weight which the .ts does not reference."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "jones1987/wenzl1988 appropriate for Markov closure / Hecke; not mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.md:84: \"the formal derivation already exposes the opt-in pn_convention\"",
+        "notes": "Recurrent placeholder phrase 'the formal derivation' / 'the canonical formalism' stands in for unnamed scripts, leaving the producing compute under-identified in several spots."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The 0.14% Δm_np Bring-weighted claim is explicitly flagged as an empirical open alternative, not as the proved content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "9-pair uud×udd quark decomposition (2+4+1+2) is arithmetically correct and physically standard for p-n."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "References named probes; α_shift(T(3,5))=5·2=10 reproducible from prop:alpha-shift-torus-knot."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ca0b49b7ba1c",
+          "ts": "2704de932b44",
+          "lean": "989e3af59a25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "major",
+        "notes": "Substantive Lean-narrative mismatch on the registered theorem; the via_weight sibling fixes it but is not the referenced decl."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

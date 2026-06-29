@@ -1048,7 +1048,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is the two-construction equivalence; Status/witness sections separate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Habiro vs GS-residue Markov-trace equivalence is mass-theory content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is about archimedean realization q→q_0∈ℝ; ℝ is the genuine evaluation regime, not a leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean is a §3b axiom class (archimedean_agreement); the proven trivialZero instance uses simp; no algebraic claim proved by archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean class field archimedean_agreement (eval(√q_0)(habiro_trace) = gb_mass) matches the .md's ρ_∞ commuting-diagram equivalence."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The equivalence is stated as an axiom-level class with the genuine equality, honestly per §3b."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No theorem projects the conclusion; proton instance supplies the axiom, trivialZero proves 0=0 honestly."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "habiro-residue-sum-equivalence.lean:180-188: \"trivialZero ... habiro_trace := 0 ... gb_mass := 0 ... simp\"",
+        "notes": "Non-vacuity is demonstrated only by a trivial-zero instance (0=0); the substantive proton instance's archimedean_agreement is an axiom (protonExample_archimedean_agreement_axiom). Honest per §3b, but the only Lean-verified inhabitant is the trivial one."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "q_0_nonneg via norm_num; no false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Class fields all participate in archimedean_agreement."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No decide-masking; trivialZero uses simp on a genuine 0-evaluation."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The analytic identity is plausible and certified empirically to machine epsilon; stated as open Lean, not as proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "habiro-residue-sum-equivalence.lean:122: \"noncomputable opaque protonHabiroTrace : Polynomial ℤ\" with axiom agreement",
+        "notes": "The proton 'demonstration' instance is opaque + axiomatic (no integer poly actually has eval at √q_0 equal to 2.1225825095, acknowledged at lean:174); the only fully-Lean inhabitant is trivialZero. Disclosed honestly, so warn."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No circularity; two independent constructions cross-validated."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Status explicitly 'non-trivial analytic identity ... open at the level of gb-residue-spectral-sum'; empirical witness called the working substitute, not a proof."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Commuting-diagram framing is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean axiom class matches the .md equivalence; no weaker-than-claimed gap beyond the disclosed §3b axiom."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "habiro2004 / jones1987 appropriate for the Habiro ring and Markov trace."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Habiro ring, ρ_∞, u_0=q_0^{1/2}, GB residue sum all defined or linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Per-atom rel_diff (0, 2.79e-16, 0) at 1e-9 tolerance is a cross-method agreement, robust not cherry-picked."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Trace-construction equivalence; no direct physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Cross-validation script + witness named; WitnessBuilder auto-reruns on input change."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "89b75944d6f1",
+          "ts": "f2d51803bc6f",
+          "lean": "e78f3de5d3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Sound, honestly-scoped; Lean non-vacuity is only trivial."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

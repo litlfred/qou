@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is the binding formula B(A)=m_e·ρ_0·α_shift(T(p_A,k_A)) + the uniqueness claim; setting/unification are separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "A≥3 binding via per-rep Reeb phase at a force-carrier torus knot is mass-theory content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is over [Field R]; α_shift=k(p-1) is integer arithmetic, no archimedean construct in the algebraic part."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean proof is funext+rw over [Field R]; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "binding_unique_via_alpha_shift (two evaluators sharing m_e,ρ_0,(p,k) agree) matches the .md uniqueness claim; the candidate table maps to lightNucleiForceCarrierKnot."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Signature carries the genuine factors-through-α_shift hypotheses; not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "binding_unique derives B=B' by rewriting both via factors + matches_alpha_shift, not projecting the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "B=B' function equality is non-trivial; lightNucleiForceCarrierKnot discharges matches_alpha_shift by genuine rfl on bindingAlphaShift composition."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No false premise; classes are content-bearing substrate axioms."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Both BindingPerRepReebPhase (factors) and BindingForceCarrierKnot (matches_alpha_shift) instances are used in the rewrite chain."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "decide is used only for the harmless 5=5/8=8 sanity examples; the uniqueness theorem uses rw, not decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "α_shift=k(p-1) gives 3,5,8 for the candidate knots (verified by rfl); the conditional uniqueness theorem is sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The §3b-cond conditional theorem has genuine content (uniqueness from shared substrate params); not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "ρ_0 pinned by the deuteron, α_shift from prop:alpha-shift-torus-knot; the (p_A,k_A) are openly flagged as Phase-3 candidates/hypotheses, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The uniqueness theorem is explicitly conditional (§3b-cond) and the per-nucleus (p_A,k_A) are labelled 'candidate'/'hypothesised'/'Phase-3 open'; no A≥3 accuracy is claimed as derived, so nothing is over-asserted."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "binding-alpha-shift-extension.md:39-44: candidate table T(2,3)/T(2,5)/T(3,4) all 'open'/'hypothesised'",
+        "notes": "The per-nucleus (p_A,k_A) force-carrier knot is a chosen candidate per nucleus (a discrete selection freedom across torus knots) that is not yet derived from substrate data; with α_shift=k(p-1) tunable by the (p,k) pick, the binding fit has an undisclosed-until-Phase-3 combinatorial DOF. The block flags this as open, mitigating it."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "The Reeb-phase = boundary-holonomy = α_shift chain is asserted via the merged α_shift audit; internally coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean theorems + lightNucleiForceCarrierKnot instance match the .md formula and candidate table; uniqueness is genuinely conditional, openly so."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Internal audit/prop links; no external citation misused."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "ρ_0 (class field, dimensionless ratio) vs ρ_full(D) (witness output) explicitly disambiguated (md:70-76)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "binding-alpha-shift-extension.md:14: \"undershoots A≥3 by 44–72%\" and the candidate (p,k) are all 'open'",
+        "notes": "The extension's actual binding-energy accuracy at A≥3 is not yet demonstrated (only the deuteron closes to +0.19% via the separate Vol·Δtr route); the per-rep-Reeb mechanism is proposed but the candidate knots are unverified, so no A≥3 numerical closure is yet claimed. Honestly open."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Binding ~ per-rep rotation phase at a force-carrier knot is consistent with the framework's force-carrier scheme; ρ≈14.7/18.5 MeV/rad rise plausible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Probes (binding_rotation_phase_lead, binding_qhamiltonian_rotational_scale) named; α_shift values rfl-checked in Lean."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "29950f67f7e9",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Sound conditional proposition; the force-carrier-knot choice is an openly-disclosed open DOF."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

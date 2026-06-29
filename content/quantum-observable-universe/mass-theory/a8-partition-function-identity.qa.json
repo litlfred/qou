@@ -1054,7 +1054,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is the a_8 = Σ p(n)X^{5-n} identity; categorical interpretation is a separate section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "a_8 Habiro-coefficient / partition-function identity is mass-theory (Q_β Habiro) content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Statement is over ℤ[X] (a_8 ∈ ℤ[X]); polynomial/partition combinatorics, no archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Lean proof is norm_num+ring over ℤ[X]; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "a_8_eq_partition_sum (a_8_poly = Σ_{Icc 1 5} partitionCount·X^{5-n}) matches the .md identity; values (1,2,3,5,7) match p(1..5)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Main identity signature is the genuine polynomial equality; not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Proof is norm_num+ring expansion, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Non-trivial polynomial coefficient match; partitionCount is a real value table, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No false premise in the main identity."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Main identity is parameter-free; all sum terms consumed."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "decide used only for finite-set rewrites (Icc 1 5 = {1..5}); the identity itself closes by norm_num+ring, not decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "a_8(X)=X⁴+2X³+3X²+5X+7 = Σp(n)X^{5-n} with p(1..5)=(1,2,3,5,7) is a true polynomial identity (Lean-proved)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "a8-partition-function-identity.lean:170-190: partitionCount_eq_fintype_card_partition_small := sorry",
+        "notes": "The genuine 'partitionCount = Hardy-Ramanujan p(n)' bridge to Mathlib's Nat.Partition is a cited sorry; the proved identity uses a local value-table partitionCount, so the partition-function meaning rests on the (uncontested but unformalised) bridge. The main identity is sorry-free; disclosed honestly."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Explicitly labelled 'records the coincidence ... an observation rather than a new deductive argument'; the partition-counting interpretation is 'strongly suggests', hedged."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "a_8 coefficients are a fixed witness output; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Coefficient match is exact; the 'counting partitions' interpretation is offered as a suggestion, not a logical conclusion."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Main identity Lean-proved sorry-free; the bridge sorry is disclosed and the downstream identity does not depend on it."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "hardy-ramanujan1918 / andrews1976 / OEIS A000041 correctly cited for p(n) values."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "a_8, p(n), convention (include_inter=True) all specified; Mathlib bridge note clarifies partitionCount vs Fintype.card."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "severity": "minor",
+        "evidence": "a8-partition-function-identity.md:35-39: \"strongly suggests that the m=8 shell ... is counting partitions\"",
+        "notes": "A 5-coefficient match (1,2,3,5,7) to a famous integer sequence is weak evidence for a structural 'partition-counting' claim — with small integers, coincidental agreement is plausible. The block hedges ('coincidence', 'observation', convention-stability argument), so this is a disclosed weak-evidence concern not an overclaim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Combinatorial identity; no direct physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "a_8 coefficients are a deterministic witness output (PR #1579 audit named); identity hand-reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a5a306f7ab54",
+          "ts": "bd37ef54d0ea",
+          "lean": "3d94fdee8ec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:28:56.347Z",
+        "reviewed_sha": "41df4ca36f37ed08b67ac8661b07f73f56512d57",
+        "notes": "Sound identity, appropriately hedged interpretation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:28:56.347Z"
 }

@@ -25,3 +25,7 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 27, mass-endomorphism)
 - q-hecke-seminormal-character-closure: lib decl self-assuming projection (def := ctx.claim_paths_agree) + : True shadow stub (critical da-circular)
 - gb-spectral-sequence.lean:19 (: True := trivial; real formalisation un-routed in BraidKnot/)
+
+## More instances (batch 28, mass-theory)
+- frobenius-self-duality-forces-lp-dual-extraction.lean:5-23 (all-sorry stub; drops non-degenerate/symmetric hyp)
+- pn-averaging-uniqueness.lean:170-174 (proves StandardNorm only; BarInvariant + ColorFlavorCompatible binders unused; pn_averaging_unique_via_weight sibling fixes but not referenced)
