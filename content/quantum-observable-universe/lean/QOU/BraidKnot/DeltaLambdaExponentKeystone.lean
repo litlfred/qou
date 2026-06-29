@@ -204,4 +204,58 @@ theorem he3_penalised_more_than_triton {K : Type*} [Preorder K] {δ : Int → K}
     (h : ProtonExcessPenaltyAsymmetry δ) : δ 1 < δ (-1) :=
   h 1 (by decide)
 
+/-! ### Mirror-pair cancellation — the bar-even baseline drops out
+
+A mirror pair swaps `(Z, N) ↦ (N, Z)` (proton↔neutron counts) at fixed
+`A = Z + N`. The bar-EVEN crossing statistics are `Z↔N`-symmetric (A-only), so
+they are identical across a mirror pair; only the bar-ODD writhe distinguishes
+them. Hence any binding deviation that separates into an A-only baseline plus an
+interface-imbalance term has the baseline cancel *exactly* in the mirror
+difference — isolating the Z-correction. This is why the ³He/T (`−1.34`) and
+⁷Be/⁷Li (`−1.77`) mirror splits are clean even though the absolute deviations
+are large and A-dependent (and even though the leading `10A−5` law has collapsed
+by A=7). See `delta_lambda_z_coefficient_and_slope.py`. -/
+
+/-- **Derived.** The crossing sum is invariant under the mirror swap `Z ↔ N`
+(it is A-only): the bar-even leading content is identical across a mirror pair. -/
+theorem crossing_sum_mirror_invariant (Z N : Nat) (h : 1 ≤ Z + N) :
+    protonCrossings Z N + neutronCrossings Z N
+      = protonCrossings N Z + neutronCrossings N Z := by
+  unfold protonCrossings neutronCrossings; omega
+
+/-- **Derived.** The color-averaged count `2A + 1` is also mirror-invariant —
+the second bar-even statistic is A-only too. -/
+theorem averaged_count_mirror_invariant (Z N : Nat) :
+    2 * (Z + N) + 1 = 2 * (N + Z) + 1 := by omega
+
+/-- **Derived.** The writhe is *not* mirror-invariant: it maps `4Z ↦ 4N`, and
+the mirror difference is `4(Z − N)`. The writhe is therefore the **unique**
+crossing statistic that distinguishes a mirror pair — the entire mirror-pair
+difference is carried by the bar-odd channel. -/
+theorem writhe_mirror_difference (Z N : Nat) (h : 1 ≤ Z + N) :
+    (writhe Z N : Int) - (writhe N Z : Int) = 4 * ((Z : Int) - (N : Int)) := by
+  have hZ : writhe Z N = 4 * Z := writhe_eq_four_Z Z N h
+  have hN : writhe N Z = 4 * N := writhe_eq_four_Z N Z (by omega)
+  rw [hZ, hN]; push_cast; ring
+
+/-- **The mirror cancellation (proved; the separation is the hypothesis).** Model
+the Δ_λ deviation as `f Z N = baseline (Z+N) + zCorr (Z − N)` — an A-only
+baseline plus a term in the interface imbalance `Z − N`, the additive form
+justified by the mirror-invariance of the two bar-even statistics above. Then
+the mirror-pair difference cancels the baseline **exactly** (since
+`Z + N = N + Z`) and equals `zCorr (Z−N) − zCorr (N−Z)`: the observable mirror
+split is the bar-odd Z-correction alone, independent of the (A-dependent,
+collapsing) baseline.
+
+The cancellation given the additive form is *unconditional*; the separation
+hypothesis `hf` itself is the additive-channel ansatz (supplied, not proved —
+the data confirms it but the corpus gates fitting its magnitude). -/
+theorem mirror_baseline_cancels {K : Type*} [AddCommGroup K]
+    (baseline : Nat → K) (zCorr : Int → K) (f : Nat → Nat → K)
+    (hf : ∀ a b : Nat, f a b = baseline (a + b) + zCorr ((a : Int) - (b : Int)))
+    (Z N : Nat) :
+    f Z N - f N Z = zCorr ((Z : Int) - N) - zCorr ((N : Int) - Z) := by
+  rw [hf Z N, hf N Z, Nat.add_comm N Z]
+  abel
+
 end QOU.BraidKnot
