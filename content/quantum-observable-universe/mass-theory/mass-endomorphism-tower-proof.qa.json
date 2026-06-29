@@ -7,29 +7,9 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/mass-endomorphism-tower-proof.md"
   },
   "source_hashes": {
-    "md": "6c5d4e275696",
+    "md": "5519cef77bc3",
     "ts": "de5b256a6d7a"
   },
-  "criteria": {
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "6c5d4e275696",
-          "ts": "de5b256a6d7a"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-32",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T22:55:43.946Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "Claims 'distinct elements of H_n(R, q) modulo Yang-Baxter; their combined weight is z^2, not 2z^2' for adjacent pairs.",
-        "notes": "Post-hoc rationalization. If there are two distinct basis elements, summing their traces yields 2z^2. The text artificially re-weights them to z^2 to force agreement with a target quadratic term."
-      }
-    ]
-  },
+  "criteria": {},
   "updated_at": "2026-06-28T22:55:43.946Z"
 }
