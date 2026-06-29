@@ -48,7 +48,10 @@ shape `λ` the largest entry `n` occupies a removable corner; deleting it is a b
 theorem cornerRecursion (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
     (hne : l ≠ []) :
     numSYTenum l = ((corners l).map (fun c => numSYTenum (removeCorner l c))).sum :=
-  cornerRecursion_proof l hl hpos hne
+  cornerRecursion_proof l hl (by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons a t => have := hpos a (List.mem_cons_self ..); unfold sz; rw [List.sum_cons]; omega)
 
 /-- **(GNW hook) hook-summation identity — the sole remaining gap of the GNW route.**  Summing the
 hook-product ratios over the removable corners gives the cell count: `∑_{corners c} ∏h_λ / ∏h_{λ∖c} = n`.
