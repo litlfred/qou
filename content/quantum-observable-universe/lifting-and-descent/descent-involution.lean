@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Module.LinearMap.Defs
 
 
 /-!
@@ -31,14 +32,20 @@ structure DescentInvolution (M : Type*) [AddCommGroup M] [Module R M] where
   descent : M →ₗ[R] M
   /-- Retraction: 𝔡 ∘ ℓ = id. -/
   retraction : descent ∘ₗ ascent = LinearMap.id
-  /-- The involution τ = ℓ ∘ 𝔡. -/
-  tau : M →ₗ[R] M := ascent ∘ₗ descent
+
+/-- The involution τ = ℓ ∘ 𝔡. -/
+def DescentInvolution.tau {M : Type*} [AddCommGroup M] [Module R M]
+    (di : DescentInvolution (R := R) M) : M →ₗ[R] M :=
+  di.ascent ∘ₗ di.descent
 
 /-- τₙ is idempotent. -/
 -- Ref: [manuscript] §3
 theorem DescentInvolution.tau_idem {M : Type*} [AddCommGroup M] [Module R M]
     (di : DescentInvolution (R := R) M) :
     di.tau ∘ₗ di.tau = di.tau := by
-  ext x; simp [DescentInvolution.tau, LinearMap.comp_apply, di.retraction]
+  ext x
+  simp only [DescentInvolution.tau, LinearMap.comp_apply]
+  rw [show di.descent (di.ascent (di.descent x)) = di.descent x from
+    congr_fun (congr_arg DFunLike.coe di.retraction) (di.descent x)]
 
 end QOU

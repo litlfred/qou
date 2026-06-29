@@ -1,4 +1,5 @@
-import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Module.LinearMap.Defs
+import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
 
 
