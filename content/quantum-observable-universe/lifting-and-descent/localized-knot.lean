@@ -22,9 +22,10 @@ numerical evaluation.
 
 namespace QOU
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
+
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+   See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -39,9 +40,9 @@ structure LocalizedKnot where
   phi : R_q
   /-- The knot type at this point (given by its braid word). -/
   knot : KnotTheory.BraidWord
-  /-- θ is in valid range. -/
+  -- θ is in valid range:
   -- theta_range : 0 ≤ theta ∧ theta ≤ Real.pi  -- (archimedean; not meaningful over R_q)
-  /-- φ is in valid range. -/
+  -- φ is in valid range:
   -- Ref: [manuscript] §3, Definition: Localized knot
   -- phi_range : 0 ≤ phi ∧ phi < 2 * Real.pi  -- (archimedean; not meaningful over R_q)
 
@@ -116,10 +117,13 @@ to its crossing number. This gives knots their half-integer spin
 classification in the QOU framework. -/
 
 /-- Intrinsic angular momentum of a localized knot, proportional to
-    crossing number: J = c(K) / 2 (in natural units). -/
+    crossing number: J = c(K) / 2 (in natural units).  Rational-valued
+    (half-integer spin); the division and ordering below are the
+    archimedean half-integer arithmetic, kept over `ℚ` rather than the
+    Laurent ground ring `R_q`, which has no division. -/
 -- Ref: [manuscript] §3, Proposition: Intrinsic angular momentum
-noncomputable def LocalizedKnot.intrinsicAngularMomentum (k : LocalizedKnot) : R_q :=
-  (k.crossingNumber : R_q) / 2
+def LocalizedKnot.intrinsicAngularMomentum (k : LocalizedKnot) : ℚ :=
+  (k.crossingNumber : ℚ) / 2
 
 /-- The trefoil (3 crossings) has spin 3/2 — a fermion (baryon constituent). -/
 -- Ref: [manuscript] §3, Example: Trefoil spin
@@ -129,7 +133,6 @@ theorem trefoil_spin_three_halves (k : LocalizedKnot)
   unfold LocalizedKnot.intrinsicAngularMomentum LocalizedKnot.crossingNumber
   rw [hk]
   simp [KnotTheory.BraidWord.crossingCount, KnotTheory.trefoil]
-  ring
 
 /-- The unknot (0 crossings) has spin 0 — a scalar. -/
 -- Ref: [manuscript] §3, Example: Unknot spin
@@ -145,6 +148,8 @@ theorem unknot_spin_zero (k : LocalizedKnot)
 theorem LocalizedKnot.angularMomentum_nonneg (k : LocalizedKnot) :
     0 ≤ k.intrinsicAngularMomentum := by
   unfold intrinsicAngularMomentum
-  apply div_nonneg (Nat.cast_nonneg _) (by norm_num : (0 : R_q) ≤ 2)
+  apply div_nonneg (Nat.cast_nonneg _) (by norm_num : (0 : ℚ) ≤ 2)
+
+end
 
 end QOU
