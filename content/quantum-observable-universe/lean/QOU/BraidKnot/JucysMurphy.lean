@@ -303,18 +303,21 @@ The bundle carries:
   GZ basis vector;
 * `v` — the corresponding seminormal vector, living in the Specht submodule `S^λ ≤ M^λ`;
 * `nz` — non-triviality (`v ≠ 0`), so "eigenvector" is meaningful;
+* `cellOf` — the **bijection** `Fin (nOf μ) ≃ μ.cells` that `T` induces, reading label `k` to the
+  cell of `μ` holding `k`.  This is a bijection because a standard tableau fills the `nOf μ = μ.card`
+  cells with the labels `0, …, nOf μ − 1` exactly once (brick 1's `StandardYoungTableau.inj_on`);
+  packaging it as an `Equiv` is the faithful form of "the cell holding label `k`", and it is what
+  makes the content-square sum over labels equal the content-square sum over cells
+  (`centralC2_smul_seminormal`);
 * `isEig` — the **defining seminormal property**: each `X_k` acts on `v` by the scalar
-  `cellContent (T.cellOf k)`, i.e. the content of the cell holding label `k` in `T`.  We express
+  `cellContent (cellOf k)`, i.e. the content of the cell holding label `k` in `T`.  We express
   the JM action on `M^λ` through `Specht.Mtab.rep` extended to the group algebra
   (`Representation.asAlgebraHom`), and the integer scalar via `zsmul`.
 
 This is the *honest* packaging: rather than assert the GZ basis exists (the theorem), we make the
 seminormal-eigenvector data a hypothesis, and `jucysMurphy_eigenvalue` states the consequence that
 characterises such a vector.  Replacing this bundle with a constructed GZ basis is exactly the OV
-theorem (`-- Ref: [vershik-kerov1977]`).
-
-`cellOf` below is the cell that the tableau `T` assigns to the label `k`; we read it off `T`'s
-underlying filling (brick 1 exposes the entries, so `cellOf` is the index lookup). -/
+theorem (`-- Ref: [vershik-kerov1977]`). -/
 structure SeminormalVector (μ : YoungDiagram) where
   /-- The standard Young tableau indexing this GZ basis vector. -/
   T : QOU.BraidKnot.StandardYoungTableau μ
@@ -324,8 +327,11 @@ structure SeminormalVector (μ : YoungDiagram) where
   mem : v ∈ Specht.SpechtSubmodule (k := k) μ
   /-- It is nonzero (so "eigenvector" is non-vacuous). -/
   nz : v ≠ 0
-  /-- The cell of `μ` that the tableau `T` assigns to the label `k` (the OV indexing datum). -/
-  cellOf : Fin (Specht.nOf μ) → μ.cells
+  /-- The **bijection** `Fin (nOf μ) ≃ μ.cells` induced by the tableau `T`: label `k ↦` the cell
+  of `μ` carrying `k`.  Bijective because a standard tableau is a bijection labels ↔ cells (brick 1's
+  `inj_on` + the card identity `μ.cells.card = μ.card = nOf μ`).  Carrying the bijection (rather than
+  a bare function) is what lets the content-square sum over labels collapse to `contentSqSum μ`. -/
+  cellOf : Fin (Specht.nOf μ) ≃ μ.cells
   /-- **Seminormal eigenproperty.** Each `X_k` acts on `v` by the scalar
   `cellContent (cellOf k)` (an integer, via `zsmul`).  This is the defining diagonality of the
   GZ basis; its *existence* (a full GZ basis with this property) is the OV theorem stubbed in
@@ -333,6 +339,48 @@ structure SeminormalVector (μ : YoungDiagram) where
   isEig : ∀ s : Fin (Specht.nOf μ),
     (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) v
       = (cellContent ((cellOf s : ℕ × ℕ))) • v
+
+/-- **Content-square sum over labels = over cells.** For any bijection `e : Fin (nOf μ) ≃ μ.cells`,
+the sum of `cellContent (e s)²` over the labels `s` equals `contentSqSum μ = ∑_{c∈μ.cells} c(c)²`.
+A pure reindexing of a finite sum along the bijection (`Finset.sum_attach` + `Fintype.sum_equiv`);
+**no `sorry`, no `ℝ`** — integer arithmetic over `ℤ` (§7c-clean).  This is the "content-sum
+arithmetic" leg of the punchline: it turns the JM-eigenvalue sum into the keystone's `ω = Σc²`. -/
+theorem contentSqSum_eq_sum_over_labels (μ : YoungDiagram)
+    (e : Fin (Specht.nOf μ) ≃ μ.cells) :
+    (∑ s : Fin (Specht.nOf μ), (cellContent ((e s : ℕ × ℕ))) ^ 2) = contentSqSum μ := by
+  rw [contentSqSum, ← Finset.sum_attach μ.cells (fun c => (cellContent (c : ℕ × ℕ)) ^ 2)]
+  exact Fintype.sum_equiv e _ _ (fun s => rfl)
+
+/-- **Each JM square acts on a seminormal vector by the content square.** From the seminormal
+eigenproperty `X_s · v = c(cellOf s) • v`, the square `X_s² = X_s ∘ X_s` acts by `c(cellOf s)² • v`.
+Sorry-free; the only inputs are `Representation.asAlgebraHom` being an algebra hom (so `map_pow`
+sends `X_s²` to `(ρ X_s)²`) and the `zsmul` square computation. -/
+theorem jucysMurphy_sq_smul_seminormal (μ : YoungDiagram) (sv : SeminormalVector (k := k) μ)
+    (s : Fin (Specht.nOf μ)) :
+    (Specht.Mtab.rep μ).asAlgebraHom ((jucysMurphy (k := k) (Specht.nOf μ) s) ^ 2) sv.v
+      = ((cellContent ((sv.cellOf s : ℕ × ℕ))) ^ 2) • sv.v := by
+  rw [map_pow, sq]
+  show (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s)
+        ((Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) sv.v) = _
+  rw [sv.isEig s, map_zsmul, sv.isEig s, smul_smul, sq]
+
+/-- **`C₂` acts on a seminormal vector by `contentSqSum μ`.** The central element
+`C₂ = ∑_k X_k²` acts on the seminormal vector `sv.v` by the scalar `contentSqSum μ`.
+
+Sorry-free.  The proof distributes `ρ(C₂) = ρ(∑_k X_k²) = ∑_k ρ(X_k²)` (via `map_sum` and
+`LinearMap.sum_apply`), evaluates each summand by `jucysMurphy_sq_smul_seminormal`
+(`= c(cellOf k)² • v`), pulls the `zsmul` out of the sum (`Finset.sum_smul` / `Finset.sum_zsmul`),
+and collapses `∑_k c(cellOf k)² = contentSqSum μ` by `contentSqSum_eq_sum_over_labels` along the
+bijection `sv.cellOf`.  This is the sorry-free core of the punchline; the only remaining OV input
+(the *spanning* of `S^λ` by such vectors) is isolated in `seminormalVectors_span`. -/
+theorem centralC2_smul_seminormal (μ : YoungDiagram) (sv : SeminormalVector (k := k) μ) :
+    (Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)) sv.v
+      = (contentSqSum μ) • sv.v := by
+  rw [centralC2, map_sum, LinearMap.sum_apply]
+  -- each summand: ρ(X_s²) v = c(cellOf s)² • v
+  rw [Finset.sum_congr rfl (fun s _ => jucysMurphy_sq_smul_seminormal μ sv s)]
+  -- factor the common vector out of the sum, then collapse the content-square sum over labels
+  rw [← Finset.sum_smul, contentSqSum_eq_sum_over_labels μ sv.cellOf]
 
 /-- **Jucys–Murphy eigenvalue theorem (Okounkov–Vershik).** The Specht module `S^λ` admits a
 Gelfand–Zetlin / seminormal basis indexed by the standard Young tableaux of shape `μ`, on which
@@ -347,11 +395,33 @@ JM elements.  Together with `jucysMurphy_commute`, this is the heart of the OV a
 (The cleanest faithful formulation found: package the seminormal datum as `SeminormalVector` with
 the eigenproperty built in, then assert existence indexed by the SYT.  This avoids hand-rolling a
 basis API while keeping the statement honest — the only `sorry` is the genuine OV existence claim,
-and the eigenvalue *equation* `X_k · v = c(cell) • v` is literally present in the bundle.) -/
+and the eigenvalue *equation* `X_k · v = c(cell) • v` is literally present in the bundle.)
+
+This is the **deep OV core** — the existence of the GZ/seminormal eigenbasis — and remains a single
+cited `sorry`; it is the content of the Okounkov–Vershik paper and out of scope for one brick. -/
 theorem jucysMurphy_eigenvalue (μ : YoungDiagram) (T : QOU.BraidKnot.StandardYoungTableau μ) :
     ∃ sv : SeminormalVector (k := k) μ, sv.T = T := by
   -- Ref: [vershik-kerov1977] (the GZ/seminormal basis of S^λ diagonalises the JM elements with
-  -- eigenvalues equal to the cell contents); brick-5 OV target.
+  -- eigenvalues equal to the cell contents); brick-5 OV existence core.
+  sorry
+
+/-- **Seminormal vectors span the Specht module (Okounkov–Vershik).** The Specht submodule
+`S^λ ≤ M^λ` is spanned by the seminormal (Gelfand–Zetlin) vectors `{sv.v}`.  Equivalently, the GZ
+basis is a basis of `S^λ`.
+
+This is the second irreducible OV input (alongside `jucysMurphy_eigenvalue`): it is *exactly* the
+statement that the simultaneous JM-eigenvectors exhaust `S^λ`, i.e. that the GZ basis is complete.
+It is isolated here as a single cited `sorry` so that the punchline `centralC2_acts_by_contentSqSum`
+is then **sorry-free** (the scalar action on each spanning vector is the sorry-free
+`centralC2_smul_seminormal`, and a `Submodule.span_induction` propagates it to all of `S^λ`).
+
+The inclusion `span ⊆ S^λ` is automatic (each `sv.v ∈ S^λ` by the `mem` field); the content is the
+reverse inclusion `S^λ ⊆ span`, stated below. -/
+theorem seminormalVectors_span (μ : YoungDiagram) :
+    Specht.SpechtSubmodule (k := k) μ
+      ≤ Submodule.span k (Set.range (fun sv : SeminormalVector (k := k) μ => sv.v)) := by
+  -- Ref: [vershik-kerov1977] (the GZ/seminormal eigenvectors form a basis of S^λ; the simultaneous
+  -- JM-eigenbasis is complete); brick-5 OV completeness core.
   sorry
 
 /-- **Punchline — `C₂` acts by `Σ_{c∈λ} c(c)²` on `S^λ`.** The Jucys–Murphy central element
@@ -364,14 +434,32 @@ made explicit): since each `X_k` acts on the seminormal vector for `T` by `c(cel
 central `∑_k X_k²` acts by `∑_k c(cell of k)² = ∑_{c∈λ} c(c)²` — independent of `T`, hence a
 scalar on all of `S^λ`.  **This integer scalar `contentSqSum μ` is exactly the `ω = Σc²` field of
 the keystone's `SnWedderburnSpectralData`** (`QOU.BraidKnot.RegularRepBlockTrace`); discharging
-this theorem discharges that field's content for the Specht-module block. -/
+this theorem discharges that field's content for the Specht-module block.
+
+**Sorry-free modulo the two cited OV cores.** The proof is a `Submodule.span_induction`:
+the seminormal vectors span `S^λ` (`seminormalVectors_span`), `C₂` acts on each by `contentSqSum μ`
+(the sorry-free `centralC2_smul_seminormal`), and the scalar action extends through `+`, `0`, and
+`k`-scaling because both `ρ(C₂)` and `(contentSqSum μ) • ·` are `k`-linear.  No `sorry`, no `ℝ`,
+no `native_decide`. -/
 theorem centralC2_acts_by_contentSqSum (μ : YoungDiagram) :
     ∀ x ∈ Specht.SpechtSubmodule (k := k) μ,
       (Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)) x
         = (contentSqSum μ) • x := by
-  -- Ref: [vershik-kerov1977] (C₂ = Σ X_k² is central and acts on the irreducible S^λ by the
-  -- scalar Σ_{c∈λ} c(c)², the JM eigenvalue sum; this is the ω of SnWedderburnSpectralData);
-  -- brick-5 OV target — the punchline feeding the Identity-(B) keystone.
-  sorry
+  intro x hx
+  -- the seminormal vectors span S^λ, so x lies in their span
+  have hxspan : x ∈ Submodule.span k
+      (Set.range (fun sv : SeminormalVector (k := k) μ => sv.v)) :=
+    seminormalVectors_span μ hx
+  -- propagate the scalar action `ρ(C₂) w = ω • w` from the spanning vectors to x by linearity,
+  -- with a motive that depends *only* on span-membership (so no spurious S^λ side-goals appear)
+  refine Submodule.span_induction
+    (p := fun w _ => (Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)) w
+      = (contentSqSum μ) • w)
+    ?_ ?_ ?_ ?_ hxspan
+  · rintro w ⟨sv, rfl⟩
+    exact centralC2_smul_seminormal μ sv
+  · simp
+  · intro a b _ _ ha hb; rw [map_add, ha, hb, smul_add]
+  · intro r a _ ha; rw [map_smul, ha, smul_comm]
 
 end QOU.BraidKnot.JucysMurphy
