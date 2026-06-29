@@ -474,8 +474,11 @@ def main() -> int:
     out_path = w.save()
     print()
     print(f"  Witness: {out_path.name}")
-    print(f"  atoms compared: {len(deltas)}, divergent: "
-          f"{sum(1 for d in deltas if not d['within_1ppQ'])}")
+    n_div = sum(1 for d in deltas if d.get("status") == "DIVERGE")
+    n_unc = sum(1 for d in deltas if not d.get("checkable"))
+    n_cert = sum(1 for d in deltas if d.get("certified_1ppQ_exact_methods"))
+    print(f"  atoms compared: {len(deltas)}, certified 1 ppQ: {n_cert}, "
+          f"uncertified (insufficient methods): {n_unc}, divergent: {n_div}")
 
     if args.strict and (any_diverge or anchor["n_fail"]):
         print()
