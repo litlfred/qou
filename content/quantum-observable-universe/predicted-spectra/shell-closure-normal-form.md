@@ -117,39 +117,8 @@ next step ($0.095 \to 1.409$: the new nucleon must start a fresh
 shell). The ratio $1.409 / 0.095 = 14.8$ is the **shell gap**
 in Hecke energy units.
 
-## Optimal normal form (quotient ideals I$_{8}$ + I$_{9}$)
-
-The raw normal form has up to $A!$ terms. Quotient ideals reduce
-this to exactly $A$ terms — the **optimal Gröbner--Shirshov basis** — for
-nuclei in the valley of stability ($N \geq Z - 1$).
-
-**Definition (quotient ideals).**
-
-- **I$_{8}$ (adjacency correlation):** A reduced word
- $\sigma_i \sigma_{i+1}$ of length 2 is *absorbed* into $\sigma_{i+1}$
- when $\sigma_{i+1}$ is present in the normal form. The coefficient of
- $\sigma_i \sigma_{i+1}$ is determined by the off-diagonal entry of the
- transfer matrix product $M_i$ — it is structural, not independent.
-
-- **I$_{9}$ (closed shell chain collapse):** A reduced word $w \cdot \sigma_j$
- is *absorbed* when its prefix $w$ is present in the normal form. This
- implements the per-generator transfer matrix factorization: the product
- of $\hat{V}_i$ volumes replaces the expanded Hecke element.
-
-**Theorem (Optimal Normal Form).**
-*For any nucleus $N(Z, N)$ with $N \geq Z - 1$ (valley of stability),
-the Gröbner--Shirshov normal form after quotient ideals I$_{8}$ + I$_{9}$ has exactly
-$A = Z + N$ terms:*
-
-$$
-  \mathcal{N}_{\mathrm{opt}}(Z, N)
-  = 
-  c_0 \cdot \mathbf{1}
-  + c_1 \cdot \sigma_0
-  + c_2 \cdot \sigma_1
-  + \cdots
-  + c_{A-1} \cdot \sigma_{A-2}
-$$
-
-*where each coefficient $c_i = \hat{V}_i(q)$ is the Markov-traced volume
-from the transfer matrix chain at generator $\sigma_i$.*
+The optimal $A$-term refinement of this raw normal form — obtained
+by quotienting by the adjacency / chain-collapse ideals
+([quotient ideals $I_8$, $I_9$](#def:gs-quotient-ideals-I8-I9)) — is
+stated separately
+([optimal normal form](#thm:optimal-normal-form-valley)).
