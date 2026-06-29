@@ -27,9 +27,10 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -45,5 +46,7 @@ structure QReebFlow (M : Type*) where
   flow : R_q → M → M
   /-- Initial condition: `φ^q_0 = id`. -/
   flow_zero : ∀ (p : M), flow 0 p = p
+
+end
 
 end QOU

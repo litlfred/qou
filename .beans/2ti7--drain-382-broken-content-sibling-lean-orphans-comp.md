@@ -145,3 +145,17 @@ faithful sibling-structure copies for out-of-scope `extends` (reeb cluster) cite
 `[kock2004]`; type-correct monoidal Frobenius law (frobenius-hopf-substrate); `HEq` for
 heterogeneous equalities; conclusion restated as honest `∃`-Prop (categorical-self-duality);
 dead-`ring` / `No goals` cleanups. **27/63 of the chapter now drained across waves 2+3.**
+
+## 2026-06-29 wave-4 swarm (9 agents × 2 files, quantum-observable-universes next 18)
+
+Re-derived (36 fixed by waves 2+3, 27 remaining); swarmed next **18** (q-differential-geometry
++ `qou-exists-axiom-*` cluster). **18/18 genuinely repaired, all independently re-verified
+`fail=0`**, 0 flagged. Quality gate clean: no `: True`/`native_decide`/trivial-field; 1 new
+sorry, cited `[kassel1995] §IX` (valid key); **axioms IMPROVED** — `quantum-observable-universe-exists`
+2→0 (replaced both axioms with one honest cited sorry), `q-logarithm-unique` 3→3 (pre-existing),
+`qou-exists-axiom-2` 1→1 (pre-existing, axiom-by-design); no fabricated axioms. Dominant fix this
+wave: the recurring **R_q-vs-ℝ base-ring mismatch** — many files recast to `R_q = LaurentPolynomial ℤ`
+but consumed ℝ-valued `SubstrateParameter.field` / used `q⁻¹`/order on `R_q` (no Inv/order);
+rewired to ℝ (archimedean realisation per §7c) or generic `[Field R]` where appropriate, importing the
+canonical library module. Also `q-logarithm-exists` replaced a vacuous `∃…,True` with honest
+`Nonempty`. **45/63 of the chapter drained across waves 2+3+4 (18 remain).**

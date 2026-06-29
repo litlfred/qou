@@ -28,6 +28,14 @@ LaTeX label: `lem:qou-exists-axiom-2`
 
 namespace QOU.QuantumObservableUniverse
 
+-- Universe pinning (§7d): `QuantumObservableUniverse` is universe-carrying
+-- via its `C : Type cObj` and `fibreFunctor : C ⥤ Type fib` fields.  The
+-- application order is `.{cObj, cHom, k, fib}`.  Both the data def and the
+-- existence lemma pin the same `fib` so the fibre-codomain universe of
+-- `Q.fibreFunctor` ties at the use site (the respelled `Type _` otherwise
+-- elaborates to a distinct rigid universe — the §7d trap).
+universe cObj cHom uk fib
+
 /-- **Axiom 2 — fibre functor / Peter–Weyl carrier (existence form).**
 
     Any `QuantumObservableUniverse k` exhibits a `fibreFunctor : C →
@@ -38,13 +46,15 @@ namespace QOU.QuantumObservableUniverse
 -- NOTE: `def`, not `theorem` — `Functor` is a `Type _` (data,
 -- not a proposition).  Per Copilot review on PR #794.
 def exists_axiom_2_observability_data
-    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
-    @CategoryTheory.Functor Q.C Q.catInst (Type _) inferInstance :=
+    {k : Type uk} [Field k]
+    (Q : QOU.QuantumObservableUniverse.{cObj, cHom, uk, fib} k) :
+    @CategoryTheory.Functor Q.C Q.catInst (Type fib) inferInstance :=
   Q.fibreFunctor
 
 lemma exists_axiom_2_observability
-    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
-    Nonempty (@CategoryTheory.Functor Q.C Q.catInst (Type _) inferInstance) :=
+    {k : Type uk} [Field k]
+    (Q : QOU.QuantumObservableUniverse.{cObj, cHom, uk, fib} k) :
+    Nonempty (@CategoryTheory.Functor Q.C Q.catInst (Type fib) inferInstance) :=
   ⟨exists_axiom_2_observability_data Q⟩
 
 end QOU.QuantumObservableUniverse
