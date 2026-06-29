@@ -762,7 +762,257 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Gauge/conformal invariance of the Hecke eigenspectrum is topically adjacent to the predicted-spectra material."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance-proof.md:5: \"higher-order Cemetery group spike\" and \"aeon initiation's relaxation\"",
+        "notes": "The block invokes non-existent/garbled terminology ('Cemetery group', 'aeon initiation's relaxation', 'primary Balmer transition' as a Hecke object) presented as established; these are not defined anywhere and read as fabricated/word-salad rather than a real mathematical statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance-proof.md:1: \"By direct algebraic verification on the Hecke eigenvalues, the conformal scaling isolates as a global factor.\"",
+        "notes": "The 'Proof.' asserts the conclusion ('isolates as a global factor', 'relative quotient factors through the fundamental algebra relations') with NO actual computation, lemma, or eigenvalue manipulation shown -- it is a content-free restatement of the claim followed by undefined jargon. No .lean sibling backs it."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Not circular per se (it asserts rather than back-fits); the defect is absence of derivation, captured under da-vacuous/non-sequitur."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance-proof.md:1: \"the relative quotient factors through the fundamental algebra relations, preserving the eigenspace ratio exactness\"",
+        "notes": "Claims 'exactness' of eigenspace-ratio preservation under conformal scaling with no supporting argument; the conclusion is far stronger than the (absent) derivation supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance-proof.md:1: \"the conformal scaling isolates as a global factor. ... the relative quotient factors through the fundamental algebra relations, preserving the eigenspace ratio exactness.\"",
+        "notes": "Each clause is asserted without the lemma that would connect it: no demonstration that conformal scaling 'isolates as a global factor', no statement of which 'fundamental algebra relations' force the factoring. The therefore-chain has every connecting step missing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Proof block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No external citation invoked (none to misuse)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "gauge-conformal-invariance-proof.md:5: \"higher-order Cemetery group spike\", \"primary Balmer transition\"",
+        "notes": "Key terms 'Cemetery group', 'aeon initiation', and the Hecke-object reading of 'Balmer transition' are undefined and have no referent in the corpus; the proof's vocabulary is ambiguous to the point of being non-referential."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No concrete physical-observable claim with units to dispute (the issue is vacuity, not a physics error)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No witness asserted."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e1e9ca256363",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance-proof.md:1-5: 'By direct algebraic verification...' with no computation, plus undefined 'Cemetery group'/'aeon initiation' jargon",
+        "notes": "This proof block is the weakest in the batch: it asserts its conclusion with no derivation and pads with non-referential terminology. Strongest objection: there is no proof here -- it must either supply the actual eigenvalue computation or be demoted/rewritten."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

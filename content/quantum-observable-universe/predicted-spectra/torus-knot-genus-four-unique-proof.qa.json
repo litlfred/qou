@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Genus-4 torus-knot enumeration underpins the force-carrier sector; on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Verified: (m-1)(n-1)=8 with 1<=m-1<=n-1 gives 1*8->(2,9) and 2*4->(3,5); gcd(2,9)=gcd(3,5)=1. The two genus-4 torus knots are exactly {T_{2,9},T_{3,5}}. Correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Genuine (if short) Diophantine enumeration proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Pure factorisation argument; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Claims exactly the complete list up to mirror symmetry; correct and not stronger."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Factorisation -> coprimality check -> mirror-symmetry dedup is a complete chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Proof block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No external citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Genus, coprimality, mirror symmetry T_mn=T_nm all clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Exact enumeration, no numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Pure topology; no physical claim to dispute."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Trivially reproducible enumeration."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fcb01bba7653",
+          "ts": "7fd8245eb1c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Correct, complete short proof; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

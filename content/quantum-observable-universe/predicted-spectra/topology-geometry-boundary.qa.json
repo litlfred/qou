@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Distinguishing q-determined vs geometry-needed observables is a natural boundary remark for the predicted-spectra chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The claim that some observables follow from q + chi(A)=-6 + Hecke alone while others need geometric input is a reasonable taxonomy; defers detail to a table. No false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Interpretive remark with real organizing content (interprets reidemeister-action-table)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No derivation that assumes its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Modest taxonomy remark; no strong claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Coherent statement of the two observable levels."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Remark block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Internal refs only (canonical-action, reidemeister-action-table)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "q, chi(A)=-6 Descartes condition, H_A(q) all referenced to existing definitions."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Taxonomy is physically benign."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Defers numbers to a table block; nothing irreproducible asserted here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "962e53872fb9",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Short, sound organizing remark; no substantive objection (full content lives in the referenced table)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

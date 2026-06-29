@@ -853,7 +853,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Nuclear degeneracy locus / elliptic-curve stability is on-scope for the Diophantine-stability section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Genus computations (S rational genus 0; C genus 1; D' degree-12 -> residual degree-6 genus-1) and the curve E_q invariants are stated correctly; no false identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Substantive conjecture with explicit coefficient-matching computation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Conjecture is clearly labelled; established vs open results are separated, and the erbium p~67.8 match is presented as suggestive not derived."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Block carefully labels the genus-1 pairing lift '(open)' and 'suggestive but not yet proven'; lists exactly which sub-results are exact. Properly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "c=a_C/(2a_A)~0.01497 comes from the binding Lagrangian coefficients, referenced; no free knob."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Coefficient-matching elimination (4c^3 p^2 + c = 1 -> p^2=(1-c)/(4c^3)) is algebraically valid; physical interpretation flagged conditional ('if the conjecture holds')."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Remark/conjecture block; lean.ref declared but content is a conjecture, divergence n/a for the narrative claims."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Internal refs (color-elliptic, beta-stability, descartes-elliptic-curve, diophantine-valley); used consistently."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Cubics C and S, degeneracy locus D/D', isogeny phi, z(p) substitution all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.md:128: \"this gives $p \\approx 67.8$, corresponding to $A \\approx 170$ ... neighborhood of **erbium**\"",
+        "notes": "The p~67.8/erbium coincidence is a single suggestive numerical match used to motivate the conjecture; the block honestly calls it 'suggestive but not yet proven', so warn (disclosed) rather than fail."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Even-even/odd-odd pairing degeneracy and rare-earth shell-effect region are physically reasonable framings."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "computations/elliptic-stability.json exists; its E_q (Delta=-18.948, j=129.86, q=1.10997) matches the .md's Delta=-18.95, j=129.9. Reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a537d68847c1",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Well-disciplined conjecture: exact sub-results and open lift clearly partitioned, witness present. Strongest objection: the central isogeny claim rests on one coefficient-matching coincidence, which the block concedes is unproven."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

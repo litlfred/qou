@@ -762,7 +762,253 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Hydrogen shell structure / Rydberg from transfer-matrix eigenvalues is on-scope for the atomic-spectra section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The matrix recurrence T^{n+1}=T*T^n -> Chebyshev recurrence with (T)_11=q-q^-1, det T=-1 is correctly derived."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Genuine recurrence proof plus spectral analysis."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Rydberg behaviour is derived from eigenvalue structure, not assumed; E_0 set by the e-p crossing energy."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "shell-structure-eigenvalues-proof.md:73: \"The exact formula is the **exponential** $\\lambda_+^{-n}$, which reproduces the Rydberg formula\"",
+        "notes": "The block claims an exponential E_bind ~ e^{-n*eps} (eps=0.1073) 'reproduces the Rydberg formula' E~1/n^2. Exponential and 1/n^2 are genuinely different functional forms; the agreement is only a low-n (n=1..7) approximation, which the block does hedge ('approximates 1/n^2 over the relevant range') -- so warn, but the 'reproduces ... to the precision of low-n spectroscopy' phrasing overstates."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "eps=lambda_+-1=0.1073 is derived from q0, not a free knob; E_0 is the crossing-energy scale."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Recurrence and eigenvalue dominance steps follow; the 1/n^2 emergence is presented as an approximation regime, not a strict equality."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Proof block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Internal ref (parity-violation-skein for the q-q^-1 deformation); appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "T_{gamma e}, lambda_pm, eps, E_0, V̂(n) defined; Rydberg regime characterised."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "shell-structure-eigenvalues-proof.md:71: \"For small $\\epsilon$, this approximates $1/n^2$ over the relevant range ($n = 1$ to $\\sim 7$)\"",
+        "notes": "The 1/n^2-vs-exponential match is restricted to n<=~7 with eps=0.1073; e^{-n*eps} deviates from 1/n^2 substantially as n grows, so the 'reproduces Rydberg' claim is range-limited / fragile. Disclosed, hence warn."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "shell-structure-eigenvalues-proof.md:62-69: \"$\\mathfrak{E}_{bind}(n) \\propto 1/\\lambda_+^n \\approx e^{-n\\epsilon}$\"",
+        "notes": "Hydrogen binding energy is empirically a power law (~ -13.6/n^2 eV); an exponential e^{-n*eps} contradicts the measured asymptotic n-dependence for higher n. A spectroscopist would reject the exponential as the true shell law beyond low n; the block only partially flags this."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "eps=0.1073 reproduces from q0; no external witness asserted."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "54fe698a92c6",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "shell-structure-eigenvalues-proof.md:73: exponential lambda_+^{-n} claimed to 'reproduce the Rydberg formula'",
+        "notes": "The recurrence derivation is correct, but the central physics claim -- exponential binding reproduces the 1/n^2 Rydberg law -- holds only as a low-n approximation and conflicts with the measured power-law tail. Strongest objection: the functional form is wrong away from low n; should be scoped as an approximation, not 'reproduces ... to spectroscopic precision'."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

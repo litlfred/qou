@@ -1048,7 +1048,457 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.md:95: \"### Geometric interpretation\" within the corollary block",
+        "notes": "The italic Corollary statement (lines 10-94) is fairly bare, but the block then appends 'Geometric interpretation' and 'Physical significance'-style sections; these interpretive parts belong in a follow-on remark rather than the corollary block. Minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Q-value spectral decomposition over torus-knot basis is on-scope for the beta-decay/predicted-spectra section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Archimedean realisation block (Q-value in MeV via log_q, ℏ_q); ℝ usage is appropriate and the opening note flags the R-specialisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No narrative `**Proof.**` body; corollary asserted as consequence of cited props."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:90: \"∃ Q_q : ℝ, Q_q = bareQValue q (daughterPoly / parentPoly) m_e * knotOperator := ⟨..., rfl⟩\"",
+        "notes": "The .md corollary asserts an EXACT, COMPLETE spectral decomposition (item v: Rosso-Jones completeness, tower terminates at degree 2, no higher corrections). The Lean theorem proves only `∃ Q_q, Q_q = RHS` (trivially true for any defined RHS); its own comment admits 'Trivial existential... substantive content belongs in a sharper theorem'. Lean proves drastically less than the narrative."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:91-97: existential body `⟨bareQValue ... * knotOperator, rfl⟩`",
+        "notes": "The provable-kind statement is weakened to a vacuous existential equality, so the corollary's content is not captured by a Lean statement with integrity; ts records validation:not_checked."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Not a structure-field projection; it's an existential introduced by rfl (covered under trivial-true)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "critical",
+        "evidence": "spectral-decomposition-qvalue.lean:92-97: \"⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩\"",
+        "notes": "spectral_decomposition_qvalue is the tautology `∃ x, x = (defined RHS)` discharged by rfl -- any term equals itself; it ignores all hypotheses (hq, hp, hd, hme) and the structural decomposition content. The Lean comment itself concedes this is a 'Trivial existential'."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Hypotheses (q>1, positive polys, m_e>0) are non-contradictory; the issue is they are unused, not false."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:86-89: hq, hp, hd, hme, hr/hs none used in the rfl existential",
+        "notes": "The existential proof discharges by rfl and uses none of hq:1<q, hp:0<parentPoly, hd:0<daughterPoly, hme:0<m_e -- every hypothesis is dead, confirming the statement is weaker than intended."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Uses rfl on an existential, not decide; but this is the trivial-true issue, not decide-masking specifically."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The narrative decomposition and the genus-bound side lemmas (tower_terminates: genus>=13>4 not embeddable; degree-2 knots tau(2,9),tau(3,4)) are mathematically correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:90-97: trivial existential `∃ Q_q, Q_q = RHS := ⟨RHS, rfl⟩`",
+        "notes": "The headline Lean theorem is content-free (true for any defined RHS); plus torus_knot_self_duality proves only (r-1)(s-1)=(s-1)(r-1) by `ring` (commutativity), not actual self-duality. The substantive .md claims are not formalised."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Decomposition not back-fitted; F-factors defined from Markov traces; the residual 2-10% structural error is disclosed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.md:87: \"*The decomposition is **exact***\" with .lean only proving a trivial existential",
+        "notes": "The .md asserts the decomposition is EXACT and the tower TERMINATES with NO higher corrections, but the formalisation supporting it is a vacuous existential; the exactness/completeness claim outruns what is proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "F_deg2~0.5904 and F_Pauli~0.6382 are Rosso-Jones/Young-symmetrizer ratios with 'zero fitting freedom' as stated; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Product-collapse-to-single-term and Pauli/deg2 factorization are reasoned from shell cancellation; no broken inference in the narrative."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:92: \"-- Trivial existential: take Q_q to be the right-hand side itself.\"",
+        "notes": "The Lean proves something vacuously-implied (an existential equality) versus the .md's exact spectral-decomposition-with-completeness claim -- a clear proof-statement-integrity divergence acknowledged by the Lean's own comment."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "jones1987 (Markov trace/link polynomials) and turaev2010 (quantum invariants) are correctly attributed for the Rosso-Jones completeness context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "P(q), log_q, F(tau,N) cases, Delta_beta, e_{(1^3)} all defined; the four cases of F are explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "F_deg2~0.5904 and F_Pauli~0.6382 are computed ratios, not tuned; structural errors honestly stated as 2-10% O(1) relative to the negligible parametric error."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Q-value as categorical-action difference, with Pauli-blocking and shell factors, is dimensionally coherent; 137Cs N=82 example reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "F-factor numbers are internally specified; no external stale witness cited in this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3f64a1124e64",
+          "ts": "871bc0fc6bb0",
+          "lean": "6c261691ebcf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:90-97: headline theorem is `∃ Q_q, Q_q = RHS := ⟨RHS, rfl⟩`",
+        "notes": "The narrative is rich and likely correct, but the central Lean 'theorem' for an EXACT spectral decomposition is a trivial existential (admitted as such), and the self-duality lemma proves only commutativity. Strongest objection: the formalisation backing the corollary's exactness/completeness claim is vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

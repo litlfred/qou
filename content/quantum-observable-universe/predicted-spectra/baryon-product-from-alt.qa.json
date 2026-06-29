@@ -1048,7 +1048,451 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The italic Proposition (lines 1-30) is the bare Alt-isotype identification; the 'purely algebraic, no archimedean' note (lines 32-36) is a scope clarification, not physical interpretation injected into the claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Baryon-integrand isotype identification is on-scope for the baryon/Galois section; the ts chapter:'archimedean-universe' tag is the Phase-5 split residue, not a topical misplacement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "baryon-product-from-alt.md:32: \"This is a purely algebraic statement: it lives over the categorical base ring $R$ and makes no use of the archimedean fibre functor $\\tau$\" vs baryon-product-from-alt.lean:79: \"theorem baryonProductFromAlt (a b c : ℝ)\"",
+        "notes": "The .md emphatically declares the statement purely algebraic over generic R with no archimedean content, yet the .lean specialises the Vandermonde identity to (a b c : ℝ). Per §7c the `ring` identity holds over any CommRing, so the ℝ specialisation is gratuitous; should be generic R. Minor wall-side leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No narrative `**Proof.**` body in this proposition block (the proof lives in baryon-product-from-alt-proof)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "baryon-product-from-alt.lean:79-82: theorem proves the Vandermonde cofactor = (b-a)(c-a)(c-b) by `ring`",
+        "notes": "The .md Proposition asserts the integrand ∏dc_k/dz is the Alt^3-isotype projection of the S_3-module (an isotype-decomposition claim). The .lean proves only the 3x3 Vandermonde determinant factorization underlying it -- a true sub-lemma, but materially narrower than the stated proposition; the isotype-projection content is not formalised."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No weakening-to-pass or axiom injection; the Lean theorem is an honest determinantal identity with a docstring openly stating it is the 'determinantal form', ts validation:not_checked."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "baryonProductFromAlt is proved by `ring`, not by projecting a structure field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The Vandermonde cofactor=discriminant identity is a genuine non-trivial polynomial identity, not a tautology; the helper sign-character lemmas are also substantive."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No false premise; the identity holds for all a,b,c."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "baryonProductFromAlt has only the variables a,b,c (all used); no spurious hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Uses `ring` and `simp`, not decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Alt^3 isotype = sign-projection, the R[S_3]=R⊕R⊕R^{2x2} Wedderburn decomposition, and the Vandermonde^2=discriminant are correct; the integrand assignment to the sign block is right."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Substantive proposition; the .lean proves a real (if narrower) determinantal identity, not a `: True` vacuity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Isotype selection forced by quark color content / Wedderburn decomposition; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "baryon-product-from-alt.md:1: \"**Proposition (Alt-isotype identification...)**\" with .lean proving only the Vandermonde factorization",
+        "notes": "The proposition-kind statement asserts the full isotype identification, but the formal backing covers only the determinantal sub-identity; the proven content is narrower than the proposition's stated scope (mild overclaim of formalisation status, ts validation:not_checked mitigates)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No free parameter; sign-isotype fixed by group theory."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The sum=trivial-isotype / product=sign-isotype / standard-isotype assignment is consistent with the S_3 representation theory; no broken inference."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "baryon-product-from-alt.lean:60-82: docstring 'The S_3-sign-isotype projection ... is the cofactor expansion of the 3x3 Vandermonde', theorem proves only that factorization",
+        "notes": "The Lean proves a vacuously-narrower statement (Vandermonde factorization) than the .md isotype-projection proposition; honest partial formalisation flagged by the docstring, not a divergence to triviality -- minor."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "fulton1991 (Frobenius character / sign-isotype projection) and macdonald1995 (Vandermonde discriminant) are correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Color-tube cubic F, roots c_k(z), S_3 action, the three isotypes, and lambda_baryon all defined; the generic base ring R is named (the only slip is the .lean's ℝ specialisation)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No numerical observable match; purely algebraic isotype claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Antisymmetric color-singlet (Alt^3) for the baryon matches QCD color structure."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "baryon-product-from-alt.lean:26: \"[baryon-product-from-alt.witness.json](../../../computations/baryon-product-from-alt.witness.json)\"",
+        "notes": "The .lean §Witness cites computations/baryon-product-from-alt.witness.json as a 'pointwise + thimble-period numerical certificate', but no such witness file exists anywhere under computations/ (verified by find). The cited certificate is missing/irreproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "56bc6e5f4d68",
+          "ts": "f7fbaccda4d9",
+          "lean": "3764ffe0fc56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "baryon-product-from-alt.lean:26 missing witness + lean.ref specialised to ℝ for a claimed-generic-R statement",
+        "notes": "The proposition is mathematically correct. Strongest objections: (1) the cited numerical witness file does not exist; (2) the .lean formalises only the Vandermonde sub-identity (over ℝ) while the proposition claims a generic-R isotype projection -- so the formal backing is both narrower and gratuitously archimedean."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

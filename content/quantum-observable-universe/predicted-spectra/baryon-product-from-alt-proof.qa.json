@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Schur-Weyl/Alt-isotype selection of the baryon integrand is on-scope for the baryon/Galois section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The S_3 sign-projector formula, the permutation-rep decomposition V=(3)+(2,1), the Lambda^3 V ~ R top-power, and the Vandermonde^2 = discriminant identity are all correct; the proof carefully distinguishes top-exterior-power from a 3x1 Jacobian."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Substantive four-step proof with a genuine group-theoretic selection argument."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Alt-channel selection is fixed by Wedderburn decomposition of R[S_3], not back-fitted to the baryon."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "States the result is purely algebraic over R and that the archimedean period integral is a separate step; appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No free parameter; sign-isotype is forced by quark color content."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Steps 1-4 connect: projector -> wedge -> product -> Vandermonde/discriminant; the resultant identity J(z)=+-Delta(z) is correctly invoked."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "baryon-product-from-alt.lean:79: theorem baryonProductFromAlt (a b c : ℝ) : (Vandermonde cofactor) = (b-a)(c-a)(c-b) := by ring",
+        "notes": "The .lean proves the underlying 3x3 Vandermonde cofactor=discriminant factorization (sound, non-trivial), which is the determinantal core of Step 4 -- but it is narrower than the full .md proposition (Alt-isotype projection of the tensor module). Honest partial formalisation, not a divergence-to-vacuity."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Frobenius character formula (frobenius-codim-universal internal) and Schur-Weyl refs used correctly; fulton1991/macdonald1995 are the standard sources for the sign-projector and Vandermonde identity."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "V, pi_Alt, Lambda^3 V, V_3, Delta(z), J(z) defined; the top-power vs Jacobian distinction is explicitly clarified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No numerical match; purely algebraic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Antisymmetric color-singlet (Alt^3) for the baryon matches QCD color structure; physically sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "baryon-product-from-alt.lean:26: \"[baryon-product-from-alt.witness.json](../../../computations/baryon-product-from-alt.witness.json) — pointwise + thimble-period numerical certificate\"",
+        "notes": "The .lean §Witness section cites computations/baryon-product-from-alt.witness.json, but no such file exists anywhere under computations/ (verified by find). The cited reproducibility certificate is missing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3c87d6dcd978",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "baryon-product-from-alt.lean:26: missing computations/baryon-product-from-alt.witness.json",
+        "notes": "The proof is mathematically sound and the Lean Vandermonde core is correct. Strongest objection: the referenced numerical witness certificate does not exist, and the Lean formalises only the determinantal sub-identity rather than the full isotype-projection statement."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

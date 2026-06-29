@@ -816,7 +816,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "alpha_EM coupling derivation is the EM-completeness section of predicted-spectra; on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "genus-4 torus-knot Diophantine fact ((m-1)(n-1)=8 -> {(2,9),(3,5)}) and CS(T_mn) formula are correct; no false math statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Substantive content (idempotent completeness, CS correction, open-residual discussion)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The block explicitly admits the CS kappa correction is NOT closed (matching CODATA needs kappa~1.888 vs derived 1.722); does not back-fit to alpha_EM, it flags the gap."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "em-coupling-projection-discussion.md:67: \"Both $\\delta_{CS}$ and $\\kappa$ are **derived**... no free parameters are introduced\"",
+        "notes": "Lines 66-69 assert kappa is 'derived... no free parameters', but lines 90-96 below correct that kappa~1.722 was a `sorry` never closed and CODATA needs ~1.8878 -- the early 'derived' claim is contradicted by the block's own later audit note."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The kappa parameter is openly flagged as an unresolved/fitted quantity (kappa~1.888 needed), not hidden; the additive 2/(3pi) form is disclosed as importing archimedean pi."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Reasoning chain (completeness -> uniqueness -> forced force-carrier) is coherent; residual gap honestly labelled open."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Remark block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Internal refs (em-spectral-completeness, force-carrier-bring-uniqueness which exists, em-coupling-chern-simons); no misattributed external source."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Bare formula, delta_CS, kappa, additive form all defined; the PSLQ vs additive vs CS routes are clearly distinguished."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "em-coupling-projection-discussion.md:115: \"The PSLQ-empirical form ... matches CODATA to $7$ ppb ... but disagrees with the bare formula at every other $q$ and has only one of four factors structurally derived\"",
+        "notes": "Block itself documents the empirical fragility: the 7-ppb PSLQ match is q0-specific and structurally underived; the additive 2/(3pi) front-runner imports archimedean pi. Disclosed, not hidden, hence warn not fail."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "alpha_EM target 1/137 and CS(T_mn) values are physically sensible; no broken conservation/units."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "References a numerical table block; the bare 0.155% residual and CS reduction figures are internally consistent and the unresolved ones are flagged."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7474e04e82f9",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "em-coupling-projection-discussion.md:67 vs em-coupling-projection-discussion.md:90: 'derived...no free parameters' contradicted by 'kappa was admitted as sorry and never closed'",
+        "notes": "Overall an honest, well-structured open-problem remark, but it carries an internal contradiction: kappa is asserted 'derived' in the formula block then corrected as an unclosed sorry below. Strongest objection: the closing CS/additive corrections to 1/alpha remain underived, so the 'topological invariant' framing overstates current status."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

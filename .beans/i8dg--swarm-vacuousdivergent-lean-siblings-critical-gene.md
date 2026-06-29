@@ -112,3 +112,9 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 58, predicted-spectra)
 - hadron-q-self-correction.lean:61,90,122 (substantive inequality theorems commented out + dangling bodies; file does not compile; .md admits structure broken)
 - gauge-conformal-invariance.lean (proves (a*lam^n)/(a*lam^m)=lam^n/lam^m tautology; q_baseline unused; critical)
+
+## More instances (batch 57, predicted-spectra)
+- gauge-conformal-invariance-proof.md:1,5 (Proof asserts conclusion, no computation, fabricated jargon Cemetery group/aeon initiation; weakest block)
+- spectral-decomposition-qvalue.lean:90-97 (exists Q_q=RHS rfl trivial existential)
+- optimal-normal-form-valley.lean:46-56 (vacuous existential, hq/hval unused)
+- parity-violation-skein.lean:53-54 (3 theorem sigs commented + orphan := by; mk arity mismatch; does not compile)

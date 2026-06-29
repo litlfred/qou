@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.md:74: \"The stability condition at generator $0$ is the **binding**:\"",
+        "notes": "The Proposition statement (lines 37-59) is the bare P>0 / lattice-inequality claim, but surrounding statement-level prose injects physical interpretation ('this is the binding') rather than confining it to a follow-on remark; minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Nuclear-chart finiteness / drip-line bound is on-scope for the nuclear-stability section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "This is a nuclear-stability (archimedean realisation) block; ℝ-valued eigenvalue/sqrt statement and the .lean ground-ring annotation 'ℝ (geometric realisation), NOT part of the formal proof chain' are consistent with the regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Eigenvalue/sqrt/asymptotic arguments are legitimately archimedean for a nuclear-stability block; the q-factorial crossover [A-1]_q!>[2]_q^{A-1} is also given combinatorially."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "skein-finiteness-bound.lean:67: \"axiom q_factorial_exceeds_at_5 ...\" and skein-finiteness-bound.lean:37: \"axiom skeinPolynomial\"",
+        "notes": "The Lean axiomatizes the Skein polynomial, the crossover facts, and A_max as opaque axioms; there is no proved theorem corresponding to the .md Proposition, so the Lean does not establish the narrative claim (it asserts the pieces as axioms). Acceptable as an archimedean stub but narrative<->Lean equivalence is not a proved match."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No weakening/axiom-injection to 'pass' a proof; the .lean is openly an axiom-stub (no theorem claiming the conclusion), ts validation:not_checked."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No structure-field projection of the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Claim (stability iff P>0, crossover at A=5/6) is substantive, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No contradictory premise; q>1 regime is live."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "IsStable structure carries q_gt_one and skein_positive both meaningfully; no dead hypothesis in a proved theorem (the substantive facts are axioms)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No decide/trivial masking; facts are honestly axioms with -- Ref citations, not hidden behind decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Verified [4]_q! > [2]_q^4 direction at q0; the crossover A=5 (with q-correction O(eps^2)) and product sign flip at A=6 are consistent. No false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Real factorial-vs-exponential crossover argument; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Bound derived from Hecke dimension A! and q-factorial growth, not back-fitted to the observed drip line."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.lean:14: \"The closed-form bound: A_max(q) ~ π / √(4 ln q).\"",
+        "notes": "The .lean docstring asserts a closed-form A_max~pi/sqrt(4 ln q) (archimedean) while the .md emphasises the bound is 'topological... no classical e or pi'; the A_max form is axiomatized (A_max_approx opaque), so the closed-form is asserted, not derived -- mild overclaim in the Lean docstring."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No tunable parameter; magic-number shell-closure stabilisation is referenced to an existing prop."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Each step (eigenvalue sign, dominance, cross-term growth ~binom(A,2), crossover) follows."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Internal refs (transfer-matrix, shell-closure); no external citation invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "V̂_i, lambda_pm, q-factorial, k_i all defined; crossover regimes (q=1, q0, q->inf) consistently analysed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Crossover is topological (A! vs 2^{A-1}); q-correction eps^2=0.011 explicitly negligible -- robust, not fit-noise."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Finiteness of the chart + magic-number re-stabilisation to A~300 is consistent with nuclear phenomenology."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "[4]!=25.15>[2]^4=16.35 cited in -- Ref reproduces; sign-flip P=-0.0053 at A=6 referenced to a data table."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "skein-finiteness-bound.lean:37,67,72,79: skeinPolynomial / q_factorial_exceeds_at_5 / q_factorial_bounded_below_5 / A_max_approx all `axiom`",
+        "notes": "The Lean does not prove the .md Proposition; it axiomatizes the Skein polynomial and the crossover facts, so the narrative claim is asserted rather than formalised. Honest archimedean stub (NOT part of the formal proof chain), hence warn not fail."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "329f24a283fa",
+          "ts": "148396442a19",
+          "lean": "be8b33592bf9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "skein-finiteness-bound.lean:37,67,79: skeinPolynomial / crossover / A_max all `axiom`",
+        "notes": "Narrative argument is internally sound and numerically checks, but the Lean sibling proves nothing -- it axiomatizes every load-bearing fact. Strongest objection: the 'closed-form bound' is asserted (axiomatized), not formalised."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

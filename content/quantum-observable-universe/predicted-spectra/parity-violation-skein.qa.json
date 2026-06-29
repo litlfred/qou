@@ -1046,7 +1046,447 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The boxed Proposition (lines 72-76) is the bare iff claim; the eigenvalue/Skein discussion is supporting derivation, not interpretive physics injected into the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Parity-violation from the Skein relation belongs in the weak-decay / predicted-spectra scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The .md states the combinatorial q!=1 iff fact (generic ring) and the opening note correctly flags the Lean as an archimedean R-specialisation; statement itself is q-algebraic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Narrative proof is purely algebraic (eigenvalue asymmetry q vs -q^-1, Skein-relation comparison); no archimedean machinery used in the .md argument."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "parity-violation-skein.lean:53: \"-- theorem parity_violation_skein (q : R_q) (hq : 0 < q) :\" with the body `(SkeinCoefficients.mk q hq).parityInvariant ↔ q = 1 := by` left uncommented",
+        "notes": "The Lean theorem heads (parity_violation_skein, parityViolationStrength_pos, cp_conservation) are COMMENTED OUT while their `:= by` bodies remain, leaving dangling proof bodies with no declaration; the file cannot compile and the .md iff claim has no live Lean counterpart. SkeinCoefficients.mk is also called with two args (q,hq) though the struct field hq was commented out."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "parity-violation-skein.lean:53-54: theorem signature commented out, body retained",
+        "notes": "The provable-kind Lean statement is effectively absent (signature commented); ts records validation:not_checked, so the .md proposition is unbacked by a compiling Lean statement."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No structure-field projection of the conclusion; the (broken) proof would unfold the Skein coeff definitions."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Claim is a genuine iff (parity-invariance <-> q=1), not a tautology; the .md statement is substantive."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No false/contradictory hypothesis; q!=1 on the substrate ray is the live regime."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The Lean theorem statement is commented out, so hypothesis-usage cannot be assessed against a live declaration."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No decide/trivial masking; the (commented) bodies use field_simp/nlinarith/norm_num."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Math is correct: Hecke eigenvalues (q,-q^-1), parity invariance forces q=-q^-1 i.e. q^2=-1, impossible on the substrate ray; iff q=1 conclusion holds."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Narrative statement has real content; only the Lean is broken (covered under proof-narrative-lean-equiv)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Conclusion derived from eigenvalue asymmetry, independent second derivation via Skein-relation mirror; not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "States parity violated for any q!=1; matches the algebra, no overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Both derivations are valid; the comparison of original vs mirrored Skein relation correctly yields q=q^-1."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "parity-violation-skein.lean:53: theorem signature commented out, dangling `:= by` body",
+        "notes": "Lean provides no live theorem for the .md claim (heads commented out, bodies orphaned); the file does not compile, so the narrative iff diverges from a non-existent Lean statement."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Lee-Yang 1956 / Wu 1957 cited in the .lean docstring as historical parity-violation references; correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "P (mirror), L+/L-/L0, Skein relation, q-regime all defined; opening note pins the base ring."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No numerical match claimed; q-q^-1~0.209 strength is an exact algebraic value."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Maps to established physics (weak parity violation), consistent direction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No external witness; the algebraic strength value reproduces from q0."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "927deb2f022a",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "major",
+        "evidence": "parity-violation-skein.lean:53-54,73,90: three theorem heads commented out with orphaned bodies",
+        "notes": "Narrative math is sound, but the Lean sibling is broken (commented-out signatures with dangling proof bodies, mk arity mismatch) and will not compile. Strongest objection: the claimed formalisation does not exist as a live declaration."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

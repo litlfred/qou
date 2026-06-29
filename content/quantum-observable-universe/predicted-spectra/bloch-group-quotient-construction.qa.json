@@ -1048,7 +1048,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Proposition statement (lines 1-17) is the bare B(F)=FreeAbelianGroup/pentagonSubgroup construction claim; the gap-status discussion is in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "bloch-group-quotient-construction.md:1: \"closes substantive Mathlib gap (1)\"",
+        "notes": "A Bloch-group/Mathlib-construction proposition; like upstream-mathlib-additions, it is formal-infrastructure plumbing supporting the alpha_EM/dilogarithm chain rather than a spectra prediction. Borderline placement, minor."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Generic over `{F : Type*} [Field F]` -- correctly NOT specialised to ℝ; archimedean ℝ instance provided only as one inhabitant. Wall respected."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Quotient construction + universal property are pure algebra over Field F; no archimedean machinery used to prove an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The .md construction (FreeAbelianGroup(PreBlochElement F)/pentagonSubgroup, AddCommGroup, canonical projection, universal property) matches the .lean (BlochGroup, instance AddCommGroup, quot, quot_universal_property) faithfully."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Real Lean construction; no weakening or axiom injection. The over-permissive pentagon-shape caveat is disclosed in both .md and authorNotes, and the constrained Rogers-form generators are actually built."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Universal property proved via QuotientAddGroup.lift, not a self-assuming field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "BlochGroup is a genuine quotient AddCommGroup; the universal property and Rogers-generator membership are non-trivial."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "RogersPair hypotheses (x,y in F\\{0,1}, x!=y) are consistent and used (shape3/4/5 ne_one proofs depend on hxy_ne)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Rogers conditions are all used in the derived-shape well-definedness proofs (e.g. shape3.ne_one uses hxy_ne; shape4/5 use hy_ne_one etc.)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Proofs use field_simp/linear_combination/QuotientAddGroup lemmas; no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The quotient construction and universal property are standard and correctly formalised; Rogers-form 5-tuple maps (y/x, (1-y^-1)/(1-x^-1), (1-y)/(1-x)) are the correct pentagon parametrisation."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Substantive sorry-free Lean object (real AddCommGroup quotient), not a typeclass ansatz; HasBlochGroup ℝ concretely inhabited."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No circularity in a quotient-group construction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Honestly caveats the over-permissive PentagonShape and lists remaining open work (pentagon identity for Cl_2, regulator injectivity, Suslin map) as Mathlib-pending."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Pure formalisation; no physical parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Each Lean step (free group -> pentagon subgroup -> quotient -> universal property) follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Lean matches narrative; the constrained Rogers-form generators in the .lean even go beyond the .md's 'remaining work' note (PR #575 switched to validPentagonRelationGenerators)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "bloch2000 (Bloch group) and suslin1991 (K_3^ind/regulator) are correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "PreBlochElement, PentagonShape, RogersPair, pentagonSubgroup, BlochGroup all precisely defined in Lean."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Self-contained Lean; no external witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Strong, honest, sorry-free formalisation closing a real Mathlib gap. Strongest objection is placement in a physics-prediction chapter and the disclosed over-permissive-shape caveat, both minor."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }

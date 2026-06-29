@@ -1048,7 +1048,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "upstream-mathlib-additions.md:6: \"User: \\\"work on adding\\\". The Lean file ... provides three real Mathlib-targeted additions\"",
+        "notes": "This is a Mathlib-plumbing/dilogarithm-infrastructure proposition (Cl_2, Bloch-Wigner, complex dilog) living in the predicted-spectra chapter; its subject is upstream-Mathlib contribution, only loosely tied to the alpha_EM derivation it supports. Borderline placement; the leak 'User: work on adding' is a chat artifact in prose."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "These are genuinely archimedean objects (Real/Complex dilogarithm, Cl_2); ℝ/ℂ usage is correct, no spurious specialisation of an algebraic claim."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "upstream-mathlib-additions.md:6: \"User: \\\"work on adding\\\". The Lean file ... provides three real Mathlib-targeted additions, each sorry-free\"",
+        "notes": "The 'Proposition' statement is really a meta-claim about Lean deliverables and leaks a chat artifact ('User: work on adding') into the statement rather than stating a bare mathematical claim; voice/status leak in the statement, minor."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The Lean proofs (Cl_2_neg via tsum_neg, summability via p-series comparison) are genuinely archimedean analysis; ℝ/ℂ usage is correct for dilogarithm objects, no algebraic claim proved by misplaced archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "severity": "minor",
+        "evidence": "upstream-mathlib-additions.ts: lean.ref qou:QOU.Archimedean.UpstreamAdditions.complexLiTwo (a def, not a theorem)",
+        "notes": "The block is kind:proposition but the .md is a meta-statement ('three sorry-free additions') and the lean.ref targets a definition (complexLiTwo); there is no single provable Lean theorem mirroring a single .md claim -- the .lean instead delivers several defs/theorems. Acceptable as an infrastructure block, but the proposition<->Lean mapping is loose."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No weakening/axiom injection; the .lean theorems (Cl_2_neg, Cl_2_pi, complexLiTwo_summable_on_unit_disk) are sorry-free, and the unproved pieces are honestly carried as conditional class hypotheses (ComplexLiTwoUnitCircleClassical, Cl_2_DoubleAngle)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Conditional theorems (blochWigner_unit_circle_eq_Cl_2, Cl_2_double_angle) project their class field, but the class axiomatizes a genuine hypothesis (the classical identity) and the theorem derives a different conclusion (D = Cl_2 via the log‖z‖=0 reduction), per §3b-cond -- not a self-assuming projection of the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Conclusions are non-trivial (oddness, periodicity, Cl_2(pi)=0, summability); none is `: True` or x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No contradictory hypotheses; the conditional-class instances are honest open conjectures, not False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Conditional theorems use their [class] instance (hC.unit_circle_identity / hC.double_angle); the boundary-check theorems take no hypotheses. No dead hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Proofs use tsum_congr/tsum_neg/field_simp/gcongr; no decide or trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "complexLiTwo(0)=0, Cl_2 oddness/periodicity/Cl_2(pi)=0, summability on the unit disk are correct standard facts; the Lean proofs are real (not sorry)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The .lean has substantive sorry-free theorems (Cl_2_neg via tsum_neg, Cl_2_pi, summability); the conditional-class conjectures carry real content fields per 3b-tax, not bare True."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No back-fitting; these are independent functional-equation lemmas."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Honestly distinguishes sorry-free pieces (Cl_2_neg etc.) from class-hypothesis conjectures (unit-circle identity, double-angle) deferred to Mathlib; no overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No physics parameters; pure analysis."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Each Lean proof step is valid; the prose 'reduces gap to (i),(ii)' is accurate."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "The .md is a meta-claim ('three sorry-free additions') and the .lean delivers exactly those definitions/theorems sorry-free; lean.ref targets complexLiTwo (a def), consistent with the 'concrete tsum definition' claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "zagier1986 (dilogarithm) and bloch2000 (Bloch-Wigner) are correctly attributed for Cl_2 / D constructions."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "complexLiTwo, blochWigner, Cl_2 all defined explicitly in the .lean; boundary conventions (Real.log 0 = 0) noted."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No numerical/observable match; pure formalisation."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Lean theorems are self-contained; no external witness needed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "962967319488",
+          "ts": "0a1d5e3de728",
+          "lean": "c18beb504e56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:37:55.233Z",
+        "reviewed_sha": "3f40357745725d8fc2adb5000c9920a5a78a071c",
+        "notes": "Solid, honest formalisation block. Strongest objection is placement (Mathlib plumbing inside a physics-prediction chapter) and the 'User: work on adding' chat-artifact in prose, both minor."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:37:55.233Z"
 }
