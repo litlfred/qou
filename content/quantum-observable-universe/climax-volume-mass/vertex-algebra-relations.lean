@@ -1,6 +1,7 @@
 import UGB.GrobnerShirshov.HeckeGS
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -19,20 +20,14 @@ LaTeX label: `prop:vertex-algebra-relations`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [jones1987] https://doi.org/10.2307/1971403
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring**: this Lean sibling is the **archimedean specialisation
+over `ℝ`** (AGENTS.md §7c), matching the `HeckeGS` library, whose
+`AlgElement (HeckeGen n)` and `HeckeParams.q` are over `ℝ`. The
+underlying combinatorial content stays generic to any commutative ring
+with the same `q`-data; `q ↦ q₀ ∈ ℝ` is the numerical evaluation.
 -/
 
 namespace QOU.VertexAlgebra
-
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 open UGB.GrobnerShirshov
 open UGB.GrobnerShirshov.Hecke
@@ -41,46 +36,46 @@ open UGB.GrobnerShirshov.Hecke
 -- QU-1: Re-export the three Hecke relations from HeckeGS.lean
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- QU-1a: The Hecke relation σᵢ² = (q - q⁻¹)σᵢ + 1 is formalized
+/- QU-1a: The Hecke relation σᵢ² = (q - q⁻¹)σᵢ + 1 is formalized
     as `heckeRelation` in HeckeGS.lean — a constructive `ReductionRule`
-    in the Gröbner–Shirshov rewriting system. -/
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-#check @heckeRelation  -- ReductionRule (HeckeGen n) R_q
+    in the Gröbner–Shirshov rewriting system.
+    Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+         — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+         DOI: 10.1007/978-1-4612-0783-2 -/
+#check @heckeRelation  -- ReductionRule (HeckeGen n) ℝ
 
-/-- QU-1b: Yang–Baxter σᵢσᵢ₊₁σᵢ = σᵢ₊₁σᵢσᵢ₊₁ is formalized
-    as `yangBaxterRelation` in HeckeGS.lean. -/
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-#check @yangBaxterRelation  -- ReductionRule (HeckeGen n) R_q
+/- QU-1b: Yang–Baxter σᵢσᵢ₊₁σᵢ = σᵢ₊₁σᵢσᵢ₊₁ is formalized
+    as `yangBaxterRelation` in HeckeGS.lean.
+    Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+         — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+         DOI: 10.1007/978-1-4612-0783-2 -/
+#check @yangBaxterRelation  -- ReductionRule (HeckeGen n) ℝ
 
-/-- QU-1c: Far-commutativity σᵢσⱼ = σⱼσᵢ for |i-j| ≥ 2 is
-    formalized as `farCommRelation` in HeckeGS.lean. -/
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-#check @farCommRelation  -- ReductionRule (HeckeGen n) R_q
+/- QU-1c: Far-commutativity σᵢσⱼ = σⱼσᵢ for |i-j| ≥ 2 is
+    formalized as `farCommRelation` in HeckeGS.lean.
+    Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+         — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+         DOI: 10.1007/978-1-4612-0783-2 -/
+#check @farCommRelation  -- ReductionRule (HeckeGen n) ℝ
 
-/-- The three families form a Gröbner–Shirshov basis (Bokut & Shiao
-    2001, Theorem 3.5). -/
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
+/- The three families form a Gröbner–Shirshov basis (Bokut & Shiao
+    2001, Theorem 3.5).
+    Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+         — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+         DOI: 10.1007/978-1-4612-0783-2 -/
 #check @hecke_is_gs_basis  -- IsGrobnerShirshovBasis
 
 -- ═══════════════════════════════════════════════════════════════════
 -- QU-2: Antipode = Hecke inverse (derived from heckeRelation)
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- QU-2d: The inverse σᵢ⁻¹ = (q⁻¹ - q)σᵢ + q⁻¹ is formalized as
+/- QU-2d: The inverse σᵢ⁻¹ = (q⁻¹ - q)σᵢ + q⁻¹ is formalized as
     `embedNegativeGen` in HeckeGS.lean — constructive from the Hecke
-    relation. This IS the antipode S(σᵢ). -/
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-#check @embedNegativeGen  -- AlgElement (HeckeGen n) R_q
+    relation. This IS the antipode S(σᵢ).
+    Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+         — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+         DOI: 10.1007/978-1-4612-0783-2 -/
+#check @embedNegativeGen  -- AlgElement (HeckeGen n) ℝ
 
 -- ═══════════════════════════════════════════════════════════════════
 -- QU-3: Markov trace (requires functional on AlgElement)
@@ -91,15 +86,16 @@ open UGB.GrobnerShirshov.Hecke
 
     This extends the Gröbner–Shirshov framework with a linear functional
     satisfying conjugation invariance and stabilisation. The existence
-    and uniqueness is Jones 1987, Theorem 5.1. -/
-/-- **Markov trace** on H_n(q) — axiomatised pending the full
+    and uniqueness is Jones 1987, Theorem 5.1.
+
+    **Markov trace** on H_n(q) — axiomatised pending the full
     Markov-recursion-on-GS-normal-forms implementation in the
     transfer-matrix framework. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-axiom MarkovTrace {n : ℕ} (hp : HeckeParams) (f : AlgElement (HeckeGen n) R_q) : R_q
+axiom MarkovTrace {n : ℕ} (hp : HeckeParams) (f : AlgElement (HeckeGen n) ℝ) : ℝ
 
 /-- **AlgElement.embed_succ** — embed H_n into H_{n+1} by treating
     generators as σ₀,…,σ_{n-1}.  Axiomatised pending the concrete
@@ -108,8 +104,8 @@ axiom MarkovTrace {n : ℕ} (hp : HeckeParams) (f : AlgElement (HeckeGen n) R_q)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-axiom AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) R_q) :
-    AlgElement (HeckeGen (n + 1)) R_q
+axiom AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) :
+    AlgElement (HeckeGen (n + 1)) ℝ
 
 /-- **AlgElement.mul** — convolution on monomials.  Axiomatised
     pending concrete formal-algebra ring structure. -/
@@ -117,13 +113,13 @@ axiom AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) R_q) :
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 axiom AlgElement.mul {n : ℕ}
-    (_ _ : AlgElement (HeckeGen n) R_q) : AlgElement (HeckeGen n) R_q
+    (_ _ : AlgElement (HeckeGen n) ℝ) : AlgElement (HeckeGen n) ℝ
 
 /-- **AlgElement.zero** — additive identity of the formal algebra. -/
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
-axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) R_q
+axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) ℝ
 
 /-- QU-3a: Markov conjugation invariance —
     tr_M(σᵢ · f) = tr_M(f · σᵢ) for all i and f. -/
@@ -132,7 +128,7 @@ axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) R_q
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
-    (f : AlgElement (HeckeGen n) R_q) :
+    (f : AlgElement (HeckeGen n) ℝ) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨i⟩ f)
     = MarkovTrace hp (AlgElement.rightMulGen f ⟨i⟩)
 
@@ -143,7 +139,7 @@ axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) R_q) :
+    (f : AlgElement (HeckeGen n) ℝ) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨⟨n, by omega⟩⟩
       (AlgElement.embed_succ f))
     = MarkovTrace hp f / (-(hp.q + hp.q⁻¹))
@@ -156,8 +152,8 @@ axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) R_q) :
-    (∀ g : AlgElement (HeckeGen n) R_q,
+    (f : AlgElement (HeckeGen n) ℝ) :
+    (∀ g : AlgElement (HeckeGen n) ℝ,
       MarkovTrace hp (AlgElement.mul f g) = 0) →
     f = AlgElement.zero
 
@@ -169,10 +165,10 @@ axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
     is a scalar. Equivalent to Hom(1, Ad(A)) = 0. -/
 -- Ref: [manuscript] §4/vertex-algebra-relations
 axiom observability {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) R_q) :
+    (f : AlgElement (HeckeGen n) ℝ) :
     (∀ i : Fin n, AlgElement.leftMulGen ⟨i⟩
       (AlgElement.rightMulGen f ⟨i⟩) = f) →
-    ∃ c : R_q, f = AlgElement.smul c (AlgElement.singleton [])
+    ∃ c : ℝ, f = AlgElement.smul c (AlgElement.singleton [])
 
 -- ═══════════════════════════════════════════════════════════════════
 -- QUO-3: Anomaly freedom (Chern class vanishing)
@@ -192,11 +188,11 @@ axiom first_chern_vanishes {n : ℕ} (hp : HeckeParams) (i : Fin n) :
 /-- C-2: The obstruction coefficient q⁻¹(1-q⁻¹) is nonzero for q > 1.
     This proves d_q² ≠ 0 on vertical forms. -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
--- theorem dq_squared_nonzero (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
+theorem dq_squared_nonzero (q : ℝ) (hq : q > 1) :
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
-  have hq0 : q ≠ 0 := by linarith
+  have hqpos : q > 0 := by linarith
   have hqi : q⁻¹ > 0 := by positivity
-  have hqi1 : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; linarith
+  have hqi1 : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   have h1 : 1 - q⁻¹ > 0 := by linarith
   exact ne_of_gt (mul_pos hqi h1)
 
@@ -220,12 +216,11 @@ axiom descartes_trace {n : ℕ} (hp : HeckeParams) :
 /-- C-7: The curvature [σᵢ, σⱼ] is self-adjoint under the antipode:
     S([σᵢ, σⱼ]) = [σᵢ, σⱼ] where [a, b] = ab(ba)⁻¹. -/
 -- Ref: [manuscript] §4/vertex-algebra-relations
-axiom self_dual_curvature {n : ℕ} (hp : HeckeParams)
+axiom self_dual_curvature {n : ℕ} [NeZero n] (hp : HeckeParams)
     (i j : Fin n) (hij : i ≠ j) :
-    let ab := braidToAlg hp [i.val, j.val]
-    let ba_inv := braidToAlg hp [-(j.val : ℤ), -(i.val : ℤ)]
-    -- S(ab · ba⁻¹) = ab · ba⁻¹
-    braidToAlg hp [-(j.val : ℤ), -(i.val : ℤ), i.val, j.val]
-    = braidToAlg hp [i.val, j.val, -(j.val : ℤ), -(i.val : ℤ)]
+    -- S(ab · ba⁻¹) = ab · ba⁻¹, where ab = braidToAlg [σᵢ, σⱼ] and
+    -- ba⁻¹ = braidToAlg [σⱼ⁻¹, σᵢ⁻¹].
+    braidToAlg (n := n) hp [-(j.val : ℤ), -(i.val : ℤ), i.val, j.val]
+    = braidToAlg (n := n) hp [i.val, j.val, -(j.val : ℤ), -(i.val : ℤ)]
 
 end QOU.VertexAlgebra
