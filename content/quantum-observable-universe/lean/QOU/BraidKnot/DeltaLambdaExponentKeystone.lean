@@ -169,10 +169,13 @@ theorem interfaceImbalance_eq_Z_sub_N (Z N : Int) :
 
 /-- **Derived.** The writhe splits as `intra (3Z+N) + interface (Z−N) = 4Z`,
 reconciling `writhe_eq_four_Z` with the per-nucleon seeds and the interface
-imbalance. Stated over `ℤ` because the interface term is signed. -/
-theorem writhe_intra_interface_decomp (Z N : Int) :
-    ((3 : Int) * Z + N) + interfaceImbalance Z N = 4 * Z := by
-  unfold interfaceImbalance; ring
+imbalance. The intra term is the *defined* `intraWrithe` (cast to `ℤ`); the
+interface term is signed, hence the identity lives over `ℤ`. -/
+theorem writhe_intra_interface_decomp (Z N : Nat) :
+    (intraWrithe Z N : Int) + interfaceImbalance (Z : Int) (N : Int) = 4 * (Z : Int) := by
+  unfold intraWrithe protonIntraWrithe neutronIntraWrithe interfaceImbalance
+  push_cast
+  ring
 
 /-- **Conjectural bridge (NOT asserted).** The structural asymmetry the binding
 data exhibits on mirror pairs: writing `δ` for the measured Δ_λ q₀-exponent
