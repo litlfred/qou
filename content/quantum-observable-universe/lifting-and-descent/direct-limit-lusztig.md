@@ -19,7 +19,7 @@ The flatness of this specialisation---the fact that the divided-power
 basis remains a basis after $q \mapsto q_n$---is guaranteed by the
 Gröbner--Shirshov normal-form theorem applied to
 $\mathrm{Dist}(G)$ \[fred2005].  In the $p$-adic setting
-([Chapter](#chap:archimedean-universe)), the
+(Chapter), the
 ([Witt vector lift](#def:witt-vector-lift)) converts this algebraic
 flatness into a geometric statement: the formal group $\widehat{G}$
 over $\mathbb{Z}_p$ reduces modulo $p$ to the commutative

@@ -22,6 +22,6 @@ physical face carries the complementary **imaginary part**
 $\mathfrak{Q}_\beta = \operatorname{Im}\mathfrak{V}$, the bar-odd
 ($\sinh$) weak channel — the $\beta$-decay $Q$-value — developed as
 the $\operatorname{Im}$ leg of the complex-volume precision ladder
-([complex-volume ladder](#sec:mass-algebraic-complex-volume-ladder)).
+(complex-volume ladder).
 Binding and decay are one complex object read on its two parities,
 not two independent predictions.

@@ -1,5 +1,5 @@
 The pentagon identity of the quantum dilogarithm
-([quantum Bloch group](#rem:quantum-bloch-group))
+(quantum Bloch group)
 
 $$
   \Phi_q(v)\,\Phi_q(u) \;=\; \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)

@@ -4,7 +4,7 @@ Markov-trace collapse, $T_\beta = S\cdot\mathbf{1}$
 That collapse leaves one object to identify: the fibre-level Habiro
 element $F(q)$ whose $q$-Taylor coefficients are the precision-ladder
 $c_k$ of the $\mathfrak{Q}_\beta$ series
-([`sec:mass-algebraic-complex-volume-ladder`](#sec:mass-algebraic-complex-volume-ladder)).
+(`sec:mass-algebraic-complex-volume-ladder`).
 The question this section settles is not *what $F$ is* — that remains the
 open keystone — but *which structural constraints any candidate $F$ must
 satisfy before it is worth evaluating*. This is the formalize-first

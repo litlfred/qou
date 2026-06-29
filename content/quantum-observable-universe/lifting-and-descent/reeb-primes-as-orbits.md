@@ -25,7 +25,7 @@ chapters:
    the parallel transport of the adjoint representation around the
    closed orbit. This promotes the abelian counting of classical
    number theory to a nonabelian, matrix-valued integral
-   ([Chapter 8](#chap:algebraic-substrate)).
+   (Chapter 8).
 
 3. **Stability becomes geometric.** Whether the prime distribution
    has bounded fluctuations (the content of the Riemann hypothesis)

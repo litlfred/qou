@@ -56,7 +56,7 @@ Three-manifold language ($S^3$, knot complement, hyperbolic volume,
 JSJ decomposition) does **not** appear on the algebraic side; it
 enters only as the τ-image of the algebraic structure under
 $\tau_{\mathrm{arch}}$
-([Φ$_q$-tower JSJ archimedean bridge](#conj:phi-q-tower-jsj-bridge)).
+(Φ$_q$-tower JSJ archimedean bridge).
 
 ## The four levels of the algebraic stratification
 
@@ -88,7 +88,7 @@ the mass-endomorphism formula
   The mass formula computes via algebraic stratification
   (Φ$_q(|\hat V_S|)$ as a Laurent polynomial); the JSJ
   identification of the τ-image is a separate conjecture
-  ([Φ$_q$-tower JSJ bridge](#conj:phi-q-tower-jsj-bridge))
+  (Φ$_q$-tower JSJ bridge)
   that *interprets* this algebraic structure on the geometric
   side. If the JSJ conjecture remains open, the algebraic mass
   formula is unaffected.

@@ -5,6 +5,14 @@ export default remark({
   label: "rem:vdw-pskew-isolation-interpretation",
   title:
     "Van der Waals is the discarded sinh residual, the same Hopf channel as $\\alpha_{EM}$",
+  computation: {
+    engine: "python",
+    script: "computations/vdw_pskew_sinh_probe.py",
+    witness: [
+      "computations/vdw-pskew-sinh-probe.witness.json"
+    ],
+    status: "verified",
+  },
   uses: [
     "prop:vdw-pskew-isolation",
     "prop:crossing-energy-decomposition",

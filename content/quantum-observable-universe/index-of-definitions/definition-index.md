@@ -690,7 +690,7 @@
 | [lem:mobius-energy-frobenius-kernel](#lem:mobius-energy-frobenius-kernel) | Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$ | Ch 9 | `qou:QOU.BraidsKnots.mobius_frobenius_kernel` |
 | [lem:descent-cocycle-deviation](#lem:descent-cocycle-deviation) | Cocycle deviation at level $n+1$ as a twisted Cech 2-cocycle | Ch 4 | `qou:QOU.LiftingDescent.descent_cocycle_deviation` |
 | [lem:tmli-constituent-composite-agreement](#lem:tmli-constituent-composite-agreement) | Constituent and composite Markov-trace evaluations agree exactly | Ch 10 | `qou:QOU.BraidsKnots.tmli_constituent_composite_agreement` |
-| [lem:ccg-cosimplicial-identities](#lem:ccg-cosimplicial-identities) | Cosimplicial identities for the jet/descent face and degeneracy maps | Ch 4 | `qou:QOU.LiftingDescent.ccg_cosimplicial_identities` |
+| lem:ccg-cosimplicial-identities | Cosimplicial identities for the jet/descent face and degeneracy maps | Ch 4 | `qou:QOU.LiftingDescent.ccg_cosimplicial_identities` |
 | [lem:ccg-crossed-module-structure](#lem:ccg-crossed-module-structure) | Crossed-module structure on $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ | Ch 4 | `qou:QOU.LiftingDescent.ccg_crossed_module_structure` |
 | [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Degree-one Hecke elements have vanishing archimedean volume: $\mathrm{Vol}\bigl(\overline{1 + \sum_i \phi_i \sigma_i}\bigr) = 0$ | Ch 10 | `qou:QOU.Photon.geom_degree_one_zero` |
 | [lem:topological-mass-cat-descended](#lem:topological-mass-cat-descended) | Descended term equals the base-level mass | Ch 7 | `qou:QOU.TopologicalMass.cat_descended_is_base_mass` |
