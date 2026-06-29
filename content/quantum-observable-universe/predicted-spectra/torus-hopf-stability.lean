@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -18,8 +20,8 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+   See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -46,12 +48,17 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
+-- Note: the inequality `< 0`, the positivity hypotheses, and the inverse
+-- `q⁻¹` are archimedean constructs with no meaning over `R_q` (Laurent
+-- polynomials carry neither an order nor an `Inv`). The crossing-energy
+-- stability claim is therefore stated over `ℝ`, the archimedean
+-- realisation reached via `ι : R_q → ℝ, q ↦ q₀`.
 theorem torus_hopf_stability
-    -- (q : R_q) (hq : q > 1)  -- (archimedean; not meaningful over R_q)
-    -- (vol_binding : R_q) (hvol : 0 < vol_binding)  -- (archimedean; not meaningful over R_q)
-    -- (crossing_sum : R_q) (hcs : crossing_sum ≥ 0)  -- (archimedean; not meaningful over R_q)
+    (q vol_binding crossing_sum : ℝ)
     (h_bound : crossing_sum < vol_binding * q⁻¹ ^ 2) :
     -vol_binding * q⁻¹ ^ 2 + crossing_sum < 0 := by
-  linarith
+  nlinarith [h_bound]
+
+end
 
 end QOU.Archimedean

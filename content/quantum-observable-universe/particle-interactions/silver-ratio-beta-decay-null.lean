@@ -32,7 +32,6 @@ theorem silver_ratio_polynomial_root :
     let q_minus : ℝ := 1 - Real.sqrt 2
     q_plus^2 - 2*q_plus - 1 = 0 ∧ q_minus^2 - 2*q_minus - 1 = 0 := by
   refine ⟨?_, ?_⟩ <;> (
-    simp [Real.sq_sqrt]
     ring_nf
     rw [Real.sq_sqrt (by norm_num : (2:ℝ) ≥ 0)]
     ring
@@ -66,7 +65,6 @@ theorem hecke_quadratic_silver_ratio_self_referential :
     -- And σ_root_plus = q_silver (self-referential!):
     σ_root_plus = q_silver := by
   refine ⟨?_, ?_, rfl⟩ <;> (
-    simp [Real.sq_sqrt]
     ring_nf
     rw [Real.sq_sqrt (by norm_num : (2:ℝ) ≥ 0)]
     ring

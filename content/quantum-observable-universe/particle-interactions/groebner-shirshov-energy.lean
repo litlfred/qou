@@ -36,7 +36,7 @@ theorem heckeEnergyChange_pos (q : ℝ) (hq : 1 < q) (c : ℝ) (hc : c ≠ 0) :
   unfold heckeEnergyChange
   apply mul_pos
   · exact abs_pos.mpr hc
-  · rw [sub_pos, div_lt_one (by linarith : (0 : ℝ) < q)]
+  · rw [sub_pos, div_lt_iff₀ (by linarith : (0 : ℝ) < q)]
     nlinarith
 
 /-- Yang-Baxter steps have zero energy change. -/
@@ -62,7 +62,7 @@ private theorem heckeEnergyChange_nonneg (q : ℝ) (hq : 1 < q) (c : ℝ) :
   unfold heckeEnergyChange
   apply mul_nonneg (abs_nonneg _)
   have hq_pos : (0 : ℝ) < q := by linarith
-  rw [sub_nonneg, div_le_iff hq_pos]
+  rw [sub_nonneg, div_le_iff₀ hq_pos]
   nlinarith
 
 /-- The total energy is non-negative for q > 1. -/

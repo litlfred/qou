@@ -70,11 +70,24 @@ theorem muLambda_classical (lam : YoungDiagram) :
   unfold muLambda hbar_q
   simp
 
+/-- The single-cell Young diagram λ = (1), i.e. cells `{(0,0)}`. The
+    singleton is a lower set because `(0,0)` is the minimum of `ℕ × ℕ`. -/
+-- Ref: [manuscript] §9
+def singleCellDiagram : YoungDiagram where
+  cells := {(0, 0)}
+  isLowerSet := by
+    intro a b hba ha
+    simp only [Finset.coe_singleton, Set.mem_singleton_iff] at ha ⊢
+    subst ha
+    have h1 : b.1 ≤ 0 := hba.1
+    have h2 : b.2 ≤ 0 := hba.2
+    exact Prod.ext_iff.mpr ⟨by omega, by omega⟩
+
 /-- **Single-cell partition** λ = (1) has μ_λ = 0. -/
 -- Ref: [manuscript] §9
 theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
-    muLambda q {cells := {(0, 0)}, isLowerSet := by decide} = 0 := by
-  unfold muLambda contentSumClassical contentSumQCasimir
+    muLambda q singleCellDiagram = 0 := by
+  unfold muLambda contentSumQCasimir singleCellDiagram
   simp [jacksonInt]
 
 /-- **Peter-Weyl heat-kernel convergence** (conjecture, archimedean).
@@ -99,5 +112,7 @@ theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
 def qHeatKernelPeterWeyl (q t : ℝ) (dLambda : YoungDiagram → ℝ)
     (_hq : 0 < q) (_hq1 : q ≠ 1) (_ht : 0 < t) : Prop :=
   Summable (fun lam : YoungDiagram => dLambda lam * Real.exp (-(muLambda q lam) * t))
+
+end
 
 end QOU

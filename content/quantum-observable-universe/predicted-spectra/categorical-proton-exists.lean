@@ -1,4 +1,4 @@
-import QOU.Basic
+import Mathlib.Data.Real.Basic
 
 
 /-!
@@ -15,6 +15,20 @@ LaTeX: `\label{prop:categorical-proton-exists}`
 -/
 
 namespace QOU
+
+/-- Defining data of the categorical proton (mirror of
+    [`def:categorical-proton`], shared with `categorical-proton-unique.lean`):
+    the colour-linked triple `[u, u, d]_c` is determined by its pair-Skein
+    masses `(S_uu, S_ud)`, with derived mass `S_uu + 2·S_ud` and chirality `+1`. -/
+structure CategoricalProton where
+  /-- Pair Skein mass `S_uu`. -/
+  skein_uu : ℝ
+  /-- Pair Skein mass `S_ud`. -/
+  skein_ud : ℝ
+  /-- Mass `= S_uu + 2·S_ud`. -/
+  mass : ℝ := skein_uu + 2 * skein_ud
+  /-- Positive crossing chirality (electric charge `+1`). -/
+  chirality : ℤ := 1
 
 /-- **Existence of the categorical proton.**
 

@@ -23,9 +23,9 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
+noncomputable section
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -65,5 +65,7 @@ theorem neutrino_genus_zero : Neutrino.mk.genus = 0 := rfl
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem neutrino_crossing_zero : Neutrino.mk.crossing_number = 0 := rfl
+
+end
 
 end QOU.Archimedean

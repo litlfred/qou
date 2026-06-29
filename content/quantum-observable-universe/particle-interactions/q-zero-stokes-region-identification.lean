@@ -1,3 +1,6 @@
+import Mathlib.Data.Rat.Defs
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.QZeroStokesRegionIdentification
 

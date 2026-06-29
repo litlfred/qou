@@ -68,10 +68,8 @@ theorem BetaDecayData.q_integer_2_gt_two (d : BetaDecayData) :
     2 < d.q_integer_2 := by
   unfold q_integer_2
   have hq : 0 < d.q := by linarith [d.q_gt_one]
-  rw [show (2 : ℝ) = 1 + 1 from by norm_num]
-  have : 1 < d.q := d.q_gt_one
-  have : 1 / d.q < 1 := by rwa [div_lt_one hq]
-  nlinarith [sq_nonneg (d.q - 1 / d.q)]
+  have hcancel : d.q * (1 / d.q) = 1 := by field_simp
+  nlinarith [sq_nonneg (d.q - 1), hq, hcancel, d.q_gt_one]
 
 /-- The q-dependent prefactor of the decay rate:
     F(q) = (q + q⁻¹) · (q - q⁻¹)⁵.

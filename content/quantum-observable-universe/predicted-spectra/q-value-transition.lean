@@ -1,4 +1,7 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
 
 
 /-!
@@ -86,11 +89,17 @@ noncomputable def delta_q_eff (q : ℝ) (A : ℕ) : ℝ :=
 theorem delta_q_eff_pos {q : ℝ} {A : ℕ} (hq : 1 < q) (hA : 2 ≤ A) :
     0 < delta_q_eff q A := by
   unfold delta_q_eff hbar_q'
+  have hA1 : (1 : ℝ) < (A : ℝ) := by exact_mod_cast (show 1 < A by omega)
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hAne : (A : ℝ) ≠ 0 := by positivity
   apply mul_pos
   · apply div_pos
-    · exact by exact_mod_cast (show (0 : ℝ) < (A : ℝ) - 1 by exact_mod_cast Nat.sub_pos_of_lt (by omega))
+    · linarith
     · positivity
-  · positivity
+  · have hlt : 1 / q < 1 := by
+      rw [div_lt_one hq0]; linarith
+    have hpos : (0 : ℝ) < 1 - 1 / q := by linarith
+    positivity
 
 /-- At q = 1, the anomaly vanishes (classical limit). -/
 -- Ref: [manuscript] §6/q-value-transition
@@ -111,8 +120,10 @@ noncomputable def singleCrossingDelta (q : ℝ) : ℝ := q - 1 / q
 theorem singleCrossingDelta_pos {q : ℝ} (hq : 1 < q) :
     0 < singleCrossingDelta q := by
   unfold singleCrossingDelta
-  rw [sub_pos, div_lt_iff (by linarith : (0 : ℝ) < q)]
-  nlinarith
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlt : 1 / q < 1 := by
+    rw [div_lt_one hq0]; linarith
+  linarith
 
 /-- At q = 1: crossing change releases zero energy (no weak force). -/
 -- Ref: [manuscript] §6/q-value-transition
@@ -176,6 +187,10 @@ theorem tritium_delta_q_pos : 0 < delta_q_eff 1.110 3 := by
 theorem delta_q_decreasing {q : ℝ} (hq : 1 < q) {A : ℕ} (hA : 2 ≤ A) :
     delta_q_eff q (A + 1) < delta_q_eff q A := by
   unfold delta_q_eff
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlt : 1 / q < 1 := by
+    rw [div_lt_one hq0]; linarith
+  have hbpos : (0 : ℝ) < hbar_q' q := by unfold hbar_q'; linarith
   apply mul_lt_mul_of_pos_right
   · -- (A)/(A+1)² < (A-1)/A²
     -- Equivalently: A³ < (A-1)(A+1)² = (A²-1)(A+1) = A³ + A² - A - 1
@@ -206,6 +221,6 @@ noncomputable def sigma1_fraction : ℝ := 0.0792 / 0.1021  -- ≈ 0.776
 theorem generator_fractions_sum :
     sigma0_fraction + sigma1_fraction = 1 := by
   unfold sigma0_fraction sigma1_fraction
-  ring
+  norm_num
 
 end QOU.Archimedean

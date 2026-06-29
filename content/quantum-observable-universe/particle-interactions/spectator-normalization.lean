@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
 /-
   Spectator normalization factor.
 
@@ -26,32 +29,26 @@ noncomputable def spectatorNorm (q : ℝ) (Z_spec N_spec : ℕ) : ℝ :=
     fermionic sign: sign(a^Z × b^{N-1}) = (−1)^{A−1}. -/
 theorem spectatorSign (q : ℝ) (hq : q > 1) :
     protonChannelSum' q < 0 ∧ neutronChannelSum q < 0 := by
+  have hq0 : q > 0 := by linarith
   constructor
   · -- a = -(q - q⁻¹)/2 < 0 for q > 1
-    simp [protonChannelSum']
-    have : q - q⁻¹ > 0 := by
-      have hq0 : q > 0 := by linarith
-      rw [inv_eq_one_div]
-      have : 1/q < q := by rw [div_lt_iff hq0]; nlinarith
-      linarith
+    unfold protonChannelSum'
+    have hinv : q⁻¹ < 1 := by
+      rw [inv_lt_one₀ hq0]
+      exact hq
+    have hge : q⁻¹ < q := by linarith
+    have : q - q⁻¹ > 0 := by linarith
     linarith
   · -- b < 0: (q²-1) > 0 and (q²+1)² > 0 and q³ > 0
-    simp [neutronChannelSum]
-    have hq0 : q > 0 := by linarith
+    unfold neutronChannelSum
     have hq2 : q^2 > 1 := by nlinarith
-    have : (q^2 + 1)^2 > 0 := by positivity
-    have : q^3 > 0 := by positivity
-    nlinarith
+    have hpos2 : (q^2 + 1)^2 > 0 := by positivity
+    have hq3 : q^3 > 0 := by positivity
+    have hnum : -3 * (q^2 - 1) * (q^2 + 1)^2 < 0 := by nlinarith
+    rw [div_neg_iff]
+    right
+    exact ⟨hnum, by positivity⟩
 
-/-- The parity regime: for q > 1, both channel sums are negative,
-    so sign(a^Z × b^N) = (−1)^{Z+N}. The spectator product is
-    positive when Z + N is even (odd A in beta decay).
-    Ref: [manuscript] Ch 11 §9 / parity-regime-selection -/
--- Ref: [manuscript] Ch 11 §9 / parity-regime-selection
--- Proof: a < 0 and b < 0 (spectatorSign), so a^Z × b^N has sign (−1)^{Z+N}.
--- Positive iff Z+N even. Requires Even.neg_pow / Odd.neg_pow from Mathlib.
--- The mathematical content is: sign(spectatorNorm) = (−1)^{A−1} where A = Z+N+1.
--- Lean verification deferred to lean-build-fix pass (Mathlib API alignment).
 -- Helper: a negative real raised to a natural power is positive iff the exponent is even.
 private lemma neg_pow_pos_iff {x : ℝ} (hx : x < 0) (n : ℕ) :
     0 < x ^ n ↔ Even n := by
@@ -59,45 +56,54 @@ private lemma neg_pow_pos_iff {x : ℝ} (hx : x < 0) (n : ℕ) :
   · intro hpos
     by_contra hodd
     rw [Nat.not_even_iff_odd] at hodd
-    exact not_lt.mpr (le_of_lt hpos |>.antisymm (le_of_lt (Odd.neg_pow hodd ▸
-      neg_neg_of_neg (pow_neg hx n |>.elim (fun h => absurd hpos (not_lt.mpr (le_of_lt h)))
-        (fun h => absurd hpos (not_lt.mpr (le_of_eq h.symm))))))) |> absurd hpos ∘ ne_of_gt
-    -- Simplification: use Even.pow_pos and Odd.pow_neg
+    have : x ^ n < 0 := hodd.pow_neg hx
+    linarith
   · intro heven
-    exact Even.pow_pos heven hx
+    exact heven.pow_pos (ne_of_lt hx)
 
--- Helper: product of two positive reals is positive.
-private lemma mul_pos_of_pos {a b : ℝ} (ha : 0 < a) (hb : 0 < b) : 0 < a * b :=
-  mul_pos ha hb
-
+/-- The parity regime: for q > 1, both channel sums are negative,
+    so sign(a^Z × b^N) = (−1)^{Z+N}. The spectator product is
+    positive when Z + N is even (odd A in beta decay). -/
 theorem spectatorSignPattern (q : ℝ) (hq : q > 1) (Z N : ℕ) :
     (0 < spectatorNorm q Z N) ↔ Even (Z + N) := by
   obtain ⟨ha, hb⟩ := spectatorSign q hq
   simp only [spectatorNorm]
   -- spectatorNorm = a^Z * b^N where a < 0 and b < 0.
-  -- a^Z * b^N > 0 iff both powers are the same sign,
-  -- which happens iff Z and N have the same parity, i.e. Z+N is even.
+  -- a^Z * b^N > 0 iff both powers are the same sign, i.e. Z and N have the
+  -- same parity, i.e. Z+N is even.
   constructor
   · intro hpos
-    -- If the product is positive, both factors have the same sign.
-    -- Since a < 0 and b < 0, a^Z > 0 iff Even Z, a^Z < 0 iff Odd Z (same for b^N).
-    -- Product positive => both even or both odd => Z+N even.
     by_contra hne
     rw [Nat.not_even_iff_odd] at hne
-    -- Z+N odd means exactly one of Z, N is odd.
-    obtain ⟨hZ_even, hN_odd⟩ | ⟨hZ_odd, hN_even⟩ := Nat.Even.add_odd_or_odd_add hne
-    all_goals {
-      have := mul_pos_iff.mp hpos
-      simp only [Even.pow_pos, Odd.pow_neg, *] at this
-      · linarith
-    }
+    -- Z+N odd ⇒ exactly one of Z, N is odd; the corresponding factor is < 0,
+    -- the other > 0, so the product is < 0, contradicting hpos.
+    rcases mul_pos_iff.mp hpos with ⟨hZ, hN⟩ | ⟨hZ, hN⟩
+    · -- both factors positive ⇒ both exponents even ⇒ Z+N even
+      have hZe : Even Z := (neg_pow_pos_iff ha Z).mp hZ
+      have hNe : Even N := (neg_pow_pos_iff hb N).mp hN
+      exact (Nat.not_even_iff_odd.mpr hne) (hZe.add hNe)
+    · -- both factors negative ⇒ both exponents odd ⇒ Z+N even
+      have hZo : Odd Z := by
+        by_contra h
+        rw [Nat.not_odd_iff_even] at h
+        have : 0 < (protonChannelSum' q) ^ Z := (neg_pow_pos_iff ha Z).mpr h
+        linarith
+      have hNo : Odd N := by
+        by_contra h
+        rw [Nat.not_odd_iff_even] at h
+        have : 0 < (neutronChannelSum q) ^ N := (neg_pow_pos_iff hb N).mpr h
+        linarith
+      exact (Nat.not_even_iff_odd.mpr hne) (hZo.add_odd hNo)
   · intro heven
-    -- Z+N even means Z and N have the same parity.
-    -- Both even: a^Z > 0 and b^N > 0, product positive.
-    -- Both odd: a^Z < 0 and b^N < 0, product positive.
-    obtain ⟨hZe, hNe⟩ | ⟨hZo, hNo⟩ := Nat.even_add.mp heven |>.elim
-      (fun ⟨l, r⟩ => Or.inl ⟨l, r⟩) (fun ⟨l, r⟩ => Or.inr ⟨l, r⟩)
-    · exact mul_pos (Even.pow_pos hZe ha) (Even.pow_pos hNe hb)
-    · exact mul_pos_of_neg_of_neg (Odd.pow_neg hZo ha) (Odd.pow_neg hNo hb)
+    rw [Nat.even_add] at heven
+    by_cases hZe : Even Z
+    · -- both even: a^Z > 0 and b^N > 0, product positive
+      have hNe : Even N := heven.mp hZe
+      exact mul_pos ((neg_pow_pos_iff ha Z).mpr hZe) ((neg_pow_pos_iff hb N).mpr hNe)
+    · -- both odd: a^Z < 0 and b^N < 0, product positive
+      have hZo : Odd Z := Nat.not_even_iff_odd.mp hZe
+      have hNe : ¬ Even N := fun hn => hZe (heven.mpr hn)
+      have hNo : Odd N := Nat.not_even_iff_odd.mp hNe
+      exact mul_pos_of_neg_of_neg (hZo.pow_neg ha) (hNo.pow_neg hb)
 
 end QOU.ParticleInteractions

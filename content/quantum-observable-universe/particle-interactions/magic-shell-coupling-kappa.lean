@@ -149,6 +149,11 @@ theorem kappaClosed_neg {q m_e : ℝ}
       E0 q m_e * Real.log (1 / hParam q) /
         (qBracket q 2 * qBracket q 3) :=
     div_pos h_num_pos h_brackets_pos
+  have h_eq : -E0 q m_e * Real.log (1 / hParam q) /
+        (qBracket q 2 * qBracket q 3) =
+      -(E0 q m_e * Real.log (1 / hParam q) /
+        (qBracket q 2 * qBracket q 3)) := by ring
+  rw [h_eq]
   linarith
 
 end QOU.BraidKnot

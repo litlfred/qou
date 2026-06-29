@@ -30,5 +30,4 @@ def neutronFlavors : Fin 3 → Bool
 /-- The proton and neutron have different flavor assignments. -/
 theorem proton_ne_neutron : protonFlavors ≠ neutronFlavors := by
   intro h
-  have := congr_fun h 1
-  simp [protonFlavors, neutronFlavors] at this
+  exact Bool.noConfusion (congrFun h 1)

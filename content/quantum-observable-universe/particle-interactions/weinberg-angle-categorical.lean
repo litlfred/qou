@@ -18,13 +18,6 @@
 -/
 
 import Mathlib.Algebra.Algebra.Basic
--- import QOU.BraidsAndKnots.HoefsmitEWCellContent
--- (sibling import is required when this file is built inside the
--- QOU Lake library; left commented in chapter-resident form to
--- match the convention used by `categorical-higgs-mechanism.lean`.
--- The `FarCommutes` / `WZH_indices_far_commute` references below
--- resolve to the sibling `hoefsmit-ew-cell-content.lean` declarations
--- under the shared `QOU.BraidsAndKnots` namespace.)
 
 namespace QOU.BraidsAndKnots
 
@@ -34,21 +27,12 @@ def LkDischarged {R : Type*} [CommRing R] (_q : R) : Prop :=
   True
 
 /-- Predicate: the Hoefsmit cell-content identification of the
-    EW triplet is discharged for this `R, q`. Upgraded from the
-    earlier `True` placeholder to the structural prerequisite —
-    the carrier triple `(1, 3, 5)` in `B_6` pairwise far-commutes
-    — which is the *exact* far-commutativity input the Hoefsmit
-    EW assignment depends on. The companion sibling proof is
-    `HoefsmitEWCellContent.disjointStrandPairAssignment` in
-    `hoefsmit-ew-cell-content.lean`. -/
--- Ref: [manuscript] hoefsmit-ew-cell-content.lean (DisjointStrandPairAssignmentB6)
+    EW triplet is discharged for this `R, q`. Like the other three
+    hypothesis predicates of this conjecture skeleton, currently a
+    `True` placeholder — its full categorical statement is the
+    subject of `conj:hoefsmit-ew-cell-content`. -/
 def HoefsmitDischarged {R : Type*} [CommRing R] (_q : R) : Prop :=
-  FarCommutes 1 3 ∧ FarCommutes 3 5 ∧ FarCommutes 1 5
-
-/-- Sorry-free discharge of `HoefsmitDischarged`, by direct reuse
-    of `WZH_indices_far_commute`. -/
-theorem HoefsmitDischarged_holds {R : Type*} [CommRing R] (q : R) :
-    HoefsmitDischarged q := WZH_indices_far_commute
+  True
 
 /-- Predicate: the Higgs vacuum-expectation-value induces a
     well-defined automorphism of the Hoefsmit projector

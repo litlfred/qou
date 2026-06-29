@@ -80,8 +80,7 @@ theorem bar_lt_iff {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
 theorem bar_paired_zero_locus
     {f : ℝ → ℝ} {a : ℝ} (ha : 0 < a) (hf : f a = 0) :
     (f ∘ bar) (a⁻¹) = 0 := by
-  unfold bar Function.comp
-  rw [inv_inv]
+  simp only [Function.comp_apply, bar, inv_inv]
   exact hf
 
 /-- **Substrate-level bar T-duality** (Proposition):
@@ -96,6 +95,8 @@ theorem bar_t_duality_substrate :
     bar 1 = 1 ∧
     (∀ a b : ℝ, 0 < a → 0 < b → (bar a < bar b ↔ b < a)) ∧
     (∀ {f : ℝ → ℝ} {a : ℝ}, 0 < a → f a = 0 → (f ∘ bar) (a⁻¹) = 0) :=
-  ⟨bar_involutive, bar_one, bar_lt_iff, bar_paired_zero_locus⟩
+  ⟨bar_involutive, bar_one,
+    fun _ _ ha hb => bar_lt_iff ha hb,
+    fun ha hf => bar_paired_zero_locus ha hf⟩
 
 end QOU.Archimedean.BarTDualitySubstrate
