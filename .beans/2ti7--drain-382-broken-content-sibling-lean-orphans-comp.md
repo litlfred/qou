@@ -4,7 +4,7 @@ title: Drain 382 broken content-sibling .lean orphans (compile sweep 2026-06-28)
 status: todo
 type: task
 created_at: 2026-06-28T16:49:39Z
-updated_at: 2026-06-28T16:49:39Z
+updated_at: 2026-06-29T13:00:00Z
 ---
 
 
@@ -90,3 +90,27 @@ Options:
 repo's base-ring discipline. su2-basis is the worked exemplar (Killing form is
 q-independent rational → codomain `ℚ`). Needs author sign-off before a wide
 pass since it touches ~89 files and makes per-quantity math judgments.
+
+## 2026-06-29 wave-1 swarm (6 agents × 3 files, mass-theory first 18; olean cache restored)
+
+Multi-agent swarm over 18 mass-theory orphans, each agent verifying with
+`lean-verify-siblings.sh`. Outcome: **16/18 already-green** (sibling drains had
+already fixed them since 2026-06-28 — the genuine.txt list is now VERY stale),
+**1 genuine repair**, **1 rejected on quality review**:
+- ✅ `crystal-r-matrix-sub-lemma.lean` — REPAIRED + committed. Removed a vacuous
+  `hA.identity_holds ∨ True` theorem + empty `identity_holds : Prop` carrier;
+  added the real §3b-cond `CrystalGraphRealization` class (content-bearing field
+  `crystal_realises : ∀ T i, raising i (nodeOf T) = none`). lean-verify fail=0.
+- ❌ `categorical-higgs-mechanism.lean` — agent's repair REVERTED (not committed).
+  It greened the file but via UNDER-SPECIFIED carriers: `linkingAdditive : ∀ k₁ k₂
+  : ℤ, k₁+k₂=k₂+k₁` is integer commutativity (docstring claims linking-additivity
+  `Lk(k₁+k₂)=Lk(k₁)+Lk(k₂)`) → §3b-tax `proof-claims-unencoded`; `mixingNormalised
+  : ∃ c s, c²+s²=1` trivially (1,0). Left broken for a proper author/formalizer
+  repair (the missing classes must encode REAL content).
+
+**Process lessons for the next wave:** (1) RE-DERIVE the broken set from CURRENT
+main before swarming — 16/18 were already green, so most of the ~500k swarm tokens
+confirmed sibling work; a fresh `lean-verify-siblings.sh` sweep over the chapter
+first would target only live breakage. (2) Swarm output MUST be quality-gated by
+the orchestrator (the §3b-tax vacuity check caught the categorical-higgs
+trivial-field repair the per-file verifier passed — compile-green ≠ honest-content).
