@@ -18,8 +18,6 @@ export default remark({
     "local-global",
   ],
   cites: ["conway1976", "tate1950",
-    "denef-loeser2001",
-    "kontsevich1995",
     "tate1967",
   ],
 });

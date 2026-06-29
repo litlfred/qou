@@ -107,31 +107,6 @@ structure missing from [RH surreal bound](#rem:rh-surreal-bound):
 it is not only the global $\varepsilon$-squeeze that forbids rogue
 zeros, but a separate squeeze at each prime.
 
-**BSD reduction.** The leading-coefficient form of BSD
-([BSD surreal bound](#rem:bsd-surreal-bound)) requires identifying
-the standard-real prefactor $c$ in $L(\mathcal{E}_q, s) \asymp c \cdot
-(s - 1)^r$ with the product of Tate--Shafarevich order, regulator,
-and real/complex periods.  The adelic Fourier transform above gives
-the explicit formula for $c$ in terms of local $\varepsilon_p$-adic
-integrals, reducing BSD to a local-squeeze check at each prime
-together with the archimedean regulator identification.
-
-**Motivic dual.** The adelic decomposition of the global zeta
-integral has a *geometric* dual via the
-[arc space $\mathcal{L}(X)$](#def:arc-space) and the
-Kontsevich--Denef--Loeser motivic measure
-\cite{kontsevich1995, denef-loeser2001}.  Where Tate factorises
-the global zeta as a restricted product of local
-$\mathbb{Q}_v$-integrals, motivic integration on $\mathcal{L}(X)$
-factorises a class in the Grothendieck ring of varieties as a
-sum over jet-scheme cylinders; for the QOU brane tower the two
-factorisations agree under the change-of-variables formula
-applied to the Reeb flow.  In particular, the leading-coefficient
-form of [BSD surreal bound](#rem:bsd-surreal-bound) — assembling
-the prefactor $c$ from local $\varepsilon_p$-adic integrals — is
-the motivic-measure read of the same data on
-$\mathcal{L}(\mathcal{E}_q)$.
-
 **Outlook.** The adelic lift of the surreal squeeze is the key to
 generalising the Reeb-$\varepsilon$ framework from the rational
 zeta function to automorphic $L$-functions (Langlands programme) —
