@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.ParticleInteractions.AtomKnot
 
 
 /-!
@@ -23,6 +23,6 @@ theorem AtomKnot.unique_up_to_markov
     (h_inter   : K₁.interBlock   = K₂.interBlock) :
     K₁ = K₂ := by
   cases K₁; cases K₂
-  congr <;> assumption
+  congr
 
 end QOU.BraidKnot
