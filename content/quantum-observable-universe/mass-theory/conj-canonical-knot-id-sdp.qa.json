@@ -894,7 +894,263 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Conjecture that the joint-tower SDP selects the canonical knot ids; central mass-theory knot-identification content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Stated as conjecture; volume-matching table values consistent with named-knot adjudication; no asserted falsehood."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Substantive uniqueness conjecture with explicit proof obligations and partial 3He closure."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "conj-canonical-knot-id-sdp.md:50: \"originally found by matching hyperbolic volumes to AME binding energies\"",
+        "notes": "Knot ids were historically fit to AME bindings, and the conjecture asserts the SDP reproduces that same assignment; honestly disclosed (line 74-77 'does not constitute a categorical derivation'), so disclosed-not-hidden circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "3He uniqueness closed without axiom (active set empty) clearly separated from the open general/binding-K legs; honestly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "rho in {1,2,2} is presented as a multiplicity to be derived (proof obligation 3), not a hidden fit knob."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Strict-complementarity => unique optimum (Boyd-Vandenberghe 5.5) is correctly invoked for the active-empty case."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean records 3He uniqueness via active-empty + the §3b-cond class; matches the narrative's scoped closure claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Boyd-Vandenberghe §5.5 strict complementarity, Ruberman volume invariance correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "n_0=3A convention reconciled with earlier n_0=6 drafts explicitly; knot types named."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "conj-canonical-knot-id-sdp.md:57: \"$^3$He | $L_{6a4}$ | $7.32772$ | $\\approx 7.4889$ | $-2.97\\%$\"",
+        "notes": "Volume-match residuals span +1.09% to -2.97% (3He at ~3% under a 'no free parameter' law); the match is suggestive but loose, as the block itself acknowledges ('empirically strong but not a categorical derivation')."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Binding energies and volume scale are within plausible nuclear ranges; no broken conservation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Multiple witnesses cited (r5-full, snappy-census, adjudication); historical orphan volumes reconciled with audit doc."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7a770761b535",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Well-structured conjecture: 3He leg closed sans axiom, general/binding-K legs honestly open. Strongest objection: the underlying knot ids remain volume-fit, openly acknowledged."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

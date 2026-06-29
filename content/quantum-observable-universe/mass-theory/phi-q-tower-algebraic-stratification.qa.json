@@ -1009,7 +1009,427 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Statement is the stratification identity; significance/interpretation in separate marked sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Hecke-tower/GS-filtration algebraic reformulation; mass-theory algebraic side."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Frobenius norm explicitly Z[q^1/2]-valued, not archimedean abs; substitution q->q_0 declared post-tau."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean class over CommRing R; no archimedean tactics. Narrative stays in Z[q^+-1/2]."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "PhiQTowerAlgebraicStratification.lean:106: \"theorem phi_q_tower_algebraic_stratification ... := s.mass_sum\"",
+        "notes": "Narrative proposition (mass = sum of four GS strata, with pentagon-ascension argument) is reduced in Lean to projecting the class field mass_sum that asserts exactly that equality; the stratification argument is not formalized."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Signature carries the mass-sum conclusion; not weakened to a tautology syntactically."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "critical",
+        "evidence": "PhiQTowerAlgebraicStratification.lean:108: \":= s.mass_sum\"",
+        "notes": "Verbatim projection: class field mass_sum IS the theorem's conclusion (mass = level0+level1+level2_adj+level2_non_adj); §3b-cond requires the class to encode hypotheses, not the conclusion. Pentagon_ascension field is unused."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Conclusion is a non-tautological ring equality, not True/x=x (the issue is self-assumption, not triviality of the goal shape)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No False/contradictory premise; class fields are consistent."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "PhiQTowerAlgebraicStratification.lean:92: \"pentagon_ascension : level3plus = 0\"",
+        "notes": "The theorem uses only mass_sum; v_sq, frobeniusNorm, pentagon_ascension class fields are not consumed by the proved theorem."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No decide/trivial; the body is a single field projection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Stratification by |S| and the level table are mathematically coherent (smoothing crossings, GS degrees)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "PhiQTowerAlgebraicStratification.lean:23: \"This stub upgrades the previous : True := trivial placeholder to a class-axiomatised statement\"",
+        "notes": "Narrative content is real, but the Lean backing is a self-assuming class projection (mass_sum carries the conclusion), so the formalization adds little beyond restating the claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No calibration/target back-fitting; pure algebraic decomposition."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Decouples algebraic engine from open JSJ conjecture; does not over-claim the geometric link."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "z^2 prefactor and level truncation are structural, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Pentagon-ascension absorption of |S|>=3 is asserted with cross-ref to mass-endomorphism-tower."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "PhiQTowerAlgebraicStratification.lean:108: \":= s.mass_sum\"",
+        "notes": "Lean proves only the field that assumes the .md's headline equality; the stratification/pentagon-ascension content of the narrative is not derived (weaker than the .md claim)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "bokut1978/shirshov1962/jones1987 appropriate for GS-filtration + Markov trace."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Frobenius norm, GS filtration, phi-q piece all defined or cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Pure algebraic identity; no numeric match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No witness value asserted."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d23e020400d0",
+          "ts": "f02e1210c1da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "PhiQTowerAlgebraicStratification.lean:108: \":= s.mass_sum\"",
+        "notes": "Narrative is sound and well-scoped, but its Lean backing self-assumes the conclusion (mass_sum class field). Strongest objection: the formalization is a self-assuming projection, not a proof of the stratification."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

@@ -762,7 +762,259 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Classifies nuclear braids by knot type per A; mass-theory knot-id."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "nuclear-knot-classification-proof.md:10: \"This is the NF signature of the figure-eight knot $4_1 = \\sigma_0\\sigma_1^{-1}\\sigma_0^{-1}\\sigma_1$, verified by comparing eigenvalue structure.\"",
+        "notes": "The A=3 -> 4_1 and A>=4 -> Borromean assignments rest on 'eigenvalue structure' / 'Frobenius positivity at six channels' with no shown computation; identifications are asserted rather than demonstrated in the proof body."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Proof has structural content (NF composition, sign alternation); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "nuclear-knot-classification-proof.md:25: \"Vol(4_1) = 2.030 is the SAME volume that defines q_0 through hbar_q^2 = Vol(4_1)/(m_mu/m_e). So A=3 nuclei bind at the scale set by the substrate itself.\"",
+        "notes": "Vol(4_1) both fixes q_0 (muon anchor) and is invoked as the A=3 binding scale; the 'bind at the scale set by the substrate' statement is self-referential, though it is presented as a consistency observation rather than a prediction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "nuclear-knot-classification-proof.md:10: \"verified by comparing eigenvalue structure\"",
+        "notes": "'Verified' overstates what is shown; the knot-type identifications are asserted from qualitative NF signatures without the supporting computation displayed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "rho/scale set by cited topological-mass-formula; no off-menu constant introduced here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "nuclear-knot-classification-proof.md:13: \"produces identity-dominated NF with small Hopf corrections — the signature of the Borromean link\"",
+        "notes": "The step from 'identity-dominated NF with small Hopf corrections' to 'the Borromean link' is asserted; the missing lemma (NF signature => specific link type) is not provided."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Proof block; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Internal cross-ref to topological-mass-formula; no external citation misused."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Nucleon NF, typed crossings (pp/nn/pn), Borromean B_3 defined by cross-ref."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Vol(4_1)=2.030 is a fixed hyperbolic constant, not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "nuclear-knot-classification-proof.md:20: \"$\\mathfrak{m}(K) = \\mathrm{Vol}(K)/\\hbar_q^2$\"",
+        "notes": "The bare m(K)=Vol(K)/hbar_q^2 form (no m_e factor) is the volume-density shape the AGENTS.md guardrail warns is the wrong ABSOLUTE-mass form for nucleons; here it is used only as a binding-scale heuristic via the cited topological-mass-formula, so flagging as minor rather than a hard error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "nuclear-knot-classification-proof.md:16: \"confirmed by the Frobenius positivity $G \\cdot x \\geq 0$ at all six basis channels\"",
+        "notes": "The 'confirmed' computations (eigenvalue structure, six-channel Frobenius positivity) are not backed by a named witness JSON in this block, so the classification claims are not independently reproducible from the text."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "nuclear-knot-classification-proof.md:10: \"verified by comparing eigenvalue structure\"",
+        "notes": "Knot-type assignments (A=3 -> 4_1, A>=4 -> Borromean) are asserted from qualitative NF signatures without displayed computation or a cited witness; the proof is a sketch, not a verification. Strongest objection: 'verified' is not supported by the shown argument."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

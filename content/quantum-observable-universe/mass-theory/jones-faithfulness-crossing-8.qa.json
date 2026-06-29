@@ -816,7 +816,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Jones-faithfulness on Bring-embeddable knots; supports the knot-id program in mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "jones-faithfulness-crossing-8.md:14: \"every prime knot of crossing $\\leq 11$ has a unique Jones polynomial\"",
+        "notes": "This line is contradicted two lines later (Conway-KT mutant pair at 11 crossings shares its Jones polynomial) and by the block's own table ('11: no for the mutant pair'); should read 'crossing <= 10'. Net content is corrected downstream, so minor mis-statement not a substantive falsehood."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Substantive theorem-level/open classification by crossing range."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No back-fitting; cites HTW enumeration and Ruberman."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Honestly marks >=12 open and the strong-falsification target as not-currently-known; coloured-Jones caveat appropriate."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Knot-theory faithfulness remark; no parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Vol-injectivity implication and its crossing-range status follow from the cited results."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Remark, no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "HTW 1998, Ruberman 1987 (mutation preserves volume), Anstee-Przytycki-Rolfsen 1989 correctly invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Bring-embeddable = Seifert genus <= 4 defined via cross-ref; mutant pair genera given."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Topological classification, no numeric match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Knot-census facts; cross-referenced to conway-kt-vol-injectivity-test."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a6fe879494bb",
+          "ts": "60807d57ac3a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "jones-faithfulness-crossing-8.md:14: \"every prime knot of crossing $\\leq 11$ has a unique Jones polynomial\"",
+        "notes": "Sound remark overall, but the 'crossing <= 11 unique Jones' line is internally self-contradicted by the Conway-KT 11-crossing mutant pair; should be <= 10. Strongest objection: fix the off-by-one crossing bound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

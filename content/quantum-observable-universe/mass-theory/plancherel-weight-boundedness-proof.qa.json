@@ -779,7 +779,230 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Plancherel-weight boundedness / convergence; underpins the mass-tower finiteness."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "sum_lambda (dim V_lambda)^2 = n!, dividing gives weights summing to 1; convergence corollary follows."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Real boundedness + absolute-convergence content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Plancherel identity is classical; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Bound sum w_lambda <= 1 and convergence for bounded |alpha_k| are correctly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "alpha_k bounded is a hypothesis, not a tuned parameter introduced here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Hecke dims = symmetric-group dims for generic q (correct); each summand bounded by total."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Proof block; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Internal ref to Wedderburn-trace identity; no external citation misused."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "w_lambda, strata sum, curvature-rank functional defined via cross-ref."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "q_0=1.109978595554181 (50 dps) used only as the evaluation point for the small-n distribution table; not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Convergence statement; no physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "plancherel-weight-boundedness-proof.md:45: \"[computations/wedderburn-strata-witness.json](#)\"",
+        "notes": "The full-table witness is linked with an empty anchor (#) rather than a resolvable path, so the n in {3..12} tables are not directly traceable from this block; the proved bound itself is reproducible analytically."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

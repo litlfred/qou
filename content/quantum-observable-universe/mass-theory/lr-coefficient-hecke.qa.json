@@ -1048,7 +1048,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Statement is the LR-multiplicity definition/identity; categorical interpretation is a separate section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "LR coefficient for Hecke branching; feeds the operator-valued Wenzl combiner in mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Combinatorial content stays generic; .md header notes Lean is archimedean specialization but the math is ring-generic (integer multiplicities)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean uses Nat/List only (Partition over N); no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "lr-coefficient-hecke.lean:91: \"theorem lr_coefficient_hecke_non_negative ... := Nat.zero_le _\"",
+        "notes": "The .md's headline (c^lambda_munu = branching multiplicity = #Yamanouchi LR tableaux) is NOT proved in Lean; the LR theorem is axiomatised as the §3b-cond class LRCoefficientHecke and Lean proves only non-negativity (Nat.zero_le) and the trivial case (class field projection)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean theorems are honestly minor (non-negativity, trivial-case); they do not silently weaken the .md statement, they are explicitly a §3b-cond class consumption."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "lr_coefficient_hecke_trivial_case := hLR.coeff_trivial projects a class field, but that field (coeff mu mu []=1) is a §3b-cond standard-LR hypothesis, not the declaration's own headline conclusion; carve-out applies."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Goals are 0<=coeff and coeff mu mu []=1, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Class instance is a hypothesis, not a contradiction; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Theorems consume the class instance via hLR.coeff; non-negativity is intrinsic to Nat."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No decide; Nat.zero_le and field projection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "LR coefficient = branching multiplicity = Yamanouchi-tableau count is standard; vanishing conditions correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Real combinatorial content; Lean is a §3b-cond class with two genuine corollaries."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No circularity; standard combinatorics consumed as hypothesis."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Mathlib inhabitation flagged as future work; class hypothesis discipline stated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Integer multiplicities; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Skew-SYT vs LR-coefficient distinction correctly drawn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "lr-coefficient-hecke.lean:63: \"class LRCoefficientHecke where ... coeff : Partition -> Partition -> Partition -> N\"",
+        "notes": "Lean is weaker than the .md (multiplicity theorem axiomatised as a class, not proved); openly a §3b-cond consumption, so divergence is disclosed not deceptive — minor."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "ariki1996/ram1991/stanley1999/wenzl1988 correctly support the Hecke LR rule."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Yamanouchi/reverse-reading-word, containment, content all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No numeric match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Combinatorial; no physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Precomputed LR tables (3_3_to_6 etc.) referenced; reproducible by enumeration."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9eb64bf9d945",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Mathematically standard and correct; Lean honestly a class hypothesis. Strongest objection: headline multiplicity claim is not Lean-proved (disclosed §3b-cond)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

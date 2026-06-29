@@ -1009,7 +1009,429 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Statement is the depth = f(bar-class) boxed formula; corollaries separated."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Bar-class determines iterated-integral depth across all partitions; mass-theory two-filtration program."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Depth assignment is a partition-combinatorics claim (self-conjugate->2, chiral->3); no archimedean content in the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean proof is rw of depth_formula (if conj=lam then 2 else 3); pure case split, no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean:28: \"depth_formula : ∀ lam, depth lam = if conj lam = lam then 2 else 3\"",
+        "notes": "The .md claims the depth split is proved 'for all partitions via a structural bar-eigenspace argument'; the Lean encodes that very split as the class field depth_formula and the theorem merely rw's it — the bar-eigenspace argument is assumed, not formalized."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean signature states the two-case depth conclusion; not weakened syntactically (the issue is self-assumption, not weakening)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "critical",
+        "evidence": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean:35: \"theorem bridge_map_general ... := by ... rw [ctx.depth_formula lam, if_pos h]\"",
+        "notes": "depth_formula is the conclusion itself (depth = if conj=lam then 2 else 3); bridge_map_general just unfolds it by if_pos/if_neg. The class assumes its own conclusion, the §3b-cond carve-out (class must encode hypotheses) is not met."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Conclusion is a genuine two-case depth equality, not True/x=x (the defect is self-assumption, not goal-triviality)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "depth_formula is consistent (a total function spec); no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Both branches use the conj=lam / conj!=lam hypotheses via if_pos/if_neg."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No decide; if_pos/if_neg rewrites."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "The depth=2 (self-conjugate, Li_2) / depth=3 (chiral pair, Li_3) split is mathematically coherent and consistent with the n<=4 verified small cases."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean:28: \"depth_formula : ∀ lam, depth lam = if conj lam = lam then 2 else 3\"",
+        "notes": "The Lean 'generalization to all n' is a self-assuming class projection: depth_formula axiomatises the entire conclusion, so the theorem adds no content beyond restating it; the claimed bar-eigenspace argument is absent."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No calibration/target back-fit; the circularity here is logical (assuming conclusion), captured under da-vacuous/self-assuming, not parameter circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "two-filtration-bridge-general.md:7: \"extends the verification to **all** partitions of any $n$ via a structural bar-eigenspace argument\"",
+        "notes": "The 'all n via bar-eigenspace argument' claim is not substantiated: the small-cases prop covers n<=4, and the Lean assumes the depth formula rather than deriving it from a bar-eigenspace argument, so the general-n claim is stronger than what is shown."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Depths 2/3 are fixed integers; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "two-filtration-bridge-general.md:28: \"Generalises round 9: the small-cases bridge verification at $n \\leq 4$ extends to all $n$ via the bar-eigenspace argument\"",
+        "notes": "The step from n<=4 verification to all-n is asserted ('via the bar-eigenspace argument') but the argument itself is neither given in the .md nor formalized in the Lean (which assumes the formula); the bridging lemma is missing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean:35: \"theorem bridge_map_general [ctx : TwoFiltrationBridgeContext]\"",
+        "notes": "Lean proves only the tautological unfolding of an assumed depth_formula; it does NOT prove the .md's all-partitions bar-class theorem, so the formalization is strictly weaker / vacuously-implied vs the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Cross-refs to cyclotomic-cl3 / trilog-imaginary props and bridge conjecture; no external citation misused."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Self-conjugate vs chiral pair, depth, bar-class defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Combinatorial depth assignment; no numeric match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No witness value; the Lean compiles (trivially)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a5f5d11fe6b7",
+          "ts": "54b505bedec5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "major",
+        "evidence": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean:28: \"depth_formula : ∀ lam, depth lam = if conj lam = lam then 2 else 3\"",
+        "notes": "The 'all-n generalization' is a self-assuming class projection: the depth formula is axiomatised, not derived, and the promised bar-eigenspace argument appears nowhere. Strongest objection: the proposition over-claims a general-n theorem whose proof reduces to assuming the conclusion."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

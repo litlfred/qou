@@ -29,6 +29,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Statement is the polymorphic-transfer claim; CAL-4 caveat and significance are separate sections."
       }
     ],
     "fit-section-chapter": [
@@ -49,6 +65,22 @@
         "reviewed_at": "2026-06-22T02:57:06.136Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Substrate base-ring extension to complex q; algebraic-substrate content surfaced in mass-theory."
       }
     ],
     "wall-side-statement": [
@@ -68,6 +100,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Statement over generic CommRing/unit q with |q|>1 replacing the archimedean ordering q>1; correct wall placement."
       }
     ],
     "wall-side-proof": [
@@ -87,6 +135,22 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean proves only 1<||q||->IsUnit q over C (a unit witness), the minimal archimedean-norm fact needed; no archimedean over-reach into the algebraic identities."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -105,6 +169,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean (complex_q_is_unit) is honestly scoped in its docstring as 'proves only the unit-witness'; .md statement is the broader polymorphic transfer, which the Lean supports via the IsUnit specialization."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -189,6 +269,22 @@
         "reviewed_at": "2026-06-22T02:57:09.688Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean signature (q:C, 1<||q||) -> IsUnit q is unweakened and matches its stated scope."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -209,6 +305,22 @@
         "reviewed_at": "2026-06-22T02:57:10.041Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "complex_q_is_unit proved via isUnit_iff_ne_zero + norm_zero, not a class-field projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -229,6 +341,22 @@
         "reviewed_at": "2026-06-22T02:57:10.386Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Goal IsUnit q is non-trivial; uses the ||q||>1 hypothesis."
       }
     ],
     "proof-no-false-premise": [
@@ -249,6 +377,22 @@
         "reviewed_at": "2026-06-22T02:57:10.779Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "1<||q|| is satisfiable; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -267,6 +411,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "hq:1<||q|| is consumed (rw h, norm_zero, linarith)."
       }
     ],
     "proof-no-decide-masking": [
@@ -287,6 +447,22 @@
         "reviewed_at": "2026-06-22T02:57:11.622Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No decide/trivial; genuine norm argument."
       }
     ],
     "da-false-claim": [
@@ -306,6 +482,22 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Polymorphic substrate identities transfer to R=C with |q|>1; correct (the identities are ring-generic)."
       }
     ],
     "da-vacuous": [
@@ -324,6 +516,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Infrastructure proposition with a concrete unit witness; not content-free."
       }
     ],
     "da-circular": [
@@ -343,6 +551,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No calibration; structural transfer claim."
       }
     ],
     "da-overclaim": [
@@ -361,6 +585,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "CAL-4 caveat explicitly states Im(q_0) is neither supplied nor a physical claim; no over-reach."
       }
     ],
     "da-hidden-dof": [
@@ -380,6 +620,22 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Im(q_0) is flagged as a would-be 4th DOF and explicitly forbidden as a calibration; not smuggled."
       }
     ],
     "da-non-sequitur": [
@@ -399,6 +655,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Specialization argument (polymorphic in R => C admissible) is valid."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -417,6 +689,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Lean scope (unit witness) is a faithful sub-claim of the .md transfer; no contradiction."
       }
     ],
     "da-citation-misuse": [
@@ -436,6 +724,22 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "wenzl1988 ref appropriate for Hecke/Markov substrate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -455,6 +759,22 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "|q|>1 vs q>1 distinction explicit; Lusztig-bar vs Hermitian-* split cross-referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -474,6 +794,22 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No numeric match."
       }
     ],
     "da-physical-implausibility": [
@@ -493,6 +829,22 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Explicitly disclaims any physical-reality claim about Im(q_0)."
       }
     ],
     "da-reproducibility": [
@@ -512,6 +864,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:1 — content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:35:44: error: failed to synthesize",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "542d6085d34d",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "No witness value; Lean compiles a standard norm argument."
       }
     ],
     "da-referee-verdict": [
@@ -1587,5 +1955,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }

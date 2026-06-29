@@ -44,3 +44,8 @@ updated_at: 2026-06-29T20:07:58Z
 - gram-determinant-plancherel-ratio.lean:61 (exists kappa=gramKappa by rfl; kappa axiom; det-ratio identity never established; critical)
 - q-beta-c3-hopf-three-fold-markov.lean:79,103 (class field c_3=-2 IS conclusion; self-assuming projection; overstates tier)
 - wigner-coefficient-derivation.lean:26,38 (forall c exists value 0<=value vacuous; hides 2.6-3% fitted 68.896 MeV)
+
+## More instances (batch 34, mass-theory)
+- two-filtration-bridge-general.lean:28 (axiomatises depth_formula conclusion as class field; bridge_map just rw; critical)
+- phi-q-tower-algebraic-stratification.lean:108 (:= s.mass_sum, field IS conclusion; pentagon_ascension unused; critical)
+- graded-markov-trace-from-gs-filtration (gradedTrace := fun _ => 0 placeholder)

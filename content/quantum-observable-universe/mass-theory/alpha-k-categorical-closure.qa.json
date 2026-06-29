@@ -896,7 +896,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Conjecture on the categorical resummation F(hbar_q^2) for the tower correction; mass/decay-side closure."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "alpha_0=1, alpha_1=0, alpha_2=z^2, alpha_3 forms are presented as computed H_3 values; the naive geometric recursion is correctly shown to fail (alpha_2=z^2 != 0)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Three substantive sub-claims (existence/selection/direction), all open."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "CAL-3 direction is stated as an open closure target, not assumed; no calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Both (a) geometric and (b) Li_2^q overshoot by ~1.75%/1.74%; the block does NOT claim closure, marks all three sub-claims open."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "F must be derived 'no fitting, no opt-in parameter'; candidate families enumerated, not free knobs."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Li_2^q (not Phi_q) selection is supported by the cited mass-endomorphism-tower proof + Kashaev witness (Phi_q off by 1e6)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Conjecture; no Lean sibling expected."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Kashaev-integration-identity witness and mass-endomorphism-tower correctly invoked for the Li_2^q vs Phi_q distinction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "F(x), Li_2^q, geometric 1/(1-x), substrate variable x=hbar_q^2 defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "severity": "minor",
+        "evidence": "alpha-k-categorical-closure.md:98: \"it gives $\\approx +1.74\\%$ vs the geometric $\\approx +1.75\\%$ — a $0.01\\%$ improvement\"",
+        "notes": "The two candidate closures agree to 4 sig figs and the Li_2^q 'improvement' over geometric is only 0.01%, well inside any selection resolution; the block honestly flags this (cannot distinguish (a) from (b) at substrate level), so disclosed-not-hidden fragility."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "E_0 ~ 4.15 MeV scale and ~1.75% residual are within plausible hadronic-scale range."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": ":val[] placeholders read live from witness; canonical evidence computed at q_0~1.110 referenced."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3740280e5d59",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:43:00.279Z",
+        "reviewed_sha": "7ada586afa8c1517e5574a3cc822d57bd1ca8c24",
+        "notes": "Honest open conjecture; both closure candidates shown to overshoot, selection left open. No material objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:43:00.279Z"
 }
