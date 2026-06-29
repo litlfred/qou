@@ -855,7 +855,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Iterated-integral-depth ↔ GB-depth bridge conjecture ties to the mass-theory period program."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "For (2,2): iterated-integral depth 2, GB-depth (max hook) 3 — both correct; self-conjugacy ⇒ even depth / chiral pair ⇒ odd depth is the stated conjecture, consistent with the chirality-period-pairing remark."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Substantive conjecture with an explicit bridge-map formula and a concrete-predictions table."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Bridge predicted via central idempotents; not back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Kind is conjecture; reduction-to-known-structure section flags exhaustive checks only at small n."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "d_II piecewise rule has no tunable parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Orthogonal-filtration → bridged-by-idempotents reasoning is coherent for a conjecture."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Conjecture, no Lean sibling expected to prove it."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Internal refs (gb-depth-period-correspondence, hoefsmit-seminormal, explicit-central-idempotent) used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge.md:86: \"$(1)$, $(2,1)$ [no, $(2,1)$ is its own transpose], $(2,2)$, $(3,2,1)$\"",
+        "notes": "An inline editorial self-contradiction: the prose first lists then bracket-retracts (2,1) as self-conjugate. (2,1) IS self-conjugate (its own transpose), and the table at l.72 correctly lists it as self-conj. — so the final content is right, but the garbled mid-sentence '[no, ...]' annotation is a draft artifact that muddles the self-conjugate enumeration."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No numeric experimental match; the table is structural."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Number-theory/representation conjecture, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Predictions checkable cell-by-cell via Hoefsmit + explicit idempotent formula as stated."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fa2f41a0c993",
+          "ts": "bdcc349e5255"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "notes": "Well-posed two-filtration bridge conjecture with a clean self-conj↔even / chiral↔odd prediction. Strongest objection: a draft self-contradicting editorial note on (2,1)'s self-conjugacy ('[no, ...]') should be cleaned."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

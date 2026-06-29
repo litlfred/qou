@@ -816,7 +816,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Calibration-input discussion is core mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Vol(4_1)≈2.0299, ℏ_q=(q-1)/q, m_μ/m_e=Vol(4_1)/ℏ_q^2, SM 19-parameter count are all correct; the muon ratio m_μ/m_e value 206.7682830 is CODATA."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Substantive remark on the 3-input structure and its fitting caveats."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Explicitly distinguishes calibration inputs (3) from predictions, and flags the Q_β=|Δ(net)|·E_0 relation as an unproved ansatz, not a derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "calibration-inputs.md:1: \"two leptonic (fixing the shape and size) and one hadronic\"",
+        "notes": "Framing predates the 2026-06-26 owner ruling that the ideal canonical is the decay-width triple (m_e, 𝔇_β, 𝔇_π) with Q_β as the CAL-2 proxy. This remark still presents Q_β/free-neutron decay as the 'hadronic' CAL-3 input. Not false (Q_β is a legitimate proxy and the remark is heavily caveated), but the CAL labelling is stale vs current cheat-sheet canon."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The remark's whole point is the 3-input accounting; it explicitly enumerates why no further parameters exist and flags the open ansatz rather than hiding it."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Necessity-of-three argument (dim End(A) reduced by on-shell + gauge constraints) is a heuristic but presented as such."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Internal refs and audit-doc links correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Each input's role (q_0, m_e scale, E_0) is unambiguously stated with a SUPERSEDED-ρ_q caveat for the LO truncation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The +0.17% Q_β residual and the tower-direction +1.75% overshoot are reported honestly as open findings, not cherry-picked matches."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "E_0≈4.18 MeV hadronic scale and the SM-vs-QOU parameter comparison are physically coherent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Numeric values (E_0 forms, conversion factor) are linked to companion blocks/audits."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "021ee0e43870",
+          "ts": "9efc9d55778a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "notes": "Honest, well-caveated overview remark. Strongest objection: the CAL framing ('two leptonic + one hadronic', Q_β as CAL-3) is stale relative to the 2026-06-26 decay-width canonical ruling (decay-width triple, Q_β as CAL-2 proxy)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

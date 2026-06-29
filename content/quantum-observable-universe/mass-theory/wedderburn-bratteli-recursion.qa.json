@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Statement is the recursion existence/structure; α_k implication and open items separated."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Jones–Markov weight recursion is mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Recursion is over generic q (q-content, Hoefsmit eigenvalues); the q_0 numeric (y_{(1^4)}≈-8e-4) is an explicit evaluation. Lean uses a formal v with v²=q (no Real.sqrt) — correctly generic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Recursion from Hoefsmit seminormal eigenvalues + Bratteli edges — algebraic; no narrative archimedean proof."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "wedderburn-bratteli-recursion.lean:122: \"wedderburn_bratteli_recursion_holds ... := ⟨fun _ => 0, by intro e; show (0:R)=_*_*0; ring⟩\"",
+        "notes": "The .md states the *Jones–Markov weights* satisfy a multiplicity-free Bratteli recursion; the Lean existence theorem proves only ∃ y satisfying it via the trivial witness y≡0 (vacuously, both sides 0). The verified Lean claim is strictly weaker than the .md (which is about the specific JM weights). Disclosed honestly in the docstring."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The Lean theorem honestly asserts only 'consistency of the recursion' (existence), and the docstring states the non-triviality is the meaningful next step; not a disguised weakening of a claimed stronger result."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Existence proved by an explicit (trivial) witness, not by projecting a conclusion-typed field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "wedderburn-bratteli-recursion.lean:124: \"⟨fun _ => 0, ...⟩\"",
+        "notes": "The existence theorem is discharged by the y≡0 witness — true but content-free for the intended JM-weight claim. The docstring is candid that it asserts consistency only; flagged minor since it is honest infrastructure, not a disguised vacuity."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "plancherel_completeness is a cited external axiom (wenzl1988 Lemma 3.2), not a False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "wedderburn_bratteli_apply consumes hrec; plancherel uses the axiom with its hypotheses passed through."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "ring on the trivial witness; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Multiplicity-free Bratteli structure at generic q (Hoefsmit) is correct; the sign-pattern at n≥4 (y_{(1^4)}<0) is honestly reported, consistent with LP-positivity infeasibility."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "wedderburn-bratteli-recursion.lean:124: \"trivial witness y ≡ 0\"",
+        "notes": "Lean existence theorem is vacuous (y≡0). The .md statement and the witness data (270 weights) are substantive, but the Lean backing is content-free as formalized — flagged minor given the honest disclosure."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Recursion from algebra structure; no target back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "F_q is honestly 'even before in closed form'; Lean formalisation listed as open."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "z=1/(√q+1/√q) fixed by q; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Recursion → finite-sum α_k implication is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "wedderburn-bratteli-recursion.lean:122-128",
+        "notes": "Lean proves a vacuous existence (y≡0) whereas the .md proposition is about the Jones–Markov weights specifically; the formalized content diverges (weaker) from the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "hoefsmit1974 (multiplicity-free Bratteli), wenzl1988 (Plancherel completeness) correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Bratteli edge, q-content c(λ,μ)=j−i, F_q all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "270 weights (n=2..12) in a witness; SDP/least-squares cross-checks confirm symbolic values — not a fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Representation-theory block, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "y-lambda-jones-markov-witness.json cited (270 weights); sign-pattern remark linked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7ae52b86bb69",
+          "ts": "b362ba0073b2",
+          "lean": "2899bd7b7748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "notes": "Correct narrative recursion with a solid numeric witness, but the Lean existence theorem is vacuous (y≡0) and thus does not formalize the actual Jones–Markov-weight claim. Strongest objection: the Lean backing is content-free for the stated proposition (honestly disclosed, but un-filled)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

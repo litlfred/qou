@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "α_EM categorical-trace pointer remark sits with the EM-coupling program; mass-theory scope acceptable."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "δ_q(T_2,9)=[9]_q, δ_q(T_3,5)=[10]_q so α_EM=h^2/(q[9]_q[10]_q)=1/(q[9]_q[10]_q) (using h^2 normalization) is internally consistent with the cited props."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Substantive deprecation remark pointing to the canonical pre-archimedean form."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Explicitly states the legacy PSLQ forms were single-point matches at q_0, NOT derivations, and forbids reviving them."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Honestly demotes the empirical forms to audit-trail; canonical form pointed to with archimedean correction in a separate prop."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The remark's purpose is to purge the legacy fitted forms (45·[3]_q(1+δ_CS+...)) precisely because they had hidden tuning; canonical form is parameter-free in q."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Deprecation reasoning (non-smooth residual ⇒ PSLQ uniqueness not derivation) is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Internal prop/cor refs and the legacy-forms audit doc correctly cited."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "R, δ_q, e_- coupling all defined/linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The remark itself documents the empirical fragility of the purged forms (single-point PSLQ, non-smooth in q) — it is the corrective, not the offender."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "1/α_EM via [9]_q[10]_q (Bring genus-4 pair) is internally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Legacy forms recorded in the cited audit doc; canonical form is a closed q-rational expression."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d19808aae245",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Exemplary deprecation remark that purges fitted forms and points to the canonical parameter-free α_EM. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

@@ -29,6 +29,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Statement is the factorisation/uniqueness claim; physical interpretation tabulated and discussed separately."
       }
     ],
     "fit-section-chapter": [
@@ -49,6 +65,22 @@
         "reviewed_at": "2026-06-22T02:57:04.631Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Meson mass-ratio structure is mass-theory scope."
       }
     ],
     "wall-side-statement": [
@@ -68,6 +100,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "[3]_q·[4]_q factorisation is algebraic; substrate evaluation flagged as the open residue step."
       }
     ],
     "wall-side-proof": [
@@ -87,6 +135,22 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 — content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Lean derivation rests on the proved α_shift=k(p-1) formula + factorisation class, all algebraic."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -105,6 +169,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "meson_ratio_via_alpha_shift states ratio = qChar(α_shift T(2,3))·qChar(α_shift T(2,4)) conditional on MesonGMORFactorization+MesonForceCarrierPair, matching the .md §3b-cond staging."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -265,6 +345,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Class hypotheses are genuine inputs; the index equalities alphaShift_T_2_3/4 are independently proved (rfl)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -285,6 +381,22 @@
         "reviewed_at": "2026-06-22T02:57:07.552Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "meson_ratio_via_alpha_shift rewrites by the two proved α_shift specialisations then applies hF.factors — composes a hypothesis, does not project the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -305,6 +417,22 @@
         "reviewed_at": "2026-06-22T02:57:07.939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "alphaShift 2 3 = 3 and 2 4 = 4 are real (if trivial) arithmetic; the ratio theorem is substantive."
       }
     ],
     "proof-no-false-premise": [
@@ -361,6 +489,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Field R and the factorisation class are inhabitable."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -379,6 +523,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Both classes are consumed (hF.factors + the index identification)."
       }
     ],
     "proof-no-decide-masking": [
@@ -417,6 +577,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "rw/exact, no decide masking."
       }
     ],
     "da-overclaim": [
@@ -455,6 +631,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Block explicitly says it is 'complementary' and provides the structural reason, not a new closed form; the 'why smallest pair' is left as open math."
       }
     ],
     "da-empirical-fragility": [
@@ -490,6 +682,24 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "meson-color-tube-uniqueness.md:75: \"m_K/m_pi err 23.44 ppb vs target 263.6 ppb\"",
+        "notes": "The dashboard number is quoted but no witness file/script is cited in the block (.ts has no computation field); the EM correction (α_em/π)(3q^2-1)/(2q^2) is an added analytic term whose provenance is only gestured at. Reproducibility of the quoted 23.44 ppb is not traceable from this block alone."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -522,6 +732,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Lean conditional factorisation matches the .md conditional-on-class statement."
       }
     ],
     "da-vacuous": [
@@ -554,6 +780,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Real structural-identification content (the q-integer indices)."
       }
     ],
     "da-hidden-dof": [
@@ -586,6 +828,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "EM correction term has a separate Lean ref; no off-menu coefficient introduced."
       }
     ],
     "da-citation-misuse": [
@@ -618,6 +876,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "References are internal props/audits correctly used."
       }
     ],
     "da-referee-verdict": [
@@ -639,6 +913,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Sound structural-identification proposition with honest open-math caveats. Strongest objection: the production dashboard error number lacks an in-block witness pointer."
       }
     ],
     "da-false-claim": [
@@ -658,6 +948,22 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "q-CG fusion [3]_q·[4]_q = [2]_q+[4]_q+[6]_q is the correct SU(2)_q Clebsch-Gordan (terms from |3-4|+1=2 to 3+4-1=6 step 2); α_shift(T(2,3))=3, α_shift(T(2,4))=4 via k(p-1) with p=2 are correct."
       }
     ],
     "da-circular": [
@@ -677,6 +983,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Indices forced by the proved α_shift formula, not chosen to fit m_K/m_pi."
       }
     ],
     "da-non-sequitur": [
@@ -696,6 +1018,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Factorisation → index identification → ratio is logically connected; the unexplained 'why minimal pair' is openly flagged, not asserted."
       }
     ],
     "da-definitional-ambiguity": [
@@ -715,6 +1053,22 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "α_shift, qChar, the torus knots are all defined/linked."
       }
     ],
     "da-physical-implausibility": [
@@ -734,6 +1088,22 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Meson mass-ratio framing is internally consistent; no broken conservation/units."
       }
     ],
     "da-reproducibility": [
@@ -753,6 +1123,24 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 — content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "meson-color-tube-uniqueness.ts:1: no `computation` block",
+        "notes": "Quoted dashboard error (23.44 ppb) has no witness/script reference in the manifest, so the numeric claim is not directly reproducible from the block."
       }
     ],
     "voice-status-leak": [
@@ -1790,5 +2178,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

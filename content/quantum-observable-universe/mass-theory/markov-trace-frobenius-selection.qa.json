@@ -1048,7 +1048,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Statement is the uniqueness claim; interpretive material (chain, history, compute) is in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Markov-trace uniqueness underpins the mass identity; on-topic for mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Uniqueness on H_n(R,q) at generic q is generic-ring; no archimedean leak in the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Proof is representation-theoretic (Wenzl/Jones uniqueness); no linarith/Real machinery on an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Lean qou_markov_trace_is_jones_markov states 'any non-degenerate Frobenius form equals tau_M block-wise', conditional on MarkovTraceUniqueness class — matches the .md uniqueness claim under §3b-cond."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Uniqueness axiomatised as a class per §3b-cond; honest, not a smuggled axiom that weakens the statement."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "markov-trace-frobenius-selection.lean:129: \"qou_markov_trace_is_jones_markov ... := MarkovTraceUniqueness.unique tau' h_nondeg\"",
+        "notes": "The theorem is a direct projection of the class field MarkovTraceUniqueness.unique whose type IS the conclusion. This is the §3b-cond pattern (uniqueness is the legitimately-axiomatised external hypothesis), so acceptable, but it is a projection — flagged at minor for the reviewer's eye."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "tau_M_block_value≡1 substrate model reduces non-degeneracy to 1≠0, but the headline uniqueness theorem is a real conditional claim, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Generic-q non-degeneracy hypotheses are satisfiable; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "h_nondeg and the class instance are both consumed."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No decide/trivial masking; one_ne_zero on a genuine 1≠0 substrate model."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Markov-trace uniqueness on type-A Hecke at generic q is a true classical theorem (Jones 1987, Wenzl 1988)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Real uniqueness content; the substrate ≡1 model is a disclosed simplification of one sub-lemma, not the whole claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Uniqueness derived from cat-action + standard theorem, not from the mass target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "'proved, conditional on the class instance' is stated explicitly in Discussion."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Markov parameter z is fixed by q; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Chain cat-action→Stokes→Frobenius→uniqueness is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Lean conditional-uniqueness matches the .md conditional-uniqueness statement."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "jones1987 Thm 6.1 and wenzl1988 Lemma 2.4 correctly attributed for Markov-trace existence/non-degeneracy/uniqueness."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "tau_M defined by its three axioms; non-degeneracy explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "4-way agreement ≤2.6e-16 is internal L1 cross-method, not an experimental fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No physics claim beyond the trace values."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "tr_M values stated with per-method error bars; standard 4-path compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "abed710db3cc",
+          "ts": "08d6f4716e14",
+          "lean": "010e1b20589d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Sound conditional-uniqueness statement. Strongest objection: the headline theorem is a §3b-cond projection of an axiomatised uniqueness class, so the Lean is verified-modulo-Wenzl, not from first principles (disclosed)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

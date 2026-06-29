@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:21.631Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Statement is three algebraic identities + the Verlinde-truncation reading; categorical interpretation is in separate sections."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:21.969Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "ζ_8 Verlinde witness underpins Q_β Habiro Φ_8 structure; mass-theory scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:22.480Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "All three identities are algebraic over a generic field R with a primitive 8th root; the analytic ζ_8=e^{iπ/4} is given only as a model. Correctly generic."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:22.844Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Lean proofs are field/root-of-unity algebra (IsPrimitiveRoot, mul_eq_zero); no archimedean leak."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:56:23.230Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "zeta8-witness-level2-su2.md:57: \"the Wenzl-annihilator structural theorem currently carries `sorry`\"",
+        "notes": "The .md says the Wenzl-annihilator theorem carries sorry, but the Lean wenzl_annihilator instead proves a vacuous `∃ chi, chi = 0` via ⟨0, rfl⟩ — not a sorry. Identities (1),(3) carry honest sorry+Ref; (2) is proved. Minor statement-vs-Lean mismatch on how the annihilator is represented."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -359,6 +441,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Identities (1)-(3) stated faithfully; sorries carry citations (Wenzl/Jones/Witten/Washington)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -379,6 +477,22 @@
         "reviewed_at": "2026-06-22T02:56:25.092Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No structure-field projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -399,6 +513,24 @@
         "reviewed_at": "2026-06-22T02:56:25.463Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "zeta8-witness-level2-su2.lean:113: \"theorem wenzl_annihilator ... : ∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0 := ⟨0, rfl⟩\"",
+        "notes": "wenzl_annihilator's goal `∃ x, x = 0` is a tautology any field discharges (take x=0); it does not bind χ^λ to an actual Hecke character, so the stated Wenzl-annihilator content is vacuously true. Disclosed as a 'structural target' in the docstring but presented as a theorem."
       }
     ],
     "proof-no-false-premise": [
@@ -455,6 +587,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "IsPrimitiveRoot ζ 8 is satisfiable; no False premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -511,6 +659,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "zeta8-witness-level2-su2.lean:113: \"wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol)\"",
+        "notes": "wenzl_annihilator ignores all of _n, firstCol, _h (underscored) — the proof ⟨0,rfl⟩ uses none of the partition data the statement is supposed to be about."
       }
     ],
     "proof-no-decide-masking": [
@@ -549,6 +715,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No decide; the vacuity is the ∃x,x=0 framing, flagged under proof-no-trivial-true."
       }
     ],
     "da-false-claim": [
@@ -568,6 +750,22 @@
         "notes": "Checked mathematical consistency of the claim 'Proof' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "(ζ;ζ)_7=∏_{k=1}^7(1-ζ^k)=8 (standard), ord(σ_i)=8, and [4]_q=0 at ζ_8 (since ζ^4=-1 ⇒ numerator q^4-q^-4=0) are all true."
       }
     ],
     "da-vacuous": [
@@ -586,6 +784,24 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "zeta8-witness-level2-su2.lean:114: \"⟨0, rfl⟩\"",
+        "notes": "The wenzl_annihilator declaration is content-free (∃x,x=0). The three core identities are genuine, but the headline 'Wenzl annihilator' structural theorem is vacuous as formalized."
       }
     ],
     "da-circular": [
@@ -605,6 +821,22 @@
         "notes": "Traced dependencies ['prop:cyclotomic-strand-doubling', 'prop:habiro-pochhammer-bridge'] for 'prop:zeta8-witness-level2-su2' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Identities are q=ζ_8 algebra, independent of the empirical Δa_m data they later explain."
       }
     ],
     "da-overclaim": [
@@ -623,6 +855,24 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:zeta8-witness-level2-su2' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "zeta8-witness-level2-su2.md:43: \"Vindicates earlier hypothesis (a) ... This proposition shows the hypothesis is in fact correct\"",
+        "notes": "'Vindicates'/'in fact correct' is strong given the structural mechanism (Wenzl-annihilator-forced Δa_m interference) is the part that remains a sorry/vacuous Lean target; the algebraic identities are correct but do not by themselves prove the empirical Δa_m cancellation they are claimed to force."
       }
     ],
     "da-hidden-dof": [
@@ -642,6 +892,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No free parameter; ζ_8 is fixed by k=2 WZW correspondence."
       }
     ],
     "da-non-sequitur": [
@@ -661,6 +927,24 @@
         "notes": "Logical transitions in the derivation of 'Proof' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "zeta8-witness-level2-su2.md:36: \"must respect Σ_{first col≥4} y_λ·χ^λ = 0, forcing the empirical Δa_m interference\"",
+        "notes": "The leap from '[4]_q=0 ⇒ Wenzl projector kernel' to 'forcing the empirical Δa_m interference' is asserted but the connecting Wenzl-annihilator step is exactly the unproved (vacuous/sorry) piece — the 'forcing' is not established in this block."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -679,6 +963,24 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "zeta8-witness-level2-su2.lean:113-116",
+        "notes": "The .md presents the Wenzl-annihilator as a sorry-carrying structural theorem; the Lean instead makes it a vacuously-true ∃x,x=0. The formalized content is strictly weaker than (and different in kind from) the narrative claim."
       }
     ],
     "da-citation-misuse": [
@@ -698,6 +1000,22 @@
         "notes": "All references and uses ['prop:cyclotomic-strand-doubling', 'prop:habiro-pochhammer-bridge'] cited in 'prop:zeta8-witness-level2-su2' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Wenzl 1987/Jones 1987/Witten 1989/Washington 1997 are the right sources for projectors, Verlinde truncation, and cyclotomic evaluations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -717,6 +1035,22 @@
         "notes": "All terms and algebraic structures in 'prop:zeta8-witness-level2-su2' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "qPoch, qInt, IsPrimitiveRoot precisely defined in Lean; (1)-(3) unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -792,6 +1126,22 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Identities are exact algebra; the empirical S_6(ζ_8)+Δa_7·8=0 cancellation is cited to the categorical-witness audit."
       }
     ],
     "da-referee-verdict": [
@@ -812,6 +1162,23 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:zeta8-witness-level2-su2' incomplete."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "notes": "Three correct ζ_8 algebraic identities, but the central 'Wenzl-annihilator-forces-Δa_m' mechanism is formalized as a vacuous ∃x,x=0 (and the .md claims it carries sorry). Strongest objection: the 'vindicates hypothesis (a)' / 'forcing the interference' claim rests on a step that is neither proved nor honestly sorry'd in the Lean."
       }
     ],
     "voice-status-leak": [
@@ -1855,5 +2222,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

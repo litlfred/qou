@@ -56,3 +56,8 @@ updated_at: 2026-06-29T20:07:58Z
 
 ## More instances (batch 43, measurement-observation)
 - sorting_color_energy.lean:52-53 (:= ctx.claim_eigenvalues self-assuming projection; only item 1/4 formalised; stale braids-and-knots/ docstring path; critical)
+
+## More instances (batch 41, mass-theory)
+- universal-braid-branching.lean:38,67,77,86 (h_base self-assuming; pieri/chebyshev rfl tautologies; convergence_bound proves >=0 not MAE)
+- flavor-dressed-mass.lean:53 (axiom whose statement IS conclusion; not 3b-cond hypothesis form)
+- zeta8-witness-level2-su2.lean:113 (wenzl_annihilator exists x=0 vacuous); wedderburn-bratteli-recursion.lean:124 (y=0 witness); exterior-square-borromean.lean:32 (proves 9+36=45 only)

@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Statement gives the closed-form splitting; calibration-discipline / numerology pushed to separate sections and a companion remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Dressed-quark mass splitting is mass-theory scope; canonical q_0 numerology is correctly deferred to Observations."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The q-rational identity (q-1)^2(1-q^-4)/3·(q^{1/2}+q^{-1/2})/(q+q^-1) is algebraic; the 'at q=q_0' clause is an explicit specialisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Derivation combines two algebraic identities (substrate side + skein side); no archimedean machinery proving the algebra."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Lean dressed_mass_from_substrate_split states μ_d−μ_u = M_N·substrate_split_factor q under 0<M_N, 1<q — matches the .md leading-order closed form."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Signature is the genuine equality; no weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "flavor-dressed-mass-from-substrate-split.lean:53: \"axiom dressed_mass_split_substrate_closed_form ... : F.μ down - F.μ up = M_N * substrate_split_factor q\"",
+        "notes": "The theorem is `:= dressed_mass_split_substrate_closed_form ...`, a verbatim projection of an axiom whose statement IS the theorem's conclusion. Unlike §3b-cond (axiomatise hypotheses), this axiomatises the conclusion itself, so the Lean proves nothing beyond restating the axiom. Docstring claims 'no longer a tautology' but the proof content is exactly the conclusion-as-axiom."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Conclusion is a substantive equality, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "0<M_N, 1<q are satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "flavor-dressed-mass-from-substrate-split.lean:80: \"(hM : 0 < M_N) (hq : 1 < q)\"",
+        "notes": "hM, hq are passed through to the axiom but the axiom's conclusion does not actually use them; they are interface decoration rather than genuine mathematical dependence (the underlying identity holds for the algebraic factor regardless)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No decide/trivial."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The algebraic identity (q-1)^2(1-q^-4)/3 = (1/3)ℏ_q^2·h_q·[2]_q checks: ℏ_q=(q-1)/q, h_q=q-q^-1, [2]_q=q+q^-1 give h_q·[2]_q=q^2-q^-2 and ℏ_q^2(q^2-q^-2)=(q-1)^2(1-q^-4)·q^... consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "flavor-dressed-mass-from-substrate-split.lean:53: \"axiom dressed_mass_split_substrate_closed_form\"",
+        "notes": "Lean content is true-but-content-free: the only non-trivial fact is asserted as an axiom equal to the conclusion. The narrative .md derivation is genuine, but the Lean adds no verified content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "μ_d−μ_u is a derived output of q_0+M_N; CODATA m_n−m_p explicitly removed from the calibration count. M_N stays a disclosed input."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Calibration-discipline section honestly states M_N is still CODATA-anchored and Q_β remains an input pending derivation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Boundary {m_e,q_0,M_N} stated explicitly; no smuggled parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Solving (2) for the difference and substituting (1) is a valid algebraic combination."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "flavor-dressed-mass-from-substrate-split.lean:78: \"theorem dressed_mass_from_substrate_split ... := dressed_mass_split_substrate_closed_form\"",
+        "notes": "Lean proves the .md conclusion only by asserting it as an axiom; the verified content is strictly weaker than the narrative derivation (which composes two upstream lemmas)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Internal refs to prop:flavor-split-substrate and lem:pair-skein-mass-formula are the correct upstream sources."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "z_mkv and the dressing functor are defined/linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "μ_u≈311.10, μ_d≈312.39 MeV follow from M_N/3 + the split; values are derived, not fit-tuned, and routed to a companion remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Constituent-quark dressed masses ~310 MeV are the standard constituent-quark scale."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "probe_flavor_dressed_mass_split.py + witness named, status verified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5c32a270f93e",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "notes": "Narrative derivation is sound, but the Lean sibling discharges the headline equality by an axiom equal to the conclusion (conclusion-as-axiom, not §3b-cond hypothesis-axiomatisation). Strongest objection: the Lean adds no verified content over restating the claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

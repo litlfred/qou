@@ -762,7 +762,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "General bar-eigenspace proof of the two-filtration bridge is mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "bar(e_λ)=e_{λ'}, Vol bar-invariant (P_2^+), CS bar-anti-invariant mod π²Z (P_3^-), and self-conj↔depth2 / chiral-pair↔depth3 follow correctly; self-conjugate partitions ↔ partitions into distinct odd parts is a classical bijection."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Substantive structural (bar-eigenspace) proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Proof from bar-action on idempotents + period bar-types, not from the table it reproduces."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge-general-proof.md:36: \"non-by definition\" (repeated l.38,40,49,51)",
+        "notes": "The proof repeatedly uses a garbled phrase 'non-by definition' / 'pairs ... non-by definition' where the intended meaning (non-zero by definition vs zero on bar-mismatched cells) is unclear. The structural conclusion is sound, but the key pairing-vanishing steps are stated with a corrupted phrase, weakening the rigor of the 'therefore depth = 2/3' claims as written."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No free parameter; depth assignment is binary (2 or 3)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge-general-proof.md:36-49",
+        "notes": "The pairing-analysis steps lean on the garbled 'non-by definition' phrasing to conclude which bar-component pairs non-trivially with Vol vs CS; the logical link (bar-fixed cell pairs with bar-fixed period, vanishes against bar-anti period) is correct in spirit but the corrupted wording leaves the 'therefore' under-justified as printed."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Proof block, no Lean sibling required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Internal refs (explicit-central-idempotent, hecke-baer-star-generic, archimedean-realization-functor) correctly invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge-general-proof.md:36: \"non-by definition\"",
+        "notes": "'non-by definition' is not a defined term and admits multiple readings (likely a corrupted 'non-zero by definition'); it recurs at the crux of the pairing argument, so the term governing the proof's conclusion is itself ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Structural proof, no numeric match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Bar-class of any λ is a computable combinatorial property; argument is checkable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "notes": "Correct structural bar-eigenspace argument (self-conj↔depth2, chiral-pair↔depth3) with the right classical bijection. Strongest objection: a recurring corrupted phrase 'non-by definition' at the crux pairing steps muddies the 'therefore' and should be repaired for rigor."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }

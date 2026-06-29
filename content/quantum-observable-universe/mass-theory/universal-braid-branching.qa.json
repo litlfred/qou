@@ -1048,7 +1048,456 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Statement is the branching character formula plus a base-character table; no interpretive prose."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Hecke character branching is mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Statement is over H_k(R,q) with q generic; the .md header notes the Lean sibling is an archimedean specialisation over ℝ but the combinatorial content is generic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No narrative Proof body in the .md (induction sketch lives in the Lean docstring)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "universal-braid-branching.lean:54-67: \"theorem universal_braid_branching ... (h_base : chi_lambda = ...) : chi_lambda = ... := exact h_base\"",
+        "notes": "The Lean 'theorem' takes the entire branching formula as hypothesis h_base and returns it verbatim. It proves nothing the .md claims (the actual branching identity); the .md statement and the Lean proof do not express the same proven content."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "critical",
+        "evidence": "universal-braid-branching.lean:58: \"(h_base : chi_lambda = (skewSYTCount [3] lambda)*chi_sym + ...)\"",
+        "notes": "The provable claim is reduced to assuming itself: the conclusion is injected as hypothesis h_base, so the signature does not assert the branching theorem, only its tautological echo."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "critical",
+        "evidence": "universal-braid-branching.lean:67: \"exact h_base\"",
+        "notes": "Textbook self-assuming projection: conclusion = hypothesis, proof is `exact h_base`."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "critical",
+        "evidence": "universal-braid-branching.lean:38: \"skewSYTCount mu lambda_plus = skewSYTCount mu lambda_plus := by rfl\" and l.77 \"t^3-3*t = t^3-3*t := rfl\"",
+        "notes": "pieri_skew_syt and chebyshev_sl2_cube prove x=x by rfl while their docstrings claim the Pieri rule and the Chebyshev cube identity respectively — tautologies masquerading as substantive lemmas."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No false premise; the flaw is tautology/projection, not False.elim."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "universal-braid-branching.lean:54: \"(q : ℝ) (hq : q > 1) (k : ℕ) (hk : k ≥ 3) (lambda) (hlam : lambda.sum = k)\"",
+        "notes": "In universal_braid_branching, q, hq, k, hk, hlam are all unused — the proof is `exact h_base`, ignoring every structural hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No decide; the masking here is rfl-tautology/projection, covered under other criteria."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "The .md branching formula χ(K,λ)=Σ f^{λ/μ}χ^μ is the correct restriction/branching statement; base-character table (4_1, B_3, unknot) is consistent (e.g. χ^std(4_1)=2-[3]_q)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "universal-braid-branching.lean:67: \"exact h_base\"; l.39 \"rfl\"",
+        "notes": "The Lean formalization is content-free: the headline theorem assumes its own conclusion and the two auxiliary lemmas are x=x. (The .md statement itself is non-vacuous, but the criterion's da-vacuous lens fires on the Lean backing.)"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No back-fitting in the narrative; the issue is vacuous Lean, not circular math."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "minor",
+        "evidence": "universal-braid-branching.lean:86-99: \"convergence_bound ... C₀*(q+1/q)^... ≥ 0\"",
+        "notes": "The convergence_bound docstring asserts the MAE bound MAE(k) ≤ C₀·[2]_q^{-2(k-3)}, but the Lean only proves the product is ≥ 0 (positivity) — far weaker than the claimed convergence bound."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No hidden parameter; base characters computed from Hoefsmit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Narrative formula follows from Young's-lattice branching; the gaps are in the Lean proofs, not the .md logic."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "evidence": "universal-braid-branching.lean:34-99",
+        "notes": "Every substantive Lean declaration (universal_braid_branching, pieri_skew_syt, chebyshev_sl2_cube, convergence_bound) proves something strictly weaker/vacuous vs its .md/docstring claim; skewSYTCount is an opaque axiom."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "hoefsmit1974/wenzl1988 are the right sources for seminormal-form characters and Hecke branching."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "f^{λ/μ}=|SYT(λ/μ)| defined; base characters tabulated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No empirical numeric match in the block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "Pure representation-theory block, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "notes": "No witness/compute attached."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c622dd54f883",
+          "ts": "c8144b4dbbe1",
+          "lean": "a43b1ac62406"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:00:36.906Z",
+        "reviewed_sha": "db9e1b3eb3ec3ccac2bb97fa84b4124777e3c72b",
+        "severity": "major",
+        "notes": "The narrative branching statement is correct, but the Lean sibling is vacuous: universal_braid_branching is a self-assuming projection (exact h_base), pieri/chebyshev are rfl-tautologies, and convergence_bound proves ≥0 instead of the claimed MAE bound. Strongest objection: the Lean formalization establishes none of the .md's mathematical content while presenting as proved."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:00:36.906Z"
 }
