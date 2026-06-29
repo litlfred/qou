@@ -48,7 +48,7 @@ def _w_free(q0: float) -> float:
     return mbd.W_lambda_float(q0, (1, 1, 1))
 
 
-def run():
+def run(group="low"):
     me, q0, E0 = mbd._constants()
     ame = mbd._ame_table()
     Lbond = mbd._bond_type_L()
@@ -58,9 +58,16 @@ def run():
     w_free = _w_free(q0)
     s_free = math.log(1.0 / w_free)  # surprisal of a single free nucleon block
 
-    low = mbd.GROUPS["low"]
+    if group == "sweep":
+        seen, isos = set(), []
+        for g in ("low", "low-mid", "mid", "high"):
+            for t in mbd.GROUPS.get(g, []):
+                if t[0] not in seen:
+                    seen.add(t[0]); isos.append(t)
+    else:
+        isos = mbd.GROUPS[group]
     rows = []
-    for (name, Z, N) in low:
+    for (name, Z, N) in isos:
         r = mbd._row(name, Z, N, E0, me, Lbond, nucleon_msym, ame, max_strands=21)
         A = Z + N
         bame = r["B_AME"]
@@ -69,6 +76,12 @@ def run():
         B_sym = r["B_sym"]
         w_lam = r["W_lam"]
         E_gate = r["E_gate"]                       # = E0·ln(1/W_λ)
+        # Occupancy reading is only valid while W_λ < 1 (positive surprisal). For
+        # heavy nuclei the SU(4) ground partition has W_λ ≥ 1 (or the float [n]_q!
+        # overflows), so E_gate ≤ 0 / NaN — mark INVALID rather than fabricate a
+        # negative "binding". This breakdown is itself the finding (see verdict).
+        if E_gate is None or not math.isfinite(E_gate) or E_gate <= 0:
+            E_gate = None
         B_sym_ent = r["B_sym_ent"]
         # candidate full bindings (parameter-free)
         B_lincomp = B_sym + E0 * (1.0 - w_lam)
@@ -88,7 +101,7 @@ def run():
         m_unbnd = Z * mp_can + N * mn_can
         m_nuc_meas = (r["M_atom_AME"] - Z * me + mbd._electron_binding_mev(Z)
                       if r["M_atom_AME"] else None)
-        masses = {k: m_unbnd - v for k, v in cand.items()}
+        masses = {k: (m_unbnd - v if v is not None else None) for k, v in cand.items()}
         rows.append({
             "iso": name, "Z": Z, "N": N, "A": A,
             "B_AME": bame, "sigma_B_ppb": (r["sigma_AME"] / bame * 1e9) if r["sigma_AME"] else None,
@@ -98,7 +111,8 @@ def run():
             "m_unbnd": m_unbnd, "m_nuc_meas": m_nuc_meas,
             "masses": masses,
             "mass_err_ppb": {k: ((mv - m_nuc_meas) / m_nuc_meas * 1e9)
-                             for k, mv in masses.items()} if m_nuc_meas else {},
+                             for k, mv in masses.items() if mv is not None}
+            if m_nuc_meas else {},
         })
     return {"me": me, "q0": q0, "E0": E0, "w_free": w_free, "rows": rows}
 
@@ -127,7 +141,7 @@ def report(res):
     for r in rows:
         b = r["bindings"]
         print(f"| {r['iso']} | {r['A']} | {r['B_AME']:.2f} | "
-              + " | ".join(f"{b[f]:.2f}" for f in FORMS) + " |")
+              + " | ".join(f"{b[f]:.2f}" if b[f] is not None else "—" for f in FORMS) + " |")
     print("\n| iso | A | " + " | ".join(f"err {f}" for f in FORMS) + " |")
     print("|" + "---|" * (2 + len(FORMS)))
     for r in rows:
@@ -157,9 +171,20 @@ def report(res):
     print(f"E₀·ln(1/W_free) = {sat:.3f} MeV/nucleon  (the parameter-free saturation scale)\n")
     print("| iso | A | E_gate/A | B_AME/A | c_λ=B_AME/E_gate |")
     print("|---|---|---|---|---|")
+    valid = [r for r in rows if r["E_gate"]]
     for r in rows:
-        print(f"| {r['iso']} | {r['A']} | {r['E_gate']/r['A']:.2f} | "
-              f"{r['B_AME']/r['A']:.2f} | {r['B_AME']/r['E_gate']:.2f} |")
+        eg = r["E_gate"]
+        egpn = f"{eg / r['A']:.2f}" if eg else "—"
+        cl = f"{r['B_AME'] / eg:.2f}" if eg else "INVALID (W_λ≥1)"
+        print(f"| {r['iso']} | {r['A']} | {egpn} | {r['B_AME'] / r['A']:.2f} | {cl} |")
+    max_valid_A = max((r["A"] for r in valid), default=0)
+    n_invalid = len(rows) - len(valid)
+    if n_invalid:
+        print(f"\n  E_gate VALID only for A ≤ {max_valid_A}: {n_invalid} heavy isotope(s) "
+              f"have W_λ ≥ 1 (occupancy surprisal negative / [n]_q! overflow) — the "
+              f"occupancy reading BREAKS DOWN, while B_AME/A climbs smoothly to the "
+              f"~8.8 MeV iron peak. So E_gate is a LIGHT-nucleus / magic-point proxy, "
+              f"NOT the general saturation mechanism.")
 
     print(f"\n## Verdict (honest)\n")
     print(f"- **Best scale-free form on aggregate: {best}** (RMS log-err "
@@ -168,10 +193,13 @@ def report(res):
     print(f"- BUT E_gate fixes the ⁴He magic-nucleus catastrophe: err 2.36→0.94, the")
     print(f"  single worst B_sym failure. So the entanglement channel is real and")
     print(f"  dominates AT the closed-shell/magic configuration, not uniformly.")
-    print(f"- WHY: the cluster surprisal ≈ A × free-nucleon surprisal (s_rel≈0), so")
-    print(f"  E_gate ≈ A·E₀·ln(1/W_free) = {sat:.2f} MeV/nucleon — the framework's")
-    print(f"  parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ is")
-    print(f"  the fraction-of-saturation: ²H 0.24 (far below), ⁴He ~0.94 (near-saturated).")
+    print(f"- WHY (and its LIMIT): at ⁴He the cluster surprisal ≈ A × free-nucleon")
+    print(f"  surprisal (s_rel≈0), so E_gate/A ≈ E₀·ln(1/W_free) = {sat:.2f} MeV/nucleon")
+    print(f"  ≈ B_AME/A there. But this match is LOCAL to the ⁴He magic point: E_gate/A")
+    print(f"  falls away on both sides and goes INVALID (W_λ≥1, surprisal<0) by ²⁴Mg,")
+    print(f"  while the REAL B_AME/A climbs smoothly to the ~8.8 MeV iron peak. So E_gate")
+    print(f"  is NOT the general saturation mechanism — c_λ(A) (the shell-filling")
+    print(f"  residual, the open Δ_λ object) carries all the real A-dependence.")
     print(f"- LINEAR complement E₀·(1−W_λ)≈{res['E0']:.2f} MeV is too small; the SURPRISAL")
     print(f"  reading is the correct information-theoretic form.")
     print(f"- NOT a fit: every term is E₀ (CAL-derived) × a Plancherel weight. c_λ(A) — the")
@@ -180,14 +208,22 @@ def report(res):
 
 
 def main(argv=None):
-    res = run()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--group", default="low", choices=sorted(mbd.GROUPS) + ["sweep"],
+                    help="isotope group (low | sweep | …)")
+    args = ap.parse_args(argv)
+    group = args.group
+    res = run(group)
     best = report(res)
     rows = res["rows"]
     sat = res["E0"] * math.log(1.0 / res["w_free"])
     he4 = next((r for r in rows if r["iso"] == "4He"), None)
     c_he4 = (he4["B_AME"] / he4["E_gate"]) if he4 else None
 
-    w = WitnessBuilder("su4-occupancy-binding-mass-probe", engine="python")
+    wname = ("su4-occupancy-binding-mass-probe" if group == "low"
+             else f"su4-occupancy-binding-{group}-probe")
+    w = WitnessBuilder(wname, engine="python")
     w.set_description(
         "SU(4) Plancherel-occupancy surprisal E_gate = E0*ln(1/W_lambda) as the "
         "entanglement-loss channel of the nuclear binding energy. Parameter-free "
