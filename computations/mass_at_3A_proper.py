@@ -299,8 +299,9 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
         from canonical_braid_crossings import _avg_color_delta
         delta = float(_avg_color_delta())
     else:
-        from _li_2_q_util import flavor_split_subleading
-        delta = float(flavor_split_subleading(q))
+        # DE-WIRED 2026-06-29: proven leading δ, not posited subleading
+        from _li_2_q_util import flavor_split_leading
+        delta = float(flavor_split_leading(q))
     word: list[tuple[float, float, int]] = []
     ordering = ['p'] * Z + ['n'] * N
     for k, nuc in enumerate(ordering):
