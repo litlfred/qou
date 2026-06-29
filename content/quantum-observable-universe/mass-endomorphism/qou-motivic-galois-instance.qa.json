@@ -877,7 +877,287 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Motivic-Galois instance for the brane-tower substrate; supports the chapter's Habiro/motivic mass content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Construction is over cyclotomic Z[zeta_2p] (algebraic/p-adic side); archimedean Weil/Deligne explicitly out of scope (line 84-85)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "notes": "qou-motivic-galois-instance.md:20: SLOP filler replaces Step 1 of the 'three steps' construction, so the Habiro->Frob_p map step is unstated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Defines a concrete instance with numerical witness backing (per-cell Frobenius table)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "md:73-76: 'conj:motivic-perpetual-obstruction becomes an unconditional theorem' rests on a substrate axiom (almost_everywhere_nontrivial) backed only by primes <=13."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No hidden free parameter; Frobenius values extracted from Habiro element."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "With Step 1 erased by filler (line 20), the construction's first step does not connect to the compatibility checks of step 2."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "evidence": "qou-motivic-galois-instance.md:44: \"almost_everywhere_nontrivial field is a substrate axiom\"",
+        "notes": "almost_everywhere_nontrivial is a substrate axiom (sorry-class) backed numerically; the 'unconditional theorem' claim is modulo that axiom."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No external cites mis-used; Weil-purity / Galois-norm used in standard sense."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Frob_p, Habiro expansion, cyclotomic Pochhammer defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "evidence": "qou-motivic-galois-instance.md:56-60: \"Cells marked 'partial' ... on-disk Habiro data runs out before the Pochhammer truncation point\"",
+        "notes": "'partial' cells (m_max < 2p) admit only partial-sum Frobenius values; Weil-purity claim only fully verified at p in {2,3}."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Number-theoretic construction; no direct physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "Per-cell table sourced 'from witness' but the witness file is not named in the .md; partial cells indicate incomplete on-disk data."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5db4154f5ace",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "evidence": "qou-motivic-galois-instance.md:20: SLOP filler replacing construction Step 1",
+        "notes": "Construction plausible but Step 1 erased by AI-slop filler (line 20) and the headline 'unconditional theorem' rests on a numerics-only substrate axiom (primes<=13)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }

@@ -1046,7 +1046,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Statement is the bare conditional factorisation claim; conditional banner is structural (§3b-cond), not interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Q_beta Delta-tau factorisation; mass/Markov-weight content of this chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Statement over ℝ with q>0 is justified — weights y_lambda are sqrt(q)-bearing (archimedean), so ℝ + 0<q is appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Proof factors (q^2-1) via ring from per-block witnesses; hq:0<q threaded but the factorisation itself is algebraic — base ring ℝ defensible given sqrt-weights upstream."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "md ∃ P: Delta_tau = (q^2-1)P under [CanonicalMarkovWeightsH3], q>0 matches Lean delta_tau_M_canonical_has_q2_minus_1_factor exactly."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Signature matches the narrative conditional theorem; §3b-cond class hypothesis explicit."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Conclusion (existence of P) is DERIVED via chi_blocks_have_q2_minus_1_factor + ring, not projected from a class field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Goal is a genuine existential factorisation, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "CanonicalMarkovWeightsH3 is inhabited (explicit instance proof exists); premise not false."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Both [CanonicalMarkovWeightsH3] (w.y3/y21/y111) and hq:0<q-derived per-block factorisations are used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "ring/obtain/rw, no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Factorisation is a true algebraic identity; vanishing at q=1 follows."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Non-vacuous §3b-cond conditional theorem with genuine derivation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No circularity; weights are a stated hypothesis, factorisation derived."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Explicitly conditional on the class; not claimed unconditional."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Weights are the declared class hypothesis, not a hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Substitution + factoring step is exact."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Lean and narrative express the same conditional factorisation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "hoefsmit1974/wenzl1988 correctly cited for seminormal matrices / Markov weights."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Delta-tau, P_lambda, weights defined via parent block + class."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Symbolic factorisation; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Witness referenced (qbeta-per-block-paper-closed-forms.witness.json); proof is symbolic and self-verifying."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4d2f345ba19b",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Exemplary §3b-cond conditional theorem; statement, banner, and Lean all aligned."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }

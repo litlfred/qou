@@ -855,7 +855,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "u=q^2 scalar-invariant discharges back the Hecke character content of this chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "q(q-q^-1)=u-1 verified (q*q - q*q^-1 = q^2-1 = u-1). Macdonald-substitution claim sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Concrete rational-in-u identities closed by field_simp+ring; substantive backing for abstract residual-zero fields."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Scope limited to scalar H3/V_(2,1) invariants; no over-extension."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Significance argument (abstract triviality -> concrete arithmetic) is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Narrative matches the field_simp+ring Lean identities described."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No external citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "u=q^2 substitution and the referenced fields are explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Exact algebraic identities; no numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Identities are self-contained algebra closed by ring; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "edf988c0e1cc",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Clean u-coordinate discharge remark; no defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }

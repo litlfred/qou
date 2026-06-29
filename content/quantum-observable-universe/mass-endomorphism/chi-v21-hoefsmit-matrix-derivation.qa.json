@@ -857,7 +857,266 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "V_(2,1) Hoefsmit character derivation supports the Markov-trace endomorphism content of this chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Verified: sigma0 trace q-q^-1 OK; d1+d2=q-q^-1 OK; chi-diff = -(q^4+1)(q^2-1)/(4q^3) expands to the stated Laurent OK."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Substantive Hoefsmit matrix derivation; sorry-free theorems listed."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No circularity; exact algebra."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "chi-v21-hoefsmit-matrix-derivation.md:86: \"discharged by the substantive sympy verification\" — full Lean matrix-product trace proof deferred (one remaining sorry)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No free parameters; d1,d2,b fixed by Hoefsmit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "notes": "chi-v21-hoefsmit-matrix-derivation.md:17: \"The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.\" replaces the derivation step between the matrix defn and the chi-difference formula."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "evidence": "chi-v21-hoefsmit-matrix-derivation.md:86: \"The proof is the only remaining sorry in this chapter-block content\"",
+        "notes": "md:84-92 the matrix-product trace 'theorem statement' still carries a sorry; Lean closes only the scalar trace identities, not the 11-crossing product."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No mis-attributed citation; Hoefsmit matrices used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "V_(2,1), d1,d2,b^2 explicitly given."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Exact rational closed form, not a numerical fit; q=1,2 cross-checks by norm_num."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "chi-v21-hoefsmit-matrix-derivation.md:38/62/83: three more SLOP filler insertions replace witness/derivation prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "227fea59b98b",
+          "ts": "3d8e4b7c6100",
+          "lean": "4cfff0dfdb1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "evidence": "chi-v21-hoefsmit-matrix-derivation.md:17,38,62,83: repeated placeholder filler",
+        "notes": "Math is correct but the .md is heavily corrupted by 4 AI-slop filler sentences (lines 17,38,62,83) erasing derivation/witness content."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }

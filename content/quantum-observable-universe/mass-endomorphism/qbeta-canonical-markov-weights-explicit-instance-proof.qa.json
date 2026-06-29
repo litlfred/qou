@@ -764,7 +764,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Explicit-instance proof for CanonicalMarkovWeightsH3; supports the Q_beta conditional theorem of this chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Normalisation z+2(1/2-z)+z=1 verified exactly; honest that this is NOT the canonical Wenzl instance."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Proves class inhabitation, making the §3b-cond conditional theorems non-vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No circularity; explicitly distinguishes 'an instance' from 'the canonical one'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Scope crisply bounded: 'Not established: that this instance IS the canonical weights' (lines 21-35)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "z(q)=sqrt(q)/(1+q) is the chosen parameterisation, disclosed; class admits many inhabitants (stated)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Algebraic normalisation argument is exact and complete."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Lean discharge is 'ring' for the normalisation; matches the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No mis-attributed citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "z(q), y_lambda all explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "md:39-59: numerical y_0.499 vs canonical y_0.4154 mismatch is openly stated as proof it is NOT canonical — calibration-honest, not fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Canonical values via markov_weights_symbolic.solve_y_lambda(3) cited; numbers self-consistent (sums to 1)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "aa2bbcb91df7",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Model of scope discipline — proves inhabitation while explicitly disclaiming canonicity; no defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }

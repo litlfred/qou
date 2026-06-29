@@ -21,3 +21,7 @@ updated_at: 2026-06-29T20:07:58Z
 - horizon-conformal-invariance.lean:29 (theorem : True)
 - mass-energy-equivalence.lean:47 (vacuous categoricalMass)
 - q-gaussian-solves-q-heat.lean, quantum-ideal-gas-law.lean (narrative-lean divergence)
+
+## More instances (batch 27, mass-endomorphism)
+- q-hecke-seminormal-character-closure: lib decl self-assuming projection (def := ctx.claim_paths_agree) + : True shadow stub (critical da-circular)
+- gb-spectral-sequence.lean:19 (: True := trivial; real formalisation un-routed in BraidKnot/)

@@ -1048,7 +1048,463 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "q-hecke-seminormal-character-closure.md:13-66: long 'Significance' + bug-history prose attached to the proposition; the bare statement is only lines 3-11."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "q-Hecke partition-sum vs Markov-axiom trace agreement; core trace content of this chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Partition-sum = Markov-axiom 'to numerical precision at q=q_0' — an archimedean numerical-equality claim; ℝ-side appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Real library decl is over generic R-typed context fields (ℝ); the equality is a numeric agreement so ℝ is fine."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "evidence": "QHeckeSeminormalCharacterClosure.lean:35: \"ctx.tr_M_partition_sum = ctx.tr_M_axiom_reducer := ctx.claim_paths_agree\"",
+        "notes": "Sibling .lean is ':True := trivial'; real library decl character_closure_holds returns ctx.claim_paths_agree — a verbatim projection of a structure field equal to the conclusion, not a derivation of the numerical agreement."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "critical",
+        "evidence": "QHeckeSeminormalCharacterClosure.lean:28: \"claim_paths_agree : tr_M_partition_sum = tr_M_axiom_reducer\"",
+        "notes": "The .md claims a substantive 1e-15 numerical agreement between two compute paths; the Lean assumes it as a class field claim_paths_agree and projects it — the statement's content is asserted, not proved."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "critical",
+        "evidence": "QHeckeSeminormalCharacterClosure.lean:35: \":= ctx.claim_paths_agree\"",
+        "notes": "QHeckeSeminormalCharacterClosure.lean:33-36: 'def character_closure_holds := ctx.claim_paths_agree' is the textbook self-assuming projection (field type IS the conclusion) — also a def, not theorem."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "critical",
+        "evidence": "q-hecke-seminormal-character-closure.lean:16: \"theorem character_closure_holds : True := by trivial\"",
+        "notes": "Sibling q-hecke-seminormal-character-closure.lean:16 concludes ': True := trivial' (shadow stub); the lean.ref-resolved sibling is vacuous."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Context is inhabitable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "notes": "character_closure_holds 'uses' only the claim_paths_agree field, which IS the conclusion — the two trace-value fields carry no independent constraint, so the proof is hypothesis-trivial."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "Sibling uses 'trivial' to close ': True' (flagged under no-trivial-true); library def projects a field, no decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "The numerical agreement (1e-15) is empirically plausible — the two trace paths SHOULD agree by Wedderburn-Artin; claim itself is true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "evidence": "QHeckeSeminormalCharacterClosure.lean:35: \":= ctx.claim_paths_agree\"",
+        "notes": "Both the sibling (':True') and the library decl (self-assuming projection of claim_paths_agree) are content-free w.r.t. the asserted numerical agreement."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "critical",
+        "evidence": "QHeckeSeminormalCharacterClosure.lean:28-36: structure field equals theorem conclusion",
+        "notes": "The Lean 'proof' assumes exactly what it claims (claim_paths_agree field = conclusion) — circular at the formalisation level."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "The block presents a proved closure; the genuine evidence is the numerical witness (1e-15), but the Lean does not formalise it — 'proved' overstates the formal status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No hidden free parameters in the trace agreement."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "notes": "q-hecke-seminormal-character-closure.md:1: SLOP filler opens the block (replaces the definition of the partition-sum trace context); lines 49,59,63 also filler."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "evidence": "q-hecke-seminormal-character-closure.lean:16: \"theorem character_closure_holds : True\"",
+        "notes": "md asserts a substantive cross-path numerical agreement; resolved Lean either proves True (sibling) or self-assumes it (library def). Strong divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Wedderburn-Artin / Hoefsmit / Wenzl references used correctly for the partition-sum decomposition."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "partition-sum trace, y_lambda, chi^lambda_q defined; agreement scoped to 'numerical precision at q_0'."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "evidence": "q-hecke-seminormal-character-closure.md:49: SLOP filler in the Numerical verification section",
+        "notes": "tr_M table (proton 1.0653..., etc.) agrees to 1e-15, but the verification text (lines 49,59,63) is replaced by SLOP filler so the witness provenance is in-block missing."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "Cross-check witness 'gates this on every CI run' (line 66) but the witness path is not named in-block; .ts JSDoc cites rho_k_h3a_refinement.py."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "31f90039a962",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "critical",
+        "evidence": "QHeckeSeminormalCharacterClosure.lean:35: \":= ctx.claim_paths_agree\" (self-assuming projection)",
+        "notes": "The numerical content is sound (paths SHOULD agree by Wedderburn), but the formalisation is empty: sibling is ':True', library decl is a self-assuming projection of claim_paths_agree, and the .md is corrupted by 4 SLOP filler insertions."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }

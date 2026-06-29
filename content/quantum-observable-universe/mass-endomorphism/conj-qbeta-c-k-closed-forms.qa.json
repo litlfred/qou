@@ -1050,7 +1050,447 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Content is explicitly conjectural/empirical; tiered 'categorical interpretation' column is appropriate for a conjecture carrier."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Q_beta c_k precision-ladder closed forms; mass/decay-width content of this chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "c_k closed forms over ℝ with hoefsmitB using Real.sqrt — archimedean, but the q_0 numerical evaluation genuinely needs ℝ; justified."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Lean discharges are rfl bookkeeping over ℝ; no archimedean machinery applied to an algebraic claim (the claim itself is the numeric closed-form convention)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "md tiered closed forms (c4=c3·b^4, c5=-(b^2+1/2), c6=4b^2, c7=-8) match the Lean class fields and instance exactly."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Class fields encode the conjectural closed forms honestly; no statement-weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "conj-qbeta-c-k-closed-forms.lean:120: qbeta_c_k_closed_forms_derived projects inst.c_4_closed_form/c_5_closed_form (class field = conclusion). Acceptable as the §3b-cond conjecture-carrier pattern and docstring labels it 'bookkeeping, NOT a derivation'."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Goals are concrete equalities (c_4 q = -2·b^4 etc.), not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "QBetaCKClosedForms is inhabited (defaultQBetaCKClosedForms); no false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "qbeta_c_k_closed_forms_derived uses the [QBetaCKClosedForms] instance fields."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "rfl/projection, no decide masking; honesty preserved via the open qbeta_c_k_closed_forms_derived conjecture framing."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Closed forms presented as conjectures with honest residuals (c_4 0.9%, c_6 14%, c_7 +114% signed); no false assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Class carries content (the closed-form convention); not an empty marker."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No circularity; the c_k are extracted, then pattern-matched — distinction stated."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Matches the AGENTS.md tiered c_k framing: c_3 proved-anchor, c_4..c_7 near-match/fit with explicit signed errors."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "c_k are fit coefficients openly labelled FIT (not derived); leverage-limit caveat for c_7 stated."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "notes": "conj-qbeta-c-k-closed-forms.md:3: SLOP filler replaces the block's opening explanation; md:74 another filler insertion."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Lean honestly carries the open derivation as qbeta_c_k_closed_forms_derived; instance values labelled FIT in both md and lean docstrings."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "conj-qbeta-c-k-closed-forms.md:31: references docs/audits/-qbeta-ladder-closure-path.md (leading-hyphen, likely broken path); md:63 'post-TR_M[5] bug fix from )' dangling empty ref."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "hoefsmitB, c_k rungs, leverage limit defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "evidence": "conj-qbeta-c-k-closed-forms.md:23-26: \"any c_7 in [-100,+100] closes to within 10^-4 ppb\"",
+        "notes": "c_7's +114% signed error 'retained because leverage at 10^-13 scale (any c_7 in [-100,100] closes)' is an honest disclosure of an under-determined coefficient."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No direct physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "SDP extraction values listed (c_2..c_7) but the 'post-TR_M[5] bug fix from )' provenance and the leading-hyphen audit path hinder reproducibility tracing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "abf5f1a2c90f",
+          "ts": "9f7581265889",
+          "lean": "96e85eeba56c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "evidence": "conj-qbeta-c-k-closed-forms.md:3,74: SLOP filler; lines 31,63: broken refs",
+        "notes": "Tiered c_k framing is exemplary and AGENTS.md-compliant; defects are presentational — 2 SLOP filler insertions (lines 3,74) and 2 broken/empty refs (lines 31,63)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }

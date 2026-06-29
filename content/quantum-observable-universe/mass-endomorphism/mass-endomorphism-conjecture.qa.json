@@ -894,7 +894,264 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Mass endomorphism conjecture squarely in the mass-identity section of the Mass Endomorphism chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Conjecture explicitly stated as open; no asserted-false math. Trefoil Jones/Vol example correct (Vol(trefoil)=0)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Substantive open problem with real structural content (Habiro completion, tower convergence)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "No back-fitting; openly states absolute scale is CODATA-calibrated dressed-quark mass (line 327-330), structure derived."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Carefully scoped: 'convenience target, not load-bearing'; failure consequence stated (infinite series remains valid)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "md:328: \"requires the dressed quark mass mu_u ~ 311 MeV as input — calibrated from CODATA m_p\""
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "major",
+        "notes": "mass-endomorphism-conjecture.md:246: \"The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.\""
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Lean ref is a conjecture-class carrier (MassEndomorphism); conjecture kind, no provable-equivalence obligation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "kashaev1997 + murakami-murakami2001 correctly cited for the Volume Conjecture."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Key terms (Hecke mass element, Habiro completion, z_i spectral coords) defined or cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Tower-convergence table is an exact Li_2 series decomposition, not a fragile fit; single-level table honestly labelled as NOT reproducing n/p ratio."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "notes": "Brane-tower / Higgs-coupling speculation flagged as candidate structures, not asserted physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "notes": "mass-endomorphism-conjecture.md:269-271: duplicated filler sentences replace mitigation list items; line 228 typo 'clarificationf'."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "96751a155751",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:21:11.424Z",
+        "reviewed_sha": "c7b76d50879725975bf3b41a8e2aed287b908b73",
+        "severity": "minor",
+        "evidence": "mass-endomorphism-conjecture.md:246/269/271: duplicated placeholder sentences",
+        "notes": "Sound conjecture but the .md has 3 garbled AI-slop/duplicate filler insertions (lines 246, 269, 271) that erase mitigation content."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:21:11.424Z"
 }
