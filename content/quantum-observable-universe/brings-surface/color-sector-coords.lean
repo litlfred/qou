@@ -78,7 +78,6 @@ theorem ColorSectorCoords.green_eq_red_shifted
     C.sectorPoint .green φ ψ i =
     C.sectorPoint .red φ (ψ + 2 * Real.pi / 3) i := by
   simp [ColorSectorCoords.sectorPoint, ColourSector.offset]
-  ring_nf
 
 /-- Blue is the red sector shifted by 4π/3 in the azimuthal coordinate. -/
 -- Ref: [manuscript] Chapter 6, §Color-sector coordinates
@@ -87,7 +86,6 @@ theorem ColorSectorCoords.blue_eq_red_shifted
     C.sectorPoint .blue φ ψ i =
     C.sectorPoint .red φ (ψ + 4 * Real.pi / 3) i := by
   simp [ColorSectorCoords.sectorPoint, ColourSector.offset]
-  ring_nf
 
 /-- The three sectors tile the circle: their angular offsets sum to 2π.
     Each sector covers a 2π/3-wide strip, and 0 + 2π/3 + 4π/3 = 2π. -/
