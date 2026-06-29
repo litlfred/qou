@@ -1,5 +1,6 @@
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.SpechtClassification
+import QOU.BraidKnot.SpechtTriangularCore
 
 /-!
 # QOU.BraidKnot.SpechtIrreducibleCore — reduction of the two B1 irreducibility cores
@@ -33,6 +34,8 @@ is the kernel-of-the-flipped-form argument.
 The **char-0 Gram** core (`specht_form_nondegenerate`) is reused verbatim from
 `SpechtIrreducible`. So this module reduces brick-2 irreducibility from *two* deep
 cores to **one** deep core (`james_kernel_core`) plus the already-stated Gram core.
+The **diagonal** of that Gram core is discharged sorry-free here
+(`polytabloid_self_pairing` : `⟨e_t,e_t⟩ = |C_t|`, hence `e_t ∉ (S^μ)ᗮ` in char 0).
 
 ## sorry-free ↔ stubbed map
 
@@ -42,6 +45,9 @@ cores to **one** deep core (`james_kernel_core`) plus the already-stated Gram co
 | `tableau_exists_smul` (transitivity of `S_n` on tableaux) | **sorry-free** |
 | `james_kernel_core` (James §4 sign lemma) | **STUB** `sorry` — `-- Ref: [james1984representation]` §4 |
 | `specht_submodule_dichotomy'` (verbatim dichotomy target) | **sorry-free MODULO `james_kernel_core`** |
+| `bilinM_apply_of`, `mk_smul_eq_iff`, `polytabloid_coeff` (Gram plumbing) | **sorry-free** |
+| `polytabloid_self_pairing` (`⟨e_t,e_t⟩ = |C_t|`) | **sorry-free** |
+| `polytabloid_not_mem_spechtPerp` (`e_t ∉ (S^μ)ᗮ`, char 0) | **sorry-free** |
 | `specht_isSimple'` (the reduction) | **sorry-free MODULO `james_kernel_core` + `specht_form_nondegenerate`** |
 
 ## References
@@ -57,6 +63,7 @@ namespace QOU.BraidKnot.SpechtIrreducibleCore
 open QOU.BraidKnot
 open QOU.BraidKnot.Specht
 open QOU.BraidKnot.SpechtIrreducible
+open QOU.BraidKnot.SpechtTriangularCore
 open Equiv (Perm)
 
 variable {k : Type} [Field k] [CharZero k]
@@ -156,7 +163,95 @@ theorem specht_submodule_dichotomy' (μ : YoungDiagram)
     have := hsub hy
     rwa [LinearMap.mem_ker, LinearMap.flip_apply] at this
 
-/-! ## 5. The reduction: `specht_isSimple` from the dichotomy core + the Gram core -/
+/-! ## 5. A sorry-free advance on the char-0 Gram core: the diagonal self-pairing
+
+The full Gram core `specht_form_nondegenerate` (`S^μ ⊓ (S^μ)ᗮ = ⊥`) needs the
+Gram **determinant** (a product of hook lengths, nonzero in char 0). Its
+**diagonal** is provable sorry-free here: `⟨e_t, e_t⟩ = |C_t|`, so `e_t ∉ (S^μ)ᗮ`
+in char 0 — the easy "form is not identically zero on `S^μ`" half. -/
+
+omit [CharZero k] in
+/-- `⟨f, ⟦d⟧⟩ = f ⟦d⟧`: pairing a vector with a basis tabloid reads its coefficient. -/
+theorem bilinM_apply_of (f : Mtab (k := k) μ) (d : Tableau μ) :
+    bilinM (k := k) μ f (Mtab.of (k := k) d) = f (Tabloid.mk d) := by
+  rw [bilinM_symm, bilinM_apply, Mtab.of, Finsupp.sum_single_index (by rw [zero_mul]), one_mul]
+
+omit [CharZero k] in
+/-- For `π, ρ ∈ C_t`, `⟦π•t⟧ = ⟦ρ•t⟧ ↔ π = ρ` (column-orbit injectivity; the
+`C_t ∩ R_t = {1}` fact from `SpechtTriangularCore`). -/
+theorem mk_smul_eq_iff (t : Tableau μ) (π ρ : colStab t) :
+    Tabloid.mk ((π : Perm (Fin (nOf μ))) • t) = Tabloid.mk ((ρ : Perm (Fin (nOf μ))) • t)
+      ↔ π = ρ := by
+  rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff, rowPattern_smul, rowPattern_smul]
+  constructor
+  · intro h
+    have hmul : ((π : Perm (Fin (nOf μ)))⁻¹ * (ρ : Perm (Fin (nOf μ)))) ∈ rowStab t := by
+      rw [mem_rowStab, mul_smul, ← h, inv_smul_smul]
+    have hcol : ((π : Perm (Fin (nOf μ)))⁻¹ * (ρ : Perm (Fin (nOf μ)))) ∈ colStab t :=
+      mul_mem (inv_mem π.2) ρ.2
+    have h1 : (π : Perm (Fin (nOf μ)))⁻¹ * (ρ : Perm (Fin (nOf μ))) = 1 :=
+      colStab_inf_rowStab_eq_one t hcol hmul
+    apply Subtype.ext
+    have h2 : ((π : Perm (Fin (nOf μ))))⁻¹ = ((ρ : Perm (Fin (nOf μ))))⁻¹ :=
+      mul_eq_one_iff_eq_inv.1 h1
+    exact inv_injective h2
+  · rintro rfl; rfl
+
+omit [CharZero k] in
+/-- The coefficient of `⟦ρ•t⟧` in `e_t` is `sgn ρ` (for `ρ ∈ C_t`). -/
+theorem polytabloid_coeff (t : Tableau μ) (ρ : colStab t) :
+    (Specht.polytabloid (k := k) t) (Tabloid.mk ((ρ : Perm (Fin (nOf μ))) • t))
+      = ((Equiv.Perm.sign (ρ : Perm (Fin (nOf μ))) : ℤ) : k) := by
+  classical
+  rw [Specht.polytabloid, Finsupp.finset_sum_apply]
+  have hterm : ∀ π : colStab t,
+      ((Equiv.Perm.sign (π : Perm (Fin (nOf μ))) : ℤ) •
+        Mtab.of (k := k) ((π : Perm (Fin (nOf μ))) • t))
+          (Tabloid.mk ((ρ : Perm (Fin (nOf μ))) • t))
+        = if π = ρ then ((Equiv.Perm.sign (π : Perm (Fin (nOf μ))) : ℤ) : k) else 0 := by
+    intro π
+    rw [Finsupp.smul_apply, Mtab.of, Finsupp.single_apply]
+    by_cases h : π = ρ
+    · rw [if_pos ((mk_smul_eq_iff t π ρ).2 h), if_pos h, zsmul_eq_mul, mul_one]
+    · rw [if_neg (fun heq => h ((mk_smul_eq_iff t π ρ).1 heq)), if_neg h, smul_zero]
+  simp_rw [hterm]
+  rw [Finset.sum_ite_eq' Finset.univ ρ, if_pos (Finset.mem_univ _)]
+
+omit [CharZero k] in
+/-- **Diagonal self-pairing `⟨e_t, e_t⟩ = |C_t|`** (sorry-free). Expanding the
+second polytabloid, each cross term reads off a coefficient `sgn ρ` (the others
+vanish by column-orbit injectivity) and `(sgn ρ)² = 1`, leaving `|C_t|` ones. -/
+theorem polytabloid_self_pairing (t : Tableau μ) :
+    bilinM (k := k) μ (Specht.polytabloid (k := k) t) (Specht.polytabloid (k := k) t)
+      = (Fintype.card (colStab t) : k) := by
+  classical
+  nth_rewrite 2 [show (Specht.polytabloid (k := k) t)
+      = ∑ ρ : colStab t, (Equiv.Perm.sign (ρ : Perm (Fin (nOf μ))) : ℤ) •
+          Mtab.of (k := k) ((ρ : Perm (Fin (nOf μ))) • t) from rfl]
+  rw [map_sum]
+  have hone : ∀ ρ : colStab t,
+      (bilinM (k := k) μ (Specht.polytabloid (k := k) t))
+        ((Equiv.Perm.sign (ρ : Perm (Fin (nOf μ))) : ℤ) •
+          Mtab.of (k := k) ((ρ : Perm (Fin (nOf μ))) • t)) = 1 := by
+    intro ρ
+    rw [map_zsmul, bilinM_apply_of, polytabloid_coeff, zsmul_eq_mul, ← Int.cast_mul]
+    rcases Int.units_eq_one_or (Equiv.Perm.sign (ρ : Perm (Fin (nOf μ)))) with h | h <;>
+      rw [h] <;> norm_num
+  rw [Finset.sum_congr rfl (fun ρ _ => hone ρ), Finset.sum_const, Finset.card_univ,
+    nsmul_eq_mul, mul_one]
+
+/-- **`e_t ∉ (S^μ)ᗮ` in characteristic zero** (sorry-free): `⟨e_t, e_t⟩ = |C_t| ≠ 0`.
+A witness that the Gram form is not identically zero on `S^μ` — the easy half of
+`specht_form_nondegenerate`. -/
+theorem polytabloid_not_mem_spechtPerp (t : Tableau μ) :
+    Specht.polytabloid (k := k) t ∉ spechtPerp (k := k) μ := by
+  rw [mem_spechtPerp_iff]
+  push_neg
+  refine ⟨Specht.polytabloid (k := k) t, Specht.polytabloid_mem_specht t, ?_⟩
+  rw [polytabloid_self_pairing]
+  exact_mod_cast (Nat.cast_ne_zero (R := k)).mpr Fintype.card_ne_zero
+
+/-! ## 6. The reduction: `specht_isSimple` from the dichotomy core + the Gram core -/
 
 /-- **Irreducibility of `S^μ` (char 0)** — reduced `sorry`-free to
 `james_kernel_core` (the dichotomy) and `SpechtIrreducible.specht_form_nondegenerate`
