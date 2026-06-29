@@ -1,8 +1,8 @@
 {
   "engine": "python+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T01:17:00.947686+00:00",
-  "commitSha": "c1c3a6ccd446e695f473a34322fb91a75045f8b8",
+  "computedAt": "2026-06-29T14:26:13.847707+00:00",
+  "commitSha": "d1243b2a510ed6ef45bb2fea781caee3029e9d8f",
   "assertions": [
     {
       "name": "closed_forms_sigma_inv_avg_exact",
@@ -17,14 +17,21 @@
       "expected": true,
       "passed": true,
       "source": "σ+σ⁻¹=10(Z+N)-2 ⇒ exponent slope is A-only"
+    },
+    {
+      "name": "writhe_is_Z_only_and_decomposes",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "writhe σ-σ⁻¹=4Z (bar-odd, Z-only) = intra(3Z+N)+interface(Z-N); p≠n seed proton+3≠neutron+1 sources the proton-excess correction"
     }
   ],
   "allPassed": true,
-  "durationMs": 80,
+  "durationMs": 152,
   "computation": "delta-lambda-exponent-from-crossings",
   "scriptFile": "delta_lambda_exponent_from_crossings.py",
-  "scriptHash": "d8cce0a8aa30",
-  "scriptCommitSha": "c1c3a6ccd446e695f473a34322fb91a75045f8b8",
+  "scriptHash": "8bea2239a405",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,6 +57,8 @@
         "sigma_inv": 7,
         "non_averaged": 18,
         "writhe": 4,
+        "intra_writhe_3Z_N": 4,
+        "interface_writhe_Z_N": 0,
         "closed_form_sigma_7Z5N_1": 11,
         "closed_form_inv_3Z5N_1": 7,
         "exponent_10A_5": 15,
@@ -67,6 +76,8 @@
         "sigma_inv": 12,
         "non_averaged": 28,
         "writhe": 4,
+        "intra_writhe_3Z_N": 5,
+        "interface_writhe_Z_N": -1,
         "closed_form_sigma_7Z5N_1": 16,
         "closed_form_inv_3Z5N_1": 12,
         "exponent_10A_5": 25,
@@ -84,6 +95,8 @@
         "sigma_inv": 10,
         "non_averaged": 28,
         "writhe": 8,
+        "intra_writhe_3Z_N": 7,
+        "interface_writhe_Z_N": 1,
         "closed_form_sigma_7Z5N_1": 18,
         "closed_form_inv_3Z5N_1": 10,
         "exponent_10A_5": 25,
@@ -101,6 +114,8 @@
         "sigma_inv": 15,
         "non_averaged": 38,
         "writhe": 8,
+        "intra_writhe_3Z_N": 8,
+        "interface_writhe_Z_N": 0,
         "closed_form_sigma_7Z5N_1": 23,
         "closed_form_inv_3Z5N_1": 15,
         "exponent_10A_5": 35,
@@ -117,6 +132,20 @@
       "writhe": "4Z",
       "Z_minus_N": "(p-p ifaces)-(n-n ifaces)",
       "exponent": "10A-5 = (σ+σ⁻¹) - 3  [A≥2]"
+    },
+    "bar_parity": {
+      "sum_sigma_plus_inv": "bar-EVEN (q↔q⁻¹ invariant) ⇒ A-only ⇒ leading exponent 10A-5",
+      "writhe_sigma_minus_inv": "bar-ODD ⇒ Z-only (4Z) ⇒ source of the proton-excess correction",
+      "reading": "leading bar-even q₀^(10A-5) + first bar-odd Z-correction; a symmetric sum cannot carry Z-dependence, so ³He/T asymmetry is forced into the writhe"
+    },
+    "writhe_decomposition": {
+      "identity": "writhe = 4Z = intra(3Z+N) + interface(Z-N)",
+      "per_nucleon_intra_writhe": {
+        "proton": "6σ-3σ⁻¹ = +3",
+        "neutron": "5σ-4σ⁻¹ = +1"
+      },
+      "p_ne_n_seed": "3 ≠ 1 ⇒ proton walk more positive-chirality ⇒ proton excess penalised faster than neutron excess (³He -1.40 vs mirror T -0.07)",
+      "interface_writhe": "(Z-1) p-p σ minus (N-1) n-n σ⁻¹ = Z-N (mirror-pair splitter; T & ³He share σ+σ⁻¹=28 ⇒ identical leading exp 25, differ only here)"
     },
     "per_nucleon_10": "9 (intra-𝓑₃ non-averaged) + 1 (interface, amortized)",
     "predictions_exponent": {
