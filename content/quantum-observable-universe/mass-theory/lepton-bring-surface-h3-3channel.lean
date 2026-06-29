@@ -1,5 +1,4 @@
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Algebra.Ring.Basic
+import Mathlib.Tactic
 
 
 /-!
