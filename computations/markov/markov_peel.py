@@ -84,13 +84,17 @@ _COLOR_DELTA: "tuple[float, object] | None" = None
 def _color_delta():
     global _COLOR_DELTA
     if _COLOR_DELTA is None:
-        from _li_2_q_util import flavor_split_subleading
+        # DE-WIRED 2026-06-29 (owner directive): the canonical color-weighting
+        # δ now uses the PROVEN leading flavor split (flavor_split_leading,
+        # prop:flavor-split-substrate), NOT the posited flavor_split_subleading
+        # — the (1+ℏ_q³) factor is unproven and 76%-insufficient (audit
+        # 2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md).
+        # Re-wire to the derived 3-strand correction once it lands.
+        from _li_2_q_util import flavor_split_leading
         from q_parameter import Q as _Q0
-        d_num = float(flavor_split_subleading(mp.mpf(str(_Q0))))
-        # symbolic mirror of flavor_split_subleading(q):
-        #   leading = (q−1)²·(1−q⁻⁴)/3 ;  subleading = leading·(1+((q−1)/q)³)
-        leading = (q_sym - 1) ** 2 * (1 - q_sym ** (-4)) / 3
-        d_sym = leading * (1 + ((q_sym - 1) / q_sym) ** 3)
+        d_num = float(flavor_split_leading(mp.mpf(str(_Q0))))
+        # symbolic mirror of flavor_split_leading(q) = (q−1)²·(1−q⁻⁴)/3:
+        d_sym = (q_sym - 1) ** 2 * (1 - q_sym ** (-4)) / 3
         _COLOR_DELTA = (d_num, d_sym)
     return _COLOR_DELTA
 

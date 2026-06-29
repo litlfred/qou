@@ -275,10 +275,14 @@ def closed_form_ratio(
     asymmetry.
     """
     if pn_convention == "bring_color_weighted":
-        from _li_2_q_util import flavor_split_subleading
+        # DE-WIRED 2026-06-29 (owner directive): canonical color-weighting δ
+        # uses the PROVEN leading flavor split, not the posited (1+ℏ_q³)-
+        # corrected subleading (unproven, 76%-insufficient — see audit
+        # 2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md).
+        from _li_2_q_util import flavor_split_leading
         z = markov_z(q)
         h = hecke_h(q)
-        delta_m_over_M = flavor_split_subleading(q)
+        delta_m_over_M = flavor_split_leading(q)
         A = Z + N
         if A < 2:
             return mp.mpf(1)

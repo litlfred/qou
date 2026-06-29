@@ -66,8 +66,9 @@ def to_braid_terms(
             terms = [(co, w + [(0, g + 1)]) for co, w in terms]
         else:
             if delta is None:
-                from _li_2_q_util import flavor_split_subleading
-                delta = flavor_split_subleading(q)
+                # DE-WIRED 2026-06-29: proven leading δ, not posited subleading
+                from _li_2_q_util import flavor_split_leading
+                delta = flavor_split_leading(q)
             expected_d = -(h * (mp.mpf("0.5") - delta / 4))
             if abs(df - float(expected_d)) > _TOL:
                 raise ValueError(
