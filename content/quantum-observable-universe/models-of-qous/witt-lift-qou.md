@@ -7,7 +7,7 @@ $\mathbb{Q}_\pp$ rather than $\mathbb{C}$:
    ([finite field realisation](#ex:finite-field-realisation)) carries a
    skewed-Poisson structure induced by the $q$-commutator
    $[\hat{X},\hat{P}]_q = i\hbar_q$
-   ([Section](#sec:enveloping-algebras)).
+   ([Section](#sec:enveloping-algebras-models)).
 
 2. The Witt vector lift $\widehat{G}$
    ([Witt vector lift](#def:witt-vector-lift)) is the non-commutative
