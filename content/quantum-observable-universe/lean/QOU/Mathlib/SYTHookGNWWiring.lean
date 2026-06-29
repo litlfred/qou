@@ -113,4 +113,32 @@ theorem betaGapProd_cast : ∀ (t : List ℕ) (a : ℕ), (∀ p ∈ t, p ≤ a) 
       rw [show (c :: r).getD (m + 1) 0 = r.getD m 0 from rfl]; push_cast; ring
     · rw [show (c :: r).getD 0 0 = c from rfl]; push_cast; ring
 
+/-- The `ℕ`-indexed β-value `βᵢ = l[i] + (k−1−i)` (no `Fin` bound), for stating Vandermonde products
+over `range`. Agrees with `betaVec` on valid indices. -/
+noncomputable def betaNat (l : List ℕ) (i : ℕ) : ℚ :=
+  (l.getD i 0 : ℚ) + ((l.length - 1 - i : ℕ) : ℚ)
+
+/-- `betaVec` is `betaNat` restricted to `Fin k`. -/
+theorem betaVec_eq_betaNat (l : List ℕ) (i : Fin l.length) : betaVec l i = betaNat l i.val := rfl
+
+/-- **Per-row Vandermonde factor.** The corpus' recursive gap factor at row `i` is the column
+`∏_{i<j}(βᵢ − βⱼ)` of the Vandermonde: `betaGapProd (l[i]) (l.drop (i+1)) = ∏_{m<k−1−i}(βᵢ − β_{i+1+m})`
+(reindex `j = i+1+m`). -/
+theorem betaGapProd_row_cast (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (i : ℕ) (hi : i < l.length) :
+    (betaGapProd (l.getD i 0) (l.drop (i + 1)) : ℚ)
+      = ∏ m ∈ Finset.range (l.length - 1 - i), (betaNat l i - betaNat l (i + 1 + m)) := by
+  have hlen : (l.drop (i + 1)).length = l.length - 1 - i := by
+    rw [List.length_drop]; omega
+  rw [betaGapProd_cast (l.drop (i + 1)) (l.getD i 0)
+        (fun p hp => QOU.Mathlib.SYTBeta.drop_le_getD l hl i hi p hp), hlen]
+  apply Finset.prod_congr rfl
+  intro m hm
+  rw [Finset.mem_range] at hm
+  have hgd : (l.drop (i + 1)).getD m 0 = l.getD (i + 1 + m) 0 := by
+    rw [List.getD_eq_getElem?_getD, List.getD_eq_getElem?_getD, List.getElem?_drop]
+  rw [hgd]
+  unfold betaNat
+  have hAB : l.length - 1 - i = (l.length - 1 - (i + 1 + m)) + 1 + m := by omega
+  rw [hAB]; push_cast; ring
+
 end QOU.Mathlib.SYTBetaLagrange
