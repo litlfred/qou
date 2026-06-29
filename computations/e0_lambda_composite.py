@@ -68,10 +68,6 @@ H = Q0 - QINV  # h = q - q⁻¹
 
 # experimental anchors (CODATA 2022, via experimental_constants.py)
 from experimental_constants import (  # noqa: E402
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     M_E_MEV, M_P_MEV, m_n_derived_3input,
 )
 M_E = mpf(str(M_E_MEV))
