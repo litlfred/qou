@@ -53,11 +53,11 @@ via any process.
 
 2. **No scattering decay.** Any decay channel
    $\nu \to \gamma + \cdots$ or $\nu \to \nu' + \cdots$ must
-   pass through the $T_{3,5}$ topology (or something at least as
-   complex).  The $T_{3,5}$ mediator requires $10$ $R$-matrix
-   applications — $10$ Planck steps of braid computation.  Each
-   application costs crossing energy $(q - q^{-1}) \cdot \mu_0$.
-   The total energy barrier:
+   pass through the $T_{3,5}$ topology (or a higher-genus equivalent).
+   The $T_{3,5}$ mediator is an element of length $10$ in the Artin
+   generators. Each crossing operation incurs an energy penalty
+   proportional to $(q - q^{-1})\mu_0$. The total topological obstruction
+   barrier scales strictly with the invariant crossing number:
 
    $$
      E_{\mathrm{box}}  \geq 
@@ -68,20 +68,19 @@ via any process.
      m_\nu =  \mu_0(q - 1).
    $$
 
-   The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot (q + 1) / q \approx 19$ at the substrate parameter $q$: the box
-   energy barrier is $\sim 19$ times the neutrino mass.
+   Since $E_{\mathrm{box}}$ is structurally disjoint from the unknot mass 
+   scale $m_\nu = \mu_0(q - 1)$, the decay channel is strongly suppressed.
 
 3. **No simpler process.** $T_{3,5}$ is the unique cross-family
    mediator on the Bring's surface, and its crossing number $10$
    is a topological invariant.  No isotopy or alternative mediator
    reduces the barrier.
 
-The neutrino is therefore the **most stable** particle in the
+The neutrino is therefore strictly stable in the
 Descartes universe: it has no decay channels at any energy below
 the $T_{3,5}$ crossing threshold.  Unlike the electron (which is
 stable by topological invariance of the trefoil — it *could*
 interact but cannot *decay*), the neutrino is stable by
 **energetic inaccessibility of its only interaction channel**.
-This is why neutrinos pass through matter virtually unimpeded:
-every interaction requires the full box machinery, which is both
-topologically irreducible and energetically suppressed.
+The structural requirement of the full box machinery renders
+these interactions both topologically irreducible and energetically suppressed.
