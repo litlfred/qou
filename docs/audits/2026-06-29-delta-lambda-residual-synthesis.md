@@ -42,18 +42,18 @@ neutron `+1` fixing the **sign** (proton excess penalised). Measured values:
 | 3 (³He/T) | −1.34 |
 | 6 (⁶Be/⁶He) | −1.73 |
 | 8 (⁸B/⁸Li) | −1.80 |
-| 10 | _(pending compute)_ |
-| 12 | _(pending compute)_ |
+| 10 (¹⁰C/¹⁰Be) | −1.73 |
+| 12 (¹²N/¹²B) | −1.72 |
 
-**Trend (item 3 characterization).** `b(A)` grows then **saturates** (−1.34 →
-−1.73 → −1.80): sub-linear in A, despite the writhe itself growing as `4Z ∼ 2A`.
-The saturation is the same `log`-compression that flattens `a(A)` — the residual
-is a *ratio* whose logarithm grows slowly. Physically `b` is the IMME
-charge-asymmetry coefficient (Coulomb-displacement + n–p mass term); in real
-nuclei the MeV-level `b` grows ~`A^{2/3}` (Coulomb), but here it is the *residual
-exponent's* odd part, which saturates. **Honest status:** `b(A)` is an
-observational trend consistent with a Coulomb-displacement reading; a
-parameter-free categorical derivation is **not** claimed (3–5 points, no fit).
+**Trend (item 3 characterization).** After an initial rise (A=3 `−1.34`),
+`b(A)` is **constant to ~3 % across A=6–12** (`−1.73, −1.80, −1.73, −1.72`) — it
+**saturates to ≈ −1.73**, *not* the `~A^{2/3}` growth a raw MeV Coulomb term
+shows. The flattening is the `log`-ratio compression that also kills `a(A)`'s
+slope: `Δ_λ` is a ratio whose logarithm grows slowly. So the bar-odd writhe
+correction contributes a **near-A-independent** charge-asymmetry exponent.
+**Honest status:** a clean constant `b ≈ −1.73` is the observation; whether it is
+a categorical Coulomb-displacement invariant is **not** derived (no fit, Δ_λ
+gate) — but the constancy is a sharper target than a growing fit would be.
 
 ### `c(A)` — the bar-even quadratic (small, A-independent)
 
@@ -65,13 +65,17 @@ not the T=1 isobaric analog. Correcting to the analog state (measured `E_x`:
 
 | A | c (raw) | c (same-T, clean) |
 |---|---|---|
-| 6 | −1.24 | −0.11 |
-| 8 | −3.44 | −0.10 |
-| 10 | _(pending)_ | _(pending)_ |
-| 12 | _(pending)_ | _(pending)_ |
+| 6 | −1.24 | −0.109 |
+| 8 | −3.44 | −0.096 |
+| 10 | −0.32 | −0.062 |
+| 12 | −1.75 | −0.037 |
 
-So the genuine quadratic is **small (≈−0.1) and A-independent** — the residual is
-**linear-(writhe)-dominated** (`|b| ≈ 1.8 ≫ |c| ≈ 0.1`).
+So the genuine quadratic is **small and shrinking toward zero** with A (−0.11 →
+−0.10 → −0.062 → −0.037). The raw `c` is erratic (its T=0/T=1 contamination
+tracks the varying analog-state energy `E_x` = 3.6/16.6/1.7/15.1 MeV); the same-T
+`c` is monotone and tiny. The residual is therefore **strongly
+linear-(writhe)-dominated** (`|b| ≈ 1.7` vs `|c| ≲ 0.1`, vanishing), even more so
+than the A=6/8 pair alone suggested.
 
 ## The two Askey structures (one per quantum number)
 
@@ -86,9 +90,10 @@ So the genuine quadratic is **small (≈−0.1) and A-independent** — the resi
 
 - **Form: established** (IMME degree-2; Lean-proved parity algebra).
 - **`a(A)`: light-nucleus power law only** (refuted A≥5, scope-(a)).
-- **`b(A)`: dominant, saturating; Coulomb-displacement candidate** (observational,
-  no derivation).
-- **`c(A)`: small ≈−0.1, A-independent** (the residual is writhe-linear-dominated).
+- **`b(A)`: dominant and ≈ CONSTANT `−1.73`** across A=6–12 (observational; a
+  near-A-independent charge-asymmetry exponent, not a growing Coulomb term).
+- **`c(A)`: small and vanishing** (same-T `−0.11 → −0.037`) — the residual is
+  strongly writhe-linear-dominated.
 - **Not wired; no fit.** Closure would need an owner reversal of the Δ_λ fit-gate.
-- **Open:** A=10/12 confirmation (pending compute); a categorical origin for the
-  small `c`; whether `b(A)`'s saturation is the categorical Coulomb.
+- **Open:** a categorical origin for the constant `b ≈ −1.73`; why same-T `c → 0`;
+  extending the ladder (A=14+) — though `b`/`c` look converged by A=12.
