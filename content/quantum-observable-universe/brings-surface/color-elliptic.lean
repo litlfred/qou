@@ -22,9 +22,10 @@ numerical evaluation.
 
 namespace QOU.Brings
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -59,11 +60,11 @@ def colorCubic (R : Type*) [CommRing R] (z X : R) : R :=
 theorem constant_coeff_identity (z : R_q) :
     z ^ 3 + z ^ 2 + z + 1 = (z + 1) * (z ^ 2 + 1) := by ring
 
-/-- The sum of coefficients (evaluating at X = 1) equals 4(z+1)
-    which vanishes at z = −1, confirming X = 1 is not generically a root. -/
+/-- The sum of coefficients (evaluating at `X = 1`):
+    `colorCubic z 1 = z³ + 2z² + 3z + 4`. -/
 -- Ref: [manuscript] §5, Color fibration
 theorem color_cubic_at_one (z : R_q) :
-    colorCubic R_q z 1 = 4 * (z + 1) := by
+    colorCubic R_q z 1 = z ^ 3 + 2 * z ^ 2 + 3 * z + 4 := by
   unfold colorCubic
   ring
 
@@ -73,5 +74,7 @@ theorem color_cubic_at_z_zero (X : R_q) :
     colorCubic R_q 0 X = X ^ 3 + X ^ 2 + X + 1 := by
   unfold colorCubic
   ring
+
+end
 
 end QOU.Brings
