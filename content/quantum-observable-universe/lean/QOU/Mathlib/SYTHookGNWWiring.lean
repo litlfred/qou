@@ -157,4 +157,23 @@ theorem betaProdGap_cast (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
   rw [Finset.mem_range] at hi
   exact betaGapProd_row_cast l hl i hi
 
+/-- The `ℕ`-valued β-number `βᵢ = l[i] + (k−1−i)` (= `betaNat l i` as a natural). -/
+def betaNatVal (l : List ℕ) (i : ℕ) : ℕ := l.getD i 0 + (l.length - 1 - i)
+
+/-- **`betaFactProd` as `∏ βᵢ!`.** `(betaFactProd l : ℚ) = ∏_{i<k} (βᵢ)!`. Each factor depends only on
+`l[i]` and the drop *length* `k−1−i`, so under `removeCorner = l.set c (l[c]−1)` only factor `c` changes
+(the factorial side of the per-corner ratio). -/
+theorem betaFactProd_cast (l : List ℕ) :
+    ((QOU.Mathlib.SYTEnum.betaFactProd l : ℕ) : ℚ)
+      = ∏ i ∈ Finset.range l.length, ((betaNatVal l i).factorial : ℚ) := by
+  rw [show QOU.Mathlib.SYTEnum.betaFactProd l
+        = ∏ i ∈ Finset.range l.length, (betaNatVal l i).factorial from by
+      unfold QOU.Mathlib.SYTEnum.betaFactProd betaNatVal
+      rw [QOU.Mathlib.SYTBeta.list_range_map_prod]
+      apply Finset.prod_congr rfl
+      intro i hi; rw [Finset.mem_range] at hi
+      congr 2
+      rw [List.length_drop]; omega]
+  rw [Nat.cast_prod]
+
 end QOU.Mathlib.SYTBetaLagrange
