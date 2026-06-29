@@ -93,7 +93,6 @@ theorem kappa_squared_closed_form
       = τ ^ 2 * (-2 * ν * Real.log τ + C₂) / (C₁ - ν * τ ^ 2) := by
   unfold V1 V2
   field_simp
-  ring
 
 /-- Helper: the limiting denominator $C_1 - \nu\tau^2$ is positive
     near the collision for $C_1 > 0$. -/
@@ -110,11 +109,12 @@ theorem denominator_pos_near_zero
     refine ⟨C₁ / ν, by positivity, ?_⟩
     intro τ _ hτ2
     have : ν * τ ^ 2 < C₁ := by
-      have := (div_lt_iff hν).mp hτ2
-      linarith
+      have hmul : ν * τ ^ 2 < ν * (C₁ / ν) := by
+        exact mul_lt_mul_of_pos_left hτ2 hν
+      rwa [mul_div_cancel₀ C₁ (ne_of_gt hν)] at hmul
     linarith
 
-/-- **First-order branch (B) limit.**  Under the singular
+/- **First-order branch (B) limit.**  Under the singular
     Biot–Savart strain, the squared core aspect ratio vanishes at
     the collision: $\kappa^2(\tau) \to 0$ as $\tau \to 0^+$.
 
@@ -141,7 +141,7 @@ theorem kappa_squared_tends_to_zero
     (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) :
     ∀ ε > 0, ∃ δ > 0, ∀ τ : ℝ, τ ≠ 0 → 0 < τ → τ < δ →
       |V2 ν C₂ τ / V1 C₁ ν τ| < ε :=
-  kappa_squared_tends_to_zero_axiom C₁ C₂ _hC
+  kappa_squared_tends_to_zero_axiom C₁ C₂ ν _hC
 
 end TownsendBiotSavart
 

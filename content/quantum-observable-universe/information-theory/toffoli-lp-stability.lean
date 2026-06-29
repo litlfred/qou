@@ -119,7 +119,7 @@ theorem toffoli_lp_stable (q : ℝ) :
       · -- q < 0: √q = 0 by Real.sqrt convention.
         push_neg at hq_nn
         have hsqrt_zero : Real.sqrt q = 0 :=
-          Real.sqrt_eq_zero'.mpr (Or.inl (le_of_lt hq_nn))
+          Real.sqrt_eq_zero'.mpr (le_of_lt hq_nn)
         rw [hsqrt_zero] at hf
         linarith
     · -- q = q⋆: f = 0, contradicts hf.
