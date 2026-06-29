@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.NS.NSCounterexample — `conj:ns-counterexample` axiomatised
 

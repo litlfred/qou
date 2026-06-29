@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+
 -- Ref: [manuscript] Ch. 7, §q-navier-stokes
 -- q-deformed Navier-Stokes equation
 
@@ -23,9 +26,9 @@ structure QNavierStokes where
 theorem q_viscosity_pos {q : ℝ} (hq : 1 < q) :
     0 < (1 - q⁻¹) / 2 := by
   have hq_pos : 0 < q := by linarith
-  have hq_inv_lt : q⁻¹ < 1 := by
-    rw [inv_lt_one_iff_of_pos hq_pos]
-    exact hq
+  have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq_pos
+  have hmul : q⁻¹ * q = 1 := inv_mul_cancel₀ (ne_of_gt hq_pos)
+  have hq_inv_lt : q⁻¹ < 1 := by nlinarith [hq_inv_pos, hmul, hq]
   linarith
 
 /-- At q = 1, viscosity vanishes (Euler limit). -/

@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 -- Ref: [manuscript] Ch. 7, §substrate-line-bundle
 -- Substrate line bundle L_θ
 

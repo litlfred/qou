@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.NS.CriticalExponent — `conj:critical-exponent` axiomatised
 

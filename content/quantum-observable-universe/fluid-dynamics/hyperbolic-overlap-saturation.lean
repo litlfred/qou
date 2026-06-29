@@ -1,4 +1,8 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.FluidDynamics.HyperbolicOverlapSaturation
@@ -93,10 +97,9 @@ theorem lambda_lt_quasi_steady
     lambda Γ π_ ν < lambdaQuasiSteady Γ π_ ν := by
   unfold lambda lambdaQuasiSteady
   have hd1 : 0 < 2 * Γ + π_ * ν := by positivity
-  have hΓne : Γ ≠ 0 := ne_of_gt hΓ
-  rw [div_lt_div_iff hd1 hΓ]
   have hπν : 0 < π_ * ν := mul_pos hπ hν
-  nlinarith [hπν, sq_nonneg (π_ * ν), hΓ]
+  have hlt : Γ < 2 * Γ + π_ * ν := by linarith
+  exact div_lt_div_of_pos_left hπν hΓ hlt
 
 /-- **Strict positivity of the Levi condition number.**  The
     corrected asymptotic ratio $\kappa^2 = \lambda$ is strictly
