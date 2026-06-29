@@ -86,7 +86,6 @@ theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
     lambda_C q m_e * q_int q 3 := by
   unfold lambda_ex lambda_C
   field_simp
-  ring
 
 -- ── Seven-term binding energy ──────────────────────────────────
 

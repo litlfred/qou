@@ -188,6 +188,7 @@ theorem pn_averaging_subsingleton
   obtain ⟨_, _, hN'⟩ := h'
   apply Subtype.ext
   funext q
+  show σ q = σ' q
   rw [hN q, hN' q]
 
 end QOU.BraidKnot
