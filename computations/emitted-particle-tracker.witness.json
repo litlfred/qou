@@ -1,15 +1,15 @@
 {
   "engine": "emitted_particle_tracker.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T02:42:14.462163+00:00",
-  "commitSha": "c6b1455e40979190b08851bd5e665716558fcd88",
+  "computedAt": "2026-06-29T17:11:19.890852+00:00",
+  "commitSha": "5b33e2073fca0d47e96b2c7a52fc5dc647f07c79",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 19,
   "computation": "emitted-particle-tracker",
   "scriptFile": "emitted_particle_tracker.py",
   "scriptHash": "44c4b7caccdc",
-  "scriptCommitSha": "725c0d93bc16287570ded18934f7d41ff53a8071",
+  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,12 +35,12 @@
       "N": 0,
       "A": 1,
       "gamma_vertices": 5,
-      "tr_q0": 1.065306238075878,
+      "tr_q0": 1.065306228613167,
       "tr_qinv": 0.06824145930949503,
-      "retained_MeV": 2.3725044642029527,
-      "emitted_MeV": 2.0868470238871284,
+      "retained_MeV": 2.372504444397589,
+      "emitted_MeV": 2.086847004081765,
       "emitted_multilink_MeV": 0.0,
-      "delta_emitted_MeV": 2.0868470238871284
+      "delta_emitted_MeV": 2.086847004081765
     },
     "step_D": {
       "name": "D",
@@ -48,12 +48,12 @@
       "N": 1,
       "A": 2,
       "gamma_vertices": 12,
-      "tr_q0": 0.3883572761460903,
-      "tr_qinv": 0.007768406519664677,
-      "retained_MeV": 0.8290872564760174,
-      "emitted_MeV": 0.7965688557238311,
-      "emitted_multilink_MeV": 1.235020124393203,
-      "delta_emitted_MeV": -1.2902781681632973
+      "tr_q0": 0.3883571887237809,
+      "tr_qinv": 0.00776840803542845,
+      "retained_MeV": 0.829087076674441,
+      "emitted_MeV": 0.7965686695772967,
+      "emitted_multilink_MeV": 1.2350202744983327,
+      "delta_emitted_MeV": -1.2902783345044682
     },
     "step_3He": {
       "name": "3He",
@@ -61,12 +61,12 @@
       "N": 1,
       "A": 3,
       "gamma_vertices": 17,
-      "tr_q0": 0.2065785284515809,
-      "tr_qinv": 0.00026470338915575924,
-      "retained_MeV": 0.43292090140030337,
-      "emitted_MeV": 0.43181285808830117,
-      "emitted_multilink_MeV": 1.7592944602964535,
-      "delta_emitted_MeV": -0.36475599763552996
+      "tr_q0": 0.2065784750874029,
+      "tr_qinv": 0.0002647034408044219,
+      "retained_MeV": 0.43292078981769055,
+      "emitted_MeV": 0.431812746289488,
+      "emitted_multilink_MeV": 1.7592945142210397,
+      "delta_emitted_MeV": -0.3647559232878086
     },
     "step_4He": {
       "name": "4He",
@@ -74,12 +74,12 @@
       "N": 2,
       "A": 4,
       "gamma_vertices": 24,
-      "tr_q0": 0.05535844340023874,
-      "tr_qinv": 3.5344088359558784e-05,
-      "retained_MeV": 0.11593866619723676,
-      "emitted_MeV": 0.11579071652099525,
-      "emitted_multilink_MeV": 1.9084623973470445,
-      "delta_emitted_MeV": -0.3160221415673059
+      "tr_q0": 0.05535842626678308,
+      "tr_qinv": 3.534409525586224e-05,
+      "retained_MeV": 0.11593863035151221,
+      "emitted_MeV": 0.11579068064640291,
+      "emitted_multilink_MeV": 1.9084623623263057,
+      "delta_emitted_MeV": -0.3160220656430851
     },
     "step_6Li": {
       "name": "6Li",
@@ -87,12 +87,12 @@
       "N": 3,
       "A": 6,
       "gamma_vertices": 36,
-      "tr_q0": 0.007891075511201098,
-      "tr_qinv": 1.6080576869993932e-07,
-      "retained_MeV": 0.016516281964380704,
-      "emitted_MeV": 0.01651560883451596,
-      "emitted_multilink_MeV": 1.9747263927502836,
-      "delta_emitted_MeV": -0.09927510768647929
+      "tr_q0": 0.00789107411351287,
+      "tr_qinv": 1.608058000762014e-07,
+      "retained_MeV": 0.01651627903909831,
+      "emitted_MeV": 0.016515605909102227,
+      "emitted_multilink_MeV": 1.9747263956756975,
+      "delta_emitted_MeV": -0.09927507473730068
     },
     "step_7Li": {
       "name": "7Li",
@@ -100,12 +100,12 @@
       "N": 4,
       "A": 7,
       "gamma_vertices": 43,
-      "tr_q0": 0.0021146323287923323,
-      "tr_qinv": 2.147132802411181e-08,
-      "retained_MeV": 0.0044259501321395585,
-      "emitted_MeV": 0.004425860253572107,
-      "emitted_multilink_MeV": 1.833958331161393,
-      "delta_emitted_MeV": -0.012089748580943855
+      "tr_q0": 0.0021146319542430445,
+      "tr_qinv": 2.1471332213576033e-08,
+      "retained_MeV": 0.0044259493482202575,
+      "emitted_MeV": 0.004425859469635269,
+      "emitted_multilink_MeV": 1.8339583319453299,
+      "delta_emitted_MeV": -0.012089746439466958
     }
   }
 }
