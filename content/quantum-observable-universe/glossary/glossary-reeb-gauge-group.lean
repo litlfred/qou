@@ -1,3 +1,5 @@
+import Mathlib.Tactic.Basic
+
 /-!
 # QOU.ReebGaugeGroup — Glossary: Reeb gauge group U₁(R)
 
