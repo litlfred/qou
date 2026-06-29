@@ -1048,7 +1048,457 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "vertex-algebra-relations.md: extensive prose tying each axiom to 'OPE channels', 'locality', 'genus-0 cobordism', etc.",
+        "notes": "This proposition block is really a long dictionary of QU/QUO axioms in knot coordinates, interleaving substantial physical/categorical interpretation (OPE, locality, cobordism, particle state space) with the relations. Heavy interpretation embedded in a 'proposition'; would be cleaner split, but the content is structural."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Vertex-algebra relations on Hecke generators in sec:braiding-relations; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Relations stated over H_n(R,q) generically; Lean ground ring R_q=ℤ[q,q⁻¹]. C-8 mentions ℝ Hilbert structure but localises it ('over K=ℝ ... over a general field'). Acceptable wall side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No narrative **Proof.** body; relations are asserted/cross-referenced."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "vertex-algebra-relations.ts: lean.ref \"qou:QOU.VertexAlgebra.descartes_genus\"; lean: \"theorem descartes_genus : (2:ℤ) - 2*4 = -6 := by norm_num\"",
+        "notes": "The .ts lean.ref points at descartes_genus, which proves only the arithmetic (2-2·4=-6) — a single trivial fact, while the .md asserts ~26 structural+cohomological relations. The bulk of the relations (Markov trace, non-degeneracy, observability, χ=-6, self-dual curvature) are `axiom`s in the .lean, not theorems. The referenced declaration is wildly narrower than the proposition."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "vertex-algebra-relations.lean: descartes_genus is the lean.ref target",
+        "notes": "descartes_genus itself is honest (a true arithmetic fact), but selecting it as THE lean.ref for a 26-relation proposition under-represents the formal status; the substantive relations are axiomatised. Not a weakening of a specific claim, but the manifest's lean.ref is unrepresentative."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "descartes_genus is norm_num; no self-projection. (The axioms are inputs, not projections.)"
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "vertex-algebra-relations.lean: \"theorem descartes_genus : (2 : ℤ) - 2 * 4 = -6 := by norm_num\"",
+        "notes": "The lean.ref declaration is the trivial arithmetic identity 2-8=-6; as the nominal formalisation of a 26-relation proposition it is essentially content-free relative to the proposition's substance (the real content lives in unproved `axiom`s)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No false premise in descartes_genus; the axioms are strong but not contradictory on their face."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "descartes_genus has no hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "norm_num on a true arithmetic goal is justified; not masking. (The dq_squared_nonzero archimedean theorem is commented out.)"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Sampled relations are standard: Hecke σ²=(q-q⁻¹)σ+1, Yang-Baxter, snake identities, Markov I/II with δ=-(q+q⁻¹), χ=[n]_q!, Descartes χ=-6⇒g=4. No false identity found; QUO-3b/C-7 'instanton' claims are framework-internal definitions."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "vertex-algebra-relations.lean: descartes_genus (lean.ref) is `(2:ℤ)-2*4=-6 := by norm_num`; the substantive relations are `axiom MarkovTrace/markov_nondegenerate/observability/descartes_trace/self_dual_curvature`",
+        "notes": "The block's nominal Lean formalisation (lean.ref = descartes_genus) is a trivial arithmetic fact; nearly all the proposition's substance is carried by un-discharged `axiom`s. The proposition is real, but its formal backing is mostly axiomatised + one trivial theorem."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Axioms are honest inputs (Jones 1987 Markov-trace existence) with -- Ref: pins; no self-referential derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "vertex-algebra-relations.md: \"These **26 relations** ... constitute a complete presentation of the QOU vertex algebra in knot coordinates\"",
+        "notes": "'Complete presentation' is a strong completeness claim; the .md provides a dictionary, and the rank-5 character-matrix 'completeness' statement (C-9) is asserted, while the Lean encodes the relations as axioms — completeness is not established. Major as a stated-strength-vs-support gap."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "χ=-6 / g=4 trace to the Descartes constraint elsewhere; no new free parameter introduced here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Individual axiom translations follow standard Hecke/Markov-trace dictionary; no specific 'therefore' gap identified among the sampled relations."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "vertex-algebra-relations.ts: lean.ref descartes_genus vs ~26 narrative relations",
+        "notes": "The Lean's only non-axiom, non-trivial content relevant to the prop is descartes_genus (2-8=-6); the proposition asserts ~26 relations, most of which are `axiom`s. The Lean proves drastically less than the narrative claims."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "kassel1995/jones1987/yekutieli2010 cited appropriately for Hecke, Markov trace, and obstruction classes."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "vertex-algebra-relations.md QU-3b: \"$\\delta = -(q + q^{-1})$\" vs C-4b: \"$\\chi(A) = \\mathrm{tr}_M(\\mathrm{id}) = -6$\"",
+        "notes": "Many objects (ξ weight operator, ω_V Casimir, R̆_{(n)}, the modes a_m) are introduced inline without standalone definitions; the dictionary is dense and several symbols (e.g. the precise normalisation linking δ=-(q+q⁻¹) to χ=[n]_q!) are used without reconciliation. Minor, given the block's surveying intent."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No fitted numerics; χ=-6 is a topological constraint, not a tuned match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "The axiom-to-knot dictionary (Chern classes, instanton, Hodge) is framework-internal and self-consistent; no measurable-physics contradiction asserted as fact."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No backing witness; relations are axiomatised."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "949e6c68a199",
+          "ts": "b9a6912ee340",
+          "lean": "e6090971b0e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "vertex-algebra-relations.ts: lean.ref descartes_genus (2-2*4=-6) vs ~26 narrative relations",
+        "notes": "A useful and largely-correct dictionary of QU/QUO axioms in knot coordinates, but it claims a 'complete presentation' while its Lean backing is one trivial arithmetic theorem (descartes_genus) plus a battery of un-discharged `axiom`s."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

@@ -1009,7 +1009,424 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement (a)-(c) is the bare orthogonality/completeness/eigendecomposition claim; no physical interpretation prose embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Peter-Weyl basis underpins the SU_q(2) mode decomposition used in the Leray-profile/vortex-spectrum machinery of this chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement uses Hilbert completion L^2(A) and Frobenius pairing — archimedean analytic objects genuinely required for an L^2 completeness claim; ℝ-side appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No narrative Proof body in the .md (statement-only block)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "quantum_peter_weyl.lean:45: \"theorem quantum_peter_weyl [ctx] : ∀ n : ℕ, ctx.dim_V n = n + 1\"",
+        "notes": "The .md states orthogonality, L^2 completeness and the Δ_q eigendecomposition; the Lean decl proves only the trivial dimension formula dim(V_j)=2j+1 (n+1), a far weaker/different claim. The real content sits on the context's `peter_weyl_holds` axiom field."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "quantum_peter_weyl.lean:6: \"Placeholder canonical ... The full Lean statement and proof are pending\"",
+        "notes": "Lean concludes the n+1 dimension identity rather than the manuscript Peter-Weyl claim; honest placeholder (peter_weyl_holds axiomatised), but the proved goal is weaker than the .md statement."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Conclusion (dim_V n = n+1) is derived via impl_quantum_peter_weyl from peter_weyl_active; it is not a verbatim projection of a field whose type is dim_V n = n+1."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Goal is `dim_V n = n+1`, not `True`/`x=x`; a genuine (if trivial) arithmetic claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No False/contradictory hypothesis; peter_weyl_holds is an ordinary Prop field."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "peter_weyl_active and impl_quantum_peter_weyl are both consumed in the term."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No decide/trivial masking; the body is a function application."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Orthogonality 1/[2j+1]_q, eigenvalue [j]_q[j+1]_q (q-Casimir), eigenspace dim (2j+1)^2 are the standard SU_q(2) Peter-Weyl facts; no false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": ".md statement is substantive; vacuity concern is on the Lean side (captured under proof-statement-integrity / lean-narrative-divergence), not the narrative claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No back-fitting; standard representation-theoretic statement."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "quantum-peter-weyl.ts:7: \"Quantum Peter--Weyl theorem: completeness of the SU_q(2) eigenbasis\"",
+        "notes": "Titled/kinded as a `theorem` while the Lean formalisation is an explicit placeholder (real claim is the unproved `peter_weyl_holds`); narrative completeness claim is correct but the formal status is weaker than 'theorem' implies."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No free parameter; structure indexed by spin j only."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement-only block; (a)-(c) are coherent and standard."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "quantum_peter_weyl.lean:46: \"ctx.impl_quantum_peter_weyl ctx.peter_weyl_active\"",
+        "notes": "Lean proves the dimension identity dim_V n = n+1, vacuously implied by the axiomatised peter_weyl_holds; it does not formalise the orthogonality/completeness/eigendecomposition the .md asserts."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No spurious citation; relies on uses[] (q-spectral-sobolev, pawlowski-leitner)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "D^j_mn, Frobenius pairing, Δ_q, [2j+1]_q all reference defined constructs; orthonormal basis of τ(V_j) specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Pure representation-theory statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b5ef7dba0d93",
+          "ts": "3dca94a9de29"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "notes": "Narrative statement is correct standard SU_q(2) Peter-Weyl; strongest objection: the `theorem`-kinded block's Lean formalisation proves only dim_V=2j+1, not the stated completeness/orthogonality, so the formal backing is a placeholder (proof-narrative-lean-equiv FAIL)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

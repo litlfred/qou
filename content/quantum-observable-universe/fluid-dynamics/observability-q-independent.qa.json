@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "observability-q-independent.md:23: \"**Mathematical Novelty.** ... the mathematical novelty lies in establishing this exact independence as the formal mechanism that permits properties to safely propagate...\"",
+        "notes": "Theorem block carries a 'Mathematical Novelty' interpretive paragraph that belongs in a linked remark per voice-statement-no-interpretation; the bare statement (the Hom-space equality) precedes it."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-independence theorem propagating observability to q=1; core to the chapter's q->1 argument."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement is the equality of Hom-spaces over sections of the substrate bundle — categorical, generic (Lean uses generic R per §7c); no gratuitous ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Proof is in the sibling proof block; this statement block has no Proof body."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Library decl proves homRankAt q1 = homRankAt q2 ∧ = 0; matches 'Hom over q1 = Hom over q2' and the observability axiom (rank 0)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Sibling .lean is an honest shadow-stub pointing to the real GaugeFieldFluidDynamics decl (AGENTS.md §0b carve-out); the buildable decl carries the genuine statement."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Library proof ⟨rfl, obs.observable⟩: q-independence is rfl (q not consumed), observability from the data field — derived, not a projection of the conjunction itself."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "observability-q-independent.lean:19: \"theorem observability_q_independent : True := by ... trivial\"",
+        "notes": "The sibling stub concludes `: True := trivial`; legitimate as a documented shadow-stub (real decl in GaugeFieldFluidDynamics.lean), but the sibling itself is the trivial-True placeholder pattern flagged by this criterion."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No False premise in the library decl."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Library decl: obs.observable and rfl both used; q1,q2 appear in the (constant) homRankAt."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Library proof uses rfl + field projection, not decide; the sibling-stub `trivial` is for `: True` and documented, not masking a substantive goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Hom(1,Ad(A)) independent of substrate section is correct (Hom uses no differential)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": ".md statement is substantive (the q=1 extension is the point); the trivial-True is on the sibling stub, captured under proof-no-trivial-true."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No circular reasoning."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Novelty paragraph self-describes the result as 'a straightforward categorical triviality' — honest about scope, not overclaimed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q1=q2 Hom equality and the q=1 corollary follow directly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Buildable library decl matches the .md; sibling is a documented stub, not a weaker substitute claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Substrate sections q1,q2 and Hom(1,Ad(A)) well-defined via cited blocks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Categorical statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "828cf5c309b0",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Correct categorical-triviality theorem with matching library Lean; minor objections: novelty prose in the statement block and the sibling `: True` stub."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Divisor/blowup structure of the wavefunction zero-locus tied to vortex topology; on-topic for the Madelung-fluid thread."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Standard: zero-locus of ψ is a Weil divisor; blowup at a ramification point gives exceptional CP^1; E_i·E_j intersection pairing — all correct algebraic-geometry usage."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Substantive structural remark with interprets backing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "madelung-divisor-topology.md:14: \"the intersection pairing measures the strong-force binding energy from mutual velocity induction\"",
+        "notes": "Identifying the divisor intersection pairing E_i·E_j with 'strong-force binding energy' is a physical interpretation asserted without a derivation linking the homological pairing to a binding-energy scale; reads as interpretive overreach in a remark."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "λ_j are the mass-decomposition coefficients of the cited topological-decomposition prop, not new free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Splitting/linking dichotomy follows from blowup geometry; the binding-energy reading is flagged under da-overclaim, not a logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Remark, no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Weil divisor, exceptional divisor, Hopf-linked filaments unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Vortex-filament linking <-> mutual velocity induction is physically standard; the binding-energy identification is interpretive (flagged elsewhere) but not unit-wrong."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e02ac9927b2b",
+          "ts": "73e410e801cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Sound divisor-topology remark; strongest objection is the un-derived 'intersection pairing = strong-force binding energy' interpretive leap."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

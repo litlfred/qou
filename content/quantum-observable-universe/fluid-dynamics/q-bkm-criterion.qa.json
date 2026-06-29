@@ -1009,7 +1009,415 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement is the BKM iff plus a one-line corollary that the integral is finite for q>1; no extraneous physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-BKM regularity criterion is core fluid-dynamics content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement uses L^∞ norms and a time integral (archimedean); the iff itself is carried generic-ring in Lean per §7c — narrative analytic phrasing is appropriate post-wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No narrative Proof body; statement-only block."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean q_bkm_criterion proves extendsSmoothly ↔ vorticityIntegralFinite, matching the .md iff; the q>1 globality corollary is narrative context outside the iff."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean statement is the genuine iff over generic CommRing; §3b-cond conditional with the two directions as explicit hypotheses (AGENTS.md cites this file as exemplar)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Iff is built by Iff.intro from bkm_necessity and bkm_continuation (the two directional sub-hypotheses), not projected from a single field of its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Goal is a nontrivial iff of two distinct Props, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No False premise; class fields are ordinary implications."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Both bkm_necessity and bkm_continuation are used in the Iff.intro."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No decide/trivial; explicit Iff.intro."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "BKM-type criterion is standard; the q>1 globality follows from the cited q-NS well-posedness theorem; criterion becomes nontrivial only as q->1, correctly noted."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Substantive iff; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Relies on thm:q-ns-wellposedness for globality, not on its own conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Claims iff + q>1 globality (downstream of well-posedness); does not overstate beyond what well-posedness gives."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Globality-from-well-posedness step is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean iff matches narrative iff; no divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No external citation; cross-refs to internal q-NS theorems."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-vorticity omega_q = d_q v defined; q>1 regime fixed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "PDE-criterion statement; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Clean conditional BKM criterion; Lean exemplar per AGENTS.md. No serious objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

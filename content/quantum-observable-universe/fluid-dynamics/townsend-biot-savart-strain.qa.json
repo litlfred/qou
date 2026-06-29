@@ -855,7 +855,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Explicit Townsend-covariance ODE for the core aspect ratio under Biot-Savart strain; directly serves the Levi-degeneracy conjecture in the chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Townsend covariance equations dV1/dt=+2αV1+2ν, dV2/dt=-2αV2+2ν and the integrating-factor solutions V1=C1/τ-ντ, V2=-2ντlnτ+C2τ are correctly solved; α(t)=1/(2c(T*-t)) and Γ-cancellation are standard point-vortex results."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Genuine ODE derivation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No circularity; derives κ²(τ)->0 then shows the approximation breaks down."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Explicitly labels κ->0 as 'first-order Levi prediction' under the point-vortex assumption and flags it as an artefact of the failed approximation — appropriately scope-limited (avoids the structural-exclusion overreach)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Constants C1,C2 fixed by initial cross-section; convention constant c handled explicitly; no hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Crossover τ* where V1~d² invalidating Biot-Savart is logically derived (V1~C1/τ->∞ vs d²~τ->0)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Header notes the Lean sibling states the result in c-agnostic form over a generic ring (archimedean specialisation over ℝ); consistent with the .md's c-convention discussion."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "townsend1951 (covariance evolution), saffman1992 §11.2 / moffatt1994 (Biot-Savart separation) cited for the standard results they contain — appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "V1,V2 (squared core radii), α (strain rate), τ=T*-t, c convention all defined explicitly."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Analytical ODE; no experimental-data match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Strain-rate independence of Γ under point-vortex approximation and viscous core flattening are physically standard fluid-mechanics results."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Analytic derivation; no witness to drift-check."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7bc0720c5ab9",
+          "ts": "a74b7f9e684a",
+          "lean": "8272a7d24e9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Careful, well-cited ODE derivation that honestly flags its own approximation breakdown; no substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

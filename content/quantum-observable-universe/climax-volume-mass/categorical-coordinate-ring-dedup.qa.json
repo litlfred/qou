@@ -816,7 +816,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "categorical-coordinate-ring-dedup.ts: interprets def:crossing-energy; uses hyperelliptic-quintic, descartes-elliptic-curve, wick-rotation, u1-phase-tube",
+        "notes": "Block is a meta/dedup remark spanning Wick rotation, complex-substrate, hyperelliptic quintic and Descartes elliptic curve — material from several chapters — homed in sec:crossing-energy because it interprets def:crossing-energy's q=e^{iΘ} step. Placement is defensible but the content reaches well beyond crossing energy."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "e^{iΘ} a unit in R[i] via Euler; q-q⁻¹=2i sinΘ; ζ₅ as geometric points of Spec — all consistent with prop:categorical-coordinate-ring R[i,q^{±1}]=R[q,q⁻¹][i]/(i²+1)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Interpretive dedup remark, no Lean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Recognises an ambient ring to deduplicate complexifications; no back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "categorical-coordinate-ring-dedup.md: \"the fifth roots of unity $\\zeta_5^k$ are the five geometric points of $\\mathrm{Spec}(R[i, q^{\\pm 1}])$\"",
+        "notes": "Identifying ζ₅^k with 'the five geometric points of Spec(R[i,q^{±1}])' is a strong scheme-theoretic claim asserted in a dedup remark; Spec of a Laurent/complexified ring is not literally a 5-point set, so the phrasing overstates a localisation/specialisation statement. Minor (interpretive)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No new free parameter; i and q are the existing categorical coordinates."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Each dedup item (1-4) is a reasonable 'same ambient ring' observation; explicitly states computations/proofs do not change."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No external citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "R[i,q^{±1}], Gal(R[i]/R)=Z₂, the curves and roots of unity all cross-referenced to their defining blocks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Algebraic dedup; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ab4b536f42c5",
+          "ts": "cc2ec3d50f97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Reasonable categorical-justification dedup remark; only soft point is the 'five geometric points of Spec' phrasing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

@@ -1046,7 +1046,453 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement is the bare continuity claim plus the immediate continuity-corollary; no physical interpretation injected."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Shadow-price continuity sits in sec:knot-operator-energy; LP-dual shadow prices are the section's subject."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement is explicitly multi-realisation (ℝ smooth, ℚ_p continuous, 𝔽_p Zariski); the rational-function content is generic-ring and the archimedean smoothness is correctly localised to the ℝ realisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No narrative **Proof.** body in the .md (proof is deferred to the Lean, which is itself non-substantive — see proof-narrative-lean-equiv)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "shadow-price-continuity.lean:30: \"theorem ShadowPriceContinuity (R : Type u) [CommRing R] : Nonempty (KnotOperatorEnergy R) := by exact ⟨{ partition := [1], q := 0, shadowPrice := 0 }⟩\"",
+        "notes": "The Lean proves only that the data record KnotOperatorEnergy is inhabited; it states/derives NOTHING about rational-function continuity, the generic locus, or the ordering corollary in the .md. Lean ≠ narrative claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "critical",
+        "evidence": "shadow-price-continuity.lean:30: \"Nonempty (KnotOperatorEnergy R)\"",
+        "notes": "The Lean signature's conclusion (Nonempty of a record) is a weakening that does not encode the proposition's actual content (continuity on the generic locus); a 'proof' is obtained by trivialising the statement."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Not a self-projection; it constructs a record value. The defect is weakening (logged under integrity/trivial-true), not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "critical",
+        "evidence": "shadow-price-continuity.lean:30: \"Nonempty (KnotOperatorEnergy R) := by exact ⟨{ partition := [1], q := 0, shadowPrice := 0 }⟩\"",
+        "notes": "Conclusion `Nonempty (KnotOperatorEnergy R)` is discharged by any inhabitant of a non-empty data record — content-free relative to the continuity claim it purports to formalise; docstring itself admits 'Closing this requires the rational-function continuity API'."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No false/contradictory hypothesis used (only [CommRing R])."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Theorem has no mathematical hypotheses beyond the ring instance; vacuity is the issue, not unused hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No decide/trivial used; the masking here is via statement-weakening, not a reflection tactic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "The narrative claim (shadow price is a rational function, continuous on the generic locus) is mathematically true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "shadow-price-continuity.lean:30: \"Nonempty (KnotOperatorEnergy R)\"",
+        "notes": "The Lean formalisation is content-free: it proves inhabitation of a record, not continuity. The .md statement is fine, but the block's only formal backing is vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No back-fit; statement does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "shadow-price-continuity.ts: lean.ref \"qou:QOU.BraidKnot.ShadowPriceContinuity\"",
+        "notes": "Presenting a Nonempty-record theorem as the formalisation of the continuity proposition overstates what is proved (conditional-as-proved); honest disposition would be a sorry+Ref or conjecture."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Narrative continuity⇒neighborhood-ordering step is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "shadow-price-continuity.lean:30: \"Nonempty (KnotOperatorEnergy R)\"",
+        "notes": "Lean proves something strictly weaker/different (record inhabitation) than the .md continuity claim — textbook narrative/Lean divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Only a -- Ref: [manuscript] cross-ref; no external citation misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "u_λ, [k]_q!, d_λ, generic locus all defined; reading is unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Pure algebra/topology, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "d13a2466520a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "shadow-price-continuity.lean:30: \"Nonempty (KnotOperatorEnergy R) := by exact ⟨{ partition := [1], q := 0, shadowPrice := 0 }⟩\"",
+        "notes": "Narrative claim is true and correctly scoped, but the sole Lean backing is a vacuous Nonempty-record stub presented as the formalisation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

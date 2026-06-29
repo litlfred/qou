@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:44.910Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement (a)-(c) is the bare Ladyzhenskaya/enstrophy/uniqueness triple; no interpretive prose."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:56:45.274Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Nonlinear estimate + uniqueness for q-NS; core fluid-dynamics analysis."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:56:45.686Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Energy norms, enstrophy, exponential Gronwall bound are genuinely archimedean; Lean correctly uses ℝ post-wall (§7c noted in the file)."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:56:46.062Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No narrative Proof body in the .md (statement-only)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,21 @@
         "reviewed_at": "2026-06-22T02:56:46.469Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean conjunction (Ladyzhenskaya, enstrophy bound, dist(0)=0 => dist(t)=0) matches .md (a),(b),(c)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +415,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "§3b-cond conditional class with upstream estimates as hypotheses; uniqueness (c) is derived from the Gronwall distance bound, not projected."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +483,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "(c) is derived: dist(0)=0 => dist(t) ≤ 0·G(t)=0 with distance_nonneg => equality; not a verbatim field projection (header explicitly notes the prior projection was removed)."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +534,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Goal is a nontrivial three-part conjunction over ℝ, not True."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +602,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "ν_q_pos and the estimate hypotheses are consistent; no False premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +670,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q_ladyzhenskaya, enstrophy_bound, distance_bound and distance_nonneg are all consumed in the proof term."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +721,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Proof uses refine + a derived inequality chain, not decide/trivial."
       }
     ],
     "da-false-claim": [
@@ -589,6 +754,21 @@
         "notes": "Checked mathematical consistency of the claim 'Let $(\\mathbf{C}, A, \\tau)$ be a' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Ladyzhenskaya-type bound, exponential enstrophy bound Ω(t)≤Ω(0)e^{Λ_q t}, and Gronwall uniqueness are the standard q-deformed analogues; no false statement."
       }
     ],
     "da-vacuous": [
@@ -606,6 +786,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:q-ns-nonlinear-uniqueness'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Substantive estimate triple."
       }
     ],
     "da-circular": [
@@ -624,6 +819,21 @@
         "notes": "Traced dependencies ['prop:q-spectral-sobolev', 'thm:q-ns-wellposedness'] for 'prop:q-ns-nonlinear-uniqueness' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Relies on the q-spectral-Sobolev constant, not on its own conclusion."
       }
     ],
     "da-overclaim": [
@@ -641,6 +851,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'prop:q-ns-nonlinear-uniqueness' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Λ_q=C_q²E_0/ν_q - ν_q can be positive (no global *decay* claimed); the block claims only finite-time non-blowup of enstrophy, which the exponential bound supports."
       }
     ],
     "da-hidden-dof": [
@@ -659,6 +884,21 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "E_0, C_q, ν_q are physical inputs; no hidden calibration."
       }
     ],
     "da-non-sequitur": [
@@ -677,6 +917,21 @@
         "notes": "Logical transitions in the derivation of 'Let $(\\mathbf{C}, A, \\tau)$ be a' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Enstrophy differential inequality => exponential bound (Gronwall); identical initial data => uniqueness — both valid."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -694,6 +949,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean matches the .md triple; (c) genuinely derived."
       }
     ],
     "da-citation-misuse": [
@@ -712,6 +982,21 @@
         "notes": "All references and uses ['prop:q-spectral-sobolev', 'thm:q-ns-wellposedness'] cited in 'prop:q-ns-nonlinear-uniqueness' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No external citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -730,6 +1015,21 @@
         "notes": "All terms and algebraic structures in 'prop:q-ns-nonlinear-uniqueness' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "B(v) advection, enstrophy Ω, Sobolev constant C_q all defined/referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -748,6 +1048,21 @@
         "notes": "The algebraic statements in 'prop:q-ns-nonlinear-uniqueness' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -766,6 +1081,21 @@
         "notes": "Physical dimensions and units in 'prop:q-ns-nonlinear-uniqueness' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Enstrophy/energy estimates are standard NS analysis."
       }
     ],
     "da-reproducibility": [
@@ -783,6 +1113,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute."
       }
     ],
     "da-referee-verdict": [
@@ -802,6 +1147,21 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing for 'prop:q-ns-nonlinear-uniqueness', preventing formal verification of the claims.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "578c049bf49f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Standard nonlinear-estimate/uniqueness proposition with a clean §3b-cond Lean derivation; no objection."
       }
     ],
     "voice-status-leak": [
@@ -1804,5 +2164,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

@@ -816,7 +816,255 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Unpacks def:q-energy three terms/limits in sec:lagrange-q-kinematics; in scope (interprets def:q-energy)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Term decomposition, q=1 and q→∞ limits, and action-dominance for hadrons are internally consistent with def:q-energy; no false identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Interpretive remark, no Lean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Unpacks an existing definition; no derivation that assumes its target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-energy-terms-and-limits.md: \"The action term dominates: for hadrons, $\\mathfrak{S}_q \\sim 10^3$ MeV while the rotational and translational terms are $O(\\hbar_q) \\sim 0.1$.\"",
+        "notes": "The ~10³ MeV vs ~0.1 magnitude comparison is asserted in absolute MeV units inside an interpretive remark without a witness; reads as a quantitative claim beyond the definitional unpacking. Minor (it interprets def:q-energy)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Terms parameterised by q, j, p_q, [n]_q from def:q-energy; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q=1 limit (ℏ_q→0 kills rot+trans, leaving S_1) follows from ℏ_q=1-q⁻¹."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No external citations; only internal cross-refs."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-energy-terms-and-limits.md: \"$[1/2]_q [3/2]_q \\cdot \\hbar_q \\approx 0.818 \\times 0.0991 = 0.0811$\"",
+        "notes": "Uses J_q²=[1/2]_q[3/2]_q here, whereas def:q-energy writes J_q²(K)=[j]_q[j+1]_q; for j=1/2 that gives [1/2]_q[3/2]_q — consistent, but the half-integer q-bracket convention is left implicit and the ≈0.818 numeric is unwitnessed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-energy-terms-and-limits.md: \"$\\mathfrak{E}_\\times(q) = \\frac{1}{2}(q - q^{-1}) = 0.1045$\" and \"$\\approx 0.818 \\times 0.0991 = 0.0811$\"",
+        "notes": "Several q_0-evaluated numerics (0.1045, 0.818, 0.0991, 0.0811) are quoted to 3-4 figures with no backing witness file; cannot verify against the current q₀ pin (proton vs muon). Magnitude-illustrative, but unpinned."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Action=rest-mass and rot/trans=kinetic mapping is internally coherent; '~10³ MeV for hadrons' is the right order of magnitude."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-energy-terms-and-limits.md: numeric values 0.1045, 0.0811, 0.818 with no witness.json reference",
+        "notes": "Quoted q₀-evaluations have no -- Ref: witness; not reproducible from the block alone."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ba4739657ce7",
+          "ts": "7fe58a12dfe0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-energy-terms-and-limits.md: numerics 0.1045/0.0811/0.818 with no witness reference",
+        "notes": "Sound definitional unpacking, but carries several unpinned q₀-numeric values inside an interpretive remark."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

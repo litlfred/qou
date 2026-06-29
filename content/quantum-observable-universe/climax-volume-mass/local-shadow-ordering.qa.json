@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:15.186Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Local shadow-price ordering definition in sec:knot-operator-energy; in scope."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:15.508Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition is over generic shadow prices y∈R with an open-neighborhood predicate; the Lean structure uses [Field R][LinearOrder R][IsStrictOrderedRing R] (ordered ring needed for |·| inequality) — legitimate archimedean-ordered specialisation matching the |y₁|≤|y₂| content."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "Checked mathematical consistency of the claim '**Definition.**' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "A definition; the ≼_q relation is well-posed (∃ open U, pointwise magnitude inequality)."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:local-shadow-ordering'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean structure LocalShadowOrdering carries genuine content (holds_on_neighborhood field is the real inequality), not a `: True` marker."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "Traced dependencies ['def:unstable-atom'] for 'def:local-shadow-ordering' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definitional, non-circular."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:local-shadow-ordering' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No claim beyond naming the relation."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No parameters."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical transitions in the derivation of '**Definition.**' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition, no inferential step."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean structure faithfully encodes the .md's ∃U-open, pointwise |y₁|≤|y₂| definition (nbhd predicate + mem_self + holds_on_neighborhood)."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +344,22 @@
         "notes": "All references and uses ['def:unstable-atom'] cited in 'def:local-shadow-ordering' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +379,24 @@
         "notes": "All terms and algebraic structures in 'def:local-shadow-ordering' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "local-shadow-ordering.lean:nbhd: \"the topological openness of `U` is an external hypothesis\"",
+        "notes": "The Lean encodes the magnitude inequality but the openness of U is admittedly NOT enforced (nbhd is an arbitrary predicate with mem_self); so the formal 'ordering' is weaker than the .md's 'open U' definition. Minor, since the order content is the inequality."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +416,22 @@
         "notes": "The algebraic statements in 'def:local-shadow-ordering' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +451,22 @@
         "notes": "Physical dimensions and units in 'def:local-shadow-ordering' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No physics claim."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +486,22 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +522,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cea5861e8a27",
+          "ts": "b7ae85cecb60",
+          "lean": "c467d9a976de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Well-posed definition with a faithful (modulo un-enforced openness of U) Lean encoding."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1402,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

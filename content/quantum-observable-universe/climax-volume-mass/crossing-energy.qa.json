@@ -29,6 +29,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Block placement and kind matches section and chapter configuration for 'def:crossing-energy'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Crossing-energy definition in sec:crossing-energy; in scope."
       }
     ],
     "wall-side-statement": [
@@ -48,6 +64,22 @@
         "notes": "The Lean theorem 'qou:QOU.Braiding.CrossingEnergy' statement in content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean structurally matches the mathematical formulation of 'def:crossing-energy' in content/quantum-observable-universe/climax-volume-mass/crossing-energy.md.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition over substrate q with Skein sign convention; Lean ground ring R_q=ℤ[q,q⁻¹] generic, archimedean q>1 fields commented out as 'not meaningful over R_q' — correct wall side."
       }
     ],
     "da-false-claim": [
@@ -67,6 +99,22 @@
         "notes": "Checked mathematical consistency of the claim 'Categorical origin: $\\mathfrak{E}_{\\mathrm{cross}}$ is not an external postulate' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "E_cross = Σ(q on L_+, -q⁻¹ on L_-); the Lean decomposition value = baseline + coulombContribution = ½(n₊+n₋)(q+q⁻¹)+½(n₊-n₋)(q-q⁻¹) = n₊q - n₋q⁻¹ is verified by field_simp;ring. Correct."
       }
     ],
     "da-vacuous": [
@@ -85,6 +133,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:crossing-energy'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean CrossingEnergy.decomposition is a genuine sorry-free identity; pos_plus_neg_eq_total is real. Not vacuous."
       }
     ],
     "da-circular": [
@@ -104,6 +168,22 @@
         "notes": "Traced dependencies ['prop:nuclear-groebner-reduction'] for 'def:crossing-energy' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definitional; no back-fit."
       }
     ],
     "da-overclaim": [
@@ -122,6 +202,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:crossing-energy' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "'positive E_cross ⇒ repulsion dominates' is an interpretive label on the sign, not an inflated theorem."
       }
     ],
     "da-hidden-dof": [
@@ -141,6 +237,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Only q and crossing counts; no off-menu constant."
       }
     ],
     "da-non-sequitur": [
@@ -160,6 +272,22 @@
         "notes": "Logical transitions in the derivation of 'Categorical origin: $\\mathfrak{E}_{\\mathrm{cross}}$ is not an external postulate' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Net Skein weight = sum over crossings; baseline/Coulomb split follows algebraically."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -178,6 +306,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean value n₊q-n₋q⁻¹ matches the .md piecewise definition (q on L_+, -q⁻¹ on L_-); decomposition theorem is a faithful refinement."
       }
     ],
     "da-citation-misuse": [
@@ -197,6 +341,22 @@
         "notes": "All references and uses ['prop:nuclear-groebner-reduction'] cited in 'def:crossing-energy' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "kassel1995 cited for Hecke/Markov; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -216,6 +376,24 @@
         "notes": "All terms and algebraic structures in 'def:crossing-energy' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "crossing-energy.md: \"q L_+ - q^{-1} L_- = (q^{1/2} - q^{-1/2}) L_0\"",
+        "notes": "The Skein normalisation here is (q^{1/2}-q^{-1/2}) on the RHS, while skein-bar-antisymmetry/the standard §7a relation uses (q-q⁻¹)L_0. The two conventions coexist across the chapter without an explicit reconciling note; per-block it is internally consistent."
       }
     ],
     "da-empirical-fragility": [
@@ -235,6 +413,22 @@
         "notes": "The algebraic statements in 'def:crossing-energy' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics in the definition."
       }
     ],
     "da-physical-implausibility": [
@@ -254,6 +448,22 @@
         "notes": "Physical dimensions and units in 'def:crossing-energy' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Net Skein weight as a stability indicator is a coherent interpretive definition; no unit/conservation issue."
       }
     ],
     "da-reproducibility": [
@@ -273,6 +483,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:1 — content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean decomposition reproducible (ring); no external witness required."
       }
     ],
     "da-referee-verdict": [
@@ -293,6 +519,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "317114af15d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Clean definition with a sorry-free Lean decomposition; only nit is the (q^{1/2}-q^{-1/2}) vs (q-q⁻¹) Skein-normalisation coexistence across the chapter."
       }
     ],
     "voice-status-leak": [
@@ -1157,5 +1399,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

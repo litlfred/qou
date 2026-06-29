@@ -796,7 +796,267 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Proof of the self-intersection obstruction in sec:mobius-energy; in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Narrative: at q=1, R=1⊗1 cocommutative; for q≠1 the kernel [2]_q/(r²-ℏ_q²) has a hard pole at r=ℏ_q. Algebraically consistent with lem:nsi-q-deformed-kernel."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "non-self-intersection-proof.lean:55: \"-- theorem hbar_q_pos (q : R_q) (hq : q > 1) ... \\n  unfold hbar_q; linarith [...]\"",
+        "notes": "The Lean sibling has theorem signatures COMMENTED OUT while their tactic bodies remain uncommented (orphan `unfold...; linarith`), e.g. hbar_q_pos, quantumTwo_pos, exclusionZone_positive. As written this file would NOT compile; the archimedean positivity content is effectively elided. Narrative proof itself is fine, but the formal backing is degraded."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No back-fit; mechanism derived from non-cocommutativity + the q-kernel."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Claims an 'infinite barrier' at r=ℏ_q, which is exactly the pole of the stated kernel."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Only q and ℏ_q=1-q⁻¹; no hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q=1 cocommutative ⇒ free passage; q≠1 hard pole ⇒ barrier — both follow from the cited kernel lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "non-self-intersection-proof.lean:84: \"-- theorem exclusionZone_positive (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)\\n    0 < hbar_q q := hbar_q_pos q hq\"",
+        "notes": "The positivity statements the narrative relies on (exclusion radius >0, barrier height) are commented out in the Lean over R_q as 'not meaningful'; the Lean proves only hbar_q_classical_limit (hbar_q 1 = 0) and exclusionRadius_eq (rfl). The barrier-existence content of the narrative is not formalised."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "freedman1994 cited for the Möbius/repulsion kernel; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "R-matrix, σ∘Δ≠Δ, ℏ_q, [2]_q all defined; kernel from lem:nsi-q-deformed-kernel."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Exclusion-zone barrier is an interpretive consequence of a pole; no measurable contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "non-self-intersection-proof.lean: commented-out theorem signatures with live tactic bodies",
+        "notes": "The .lean as committed appears non-compiling (dangling tactic blocks under commented theorem headers); a validation:not_checked sibling cannot be relied on as reproducible formal backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4db97e47dc37",
+          "ts": "4b5197f85ea1",
+          "lean": "35283a6f1e46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "non-self-intersection-proof.lean: commented theorem headers above live tactic bodies",
+        "notes": "Narrative proof is mathematically fine, but the Lean sibling has commented-out theorem headers above live tactic bodies and elides the archimedean barrier-positivity content over R_q."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

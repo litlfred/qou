@@ -855,7 +855,269 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "t211-ideal-annihilation.ts: section sec:braiding-relations; interprets prop:vertex-algebra-jet-relations",
+        "notes": "The remark's primary subject (genus-filtration exclusion, S₅ embeddability, shell structure) is jet-bundle/spectral-filter material; it sits in sec:braiding-relations and interprets the jet-relations prop, which is a reasonable home, but the content sprawls across genus bounds, crystallography, and Z₅-cohomology that touch several chapters. Borderline placement, not clearly off-chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Core math checks: g(T_{2,11})=(11-1)/2=5>4; max element order in S₅ is 6; 11∤120 so Z₁₁⊄S₅; Sym(T_{2,11})=D₁₁ order 22; (m-1)(n-1)=10>8=2g. All correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "t211-ideal-annihilation.lean: \"axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4) : ∀ (k : ℕ), (1 : R_q) ^ k = 1\"",
+        "notes": "This axiom's CONCLUSION (1^k=1) is a provable triviality (one_pow), so axiomatising it asserts nothing about transfer-matrix eigenvalues; the meaningful claim (eigenvalues are (1,1)) is in the docstring but not in the axiom's type. The genus/symmetry theorems are genuinely proved (decide), so the block as a whole is not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Genus and symmetry obstructions are derived from T_{2,11} structure, not back-fitted to a generation count."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "t211-ideal-annihilation.md: \"It is the ghost of the fourth generation — algebraically valid, topologically null\"",
+        "notes": "The 'fourth lepton generation' physical identification and the survives/killed tables overlay strong physical interpretation on the (correct) genus/symmetry facts; several rows (Mass functional Killed, Hodge dual ★[T_{2,11}]=0) are asserted without in-block proof. Interpretive remark, so impact is bounded, but the physical over-reading is notable."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Genus bound g≤4 traces to the Descartes χ=-6 constraint elsewhere; no new free parameter here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "The Z₁₁⊄S₅ and genus>4 'doubly excluded' conclusion follows from the two correct facts; the table is consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "t211-ideal-annihilation.lean: \"axiom non_embeddable_eigenvalues_trivial ... : ∀ k, (1:R_q)^k = 1\"",
+        "notes": "The Lean proves the genus/order-divisibility facts faithfully (sorry-free via decide), but the transfer-matrix 'null force / eigenvalues (1,1)' narrative is backed only by an axiom whose type is the triviality 1^k=1, not the eigenvalue claim — a (minor) gap between narrative and Lean for that sub-claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "kassel1995/jones1987 cited for Hecke/Markov context; jones1987 referenced for the spectral-filter eigenvalue claim — appropriate as background, though it does not itself prove the (1,1) eigenvalue (see da-vacuous)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "T_{2,11}, Σ_4, S₅=Aut(Σ₄), genus-filtration ideal 𝔉_4=(u⁵) all defined/cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No fitted numerics; integer-arithmetic obstructions only."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "The crystallographic-obstruction analogy (Z₁₁ incompatible with 5-sheet surface) is internally consistent; no measurable-physics contradiction asserted as fact."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Integer claims are reproducible by decide/omega in the Lean; no external witness needed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fd04f6ae0609",
+          "ts": "a46d36226cb4",
+          "lean": "cee16c2e9a48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "t211-ideal-annihilation.lean: axiom non_embeddable_eigenvalues_trivial : ∀k,(1:R_q)^k=1",
+        "notes": "The number-theoretic core (genus 5>4, Z₁₁⊄S₅, D₁₁) is correct and Lean-verified; the surrounding survives/killed and 'fourth-generation ghost' tables overlay heavy physical interpretation, and the transfer-matrix null-force sub-claim is backed only by a trivial axiom."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

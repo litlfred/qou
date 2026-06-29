@@ -1052,7 +1052,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Proposition lists four bare algebraic properties (additivity, Markov-I/II, parity); the parity-violation note is mathematical, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-momentum properties in sec:lagrange-q-kinematics; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Stated over Hecke-trace algebra (generic q); no gratuitous ℝ in the narrative statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No narrative **Proof.** body; rationale is parenthetical (trace linearity/cyclicity)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "q-momentum-properties.lean:35: \"theorem qMomentumP_additive ... := by\\n  -- Ref: [manuscript] ...\\n  sorry\"",
+        "notes": "The .md asserts FOUR properties; the .lean only states ONE (additivity) and proves it with `sorry`. Markov-I, Markov-II, and parity are absent from the Lean. Lean covers strictly less than the narrative claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-momentum-properties.lean:35: \"qMomentumP_additive ... := by sorry\"",
+        "notes": "The single Lean statement (additivity) is honest but unproved (sorry). The proposition's integrity is not violated by weakening, but 3 of 4 claims have no Lean statement at all."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No projection; additivity is stated and deferred via sorry."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "qMomentumP_additive is a genuine list-concatenation identity, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No false premise; [Field k] only."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Proof is sorry; hypothesis-usage not assessable."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No decide; the gap is an honest sorry."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Additivity (trace linearity), conjugation-invariance (cyclicity), stabilisation shift, and parity p_q(β^σ)=-p_{q⁻¹}(β) are standard Markov-trace properties; the parity-violation observation at q≠1 is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Properties are substantive; the Lean is incomplete (sorry) but not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No circular reasoning."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-momentum-properties.md:9: \"3. **Shift under Markov II**: stabilization ... shifts $p_q$ by $\\pm [1]_q$\"",
+        "notes": "Property 3 asserts a clean ±[1]_q shift under Markov II; for a trace-derived momentum the stabilisation normalisation usually carries a δ=-(q+q⁻¹) factor (cf. vertex-algebra-relations QU-3b), so the bare ±[1]_q shift is asserted without the normalisation accounting. Minor — no Lean to check it against."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Each property is independently a known trace property; no chained inference gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "q-momentum-properties.lean: only qMomentumP_additive stated (sorry); Markov-I/II/parity absent",
+        "notes": "Lean formalises 1 of 4 stated properties and even that is sorry; the formal backing diverges substantially from the .md's four-part claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "jones1987 cited for the Markov trace; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "p_q, [1]_q, mirror σ, Markov moves all defined upstream."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Parity-violation framing is a structural q≠1 statement, not a measured-physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2fb3ae07086e",
+          "ts": "fb95cb4abb1e",
+          "lean": "0a017dc43692"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "q-momentum-properties.lean: only qMomentumP_additive stated, closed by `sorry`",
+        "notes": "Properties are mathematically standard, but the Lean formalises only additivity (with sorry); three of four claims are unformalised."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

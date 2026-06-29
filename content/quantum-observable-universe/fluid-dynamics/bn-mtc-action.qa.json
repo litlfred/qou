@@ -1046,7 +1046,450 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement is the bare ρ_n:B_n→Aut(V^⊗n) construction + non-factorisation claim; no interpretation embedded (the fractional-statistics reading lives in the proof block's corollary)."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Braid-group action on vortex tensor powers; supports anyonic-vortex content of the chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Categorical braiding statement over the MTC (ℂ); no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Proof is in the sibling bn-mtc-action-proof block."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "bn-mtc-action.lean:30: \"∃ V : C, (β_ V V).hom ≫ (β_ V V).hom ≠ 𝟙 (V ⊗ V)\"",
+        "notes": "The .md proposition asserts both (i) ρ_n is a well-defined B_n representation for every n≥2 and (ii) it does not factor through S_n; the Lean decl bnAction proves only the non-symmetry witness (∃V, c²≠id), i.e. the load-bearing half (ii)'s premise, not the full statement (i)+(ii)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "bn-mtc-action.lean:27: \"theorem bnAction ... := MTC.braiding_nonsymmetric\"",
+        "notes": "The named Lean statement is narrower than the .md proposition (existence of a non-symmetric simple, not the B_n non-factorisation); the narrative proof block supplies the full argument, but the Lean signature does not match the proposition's conclusion."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "bn-mtc-action.lean:31: \"MTC.braiding_nonsymmetric\"",
+        "notes": "bnAction's body is a verbatim projection of the class field braiding_nonsymmetric whose type IS the theorem's conclusion (∃V, c²≠id); this is the self-assuming-projection anti-pattern — though here the field is a genuine MTC axiom (non-symmetric braiding) and the proposition's substance is the non-factorisation argued in the .md proof."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Goal ∃V, c²≠id is a substantive existence claim, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No False premise; ObservableMTC is an inhabitable class."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "The MTC instance (its braiding_nonsymmetric field) is used directly."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No decide/trivial; direct field reference."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "In a non-symmetric MTC the braiding gives a genuine B_n (not S_n) representation; the non-factorisation claim is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "bn-mtc-action.lean:27: \"theorem bnAction ... := MTC.braiding_nonsymmetric\"",
+        "notes": "The Lean witness is a direct projection of an MTC axiom; while the .md proposition is substantive, the formal decl reduces to restating the class's defining non-symmetry field — formally close to vacuous on the Lean side."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Non-factorisation derived from the non-symmetric-braiding axiom (a premise), not from the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Claims only B_n action + non-factorisation; matches the standard MTC result."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No free parameter (N≥3, n≥2 declared)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Braiding satisfies braid relations (hexagon) => B_n rep; non-symmetry => no S_n factorisation — valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "bn-mtc-action.lean:27: \"bnAction ... : ∃ V, (β_ V V).hom ≫ (β_ V V).hom ≠ 𝟙 (V ⊗ V)\"",
+        "notes": "Lean proves the weaker existence-of-non-symmetric-simple fact; the .md proposition's full B_n-non-factorisation statement is not formalised in the Lean signature."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean cites kitaev2006 for anyonic non-symmetric braiding — appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "B_n (Artin braid group), c_{V,V}, the S_n quotient all referenced to defined blocks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Categorical statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "df39c390d0c8",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "notes": "Correct MTC proposition; strongest objection: the Lean decl bnAction only projects the MTC's non-symmetric-braiding axiom (∃V, c²≠id), formalising the load-bearing premise rather than the full 'ρ_n does not factor through S_n' conclusion."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

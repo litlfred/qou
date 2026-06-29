@@ -29,6 +29,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Observable modular tensor category at $q = \\\\zeta_N$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Defines the observable MTC at a root of unity, the algebraic backbone for the chapter's vortex braiding/anyon content."
       }
     ],
     "wall-side-statement": [
@@ -48,6 +64,22 @@
         "notes": "The Lean theorem statement in content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean matches the mathematical statement in content/quantum-observable-universe/fluid-dynamics/observable-mtc.md.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition at q=ζ_N (root of unity), ribbon fusion category, modular S-matrix — categorical over ℂ; Lean uses ℂ structurally, no gratuitous archimedean leak."
       }
     ],
     "da-false-claim": [
@@ -67,6 +99,22 @@
         "notes": "The claim in 'Observable modular tensor category at $q = \\\\zeta_N$' is unverified due to Lean compilation failures in sibling file.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Rep(U_q(su₂)) at primitive N-th root is non-semisimple; quotient by negligibles gives the truncated MTC with simples V_0..V_{N-2}; S non-degenerate (modular) — all standard (Moore-Seiberg)."
       }
     ],
     "da-vacuous": [
@@ -85,6 +133,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Observable modular tensor category at $q = \\\\zeta_N$' presents substantial mathematical content: Fix a positive integer $N \\geq 3$ and set $q = \\zeta_N = e^{2\\pi i / N}$ --- a p...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Genuine definition naming a specific category and its modular structure."
       }
     ],
     "da-circular": [
@@ -104,6 +168,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Observable modular tensor category at $q = \\\\zeta_N$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition; no derivation."
       }
     ],
     "da-overclaim": [
@@ -122,6 +202,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents 'Observable modular tensor category at $q = \\\\zeta_N$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Asserts only modularity (non-degenerate S), which is standard for the Verlinde/CS category at a root of unity."
       }
     ],
     "da-hidden-dof": [
@@ -141,6 +237,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Observable modular tensor category at $q = \\\\zeta_N$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Level N is the single declared integer parameter (N≥3)."
       }
     ],
     "da-non-sequitur": [
@@ -160,6 +272,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Truncation -> finitely many simples -> modular tensor category is a coherent chain."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -178,6 +306,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean ObservableMTC class encodes finite level (≥3) and the non-symmetric-braiding witness; consistent with the definition (it abstracts, rather than fully reconstructs, the category — acceptable for a definition block)."
       }
     ],
     "da-citation-misuse": [
@@ -197,6 +341,22 @@
         "notes": "Citations to moore-seiberg1989, kitaev2006 are correct and contextually appropriate.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "moore-seiberg1989 cited for the truncated ribbon fusion category at a root of unity — correct attribution."
       }
     ],
     "da-definitional-ambiguity": [
@@ -216,6 +376,24 @@
         "notes": "Key terms and symbols in 'Observable modular tensor category at $q = \\\\zeta_N$' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "observable-mtc.md:2: \"set q = ζ_N = e^{2πi/N}\"",
+        "notes": "The MTC convention here uses q=ζ_N=e^{2πi/N}, while the truncation/interpretation blocks elsewhere in the chapter (root-of-unity-truncation.md) use q=e^{iπ/κ}; the two root-of-unity parametrisations (N vs κ, 2π vs π) are not reconciled in-block, a mild cross-block ambiguity."
       }
     ],
     "da-empirical-fragility": [
@@ -235,6 +413,22 @@
         "notes": "The algebraic and logical relations in 'Observable modular tensor category at $q = \\\\zeta_N$' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -254,6 +448,22 @@
         "notes": "The physical concepts described in 'Observable modular tensor category at $q = \\\\zeta_N$' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Pure categorical definition."
       }
     ],
     "da-reproducibility": [
@@ -273,6 +483,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute."
       }
     ],
     "da-referee-verdict": [
@@ -293,6 +519,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "510fc92c2767",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Standard, correctly-cited MTC-at-root-of-unity definition; minor objection is the unreconciled ζ_N (2π/N) vs e^{iπ/κ} root-of-unity convention across the chapter."
       }
     ],
     "voice-status-leak": [
@@ -1159,5 +1401,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

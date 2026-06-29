@@ -1342,7 +1342,247 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "δ_Coulomb=q-½(q+q⁻¹)=½(q-q⁻¹)>0 for q>1 and ratio (q-q⁻¹)/(q+q⁻¹)=tanh(ln q) are all correct identities; endpoints q=1→0, q→∞→1 check out."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "skein-crossing-asymmetry-prop.ts:authorNotes: \"the companion Lean `skein_crossing_asymmetry` currently encodes a placeholder (`: True`)\"",
+        "notes": "authorNotes claims the Lean is a `: True` placeholder, but the actual .lean proves coulombCorrection_eq/_pos and skein_crossing_asymmetry sorry-free over ℝ — the authorNote is STALE; the Lean is NOT vacuous. Flagging the stale status note, not a real vacuity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Coulomb correction derived from the skein weights via ring algebra; no back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement is a per-crossing identity with explicit q>1 hypothesis; no scope inflation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Only q appears; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Each algebraic step follows; mixed-charge baseline ½(q+q⁻¹) is consistently used."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean skein_crossing_asymmetry proves q⁻¹<q ∧ correction identity ∧ positivity from q>1 — matches the .md's δ_Coulomb>0 content (the .md skein eq uses (q^{1/2}-q^{-1/2}) but the proved content is the asymmetry/positivity, which agrees)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean cites kassel1995 for Hecke; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "skein-crossing-asymmetry-prop.md:5: \"q L_+ - q^{-1} L_- = (q^{1/2} - q^{-1/2}) L_0\"",
+        "notes": "The .md writes the skein normalisation with RHS (q^{1/2}-q^{-1/2}), whereas crossing-energy.md and skein-bar-antisymmetry use L_+-L_-=(q-q^{-1})L_0; the two normalisation conventions coexist in the chapter without a reconciling note."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerical anchor; pure q-identity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Per-crossing 'Coulomb correction' is an interpretive label on a real q-quantity; no unit/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No witness compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "skein-crossing-asymmetry-prop.ts:authorNotes: stale '`: True` placeholder' note vs sorry-free .lean",
+        "notes": "Math is correct and Lean is sorry-free, but the authorNote describing the Lean as a `: True` placeholder is stale and should be removed/updated."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

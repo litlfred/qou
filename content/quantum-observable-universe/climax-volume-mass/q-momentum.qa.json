@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:16.723Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-momentum definition in sec:lagrange-q-kinematics; in scope."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:17.081Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition over substrate q; Lean qMomentum over R_q=ℤ[q,q⁻¹] generic. The classical-limit theorem and single_term_limit are archimedean ε-δ statements but are localised to the q→1 limit analysis. Acceptable."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "p_q(β)=Σ_j ε_j (q^{ε_j}-q^{-ε_j})/(q-q⁻¹)=Σ(q^{2ε_j}-1)/(q²-1); for ε=±1 this gives +1/-1, recovering writhe at q=1. The building-block table (trefoil +3, fig-8 0, cinquefoil +5) matches the writhes. Correct."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:q-momentum'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean carries genuine content: qMomentum_classical_limit is a real (non-sorry) ε-δ induction, writhe_mirror is proved; the q→1 single-term limit is honestly an `axiom` (single_term_limit) with -- Ref:, not a vacuous theorem."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "Traced dependencies ['rem:building-block-knots'] for 'def:q-momentum' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definitional; no back-fit."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:q-momentum' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "The 'equivalently p_q=tr_fund(ρβ)' identity is asserted as the standard trace interpretation; not over-claimed beyond the definition."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Only q and crossing signs; no off-menu constant."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "(q^{ε}-q^{-ε})/(q-q⁻¹) simplifies to (q^{2ε}-1)/(q²-1); q=1 limit gives the writhe. Steps follow."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Lean qMomentum and qMomentum_classical_limit (→ writhe as q→1) faithfully encode the .md definition and its q=1 limit; the single_term_limit axiom is the honestly-flagged analytic input."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +344,22 @@
         "notes": "All references and uses ['rem:building-block-knots'] cited in 'def:q-momentum' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "jones1987 cited for the Markov trace / link polynomials; appropriate for the trace interpretation of p_q."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +379,22 @@
         "notes": "All terms and algebraic structures in 'def:q-momentum' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "p_q, writhe, [1]_q, fundamental Hecke rep all defined; building-block table disambiguates braid words."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +414,22 @@
         "notes": "The algebraic statements in 'def:q-momentum' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Table values are exact writhes (integers), not fitted; p_q(q_0) column equals writhe for these ε=±1 examples."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +449,22 @@
         "notes": "Physical dimensions and units in 'def:q-momentum' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-deformed writhe as 'momentum' is a coherent definition; no unit/conservation issue."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +484,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:34:13: error: unexpected token 'section'; expected 'lemma'.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:1 — content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:34:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Writhe examples reproducible by decide; classical-limit proof self-contained modulo the cited single_term_limit axiom."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +520,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:34:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Sound definition with a genuinely-proved classical-limit Lean (one honestly-flagged analytic axiom); building-block table is correct."
       }
     ],
     "voice-status-leak": [
@@ -1162,5 +1402,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

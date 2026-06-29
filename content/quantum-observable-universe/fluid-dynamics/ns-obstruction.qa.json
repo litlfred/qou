@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:44.909Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Defines the NS obstruction class central to the chapter's blowup theory."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:45.288Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition lives in local cohomology H^3_loc(A,Θ) of the quantum universe, evaluated at q=1; categorical/cohomological, no gratuitous ℝ."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "Checked mathematical consistency of the claim 'Algebraic reading: spectral-gap closure' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition + two stated equivalences (NS(A)=0 iff NS-regular; ≠0 implies blowup); these are definitional/conjectural framings, not false assertions."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:ns-obstruction'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Names a genuine cohomological construction; definition block, not a vacuous proof."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "Traced dependencies ['def:ns-regular-qou'] for 'def:ns-obstruction' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition; no derivation to be circular."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:ns-obstruction' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "The 'iff NS-regular' biconditional is stated as the defining property of the class, consistent with the chapter's conjectural program."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Depends on χ(A), an intrinsic topological invariant, not a free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical transitions in the derivation of 'Algebraic reading: spectral-gap closure' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definitional; internally coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Sibling ns-obstruction.lean is a short stub for a definition block; no provable-claim divergence to assess."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +344,22 @@
         "notes": "All references and uses ['def:ns-regular-qou'] cited in 'def:ns-obstruction' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +379,24 @@
         "notes": "All terms and algebraic structures in 'def:ns-obstruction' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "ns-obstruction.md:11: \"obstruction to lifting the q-NS solution from brane level n to level n+1 in the limit q -> 1\"",
+        "notes": "Class is defined as the lifting obstruction 'from level n to n+1' without fixing which n (a single class in H^3_loc is named, but the level index is left open); mild ambiguity in a conjectural definition."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +416,22 @@
         "notes": "The algebraic statements in 'def:ns-obstruction' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +451,22 @@
         "notes": "Physical dimensions and units in 'def:ns-obstruction' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Abstract cohomological definition."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +486,22 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No compute."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +522,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19b5dacf5e54",
+          "ts": "5184747be64b",
+          "lean": "69cb16fe8455"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:16.613Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Coherent obstruction-class definition; minor objection is the unfixed level index n in the lifting characterisation."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1402,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:16.613Z"
 }

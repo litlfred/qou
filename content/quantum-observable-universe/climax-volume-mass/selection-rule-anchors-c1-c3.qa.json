@@ -1048,7 +1048,453 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Statement is the two bare identities lw(1)=1 and lw(3)=5/2+(3/4)h²; the muon/proton labels are terse and the interpretation is in separate ## sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Re-homed selection-rule anchors in sec:knot-operator-energy per manifest comment; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Stated over real q>0 for q-rational identities; q-usage section justifies ℝ and notes c=1 holds ∀q>0. §7c compliant."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "field_simp;ring on real q-rational identities; appropriate since stated over ℝ>0."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "selection-rule-anchors-c1-c3.lean: \"theorem selection_rule_c1_eq_one (q : ℝ) (_hq : 0 < q) : ((1:ℝ)+1)/2 = 1\"",
+        "notes": "The c=3 Lean (selection_rule_c3_eq_family_a) faithfully matches the narrative. But the c=1 Lean states ((1+1)/2=1) with the q-dimensions already substituted as literal 1's and q UNUSED (_hq); it proves the arithmetic average but not that dim_q V_{(2)}=dim_q V_{(1,1)}=1, so the q-content of the c=1 anchor is asserted in prose, not encoded in the Lean."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "c=3 theorem carries the substantive Laurent identity; c=1 is a (degenerate but honest) arithmetic statement. No weakening of c=3."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Proofs by field_simp;ring/norm_num, not field projections."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "selection-rule-anchors-c1-c3.lean: \"selection_rule_c1_eq_one (q : ℝ) (_hq : 0 < q) : ((1 : ℝ) + 1) / 2 = 1 := by norm_num\"",
+        "notes": "The c=1 anchor's Lean reduces to the constant arithmetic (1+1)/2=1 with q unused — close to trivial; it does not formalise the q-dimension computation that makes lw(1)=1 'for all q' non-trivial. c=3 is genuinely non-trivial."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Only 0<q; satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "selection-rule-anchors-c1-c3.lean: \"selection_rule_c1_eq_one (q : ℝ) (_hq : 0 < q)\"",
+        "notes": "In the c=1 anchor the hypothesis _hq:0<q is unused (underscore-named), reflecting that the q-dimension content was pre-substituted to literals — the theorem is weaker than the stated 'for all q>0' anchor suggests."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "norm_num/field_simp;ring, no decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Verified c=3: 1+1+2(q²+1+q⁻²)+(q²+q⁻²)=4+3q²+3q⁻², /4 = 5/2+(3/4)h² using q²+q⁻²=h²+2. Correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "selection-rule-anchors-c1-c3.lean: c=1 theorem proves ((1+1)/2=1) with q unused",
+        "notes": "c=3 is substantive; the c=1 Lean is near-vacuous (constant arithmetic) because the dim_q=1 inputs are hard-coded rather than derived. Not a fail since the narrative c=1 fact is genuinely true, but the formal backing is thin."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "c=3 'proton anchor = Family-A' is an algebraic identity in q, not fitted to an observable; 'derivation-tight, not a fit' is accurate for the identity itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "selection-rule-anchors-c1-c3.md: \"the c=3 case must equal the Family-A formula ... (proton)\"",
+        "notes": "Labelling lw(3)=5/2+(3/4)h² as 'the proton anchor' that 'must equal' Family-A imports a physical identification (proton↔Borromean 3-link↔Family-A) that the Lean does not establish; the Lean only proves the q-hook average equals that closed form. Minor scope import."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "lw(c)=(1/(c+1))Σdim_q is parameter-free; h=q-q⁻¹ is not an independent DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-dimension substitution and summation steps follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "selection-rule-anchors-c1-c3.lean: c=1 anchor proves only the post-substitution arithmetic",
+        "notes": "c=3 Lean matches the narrative; c=1 Lean omits the q-dimension derivation (proves (1+1)/2=1), so the '∀q>0' content of the c=1 anchor is narrative-only — a partial divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "References the habiro-per-knot-lambda derivation audit; no external citation misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "dim_q V_λ via q-hook formula, h=q-q⁻¹, partitions of 2 and 4 enumerated explicitly."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No fitted numerical match; identities hold ∀q>0 (c=1) / as Laurent identity (c=3)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Algebraic anchors; physical proton/muon identification is interpretive."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Self-contained algebra, reproducible by hand."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ce2c41cf9f8a",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "selection-rule-anchors-c1-c3.lean: selection_rule_c1_eq_one proves ((1+1)/2=1), hyp 0<q unused",
+        "notes": "c=3 anchor is correct and well-formalised; the c=1 Lean is near-trivial (q unused) and the proton/muon physical identification is asserted beyond the proved algebra."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }

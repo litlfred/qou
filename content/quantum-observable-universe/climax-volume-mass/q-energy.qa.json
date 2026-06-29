@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:16.421Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "q-energy definition in sec:lagrange-q-kinematics; in scope."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:16.846Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definition is over the categorical triple/substrate q; the .md is regime-neutral and the Lean ground ring is R_q=ℤ[q,q⁻¹] (generic) — appropriate wall side."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Three-term decomposition (rotational [j]_q[j+1]_q·ℏ_q + translational p_q²ℏ_q/2[n]_q + action tr_τ(ρβ)) and the rest limit E|rest=S_q are a coherent definition, not a falsifiable identity."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,24 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "q-energy.lean: \"-- theorem q_energy_rest (q S : R_q) (hq : 1 < q) (hS : 0 ≤ S) :  -- (archimedean; not meaningful over R_q)\\n    (QEnergy.mk q hq 0 ...).total = S := by\" and \"theorem q_energy_def : ∃ (E : QEnergy), E.S_q ≥ 0 := by sorry\"",
+        "notes": "The Lean sibling has q_energy_rest's signature commented out while its proof body (and a QEnergy.mk call referencing dropped fields hq/hS) remains uncommented — non-compiling. The only live theorem matching def:q-energy, q_energy_def, is `∃E, E.S_q≥0` closed by `sorry`: a trivial existence statement, not the energy decomposition. Formal backing is effectively vacuous/broken."
       }
     ],
     "da-circular": [
@@ -107,6 +173,22 @@
         "notes": "Traced dependencies ['def:q-angular-momentum'] for 'def:q-energy' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Definitional; no back-fit."
       }
     ],
     "da-overclaim": [
@@ -125,6 +207,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:q-energy' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Names the energy; the rest-limit recovers the topological mass formula — consistent with the framework's mass story, no inflation in the .md."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +242,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Terms built from q, j, p_q, [n]_q, tr_τ; no off-menu constant."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +277,22 @@
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Rest limit p_q=J_q=0 ⇒ E=S_q=m(K)c² follows directly from the definition."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +311,24 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "q-energy.lean: \"theorem q_energy_def : ∃ (E : QEnergy), E.S_q ≥ 0 := by sorry\"",
+        "notes": "The .lean theorem tied to def:q-energy proves only ∃E with S_q≥0 (sorry), not the three-term total or the rest-limit identity; the rest-limit theorem is commented out. Lean covers far less than the narrative definition."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +348,22 @@
         "notes": "All references and uses ['def:q-angular-momentum'] cited in 'def:q-energy' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Only -- Ref: [manuscript]; no external citation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +383,22 @@
         "notes": "All terms and algebraic structures in 'def:q-energy' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "J_q², p_q, S_q, ℏ_q, [n]_q all defined with cross-refs; tr_τ vs tr_M used consistently with the action term."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +418,22 @@
         "notes": "The algebraic statements in 'def:q-energy' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "No numerics in the definition."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +453,22 @@
         "notes": "Physical dimensions and units in 'def:q-energy' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "notes": "Energy=rotational+translational+rest is a physically coherent decomposition; rest mass = action is the framework's standard identification."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +488,24 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/q-energy.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/q-energy.lean:1 — content/quantum-observable-universe/climax-volume-mass/q-energy.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "minor",
+        "evidence": "q-energy.lean: commented-out theorem header above a live QEnergy.mk proof body",
+        "notes": "The .lean as committed appears non-compiling (orphan proof body referencing fields hq/hS that the commented structure dropped); validation:not_checked so not reliable formal backing."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +526,24 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/q-energy.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "f2e432ee6c70",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:14:15.076Z",
+        "reviewed_sha": "1ed01ad3f5467c20fb98287c8d7bbcc13b7f7d9d",
+        "severity": "major",
+        "evidence": "q-energy.lean: q_energy_def `∃E, E.S_q≥0 := by sorry` + commented rest-limit theorem",
+        "notes": "The definition is coherent, but its Lean sibling has a commented-out rest-limit theorem with a dangling proof body and a `sorry`-closed trivial existence theorem as the only live def:q-energy backing."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1408,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:14:15.076Z"
 }
