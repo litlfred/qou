@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Confinement LP proof (negative Gram eigenvalue + braid-word enumeration) is particle-interactions scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Gram matrix of the H_3(q) NF basis being indefinite (λ_−<0) is consistent with the framework; the enumeration claim is checkable. No counterexample found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Substantive eigenvalue + exhaustive-enumeration argument."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Enumeration over 4^6 words is independent of the conclusion; not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Claims are scoped to length≤6 words and the H_3 LP; consistent with the confinement proposition."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free parameter; λ_−≈−0.855 is a computed eigenvalue at q₀."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Negative eigenvalue direction lowers objective while keeping Frobenius positivity ⇒ unphysical LP optimum; follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Proof block; no own Lean sibling provided."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No external citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "|Δnet|, eigenvalues, braid generators all defined; B_3 word given explicitly."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The |Δnet| separations (0.000 vs 0.004 vs >0.01) are well above fit noise; not fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "B_3 (Borromean) as the selected minimum is physically the framework's nucleon ansatz."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "confinement-topological-proof.md:38: \"**Witness**: `confinement-lp.witness.json`.\"",
+        "notes": "The cited witness now lives at computations/_deprecated/confinement-lp.witness.json (deprecated path); the proof references it by bare name, so the backing data is stale/relocated and may not reproduce as-cited."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "88bd6585c1a1",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Sound LP + enumeration proof. Strongest (minor) objection: the cited confinement-lp.witness.json is in _deprecated/, a staleness concern."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

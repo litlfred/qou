@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:22.194Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Crystal-graph realization of Hecke NFs (computational shortcut) is particle-interactions scope."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -108,6 +123,21 @@
         "notes": "No false claims identified in 'Hecke normal forms realise crystal highest-weight vectors': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Conjecture; the established inputs (Brundan-Kleshchev iso, KLR canonical basis, finite cyclotomic quotient, Lecouvey plactic bridge) are correctly attributed, with the order-match left explicitly conjectural."
       }
     ],
     "da-vacuous": [
@@ -126,6 +156,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Hecke normal forms realise crystal highest-weight vectors' presents substantial mathematical content: '$K$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Genuine conjectural content (GS irreducibles ↔ crystal highest-weight labels)."
       }
     ],
     "da-circular": [
@@ -145,6 +190,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Hecke normal forms realise crystal highest-weight vectors'.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Not circular."
       }
     ],
     "da-overclaim": [
@@ -163,6 +223,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Hecke normal forms realise crystal highest-weight vectors' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "'What remains conjectural' precisely isolates the order-match ★; no sorry added (replaces brute-force bounds). Well-scoped."
       }
     ],
     "da-hidden-dof": [
@@ -182,6 +257,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hecke normal forms realise crystal highest-weight vectors'.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -201,6 +291,21 @@
         "notes": "The prose arguments in 'Hecke normal forms realise crystal highest-weight vectors' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Finite-dimensional cyclotomic quotient ⇒ finite crystal component ⇒ termination follows."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -219,6 +324,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Conjecture with lean validation:'stub'; no theorem to diverge from."
       }
     ],
     "da-citation-misuse": [
@@ -238,6 +358,21 @@
         "notes": "The citations brundankleshchev2009, kashiwara1991, lecouvey2007, khovanovlauda2009, marsh2000 in 'Hecke normal forms realise crystal highest-weight vectors' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "brundankleshchev2009/kashiwara1991/lecouvey2007/khovanovlauda2009/marsh2000 are all apt for the KLR/crystal/plactic claims."
       }
     ],
     "da-definitional-ambiguity": [
@@ -257,6 +392,21 @@
         "notes": "Key terms and symbols in 'Hecke normal forms realise crystal highest-weight vectors' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Brundan-Kleshchev iso, KLR cyclotomic quotient, Kashiwara raising ẽ_i, shortlex GS order all defined/referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -276,6 +426,21 @@
         "notes": "The algebraic and logical relations in 'Hecke normal forms realise crystal highest-weight vectors' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Empirical support is the witnessed NF match, framed as evidence for a conjecture, not a fitted observable."
       }
     ],
     "da-physical-implausibility": [
@@ -295,6 +460,21 @@
         "notes": "The physical concepts described in 'Hecke normal forms realise crystal highest-weight vectors' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "crystal-graph-realization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Algorithmic/representation-theoretic conjecture; no physical claim."
       }
     ],
     "da-reproducibility": [
@@ -313,6 +493,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Hecke normal forms realise crystal highest-weight vectors' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Points to a documented formalization plan (docs/audits/2026-06-07-klr-gs-order-formalization-plan.md)."
       }
     ],
     "da-referee-verdict": [
@@ -333,6 +528,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Hecke normal forms realise crystal highest-weight vectors' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Well-scoped Tier-S conjecture with honest established/conjectural separation and a formalization roadmap. No objection."
       }
     ],
     "voice-status-leak": [
@@ -1181,5 +1391,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

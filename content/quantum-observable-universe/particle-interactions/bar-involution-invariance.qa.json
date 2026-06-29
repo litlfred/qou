@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.787Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement is the three invariance claims; the 'witness against CPT violations' significance is in a separate clearly-headed section."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:20.329Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Bar-involution/Plancherel-weight invariance underpins CPT/pair-production; particle-interactions scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:20.627Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "q-integer/Plancherel-weight invariance is algebraic; ℝ used only for the q>0 ordering needed by the well-definedness, acceptable."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:21.049Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Proof of [k]_{q^{-1}}=[k]_q is field_simp;ring (algebraic); transpose via List.Perm.prod_eq; no archimedean machinery misapplied."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:21.425Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "plancherel_weight_bar_invariant + plancherel_weight_transpose_eq (parts 1,2) and the conditional normal_form_bar_invariant (part 3, §3b-cond class) match the narrative's three claims."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -275,6 +355,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statements are genuine invariance equalities; part 3 honestly conditional on the class instance."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -295,6 +391,24 @@
         "reviewed_at": "2026-06-22T02:57:23.347Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "bar-involution-invariance.lean:193: \"barNormalForm T = T := inst.bar_invariant_outputs T h\"",
+        "notes": "normal_form_bar_invariant_conditional is a verbatim projection of the class field bar_invariant_outputs, whose type IS the conclusion; this is the §3b-cond conditional pattern (the only sorry is the instance), so acceptable, but it is structurally a field projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -315,6 +429,22 @@
         "reviewed_at": "2026-06-22T02:57:23.737Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Conclusions are real q-arithmetic equalities; bar_involution_invariance_witness_scope is a true arithmetic identity used as a scope tag, not masking a goal."
       }
     ],
     "proof-no-false-premise": [
@@ -353,6 +483,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "q>0, q≠1 premises are consistent and inhabited."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -391,6 +537,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "hq_pos/hq_ne_one are used (denominator q−q⁻¹≠0, positivity in field_simp)."
       }
     ],
     "proof-no-decide-masking": [
@@ -429,6 +591,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "decide on 1+1+...+30=97 closes a genuine concrete arithmetic identity (witness scope tag), justified."
       }
     ],
     "da-false-claim": [
@@ -449,6 +627,22 @@
         "notes": "The claim in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "[k]_{q^{-1}}=[k]_q is correct ((q^{-k}−q^k)/(q^{-1}−q) = [k]_q); transpose preserves hook lengths; both claims true."
       }
     ],
     "da-vacuous": [
@@ -469,6 +663,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Genuine invariance content; part 3 honestly conditional."
       }
     ],
     "da-circular": [
@@ -489,6 +699,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No circularity; invariances are intrinsic to q-integers/hook lengths."
       }
     ],
     "da-overclaim": [
@@ -508,6 +734,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Steps 1,2 marked unconditional; step 3 marked conditional on the conjecture per §3b-cond. Scoping is honest."
       }
     ],
     "da-hidden-dof": [
@@ -528,6 +770,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -548,6 +806,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Quotient-of-bar-invariants ⇒ bar-invariant; perm of hooks ⇒ equal products; both valid."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -567,6 +841,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Lean matches; hookLengths_transpose is an honest axiom pending the Mathlib lemma (cited fulton1997)."
       }
     ],
     "da-citation-misuse": [
@@ -587,6 +877,22 @@
         "notes": "Citations to kashiwara1991, khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "kashiwara1991/khovanovlauda2009/brundankleshchev2009 are correct for crystal bases/KLR/Type-B folding; kassel1995 for the q-integer identity."
       }
     ],
     "da-definitional-ambiguity": [
@@ -607,6 +913,24 @@
         "notes": "Key terms and symbols in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "bar-involution-invariance.md:9: \"for every partition $\\lambda \\vdash n$ and every $q > 0$\"",
+        "notes": "Narrative says 'every q>0' but the q-integer [k]_q=(q^k−q^{-k})/(q−q^{-1}) is undefined at q=1; the Lean correctly carries q≠1, an exclusion the prose omits."
       }
     ],
     "da-empirical-fragility": [
@@ -627,6 +951,22 @@
         "notes": "The algebraic and logical relations in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Numerical witness (n≤9, 97 partitions) supports an exact algebraic identity, not a fitted match."
       }
     ],
     "da-physical-implausibility": [
@@ -647,6 +987,22 @@
         "notes": "The physical concepts described in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "CPT/bar-invariance as a structural cross-check is physically coherent."
       }
     ],
     "da-reproducibility": [
@@ -667,6 +1023,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:1 — content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "brundan_kleshchev_audit.py + witness present in computations/audits/; ts marks status verified."
       }
     ],
     "da-referee-verdict": [
@@ -688,6 +1060,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean for 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' fails compilation with error: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Strong block: parts 1,2 fully proved, part 3 honestly conditional. Strongest (minor) objection: prose 'every q>0' omits the q≠1 exclusion the Lean carries."
       }
     ],
     "voice-status-leak": [
@@ -1729,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

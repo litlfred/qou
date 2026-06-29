@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:18.818Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Type-B folding / CPT pair production conjecture is particle-interactions scope."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -108,6 +123,21 @@
         "notes": "No false claims identified in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Conjecture (kind=conjecture); the established literature claims (Type-B folding, KLR bar-involution) are correctly attributed and not asserted as proved here."
       }
     ],
     "da-vacuous": [
@@ -126,6 +156,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are non-vacuous as they make concrete conjectures about 'with Hecke normal forms $\\{T_w\\}$, and let $\\mathrm{Cryst}(\\mathfrak{sl}_n)$ be its associated Kashiwara crystal unde...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Genuine conjectural content (folded operators realize matter/antimatter pairing)."
       }
     ],
     "da-circular": [
@@ -145,6 +190,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Not circular; the det-pair identity is offered as a shadow, not as the conjecture's premise."
       }
     ],
     "da-overclaim": [
@@ -163,6 +223,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Conjectural status explicitly delimits what is established vs conjectured; appropriately scoped."
       }
     ],
     "da-hidden-dof": [
@@ -182,6 +257,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free numerical parameter."
       }
     ],
     "da-non-sequitur": [
@@ -201,6 +291,21 @@
         "notes": "The argument flow in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Paired-operator step ⇒ bar-conjugate descendants ⇒ single chirality unreachable is internally coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -219,6 +324,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjectured block 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Conjecture with lean validation:'stub'; no theorem to diverge from."
       }
     ],
     "da-citation-misuse": [
@@ -238,6 +358,21 @@
         "notes": "Citations to kashiwara1991, lecouvey2007, khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "kashiwara1991/lecouvey2007/khovanovlauda2009/brundankleshchev2009 correctly support the crystal/Type-B/KLR claims; det_pair_law.py exists."
       }
     ],
     "da-definitional-ambiguity": [
@@ -257,6 +392,21 @@
         "notes": "Key terms and symbols in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Dynkin involution i↦n−i, bar-involution, symmetric crystal so_{2n+1} all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -276,6 +426,21 @@
         "notes": "The algebraic and logical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Empirical support is the exact det ρ_λ·det ρ_{λ'}=±1 identity (parity, not a fitted number)."
       }
     ],
     "da-physical-implausibility": [
@@ -295,6 +460,21 @@
         "notes": "The physical concepts described in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "CPT pairing from symmetric-crystal structure is physically coherent as a conjecture."
       }
     ],
     "da-reproducibility": [
@@ -314,6 +494,21 @@
         "notes": "The derivation steps and formal definitions in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "det_pair_law.py present in computations/."
       }
     ],
     "da-referee-verdict": [
@@ -334,6 +529,21 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic and physical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Well-scoped conjecture with honest established/conjectural separation and a concrete empirical shadow. No objection."
       }
     ],
     "voice-status-leak": [
@@ -1182,5 +1392,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

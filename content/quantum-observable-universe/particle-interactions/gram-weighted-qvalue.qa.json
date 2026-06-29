@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:18.597Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement gives the Q-value formula and its three factors; the 'Structure of the formula' discussion is in separate sections."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:18.937Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Gram-weighted β-decay Q-value is particle-interactions scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:19.336Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Block opens by declaring the Lean sibling is the archimedean ℝ-specialisation (§7c) with generic combinatorial content; Frobenius norm √|·| and m_e scaling justify ℝ."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:19.629Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "gramWeight_sum_one / nonneg / uniform are proved by div_self, positivity, field_simp — appropriate for the ℝ-specialised weights."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:20.066Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "gram-weighted-qvalue.ts:16: \"ref: 'qou:QOU.Archimedean.gram_weighted_qvalue'\"",
+        "notes": "The Q-value formula itself is encoded as a def (gramWeightedQ), not a theorem; the .ts lean.ref names gram_weighted_qvalue but the file defines gramWeightedQ (no snake_case alias). The proved theorems (weights sum to 1, nonneg, uniform) are auxiliary, not the proposition's equality claim — but as a defining formula this is acceptable."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,22 @@
         "reviewed_at": "2026-06-22T02:57:21.627Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The proved lemmas (gramWeight_sum_one etc.) state genuine properties; no statement weakening."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:57:21.961Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Lemmas derived from the definitions, not field projections."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,22 @@
         "reviewed_at": "2026-06-22T02:57:22.248Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Σ_k w_k = 1 and w_k ≥ 0 are non-trivial (depend on the total≠0 branch and √|·|≥0)."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +393,22 @@
         "reviewed_at": "2026-06-22T02:57:22.592Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "h_nonzero / 0<N hypotheses are consistent."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +429,22 @@
         "reviewed_at": "2026-06-22T02:57:22.992Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "h_nonzero used in if_neg/div_self; hN used in the uniform lemma's N≠0 step."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +465,22 @@
         "reviewed_at": "2026-06-22T02:57:23.411Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No decide; positivity/field_simp are appropriate."
       }
     ],
     "da-false-claim": [
@@ -323,6 +501,22 @@
         "notes": "The claim in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Weights sum to 1 and are nonneg as proved; the Gram matrix being indefinite (negative nn eigenspace) is consistent with the framework. No false claim."
       }
     ],
     "da-vacuous": [
@@ -342,6 +536,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' presents substantial mathematical content: be the typed Garside element (typed Garside element) of the parent nucleus in $H_A(q)$, and let $G$ be the Gram matri...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Genuine probability-distribution lemmas; not vacuous."
       }
     ],
     "da-circular": [
@@ -362,6 +572,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Formula built from Garside elements and the Gram metric; not back-fitted to the single ⁶He datum."
       }
     ],
     "da-overclaim": [
@@ -381,6 +607,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "gram-weighted-qvalue.md:71: \"**Inputs.** The substrate parameter $q$ ... and the electron mass $m_e$. No other parameters.\"",
+        "notes": "Claims 'no other parameters', but the choice of Frobenius weight (√|δGδ|) vs the Gram-pairing variant (line 131) is itself a modelling choice yielding 3.849 vs 3.752 MeV; the form of w_k^G is an unstated degree of freedom in the construction."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +645,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Numerical inputs are q and m_e; the weight-functional choice is disclosed (two variants shown), so not a hidden DOF, though it is a modelling choice."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +681,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The three-factor structure (Δ_k, w_k^G, N) and the adjoint-character suppression argument are coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +716,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "gramWeightedQ + the weight lemmas faithfully encode the narrative formula and properties."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +752,22 @@
         "notes": "No citations are present in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No external citation; cross-ref to def:typed-garside-element apt."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +788,22 @@
         "notes": "Key terms and symbols in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Garside element, Frobenius norm √|δGδ|, Δ_k, w_k^G all defined; the if total=0 ⇒ 1/N edge case handled in Lean."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +824,24 @@
         "notes": "The algebraic and logical relations in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "gram-weighted-qvalue.md:126: \"{}^6\\mathrm{He} \\to {}^6\\mathrm{Li} & 4 & 3.849 & 3.508 & +9.7\\%\"",
+        "notes": "Single verified instance with a +9.7% error, and a competing 'Gram-pairing variant' giving +7.0% (line 133) is reported alongside; presenting two weight functionals with the better-looking one is mild cherry-picking, and one ~10%-error datum is thin support for a Q-value formula."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +862,22 @@
         "notes": "The physical concepts described in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Q-value units (MeV) and the boundary-vs-interior neutron weighting are physically reasonable; the ~10% error is honestly reported."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +898,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 — content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "gram-weighted-qvalue.md:125: \"{}^6\\mathrm{He} \\to {}^6\\mathrm{Li} & 4 & 3.849 ...\"",
+        "notes": "The verified instance (3.849 / variant 3.752) carries no witness pointer in the block; the numbers are not tied to a *.witness.json for independent reproduction."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +937,24 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean for 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' fails compilation with error: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "b35f0c3567b3",
+          "ts": "a77c2a816d41",
+          "lean": "eead49d9246d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "gram-weighted-qvalue.md:131: \"The Gram-pairing variant ... gives $3.752$ MeV ($+7.0\\%$).\"",
+        "notes": "Lean weight-distribution lemmas are clean, but the empirical support is a single ⁶He→⁶Li point at +9.7% with a second variant at +7.0% and no witness pointer; the weight-functional choice is an undisclosed modelling DOF behind 'no other parameters'. Strongest objection: empirical fragility / weight-functional freedom."
       }
     ],
     "voice-status-leak": [
@@ -1598,5 +1992,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:22.033Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement is the Schur-Weyl duality + self-duality constraint; minimal interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:22.421Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Shell-operator self-duality (magic shells) is particle-interactions scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:22.748Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement is generic quantum-group/Hecke algebra over R; the Lean correctly uses {R}[CommRing R], no archimedean leak."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:23.152Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The (degenerate) Lean proof is rfl over CommRing — algebraic, no archimedean misuse (the defect is vacuity, flagged elsewhere)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:23.668Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "shell-schur-weyl-self-duality.lean:42: \"def conjugatePartition (part : List ℕ) : List ℕ := part\"",
+        "notes": "Narrative claims x_λ = x_{λ*} with λ* the genuine Young-diagram transpose (Schur-Weyl image of GL_k charge conjugation); the Lean defines conjugatePartition := id, so shell_self_duality reduces to x_λ = x_λ — a different, trivial statement. Lean ≠ narrative."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:57:24.876Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "critical",
+        "evidence": "shell-schur-weyl-self-duality.lean:39: \"Trivial degenerate witness: the identity. ... keeps `shell_self_duality` provable as `rfl`.\"",
+        "notes": "The transpose involution is replaced by the identity precisely to make the theorem provable; this weakens the stated self-duality (λ↔λ*) into reflexivity, a self-acknowledged degeneration."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:57:25.095Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Not a field projection; the defect is the identity-transpose trivialization (trivial-true)."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:57:25.259Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "critical",
+        "evidence": "shell-schur-weyl-self-duality.lean:63: \"rfl\"",
+        "notes": "With conjugatePartition := id, the goal sc.coeff part = sc.coeff (conjugatePartition part) is syntactically sc.coeff part = sc.coeff part — a tautology discharged by rfl, carrying none of the self-duality content."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:57:25.367Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "ShellCoefficients is inhabited; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,22 @@
         "reviewed_at": "2026-06-22T02:57:25.473Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No hypotheses beyond binders; vacuity is the issue, not unused hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +469,22 @@
         "reviewed_at": "2026-06-22T02:57:25.598Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "rfl on an identity-collapsed goal is not decide-masking per se; flagged under trivial-true."
       }
     ],
     "da-false-claim": [
@@ -323,6 +505,22 @@
         "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The narrative Schur-Weyl statement (transpose ↔ rep-duality, V(λ*)≅V(λ)* up to det twist) is correct mathematics (Kassel Ch X); the defect is the Lean's trivialization, not a false math claim."
       }
     ],
     "da-vacuous": [
@@ -343,6 +541,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "shell-schur-weyl-self-duality.lean:42: \"conjugatePartition (part) := part\"",
+        "notes": "The Lean witness is content-free: by setting transpose=identity, shell_self_duality becomes x=x. The self-acknowledged 'trivial degenerate witness' proves nothing about actual conjugate-partition self-duality."
       }
     ],
     "da-circular": [
@@ -363,6 +579,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Schur-Weyl justification of shell-operator self-duality'.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No circularity in the narrative argument."
       }
     ],
     "da-overclaim": [
@@ -382,6 +614,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Schur-Weyl justification of shell-operator self-duality' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "shell-schur-weyl-self-duality.lean:54: \"that sharper version remains future work.\"",
+        "notes": "The block is a Proposition asserting x_λ=x_{λ*} as established, but the only formal backing is the identity-transpose tautology; the genuine self-duality is admitted as future work — claim stronger than the proof."
       }
     ],
     "da-hidden-dof": [
@@ -402,6 +652,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Schur-Weyl justification of shell-operator self-duality'.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free numerical parameter."
       }
     ],
     "da-non-sequitur": [
@@ -422,6 +688,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Narrative steps 1-5 follow as a sketch; the gap is formal (trivial Lean), not a narrative logic gap."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -441,6 +723,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "shell-schur-weyl-self-duality.lean:60: \"sc.coeff part = sc.coeff (conjugatePartition part)\"",
+        "notes": "Lean proves x=x (transpose:=id); narrative proves/claims x_λ=x_{λ*} for the real transpose. The formalization is strictly weaker and self-acknowledged as degenerate."
       }
     ],
     "da-citation-misuse": [
@@ -461,6 +761,22 @@
         "notes": "The citations kassel1995 in 'Schur-Weyl justification of shell-operator self-duality' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "kassel1995 (Ch X, quantum Schur-Weyl) is the right reference; jimbo1986/drinfeld1987/stanley1999 in the docstring are apt."
       }
     ],
     "da-definitional-ambiguity": [
@@ -481,6 +797,22 @@
         "notes": "Key terms and symbols in 'Schur-Weyl justification of shell-operator self-duality' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "λ*, sign rep V(1^n), Wedderburn block e_λ all defined in the narrative (even if the Lean degenerates transpose)."
       }
     ],
     "da-empirical-fragility": [
@@ -501,6 +833,22 @@
         "notes": "The algebraic and logical relations in 'Schur-Weyl justification of shell-operator self-duality' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -521,6 +869,22 @@
         "notes": "The physical concepts described in 'Schur-Weyl justification of shell-operator self-duality' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Charge-conjugation self-duality of a parity-conserving shell is physically coherent."
       }
     ],
     "da-reproducibility": [
@@ -541,6 +905,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1 — content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier"
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No witness; Lean is build-checkable (but trivially)."
       }
     ],
     "da-referee-verdict": [
@@ -562,6 +942,24 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "92f37dce6244",
+          "ts": "5200620c322b",
+          "lean": "64bdbeeff505"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "shell-schur-weyl-self-duality.lean:39: \"Trivial degenerate witness: the identity.\"",
+        "notes": "The narrative Schur-Weyl argument is sound, but the formal proposition is backed by a self-acknowledged degenerate Lean (transpose:=id ⇒ x=x by rfl) that proves none of the self-duality content. Strongest objection: trivial-true / proof-statement-integrity — the genuine λ↔λ* claim is unformalized."
       }
     ],
     "voice-status-leak": [
@@ -1601,5 +1999,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:20.062Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Jacobian-level Z_5 compatibility between X_5 and Bring grounds the substrate; acceptable in particle-interactions."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Parallel structure at the Jacobian level': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Correctly states Bring has no genus-2 Galois quotient so the standard Prym embedding does NOT apply — an accurate, careful negative; the Z_5-isotypical character equality is plausible and not asserted as an embedding."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Parallel structure at the Jacobian level' presents substantial mathematical content: The weight identification of prop:x5-bring-weight-identification has a companion statement at the level of Jacobians....",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Substantive representation-compatibility remark."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Parallel structure at the Jacobian level'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Parallel structure at the Jacobian level' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Explicitly downgrades from a Prym embedding to a Z_5-representation compatibility ('Not a Prym embedding'); appropriately cautious."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +196,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Parallel structure at the Jacobian level'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No parameter."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +230,21 @@
         "notes": "The argument flow in 'Parallel structure at the Jacobian level' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "χ_1⊕..⊕χ_4 decomposition and the weight-0 S_5-standard remainder reasoning is coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +263,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Remark block, no own Lean; interprets prop:x5-bring-weight-identification."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +297,21 @@
         "notes": "Citations to edge1978 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "edge1978 correctly cited for the classical Bring/hyperelliptic-quotient relation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +331,21 @@
         "notes": "Key terms and symbols in 'Parallel structure at the Jacobian level' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "H^1(·,ℚ), χ_k character, isotypical part all defined; minor typo ('the The right-hand side', line 16-17) is cosmetic."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +365,21 @@
         "notes": "The algebraic and logical relations in 'Parallel structure at the Jacobian level' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +399,21 @@
         "notes": "The physical concepts described in 'Parallel structure at the Jacobian level' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No physical prediction; pure algebraic-geometry compatibility."
       }
     ],
     "da-reproducibility": [
@@ -253,6 +433,21 @@
         "notes": "The derivation steps and formal definitions in 'Parallel structure at the Jacobian level' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No witness staked."
       }
     ],
     "da-referee-verdict": [
@@ -273,6 +468,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Parallel structure at the Jacobian level' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Careful remark that correctly avoids the Prym-embedding overclaim. Only a cosmetic typo ('the The'). No substantive objection."
       }
     ],
     "voice-status-leak": [
@@ -1082,5 +1292,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.203Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement is the bare primality claim; the magic-number interpretation is correctly placed in a Remarks subsection."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:19.499Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Algebraic-primality base case underpins the magic-number derivation; particle-interactions scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:19.887Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement quantifies over q>1 but the claim is purely arithmetic (no decomposition exists); archimedean ordering on q is incidental, uniform in q."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:20.317Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Proof is elementary arithmetic (sum≥length, omega), no archimedean machinery misapplied to an algebraic goal."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:20.664Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "one_isAlgebraicallyPrime(q) matches the narrative '1 is algebraically prime for all q'; sum_ge_length_of_all_pos + omega close it as described."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +283,22 @@
         "reviewed_at": "2026-06-22T02:57:22.115Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "IsAlgebraicallyPrime 1 q is the genuine claim; not weakened."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +319,22 @@
         "reviewed_at": "2026-06-22T02:57:22.578Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Re-export of a separately proved theorem, not a field projection of its own conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +355,22 @@
         "reviewed_at": "2026-06-22T02:57:22.907Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The block is honestly titled 'vacuous primality': vacuity is the mathematical content (no decomposition of 1), not an evasion; conclusion is IsAlgebraicallyPrime, not literal True."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +391,22 @@
         "reviewed_at": "2026-06-22T02:57:23.320Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No false premise; the empty decomposition set is the genuine reason."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +427,22 @@
         "reviewed_at": "2026-06-22T02:57:23.698Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "q-uniformity is intrinsic; no spurious hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +463,22 @@
         "reviewed_at": "2026-06-22T02:57:24.050Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "omega closes the arithmetic contradiction legitimately; no decide masking."
       }
     ],
     "da-false-claim": [
@@ -323,6 +499,22 @@
         "notes": "No false claims identified in 'Vacuous primality at $n = 1$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "1 has no decomposition into k≥2 parts each ≥1; the primality is correct (and vacuously so)."
       }
     ],
     "da-vacuous": [
@@ -342,6 +534,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Vacuous primality at $n = 1$' presents substantial mathematical content: prime (def:algebraic-primality). Equivalently, the canonical state $\\psi_1(q)$ is not in the closed span of any non-t...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Vacuity is the deliberate, disclosed content of a base case, not a hidden evasion; the block itself flags it."
       }
     ],
     "da-circular": [
@@ -362,6 +570,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Vacuous primality at $n = 1$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No circularity; structural impossibility of decomposition."
       }
     ],
     "da-overclaim": [
@@ -381,6 +605,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Vacuous primality at $n = 1$' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Explicitly notes including 1 in the magic set is a presentation choice, not a physical magic-number claim."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +641,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Vacuous primality at $n = 1$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +677,22 @@
         "notes": "The argument flow in 'Vacuous primality at $n = 1$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "length≥2 ∧ sum=1 ⇒ contradiction follows by omega."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +712,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Vacuous primality at $n = 1$' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Sibling re-exports the proved theorem; matches narrative."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +748,22 @@
         "notes": "No citations are present in 'Vacuous primality at $n = 1$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No external citation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +784,22 @@
         "notes": "Key terms and symbols in 'Vacuous primality at $n = 1$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Algebraic primality defined via def:algebraic-primality; unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +820,22 @@
         "notes": "The algebraic and logical relations in 'Vacuous primality at $n = 1$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No numerical match staked."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +856,22 @@
         "notes": "The physical concepts described in 'Vacuous primality at $n = 1$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No physical prediction asserted beyond the disclosed presentation choice."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +892,22 @@
         "notes": "The derivation steps and formal definitions in 'Vacuous primality at $n = 1$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Lean is build-checkable; no witness."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +929,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Vacuous primality at $n = 1$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "f0662d42fb44",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Honest, correctly-scoped base-case proposition; vacuity is the disclosed content. No objection."
       }
     ],
     "voice-status-leak": [
@@ -1598,5 +1982,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

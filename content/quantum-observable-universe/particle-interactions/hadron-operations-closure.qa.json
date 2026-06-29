@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:21.618Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement is the four-part closure claim with no extraneous physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:22.071Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Hadron operations closure is core particle-interactions content."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,24 @@
         "reviewed_at": "2026-06-22T02:57:22.631Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "hadron-operations-closure.lean:1: \"import Mathlib.Data.Real.Basic\"",
+        "notes": "Statement is generic categorical/skein content (no archimedean construct), yet the sibling Lean imports Real.Basic and types Hadron over an axiom unrelated to ℝ; the ℝ import is gratuitous (§7c)."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +141,22 @@
         "reviewed_at": "2026-06-22T02:57:22.950Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No archimedean machinery used to prove an algebraic claim (the Lean proof is by rfl on existentials)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +177,24 @@
         "reviewed_at": "2026-06-22T02:57:23.302Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.lean:37: \"(∀ n, ∀ h : Hadron n, ∃ h' : Hadron n, h' = braidingOp n h)\"",
+        "notes": "Narrative claims braiding is an involution producing −1 on antisymmetric exchange, Hopf linking has a two-sided inverse, and skein resolves into Q(q)·M(L)+ΣM(Kᵢ); the Lean only asserts each operation's output lies in the type (∃ h'=op h), proving none of the substantive structure."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +287,24 @@
         "reviewed_at": "2026-06-22T02:57:24.630Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "critical",
+        "evidence": "hadron-operations-closure.lean:35: \"theorem hadron_operations_closure : ... ∃ h' : Hadron n, h' = braidingOp n h ...\"",
+        "notes": "The Lean statement is a drastic weakening of the narrative proposition: 'op(h) exists in Hadron n' is true by construction for any total function, so the theorem certifies far less than the four narrative closure claims."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +325,22 @@
         "reviewed_at": "2026-06-22T02:57:24.854Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Not a structure-field projection; it is an existential-of-equality, separately problematic (see trivial-true)."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +361,24 @@
         "reviewed_at": "2026-06-22T02:57:25.101Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "critical",
+        "evidence": "hadron-operations-closure.lean:47: \"exact ⟨fun n h => ⟨_, rfl⟩, ... fun n₁ n₂ h₁ h₂ => ⟨_, rfl⟩⟩\"",
+        "notes": "Each conjunct ∃ h', h' = opₙ h is discharged by ⟨_, rfl⟩ — a tautology (the witness is op h itself). The theorem is content-free relative to the narrative's involution/inverse/skein claims."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +399,22 @@
         "reviewed_at": "2026-06-22T02:57:25.215Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Hadron axiomatised as a total type family; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +435,22 @@
         "reviewed_at": "2026-06-22T02:57:25.380Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No hypotheses beyond the binders, which are used trivially."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +471,22 @@
         "reviewed_at": "2026-06-22T02:57:25.525Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No decide/trivial masking; the issue is the rfl-existential vacuity, flagged under trivial-true."
       }
     ],
     "da-false-claim": [
@@ -323,6 +507,22 @@
         "notes": "No false claims identified in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The narrative claims (braiding involution, skein resolution, fusion additivity of n) are standard and not false."
       }
     ],
     "da-vacuous": [
@@ -342,6 +542,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' presents substantial mathematical content: '$\\mathbf{C}$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.lean:47: \"fun n h => ⟨_, rfl⟩\"",
+        "notes": "The Lean certification is vacuous: ∃h'=op(h) is true for any total operation, certifying none of the asserted closure structure."
       }
     ],
     "da-circular": [
@@ -362,6 +580,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No back-fitting; closure claim is structural."
       }
     ],
     "da-overclaim": [
@@ -381,6 +615,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.md:6: \"exchanging two identical constituents produces $-1$\"",
+        "notes": "Narrative asserts the fermionic −1 sign and a two-sided unlinking inverse as proved closure, but no proof (Lean or narrative) is given for these; presented as established without backing."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +653,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free numerical parameter."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +689,22 @@
         "notes": "The prose arguments in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Narrative steps are internally coherent (each operation preserves Sym^n structure)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +724,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.lean:41: \"(∀ n, ∀ h : Hadron n, ∃ h' : Hadron n, h' = skeinOp n h)\"",
+        "notes": "Lean proves a vacuously-implied existence statement; the .md skein closure with the explicit mass formula M(H)=Q(q)·M(L_Hopf)+ΣM(Kᵢ) is not in the Lean at all."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +762,22 @@
         "notes": "No citations are present in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "kock2004 (Frobenius algebras / 2D TQFT) is apt for the symmetric-product closure framing."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +798,24 @@
         "notes": "Key terms and symbols in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "hadron-operations-closure.md:16: \"q · L_+ - q^{-1} · L_- = (q - q^{-1}) · L_0\"",
+        "notes": "This q-weighted skein form differs from the canonical AGENTS.md §7a Skein relation L_+ − L_− = (q − q^{-1})L_0 (eigenvalues q, −q^{-1}); the extra q/q^{-1} weighting is unexplained and risks an incompatible normalization."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +836,22 @@
         "notes": "The algebraic and logical relations in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No numerical match staked in the block."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +872,22 @@
         "notes": "The physical concepts described in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Fermionic exchange sign and fusion-of-hadrons are physically standard."
       }
     ],
     "da-reproducibility": [
@@ -539,6 +907,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No witness staked."
       }
     ],
     "da-referee-verdict": [
@@ -560,6 +944,24 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "8e523e2e36ee",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.lean:47: \"⟨_, rfl⟩\"",
+        "notes": "Narrative is plausible but the formal backing is vacuous: the Lean theorem certifies only that each operation's output is in the type (∃h'=op h by rfl), proving none of the four asserted closure properties. Strongest objection: proof-statement-integrity gap — the Lean is a tautology, not the closure theorem."
       }
     ],
     "voice-status-leak": [
@@ -1599,5 +2001,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

@@ -31,6 +31,24 @@
         "reviewed_at": "2026-06-22T02:57:22.267Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:31: \"## Proved content vs. expository content (the clarification)\"",
+        "notes": "The Proposition statement (lines 11-29) is clean; substantive expository/interpretive prose follows in-block rather than in a linked remark, but it is explicitly labelled as clarification, so a minor voice note at most."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +69,22 @@
         "reviewed_at": "2026-06-22T02:57:22.656Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Order-of-operations for the pre-archimedean delta in Q_beta/binding is squarely particle-interactions scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +105,22 @@
         "reviewed_at": "2026-06-22T02:57:23.059Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement is generic-ring fibre algebra (FibreFold additivity); archimedean tau correctly placed on the observable side."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +141,22 @@
         "reviewed_at": "2026-06-22T02:57:23.444Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "fold_commutes_sub proved over generic CommRing (sub_eq_add_neg+map_add+map_neg); non-commutation witnessed over ℤ by norm_num. Wall respected."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +177,22 @@
         "reviewed_at": "2026-06-22T02:57:23.843Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "fold_commutes_sub / archimedean_does_not_commute_sub match the two proved claims (1) and (2); claim (3) is openly flagged expository convention, not a theorem."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,22 @@
         "reviewed_at": "2026-06-22T02:57:25.030Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Signature is genuine additivity-commutes-with-subtraction over CommRing; not weakened."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:57:25.163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "fold_commutes_sub derives via map_add/map_neg, not a structure-field projection of its own conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,22 @@
         "reviewed_at": "2026-06-22T02:57:25.338Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Conclusion is a non-trivial algebraic identity f(x-y)=f(x)-f(y), not a tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +393,22 @@
         "reviewed_at": "2026-06-22T02:57:25.472Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "FibreFold hypothesis (additivity) is inhabited and consistent."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +429,22 @@
         "reviewed_at": "2026-06-22T02:57:25.599Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Additivity hypothesis is used in the sub_eq_add_neg chain."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +465,22 @@
         "reviewed_at": "2026-06-22T02:57:25.660Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "norm_num on a concrete ℤ witness for non-commutation is justified, not masking."
       }
     ],
     "da-false-claim": [
@@ -323,6 +501,22 @@
         "notes": "No false claims identified in 'Difference observables are formed pre-archimedean: fold commutes': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Both proved claims are correct; additive maps commute with subtraction, squaring does not."
       }
     ],
     "da-vacuous": [
@@ -342,6 +536,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Difference observables are formed pre-archimedean: fold commutes' presents substantial mathematical content: '$\\mathfrak{Q}_\\beta = \\lvert\\Delta(\\mathrm{net})\\rvert\\cdot\\mathfrak{E}_0$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Genuine algebraic content; not a : True projection."
       }
     ],
     "da-circular": [
@@ -362,6 +572,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Difference observables are formed pre-archimedean: fold commutes'.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No back-fitting; an order-of-operations structural claim independent of numerical targets."
       }
     ],
     "da-overclaim": [
@@ -381,6 +607,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Difference observables are formed pre-archimedean: fold commutes' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Block carefully separates PROVED (1)(2) from EXPOSITORY CONVENTION (3); the ~10^2 over-amplification claim is hedged '(empirically)'."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +643,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Difference observables are formed pre-archimedean: fold commutes'.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No free parameter introduced; pure category-of-operations argument."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +679,22 @@
         "notes": "The prose arguments in 'Difference observables are formed pre-archimedean: fold commutes' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Each step follows; non-commutation of tau justifies why ordering matters."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +714,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Difference observables are formed pre-archimedean: fold commutes'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Lean re-exports fold_commutes_sub; matches the proved sub-claims."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +750,22 @@
         "notes": "The citations kassel1995 in 'Difference observables are formed pre-archimedean: fold commutes' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "kassel1995 supports the Hecke antipode / q-deformation context appropriately."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +786,22 @@
         "notes": "Key terms and symbols in 'Difference observables are formed pre-archimedean: fold commutes' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Fibre vs observable level clearly defined; FibreFold = additive map made explicit."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +822,22 @@
         "notes": "The algebraic and logical relations in 'Difference observables are formed pre-archimedean: fold commutes' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No new numerical match staked; the ~10^2 figure is an illustrative aside."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +858,22 @@
         "notes": "The physical concepts described in 'Difference observables are formed pre-archimedean: fold commutes' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "delta-pre-archimedean.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Order-of-operations claim has no unit/conservation issue."
       }
     ],
     "da-reproducibility": [
@@ -539,6 +893,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No witness staked; Lean is build-checkable."
       }
     ],
     "da-referee-verdict": [
@@ -560,6 +930,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Difference observables are formed pre-archimedean: fold commutes' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "73afd72139a5",
+          "ts": "fe342d55796e",
+          "lean": "2c7c2346b1f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Sound, carefully scoped proposition separating proved algebra from expository convention. Strongest objection: in-block interpretive prose mixes with the statement (minor voice)."
       }
     ],
     "voice-status-leak": [
@@ -1597,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

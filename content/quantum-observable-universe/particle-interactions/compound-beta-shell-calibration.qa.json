@@ -78,6 +78,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statement gives the magic-crossing Q-value formula and the y_target relation; minimal interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -145,6 +161,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Compound β-decay calibration across magic shells is particle-interactions scope."
       }
     ],
     "wall-side-statement": [
@@ -212,6 +244,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Q_β = E_0·(|tr_M^par|−|tr_M^dau|−|tr_M^lep|) is a difference observable scaled by E_0; the archimedean E_0 scaling is correctly the observable-side step."
       }
     ],
     "wall-side-proof": [
@@ -279,6 +327,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No narrative Proof body; Lean theorems are all sorry placeholders."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -346,6 +410,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "compound-beta-shell-calibration.lean:41: \"∃ Q_beta : Float, Q_beta = E_0 * (tr_M_parent - tr_M_daughter - tr_M_leptons)\"",
+        "notes": "Lean encodes the formula as ∃ Q_beta, Q_beta = expr (a trivially-true existence shape) and leaves it sorry'd; even if discharged it would assert only that the expression has a value, not the narrative's structural Q-value identity over |tr_M|."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -698,6 +780,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "compound-beta-shell-calibration.lean:58: \"theorem single_calibration_framework (chain) : chain.reference_E_0_MeV = 0.782 := by sorry\"",
+        "notes": "single_calibration_framework asserts a free structure field equals a literal — not provable as stated (a record field is arbitrary), so the theorem can never be honestly closed; it should be a hypothesis/def, not a sorry'd theorem."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -783,6 +883,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Not a field projection; the issue is the existence-shape and the sorries."
       }
     ],
     "proof-no-trivial-true": [
@@ -868,6 +984,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "compound-beta-shell-calibration.lean:42: \"Q_beta = E_0 * (tr_M_parent - tr_M_daughter - tr_M_leptons)\"",
+        "notes": "∃ Q_beta, Q_beta = expr is a tautology (witness = expr); the substantive content (that this equals the physical Q-value) is not captured. Currently sorry'd so not yet a closed vacuous proof, but the statement shape is content-free."
       }
     ],
     "proof-no-false-premise": [
@@ -953,6 +1087,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "CompoundBetaChain is inhabited; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1038,6 +1188,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Statements are sorry'd; no spurious closed hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -1123,6 +1289,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No decide/trivial; the gaps are explicit sorries with -- Ref:."
       }
     ],
     "da-false-claim": [
@@ -1190,6 +1372,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Q-value as a difference of shell-operator traces is consistent with the framework; no false claim."
       }
     ],
     "da-vacuous": [
@@ -1257,6 +1455,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "compound-beta-shell-calibration.lean:41: \"∃ Q_beta : Float, Q_beta = ...\"",
+        "notes": "The Lean statements use the trivially-true ∃ x, x = expr shape; content-free as formalized (and currently sorry'd)."
       }
     ],
     "da-circular": [
@@ -1324,6 +1540,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Uses E_0=Q_β (CAL-2 proxy) as the single archimedean input, consistent with three-calibration discipline; not back-fitted."
       }
     ],
     "da-overclaim": [
@@ -1393,6 +1625,22 @@
         "severity": "minor",
         "evidence": "derivable, not independently calibrated",
         "notes": "Stating that it is 'derivable, not independently calibrated' is an overclaim if the shadow prices are calibrated elsewhere."
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Block states the full binding scale requires combining multiple Q-values — appropriately hedged; points to a probe for consistency checks."
       }
     ],
     "da-hidden-dof": [
@@ -1465,6 +1713,22 @@
         "severity": "major",
         "evidence": "The RHS is fully determined by AME β-decay data plus the categorical level-3 shadow prices — no free parameters beyond E_0.",
         "notes": "Claiming 'no free parameters beyond E_0' hides the fact that level-3 shadow prices Q_beta^(3) themselves might carry implicit calibrations or empirical fits. This is a potential hidden degree of freedom."
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Single archimedean input E_0=0.782 MeV (CAL-2); no extra DOF introduced."
       }
     ],
     "da-non-sequitur": [
@@ -1532,6 +1796,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "The trace-difference-times-E_0 reasoning is coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1598,6 +1878,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "compound-beta-shell-calibration.lean:43: \"sorry\"",
+        "notes": "All three Lean theorems are sorry placeholders with trivial existence shapes; the formalization does not yet capture the narrative proposition."
       }
     ],
     "da-citation-misuse": [
@@ -1665,6 +1963,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No external citations (cites:[]); cross-refs to shell-self-duality and three-calibration are apt."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1734,6 +2048,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Parent/daughter/lepton trace terms and the magic anchor set are defined; references Table 1."
       }
     ],
     "da-empirical-fragility": [
@@ -1802,6 +2132,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Empirical consistency deferred to an explicit audit probe; no fragile match staked in-block."
       }
     ],
     "da-physical-implausibility": [
@@ -1871,6 +2217,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Magic anchors {2,8,20,28,50,82,126} and β-decay (Z,N)→(Z+1,N−1) are standard."
       }
     ],
     "da-reproducibility": [
@@ -1938,6 +2300,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No witness staked directly; probe referenced separately."
       }
     ],
     "da-referee-verdict": [
@@ -2006,6 +2384,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "b7ee1c822617",
+          "ts": "81b5947fae0f",
+          "lean": "fa6024123cdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "compound-beta-shell-calibration.lean:43: \"sorry\"",
+        "notes": "Narrative proposition is plausible and well-scoped, but the Lean is three sorry'd theorems with trivially-true existence shapes (and a non-provable field-equals-literal); formalization is a stub, not a proof. Strongest objection: the formal backing does not yet capture the claim."
       }
     ],
     "voice-status-leak": [
@@ -3047,5 +3443,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }

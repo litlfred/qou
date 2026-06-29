@@ -816,7 +816,257 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Skein binding Lagrangian / Bethe-Weizsäcker mapping is particle-interactions scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Interpretive remark; tanh(ln q)=(q−q^{-1})/(q+q^{-1}) is correct; a_C→0 at q=1 follows. No false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Substantive sector decomposition; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Identifies S_q=tr(L_q) on the state; not back-fitting q to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "skein-binding-lagrangian-derivation.md:64: \"producing the Coulomb repulsion without any additional structure\"",
+        "notes": "Claims the q-wedge 'automatically' produces the BW terms 'without additional structure', yet the numerical coefficients require the separate scales λ_V,λ_C,λ_S (line 23-25); the 'no additional structure' framing understates the free λ inputs."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "skein-binding-lagrangian-derivation.md:23: \"a_V = ½(q+q^{-1})·λ_V, a_C=(q−q^{-1})·λ_C, a_S=½(q+q^{-1})·λ_S\"",
+        "notes": "λ_V, λ_C, λ_S (and the a_C scale 3.334) are undetermined per-sector scales tuned to reproduce the experimental BW coefficients (a_V≈15.56, a_C≈0.697, a_S≈17.23, a_A≈23.29); these are free parameters with no shown canonical-chain origin, i.e. effectively several DOF behind the 'derivation'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Sector→nuclear-term table is a coherent mapping; the gap is the unfixed λ scales (flagged under hidden-dof), not a logic gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Remark block, no own Lean; interprets def:skein-binding-lagrangian."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "No external citation; cross-refs to canonical-action/categorical-lagrangian are apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "skein-binding-lagrangian-derivation.md:24: \"a_C = (q - q^{-1}) \\times 3.334\"",
+        "notes": "The constant 3.334 (and λ_C/λ_V ratio) appear without definition or canonical-chain provenance; the reader cannot reconstruct them from (m_e,q₀)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "skein-binding-lagrangian-derivation.md:28: \"a_V \\approx 15.56$ MeV, $a_C ... \\approx 0.697$ MeV, $a_S \\approx 17.23$ MeV, $a_A \\approx 23.29$ MeV\"",
+        "notes": "The four BW coefficients match experiment only because per-sector scales λ_V,λ_C,λ_S are free; the q-dependence alone ((q±q^{-1}) factors ≈1) does little work, so the 'agreement' is largely absorbed into fitted λ, not a parameter-free prediction."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "notes": "Mapping skein sectors to BW volume/surface/Coulomb/asymmetry terms is physically reasonable; units (MeV) consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "minor",
+        "evidence": "skein-binding-lagrangian-derivation.md:28: \"$a_V \\approx 15.56$ MeV\"",
+        "notes": "The quoted a_V/a_C/a_S/a_A numbers carry no witness pointer; not reconstructible without the undisclosed λ scales, so the values are not independently reproducible from the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2994b24e268f",
+          "ts": "2e61eba59244"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:26:21.723Z",
+        "reviewed_sha": "97a534a8705e18181611663ea28fcf3a5c723de0",
+        "severity": "major",
+        "evidence": "skein-binding-lagrangian-derivation.md:23: \"a_V = ½(q+q^{-1})·λ_V ...\"",
+        "notes": "As an interpretive remark the sector decomposition is fine, but the BW-coefficient 'derivation' hides free per-sector scales λ_V,λ_C,λ_S tuned to experiment while claiming 'no additional structure'. Strongest objection: hidden DOF in the λ scales make the numerical agreement non-predictive."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:26:21.723Z"
 }
