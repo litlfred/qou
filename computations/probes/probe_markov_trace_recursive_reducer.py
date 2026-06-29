@@ -58,22 +58,26 @@ def main() -> int:
     z_rec = R.z_sym
 
     # Recursive words are 1-indexed signed generators; canonical 0-indexed.
-    # Cover single-top, σ², and multi-top H_3 words.
+    # Cover single-top, σ², multi-top H_3, and H_4/H_5 multi-top-1 words.
     #
-    # NOTE (canonical-engine coverage gap, found by this probe's verify-first):
-    # some H_4 words — e.g. [1,2,3,2,1], which recurses to the subword
-    # (1,0,0,1) — hit `_tr_M_word_impl`'s `NotImplementedError("Complex
-    # braid case (multiple top-1 in segment)")`. That is an UNIMPLEMENTED
-    # branch in the canonical engine, not a route disagreement, so we
-    # restrict this agreement check to the H_2/H_3 words both routes fully
-    # support. The H_4 canonical gap is a separate finding (its own follow-up).
+    # The H_4 words below recurse to subwords like (1,0,0,1) that used to
+    # hit `_tr_M_word_impl`'s `NotImplementedError("Complex braid case
+    # (multiple top-1 in segment)")`. That branch is now implemented (the
+    # σ_top·segment·σ_top block is expanded through the generic Hecke word
+    # reducer into ≤1-top normal-form words), so the agreement check now
+    # covers them. An H_5 word is included as a beyond-H_4 spot-check.
     rec_words = [
-        [1],            # σ_0 in H_2
-        [1, 1],         # σ_0²  (Hecke relation)
-        [1, 2, 1],      # H_3 braid
-        [1, 2],         # H_3 chain
-        [2, 1, 2, 1],   # H_3, multi-top (exercises the fixed branch)
-        [2, 1, 2],      # H_3, multi-top
+        [1],                  # σ_0 in H_2
+        [1, 1],               # σ_0²  (Hecke relation)
+        [1, 2, 1],            # H_3 braid
+        [1, 2],               # H_3 chain
+        [2, 1, 2, 1],         # H_3, multi-top (exercises the fixed branch)
+        [2, 1, 2],            # H_3, multi-top
+        [1, 2, 3, 2, 1],      # H_4, multi-top-1 (was NotImplementedError)
+        [1, 2, 3, 2],         # H_4 chain-back
+        [1, 2, 3, 1, 2],      # H_4 multi-top
+        [2, 3, 2, 3],         # H_4 multi-top, top=σ_2 repeated
+        [1, 2, 3, 4, 3, 2, 1],  # H_5 spot-check (5-strand analogue)
     ]
 
     print("=" * 78)
@@ -105,10 +109,12 @@ def main() -> int:
     wb.set_description(
         "I1 probe: the recursive Markov-trace reducer agrees with the "
         "canonical seminormal/Hoefsmit–Wedderburn engine, exact in ℚ(q), "
-        "across single-top, multi-top, and H_2/H_3/H_4 words. Conventions "
-        "reconciled (recursive 1-indexed (z_sym,q) ↔ canonical 0-indexed "
-        "(z,h), h=q−1/q). Multi-top words exercise the branch fixed by the "
-        "tr_M_word max_gen!=n−2 normalization."
+        "across single-top, multi-top, and H_2/H_3/H_4/H_5 words. "
+        "Conventions reconciled (recursive 1-indexed (z_sym,q) ↔ canonical "
+        "0-indexed (z,h), h=q−1/q). The H_4 multi-top-1 words (e.g. "
+        "[1,2,3,2,1], which recurses to the subword (1,0,0,1)) exercise the "
+        "previously-unimplemented braid branch, now reduced via the generic "
+        "Hecke word reducer; an H_5 word confirms the fix generalizes."
     )
     for r in rows:
         wb.add_assertion(
