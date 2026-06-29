@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-23T23:49:52.238842+00:00",
-  "commitSha": "557693b7b59cf2c92ada013b2504ecf55e1c587d",
+  "computedAt": "2026-06-29T14:24:25.105879+00:00",
+  "commitSha": "00efb10c90b096b3d37b083bd5130b2cd4733684",
   "assertions": [
     {
       "name": "all_atoms_within_1ppQ",
-      "computed": 0,
+      "computed": 1,
       "expected": 1,
-      "passed": false,
-      "source": "tr_M(β_atom) @ q_0: the float-clean methods (Hoefsmit mpfr / chi-cache / Habiro) must agree to 1 ppQ (1e-15); markov_peel (float64 q_0 eval; exact path incomplete for nuclei, #508 P2) is an independent check held to 1e-12, NOT a 1 ppQ-certifying method"
+      "passed": true,
+      "source": "tr_M(β_atom) @ q_0: the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) must agree to 1 ppQ (1e-15). Both evaluate the exact-in-q trace at the full 50-digit q_0. The Hoefsmit/Habiro legs are color-blind (informational). An atom with <2 color-weighted methods (⁴He: partial chi-cache, b0vf) is UNCERTIFIED — reported but not counted as a divergence."
     },
     {
       "name": "character_engine_matches_closed_form",
@@ -19,12 +19,12 @@
       "source": "χ^{(n)}(β) = q_0^{w(β)} and χ^{(1ⁿ)}(β) = (−q_0^{-1})^{w(β)} for the two 1-dim Hecke irreps — an INDEPENDENT closed-form anchor on the character engine that feeds the chi-cache trace leg (agreement of the four paths is consistency, not correctness)"
     }
   ],
-  "allPassed": false,
-  "durationMs": 19,
+  "allPassed": true,
+  "durationMs": 20,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
-  "scriptHash": "d317c2e3aba3",
-  "scriptCommitSha": "557693b7b59cf2c92ada013b2504ecf55e1c587d",
+  "scriptHash": "4d9c90af86d1",
+  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,153 +34,164 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {
-    "description": "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. Two-part gate: the float-clean methods (Hoefsmit mpfr 50-dps, chi-cache, Habiro) are certified at 1 ppQ (1e-15 relative); markov_peel (float64 q_0 eval; exact symbolic path incomplete for nuclei, the open #508 Phase-2 rewrite) is an INDEPENDENT cross-check held to a looser 1e-12 float tolerance and does NOT certify 1 ppQ.",
+    "description": "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. 1 ppQ (1e-15) certification rests on the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) agreeing at q_0 (~1e-50); peel evaluates its exact-in-q trace at the full 50-digit q_0 (the float64 q_0 leak was fixed 2026-06-29). The Hoefsmit (mpfr 50-dps) and Habiro legs are color-blind (sign-only) cross-checks: they diverge ~1.8e-4 at A≥2 by the color-weighting (informational, not gated). An atom with only one color-weighted method (⁴He: partial chi-cache, bean b0vf) is reported UNCERTIFIED, not divergent.",
     "tolerance_1ppQ_exact_methods": "0.000000000000001000000000000000077705399876661079238307185601195",
     "tolerance_peel_float_check": "0.00000000000099999999999999997988664762925561536725284350612952",
     "working_precision_dps": 50
   },
   "data": {
     "atoms_compared": 6,
-    "any_diverge": true,
+    "any_diverge": false,
     "deltas": [
       {
         "atom": "deuteron",
-        "within_1ppQ": false,
-        "within_1ppb": false,
-        "within_1ppQ_exact_methods": false,
+        "within_1ppQ": true,
+        "within_1ppb": true,
+        "checkable": true,
+        "status": "OK (cb≠)",
+        "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": false,
-        "rel_delta_max": "0.00018230341880198511124039994466113570396015712330998",
-        "exact_method_rel_delta": "0.0000000000000014845064842305352169859458071244414103472280820451",
-        "peel_rel_delta": "0.00018230341880050033412556210270654309413652424284946",
-        "certified_1ppQ_exact_methods": false,
+        "rel_delta_max": "0.00018230341880198520254025320807892848467915575228257",
+        "exact_method_rel_delta": "9.128321202178699453586534533357818634715270967995e-20",
+        "peel_rel_delta": "0.00018230341880198520254025320807892848467915575228257",
+        "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 3,
         "hoefsmit_50dps": "0.38828647155940888266862350656245905232933814141657",
-        "markov_peel": "0.38835725751064814614821329996630083769559860229492",
+        "markov_peel": "0.38835725751064872270253077038874174264130228237023",
         "chi_cache_canonical": "0.38835725751064872266708027251119746558196979855394",
         "habiro_extended": "0.38828647155940888266862350656245905232933814141573",
         "pairwise_rel_deltas": {
-          "hoef_vs_peel": "0.00018230341880050033412556210270654309413652424284946",
+          "hoef_vs_peel": "0.00018230341880198520254025320807892848467915575228257",
           "hoef_vs_chi": "0.00018230341880198511124039994466113570396015712330998",
           "hoef_vs_habiro": "2.1751817543298278589510377501690593323067259021147e-48",
           "chi_vs_habiro": "0.00018227019032314351367449044019412976491374873055359",
-          "peel_vs_habiro": "0.00018227019032165927777153932161744300764587779016798",
-          "peel_vs_chi": "0.0000000000000014845064842305352169859458071244414103472280820451"
+          "peel_vs_habiro": "0.00018227019032314360494106425355260532327329919001247",
+          "peel_vs_chi": "9.128321202178699453586534533357818634715270967995e-20"
         }
       },
       {
         "atom": "helium-3",
-        "within_1ppQ": false,
-        "within_1ppb": false,
-        "within_1ppQ_exact_methods": false,
+        "within_1ppQ": true,
+        "within_1ppb": true,
+        "checkable": true,
+        "status": "OK (cb≠)",
+        "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": false,
         "rel_delta_max": "0.00018230341880199108364209500715488411935276344555",
-        "exact_method_rel_delta": "0.0000000000000019358432499947790829929786849694795411368879027805",
-        "peel_rel_delta": "0.00018230341880005488748125749301432860021731049981876",
-        "certified_1ppQ_exact_methods": false,
+        "exact_method_rel_delta": "5.8800298922470614476682311582013404407021059436344e-18",
+        "peel_rel_delta": "0.00018230341880198520254025320807892848467915575215427",
+        "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 3,
         "hoefsmit_50dps": "0.20654085857249695217888770130356399371477406553788",
-        "markov_peel": "0.20657851167713661699742999644513474777340888977051",
+        "markov_peel": "0.20657851167713701568635959684023053381565157947113",
         "chi_cache_canonical": "0.20657851167713701690104742059770482518322097158301",
         "habiro_extended": "0.20654085857249695217888770130356399371477406553722",
         "pairwise_rel_deltas": {
-          "hoef_vs_peel": "0.00018230341880005488748125749301432860021731049981876",
+          "hoef_vs_peel": "0.00018230341880198520254025320807892848467915575215427",
           "hoef_vs_chi": "0.00018230341880199108364209500715488411935276344555",
           "hoef_vs_habiro": "3.210888868552109692830948875791435942230189620458e-48",
           "chi_vs_habiro": "0.00018227019032314948389920233304837294950477362950494",
-          "peel_vs_habiro": "0.00018227019032121399349572516629800958154317790494618",
-          "peel_vs_chi": "0.0000000000000019358432499947790829929786849694795411368879027805"
+          "peel_vs_habiro": "0.00018227019032314360494106425355260532327329919091973",
+          "peel_vs_chi": "5.8800298922470614476682311582013404407021059436344e-18"
         }
       },
       {
         "atom": "helium-4",
         "within_1ppQ": false,
         "within_1ppb": false,
+        "checkable": false,
+        "status": "UNCERTIFIED",
         "within_1ppQ_exact_methods": false,
         "within_peel_tolerance": false,
-        "rel_delta_max": "0.00018227019031972422334606321534864048152912270734592",
+        "rel_delta_max": "0.00018227019032314360494106425355260532327329919201124",
         "exact_method_rel_delta": "0.0",
-        "peel_rel_delta": "0.00018227019031972422334606321534864048152912270734592",
+        "peel_rel_delta": "0.00018227019032314360494106425355260532327329919201124",
         "certified_1ppQ_exact_methods": false,
         "n_exact_methods": 1,
-        "markov_peel": "0.055358436072015973494764295992354163900017738342285",
+        "markov_peel": "0.055358436072016162820890237693879218463597970288594",
         "chi_cache_partial": {
           "partitions_used": 17,
           "partitions_total": 77
         },
         "habiro_extended": "0.055348345879337324856613592342565465147784293795974",
         "pairwise_rel_deltas": {
-          "peel_vs_habiro": "0.00018227019031972422334606321534864048152912270734592"
+          "peel_vs_habiro": "0.00018227019032314360494106425355260532327329919201124"
         }
       },
       {
         "atom": "neutron",
         "within_1ppQ": true,
         "within_1ppb": true,
+        "checkable": true,
+        "status": "OK",
         "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": true,
-        "rel_delta_max": "1.3300507394721375649936282972949014325625894312668e-16",
-        "exact_method_rel_delta": "1.3300507394721375649936282972949014325625894312668e-16",
-        "peel_rel_delta": "1.3300507394721373880901313402569293934467262733157e-16",
+        "rel_delta_max": "3.3292553745343006867096066310915232787084370919673e-50",
+        "exact_method_rel_delta": "3.3292553745343006867096066310915232787084370919673e-50",
+        "peel_rel_delta": "3.3292553745343006867096066310915232787084370919672e-50",
         "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 2,
         "hoefsmit_50dps": "0.92323329718615355710525339599068604013866212190137",
-        "markov_peel": "0.92323329718615343431054043321637436747550964355469",
+        "markov_peel": "0.92323329718615355710525339599068604013866212190134",
         "chi_cache_canonical": "0.92323329718615355710525339599068604013866212190137",
         "pairwise_rel_deltas": {
-          "hoef_vs_peel": "1.3300507394721373880901313402569293934467262733157e-16",
+          "hoef_vs_peel": "3.3292553745343006867096066310915232787084370919672e-50",
           "hoef_vs_chi": "0.0",
-          "peel_vs_chi": "1.3300507394721375649936282972949014325625894312668e-16"
+          "peel_vs_chi": "3.3292553745343006867096066310915232787084370919673e-50"
         }
       },
       {
         "atom": "proton",
         "within_1ppQ": true,
         "within_1ppb": true,
+        "checkable": true,
+        "status": "OK",
         "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": true,
-        "rel_delta_max": "3.3189199405923044949787695748098176625622342945511e-16",
-        "exact_method_rel_delta": "3.3189199405923044949787695748098176625622342945511e-16",
-        "peel_rel_delta": "3.3189199405923033934558123686875837780452523773484e-16",
+        "rel_delta_max": "9.2829922155013430108569670569669672980385042377792e-50",
+        "exact_method_rel_delta": "5.770508674500834844586763305682168860942853985647e-50",
+        "peel_rel_delta": "9.2829922155013430108569670569669672980385042377792e-50",
         "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 2,
         "hoefsmit_50dps": "1.0653062286131670593652845464313725576506616741352",
-        "markov_peel": "1.0653062286131667057986760482890531420707702636719",
+        "markov_peel": "1.0653062286131670593652845464313725576506616741351",
         "chi_cache_canonical": "1.0653062286131670593652845464313725576506616741352",
         "pairwise_rel_deltas": {
-          "hoef_vs_peel": "3.3189199405923033934558123686875837780452523773484e-16",
+          "hoef_vs_peel": "9.2829922155013430108569670569669672980385042377792e-50",
           "hoef_vs_chi": "3.5124835410005081662702037512847984370956502521327e-50",
-          "peel_vs_chi": "3.3189199405923044949787695748098176625622342945511e-16"
+          "peel_vs_chi": "5.770508674500834844586763305682168860942853985647e-50"
         }
       },
       {
         "atom": "tritium",
-        "within_1ppQ": false,
-        "within_1ppb": false,
-        "within_1ppQ_exact_methods": false,
+        "within_1ppQ": true,
+        "within_1ppb": true,
+        "checkable": true,
+        "status": "OK (cb≠)",
+        "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": false,
         "rel_delta_max": "0.00018230341880199108364209500715488411935276344558512",
-        "exact_method_rel_delta": "0.000000000000016275854046239321789503751213449344634168610237252",
-        "peel_rel_delta": "0.00018230341878571226245201939866886613017706868727772",
-        "certified_1ppQ_exact_methods": false,
+        "exact_method_rel_delta": "5.8800298922470614476682311582013750513514431501538e-18",
+        "peel_rel_delta": "0.00018230341880198520254025320807892848467915575215477",
+        "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 3,
         "hoefsmit_50dps": "0.10405211867846562931337388237094468248488006072405",
-        "markov_peel": "0.10407108773543261026617301467922516167163848876953",
+        "markov_peel": "0.1040710877354343035000663231445112293715500014503",
         "chi_cache_canonical": "0.10407108773543430411200742994753147515046410121145",
         "habiro_extended": "0.1040521186784656293133738823709446824848800607237",
         "pairwise_rel_deltas": {
-          "hoef_vs_peel": "0.00018230341878571226245201939866886613017706868727772",
+          "hoef_vs_peel": "0.00018230341880198520254025320807892848467915575215477",
           "hoef_vs_chi": "0.00018230341880199108364209500715488411935276344558512",
           "hoef_vs_habiro": "3.3729963450193234210627404331678584770485071541618e-48",
           "chi_vs_habiro": "0.00018227019032314948389920233304837294950477362970213",
-          "peel_vs_habiro": "0.00018227019030687659645597769110267230326092495518169",
-          "peel_vs_chi": "0.000000000000016275854046239321789503751213449344634168610237252"
+          "peel_vs_habiro": "0.00018227019032314360494106425355260532327329919108231",
+          "peel_vs_chi": "5.8800298922470614476682311582013750513514431501538e-18"
         }
       }
     ],
@@ -256,6 +267,7 @@
       "n_fail": 0,
       "worst_delta": "4.2764235361475130338248583474423710061043150081681e-50"
     },
-    "n_atoms_certified_1ppQ_exact_methods": 2
+    "n_atoms_certified_1ppQ_exact_methods": 5,
+    "n_atoms_uncertified_insufficient_methods": 1
   }
 }

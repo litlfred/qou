@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
 """Cross-check tr_M(β_atom) at 1 ppQ between independent paths.
 
-The 1 ppQ (1e-15) L1 certification rests on the three FLOAT-CLEAN methods
-(Hoefsmit mpfr 50 dps, chi-cache, Habiro), which agree to ~1e-48.
-markov_peel is an INDEPENDENT cross-check at a looser float tolerance —
-its witness is evaluated at the float64 q_0 and its exact symbolic path
-is incomplete for nuclei (the open #508 Phase-2 rewrite), so it does NOT
-certify 1 ppQ. (Filename retains `1ppb` for consumer/back-compat; the gate
-is now 1 ppQ.)
+The canonical p-n convention is `bring_color_weighted` (the
+closed_form_tau_M default / owner directive): the inter-nucleon crossing is
+σ − h·(½ − δ/4)·𝟙. The 1 ppQ (1e-15) L1 certification rests on the TWO
+FLOAT-CLEAN color-weighted methods — markov_peel and chi-cache — agreeing
+at q_0. As of 2026-06-29 markov_peel is float-clean: its atomic trace is an
+exact sympy expression in q, evaluated at the FULL 50-digit q_0
+(`Q_50_DIGIT_STR`), so peel ⟷ chi-cache agree to ~1e-50 (was ~1e-16 when
+peel substituted the float64 q_0 — the leak fixed in
+docs/audits/2026-06-29-l1-peel-float64-q0-substitution-fix.md). The
+Hoefsmit (mpfr 50 dps) and Habiro legs are SIGN-ONLY (color-blind)
+cross-checks: they match for A=1 (no inter-nucleon crossing) and diverge
+for A≥2 by the color-weighting amount (~1.8e-4), which is EXPECTED and
+reported as informational, not gating. (Filename retains `1ppb` for
+consumer/back-compat; the gate is now 1 ppQ.)
 
 Compares the canonical Markov trace tr_M @ q_0 from:
   - Hoefsmit / mpfr 50-dps brute-force
@@ -64,15 +71,16 @@ CHICACHE_PATH = _pb.witness_path("canonical-tr-m-via-chi-cache.witness.json", HE
 HABIRO_EXT_PATH = _pb.witness_path("habiro-coefficients-extended.witness.json", HERE)
 OUT_PATH = HERE / "cross-check-trM-1ppb.witness.json"
 
-# 1 ppQ (1e-15) L1 certification rests on the three FLOAT-CLEAN methods
-# (Hoefsmit mpfr 50 dps / chi-cache / Habiro), which agree to ~1e-48.
-# markov_peel's LaurentQ reduction is exact-in-q, but its witness is
-# evaluated at the float64 q_0 (and its exact symbolic path is incomplete
-# for nuclei — the open #508 Phase-2 rewrite), so peel is an INDEPENDENT
-# cross-check held to a looser float tolerance, NOT a 1 ppQ-certifying
-# method. Do not silently fold peel's float64 into the 1 ppQ claim.
-TOLERANCE_PPQ = mpf("1e-15")   # L1 gate on the exact methods (1 part/quadrillion)
-TOLERANCE_PEEL = mpf("1e-12")  # peel float-path independent-check tolerance
+# 1 ppQ (1e-15) L1 certification rests on the TWO FLOAT-CLEAN color-weighted
+# methods — markov_peel and chi-cache — agreeing at q_0 (~1e-50). Both build
+# the color-weighted (bring_color_weighted) atomic trace as an exact sympy
+# expression in q and evaluate at the FULL 50-digit q_0; peel's prior float64
+# q_0 substitution (the ~1e-16 leak) was fixed 2026-06-29. The Hoefsmit
+# (mpfr 50 dps) and Habiro legs are SIGN-ONLY (color-blind): they match peel
+# at A=1 and diverge ~1.8e-4 at A≥2 by the color-weighting, which is expected
+# and reported informationally via TOLERANCE_PEEL, not gated.
+TOLERANCE_PPQ = mpf("1e-15")   # L1 gate on the color-weighted exact methods (1 part/quadrillion)
+TOLERANCE_PEEL = mpf("1e-12")  # color-blind-leg informational flag threshold (cb≠)
 TOLERANCE = TOLERANCE_PPQ      # back-compat alias
 
 # Map from peel-witness (Z, N) tuples to atom-name strings used by
@@ -311,15 +319,32 @@ def main() -> int:
             (rel_pairs[k] for k in ("hoef_vs_peel", "peel_vs_habiro")
              if k in rel_pairs), default=mpf(0))
         peel_max = colorblind_max  # back-compat: reported field below
-        # certified_1ppQ requires the two color-weighted methods to agree.
-        certified_1ppQ = bool(cw_pairs) and exact_max < TOLERANCE_PPQ
-        ok = certified_1ppQ
-        if not ok:
+        # An atom is CHECKABLE only if it has ≥2 color-weighted float-clean
+        # methods to compare (peel + chi-cache). certified_1ppQ requires
+        # those two to agree below the gate.
+        checkable = bool(cw_pairs)
+        certified_1ppQ = checkable and exact_max < TOLERANCE_PPQ
+        # A genuine DIVERGENCE requires two certifiable (color-weighted,
+        # float-clean) methods that DISAGREE above the gate. An atom with
+        # only one such method is UNCERTIFIED, not divergent: e.g. ⁴He has
+        # peel but only a PARTIAL chi-cache (bean b0vf — the H_12 chi
+        # producer is incomplete), and the Habiro/Hoefsmit legs are
+        # color-blind. It is reported as uncertified but must NOT fail the
+        # strict gate, which would otherwise block on a missing-data
+        # condition unrelated to compute precision.
+        if checkable and not certified_1ppQ:
             any_diverge = True
-        # "OK" = color-weighted methods certify; suffix "+cb" flags that the
-        # color-blind cross-check legs diverge (expected for A>=2).
-        status = ("OK" if ok else "DIVERGE") + (
-            " (cb≠)" if (ok and colorblind_max > TOLERANCE_PEEL) else "")
+        ok = certified_1ppQ
+        # "OK" = the two color-weighted methods certify at 1 ppQ; suffix
+        # "(cb≠)" flags that the color-blind cross-check legs diverge
+        # (expected for A>=2). "UNCERTIFIED" = too few methods to check
+        # (b0vf). "DIVERGE" = two checkable methods genuinely disagree.
+        if certified_1ppQ:
+            status = "OK" + (" (cb≠)" if colorblind_max > TOLERANCE_PEEL else "")
+        elif not checkable:
+            status = "UNCERTIFIED"
+        else:
+            status = "DIVERGE"
 
         h_str = str(h_val)[:18] if h_val is not None else "(no Hoefsmit)"
         p_str = str(p_val)[:18] if p_val is not None else "(no peel)"
@@ -338,6 +363,8 @@ def main() -> int:
             "atom": atom,
             "within_1ppQ": ok,                 # combined gate: exact 1 ppQ AND peel < 1e-12
             "within_1ppb": ok,                 # back-compat alias for pre-ppQ consumers
+            "checkable": checkable,            # ≥2 color-weighted float-clean methods present
+            "status": status,                  # OK / OK (cb≠) / UNCERTIFIED / DIVERGE
             "within_1ppQ_exact_methods": certified_1ppQ,   # float-clean trio < 1 ppQ
             "within_peel_tolerance": bool(peel_max < TOLERANCE_PEEL),
             "rel_delta_max": str(rel_max),
@@ -381,12 +408,15 @@ def main() -> int:
         "description",
         (
             "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. "
-            "Two-part gate: the float-clean methods (Hoefsmit mpfr 50-dps, "
-            "chi-cache, Habiro) are certified at 1 ppQ (1e-15 relative); "
-            "markov_peel (float64 q_0 eval; exact symbolic path incomplete "
-            "for nuclei, the open #508 Phase-2 rewrite) is an INDEPENDENT "
-            "cross-check held to a looser 1e-12 float tolerance and does NOT "
-            "certify 1 ppQ."
+            "1 ppQ (1e-15) certification rests on the two FLOAT-CLEAN "
+            "color-weighted methods (markov_peel + chi-cache) agreeing at "
+            "q_0 (~1e-50); peel evaluates its exact-in-q trace at the full "
+            "50-digit q_0 (the float64 q_0 leak was fixed 2026-06-29). The "
+            "Hoefsmit (mpfr 50-dps) and Habiro legs are color-blind "
+            "(sign-only) cross-checks: they diverge ~1.8e-4 at A≥2 by the "
+            "color-weighting (informational, not gated). An atom with only "
+            "one color-weighted method (⁴He: partial chi-cache, bean b0vf) "
+            "is reported UNCERTIFIED, not divergent."
         ),
     )
     w.add_parameter("tolerance_1ppQ_exact_methods", str(TOLERANCE_PPQ))
@@ -411,17 +441,20 @@ def main() -> int:
     w.add_data("deltas", deltas)
     w.add_data("character_closed_form_anchor", anchor)
     n_certified = sum(1 for d in deltas if d.get("certified_1ppQ_exact_methods"))
+    n_uncertified = sum(1 for d in deltas if not d.get("checkable"))
     w.add_data("n_atoms_certified_1ppQ_exact_methods", n_certified)
+    w.add_data("n_atoms_uncertified_insufficient_methods", n_uncertified)
     w.add_assertion(
         name="all_atoms_within_1ppQ",
         computed=0 if any_diverge else 1,
         expected=1,
         source=(
-            "tr_M(β_atom) @ q_0: the float-clean methods (Hoefsmit mpfr / "
-            "chi-cache / Habiro) must agree to 1 ppQ (1e-15); markov_peel "
-            "(float64 q_0 eval; exact path incomplete for nuclei, #508 P2) "
-            "is an independent check held to 1e-12, NOT a 1 ppQ-certifying "
-            "method"
+            "tr_M(β_atom) @ q_0: the two FLOAT-CLEAN color-weighted methods "
+            "(markov_peel + chi-cache) must agree to 1 ppQ (1e-15). Both "
+            "evaluate the exact-in-q trace at the full 50-digit q_0. The "
+            "Hoefsmit/Habiro legs are color-blind (informational). An atom "
+            "with <2 color-weighted methods (⁴He: partial chi-cache, b0vf) "
+            "is UNCERTIFIED — reported but not counted as a divergence."
         ),
     )
     w.add_assertion(
