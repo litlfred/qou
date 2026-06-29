@@ -55,4 +55,41 @@ theorem vWeight_ne_zero (β : Fin k → ℚ) (hβ : Function.Injective β) (i : 
   rw [Finset.mem_erase] at hj
   exact sub_ne_zero.mpr (fun h => hj.1 (hβ h).symm)
 
+/-! ## The modified Vandermonde, its Laplace expansion, and the two column cases (sorry-free) -/
+
+/-- The Vandermonde with its last column `(β i)^k` replaced by `(β i)^d`. -/
+noncomputable def Amat (β : Fin (k + 1) → ℚ) (d : ℕ) : Matrix (Fin (k + 1)) (Fin (k + 1)) ℚ :=
+  fun i j => if j = Fin.last k then (β i) ^ d else (vandermonde β) i j
+
+/-- The cofactor of the Vandermonde along the last column at row `i`. -/
+noncomputable def cof (β : Fin (k + 1) → ℚ) (i : Fin (k + 1)) : ℚ :=
+  (-1) ^ ((i : ℕ) + k) * ((vandermonde β).submatrix i.succAbove (Fin.last k).succAbove).det
+
+/-- **Laplace expansion of `Amat` along the last column.** `det (Amat β d) = ∑ᵢ cofᵢ · (βᵢ)ᵈ`. -/
+theorem detAmat_laplace (β : Fin (k + 1) → ℚ) (d : ℕ) :
+    (Amat β d).det = ∑ i, cof β i * (β i) ^ d := by
+  rw [Matrix.det_succ_column (Amat β d) (Fin.last k)]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  have hAij : Amat β d i (Fin.last k) = (β i) ^ d := by simp [Amat]
+  have hsub : (Amat β d).submatrix i.succAbove (Fin.last k).succAbove
+      = (vandermonde β).submatrix i.succAbove (Fin.last k).succAbove := by
+    ext a b; simp only [Matrix.submatrix_apply, Amat, Fin.succAbove_last]
+    rw [if_neg (Fin.castSucc_lt_last b).ne]
+  rw [hAij, hsub, cof, Fin.val_last]; ring
+
+/-- At `d = k` the modified Vandermonde is the Vandermonde itself. -/
+theorem Amat_top (β : Fin (k + 1) → ℚ) : Amat β k = vandermonde β := by
+  ext i j; simp only [Amat, vandermonde_apply]
+  split
+  · next h => rw [h, Fin.val_last]
+  · rfl
+
+/-- For `d < k`, `Amat` has two equal columns (`d` and the last) so its determinant vanishes. -/
+theorem detAmat_lt (β : Fin (k + 1) → ℚ) (d : ℕ) (hd : d < k) : (Amat β d).det = 0 := by
+  have hne : (⟨d, by omega⟩ : Fin (k + 1)) ≠ Fin.last k := by
+    rw [Ne, Fin.ext_iff, Fin.val_last]; simp; omega
+  apply Matrix.det_zero_of_column_eq hne
+  intro r
+  simp [Amat, hne, vandermonde_apply]
+
 end QOU.Mathlib.SYTVandermonde
