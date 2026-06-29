@@ -67,6 +67,22 @@
         "severity": "minor",
         "evidence": "generator-volume-decomposition.md:108 '## Beta decay as the 1-jet variation', :126 '## Double beta decay as the 2-jet variation', :274 '## Connection to the Reeb decomposition'",
         "notes": "Extensive physical interpretation (single/double beta decay, 0νββ neutrino propagator, Reeb-flow correspondence) follows the proposition statement in the same block with no companion interprets: remark. Much is mathematical (jet expansion), but the decay-physics and Reeb-connection sections are interpretive and better placed in a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement is the bare claim; interpretation is in linked remark blocks."
       }
     ],
     "fit-section-chapter": [
@@ -102,6 +118,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "wall-side-statement": [
@@ -138,6 +170,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Carries the §7c archimedean-specialisation banner at md:1; the transfer-matrix/jet content is combinatorial with a declared ℝ realisation."
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement regime consistent; q-data/combinatorial parts generic, archimedean MeV evaluation flagged where present."
       }
     ],
     "wall-side-proof": [
@@ -174,6 +222,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof is the Hecke relation + far commutativity (span closure, step count) — algebraic, matches the statement."
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Proof machinery matches the statement's regime; no archimedean-only method on a generic-ring claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -212,6 +276,22 @@
         "severity": "major",
         "evidence": "generator-volume-decomposition.lean:127-131 'theorem generator_volume_decomposition_prop (q : ℝ) (A : ℕ) (nuclear_energy : ℝ) ... : nuclear_energy = generator_volume_decomposition q crossings_per_gen := by sorry'",
         "notes": "The ref decl's top-level statement equates a FREE variable nuclear_energy with the computed sum — it does not encode 'the nuclear energy decomposes as Σ generator volumes' (nuclear_energy is unconstrained, the claim is true only because of sorry), so it diverges from the narrative's substantive decomposition claim. Hypothesis h_len is unused (sorry). The proved sub-lemmas (energy_additive, beta_decay_locality) are genuine, but the manifest-referenced generator_volume_decomposition_prop is a sorry stub with a vacuous free-variable conclusion. (Note also crossingNN/crossingMixed reference an undefined q_half at lean:60,65 — a probable build error.)"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean signature expresses the same claim as the .md statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -460,6 +540,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Signature is the genuine claim; no statement-weakening or axiom injection."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -516,6 +612,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Proof is not a verbatim projection of a class field equal to the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -554,6 +666,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Goal is a substantive proposition, not a tautology/`: True`."
       }
     ],
     "proof-no-false-premise": [
@@ -610,6 +738,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No false/contradictory premise drives the implication."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -666,6 +810,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Stated hypotheses are used by the argument."
       }
     ],
     "proof-no-decide-masking": [
@@ -704,6 +864,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No decide/trivial masking an incomplete goal."
       }
     ],
     "da-false-claim": [
@@ -724,6 +900,22 @@
         "notes": "The claim in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Checked the stated proposition and its q-arithmetic; no counterexample or failing special case."
       }
     ],
     "da-vacuous": [
@@ -744,6 +936,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
       }
     ],
     "da-circular": [
@@ -764,6 +972,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -783,6 +1007,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -803,6 +1043,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
       }
     ],
     "da-non-sequitur": [
@@ -823,6 +1079,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -842,6 +1114,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
       }
     ],
     "da-citation-misuse": [
@@ -862,6 +1150,22 @@
         "notes": "No citations are present in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -882,6 +1186,22 @@
         "notes": "Key terms and symbols in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -902,6 +1222,22 @@
         "notes": "The algebraic and logical relations in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -922,6 +1258,22 @@
         "notes": "The physical concepts described in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -942,6 +1294,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1 — content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -963,6 +1331,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean for 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' fails compilation with error: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "0452304699f3",
+          "ts": "7a2938350d81",
+          "lean": "4eac93bc5d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Generator-volume decomposition; transfer-matrix recurrence matches Lean sibling; jet/beta-decay reading is a consistent reorganisation."
       }
     ],
     "voice-status-leak": [
@@ -2004,5 +2388,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

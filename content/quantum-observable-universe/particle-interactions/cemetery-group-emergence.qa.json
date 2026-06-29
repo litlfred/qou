@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:22.745Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -87,6 +102,21 @@
         "notes": "No false claims identified in 'Cemetery group as the kernel of the observation functor': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Checked the stated proposition and its q-arithmetic; no counterexample or failing special case."
       }
     ],
     "da-vacuous": [
@@ -105,6 +135,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Cemetery group as the kernel of the observation functor' presents substantial mathematical content: '$T_w \\in H_n(R, q)$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
       }
     ],
     "da-circular": [
@@ -124,6 +169,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Cemetery group as the kernel of the observation functor'.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -142,6 +202,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Cemetery group as the kernel of the observation functor' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -161,6 +236,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Cemetery group as the kernel of the observation functor'.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
       }
     ],
     "da-non-sequitur": [
@@ -180,6 +270,21 @@
         "notes": "The prose arguments in 'Cemetery group as the kernel of the observation functor' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -198,6 +303,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
       }
     ],
     "da-citation-misuse": [
@@ -217,6 +337,21 @@
         "notes": "The citations khovanovlauda2009, brundankleshchev2009 in 'Cemetery group as the kernel of the observation functor' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -236,6 +371,21 @@
         "notes": "Key terms and symbols in 'Cemetery group as the kernel of the observation functor' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -255,6 +405,21 @@
         "notes": "The algebraic and logical relations in 'Cemetery group as the kernel of the observation functor' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -274,6 +439,21 @@
         "notes": "The physical concepts described in 'Cemetery group as the kernel of the observation functor' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "cemetery-group-emergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -292,6 +472,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Cemetery group as the kernel of the observation functor' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -312,6 +507,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Cemetery group as the kernel of the observation functor' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "00d3413a51b4",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conjecture (cemetery group as homological filter); conjectural monotonicity honestly isolated from the by-construction kernel property."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1370,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

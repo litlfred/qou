@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.248Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement is the bare claim; interpretation is in linked remark blocks."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:19.584Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:20.020Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement regime consistent; q-data/combinatorial parts generic, archimedean MeV evaluation flagged where present."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:20.394Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No narrative Proof body in this proposition block (proof is the separate prf:stable-atom-decidable)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:20.792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.md:3 \"is decidable: there is an algorithm ... returns True/False\" vs .lean:23 \"Nonempty (StableAtom R)\"",
+        "notes": "Lean conclusion (Nonempty) and .md conclusion (decidability) are not the same claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,22 @@
         "reviewed_at": "2026-06-22T02:57:22.298Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Signature is the genuine claim; no statement-weakening or axiom injection."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:57:22.652Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Proof is not a verbatim projection of a class field equal to the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,24 @@
         "reviewed_at": "2026-06-22T02:57:23.094Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:25: \"⟨{ knot := K, q := q, feasible := false }⟩\"",
+        "notes": "Goal Nonempty discharged by a constant inhabitant ignoring decidability content; trivial relative to the intended statement."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +395,22 @@
         "reviewed_at": "2026-06-22T02:57:23.508Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No false/contradictory premise drives the implication."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +431,22 @@
         "reviewed_at": "2026-06-22T02:57:23.864Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Stated hypotheses are used by the argument."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +467,22 @@
         "reviewed_at": "2026-06-22T02:57:24.243Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No decide/trivial masking an incomplete goal."
       }
     ],
     "da-false-claim": [
@@ -323,6 +503,22 @@
         "notes": "The claim in 'Stability is decidable for any (Z, N) at fixed q' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Decidability via Diamond Lemma + Lenstra (ILP fixed-dim) is true; the defect is the Lean encoding, not the narrative claim."
       }
     ],
     "da-vacuous": [
@@ -342,6 +538,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Stability is decidable for any (Z, N) at fixed q' presents substantial mathematical content: of type $(Z, N)$ and a substrate parameter $q$ in the generic locus, returns True if $K$ is stable at $q$ and False o...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24-25: \"Nonempty (StableAtom R) := by exact ⟨{ knot := K, q := q, feasible := false }⟩\"",
+        "notes": "Lean proves only that StableAtom is inhabited (feasible hardcoded false), not decidability; the Lean witness is content-free vs the proposition."
       }
     ],
     "da-circular": [
@@ -362,6 +576,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Stability is decidable for any (Z, N) at fixed q'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -381,6 +611,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Stability is decidable for any (Z, N) at fixed q' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +647,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Stability is decidable for any (Z, N) at fixed q'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +683,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +718,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:23: \"theorem StableAtom.decidable ... : Nonempty (StableAtom R)\"",
+        "notes": ".md claims a decision algorithm returning True/False; Lean only shows the structure type is Nonempty — strictly weaker."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +756,22 @@
         "notes": "No citations are present in 'Stability is decidable for any (Z, N) at fixed q', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +792,22 @@
         "notes": "Key terms and symbols in 'Stability is decidable for any (Z, N) at fixed q' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +828,22 @@
         "notes": "The algebraic and logical relations in 'Stability is decidable for any (Z, N) at fixed q' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +864,22 @@
         "notes": "The physical concepts described in 'Stability is decidable for any (Z, N) at fixed q' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +900,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1 — content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +937,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean for 'Stability is decidable for any (Z, N) at fixed q' fails compilation with error: content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Narrative decidability claim is true and well-motivated, but its Lean sibling proves only Nonempty(StableAtom) with feasible:=false hardcoded — a narrative/Lean divergence to repair."
       }
     ],
     "voice-status-leak": [
@@ -1600,5 +1992,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

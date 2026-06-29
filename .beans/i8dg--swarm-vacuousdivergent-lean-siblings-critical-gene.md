@@ -84,3 +84,6 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 51, particle-interactions)
 - level-sufficiency.lean:50,56,76 (markovTrace:=0*q; theorem 0=0 rfl for all P,P; admits sharpening breaks rfl; hyps unused)
 - confinement-topological.lean:20 (gram_indefinite_witness : True := trivial shadow stub; lib GramIndefinite.lean has 3 sorries; critical sec0a)
+
+## More instances (batch 53, particle-interactions)
+- stable-atom-decidable.lean:24-25 (Nonempty with feasible:=false hardcoded; .md claims True/False decision algorithm; narrative true via Diamond Lemma+Lenstra, fix the encoding)

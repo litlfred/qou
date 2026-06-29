@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Checked the stated proposition and its q-arithmetic; no counterexample or failing special case."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b2dae8f212ea",
+          "ts": "5ff5566e5781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Corollary remark; correctly states 'no new calibration' and labels the implementation 'Open' — consistent with 3-calibration discipline."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

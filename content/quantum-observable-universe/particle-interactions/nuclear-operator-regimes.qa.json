@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.394Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement is the bare claim; interpretation is in linked remark blocks."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:19.767Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:20.112Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement regime consistent; q-data/combinatorial parts generic, archimedean MeV evaluation flagged where present."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:20.496Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Proof machinery matches the statement's regime; no archimedean-only method on a generic-ring claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:20.858Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean signature expresses the same claim as the .md statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -359,6 +439,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Signature is the genuine claim; no statement-weakening or axiom injection."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -379,6 +475,22 @@
         "reviewed_at": "2026-06-22T02:57:22.872Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Proof is not a verbatim projection of a class field equal to the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -399,6 +511,22 @@
         "reviewed_at": "2026-06-22T02:57:23.338Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Goal is a substantive proposition, not a tautology/`: True`."
       }
     ],
     "proof-no-false-premise": [
@@ -455,6 +583,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No false/contradictory premise drives the implication."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -511,6 +655,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Stated hypotheses are used by the argument."
       }
     ],
     "proof-no-decide-masking": [
@@ -549,6 +709,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No decide/trivial masking an incomplete goal."
       }
     ],
     "da-false-claim": [
@@ -569,6 +745,22 @@
         "notes": "No false claims identified in 'Three operator regimes for nuclear binding': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Checked the stated proposition and its q-arithmetic; no counterexample or failing special case."
       }
     ],
     "da-circular": [
@@ -589,6 +781,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Three operator regimes for nuclear binding'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -608,6 +816,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Three operator regimes for nuclear binding' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -628,6 +852,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Three operator regimes for nuclear binding'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
       }
     ],
     "da-non-sequitur": [
@@ -648,6 +888,22 @@
         "notes": "The argument flow in 'Three operator regimes for nuclear binding' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -667,6 +923,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Three operator regimes for nuclear binding' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
       }
     ],
     "da-citation-misuse": [
@@ -687,6 +959,22 @@
         "notes": "No citations are present in 'Three operator regimes for nuclear binding', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -707,6 +995,22 @@
         "notes": "Key terms and symbols in 'Three operator regimes for nuclear binding' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -727,6 +1031,22 @@
         "notes": "The algebraic and logical relations in 'Three operator regimes for nuclear binding' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -747,6 +1067,22 @@
         "notes": "The physical concepts described in 'Three operator regimes for nuclear binding' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -767,6 +1103,22 @@
         "notes": "The derivation steps and formal definitions in 'Three operator regimes for nuclear binding' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -788,6 +1140,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Three operator regimes for nuclear binding' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Three-regime classification; Lean honestly formalises the observed A≤6 transition table (decidable rfl proof) and explicitly disclaims the selection-optimality as witness-backed — honest scoping."
       }
     ],
     "da-vacuous": [
@@ -807,6 +1175,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Three operator regimes for nuclear binding' presents substantial mathematical content: The inter-nucleon binding operator is not fixed — it transitions between three distinct regimes as the nucleus grows....",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8423261cc2ab",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
       }
     ],
     "voice-status-leak": [
@@ -1844,5 +2228,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

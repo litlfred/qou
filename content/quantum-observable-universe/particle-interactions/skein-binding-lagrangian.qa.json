@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:21.538Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:21.982Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement regime consistent; q-data/combinatorial parts generic, archimedean MeV evaluation flagged where present."
       }
     ],
     "da-false-claim": [
@@ -71,6 +103,22 @@
         "notes": "The mathematical claims in 'Skein binding Lagrangian for multi-nucleon links' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Checked the stated proposition and its q-arithmetic; no counterexample or failing special case."
       }
     ],
     "da-vacuous": [
@@ -91,6 +139,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
       }
     ],
     "da-circular": [
@@ -111,6 +175,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Skein binding Lagrangian for multi-nucleon links'.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -130,6 +210,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Skein binding Lagrangian for multi-nucleon links' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -150,6 +246,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Skein binding Lagrangian for multi-nucleon links'.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.md:30: \"where $\\lambda_V$ is the per-junction energy scale\"",
+        "notes": "Five undetermined scales λ_V,λ_S,λ_C,λ_A,λ_P parallel empirical SEMF coefficients; this is a definition naming the construction (values not asserted derived here) but their canonical-chain origin is not exhibited — watch, not a derivation defect."
       }
     ],
     "da-non-sequitur": [
@@ -170,6 +284,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -189,6 +319,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
       }
     ],
     "da-citation-misuse": [
@@ -209,6 +355,22 @@
         "notes": "No citations are present in 'Skein binding Lagrangian for multi-nucleon links', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -229,6 +391,22 @@
         "notes": "Key terms and symbols in 'Skein binding Lagrangian for multi-nucleon links' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -249,6 +427,22 @@
         "notes": "The algebraic and logical relations in 'Skein binding Lagrangian for multi-nucleon links' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -269,6 +463,22 @@
         "notes": "The physical concepts described in 'Skein binding Lagrangian for multi-nucleon links' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -289,6 +499,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.lean:1 — content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -310,6 +536,22 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "90fafd44faab",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "A definitional five-term binding Lagrangian mirroring the SEMF; fine as a definition, but the five scales λ_V..λ_P lack an exhibited canonical-chain derivation (watch for downstream hidden DOF)."
       }
     ],
     "voice-status-leak": [
@@ -1174,5 +1416,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

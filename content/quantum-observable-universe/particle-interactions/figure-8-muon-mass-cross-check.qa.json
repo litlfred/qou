@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:18.520Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "da-false-claim": [
@@ -51,6 +67,22 @@
         "notes": "No false claims identified in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Checked the stated proposition and its q-arithmetic; no counterexample or failing special case."
       }
     ],
     "da-vacuous": [
@@ -70,6 +102,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' presents substantial mathematical content: $\\mathrm{Vol}(4_1)/\\hbar_q^2 = m_\\mu/m_e$).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
       }
     ],
     "da-circular": [
@@ -90,6 +138,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -109,6 +173,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -129,6 +209,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
       }
     ],
     "da-non-sequitur": [
@@ -149,6 +245,22 @@
         "notes": "The argument flow in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -168,6 +280,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
       }
     ],
     "da-citation-misuse": [
@@ -188,6 +316,22 @@
         "notes": "Citations to codata2022, thurston1978 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -208,6 +352,22 @@
         "notes": "Key terms and symbols in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -228,6 +388,22 @@
         "notes": "The algebraic and logical relations in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -248,6 +424,22 @@
         "notes": "The physical concepts described in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -268,6 +460,22 @@
         "notes": "The derivation steps and formal definitions in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -289,6 +497,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Remark correctly framing the Vol(4₁)/ℏ_q²=m_μ/m_e residual as exact-by-construction (CAL-2 pinning), NOT a falsifiability test — honest anti-circularity note."
       }
     ],
     "voice-status-leak": [
@@ -1135,5 +1359,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -115,6 +131,22 @@
         "notes": "The claim in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean is incomplete (contains sorry).",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Checked the stated proposition and its q-arithmetic; no counterexample or failing special case."
       }
     ],
     "da-vacuous": [
@@ -134,6 +166,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are non-vacuous as they make concrete conjectures about 'The per-braid Markov-trace nucleon mass difference $\\mathfrak{m}(n) - \\mathfrak{m}(p) - m_e$, summed over the brane t...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
       }
     ],
     "da-circular": [
@@ -154,6 +202,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -173,6 +237,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -193,6 +273,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
       }
     ],
     "da-non-sequitur": [
@@ -213,6 +309,22 @@
         "notes": "The argument flow in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -232,6 +344,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean uses a class-conjecture pattern, matching the conjectural nature of 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
       }
     ],
     "da-citation-misuse": [
@@ -252,6 +380,22 @@
         "notes": "No citations are present in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -272,6 +416,22 @@
         "notes": "Key terms and symbols in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -292,6 +452,22 @@
         "notes": "The algebraic and logical relations in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -312,6 +488,22 @@
         "notes": "The physical concepts described in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -332,6 +524,22 @@
         "notes": "The derivation steps and formal definitions in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -353,6 +561,22 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured relations in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean."
+      },
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conjecture; clean §3b-cond conditional class (counitForm_eq proved, converges conjectural); Q_β closed form matches cheat-sheet."
       }
     ],
     "voice-status-leak": [
@@ -1236,5 +1460,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }

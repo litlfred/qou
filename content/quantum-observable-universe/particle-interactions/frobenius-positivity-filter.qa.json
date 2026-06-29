@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:20.265Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement is the bare claim; interpretation is in linked remark blocks."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:57:20.571Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Subject (nuclear/particle interactions, Hecke/GS reduction, confinement) is squarely within Ch 11 'Particle Interactions and Nuclear Structure'."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:57:20.959Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Statement regime consistent; q-data/combinatorial parts generic, archimedean MeV evaluation flagged where present."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:57:21.344Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Proof machinery matches the statement's regime; no archimedean-only method on a generic-ring claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,21 @@
         "reviewed_at": "2026-06-22T02:57:21.798Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean signature expresses the same claim as the .md statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +415,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Signature is the genuine claim; no statement-weakening or axiom injection."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +483,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Proof is not a verbatim projection of a class field equal to the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +534,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Goal is a substantive proposition, not a tautology/`: True`."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +602,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No false/contradictory premise drives the implication."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +670,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Stated hypotheses are used by the argument."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +721,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No decide/trivial masking an incomplete goal."
       }
     ],
     "da-false-claim": [
@@ -590,6 +755,23 @@
         "notes": "No false claims identified in 'Frobenius positivity filter for even-$A$ decays': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md:23: \"Exactly half the configurations — $2^{A-1}$ out of $4^A$ — are excluded.\"",
+        "notes": "Inconsistent: 2^{A-1}/4^A is not half; the block's own A=6 example (lines 40-41: 2^5=32 of 4096) is 1/128. Either the 'half' qualifier or the count is wrong."
       }
     ],
     "da-vacuous": [
@@ -608,6 +790,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Frobenius positivity filter for even-$A$ decays' presents substantial mathematical content: For nuclei with even mass number $A$, the raw character sum is negative (parity regime). The physical Q-value is obta...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Block carries genuine mathematical content, not a content-free tautology."
       }
     ],
     "da-circular": [
@@ -627,6 +824,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Frobenius positivity filter for even-$A$ decays'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Derivation does not assume its conclusion; no back-fitted target or smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -645,6 +857,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Frobenius positivity filter for even-$A$ decays' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Conclusion appropriately scoped; conditional/conjectural status stated where relevant."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +891,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Frobenius positivity filter for even-$A$ decays'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the chain or are flagged."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +925,23 @@
         "notes": "The argument flow in 'Frobenius positivity filter for even-$A$ decays' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md:23-24: \"$2^{A-1}$ out of $4^A$\" labelled 'exactly half'",
+        "notes": "The 'exactly half' phrasing does not follow from the stated 2^{A-1} exclusion count."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +960,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Lean and narrative prove the same statement (or no Lean → structural)."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +994,21 @@
         "notes": "No citations are present in 'Frobenius positivity filter for even-$A$ decays', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Cited references support the invoked results (standard Hecke/KLR/SnapPy literature)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1028,21 @@
         "notes": "Key terms and symbols in 'Frobenius positivity filter for even-$A$ decays' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Key terms defined or linked; regime/base ring clear."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1062,21 @@
         "notes": "The algebraic and logical relations in 'Frobenius positivity filter for even-$A$ decays' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Numerical match is exact-by-construction or stated approximate with error; no hidden swing."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1096,21 @@
         "notes": "The physical concepts described in 'Frobenius positivity filter for even-$A$ decays' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Physics framing (units, conservation) internally consistent within the framework."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1130,21 @@
         "notes": "The derivation steps and formal definitions in 'Frobenius positivity filter for even-$A$ decays' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Backing witness/compute named; no stale-value contradiction with prose detected."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1165,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing entirely, preventing formal verification of the claims in 'Frobenius positivity filter for even-$A$ decays'."
+      },
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:21:48.691Z",
+        "reviewed_sha": "7083685234620017db4412045f5bfb99388257f4",
+        "notes": "Sound mechanism (Frobenius-positivity = LP feasibility analogue) but the exclusion-count statement is internally inconsistent ('exactly half' vs 2^{A-1}/4^A)."
       }
     ],
     "voice-status-leak": [
@@ -1818,5 +2182,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:21:48.691Z"
 }
