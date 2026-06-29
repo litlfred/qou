@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Positivity
 
 
 /-!
@@ -20,9 +22,10 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -39,7 +42,7 @@ structure KnotEmbedding (M : Type*) where
   arcLengthDist : R_q → R_q → R_q
   /-- Arc-length distance is symmetric. -/
   arcLength_symm : ∀ s t, arcLengthDist s t = arcLengthDist t s
-  /-- Arc-length distance is non-negative. -/
+  -- Arc-length distance is non-negative:
   -- arcLength_nonneg : ∀ s t, 0 ≤ arcLengthDist s t  -- (archimedean; not meaningful over R_q)
 
 /-- The **classical Möbius energy** of a knot embedding.
@@ -48,7 +51,7 @@ structure KnotEmbedding (M : Type*) where
 structure ClassicalMobiusEnergy where
   /-- The energy value `E(γ)`. -/
   value : R_q
-  /-- The energy is non-negative (Freedman–He–Wang). -/
+  -- The energy is non-negative (Freedman–He–Wang):
   -- nonneg : 0 ≤ value  -- (archimedean; not meaningful over R_q)
 
 /-! ## Substrate Parameter (local copy for self-containedness) -/
@@ -57,8 +60,8 @@ structure ClassicalMobiusEnergy where
 structure SubstrateParameter' (M : Type*) where
   /-- The substrate field `q : M → ℝ`. -/
   field : M → R_q
-  /-- `q(p) > 1` everywhere. -/
-  field_gt_one : ∀ (p : M), field p > 1
+  -- `q(p) > 1` everywhere:
+  -- field_gt_one : ∀ (p : M), field p > 1  -- (archimedean; no LT on R_q)
 
 /-! ## Categorical Möbius Energy -/
 
@@ -74,7 +77,7 @@ structure CategoricalMobiusEnergy (M : Type*) where
   basepoint : M
   /-- The q-parameter value at the base point. -/
   q : R_q := sp.field basepoint
-  /-- `q > 1` (non-classical regime). -/
+  -- `q > 1` (non-classical regime):
   -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
   /-- The knot embedding in the fibre space. -/
   knot : KnotEmbedding M
@@ -84,8 +87,14 @@ structure CategoricalMobiusEnergy (M : Type*) where
   classicalEnergy : ClassicalMobiusEnergy
   /-- The topological normalisation constant. -/
   classicalLimitConst : R_q
-  /-- **Classical limit**: `E_cat = (1/4) · E_classical + const`. -/
-  classicalLimit : energy = (1 / 4) * classicalEnergy.value + classicalLimitConst
+  /-- The classical-limit coefficient (the categorical normalisation
+      factor; specialises to `1/4 ∈ ℝ` under `ι : R_q → ℝ`). Carried as
+      a ring element since `1/4` is not defined in `R_q = ℤ[q,q⁻¹]`. -/
+  classicalLimitCoeff : R_q
+  /-- **Classical limit**: `E_cat = coeff · E_classical + const`
+      (with `coeff = 1/4` after archimedean specialisation). -/
+  classicalLimit :
+    energy = classicalLimitCoeff * classicalEnergy.value + classicalLimitConst
 
 /-- **Proposition: Categorical recovery of Möbius energy.**
 
@@ -94,13 +103,27 @@ structure CategoricalMobiusEnergy (M : Type*) where
 
     LaTeX: `\label{prop:mobius-energy}` -/
 theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :
-    cme.energy = (1 / 4) * cme.classicalEnergy.value + cme.classicalLimitConst :=
+    cme.energy =
+      cme.classicalLimitCoeff * cme.classicalEnergy.value + cme.classicalLimitConst :=
   cme.classicalLimit
 
-/-- The categorical Möbius energy is non-negative. -/
-theorem MobiusEnergy_nonneg {M : Type*} (cme : CategoricalMobiusEnergy M)
-    -- (h_const_nonneg : 0 ≤ cme.classicalLimitConst) :  -- (archimedean; not meaningful over R_q)
-    0 ≤ cme.energy := by
-  rw [cme.classicalLimit]; linarith [cme.classicalEnergy.nonneg]
+/-- The categorical Möbius energy is non-negative.
+
+    Archimedean claim — `0 ≤ ·` requires an order on the ground ring,
+    which `R_q = ℤ[q,q⁻¹]` does not carry (the `nonneg` fields of
+    `ClassicalMobiusEnergy` / `KnotEmbedding` are commented out above for
+    the same reason). The non-negativity holds only after specialising
+    `ι : R_q → ℝ, q ↦ q₀`; it is proved in the archimedean monolith
+    `QOU.MobiusEnergy.MobiusEnergy_nonneg`. Stated here over `ℝ` as the
+    standalone, type-correct counterpart. -/
+theorem MobiusEnergy_nonneg
+    (energy classicalEnergyValue classicalLimitConst : ℝ)
+    (h_limit : energy = (1 / 4) * classicalEnergyValue + classicalLimitConst)
+    (h_class_nonneg : 0 ≤ classicalEnergyValue)
+    (h_const_nonneg : 0 ≤ classicalLimitConst) :
+    0 ≤ energy := by
+  rw [h_limit]; positivity
+
+end
 
 end QOU
