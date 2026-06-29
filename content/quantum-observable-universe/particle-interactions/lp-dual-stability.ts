@@ -15,5 +15,5 @@ export default proposition({
     "hadron",
     "quark",
   ],
-  uses: ["rem:confinement-nucleon-unit"],
+  uses: ["rem:confinement-nucleon-unit", "def:lp-stable", "def:lp-confined"],
 });

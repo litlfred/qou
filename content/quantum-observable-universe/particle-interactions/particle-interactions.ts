@@ -89,6 +89,8 @@ export default chapter({
             "confinement-topological",
             "confinement-topological-proof",
             "confinement-topological-interpretation",
+            "lp-stable",
+            "lp-confined",
             "lp-dual-stability",
             "lp-dual-stability-table-data",
             "algebraic-primality",
@@ -141,6 +143,8 @@ export default chapter({
       blocks: [
         "nuclear-binding-intro",
         "nuclear-operator-regimes",
+        "nuclear-operator-regimes-interpretation",
+        "demand-profile",
         "demand-stability",
         "periodic-table-demand-conjecture",
       ],
@@ -291,6 +295,7 @@ export default chapter({
         "atomic-braid-table1-data",
         "knot-particle-generation",
         "knot-particle-generation-table-data",
+        "knot-particle-generation-consequences",
         // Merged from the former auto-split "Skein Generation and
         // Particle Correspondence : generation" (small base,
         // strongly-related continuation — the knot-particle dictionary;
@@ -423,6 +428,7 @@ export default chapter({
         "shell-schur-weyl-self-duality-proof",
         "shell-schur-weyl-self-duality-interpretation",
         "compound-beta-shell-calibration",
+        "compound-beta-shell-calibration-key-distinction",
         "compound-beta-shell-calibration-interpretation",
         "compound-beta-shell-calibration-table3-data",
         "compound-beta-shell-calibration-table2-data",
@@ -439,6 +445,7 @@ export default chapter({
         "intro-beta-stability-closure",
         "energy-scale-planck",
         "skein-binding-lagrangian",
+        "skein-binding-lagrangian-derivation",
         "beta-stability",
         "beta-stability-interpretation",
       ],

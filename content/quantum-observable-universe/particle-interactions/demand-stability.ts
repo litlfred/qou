@@ -12,5 +12,5 @@ export default proposition({
     "shell-closure",
     "magic-numbers",
   ],
-  uses: ["def:derived-atom"],
+  uses: ["def:derived-atom", "def:demand-profile"],
 });
