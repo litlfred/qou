@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T00:06:41.956109+00:00",
-  "commitSha": "6b18beda97316c25738a7ba43d31714c8abd6b00",
+  "computedAt": "2026-06-29T01:16:39.194316+00:00",
+  "commitSha": "86f19c09a1e92aafbd63f2f445d3615d13c4eb8b",
   "assertions": [
     {
       "name": "no_convention_mismatch",
@@ -24,20 +24,20 @@
     },
     {
       "name": "no_unlabeled_chi_witness",
-      "computed": 0,
+      "computed": 1,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "unit": "count",
       "source": "audit (this script)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 5,
+  "allPassed": false,
+  "durationMs": 13,
   "computation": "chi-convention-audit",
   "scriptFile": "chi_convention_audit.py",
-  "scriptHash": "e92c4ef4bb66",
-  "scriptCommitSha": "6b18beda97316c25738a7ba43d31714c8abd6b00",
+  "scriptHash": "f19e0d0cd52f",
+  "scriptCommitSha": "84f2aff293589ce9e7df3c97f477782380935402",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,9 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Audit chi-*.witness.json for an explicit, correct crossing-CONVENTION label (sign-only-crossings vs averaged-crossings). Catches the bug class where an unlabeled chi witness is consumed downstream under the wrong convention (the two value sets differ by large factors). See docs/audits/2026-06-28-chi-convention-label-audit.md (bean b0vf).",
   "data": {
@@ -97,6 +99,15 @@
         "producer": "",
         "status": "not-applicable",
         "reason": "isolates the c=0 (2,1)-block winding tower (q-Bessel test) — not a full atom-braid character"
+      },
+      {
+        "path": "chi-convention-trM-ratio-probe.witness.json",
+        "computation": "chi-convention-trM-ratio-probe",
+        "declared": null,
+        "expected": null,
+        "expected_basis": "none",
+        "producer": "chi_convention_trM_ratio_probe.py",
+        "status": "missing-ambiguous"
       },
       {
         "path": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
@@ -435,12 +446,12 @@
       }
     ],
     "totals": {
-      "scanned": 42,
+      "scanned": 43,
       "ok": 38,
       "mismatch": 0,
       "unknown_convention": 0,
       "missing_inferable": 0,
-      "missing_ambiguous": 0,
+      "missing_ambiguous": 1,
       "not_applicable": 4,
       "parse_error": 0
     },
@@ -476,7 +487,7 @@
         "chi-tritium-h9-at-qinv-50dps.witness.json",
         "chi-tritium-h9.witness.json"
       ],
-      "off_canonical_note": "convention B (markov_trace_3A Plancherel) — deprecated for binding; canonical per-λ character is sign-only (A), per the 2026-06-09 convention-split audit"
+      "off_canonical_note": "convention B (markov_trace_3A Plancherel) — deprecated for BINDING (canonical per-λ binding character is sign-only A, per the 2026-06-09 convention-split audit). NOTE: B is the CANONICAL trace for the mass/vol-density path (it carries the p/n asymmetry: proton 1.065 ≠ neutron 0.923) — see the 2026-06-29 mass-path verdict. 'off-canonical' here means binding-canonical."
     }
   }
 }
