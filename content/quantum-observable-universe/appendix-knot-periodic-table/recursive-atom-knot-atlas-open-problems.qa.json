@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Open-problems remark for the atlas; squarely in the appendix scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "States open items (⁶Li/⁷Li principled derivation, ρ(Z,N) rule, beyond-ℓ=2 IDs) as OPEN; no false assertion. Corpus-grep: ρ general rule (GAP-A-4) and joint-tower SDP are genuinely open per AGENTS.md Δ_λ gate / precision-goals."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Substantive open-problem list with a concrete method (joint-tower SDP + GB filtration/jet tracking) and a forbidden-route discipline; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Explicitly forbids per-atom volume-match as a derivation route (l.17) precisely to avoid back-fitting; anti-circular by design."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Claims are appropriately hedged ('certificate format proof-of-concept complete', 'no principled entry exists until joint SDP run')."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Names ρ(Z,N) as an undetermined structural factor that is OPEN — disclosed, not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Reasoning (joint SDP needed for cross-level filtration consistency) is coherent; no logic gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Remark block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No bibliographic cites; links point to the named producer scripts/witnesses (on a feature branch)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Terms (joint-tower SDP, GB filtration grade, jet-order, ρ factor) are referenced to defined constructs; clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Block makes no numerical match claims; it lists what is NOT yet derived."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No physics prediction asserted; methodological."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "minor",
+        "evidence": "recursive-atom-knot-atlas-open-problems.md:9: \".../blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py\"",
+        "notes": "Producer/witness links target a feature branch, not main; minor durability risk if the branch is deleted/merged. Did not re-run."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f66d8789cd66",
+          "ts": "2784892c980f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "VERDICT: exemplary open-problems remark — honest about what is underived, anti-circular (volume-match forbidden), corpus-consistent with the Δ_λ/ρ open status. STRONGEST OBJECTION (minor): feature-branch script links."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:47:09.321Z"
 }

@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Interactive visualization spec for the knot-centric table; appropriate appendix companion remark."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "UI/implementation spec; the q=1 limit ('all rows equal width, no magic shells') is a reasonable framework statement, not a falsifiable math claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Detailed visualization specification (layout, panels, controls, data source); substantive for its purpose."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Spec, no claimed result."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "q slider is an interactive UI control, not a model parameter; no hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Spec items are coherent and reference the data-source block."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Internal refs (rem:knot-atom-diagrams, prose:knot-periodic-table) are appropriate data-source/notation links."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Visual conventions (solid/outlined trefoil, Hopf, Borromean) are enumerated; clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No numerical match claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No physics prediction; UI behavior only."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No witness; reads from the knot-periodic table block for data."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ad9f3a498df2",
+          "ts": "45b867a0d719"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "VERDICT: clean implementation spec; nothing to dispute mathematically. No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:47:09.321Z"
 }

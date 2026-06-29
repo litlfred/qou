@@ -1048,7 +1048,456 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "minor",
+        "evidence": "recursive-atom-knot-atlas.md:157: \"model derives via $\\mathrm{Vol}(\\mathcal{B}_3) = 8 G$ at $q_0$\"",
+        "notes": "Block is a proposition but its .md is a large descriptive atlas (methodology tags, predictions, interpretive 'used for' prose) rather than a bare claim; interpretation is heavily mixed into the statement. Minor: the kind is really an atlas table, and the interpretive content has dedicated sibling remarks; flagged as a voice concern, not a correctness one."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Subject (recursive atom-knot atlas at q0) is exactly the appendix-knot-periodic-table scope; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Statement is an archimedean/observable-level atlas (numerical masses at q0, hyperbolic volumes, AME residuals); archimedean machinery is appropriate here (observation-frame block), so no generic-ring-proved-by-archimedean violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No narrative **Proof.** body in the .md (it is an atlas table, not a proved statement); the Lean side is a delegation to SDP-uniqueness, not an archimedean proof of an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "major",
+        "evidence": "recursive_atom_knot_atlas.lean:76: \"theorem atlas_entry_uniqueness (A : ℕ) ... (nucleusEmptySDP (3 * A)).IsFeasible Φ'\"",
+        "notes": "Lean proves only empty-constraint SDP uniqueness (atlas_entry_uniqueness → nucleus_uniqueness_closed); the .md atlas asserts the actual knot→mass identifications across the periodic table. Scope mismatch is real but HONESTLY disclosed in the Lean docstring (lines 48-56: 'real per-nucleus SDP... is per-nucleus substantive open work') and gated by conj:canonical-knot-id-sdp in .ts uses[]. Warn, not fail: not divergent in a deceptive way."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Lean signature (atlas_entry_uniqueness, parameterised over A:ℕ with real IsFeasible/objAt hypotheses) is a genuine restatement; no axiom injection or statement-weakening to pass."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "atlas_entry_uniqueness delegates to nucleus_uniqueness_closed (NucleusEmptySDPUniqueness.lean:181), a real strict-complementarity/dual-slack-PosDef argument; not a projection of a field equal to its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Goal is Φ' = Φstar (a real matrix-equality uniqueness), not True/x=x; the prior True-marker stub was explicitly removed (lean lines 122-125)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "nucleusEmptySDP is strictly feasible (nucleusEmptySDP_strictlyFeasible) — hypotheses are satisfiable, no False/uninhabited premise driving a vacuous implication."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Both h_feas and h_obj are consumed by nucleus_uniqueness_closed h_feas h_obj."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No decide/trivial masking; the proof is a named-theorem delegation, and the underlying uniqueness uses an interior strict-complementarity argument."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "minor",
+        "evidence": "recursive-atom-knot-atlas.md:85: \"$\\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6} \\cdot \\pi$\"",
+        "notes": "Stray '·π'. Vol_4_1 = 2.0298832... IS the figure-eight hyperbolic volume (2·Λ(π/3)); rendered as '2.029883·π' (≈6.38) it is wrong by a factor of π. Gallery caption slip, not a load-bearing derivation; should drop '\\cdot \\pi'. Other knot facts (Vol(B_3)=8G≈7.328, trefoil=σ1^3, fig-8=(σ1σ2^-1)^2) check out."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Lean theorem is substantive (real SDP uniqueness, sorry-free); atlas content is data-rich, not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "major",
+        "evidence": "recursive-atom-knot-atlas.md:428: \"$M_{\\text{composite}}$ is the L4 composite mass $N \\cdot m_n + Z \\cdot m_p - B$\" + l.445 status \"+empirical-(K,ρ)\"",
+        "notes": "Per-element rollup M_q≈M_o (e.g. l.330 Hydrogen 938.8=938.8) is near-tautological because the composite mass reuses AME nucleon masses minus an AME-derived/empirically-fit binding term. Concern is REAL but disclosed: prose tags 'AME2020 values used here' (knot-periodic-table.md:32), Status '+empirical-(K,ρ)', and binding errors (+5.87%, +10.34%) are shown openly. Warn for blurred predicted-vs-input, not a hidden back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "major",
+        "evidence": "recursive-atom-knot-atlas.md:157: \"$m_\\mathfrak{p} = 938.27208816$ MeV (CODATA exact); model derives via $\\mathrm{Vol}(\\mathcal{B}_3) = 8 G$ at $q_0$\"",
+        "notes": "'model derives via Vol(B_3)=8G' overstates a route AGENTS.md canonical guardrail explicitly flags as the WRONG absolute-mass form (yields +2.96% or −57%, not the muon-anchored canonical_mass); and pairing it with the CODATA value labeled 'exact' blurs predicted vs measured. Mitigated: gated by conj:borromean-baryon-mass-formula in uses[]; per-Z table (l.444) reports the actual −0.251 ppm prediction more carefully. Warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Free parameters are disclosed: q0 the single substrate input; ρ∈{1,2} prefactor and (K,ρ) empirical binding inputs are explicitly tagged '+empirical-(K,ρ)' and listed as OPEN (open-problems block); not undisclosed."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Atlas entries are catalogue rows with stated methodology tags; no chained 'therefore' deductive gaps in the narrative."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "major",
+        "evidence": "recursive_atom_knot_atlas.lean:50: \"This module wires the **abstract framework demonstration** — the empty-constraint SDP\"",
+        "notes": "Same finding as proof-narrative-lean-equiv: Lean certifies a strictly weaker object (empty-constraint SDP uniqueness) than the atlas's knot/mass claims. Disclosed in docstring + sibling wiring remark + conj gating; warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Sole cite wenzl1988 backs the Wenzl y_λ bridge invoked for symbolic Markov-trace coefficients; appropriate attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Notation legend + methodology-tag table define σ_i, closures, ⊕, ρ, c_αα, layers; key terms are pinned."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "major",
+        "evidence": "recursive-atom-knot-atlas.md:312: \"Paper hard floor (CAL-2 propagation): ~780 ppb.\"",
+        "notes": "p/n masses reported at -0.251 ppm but the witness is q-pinning-50-digit (muon-q0 computations/ layer), not the proton-pinned package layer; AGENTS.md §q0 convention warns muon-q0 witnesses must not be scored as the proton prediction. Binding errors (+1.09%..+10.34%) are far above the ~780 ppb floor and openly shown, so no cherry-picking — but the ppm-level nucleon figures may be stale vs the proton-anchor convention. Warn for q0-pin provenance, not a fit-noise match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Massless ν/γ, MeV-scale nucleons, AME binding energies, neutron-excess N>Z growth ~Z^2 — all physically standard; units consistent (MeV)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "minor",
+        "evidence": "recursive-atom-knot-atlas-interpretation.md:4: links to scripts on branch 'claude/mass-units-bridge-followups' not main",
+        "notes": "Atlas auto-render and several producer scripts (gb_filtration_jet_tracker.py, hp_volume.py, y_lambda_wenzl_bridge_extended.py) are linked on a feature branch, not main; AUTO blocks (canonical-tr-m-table) are generated and the .ts pins computation witness q-pinning-50-digit (status verified). I did not re-run the witnesses; flag minor branch-link/staleness risk for the producer scripts."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ed62fd0efdfa",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "major",
+        "notes": "VERDICT: sound atlas with honest disclosure of empirical/open content and a real (if narrow) Lean uniqueness theorem; not vacuous, not back-fitted in a hidden way. STRONGEST OBJECTION: the proton gallery line 157 'model derives via Vol(B_3)=8G at q0' invokes the route AGENTS.md canonical guardrail flags as the WRONG absolute-mass form and pairs it with the CODATA 'exact' value, overstating derivation; secondary: the Lean certifies only empty-constraint SDP uniqueness while the .md asserts the full knot→mass map (disclosed). Both warrant tightening, neither is fatal."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:47:09.321Z"
 }

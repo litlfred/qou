@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Build-pipeline integration note for the atlas; appropriate appendix metadata remark."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Describes the render pipeline + sources of truth accurately; no math claim to be false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Concrete pipeline documentation (ordered sources, hp_volume precision, staleness propagation); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Plumbing description; no derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No result claimed beyond describing the build pipeline."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Source-of-truth ordering is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Links to named producer scripts/witnesses; no bibliographic misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "hp_volume_of_link_closure, Wenzl bridge, staleness tracker referenced unambiguously."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No numerical match claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "minor",
+        "evidence": "recursive-atom-knot-atlas-interpretation.md:4: \".../blob/claude/mass-units-bridge-followups/computations/recursive_atom_knot_atlas_render.py\"",
+        "notes": "All five source-of-truth links and the render script point to a feature branch, not main; minor durability/staleness risk."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7c6adfa2a0d9",
+          "ts": "922a36d93557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "VERDICT: accurate build-pipeline documentation remark. STRONGEST OBJECTION (minor): producer-script links target a feature branch rather than main."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:47:09.321Z"
 }

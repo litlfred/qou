@@ -784,7 +784,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Knot-periodic table intro/mass-formula prose; central to the appendix."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Mass formula M=Z·m_p+N·m_n-A·(B/A)+Z·m_e is correct bookkeeping; magic numbers, sub-shell capacities (2,6,10,14), Rydberg ∝1/n^2 all standard. Faithfulness honestly flagged open (l.163-165)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Substantive prose: explicit knot formula, mass formula, transfer-matrix complexity, beta universality."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "minor",
+        "evidence": "knot-periodic-table.md:32: \"$B/A$ ... (AME2020 values used here)\"",
+        "notes": "M_q 'predicted mass' uses B/A taken from AME2020, so M_q≈M_o is partly built from the experimental answer. DISCLOSED explicitly ('AME2020 values used here', 'M_o from AME2020', 'one free parameter'), so not a hidden back-fit; downgraded to minor warn for the 'QOU predicted mass' label sitting on an AME-input quantity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Calls B/A an AME input (l.32,144) and lists faithfulness as open; predicted-vs-input boundary is stated. No structural-from-scope-limited overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "evidence": "knot-periodic-table.md:107: \"**Input parameters** (one free parameter): $q = q_0$...\"",
+        "notes": "Single free parameter q0 declared explicitly; derived constants ℏ_q, E_×, [2]_q tabulated from q0. B/A as AME input is disclosed (not smuggled as derived). No hidden 4th calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Neutron-excess argument (pp repulsive Skein phase ~Z^2 → extra neutrons) is internally coherent with the framework's charge assignment."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Prose block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Internal refs (prop:terminal-resolution, thm:embeddability-closure, thm:generation-completeness, prop:skein-polynomial-transfer-matrix, etc.) match invoked results; no external cite."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "p, n, ⊕, T_{2,3}, B/A, k_α, stability-pair markers all defined or cross-referenced; clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "m_p/m_n pinned to codata-masses.witness.json via :val tokens; λ_+≈1.1073 qualitative. No fit-noise match asserted at high precision in this prose."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "Coulomb-like Z^2 penalty, magic numbers, Rydberg scaling, transfer-matrix degree bounds all physically/computationally reasonable; units MeV consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "notes": "computation pins codata_masses.py + codata-masses.witness.json (status verified); :val tokens reference that witness. Did not re-run; witness reference is concrete and CODATA masses are stable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9e16614b9b06",
+          "ts": "44b99b61d030"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:47:09.321Z",
+        "reviewed_sha": "f3533faf4f2e95ed2e2b2d82f5661ad75c830413",
+        "severity": "minor",
+        "notes": "VERDICT: clean, honest intro prose — single declared free parameter, B/A openly an AME input, faithfulness flagged open. STRONGEST OBJECTION (minor): labeling M_q a 'QOU predicted mass' when its binding term is taken from AME2020 risks reading composite masses as predictions; the disclaimers mitigate but the label could mislead a skimming referee."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:47:09.321Z"
 }
