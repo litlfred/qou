@@ -93,7 +93,7 @@ def word_to_mpfr(word, q: "mp.mpf"):
     """
     h = q - 1 / q
     h_f = float(h)
-    delta = None
+    color_deltas = None  # lazy: the live color-weight δ conventions
     out = []
     for c, d, g in word:
         cf, df = float(c), float(d)
@@ -106,15 +106,45 @@ def word_to_mpfr(word, q: "mp.mpf"):
         elif abs(df + h_f / 2) < _TOL:
             d_mp = -h / 2
         else:
-            if delta is None:
-                from _li_2_q_util import flavor_split_subleading
-                delta = flavor_split_subleading(q)
-            d_mp = -(h * (mp.mpf("0.5") - delta / 4))
-            if abs(float(d_mp) - df) > _TOL:
+            # Color-weighted p-n crossing `−h·(½ − δ/4)`. The word may have been
+            # built under either live δ convention: the canonical single source
+            # `_avg_color_delta()` (q=None / q₀ words — now `flavor_split_leading`
+            # after the 2026-06-29 flavor-split de-wire) or `flavor_split_*(q)`
+            # for q-parameterised words. Re-identify against all live conventions
+            # and rebuild d at full dps from whichever matches; raise only if
+            # NONE does, so genuine convention drift still fails loudly.
+            if color_deltas is None:
+                color_deltas = _color_weight_deltas(q)
+            d_mp = next(
+                (-(h * (mp.mpf("0.5") - dlt / 4)) for dlt in color_deltas
+                 if abs(float(-(h * (mp.mpf("0.5") - dlt / 4))) - df) <= _TOL),
+                None)
+            if d_mp is None:
                 raise ValueError(
                     f"unrecognised crossing (c={c}, d={d}) at gen={g}; expected "
                     "σ / σ⁻¹ / averaged / color-weighted p-n")
         out.append((d_mp, g))
+    return out
+
+
+def _color_weight_deltas(q: "mp.mpf"):
+    """Live color-weight δ conventions a p-n crossing `−h·(½ − δ/4)` may use.
+
+    Returns the canonical single source `_avg_color_delta()` (q₀, the
+    `flavor_split_leading`-based value after the 2026-06-29 de-wire) plus the
+    general-`q` leading/subleading variants, so `word_to_mpfr` re-identifies a
+    crossing regardless of which δ built the word. Each is an `mp.mpf`; missing
+    sources are skipped (the caller raises only if none match).
+    """
+    out = []
+    for mod, name, arg in (("canonical_braid_crossings", "_avg_color_delta", None),
+                           ("_li_2_q_util", "flavor_split_leading", q),
+                           ("_li_2_q_util", "flavor_split_subleading", q)):
+        try:
+            fn = getattr(__import__(mod), name)
+            out.append(fn() if arg is None else fn(arg))
+        except Exception:
+            pass
     return out
 
 
