@@ -1,6 +1,6 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
+export default proposition({
   label: "prop:p-vs-np-boundary",
   lean: { ref: "qou:QOU.PvsNPBoundary.boundary_dichotomy" },
   title:
