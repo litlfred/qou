@@ -452,6 +452,11 @@ if __name__ == "__main__":
         ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
         ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
         ("6Li",  3, 3, 31.994526),
+        # A=7 mirror pair — the SECOND proton-excess test after T/³He (the
+        # Z-correction slope test, per the 9b workplan). ⁷Be (Z>N) is the
+        # proton-rich member; ⁷Li (N>Z) its mirror. AME2020 binding (MeV).
+        ("7Li",  3, 4, 39.244531),
+        ("7Be",  4, 3, 37.600350),
     ]
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
