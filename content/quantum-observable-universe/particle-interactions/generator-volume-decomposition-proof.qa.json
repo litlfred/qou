@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "GS reduction engine / transfer-matrix section — generator-volume decomposition on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Hecke relation closes span{1,sigma_i} so the product of linear forms reduces to a single linear form; sum_{i=0}^{A-2}(A-i-1)=C(A,2) is arithmetically correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive transfer-recurrence proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Honestly notes the assembled prop's closing step is deferred via sorry [manuscript]; energy_additive and beta_decay_locality proved outright."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "(a_i,b_i) recurrence from (0,1) is fully determined; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Each step (exact reduction, additivity via commutation, step count) follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "generator-volume-decomposition-proof.md:31: \"whose closing step is deferred via `sorry` (`-- Ref: [manuscript]`)\"",
+        "notes": "The assembled generator_volume_decomposition_prop carries a sorry; the .md discloses this honestly, so it is a disclosed gap rather than a hidden divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "nuclear-reduction cross-ref resolves."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "C_ij, transfer recurrence, jet terminology defined inline."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No numeric match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "beta-decay locality (a type-change at p alters only generators i<=p) is structurally coherent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "57c2af92c5a9",
+          "ts": "e5e0cac926a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Sound transfer-matrix proof; energy_additive/beta_decay_locality proved, assembly sorry disclosed. verdict=accept-with-disclosed-gap."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

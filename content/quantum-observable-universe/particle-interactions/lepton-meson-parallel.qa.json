@@ -780,7 +780,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lepton–meson structural parallel section — exact match."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "T(2,n) lepton tower (trefoil/cinquefoil/septafoil for e/mu/tau) and the Hecke eigenvalue facts (sigma_i eigenvalue q on trivial partition) are correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive dictionary content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Descriptive parallel, no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "lepton-meson-parallel.md:42: \"L_+ = sigma_1 sigma_2 ... is the lowest-weight Hecke basis element\"",
+        "notes": "Calling L_+ the 'lowest-weight' element 'in the sense that it mixes both eigenspaces through off-diagonal Hoefsmit blocks' is a loose use of 'lowest weight' (mixing != lowest-weight); a rep-theory referee would object to the terminology, though the structural point (binding probes the full spectrum) stands."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Highest/lowest-weight duality narrative coheres with the eigenvalue facts."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Prose block, no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No external citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "lepton-meson-parallel.md:24: \"lowest weight (sigma^-1 crossings in binding)\" / \"highest weight\"",
+        "notes": "'highest weight'/'lowest weight' used loosely as a structural analogy rather than the precise rep-theory notion; could mislead a reader expecting the technical meaning."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "h^2+1 ~ 1.044 numeric is a coefficient label, not a precision-sensitive observable match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lepton/meson generation tower analogy is internally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No witness/numeric to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6172dc3fca9b",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Coherent structural-parallel prose; strongest objection is the loose 'lowest-weight' terminology for L_+. verdict=accept-with-terminology-caveat."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

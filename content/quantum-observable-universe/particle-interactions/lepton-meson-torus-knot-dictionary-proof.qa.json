@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lepton–meson structural parallel section — dictionary proof on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "T(2,3)/T(2,5)/T(2,7) for e/mu/tau and the meson crossing counts (pi=6, K=8, eta/phi=10) are consistent with the framework's flavor-knot assignment."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive dictionary derivation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "lepton-meson-torus-knot-dictionary-proof.md:31: \"symmetric partition (3) carries 62% of the Markov trace at 6 crossings, rising to 100% as crossing count -> infinity\"",
+        "notes": "The 62%->100% Markov-trace-share claim is asserted in the duality table without a named witness; for a 'proof' block this specific numeric should be witness-backed or cited."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No free parameters; assignments fixed by crossing count."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Crossing-count addition (n1+n2) for meson quark pairs is a direct consequence of the per-constituent assignment."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Proof block, no own Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "jones1987 cited for the torus-knot mass tower; categorical-meson cross-ref resolves."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Torus knots, meson braid M_+, calibrations all referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "lepton-meson-torus-knot-dictionary-proof.md:31: \"carries 62% of the Markov trace at 6 crossings\"",
+        "notes": "The 62% figure is a single uncited numeric; cannot assess fit-noise sensitivity without the witness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "CAL-2/CAL-3 labels in the table match the canonical decay-width cheat sheet (m_mu/m_e proxy for CAL-2, m_pi for CAL-3)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "lepton-meson-torus-knot-dictionary-proof.md:31: \"62% ... rising to 100%\"",
+        "notes": "No witness JSON named to reproduce the symmetric-partition trace share; the rest of the dictionary is combinatorial and reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6f83e8418752",
+          "ts": "b66d6ed196bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Sound dictionary proof; CAL labels canonical. Strongest objection: the 62%->100% Markov-trace-share figure is uncited. verdict=accept-with-citation-gap."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

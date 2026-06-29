@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:22.020Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Bare well-definedness statement of the decay channel."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:22.326Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Beta-stability / decay material on-scope for this chapter."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:22.782Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Uniqueness of violated constraint is combinatorial; Lean class is generic over {R : Type u}, no archimedean leak."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:23.179Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "decay_channel_unique proof is .trans/.symm of a class field — pure algebra, no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:23.587Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean conditional-class result (off boundary -> minimisers coincide) matches the .md 'unique violated constraint is well-defined' under the §3b-cond pattern; the conjectural input (LP duality) is the class field unique_off_boundary."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +283,22 @@
         "reviewed_at": "2026-06-22T02:57:24.679Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Statement intact; uniqueness derived, not assumed as conclusion."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +319,22 @@
         "reviewed_at": "2026-06-22T02:57:25.058Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The class field unique_off_boundary is the genuine LP-duality HYPOTHESIS (minimiser=>equals lam_star), and decay_channel_unique DERIVES lam1=lam2 by composing two instances — not a verbatim projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +355,22 @@
         "reviewed_at": "2026-06-22T02:57:25.247Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Conclusion lam1=lam2 is a genuine uniqueness claim, non-vacuous."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +391,22 @@
         "reviewed_at": "2026-06-22T02:57:25.403Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Hypotheses (off-boundary, both minimisers) consistent."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +427,22 @@
         "reviewed_at": "2026-06-22T02:57:25.507Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "h_off, h1, h2 all consumed in the .trans/.symm composition."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +463,22 @@
         "reviewed_at": "2026-06-22T02:57:25.612Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No decide."
       }
     ],
     "da-false-claim": [
@@ -323,6 +499,22 @@
         "notes": "The mathematical claims in 'Unstable atom has a uniquely-determined decay channel' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Off the boundary variety (no shadow-price tie) the violated constraint is unique — correct under LP non-degeneracy."
       }
     ],
     "da-vacuous": [
@@ -343,6 +535,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Content-bearing conditional class (real LP-duality hypothesis field), not an empty marker."
       }
     ],
     "da-circular": [
@@ -363,6 +571,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Unstable atom has a uniquely-determined decay channel'.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Not self-assuming; the class carries the input, the theorem derives the output."
       }
     ],
     "da-overclaim": [
@@ -382,6 +606,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Unstable atom has a uniquely-determined decay channel' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The .md says 'well-defined'; the Lean delivers conditional uniqueness off the boundary — consistent."
       }
     ],
     "da-hidden-dof": [
@@ -402,6 +642,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unstable atom has a uniquely-determined decay channel'.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No parameters."
       }
     ],
     "da-non-sequitur": [
@@ -422,6 +678,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Composition of the two unique_off_boundary instances correctly yields lam1=lam2."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -441,6 +713,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean conditional-uniqueness aligns with the .md well-definedness claim."
       }
     ],
     "da-citation-misuse": [
@@ -461,6 +749,22 @@
         "notes": "No citations are present in 'Unstable atom has a uniquely-determined decay channel', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "local-shadow-ordering / mass-coefficient-shadow-price refs appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -481,6 +785,22 @@
         "notes": "Key terms and symbols in 'Unstable atom has a uniquely-determined decay channel' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Boundary variety and IsMinimiser precisely encoded in the class."
       }
     ],
     "da-empirical-fragility": [
@@ -501,6 +821,22 @@
         "notes": "The algebraic and logical relations in 'Unstable atom has a uniquely-determined decay channel' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No numeric."
       }
     ],
     "da-physical-implausibility": [
@@ -521,6 +857,22 @@
         "notes": "The physical concepts described in 'Unstable atom has a uniquely-determined decay channel' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Unique decay channel off boundary is physically reasonable (degenerate ties on a measure-zero variety)."
       }
     ],
     "da-reproducibility": [
@@ -541,6 +893,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.lean:1 — content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -562,6 +930,22 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "ed8e443d42e7",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Exemplary §3b-cond conditional result: content-bearing class hypothesis, genuine derivation. verdict=accept."
       }
     ],
     "voice-status-leak": [
@@ -1599,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

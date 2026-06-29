@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.625Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Branching Q-value / typed Garside section — per-nucleon channel decomposition on-scope."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:20.121Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Header explicitly states the combinatorial content is generic over any commutative ring with the same q-data; Lean is the R specialisation per §7c — correct wall handling."
       }
     ],
     "da-false-claim": [
@@ -71,6 +103,22 @@
         "notes": "The claim in 'Per-nucleon channel decomposition via $S_3^A$ branching' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "T_{2,3}=sigma0 sigma1 sigma0 eigenvalues q^3,q^-1,-q,-q^-3 are the standard trefoil Hecke spectrum; the proton/neutron channel rationals reproduce at q0=1.10998 (verified: a=-h/2=-0.1043; b formula=-0.6340 matching the listed channel-sum)."
       }
     ],
     "da-vacuous": [
@@ -90,6 +138,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Per-nucleon channel decomposition via $S_3^A$ branching' presents substantial mathematical content: The Garside matrix element for a nucleus of mass number $A$ factors as a product of per-nucleon contributions, each d...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive channel decomposition."
       }
     ],
     "da-circular": [
@@ -110,6 +174,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Per-nucleon channel decomposition via $S_3^A$ branching'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Channel values are algebraic functions of q, not fit to data."
       }
     ],
     "da-overclaim": [
@@ -129,6 +209,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Per-nucleon channel decomposition via $S_3^A$ branching' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Scoped: the eight values 'completely determine all nuclear Q-values via branching factorization' — a structural claim consistent with the framework."
       }
     ],
     "da-hidden-dof": [
@@ -149,6 +245,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Per-nucleon channel decomposition via $S_3^A$ branching'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "All channel factors are explicit functions of q; no extra parameter."
       }
     ],
     "da-non-sequitur": [
@@ -169,6 +281,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "S_3^A branching -> per-nucleon factorization -> four T_{2,3} channels is a coherent decomposition."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -188,6 +316,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean is the archimedean R specialisation of the generic channel data, consistent with the .md (header discloses this)."
       }
     ],
     "da-citation-misuse": [
@@ -208,6 +352,22 @@
         "notes": "No citations are present in 'Per-nucleon channel decomposition via $S_3^A$ branching', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "branching-qvalue-factorization and typed-crossing-operator cross-refs resolve."
       }
     ],
     "da-definitional-ambiguity": [
@@ -228,6 +388,22 @@
         "notes": "Key terms and symbols in 'Per-nucleon channel decomposition via $S_3^A$ branching' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Four channels, eigenvectors v_c, Delta_3 expectation defined; std-channel v_c via seminormal basis specified."
       }
     ],
     "da-empirical-fragility": [
@@ -248,6 +424,22 @@
         "notes": "The algebraic and logical relations in 'Per-nucleon channel decomposition via $S_3^A$ branching' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Numeric channel values reproduce at the canonical muon q0=1.10998 (b=-0.6340); the listed values are not fit-noise. The earlier-looking 0.6325/0.6340 discrepancy is just q0 digit truncation, not a real wobble."
       }
     ],
     "da-physical-implausibility": [
@@ -268,6 +460,22 @@
         "notes": "The physical concepts described in 'Per-nucleon channel decomposition via $S_3^A$ branching' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Channel decomposition of nucleon NF is internally consistent."
       }
     ],
     "da-reproducibility": [
@@ -288,6 +496,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:1 — content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize"
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Rational channels (Sym/Alt) and the sum formulas a=-h/2, b=-3(q^2-1)(q^2+1)^2/(4q^3) reproduce at q0; verified numerically."
       }
     ],
     "da-referee-verdict": [
@@ -309,6 +533,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean for 'Per-nucleon channel decomposition via $S_3^A$ branching' fails compilation with error: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "c141ad0b3ee0",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Sound, reproducible channel decomposition; the std-channel eigenvector values are stated symbolically and numerically. verdict=accept."
       }
     ],
     "voice-status-leak": [
@@ -1173,5 +1413,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

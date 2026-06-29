@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:18.477Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Varying-Euler-characteristic / mirror-bundle section — genus-2 hyperelliptic intro on-scope as a subsection opener."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'subsec:genus-2': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "X5: y^2=x^5-1 is a genus-2 hyperelliptic curve with Z5 automorphism (x,y)->(zeta5 x,y); the five fifth roots of unity are branch points — all correct."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'subsec:genus-2' presents substantial mathematical content: Throughout this chapter the varying-Euler-characteristic framework has kept the genus of the base manifold open, with...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive subsection roadmap with concrete geometric anchor."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'subsec:genus-2'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity; descriptive intro."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'subsec:genus-2' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Forward-references to the subsection's results; no claim proved here."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +196,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'subsec:genus-2'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No parameters."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +230,21 @@
         "notes": "The argument flow in 'subsec:genus-2' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The shared fifth-roots-of-unity anchor linking X5 branch points, the C5 Lagrange-resolvent, and q=zeta5 truncation is a coherent organizing observation."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +263,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Prose intro, no Lean."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +297,21 @@
         "notes": "No citations are present in 'subsec:genus-2', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "All cross-refs (hyperelliptic-quintic, z5-classification, x5-z5-automorphism, lagrange-resolvent-transform, etc.) are internal forward-refs to subsection blocks."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +331,21 @@
         "notes": "Key terms and symbols in 'subsec:genus-2' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "X5, Z5, branch points, Lagrange resolvent all defined or forward-refed."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +365,21 @@
         "notes": "The algebraic and logical relations in 'subsec:genus-2' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No numeric match."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +399,21 @@
         "notes": "The physical concepts described in 'subsec:genus-2' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Pure geometry intro, no physical prediction."
       }
     ],
     "da-reproducibility": [
@@ -253,6 +433,21 @@
         "notes": "The derivation steps and formal definitions in 'subsec:genus-2' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/genus-2-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -273,6 +468,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'subsec:genus-2' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "b5f552c8fe21",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Sound subsection-opening prose with a correct geometric anchor. verdict=accept."
       }
     ],
     "voice-status-leak": [
@@ -1046,5 +1256,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

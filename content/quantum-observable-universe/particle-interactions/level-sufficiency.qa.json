@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:23.139Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Statement is the trace-preservation claim with the computational-sufficiency corollary; no extraneous physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:23.528Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Confined particles / unfolding belongs to the confinement-level material of this chapter."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:23.842Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Trace equality in C(q) is algebraic; no archimedean leak in the statement."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:24.125Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean uses a concrete constant model (markovTrace := 0*q), rfl-proved — no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:24.376Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "level-sufficiency.lean:56: \"def markovTrace : ... := fun _ q => 0 * q\"",
+        "notes": "The .md claims trace PRESERVATION along a genuine Hecke-inclusion unfolding under the hypothesis k_max<=n0. The Lean replaces markovTrace by the constant 0, so LevelSufficiency : markovTrace P q = markovTrace P' q is 0=0 := rfl and holds for ANY P,P' regardless of the k_max hypothesis. The Lean does not express the .md's content-dependent claim — it proves a degenerate constant-model equality."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:57:25.447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "level-sufficiency.lean:72: \"theorem LevelSufficiency ... : markovTrace P q = markovTrace P' q := rfl\"",
+        "notes": "The signature carries the hypotheses but the constant-0 trace model makes the conclusion independent of them, weakening the formalized claim well below the stated proposition."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:57:25.528Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Not a field projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:57:25.622Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "critical",
+        "evidence": "level-sufficiency.lean:76: \"markovTrace P q = markovTrace P' q := rfl\" with markovTrace := 0*q",
+        "notes": "Because markovTrace is the constant 0, the goal reduces to 0=0 and is discharged by rfl independent of all hypotheses — a content-free tautology dressed as the level-sufficiency theorem. The Lean docstring even admits 'Sharpening to (p.strands:R) would break the rfl-proved theorem' — i.e. the real claim is not formalized."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:57:25.705Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise; hypotheses just unused."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,24 @@
         "reviewed_at": "2026-06-22T02:57:25.749Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "level-sufficiency.lean:74-75: \"(_h_unfold : unfolds P P') (_h_cover : kMax P q ≤ coarseStrands P)\"",
+        "notes": "Both hypotheses are underscore-prefixed and unused; the conclusion holds trivially without them, signalling the formalized statement is strictly weaker than the .md proposition."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +471,22 @@
         "reviewed_at": "2026-06-22T02:57:25.784Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "rfl, not decide; but the rfl masks a vacuous goal (covered under proof-no-trivial-true)."
       }
     ],
     "da-false-claim": [
@@ -323,6 +507,22 @@
         "notes": "No false claims identified in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The .md proposition (trace invariance under Hecke inclusion when k_max<=n0) is plausibly true; no counterexample. The defect is formalization vacuity, not falsity."
       }
     ],
     "da-vacuous": [
@@ -342,6 +542,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Level sufficiency: Markov trace computable in the coarsest confinement algebra' presents substantial mathematical content: '$P = (\\mathrm{name}, \\ell, [K]_M, n_0)$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "level-sufficiency.lean:56: \"fun _ q => 0 * q\"",
+        "notes": "The Lean formalization is vacuous: constant-0 trace model makes the theorem 0=0:=rfl, independent of every hypothesis. The narrative claim is real but unformalized."
       }
     ],
     "da-circular": [
@@ -362,6 +580,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra'.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity in the narrative."
       }
     ],
     "da-overclaim": [
@@ -381,6 +615,23 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "notes": "The block presents a Lean sibling as if it formalizes the proposition, but it formalizes only a degenerate model; the manifest gives the impression of formal backing it does not provide."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +652,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra'.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +688,22 @@
         "notes": "The prose arguments in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Narrative chain (finite filtration -> sufficiency) is coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +723,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "level-sufficiency.lean:50: \"-- Sharpening to (p.strands : ℝ) would break the rfl-proved theorem; the constant-0 model is intentional.\"",
+        "notes": "The Lean self-admittedly proves a constant-model equality, not the content-dependent trace-preservation theorem of the .md — a clear narrative/Lean divergence."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +761,22 @@
         "notes": "No citations are present in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "jones1987 cited for the Markov trace — appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +797,22 @@
         "notes": "Key terms and symbols in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "k_max, unfolding morphism, confinement category defined upstream."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +833,22 @@
         "notes": "The algebraic and logical relations in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No numeric match."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +869,22 @@
         "notes": "The physical concepts described in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "level-sufficiency.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Trace-class invariance under coarse/fine unfolding is physically reasonable."
       }
     ],
     "da-reproducibility": [
@@ -539,6 +904,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -560,6 +941,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Level sufficiency: Markov trace computable in the coarsest confinement algebra' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "24ad056afcfb",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "notes": "Strongest objection: constant-0 model -> 0=0:=rfl, hypotheses unused. Recommend restating the Lean over a content-bearing trace."
       }
     ],
     "voice-status-leak": [
@@ -1599,5 +1997,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

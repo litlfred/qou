@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.082Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Bare existence statement, no interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:19.457Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Atom-knot existence belongs to 'Atom and isotope knots'."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:19.937Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Existence in H_{3(Z+N)}(q) on the generic locus — algebraic; Lean over plain Nat fields, no archimedean leak."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:20.325Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Constructive proof (assemble blocks); no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:20.755Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "atom-knot-exists.lean:16: \"theorem AtomKnot.exists (Z N : ℕ) : ∃ K : AtomKnot, K.Z = Z ∧ K.N = N\"",
+        "notes": "md adds the hypothesis Z+N>=1 and the claim 'as a closed braid in H_{3(Z+N)}(q) on the generic locus'; the Lean drops Z+N>=1 (allows Z=N=0) and the Hecke-algebra realization, proving only that an AtomKnot record with the given Z,N exists by constructing empty blocks. The Lean is a weaker structural existence than the md's braid-realization claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,22 @@
         "reviewed_at": "2026-06-22T02:57:22.178Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Manifest decl AtomKnot.exists matches the Lean signature; no axiom injected."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:57:22.626Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Proof is an explicit anonymous-constructor witness, not a field projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,24 @@
         "reviewed_at": "2026-06-22T02:57:22.991Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "atom-knot-exists.lean:17: \"⟨{ Z := Z, N := N, protonBlock := [], ... }, rfl, rfl⟩\"",
+        "notes": "The existence is discharged with empty proton/neutron/inter blocks — the witness carries no braid content, so it proves the record type is inhabited but not that a non-degenerate atom-knot braid exists. True-but-thin relative to the md's intent."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +395,22 @@
         "reviewed_at": "2026-06-22T02:57:23.400Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +431,22 @@
         "reviewed_at": "2026-06-22T02:57:23.777Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Z,N both used in the witness."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +467,22 @@
         "reviewed_at": "2026-06-22T02:57:24.158Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No decide; rfl on field equalities is genuine."
       }
     ],
     "da-false-claim": [
@@ -323,6 +503,22 @@
         "notes": "The claim in 'Existence of the atom-knot for any (Z, N)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Existence claim is true; an atom-knot of any (Z,N) can be assembled."
       }
     ],
     "da-vacuous": [
@@ -342,6 +538,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Existence of the atom-knot for any (Z, N)' presents substantial mathematical content: the atom-knot of type $(Z, N)$ exists as a closed braid in $H_{3(Z+N)}(q)$ on the generic locus.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "atom-knot-exists.lean:17: \"protonBlock := [], neutronBlock := [], interBlock := []\"",
+        "notes": "The Lean existence is near-vacuous (empty blocks); it does not establish the braid lives in H_{3(Z+N)}(q) as the md asserts."
       }
     ],
     "da-circular": [
@@ -362,6 +576,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the atom-knot for any (Z, N)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -381,6 +611,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Existence of the atom-knot for any (Z, N)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "atom-knot-exists.md:2: \"exists as a closed braid in H_{3(Z+N)}(q) on the generic locus\"",
+        "notes": "The md asserts realization as a closed braid in a specific Hecke algebra; the Lean witness only inhabits the AtomKnot record with empty blocks — md slightly overclaims relative to what is formalized."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +649,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the atom-knot for any (Z, N)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No parameters."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +685,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Existence-by-construction is direct."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +720,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "atom-knot-exists.md:2: \"with Z+N >= 1\" vs lean: no positivity hypothesis",
+        "notes": "Lean drops the Z+N>=1 hypothesis and the Hecke-realization content; proves a structurally weaker existence."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +758,22 @@
         "notes": "No citations are present in 'Existence of the atom-knot for any (Z, N)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No citation invoked."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +794,22 @@
         "notes": "Key terms and symbols in 'Existence of the atom-knot for any (Z, N)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "def:atom-knot and 'generic locus' defined upstream."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +830,22 @@
         "notes": "The algebraic and logical relations in 'Existence of the atom-knot for any (Z, N)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No numeric claim."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +866,22 @@
         "notes": "The physical concepts described in 'Existence of the atom-knot for any (Z, N)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Existence of atom-knots is internally consistent."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +902,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:1 — content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'"
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +939,23 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean for 'Existence of the atom-knot for any (Z, N)' fails compilation with error: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "notes": "Claim is true but the Lean witness is thin (empty blocks, drops Z+N>=1 and the Hecke-algebra realization). verdict=accept-with-formalization-gap; strongest objection: the formalization proves record-inhabitation, not braid realization in H_{3(Z+N)}(q)."
       }
     ],
     "voice-status-leak": [
@@ -1598,5 +1993,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

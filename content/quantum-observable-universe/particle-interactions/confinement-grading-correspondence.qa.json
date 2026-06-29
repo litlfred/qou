@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:21.329Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Confinement level / cemetery group section — KLR grading conjecture on-scope."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -108,6 +123,21 @@
         "notes": "No false claims identified in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Brundan-Kleshchev iso and KLR Z-grading are correctly stated; the block is honestly a conjecture, not asserting the correspondence as fact."
       }
     ],
     "da-vacuous": [
@@ -126,6 +156,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are non-vacuous as they make concrete conjectures about '\\cite{brundankleshchev2009}, the confinement filtration $J^\\bullet(q)$ on $H_n(R, q)$ coincides with the filtration i...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive conjecture (filtration = KLR grading)."
       }
     ],
     "da-circular": [
@@ -145,6 +190,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -163,6 +223,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Conjectural-status section explicitly scopes what IS conjectural (LP shadow-price filtration = KLR grading on the nose) vs the established Brundan-Kleshchev facts."
       }
     ],
     "da-hidden-dof": [
@@ -182,6 +257,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -201,6 +291,21 @@
         "notes": "The argument flow in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The computational-role use of the grading bound to prune the crystal graph follows from the conjectured correspondence."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -219,6 +324,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjectured block 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean sibling file present."
       }
     ],
     "da-citation-misuse": [
@@ -238,6 +358,21 @@
         "notes": "Citations to khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "brundankleshchev2009 and khovanovlauda2009 correctly cited for the iso and KLR algebra."
       }
     ],
     "da-definitional-ambiguity": [
@@ -257,6 +392,21 @@
         "notes": "Key terms and symbols in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Confinement filtration, KLR grading, top graded piece all defined/cross-refed."
       }
     ],
     "da-empirical-fragility": [
@@ -276,6 +426,23 @@
         "notes": "The algebraic and logical relations in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.md:36: \"This is supported by all witnessed atom knots up to k_max <= 7.\"",
+        "notes": "Empirical support is asserted ('all witnessed atom knots up to k_max<=7') without a named witness file in the block; for a conjecture this is acceptable but the support claim is not directly traceable from the .md."
       }
     ],
     "da-physical-implausibility": [
@@ -295,6 +462,21 @@
         "notes": "The physical concepts described in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Algebraic conjecture, no direct physical-measurement claim."
       }
     ],
     "da-reproducibility": [
@@ -314,6 +496,23 @@
         "notes": "The derivation steps and formal definitions in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.md:36: \"supported by all witnessed atom knots up to k_max <= 7\"",
+        "notes": "No witness JSON named to back the k_max<=7 support claim; cannot reproduce from the block alone."
       }
     ],
     "da-referee-verdict": [
@@ -334,6 +533,21 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic and physical relations in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Well-scoped conjecture distinguishing established iso from the conjectural on-the-nose filtration match. Strongest objection: the k_max<=7 empirical support is uncited. verdict=accept-as-conjecture."
       }
     ],
     "voice-status-leak": [
@@ -1182,5 +1396,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:19.853Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Proposition statement is the topological-selection claim; the consistency-check caveat is part of the claim's scope, not extraneous physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:57:20.324Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Confinement operator selection section — exact match."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:57:20.773Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Topological Brunnian selection statement is combinatorial; the Gram/Markov numerics are an archimedean consistency check, appropriately framed."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:57:21.137Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Selection-principle support uses braid enumeration (combinatorial) + SDP-collapse analytic argument; no illegitimate archimedean machinery on an algebraic claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,21 @@
         "reviewed_at": "2026-06-22T02:57:21.505Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No proof block in md beyond the support paragraph; lean.ref points to confinement_operator_selection (validation not_checked); statement-level consistency holds."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +415,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Statement not weakened; explicitly distinguishes topological selector from numeric check."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +483,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No self-projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +534,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Claim is non-trivial (crossing-minimal Brunnian uniqueness)."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +602,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise; Borromean = crossing-minimal nontrivial Brunnian is correct."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +670,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No formal hypotheses orphaned."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +721,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean tactic body reviewed (validation not_checked)."
       }
     ],
     "da-false-claim": [
@@ -590,6 +755,21 @@
         "notes": "No false claims identified in 'Confinement operator selection via topological Brunnian minimality': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "(sigma0 sigma1^-1)^3 closure is the Borromean rings, the crossing-minimal (6-crossing) nontrivial Brunnian 3-link — correct."
       }
     ],
     "da-vacuous": [
@@ -608,6 +788,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Confinement operator selection via topological Brunnian minimality' presents substantial mathematical content: The Borromean braid $\\mathcal{B}_3 = (\\sigma_0\\sigma_1^{-1})^3$ is not asserted as the confinement operator — it is s...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive selection argument."
       }
     ],
     "da-circular": [
@@ -627,6 +822,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement operator selection via topological Brunnian minimality'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The block explicitly DEFENDS against circularity: topological selection uses 'no physical input'; numeric net-match is demoted to a consistency check, not the selector. This is the corrected non-circular framing."
       }
     ],
     "da-overclaim": [
@@ -645,6 +855,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Confinement operator selection via topological Brunnian minimality' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Carefully scoped: states the cost-min SDP does NOT select B3, avoiding the overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +889,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement operator selection via topological Brunnian minimality'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No free parameter; selection is parameter-free topology."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +923,21 @@
         "notes": "The argument flow in 'Confinement operator selection via topological Brunnian minimality' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Brunnian -> excludes 2-strand mesonic L_pm is logically sound."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +956,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean validation not_checked; no shadow stub observed in sibling."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +990,21 @@
         "notes": "No citations are present in 'Confinement operator selection via topological Brunnian minimality', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Cross-refs to frobenius-gram-matrix resolve."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1024,21 @@
         "notes": "Key terms and symbols in 'Confinement operator selection via topological Brunnian minimality' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Brunnian, NF, demand profile all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1058,21 @@
         "notes": "The algebraic and logical relations in 'Confinement operator selection via topological Brunnian minimality' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Net values (0.415 vs 0.420) used only as a consistency check, witness-backed; not load-bearing for selection."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1092,21 @@
         "notes": "The physical concepts described in 'Confinement operator selection via topological Brunnian minimality' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Confinement-as-Brunnian (no proper subset isolable) is a coherent topological model of quark confinement."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1126,21 @@
         "notes": "The derivation steps and formal definitions in 'Confinement operator selection via topological Brunnian minimality' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Witness confinement-operator-selection.witness.json named; numbers consistent with prose."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1161,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing entirely, preventing formal verification of the claims in 'Confinement operator selection via topological Brunnian minimality'."
+      },
+      {
+        "field_hash": {
+          "md": "a4666e93e2e9",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Well-defended non-circular selection argument; strongest objection (the net-match looks like the real selector) is pre-empted by demoting it to a consistency check. verdict=accept."
       }
     ],
     "voice-status-leak": [
@@ -1816,5 +2176,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

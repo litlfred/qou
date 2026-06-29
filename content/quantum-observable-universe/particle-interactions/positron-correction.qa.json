@@ -28,6 +28,23 @@
         "reviewed_at": "2026-06-22T02:57:20.565Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "positron-correction.md:29: \"> **Open Issue:** The current formulation relies on this parity-dependent delta_A as an unmotivated degree of freedom...\"",
+        "notes": "A proposition block carries an 'Open Issue' status block-quote in prose — author-tracking/status content that per AGENTS.md §4d belongs in authorNotes, not the scholarly statement of a proposition."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +64,21 @@
         "reviewed_at": "2026-06-22T02:57:20.989Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Q-value offset belongs to the branching/Q-value derivation material of this chapter."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +98,21 @@
         "reviewed_at": "2026-06-22T02:57:21.273Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Q = (Sigma_char + delta_A)*m_e is an evaluated archimedean observable; m_e scale appropriate post-wall."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +132,21 @@
         "reviewed_at": "2026-06-22T02:57:21.706Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No proof body in the .md."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +166,21 @@
         "reviewed_at": "2026-06-22T02:57:21.988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "lean.ref present but validation not_checked; no proof body to compare."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Statement is the offset definition; not weakened by an axiom in the .md."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +485,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No proof term reviewed."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +536,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No proof term reviewed."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +604,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise in the statement."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +672,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No proof body."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +723,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No proof body."
       }
     ],
     "da-false-claim": [
@@ -590,6 +757,21 @@
         "notes": "No false claims identified in 'Positron correction to the Q-value': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The offset formula is a definition, not a false assertion."
       }
     ],
     "da-vacuous": [
@@ -608,6 +790,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Positron correction to the Q-value' presents substantial mathematical content: The $+1$ additive term in the Q-value formula is not a fitting constant — it is the positron mass $m_{e^+}/m_e = 1$, ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Not vacuous; defines a concrete parity-dependent offset."
       }
     ],
     "da-circular": [
@@ -627,6 +824,23 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Positron correction to the Q-value'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "positron-correction.md:1: \"a parity-dependent offset delta_A, required to match the evaluated character sum to the observed kinematics\"",
+        "notes": "delta_A is set BY matching to observed kinematics — a fit-to-data offset. The block honestly discloses this as unresolved (Open Issue), so it is disclosed-circular rather than hidden, downgraded to warn."
       }
     ],
     "da-overclaim": [
@@ -645,6 +859,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Positron correction to the Q-value' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No overclaim; the block explicitly flags delta_A as an unmotivated DOF and an open issue."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +893,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Positron correction to the Q-value'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "positron-correction.md:29: \"relies on this parity-dependent delta_A as an unmotivated degree of freedom\"",
+        "notes": "delta_A in {0,1} chosen per parity regime to match kinematics IS an extra degree of freedom in the Q-value derivation. It is DISCLOSED (not hidden) and quantized to {0,1}, so not a continuous 4th calibration — warn rather than fail, but it is a genuine free choice on the canonical chain."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +929,21 @@
         "notes": "The argument flow in 'Positron correction to the Q-value' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Internally consistent regime split (thm:parity-regime-selection)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +962,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean validation not_checked."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +996,21 @@
         "notes": "No citations are present in 'Positron correction to the Q-value', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "uses thm:parity-regime-selection, resolves."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1030,23 @@
         "notes": "Key terms and symbols in 'Positron correction to the Q-value' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "positron-correction.md:12: \"where the offset delta_A depends on the parity regime\"",
+        "notes": "delta_A's value rule is only fully specified in the 'Applicability' section (A=1/even -> 1, odd>=3 -> 0); the Statement itself leaves delta_A's dependence implicit."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1066,23 @@
         "notes": "The algebraic and logical relations in 'Positron correction to the Q-value' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "positron-correction.md:1: \"required to match the evaluated character sum to the observed kinematics\"",
+        "notes": "The +1 offset is calibrated to observed kinematics; as an integer parity offset it is not fit-noise-fragile, but its motivation is empirical, which the block concedes is unresolved."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1102,21 @@
         "notes": "The physical concepts described in 'Positron correction to the Q-value' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "A parity-dependent kinematic offset of 1 m_e unit is dimensionally consistent (Q in m_e units)."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1136,21 @@
         "notes": "The derivation steps and formal definitions in 'Positron correction to the Q-value' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "probe referenced; no witness numeric in prose to reproduce."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1171,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing entirely, preventing formal verification of the claims in 'Positron correction to the Q-value'."
+      },
+      {
+        "field_hash": {
+          "md": "4b115f3de4da",
+          "ts": "41ab37c17bd8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "notes": "Strongest objection: delta_A is a disclosed fit DOF; the block is honest but the offset is not yet derived. Also a §4d status-in-prose voice issue."
       }
     ],
     "voice-status-leak": [
@@ -1814,5 +2185,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

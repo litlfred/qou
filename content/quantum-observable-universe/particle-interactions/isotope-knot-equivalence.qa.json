@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:22.647Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "One-line equivalence-relation claim, no interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:23.041Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Atom and isotope knots section — exact match."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:23.415Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Equivalence relation on atom-knots is purely algebraic/combinatorial."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:23.865Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "refl/symm/trans via rfl/.symm/.trans — no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:24.240Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean proves isIsotope refl/symm/trans — exactly 'isotope is an equivalence relation'; matches the .md."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +283,22 @@
         "reviewed_at": "2026-06-22T02:57:25.164Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Three equivalence-relation lemmas intact."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +319,22 @@
         "reviewed_at": "2026-06-22T02:57:25.270Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Proofs use anonymous constructors over field equalities, not conclusion-projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +355,22 @@
         "reviewed_at": "2026-06-22T02:57:25.400Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "isIsotope is a genuine predicate (two field equalities); refl/symm/trans are non-vacuous."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +391,22 @@
         "reviewed_at": "2026-06-22T02:57:25.510Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +427,22 @@
         "reviewed_at": "2026-06-22T02:57:25.605Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Hypotheses h, h12, h23 all used (.symm/.trans)."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +463,22 @@
         "reviewed_at": "2026-06-22T02:57:25.661Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No decide; structural term proofs."
       }
     ],
     "da-false-claim": [
@@ -323,6 +499,22 @@
         "notes": "The mathematical claims in 'Isotope relation is an equivalence' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean:13:49: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "isIsotope defined by equality of fixed Z and the iso class is indeed an equivalence."
       }
     ],
     "da-vacuous": [
@@ -343,6 +535,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Non-vacuous (relation has real content)."
       }
     ],
     "da-circular": [
@@ -363,6 +571,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Isotope relation is an equivalence'.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -382,6 +606,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Isotope relation is an equivalence' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -402,6 +642,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Isotope relation is an equivalence'.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No parameters."
       }
     ],
     "da-non-sequitur": [
@@ -422,6 +678,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Direct."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -441,6 +713,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean and .md agree."
       }
     ],
     "da-citation-misuse": [
@@ -461,6 +749,22 @@
         "notes": "No citations are present in 'Isotope relation is an equivalence', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No citation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -481,6 +785,22 @@
         "notes": "Key terms and symbols in 'Isotope relation is an equivalence' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "def:isotope-knot referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -501,6 +821,22 @@
         "notes": "The algebraic and logical relations in 'Isotope relation is an equivalence' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No numeric."
       }
     ],
     "da-physical-implausibility": [
@@ -521,6 +857,22 @@
         "notes": "The physical concepts described in 'Isotope relation is an equivalence' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Isotopes-as-equivalence is sound."
       }
     ],
     "da-reproducibility": [
@@ -541,6 +893,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.lean:1 — content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean:13:49: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -562,6 +930,22 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "b7f1f0b39176",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Clean, fully-proved equivalence-relation proposition. verdict=accept."
       }
     ],
     "voice-status-leak": [
@@ -1599,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

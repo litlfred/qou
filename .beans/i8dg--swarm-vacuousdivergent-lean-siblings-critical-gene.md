@@ -80,3 +80,7 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 50, particle-interactions)
 - confinement-lp.lean:19 (: True := trivial shadow stub; real proof in QOU/Interactions/ConfinementLP.lean + GramIndefinite.lean; critical sec0a)
 - atom-knot-unique.lean:24 (proves struct K1=K2 via congr<;>assumption, not Markov isotopy beta-hat1~beta-hat2)
+
+## More instances (batch 51, particle-interactions)
+- level-sufficiency.lean:50,56,76 (markovTrace:=0*q; theorem 0=0 rfl for all P,P; admits sharpening breaks rfl; hyps unused)
+- confinement-topological.lean:20 (gram_indefinite_witness : True := trivial shadow stub; lib GramIndefinite.lean has 3 sorries; critical sec0a)

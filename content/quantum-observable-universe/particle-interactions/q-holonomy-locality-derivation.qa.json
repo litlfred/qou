@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:19.947Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "KZ-flatness locality remark supports the locality/CPT subsection of this chapter."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Derivation: locality from flatness of the KZ connection': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Kohno-Drinfeld flatness, semisimplicity at generic q, root-of-unity non-semisimplicity all correct standard facts."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Derivation: locality from flatness of the KZ connection' presents substantial mathematical content: The lifted-crossing locality hypothesis reduces to a statement about the holonomy of the Knizhnik-Zamolodchikov conne...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive factorization argument with explicit failure-mode analysis."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Derivation: locality from flatness of the KZ connection'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No back-fit; locality derived from flatness."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,23 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Derivation: locality from flatness of the KZ connection' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "q-holonomy-locality-derivation.md:49: \"**Claim.** *At generic q, the parallel transport factorizes...\"",
+        "notes": "Labeled 'Claim' with 'Proof sketch'; the diagonalization step 3 ('Phi_q act by scalar, diagonal in R-matrix eigenbasis') is asserted, not shown. Honestly a sketch in a remark, so scoped; flagging the asserted diagonality as the soft point."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +198,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Derivation: locality from flatness of the KZ connection'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "xi(q0)~93.4 and eta(c) are derived from D(lambda)/hbar_q^2, on-chain, not free."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +232,21 @@
         "notes": "The argument flow in 'Derivation: locality from flatness of the KZ connection' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "flatness -> commuting monodromy -> simultaneous diagonalization -> product factorization is a valid chain."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +265,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Remark, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +299,21 @@
         "notes": "Citations to kohno1987 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "kohno1987 correctly cited for KZ flatness / Kohno-Drinfeld monodromy theorem."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +333,21 @@
         "notes": "Key terms and symbols in 'Derivation: locality from flatness of the KZ connection' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "KZ connection, Casimir, configuration space all defined inline."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +367,23 @@
         "notes": "The algebraic and logical relations in 'Derivation: locality from flatness of the KZ connection' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "q-holonomy-locality-derivation.md:135: \"xi(q0) = D(...)/hbar_q^2 ~ 0.9170/0.00982 ~ 93.4, so each crossing multiplies mass by ~94\"",
+        "notes": "A per-crossing factor of ~94 is presented as 'the empirical signature'; no witness JSON cited for the 0.9170 dilog value or the homogeneous fixed point eta(c)=1, and this is a remark-level corollary downstream of two conjectures (lifted-crossing-locality, crossing-graded-mass-expansion). Scoped as conjectural, but the bare numeric is uncited."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +403,21 @@
         "notes": "The physical concepts described in 'Derivation: locality from flatness of the KZ connection' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Root-of-unity locality failure and golden-degeneration vacuity are physically coherent with the framework."
       }
     ],
     "da-reproducibility": [
@@ -253,6 +437,23 @@
         "notes": "The derivation steps and formal definitions in 'Derivation: locality from flatness of the KZ connection' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "q-holonomy-locality-derivation.md:135: \"~ 0.9170/0.00982 ~ 93.4\"",
+        "notes": "Numeric xi(q0)~93.4 has no witness reference; cannot reproduce the D(lambda)=0.9170 input from the block alone."
       }
     ],
     "da-referee-verdict": [
@@ -273,6 +474,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Derivation: locality from flatness of the KZ connection' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "notes": "Mathematically sound flatness->locality sketch; weakest point is the uncited per-crossing ~94 factor and the asserted (not proved) diagonality of Phi_q in the R-matrix eigenbasis. verdict=accept-as-conjectural-remark."
       }
     ],
     "voice-status-leak": [
@@ -1082,5 +1299,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

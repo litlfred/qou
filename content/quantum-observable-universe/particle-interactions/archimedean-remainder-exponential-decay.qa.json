@@ -898,7 +898,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Beta-decay / precision-ladder material on-scope; supports the q-beta spectral bridge."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The geometric ceiling |R_N| <= hbar_q^{2(N+1)}/(1-hbar_q^2) = C e^{-cN} with c=-2 ln hbar_q is algebraically correct; at q0~1.110, hbar_q^2~9.82e-3, c~4.62, C~9.91e-3 — consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive convergence conjecture with explicit rate."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The conjecture is honestly stated as the open input that makes the brane tower converge; the geometric ceiling is offered as a witness rate, not a proof. No circular smuggling."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Status section is careful: 'The bound is conjectural'; the substrate identity fixes a witness rate the N=0 residual respects empirically, but a proof of the operator's spectral-tail decay is 'not available'. Correctly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "C(K), c(K) are existentially quantified sector-dependent constants, not free fitting parameters; the canonical witness rate is derived from hbar_q."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Geometric ceiling -> exponential form (c=-2 ln hbar_q) algebra is shown step by step and is correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The .md says the Lean (categorical-chain-convergence-mechanisms) proves the geometric DECAY RELATION cKBound(N+1)=hbar_q^2 cKBound(N) and delegates the BOUND ITSELF to this conjecture — an honest split consistent with the conjecture kind."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Cross-refs to q-beta-spectral-bridge, precision-ladder, categorical-chain-convergence resolve; c_k_beta_decay_witness.py named for the +0.168% residual."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "R_N(K), depth-N truncation, hbar_q=(q0-1)/q0 all defined; primary-conjecture status declared."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "archimedean-remainder-exponential-decay.md:71: \"Form A at N = 0 already lands at +0.168% residual ... a ~5.9x headroom against the observed residual (verified at 50 dps, c_k_beta_decay_witness.py)\"",
+        "notes": "The +0.168% residual and 5.9x headroom are tied to a q0 pin; the brief's q0-repin staleness class (muon vs proton, Q_beta dashboard at 164x) means this residual may be against a specific anchor. The conjecture is sound, but the empirical 'headroom' numeric should be checked against the current pin. Flagged as a minor staleness watch, not a defect in the conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Exponential truncation-remainder decay for a convergent brane-tower product is physically and analytically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The geometric-ceiling arithmetic (c~4.62, C~9.91e-3 at q0~1.110) reproduces; c_k_beta_decay_witness.py named for the residual."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6cf692338cc2",
+          "ts": "491b248eac4d",
+          "lean": "fa7c92acd66b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Honest, well-scoped primary conjecture with a correct geometric witness rate; the Lean proves the decay relation and defers the bound. Strongest objection: the +0.168%/5.9x headroom is anchor-dependent and should be confirmed against the current q0 pin. verdict=accept-as-conjecture."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

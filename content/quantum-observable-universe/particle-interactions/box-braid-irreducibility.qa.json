@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:22.195Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Statement gives the crossing-number/topological-invariant claim plus three numbered consequences; these are mathematical, not extraneous interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:22.630Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Box-braid / weak mediator material on-scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:23.060Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Crossing number is a topological invariant (combinatorial); header declares Lean as the R specialisation per §7c. Appropriate."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:23.416Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean T35_crossing_number via norm_num on min((m-1)n,(n-1)m); neutrino_energy_barrier uses q>1 ordering legitimately for an energy inequality."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:23.748Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Lean photon_neutrino_requires_T35 / box_braid_min_crossings prove c(T35)=10, braidIndex=3, word length 10 — matching the .md statement's topological-invariant core. (The physical 'requires T35' is encoded as the conjunction of the topological facts, not as a coupling theorem.)"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +283,24 @@
         "reviewed_at": "2026-06-22T02:57:24.857Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "box-braid-irreducibility.lean:102: \"theorem photon_neutrino_requires_T35 : T35.crossingNumber = 10 ∧ torusBraidWordLength 3 5 = 10 ∧ T35.braidIndex = 3\"",
+        "notes": "The Lean name photon_neutrino_requires_T35 promises the physical 'process requires T35' but the proved conjunction is purely the crossing-number/braid-index arithmetic; the prior crossing_number_is_minimum axiom was REMOVED (2026-05-17) as inconsistent, so the general 'no braid below 10 crossings' is no longer formalized — only the specific T35 numbers. The .md statement's 'no braid in any B_n ... has fewer than 10 crossings' is thus narrative, not Lean-proved."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:57:25.031Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Proofs are norm_num/explicit conjunctions, not field projections."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,22 @@
         "reviewed_at": "2026-06-22T02:57:25.184Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "All theorems conclude concrete arithmetic facts (=10, =3) or a genuine inequality, none are : True."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +393,22 @@
         "reviewed_at": "2026-06-22T02:57:25.370Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "TorusKnot structure constraints (2<=m<n, coprime) consistent and instantiated for T35."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +429,22 @@
         "reviewed_at": "2026-06-22T02:57:25.492Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "neutrino_energy_barrier uses hq, hmu; crossing theorems have no spurious hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +465,22 @@
         "reviewed_at": "2026-06-22T02:57:25.605Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "decide used only for Nat.Coprime 3 5 (a genuine decidable proposition); norm_num elsewhere — justified reflection."
       }
     ],
     "da-false-claim": [
@@ -323,6 +501,22 @@
         "notes": "The mathematical claims in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "c(T_{3,5})=10 via min((m-1)n,(n-1)m)=min(10,12); braid index 3; (sigma1 sigma2)^5 has 10 crossings — all correct."
       }
     ],
     "da-vacuous": [
@@ -343,6 +537,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive; the prior True-hypothesis axiom was explicitly removed (lean comment 2026-05-17) to avoid vacuity."
       }
     ],
     "da-circular": [
@@ -363,6 +573,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible'.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -382,6 +608,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "box-braid-irreducibility.md:8: \"no braid representation in any B_n whose closure is T_{3,5} has fewer than 10 crossings\"",
+        "notes": "The 'any B_n' minimality is a true knot-theory fact (crossing number is a topological invariant) but is NOT Lean-proved here — the general minimality axiom was removed as inconsistent; only the specific c(T35)=10 value is formalized. Narrative asserts more than the Lean delivers."
       }
     ],
     "da-hidden-dof": [
@@ -402,6 +646,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible'.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -422,6 +682,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "10 crossings = 10 R-matrix applications = 10 Planck steps is the framework's stated identification, internally consistent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -441,6 +717,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "box-braid-irreducibility.lean:78-87: \"REMOVED 2026-05-17: previous crossing_number_is_minimum axiom used True as hypothesis ... inconsistent\"",
+        "notes": "The general 'no braid below 10 crossings' minimality the .md asserts is no longer formalized (axiom removed for being vacuously inconsistent); the Lean now proves only the concrete T35 numbers. Disclosed in the Lean comment, so a known/honest gap."
       }
     ],
     "da-citation-misuse": [
@@ -461,6 +755,22 @@
         "notes": "No citations are present in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "morton1986 (braid index), kawauchi1996 (crossing-number survey) appropriately cited."
       }
     ],
     "da-definitional-ambiguity": [
@@ -481,6 +791,22 @@
         "notes": "Key terms and symbols in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Crossing number, braid index, R-matrix/Planck step defined/cross-refed."
       }
     ],
     "da-empirical-fragility": [
@@ -501,6 +827,22 @@
         "notes": "The algebraic and logical relations in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No observable numeric match (the energy ratio ~19 lives only in a Lean docstring; the .md states no fragile numeric)."
       }
     ],
     "da-physical-implausibility": [
@@ -521,6 +863,22 @@
         "notes": "The physical concepts described in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "gamma-nu coupling requiring charged intermediaries is consistent with EM coupling to charge."
       }
     ],
     "da-reproducibility": [
@@ -541,6 +899,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.lean:1 — content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Crossing-number arithmetic reproduces; Lean norm_num confirms."
       }
     ],
     "da-referee-verdict": [
@@ -562,6 +936,23 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "2aecb3ff6ed6",
+          "ts": "f4efc1993260",
+          "lean": "876952e9df64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "notes": "Strongest objection: narrative minimality exceeds the Lean (which proves only the specific T35 values). Honestly disclosed in the Lean comment."
       }
     ],
     "voice-status-leak": [
@@ -1601,5 +1992,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

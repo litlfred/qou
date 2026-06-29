@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:23.040Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Statement is the phi-independence claim; the asymptotic-freedom interpretation is in a separate 'Physical interpretation' section, correctly partitioned."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:57:23.399Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Nucleon derivation from pair production section — phi-independence on-scope."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:57:23.808Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "NF equality over the photon parameters is algebraic; phi in R is a parameter sweep, not an archimedean construct in the claim."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:57:24.154Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No explicit proof body; witness-backed."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,21 @@
         "reviewed_at": "2026-06-22T02:57:24.473Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean sibling file; ts may carry a ref but no .lean present."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +415,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Statement intact."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +483,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean term."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +534,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Claim is non-trivial (NF independent of 3 real params)."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +602,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +670,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean body."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +721,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean body."
       }
     ],
     "da-false-claim": [
@@ -590,6 +755,21 @@
         "notes": "No false claims identified in 'Confinement universality: nucleon NF independent of photon polarization': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "phi-independence of the confined NF is consistent with the Borromean confinement washing out photon polarization; witness (phi_01 sweep) supports it."
       }
     ],
     "da-vacuous": [
@@ -608,6 +788,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Confinement universality: nucleon NF independent of photon polarization' presents substantial mathematical content: '$(\\varphi_0, \\varphi_1, \\varphi_{01})$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive universality claim."
       }
     ],
     "da-circular": [
@@ -627,6 +822,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement universality: nucleon NF independent of photon polarization'.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -645,6 +855,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Confinement universality: nucleon NF independent of photon polarization' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Scoped to the phi-parametrized 4-term photon; not overclaimed."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +889,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement universality: nucleon NF independent of photon polarization'.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The phi parameters are explicit and shown to decouple — the opposite of a hidden DOF."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +923,21 @@
         "notes": "The prose arguments in 'Confinement universality: nucleon NF independent of photon polarization' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Derivation chain gamma gamma -> qqbar -> B3 -> N stated; phi-independence is the witnessed result."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +956,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +990,21 @@
         "notes": "No citations are present in 'Confinement universality: nucleon NF independent of photon polarization', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Breit-Wheeler and four-term-pair-nucleon cross-refs resolve."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1024,21 @@
         "notes": "Key terms and symbols in 'Confinement universality: nucleon NF independent of photon polarization' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "gamma_k, nucleon NF defined."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1058,21 @@
         "notes": "The algebraic and logical relations in 'Confinement universality: nucleon NF independent of photon polarization' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Universality is an exact NF identity, not a numeric near-match."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1092,21 @@
         "notes": "The physical concepts described in 'Confinement universality: nucleon NF independent of photon polarization' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "confinement-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Asymptotic-freedom analogy (UV-insensitivity to EM initial conditions) is physically coherent as a model statement."
       }
     ],
     "da-reproducibility": [
@@ -795,6 +1125,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Confinement universality: nucleon NF independent of photon polarization' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "four-term-photon-to-atoms.witness.json named (phi_01 sweep, constant NF)."
       }
     ],
     "da-referee-verdict": [
@@ -815,6 +1160,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Confinement universality: nucleon NF independent of photon polarization' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "0292b251aa9b",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Clean phi-independence proposition with witness; strongest objection (is the NF truly phi-independent or only for the sampled sweep?) is mitigated by it being an algebraic identity. verdict=accept."
       }
     ],
     "voice-status-leak": [
@@ -1817,5 +2177,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

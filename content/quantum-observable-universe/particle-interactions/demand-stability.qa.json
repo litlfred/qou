@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:19.421Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The proposition states the three stability characterizations; examples and beta-decay connection are in separate sections."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:57:19.791Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Beta stability closure / derived-atom material on-scope."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:57:20.196Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Demand-magnitude inequalities and tr_M minimality are evaluated at q0 (archimedean), appropriately at the observation level."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:57:20.638Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No explicit proof body in the .md (no .lean sibling present)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,21 @@
         "reviewed_at": "2026-06-22T02:57:21.033Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean sibling file; lean.ref present but not_checked."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +415,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Three-part stability characterization intact."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +483,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean term."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +534,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Non-trivial characterizations (demand-minimization, shell closure, double magic)."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +602,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +670,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean body."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +721,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean body."
       }
     ],
     "da-false-claim": [
@@ -590,6 +755,21 @@
         "notes": "No false claims identified in 'Demand profile determines nuclear and atomic stability': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The free-neutron beta-decay inequality (|c_e-(n)|=0.044>0.043=|c_e-(p)| and net(n)=0.811<0.999=net(p)) is consistent with the framework; the same-type Hecke transfer identities C_pp^2 = H_A C_pp + 1 are correct instances of sigma^2=H_A sigma+1."
       }
     ],
     "da-vacuous": [
@@ -608,6 +788,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Demand profile determines nuclear and atomic stability' presents substantial mathematical content: The demand profile of a derived atom (derived atom) — the set of negative NF coefficients — is the categorical diagno...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Substantive stability criteria with worked examples."
       }
     ],
     "da-circular": [
@@ -627,6 +822,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Demand profile determines nuclear and atomic stability'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Stability defined intrinsically (demand magnitude) then checked against known nuclides; not back-fitted."
       }
     ],
     "da-overclaim": [
@@ -645,6 +855,23 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Demand profile determines nuclear and atomic stability' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "demand-stability.md:30: \"| 3He | 0.000 | none | Shell-closed |\" and \"| 4He | 0.098 | sigma_0, L_- | Doubly magic\"",
+        "notes": "Labelling 3He 'shell-closed (demand=0)' and 4He 'doubly magic' from NF demand profiles is a strong identification; 3He is not conventionally a closed shell (it is 4He that is doubly magic). The framework redefines 'shell-closed' as demand=0, which is internally consistent but risks conflation with the standard nuclear shell model."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +891,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Demand profile determines nuclear and atomic stability'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Demand/net/tr_M are computed from the NF; no free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +925,21 @@
         "notes": "The argument flow in 'Demand profile determines nuclear and atomic stability' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Demand-minimization at fixed A -> beta-stability is a coherent criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +958,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/demand-stability.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +992,21 @@
         "notes": "No citations are present in 'Demand profile determines nuclear and atomic stability', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "derived-atom cross-ref resolves; no external citation misused."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1026,21 @@
         "notes": "Key terms and symbols in 'Demand profile determines nuclear and atomic stability' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "dem(), net(), demand channels defined; the redefined 'shell-closed' is given an explicit criterion (demand=empty)."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1060,23 @@
         "notes": "The algebraic and logical relations in 'Demand profile determines nuclear and atomic stability' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "demand-stability.md:50: \"|c_e-(n)| = 0.044 > 0.043 = |c_e-(p)|\"",
+        "notes": "The free-neutron decay verdict hinges on a 0.044 vs 0.043 margin (one part in ~40); a small q0 shift or NF-rounding could flip the inequality. The qualitative conclusion (free neutron decays) is correct, but the numeric margin is thin and the .md cites no witness JSON for these specific coefficients."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1096,21 @@
         "notes": "The physical concepts described in 'Demand profile determines nuclear and atomic stability' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Free neutron beta-decay and 4He stability are correctly reproduced qualitatively."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1130,23 @@
         "notes": "The derivation steps and formal definitions in 'Demand profile determines nuclear and atomic stability' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "minor",
+        "evidence": "demand-stability.md:75: \"**Witness**: confinement-operator-selection.witness.json, four-term-photon-to-atoms.witness.json\"",
+        "notes": "Witnesses are named, but the specific demand-table values (0.024/0.058/0.000/0.098) and the 0.044/0.043 e- coefficients are not obviously traceable to those two named witnesses; partial reproducibility."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1167,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/demand-stability.lean is missing entirely, preventing formal verification of the claims in 'Demand profile determines nuclear and atomic stability'."
+      },
+      {
+        "field_hash": {
+          "md": "a75e5d652691",
+          "ts": "23eb64f3b08c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Coherent demand-based stability proposition reproducing free-neutron decay and 4He stability. Strongest objection: the 0.044>0.043 free-neutron margin is razor-thin and the 'shell-closed 3He' label deviates from standard nuclear terminology. verdict=accept-with-caveats."
       }
     ],
     "voice-status-leak": [
@@ -1818,5 +2184,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }

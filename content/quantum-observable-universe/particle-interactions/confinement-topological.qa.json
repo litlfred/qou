@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:21.095Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Three-part LP proposition is bare mathematical claims, no physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:21.443Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Confinement-operator-selection / 'Which constraints survive' subsection — LP indefiniteness on-scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:21.836Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "LP over R^6 with Gram at q=q0 is an archimedean numerical statement; appropriately framed at the substrate."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:22.270Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The buildable library proof (GramIndefinite.lean) is a symbolic q-deformation argument reducing to z^2 - HA z - 1 < 0 for q>1 — legitimate archimedean inequality for an LP-optimum claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:22.629Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "confinement-topological.lean:20: \"theorem gram_indefinite_witness : True := by trivial\"",
+        "notes": "lean.ref resolves sibling-first (AGENTS.md §0a): the sibling confinement-topological.lean declares gram_indefinite_witness : True := trivial, which shadows the substantive library theorem QOU.Interactions.gram_indefinite_witness in GramIndefinite.lean (whose real statement is hopfPlus^2+hopfMinus^2 != 2*hopfPlus*hopfMinus, with 3 sorries). The resolved Lean is : True, expressing none of the .md's three LP claims."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:57:24.001Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "critical",
+        "evidence": "confinement-topological.lean:20: \"theorem gram_indefinite_witness : True := by trivial\"",
+        "notes": "The provable-kind signature resolved by the manifest's lean.ref is : True, a strictly weakened (vacuous) restatement of the proposition's content — fails statement integrity per the shadow-stub prohibition (AGENTS.md '🚫 No shadowing stubs')."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:57:24.290Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Not a self-projection — it is trivial, a distinct anti-pattern."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:57:24.632Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "critical",
+        "evidence": "confinement-topological.lean:20: \"theorem gram_indefinite_witness : True := by trivial\"",
+        "notes": "The sibling resolved by lean.ref concludes : True := trivial — exactly the prohibited trivial-true pattern, masking the LP indefiniteness claim. The real (sorry-bearing) statement lives only in the un-referenced library file."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:57:24.850Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No false premise (vacuously)."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,22 @@
         "reviewed_at": "2026-06-22T02:57:25.122Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The stub has no hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +469,22 @@
         "reviewed_at": "2026-06-22T02:57:25.248Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Uses trivial, not decide; the vacuity is captured under proof-no-trivial-true."
       }
     ],
     "da-vacuous": [
@@ -338,6 +520,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "confinement-topological.lean:20: \"theorem gram_indefinite_witness : True := by trivial\"",
+        "notes": "The content-block's resolved formalization is content-free (: True := trivial); the genuine proof exists in a separate library file that the lean.ref does not reach due to sibling-first resolution."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -370,6 +570,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "evidence": "confinement-topological.lean:20 (: True := trivial) vs GramIndefinite.lean:180 (hopfPlus*hopfPlus + hopfMinus*hopfMinus != 2 • (hopfPlus*hopfMinus))",
+        "notes": "The Lean reachable from the manifest proves True (nothing), strictly weaker than the .md's indefiniteness/LP claims; the substantive library proof is shadowed and additionally still carries 3 sorries (hopfPlus_sq, hopfPlus_mul_hopfMinus, gram_indefinite_witness)."
       }
     ],
     "da-non-sequitur": [
@@ -402,6 +620,22 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Indefinite Gram -> LP can hit 0 -> energy-min insufficient is a valid implication chain."
       }
     ],
     "da-overclaim": [
@@ -434,6 +668,22 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Narrative claims are correct and scoped (LP unbounded direction, x* not in braid image, B3 unique among length<=6)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -466,6 +716,22 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Gram matrix, t_i = tr_M(b_i), n_target defined."
       }
     ],
     "da-reproducibility": [
@@ -498,6 +764,22 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Symbolic; the G33/G34 reductions are derivable as shown in GramIndefinite.lean header."
       }
     ],
     "da-referee-verdict": [
@@ -519,6 +801,23 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "severity": "major",
+        "notes": "Strongest objection: shadow-stub : True := trivial shadows the buildable library proof. Fix: remove the sibling stub so the ref resolves to QOU.Interactions.gram_indefinite_witness, and discharge its 3 sorries."
       }
     ],
     "da-false-claim": [
@@ -539,6 +838,22 @@
         "notes": "No false claims identified in 'Confinement is topological (LP proof)': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "The .md proposition (Gram of H_3(q) indefinite -> LP optimum tr_M*=0; B3 unique length<=6 net-matching braid image) is mathematically correct; GramIndefinite.lean derives vGv = 2(z^2-HA z-1)<0 cleanly."
       }
     ],
     "da-circular": [
@@ -559,6 +874,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No circularity in the narrative."
       }
     ],
     "da-hidden-dof": [
@@ -579,6 +910,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "No free parameter."
       }
     ],
     "da-citation-misuse": [
@@ -599,6 +946,22 @@
         "notes": "No citations are present in 'Confinement is topological (LP proof)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "frobenius-gram-matrix cross-ref resolves; library cites jones1987 for the trace."
       }
     ],
     "da-empirical-fragility": [
@@ -619,6 +982,22 @@
         "notes": "The algebraic and logical relations in 'Confinement is topological (LP proof)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "vGv = 2(z^2 - HA z - 1) < 0 is a symbolic q>1 inequality, not a fragile numeric match."
       }
     ],
     "da-physical-implausibility": [
@@ -639,6 +1018,22 @@
         "notes": "The physical concepts described in 'Confinement is topological (LP proof)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1476cc946ad4",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:20:49.509Z",
+        "reviewed_sha": "f903b8be0b632f6b6e2ce03e41ffbc037f549351",
+        "notes": "Energy-min insufficiency for confinement is the intended (and correct) physical reading."
       }
     ],
     "voice-status-leak": [
@@ -1676,5 +2071,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:20:49.509Z"
 }
