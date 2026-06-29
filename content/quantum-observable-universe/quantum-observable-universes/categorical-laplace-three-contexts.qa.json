@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Categorical Laplace transform across F_p/Q_p/C_p — interpretive remark on the Laplace definition; fits the chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Gauss-sum / Amice-Velu (Mellin of p-adic measure) / rigid-analytic disc readings are correct p-adic-analysis statements."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Contentful comparison across three bases."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Beyond the convergence disc 'the pairing is purely formal' — careful scoping."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Each base's claim follows from the cited p-adic theory."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Remark; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Names theories (Amice-Velu) but no bib cites[] keys to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Convergence regime v_p(x) > 1/(p-1) stated explicitly; no ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No physical-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b1d969f4e02a",
+          "ts": "e8b4a6fe0b58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Mathematically careful p-adic remark; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

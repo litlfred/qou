@@ -796,7 +796,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Archimedean realisation (C, Theta, G, S) 4-tuple example of the quantum universe; fits the chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "CR-manifold + contact form + SU(2) state bundle S = P x_G P^1(C) with Mobius action is a coherent geometric realisation; matches the deprecated-5-tuple->4-tuple convention in §7."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Concrete worked example with explicit data; the .lean CRManifoldData carries genuine fields, no false theorem."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Presented as a realisation/example, not a uniqueness or universality claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "q(p) is the substrate parameter (linked), not an off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "The four numbered requirements assemble into the tuple coherently."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": ".lean CRManifoldData is a data structure (example), not a theorem; its fields (M, Levi signature, contact form, Reeb field) mirror the .md requirements without asserting a false claim; leanok marking is for the structure definition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Webster metric, Levi form signature (r,s), holonomy reduction all specified; archimedean base K declared."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Geometric realisation; no measured-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5aefd5183323",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Well-specified archimedean example; the .lean data structure honestly models the geometric requirements; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

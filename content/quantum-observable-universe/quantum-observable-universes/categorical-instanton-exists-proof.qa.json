@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Existence of categorical instantons via trivial + BPST descent; fits the chapter's gauge/instanton thread."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "F=0 is trivially star_q-self-dual (zero instanton exists); non-trivial via descent of BPST — both correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Constructive existence with a concrete witness (trivial connection) plus a non-trivial route; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Non-trivial instantons routed via 'categorical descent of the classical BPST instanton' to a self-duality prop — scoped, not overclaimed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Curvature computation -> self-duality -> instanton existence follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Proof block; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "star_q-self-duality and descent link to definitions/props."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No measured-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Sound constructive existence proof; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

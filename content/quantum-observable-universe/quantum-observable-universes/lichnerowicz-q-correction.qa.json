@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Note on the Sc_q = R + O(hbar_q) q-correction term in the categorical Lichnerowicz; fits the chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Classical Lichnerowicz has R/4; categorical Sc_q = R + O(hbar_q) from d_q^2 != 0 — internally consistent with the prop."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Explains the source of the q-anomaly term; contentful."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Bring-background vanishing scoped to the transitive-torus case."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No free parameter; hbar_q is the substrate quantity."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "d_q^2 != 0 -> contact-curvature term -> Sc_q correction follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Remark; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Sc_q, hbar_q, d_q^2 link to definitions/remarks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No measured-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f598ffb04ff9",
+          "ts": "5c6d105ab369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Sound clarifying remark; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

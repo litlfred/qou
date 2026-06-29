@@ -873,7 +873,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "q-exponential / grouplike of the q-shuffle Hopf algebra is core substrate machinery for this chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Definition is purely Hopf-algebraic (grouplike + flow equation), base-ring independent; .lean keeps it over generic H with no archimedean leak."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Grouplike + counit + flow-equation characterisation is a standard Hopf-algebraic definition; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Definition names a genuine construction; uniqueness honestly axiomatized in .lean (QExponential.unique_axiom, §3b pattern)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Uniqueness is the only strong claim and it is carried as an explicit axiom, not presented as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Laplace-inverse characterisation follows from the def; no gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": ".lean QExponential structure encodes the grouplike/counit/flow fields matching the .md; uniqueness is the axiom both sides flag."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No bibliographic citation; only [manuscript] ref."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "minor",
+        "evidence": "q-exponential.md:15: \"The q-exponential is the unique grouplike exp_q ... satisfying the categorical flow equation\"",
+        "notes": "'the unique grouplike' presupposes uniqueness, which is not proved (axiomatized in .lean as unique_axiom); acceptable for a definition block per §3b-cond but the 'unique' wording rests on an unproved axiom."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Algebraic definition, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fd9cb56792dc",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Sound Hopf-algebraic definition; only soft point is the axiomatized uniqueness, honestly marked."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

@@ -1048,7 +1048,446 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Statement is the bare subgroup-equality claim; parenthetical origin pointers are cross-refs, not interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Chart-swap U(1) = Reeb U(1) proposition; fits the chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Subgroup-equality in Aut(P(V)); .lean over generic Group G, no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Lean proof is rw over a Group; no archimedean machinery on the algebraic equality."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "reeb-u1-chart-swap.lean:62: \"chartSwap_eq_torus : chartSwap = torusT  ... reebFlow_eq_torus : reebFlow = torusT\"",
+        "notes": ".md proves chartSwap=T_q and reebFlow=T_q (Steps 1-3); .lean assumes exactly those two equalities as fields and rw-composes them to chartSwap=reebFlow. The transitivity skeleton matches, but the two substantive inclusions are assumed, not derived (honestly documented as Mathlib-infrastructure gaps)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Lean conclusion chartSwap = reebFlow matches the .md's first equality; statement not weakened relative to that target."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "eqReeb composes two DISTINCT hypotheses (chartSwap_eq_torus, reebFlow_eq_torus) by transitivity through T_q — the allowed 'carry both directions, derive by composition' exemplar, not a single-field projection of its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Conclusion chartSwap = reebFlow is a non-trivial subgroup equality, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No false/contradictory premise; data structure inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Both fields used by the rw; no unused hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Uses rw, not decide/trivial."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Chart-swap U(1) and Reeb flow both equal the maximal torus on G_q/T_q — correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "reeb-u1-chart-swap.lean:84: \"theorem eqReeb (d) : d.chartSwap = d.reebFlow := by rw [d.chartSwap_eq_torus, d.reebFlow_eq_torus]\"",
+        "notes": "Lean theorem's content is supplied by two assumed equality-fields composed by rw; relative to the stated proposition the Lean side is near-vacuous (the .md proof itself is substantive and honest about the Mathlib gap)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": ".lean docstring openly states the inclusions are recorded as hypotheses because SU_q(2)/projective-quotient infrastructure is absent from Mathlib — no overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Both subgroups = T_q -> equal, by transitivity."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "reeb-u1-chart-swap.lean:62: \"chartSwap_eq_torus : chartSwap = torusT\"",
+        "notes": "Lean proves the equality only modulo two assumed inclusions; the .md derives those inclusions. Conditional-on-hypotheses vs derived — divergence, though honestly flagged (mirrors proof-narrative-lean-equiv)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "woronowicz1989 correctly attributed for quantum-group differential calculus background."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "T_q, P(V), the chart-swap and Reeb subgroups all link to definitions/remarks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No measured-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "009a806d8e69",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "notes": "Narrative proposition + proof are sound and the Lean is honestly documented, but the .lean only composes two assumed inclusions (chartSwap=T_q, reebFlow=T_q) rather than deriving them, so the formalization is conditional on the very steps the .md proves. Strongest objection: Lean assumes the substantive inclusions as un-flagged structure fields."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

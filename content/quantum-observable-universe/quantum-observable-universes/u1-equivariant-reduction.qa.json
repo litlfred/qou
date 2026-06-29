@@ -1046,7 +1046,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Proposition statement is the bare equivariant-reduction claim; the line-1 italic note is a §7c base-ring scope clarification, not physical motivation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "U(1)-equivariant reduction of the exceptional divisor in the commutative-limit QOU; fits the chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Orbit-space [0,pi] and S^1 phase coordinate are genuinely geometric/archimedean; .lean correctly over ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No narrative Proof. body in the .md (statement-only block)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "u1-equivariant-reduction.lean:49: \"def PhaseFiber (φ) : Type := if φ ∈ polarFixedPoints then Unit else Unit  -- interior placeholder\"",
+        "notes": ".md claims the interior of (0,pi) carries a free U(1)-bundle with S^1 section space; the .lean PhaseFiber is Unit on BOTH branches (interior = Unit placeholder), so the S^1 interior claim is not formalized."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "u1-equivariant-reduction.lean:38: \"This file records the signature only; the full bundle-theoretic formalisation ... is deferred.\"",
+        "notes": "Lean only proves phaseFiber_polar (collapsed fibre at poles); the proposition's interior S^1 content is honestly deferred, so the formalized statement is strictly weaker than the .md proposition."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "phaseFiber_polar is proved by unfold + rw [if_pos], not a field projection of its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "u1-equivariant-reduction.lean:54: \"theorem phaseFiber_polar ... : PhaseFiber φ = Unit\"",
+        "notes": "Because PhaseFiber is Unit on both if-branches, 'PhaseFiber φ = Unit' is true for every φ irrespective of the polar hypothesis h — the conclusion holds vacuously, masking the absent interior-vs-polar distinction the prop asserts."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No false/contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "u1-equivariant-reduction.lean:54: \"(h : φ ∈ polarFixedPoints) : PhaseFiber φ = Unit\"",
+        "notes": "Hypothesis h is consumed by rw [if_pos h], but since both branches are Unit the conclusion does not actually depend on it — the hypothesis is mathematically inert (the proof would hold for any φ)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No decide/trivial masking (uses unfold + rw)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "U(1) rotation of P^1(C) has orbit space [0,pi] with two fixed poles and S^1 orbits over the interior — standard; narrative claim is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "u1-equivariant-reduction.lean:49: \"if φ ∈ polarFixedPoints then Unit else Unit\"",
+        "notes": "The .md is contentful, but the Lean formalization is effectively vacuous: the only theorem proves Unit=Unit and PhaseFiber discards the interior S^1 distinction it is meant to encode."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Narrative claim is correct and not overstated; the under-formalization is a Lean-side gap, not a narrative overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Single phase coordinate phi in S^1; no hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Equivariant observables -> support on orbit space -> free bundle over interior follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "u1-equivariant-reduction.lean:50: \"else Unit  -- interior placeholder\"",
+        "notes": "Lean is strictly weaker than the .md: interior S^1 fibre is replaced by Unit, and the only theorem proves a vacuously-true Unit equality (mirrors proof-narrative-lean-equiv)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Orbit space and bundle terms are linked/standard; base ring ℝ declared."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No measured-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "040022e39054",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "notes": "Narrative proposition is mathematically correct, but the Lean formalization is a placeholder (PhaseFiber = Unit on both branches; the lone theorem is vacuously true and uses an inert hypothesis). Strongest objection: the formalization does not capture the proposition's interior-S^1 content."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

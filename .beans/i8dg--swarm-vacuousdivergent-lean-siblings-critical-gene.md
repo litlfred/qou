@@ -123,3 +123,7 @@ updated_at: 2026-06-29T20:07:58Z
 - braiding-induced-ordering.lean (proves only WellFounded DegLex; braiding/c^2!=id unused)
 - categorical-fourier-transform-unique.lean (proves only extensionality; audit note concedes Subsingleton uniqueness is false)
 - substrate-self-duality (axiom substrate_self_duality_axiom statement=conclusion; honest 3b-cond)
+
+## More instances (batch 60, quantum-observable-universes)
+- pawlowski-leitner-inner-product.lean:58 (:= ip.normSq_pos i self-assuming; orthogonality claim unformalised; critical)
+- u1-equivariant-reduction.lean:49 (PhaseFiber := if ... Unit else Unit; both Unit -> theorem Unit=Unit vacuous; interior-S^1 absent)

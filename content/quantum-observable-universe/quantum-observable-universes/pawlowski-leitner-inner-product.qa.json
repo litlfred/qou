@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-inner-product.md:41: \"This orthogonality has two consequences for the QOU framework\"",
+        "notes": "Proposition body carries two interpretive 'consequences' (hadron-state decomposition, Frobenius compatibility) that read as motivation; would be cleaner in a linked remark, but they are mathematical not hype."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Intertwiner inner product / orthogonal basis is representation-theoretic substrate content fitting the chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Norm-squared positivity is genuinely archimedean (> 0, positive rational from hook lengths); .lean correctly places normSq over R and documents the §7c wall rationale."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": ".lean proof of pawLei_pos_def is a projection (no archimedean machinery misused); the > 0 statement is legitimately on the archimedean side."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "pawlowski-leitner-inner-product.lean:58: \"theorem pawLei_pos_def (ip) (i) : ip.normSq i > 0 := ip.normSq_pos i\"",
+        "notes": ".md asserts the PawLei BASIS is orthogonal w.r.t. the adjoint-trace inner product with a tikzcd diagram; the .lean only declares a structure with a positive-norm field and projects it — orthogonality, the inner product, and the diagram are absent from Lean."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "pawlowski-leitner-inner-product.lean:45: \"structure PawLeiInnerProduct ... normSq_pos : ∀ i, normSq i > 0\"",
+        "notes": "Lean statement is far weaker than the .md proposition (only positivity, not orthogonality); the proposition's actual content is not formalized, only an axiomatized positivity field."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "critical",
+        "evidence": "pawlowski-leitner-inner-product.lean:58: \"pawLei_pos_def ... := ip.normSq_pos i\"",
+        "notes": "pawLei_pos_def is a verbatim projection of the structure field normSq_pos, whose type IS the theorem's conclusion (∀ i, normSq i > 0) — textbook self-assuming projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Conclusion normSq i > 0 is not a tautology; it is a genuine (if unproven, field-supplied) inequality."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No false/contradictory premise; structure is inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "The single argument i is used by the projection; no unused hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No decide/trivial masking; the proof is a field projection (its own separate defect, flagged above)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Orthogonality of a Frobenius/adjoint-trace inner product on intertwiner spaces and rational hook-length norms are standard TL/6j facts; no false claim in the narrative."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "pawlowski-leitner-inner-product.lean:58: \"pawLei_pos_def ... := ip.normSq_pos i\"",
+        "notes": "The .md is contentful, but the formalization reduces to a single self-projecting positivity field — the Lean side is essentially vacuous relative to the stated proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circular derivation in the narrative argument."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Narrative does not overclaim; it points to TL/6j for the norm formulas rather than asserting them proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Inner product -> orthogonality -> two consequences is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "pawlowski-leitner-inner-product.lean:45: \"structure PawLeiInnerProduct ... normSq_pos\"",
+        "notes": "Lean proves only field-projected positivity; the .md's orthogonality + inner-product-diagram content is not in Lean — divergence (mirrors proof-narrative-lean-equiv)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-inner-product.lean:52: \"-- Ref: [leitnerpawloski2004] PL inner product / SU(2) intertwiner basis\"",
+        "notes": "references.ts note for leitnerpawloski2004 states the paper is 'the Gröbner paper; PDF-verified to contain NO inner products / intertwiners'; the .lean Ref attributes the SU(2)-intertwiner inner product to it. The .md cite is restricted to 'PBW bases over commutative rings' which is correct; the misuse is the .lean attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "tr_Ad, the dagger, and the norm are defined diagrammatically; no ambiguous term."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No physical-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "01ec40d50e0a",
+          "ts": "ea81fb46ccc9",
+          "lean": "03146c4c49c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "notes": "Narrative proposition is sound, but the Lean is a self-assuming positivity projection that does not formalize the stated orthogonality, and a .lean Ref mis-attributes the SU(2)-intertwiner inner product to a Gröbner-basis paper that (per references.ts) contains no such content. Strongest objection: the formalization does not prove the proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }

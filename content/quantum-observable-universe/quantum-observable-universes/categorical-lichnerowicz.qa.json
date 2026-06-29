@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Statement is the boxed Lichnerowicz identity plus its parallel-Reeb specialisation; no extraneous physical motivation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Categorical Weitzenbock/Lichnerowicz identity for the q-Dirac/q-Laplacian; fits the chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Operator identity; .lean stated over generic AddCommGroup Op, no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Lean proof is rw over an AddCommGroup; no archimedean machinery (no linarith/Real) on the algebraic identity."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "categorical-lichnerowicz.lean:62: \"weitzenbock : qLaplacian = qDiracSq + crossTerm  ... cartan_and_clifford : crossTerm = qScalarCurv\"",
+        "notes": "The .md derives the identity via Clifford/Cartan/self-duality/Weitzenbock (steps a-d); the .lean assumes exactly those two equalities as structure fields and rw-composes them — the equivalence holds only modulo the assumed steps, which carry no sorry/Ref marking them conjectural."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Lean conclusion qLaplacian = qDiracSq + qScalarCurv matches the boxed .md identity; parallel-Reeb specialisation matches the Sc_q=0 simplification."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "critical",
+        "evidence": "categorical-lichnerowicz.lean:70: \"theorem qDirac (d) : d.qLaplacian = d.qDiracSq + d.qScalarCurv := by rw [d.weitzenbock, d.cartan_and_clifford]\"",
+        "notes": "Borderline: the proof composes two structure fields (weitzenbock, cartan_and_clifford) rather than projecting a single field whose type is the conclusion, so it is not the strict self-assuming pattern; but the two fields together encode the entire mathematical content (Weitzenbock + Cartan/Clifford) as assumptions, so the theorem is close to vacuous."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Conclusion is a non-trivial operator equation, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No false/contradictory premise; structure inhabitable (trivially, but consistently)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Both fields (weitzenbock, cartan_and_clifford) are used by the rw; qDirac_parallel additionally uses h : qScalarCurv = 0."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Uses rw, not decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Weitzenbock/Lichnerowicz form Delta = D^2 + (1/4)Sc, with the parallel case Sc=0 on the transitive-torus background, is the standard structure; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "categorical-lichnerowicz.lean:62: \"weitzenbock : qLaplacian = qDiracSq + crossTerm\"",
+        "notes": "The Lean theorem's content is entirely supplied by two assumed equality-fields and discharged by rw; the formalization is essentially a tautological composition of hypotheses, so the Lean side is near-vacuous relative to the stated identity (the .md narrative itself is contentful)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No circular derivation in the narrative."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": ".lean docstring honestly states the four steps need Mathlib infrastructure absent today; the prop is presented as a structural identification, not a full Mathlib proof."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No free numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "Steps a-d -> identity, and parallel Reeb -> Sc_q=0 -> simplification, both follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "evidence": "categorical-lichnerowicz.lean:64: \"cartan_and_clifford : crossTerm = qScalarCurv\"",
+        "notes": "The .md presents a derived identity; the .lean assumes the two derivation steps as fields and only rw-composes them — Lean proves a weaker (hypothesis-conditional) statement than the .md's unconditional derivation, without sorry/Ref flagging the steps."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "lichnerowicz1963 (Spineurs harmoniques) and woronowicz1989 (differential calculus on quantum groups) are correctly attributed for the Weitzenbock and q-calculus inputs."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "All operators (q-Hodge, q-Laplacian, categorical Dirac, Sc_q) link to definitions; self-dual saddle condition stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No measured-quantity claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "27f9965b6982",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:40:09.762Z",
+        "reviewed_sha": "425cacba83e3bb8209cc8cf7eabfb7e53d96448b",
+        "severity": "major",
+        "notes": "Narrative identity is standard and the citations are correct, but the Lean 'proof' assumes the two substantive steps (Weitzenbock, Cartan/Clifford) as structure fields and rw-composes them, so it does not actually derive the identity. Strongest objection: the formalization is a hypothesis-composition, not a proof of the categorical Lichnerowicz formula."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:40:09.762Z"
 }
