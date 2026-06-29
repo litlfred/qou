@@ -55,7 +55,34 @@ at **both** anchors (proton-q₀, muon-q₀).
   (the c_k-flip-flop trap); a derivation must produce it from the trace
   normalization.
 
+## Can α improve Q_β? — NO (and α is closed as non-critical)
+
+Probe: `flavor_split_alpha_qbeta_amplification_probe.py` (+ witness). Identity
+`Q_β = (m_n−m_p) − m_e = M_N·split − m_e` suggests a better flavor split could
+sharpen Q_β (which misses its L2 target by 160×). It cannot:
+
+`Q_β ≈ 0.782` is the small *difference* of `Δm ≈ 1.293` and `m_e ≈ 0.511`, so a
+relative error in Δm is **amplified by Δm/Q_β ≈ 1.65×** into Q_β. The best
+*derivable* flavor split (geometric α=1, 0.0098% on Δm) gives Q_β at
+**~1.6e5 ppb** — ~128× **worse** than the production **Habiro** Q_β path
+(~1248 ppb), which is already the dedicated route.
+
+**α closure (critical-distance).** α is a clean structural result, but it has
+no critical-path use:
+
+| intended use | verdict |
+|---|---|
+| color-weighting δ (trace crossing) | de-wired to proven leading — α not used |
+| Q_β | NO — amplification, 128× worse than Habiro |
+| Δm_pn | NO — already 7e-7 via Q_β/Path C |
+
+So α is **closed** as understood-but-non-critical: the second-order structure
+is proven, the geometric self-energy (α=1) is the derivable archimedean form
+(0.0098%), and the exact 0.929 remains open R&D with **no observable that
+needs it**. Recorded so it is not re-chased.
+
 ## Reproduce
 ```bash
 python3 computations/probes/flavor_split_alpha_dilog_expansion_probe.py
+python3 computations/probes/flavor_split_alpha_qbeta_amplification_probe.py
 ```

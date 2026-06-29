@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-29T16:39:21.733298+00:00",
+  "commitSha": "1fba3592c9b6e598ad69fbab41fd5c87bae25997",
+  "assertions": [
+    {
+      "name": "flavor_split_route_to_qbeta_worse_than_habiro",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "geometric-form Q_β error (ppb) exceeds the production Habiro Q_β error — the flavor-split route does not improve Q_β"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "flavor-split-alpha-qbeta-amplification",
+  "scriptFile": "flavor_split_alpha_qbeta_amplification_probe.py",
+  "scriptHash": "03a3d1fa78e1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Negative result: the flavor-split coefficient α cannot improve Q_β. Q_β = M_N·split − m_e amplifies Δm relative error by ~1.65× (difference of large numbers). The best derivable flavor split (geometric self-energy α=1, 0.0098% on Δm) gives Q_β at ~1.6e5 ppb, ~128× worse than the production Habiro Q_β (~1248 ppb). α is a clean structural result but NOT on the critical path for Q_β/Δm_pn.",
+  "data": {
+    "anchors": {
+      "m_p": "938.27208816",
+      "m_e": "0.51099895069",
+      "Qb_pdg": "0.78233341"
+    },
+    "forms": {
+      "flavor_split_leading": {
+        "split": "0.0013757112499766120135287432436351703219021757083132",
+        "Q_beta": "0.78068100585455332676801150440535014250837965894764",
+        "err_ppb": "-2112148.2533216537843992826468319402230569969552486",
+        "amplification": "1.6510607114996575779219393230379233612282769042775"
+      },
+      "flavor_split_geometric_alpha1": {
+        "split": "0.0013776038314199242257965370791903422910062522123812",
+        "Q_beta": "0.78245920933210282832580071122570023819598160500526",
+        "err_ppb": "160800.15309946730486776887836125801655537759184086",
+        "amplification": "1.6533336599060786990112063745631165594678892788246"
+      },
+      "flavor_split_posited_1plus_hbar3": {
+        "split": "0.0013770494097940612483979963266208764111825025514274",
+        "Q_beta": "0.78193829377166274938864468892106483670853679132462",
+        "err_ppb": "-505048.38894359709290098077101828399666992193952102",
+        "amplification": "1.6526678113640356346134376249137370174546639792932"
+      }
+    },
+    "production_habiro_qbeta_ppb": "1248.0",
+    "l2_target_ppb": "7.8"
+  }
+}
