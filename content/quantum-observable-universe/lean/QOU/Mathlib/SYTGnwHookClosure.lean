@@ -42,7 +42,9 @@ corner-sum assembly.  Pure `ℚ`/`ℕ` combinatorics; nothing archimedean; no fi
 namespace QOU.Mathlib.SYTBetaLagrange
 
 open Finset
-open QOU.Mathlib.SYTEnum (removeCorner IsCorner betaProdGap sorted_removeCorner)
+open QOU.Mathlib.SYTEnum (removeCorner IsCorner betaProdGap betaFactProd sorted_removeCorner
+  prodHooks_mul_betaProdGap betaProdGap_pos prodHooks_pos removeCorner_pos)
+open QOU.BraidKnot.IdentityI (prodHooks)
 
 variable {k : ℕ}
 
@@ -324,5 +326,47 @@ theorem vand_ratio_middle (l : List ℕ) (c : ℕ)
   have hP3 : (∏ j ∈ univ.erase cF, (β cF - β j)) ≠ 0 := Finset.prod_ne_zero_iff.mpr hd3
   field_simp [hP1, hP2, hP3] at hws
   linear_combination (∏ p ∈ univ.erase cF, ∏ q ∈ (univ.filter (p < ·)).erase cF, (β p - β q)) * hws
+
+/-- **The per-corner hook ratio = β-Lagrange term (middle corner).**
+
+    prodHooks(l) / prodHooks(l∖c)  =  βc · ∏_{j≠c}(βc − 1 − βj) / vWeight β c,
+
+i.e. exactly the `c`-th summand of `betaLagrange`.  Combines the factorial side
+(`betaFactProd_ratio_middle`, contributing `βc`) and the Vandermonde side (`vand_ratio_middle`),
+linked through `prodHooks · betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`) for both `l` and
+`l∖c`.  The algebra clears denominators (`betaProdGap l ≠ 0`) and closes by a single
+`linear_combination` of the four multiplicative facts. -/
+theorem per_corner_ratio_middle (l : List ℕ) (c : ℕ)
+    (hl : List.Sorted (· ≥ ·) l) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hmid : 2 ≤ l.getD c 0) :
+    (prodHooks l : ℚ) / (prodHooks (removeCorner l c) : ℚ)
+      = betaVec l ⟨c, hc.1⟩
+          * (∏ j ∈ univ.erase (⟨c, hc.1⟩ : Fin l.length), (betaVec l ⟨c, hc.1⟩ - 1 - betaVec l j))
+          / vWeight (betaVec l) ⟨c, hc.1⟩ := by
+  set cF : Fin l.length := ⟨c, hc.1⟩ with hcF
+  set β := betaVec l with hβdef
+  have hlc_sorted := sorted_removeCorner l c hl hc
+  have hinj : Function.Injective β := betaVec_injective l hl
+  have h1q : (prodHooks l : ℚ) * (betaProdGap l : ℚ) = (betaFactProd l : ℚ) := by
+    exact_mod_cast prodHooks_mul_betaProdGap l hl
+  have h2q : (prodHooks (removeCorner l c) : ℚ) * (betaProdGap (removeCorner l c) : ℚ)
+      = (betaFactProd (removeCorner l c) : ℚ) := by
+    exact_mod_cast prodHooks_mul_betaProdGap (removeCorner l c) hlc_sorted
+  have hfac := betaFactProd_ratio_middle l c hl hc hpos hmid
+  have hvand := vand_ratio_middle l c hl hc hpos hmid
+  rw [← hβdef, ← hcF] at hvand
+  have hphc : (prodHooks (removeCorner l c) : ℚ) ≠ 0 := by
+    have := prodHooks_pos (removeCorner l c) hlc_sorted (removeCorner_pos l c); positivity
+  have hbpl : (betaProdGap l : ℚ) ≠ 0 := by have := betaProdGap_pos l hl; positivity
+  have hvw : vWeight β cF ≠ 0 := vWeight_ne_zero β hinj cF
+  have hvwdef : vWeight β cF = ∏ j ∈ univ.erase cF, (β cF - β j) := rfl
+  have hbeta : betaNat l c = β cF := by rw [hβdef, hcF, betaVec_eq_betaNat]
+  rw [hbeta] at hfac
+  rw [div_eq_div_iff hphc hvw, hvwdef]
+  refine mul_right_cancel₀ hbpl ?_
+  linear_combination (∏ j ∈ univ.erase cF, (β cF - β j)) * h1q
+    + (∏ j ∈ univ.erase cF, (β cF - β j)) * hfac
+    - (β cF) * (∏ j ∈ univ.erase cF, (β cF - β j)) * h2q
+    + (β cF) * (prodHooks (removeCorner l c) : ℚ) * hvand
 
 end QOU.Mathlib.SYTBetaLagrange
