@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Block subject (mass/Hecke/trace/Bring) is squarely within the Mass Analysis chapter scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "D_q²(λ)=(q^{c_λ}−q^{−c_λ})²/(q−q⁻¹)² with kernel c_λ=0 is consistent; chirality split is 'by inspection' as stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Self-described structural refinement ('split exists by inspection'); honest about adding no analytic content — not dressed up as deep."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Derivation does not assume its conclusion; no smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Conclusion matches what the argument supports; scope honestly stated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No undisclosed free parameter / 4th calibration; constants trace to the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Each step follows; no missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Non-provable-kind block (remark/proof/conjecture/definition) has no theorem-signature to compare against narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Cited references support the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Key terms defined / regimes fixed; no incompatible readings."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Chirality MeV table is presented as a witness/diagnostic ratio; not a precision-target claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No units/conservation/measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Backing compute/witness is reproducible and consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f95b76299e12",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Sound structural refinement; 'split by inspection' honestly stated."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:46:52.373Z"
 }

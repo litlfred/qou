@@ -1050,7 +1050,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Statement is the bare claim; interpretation is in separate sections/remarks."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Block subject (mass/Hecke/trace/Bring) is squarely within the Mass Analysis chapter scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Statement stays on the correct base-ring/regime side of the substrate→archimedean wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Proof uses algebraic/categorical machinery appropriate to its regime; no misplaced archimedean leak."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Lean class+reject lemma match the narrative direction-sanity invariant (parametric over candidate magnitude per Gemini review)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Signature unchanged; no statement-weakening or axiom injection."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Proof derives the conclusion; not a verbatim projection of a self-asserting field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Goal is non-tautological substantive content."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No false/contradictory premise; hypotheses are inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Stated hypotheses are used in the argument."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No decide/trivial masking a substantive goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "The magnitude target 0.78233/0.78371≈0.99824 checks out; the gate (|m−target|≤10·target) is a correct contrapositive (reject lemma)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Not vacuous: the class axiomatises |m−target|≤threshold·target and the reject lemma is its genuine contrapositive; threshold positivity is a real (if trivial) lemma."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Derivation does not assume its conclusion; no smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "'Structurally REFUTED' is bounded to a parametric class-instance non-instantiability (Lean direction_sanity_gate_reject), i.e. a per-candidate magnitude obstruction — a scope-limited (a)-style negative, correctly framed, not a blanket structural exclusion."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No undisclosed free parameter / 4th calibration; constants trace to the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Each step follows; no missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Lean proves the same claim as the .md (no weaker/vacuous divergence)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Cited references support the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "severity": "minor",
+        "evidence": "q-beta-direction-sanity-gate.md:7: \"A candidate predicting a magnitude differing by more than $10\\\\times$\"",
+        "notes": "Narrative phrases the gate as 'magnitude differing by more than 10×' (a ratio), but the Lean encodes an additive bound |m−target|≤10·|target|; for target≈1 these nearly coincide but the '10×' ratio wording vs additive-threshold formalisation is a mild mismatch."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Numerical claims are stable / verified; no fit-noise or stale-q0 issue."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No units/conservation/measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Backing compute/witness is reproducible and consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7055ed003be6",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Sound gate; strongest objection is the '10×' ratio wording vs additive-threshold Lean encoding (minor)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:46:52.373Z"
 }

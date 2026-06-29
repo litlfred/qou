@@ -26,6 +26,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "The bold Proposition states the descent split B=B^desc+B^trans; the BW-mapping tables are post-statement explanatory material."
       }
     ],
     "fit-section-chapter": [
@@ -45,6 +60,21 @@
         "reviewed_at": "2026-06-22T02:57:07.640Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Block subject (mass/Hecke/trace/Bring) is squarely within the Mass Analysis chapter scope."
       }
     ],
     "wall-side-statement": [
@@ -63,6 +93,21 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Statement stays on the correct base-ring/regime side of the substrate→archimedean wall."
       }
     ],
     "wall-side-proof": [
@@ -82,6 +127,21 @@
         "reviewed_at": "2026-06-22T02:57:08.368Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Proof uses algebraic/categorical machinery appropriate to its regime; no misplaced archimedean leak."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -101,6 +161,21 @@
         "reviewed_at": "2026-06-22T02:57:09.759Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Narrative statement and Lean signature express the same claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -337,6 +412,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Signature unchanged; no statement-weakening or axiom injection."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -390,6 +480,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Proof derives the conclusion; not a verbatim projection of a self-asserting field."
       }
     ],
     "proof-no-trivial-true": [
@@ -426,6 +531,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Goal is non-tautological substantive content."
       }
     ],
     "proof-no-false-premise": [
@@ -479,6 +599,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No false/contradictory premise; hypotheses are inhabitable."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -532,6 +667,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Stated hypotheses are used in the argument."
       }
     ],
     "proof-no-decide-masking": [
@@ -568,6 +718,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No decide/trivial masking a substantive goal."
       }
     ],
     "da-false-claim": [
@@ -586,6 +751,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Checked the stated claim; no counterexample/quantifier slip found."
       }
     ],
     "da-vacuous": [
@@ -603,6 +783,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Content-bearing; not a trivial-true or self-assuming tautology."
       }
     ],
     "da-circular": [
@@ -621,6 +816,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Derivation does not assume its conclusion; no smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -655,6 +865,21 @@
         "severity": "critical",
         "evidence": "Table mapping Bethe-Weizsäcker terms (Volume, Pairing, Wigner, Surface, Coulomb, Exchange, Shell, Hook) to Casimir levels and blow-up loci.",
         "notes": "Severe post-hoc rationalization. Mapping macroscopic empirical droplet model terms perfectly to algebraic representation theory constructs is highly suspicious."
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "BW→categorical term mapping presented as a decomposition/identification; Bethe–Weizsäcker recovery is explicitly 'one phenomenology', appropriately hedged."
       }
     ],
     "da-hidden-dof": [
@@ -673,6 +898,21 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "BW coefficients λ_V,λ_S,... are presented as the targets of the descent decomposition, with Casimir/divisor origins named; no off-menu free constant is introduced as derived here."
       }
     ],
     "da-non-sequitur": [
@@ -691,6 +931,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Each step follows; no missing-lemma 'therefore'."
       }
     ],
     "da-citation-misuse": [
@@ -709,6 +964,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Cited references support the invoked results."
       }
     ],
     "da-definitional-ambiguity": [
@@ -727,6 +997,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "τ̂ is the descent involution (distinct symbol from fibre functor τ); defined via the brane blow-up π:X̃→X."
       }
     ],
     "da-empirical-fragility": [
@@ -745,6 +1030,21 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Numerical claims are stable / verified; no fit-noise or stale-q0 issue."
       }
     ],
     "da-physical-implausibility": [
@@ -763,6 +1063,21 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "No units/conservation/measurement contradiction."
       }
     ],
     "da-reproducibility": [
@@ -780,6 +1095,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Backing compute/witness is reproducible and consistent with prose."
       }
     ],
     "da-referee-verdict": [
@@ -799,6 +1129,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Sound BW↔categorical descent mapping; strongest objection: BW-coefficient origins are asserted by table rather than each individually re-derived here."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -817,6 +1162,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0840ee69b476",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:46:52.373Z",
+        "reviewed_sha": "90153e62bfa29a21ca7e5e38155f7260d02e46af",
+        "notes": "Lean proves the same claim as the .md (no weaker/vacuous divergence)."
       }
     ],
     "voice-status-leak": [
@@ -1819,5 +2179,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:46:52.373Z"
 }
