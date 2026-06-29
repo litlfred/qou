@@ -1,3 +1,4 @@
+import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -38,6 +39,9 @@ class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
       Stays abstract — requires the AME binding table and knot-volume
       database. -/
   claim_iii_atom_knot_identification : Prop
+  /-- Witness that the atom-knot-identification sub-claim holds (§3b-cond;
+      the predicate is conjectural, an instance supplies the proof). -/
+  claim_iii_atom_knot_identification_holds : claim_iii_atom_knot_identification
   /-- Manuscript boxed identity — Combined speedup is the product of
       orthogonal speedups, bounded below by `10⁶×`. -/
   claim_combined_speedup_bound :
@@ -104,7 +108,7 @@ def wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
      1000000 ≤ ctx.combined_speedup) ∧
     ctx.trM_Tw = ctx.z ^ ctx.lengthW ∧ ctx.wenzlSum = ctx.z ^ ctx.lengthW :=
   ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
-   ctx.claim_iii_atom_knot_identification, ctx.claim_combined_speedup_bound,
+   ctx.claim_iii_atom_knot_identification_holds, ctx.claim_combined_speedup_bound,
    ctx.claim_iv_canonical_trace_power, ctx.claim_v_wenzl_qmn_cross_check⟩
 
 end QOU.BraidsAndKnots
