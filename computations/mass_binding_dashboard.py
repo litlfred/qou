@@ -627,11 +627,15 @@ def main(argv=None) -> int:
         e_qclt_fac = _err(r["B_AME"], r["B_qCLT_fac"])
         # B_gate = E₀·ln(1/W_λ): the SU(4)-occupancy (entanglement-surprisal) binding.
         # Dominant at the magic/closed-shell config (fixes ⁴He err 2.36→0.94); over-
-        # binds the loosely-bound light nuclei — the shell-filling fraction c_λ is open.
-        e_gate = _err(r["B_AME"], r.get("E_gate"))
+        # binds the loosely-bound light nuclei. VALID only while W_λ<1 (positive
+        # surprisal): heavy nuclei (A≳24) have W_λ≥1 ⇒ E_gate≤0/NaN — shown as — (the
+        # occupancy reading breaks down; probes/su4_occupancy_binding_probe.py --group sweep).
+        eg = r.get("E_gate")
+        eg = eg if (eg is not None and math.isfinite(eg) and eg > 0) else None
+        e_gate = _err(r["B_AME"], eg)
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(r.get('E_gate'))} "
+              f"| {_fmt(eg)} "
               f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} "
               f"| {_fmt(e_gate,6)} |")
 
