@@ -21,6 +21,32 @@ namespace QOU
 
 noncomputable section
 
+abbrev R_q := LaurentPolynomial ℤ
+
+/-- **q-Exponential data**: an abstract grouplike of the q-shuffle
+    Hopf algebra, characterised by the flow equation `D_q g = g`.
+
+    Mirrors the canonical `def:q-exponential` definition
+    (`QOU/QuantumObservableUniverses/q-exponential.lean`); inlined here
+    so this proposition's sibling compiles standalone (the existence
+    proof needs the structure in scope). -/
+-- Ref: [manuscript] §2-quantum-observable-universes/q-exponential
+structure QExponential (H : Type*) where
+  /-- The grouplike element e_q ∈ H. -/
+  e_q : H
+  /-- Coproduct on e_q: Δ_q(e_q) = e_q ⊗ e_q, encoded as `coprod : H → H × H`. -/
+  coprod : H → H × H
+  /-- Counit on e_q. -/
+  counit : H → R_q
+  /-- q-Jackson derivative on H. -/
+  D_q : H → H
+  /-- Grouplike axiom: Δ_q(e_q) = (e_q, e_q). -/
+  grouplike : coprod e_q = (e_q, e_q)
+  /-- Counit: ε(e_q) = 1. -/
+  counit_eq_one : counit e_q = 1
+  /-- Flow equation: D_q e_q = e_q. -/
+  flow_invariant : D_q e_q = e_q
+
 /-- **Existence of the q-exponential grouplike.**
 
     Over any Hopf algebra `H` equipped with a q-Jackson derivative

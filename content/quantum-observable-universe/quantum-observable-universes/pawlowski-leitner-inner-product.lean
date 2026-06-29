@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
 
 
 /-!
@@ -23,27 +24,36 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
+end
+
 /-- The Pawlowski–Leitner inner product on intertwiner spaces.
-    Each basis vector has a positive norm-squared computed from
-    hook lengths of the indexing Young tableau. -/
+
+    Each basis vector has a positive norm-squared.  The norms live in `ℝ`
+    (the archimedean side of the substrate→archimedean wall, §7c): the
+    norm-squared `‖T_λ‖²` is the positive rational number computed from the
+    hook lengths of the indexing Young tableau `λ`, so positivity is an
+    archimedean order statement (`> 0`) and cannot be phrased over the
+    ordering-free ground ring `R_q`. -/
 structure PawLeiInnerProduct where
   /-- Number of basis vectors. -/
   num_basis : ℕ
   /-- The norm-squared of each basis vector. -/
-  normSq : Fin num_basis → R_q
-  /-- All norms are positive. -/
+  normSq : Fin num_basis → ℝ
+  /-- All basis norm-squares are positive — the orthogonal PawLei basis has
+      strictly positive norms, computed from hook lengths. -/
   -- Ref: [leitnerpawloski2004] PL inner product / SU(2) intertwiner basis (arXiv:math/0409565, Unital Gröbner Bases)
-  -- normSq_pos : ∀ i, normSq i > 0  -- (archimedean; not meaningful over R_q)
+  normSq_pos : ∀ i, normSq i > 0
 
-/-- Positive-definiteness: the PL inner product ⟨φ, φ⟩ > 0
-    for any nonzero intertwiner φ (follows from normSq_pos). -/
+/-- Positive-definiteness: the PL inner product `⟨φ, φ⟩ > 0`
+    for any nonzero intertwiner `φ` (follows from `normSq_pos`). -/
 -- Ref: [leitnerpawloski2004] Leitner & Pawloski, "Unital Gröbner Bases over Arbitrary Commutative Ground Rings," arXiv:math/0409565
 theorem pawLei_pos_def (ip : PawLeiInnerProduct)
     (i : Fin ip.num_basis) : ip.normSq i > 0 :=
