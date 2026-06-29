@@ -11,11 +11,24 @@ import Mathlib.Tactic
       σ   = 7Z + 5N − 1      (positive crossings)
       σ⁻¹ = 3Z + 5N − 1      (negative crossings)
       σ + σ⁻¹ = 10A − 2      (Z, N cancel ⇒ slope 10 / nucleon, derived)
+      σ − σ⁻¹ = 4Z           (A, N cancel ⇒ writhe is proton-number-only)
 
   This file formalizes ONLY what is genuinely derived: the crossing-sum
-  cancellation and the factorization 5·(2A−1) = 10A−5. These are pure
-  arithmetic facts about the crossing bookkeeping; they make NO claim that
-  the binding exponent equals them.
+  cancellation, the factorization 5·(2A−1) = 10A−5, and — the Z-dependent
+  companion added here — the writhe `σ − σ⁻¹ = 4Z` together with its
+  intra/interface split `(3Z+N) + (Z−N) = 4Z`. These are pure arithmetic
+  facts about the crossing bookkeeping; they make NO claim that the binding
+  exponent (or its correction) equals them.
+
+  The bar-decomposition is the physical content: the **symmetric** sum
+  `σ+σ⁻¹` is bar-even (q ↦ q⁻¹ invariant), A-only, and sets the *leading*
+  exponent `10A−5`; the **antisymmetric** writhe `σ−σ⁻¹` is bar-odd, Z-only,
+  and is the *source* of the proton-excess (Z-dependent) correction the data
+  demands — the ³He outlier (`≈ −1.4` q₀-units per excess proton). The
+  mirror-pair splitter is the interface imbalance `Z−N`, and the p≠n
+  asymmetry is seeded by the per-nucleon intra writhe (proton `3` ≠ neutron
+  `1`). See `delta_lambda_exponent_from_crossings.py` (`writhe = 4Z`,
+  `Z−N = (p-p ifaces) − (n-n ifaces)`).
 
   The bridge from the crossing count to the binding exponent — the per-site
   "5" (Bring-quintic degree) and per-nucleon "9" (intra-𝓑₃ count) reading —
@@ -99,5 +112,93 @@ theorem perSiteFive_of_exponent_eq (A bindingExponent : Nat) (h : 1 ≤ A)
     perSiteFiveClaim A bindingExponent := by
   unfold perSiteFiveClaim
   omega
+
+/-! ## Z-dependent correction — the bar-antisymmetric companion
+
+The leading exponent above lives in the bar-EVEN sum `σ+σ⁻¹` (A-only). The
+binding data, however, shows a Z-dependent deviation from `q₀^{10A−5}` —
+sharp on the proton-rich ³He (`≈ −1.4` q₀-exponent units) and slight on its
+neutron-rich mirror T. That deviation is bar-ODD, so it cannot come from the
+symmetric sum; it lives in the **writhe** `σ−σ⁻¹`, derived below to be
+proton-number-only (`4Z`). The coefficient (`≈ −1.4` / excess proton) is
+*measured, not fitted* (Δ_λ gate): only the arithmetic skeleton is proved
+here; the bridge to the coefficient is a named-but-unasserted predicate. -/
+
+/-- Writhe (signed crossing total) of the atom braid word: `σ − σ⁻¹`. -/
+def writhe (Z N : Nat) : Nat := protonCrossings Z N - neutronCrossings Z N
+
+/-- **Derived.** The writhe is `4Z`: the `A`/`N` content cancels, leaving
+*proton number only*. This is the bar-ANTISYMMETRIC (q ↦ q⁻¹–odd) companion to
+`crossing_sum_cancels`. The symmetric sum `σ+σ⁻¹ = 10A−2` is A-only and sets
+the leading exponent `10A−5`; the antisymmetric writhe `σ−σ⁻¹ = 4Z` is Z-only
+and is the *source* of the proton-excess correction the data demands (³He). -/
+theorem writhe_eq_four_Z (Z N : Nat) (h : 1 ≤ Z + N) :
+    writhe Z N = 4 * Z := by
+  unfold writhe protonCrossings neutronCrossings
+  omega
+
+/-- Per-nucleon intra-𝓑₃ writhe of a proton walk: `6σ − 3σ⁻¹ = 3`. -/
+def protonIntraWrithe : Nat := 3
+
+/-- Per-nucleon intra-𝓑₃ writhe of a neutron walk: `5σ − 4σ⁻¹ = 1`. -/
+def neutronIntraWrithe : Nat := 1
+
+/-- **The p≠n seed (derived).** A proton and a neutron carry *different* intra
+writhe (`3 ≠ 1`): the proton walk is more positive-chirality. This inequality
+is the structural origin of the asymmetric proton-excess penalty — why ³He
+(one excess proton) is penalised sharply while its mirror T (one excess
+neutron) is barely touched. -/
+theorem proton_neutron_intra_writhe_asymmetry :
+    protonIntraWrithe ≠ neutronIntraWrithe := by decide
+
+/-- Total intra writhe of the atom: the per-nucleon seeds summed, `3Z + N`. -/
+def intraWrithe (Z N : Nat) : Nat := protonIntraWrithe * Z + neutronIntraWrithe * N
+
+/-- The interface chirality imbalance `(Z−1) − (N−1)`: each `p-p` interface is a
+`σ` (+1), each `n-n` a `σ⁻¹` (−1), the single `p-n` is bar-symmetric (0). Signed,
+hence stated over `ℤ`. -/
+def interfaceImbalance (Z N : Int) : Int := (Z - 1) - (N - 1)
+
+/-- **Derived.** The interface imbalance equals `Z − N`. This is the
+*mirror-pair splitter*: the only writhe contribution that distinguishes ³He
+(`Z−N = +1`) from the triton T (`Z−N = −1`) — the two share `σ+σ⁻¹ = 28`, hence
+an identical leading exponent `25`, and differ only here. -/
+theorem interfaceImbalance_eq_Z_sub_N (Z N : Int) :
+    interfaceImbalance Z N = Z - N := by
+  unfold interfaceImbalance; ring
+
+/-- **Derived.** The writhe splits as `intra (3Z+N) + interface (Z−N) = 4Z`,
+reconciling `writhe_eq_four_Z` with the per-nucleon seeds and the interface
+imbalance. Stated over `ℤ` because the interface term is signed. -/
+theorem writhe_intra_interface_decomp (Z N : Int) :
+    ((3 : Int) * Z + N) + interfaceImbalance Z N = 4 * Z := by
+  unfold interfaceImbalance; ring
+
+/-- **Conjectural bridge (NOT asserted).** The structural asymmetry the binding
+data exhibits on mirror pairs: writing `δ` for the measured Δ_λ q₀-exponent
+deviation indexed by the interface imbalance `Z−N`, the proton-rich member
+(`Z−N = +k`, `k>0`) is penalised strictly more than its neutron-rich mirror
+(`Z−N = −k`).
+
+This is a content-bearing *conjecture predicate* — its truth is the OPEN claim,
+deliberately NOT asserted (Δ_λ gate: the coefficient `≈ −1.4` per excess proton
+is measured, never fitted into the closure). It is the honest Z-companion to
+`perSiteFiveClaim`: derived arithmetic (`writhe = 4Z`; the p≠n seed `3 ≠ 1`)
+feeds a named-but-unproved bridge to the observable. Stated over any `Preorder`
+so it makes no archimedean commitment beyond the order on the deviations.
+
+  -- Ref: [manuscript] docs/audits/2026-06-29-delta-lambda-z-correction-writhe.md
+-/
+def ProtonExcessPenaltyAsymmetry {K : Type*} [Preorder K] (δ : Int → K) : Prop :=
+  ∀ k : Int, 0 < k → δ k < δ (-k)
+
+/-- **Conditional (proved; the asymmetry is the hypothesis).** *If* the
+proton-excess penalty asymmetry holds, then proton-rich ³He (`Z−N = +1`) has a
+strictly larger binding-exponent deficit than its mirror triton (`Z−N = −1`) —
+the `−1.40` vs `−0.07` outlier pattern. Asserts nothing about whether the
+hypothesis holds; only the structural consequence at `k = 1`. -/
+theorem he3_penalised_more_than_triton {K : Type*} [Preorder K] {δ : Int → K}
+    (h : ProtonExcessPenaltyAsymmetry δ) : δ 1 < δ (-1) :=
+  h 1 (by decide)
 
 end QOU.BraidKnot
