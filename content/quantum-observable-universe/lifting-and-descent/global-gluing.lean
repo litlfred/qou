@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Ring.Hom.Defs
+import Mathlib.Algebra.Module.Basic
 
 
 /-!
@@ -87,9 +89,10 @@ structure GlobalGluing (R : Type*) [CommRing R] where
 
 attribute [instance] GlobalGluing.instVac
 
-/-- The global algebra inherits a ring structure from the local data. -/
+/-- The global algebra inherits a ring structure from the local data.
+    (`Ring _` is data, not a `Prop`, so this is a `def`.) -/
 -- Ref: [yekutieli2010] §4
-theorem global_algebra_is_ring {R : Type*} [CommRing R]
+def global_algebra_is_ring {R : Type*} [CommRing R]
     (gg : GlobalGluing R) : Ring gg.tqm.GlobalAlgebra :=
   gg.tqm.instGlobalRing
 
