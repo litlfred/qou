@@ -1,4 +1,13 @@
 **Remark (interpretation).**
+Every knot type produced by the three generation operations
+([knot-particle generation](#def:knot-particle-generation)) applied
+to the generator set $\mathcal{G}$
+([finiteness of generators](#prop:torus-knot-generators)) remains
+embeddable in the genus-$4$ fiber of the Bring's surface, and hence
+admits a localized knot structure
+([localized knot](#def:localized-knot)) that descends to the base
+manifold via the fibre functor $\tau$.
+
 The closure of embeddability under generation is the topological
 reason that *all* fundamental particles interact: they all descend
 to the same base manifold $\mathbb{P}(V)$ and hence participate in
