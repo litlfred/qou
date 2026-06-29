@@ -141,4 +141,20 @@ theorem betaGapProd_row_cast (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (i 
   have hAB : l.length - 1 - i = (l.length - 1 - (i + 1 + m)) + 1 + m := by omega
   rw [hAB]; push_cast; ring
 
+/-- **`betaProdGap` as the Vandermonde double-product.** `(betaProdGap l : ℚ) = ∏_{i<k} ∏_{i<j}(βᵢ−βⱼ)`,
+assembling the per-row casts. This is `∏_{i<j}(βᵢ − βⱼ)` organised by lower-triangular column `i`. -/
+theorem betaProdGap_cast (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    ((QOU.Mathlib.SYTEnum.betaProdGap l : ℕ) : ℚ)
+      = ∏ i ∈ Finset.range l.length, ∏ m ∈ Finset.range (l.length - 1 - i),
+          (betaNat l i - betaNat l (i + 1 + m)) := by
+  rw [show QOU.Mathlib.SYTEnum.betaProdGap l
+        = ∏ i ∈ Finset.range l.length,
+            QOU.Mathlib.SYTBeta.betaGapProd (l.getD i 0) (l.drop (i + 1)) from by
+      unfold QOU.Mathlib.SYTEnum.betaProdGap; rw [QOU.Mathlib.SYTBeta.list_range_map_prod]]
+  rw [Nat.cast_prod]
+  apply Finset.prod_congr rfl
+  intro i hi
+  rw [Finset.mem_range] at hi
+  exact betaGapProd_row_cast l hl i hi
+
 end QOU.Mathlib.SYTBetaLagrange
