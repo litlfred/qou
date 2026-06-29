@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:53.190Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Shell-energy-as-threading-link conjecture — observations."
       }
     ],
     "da-false-claim": [
@@ -51,6 +67,22 @@
         "notes": "No false claims identified in 'Shell energy from the Skein smoothing at the beta-decay vertex': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "[1]_q[2]_q/[3]_q≈0.661 (md 0.665, 4-digit-q rounding); Δ_{T(2,6)}=q^2+1+q^-2; N(6,8) crossing counts 15/28/48, p×n 48→49 — all verified."
       }
     ],
     "da-vacuous": [
@@ -71,6 +103,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/shell-threading-conjecture.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive two-level construction with explicit open computations."
       }
     ],
     "da-circular": [
@@ -91,6 +139,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Shell energy from the Skein smoothing at the beta-decay vertex'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Explicitly a Conjecture with a 'Computations required' list and a 5% check target; not claimed proven."
       }
     ],
     "da-overclaim": [
@@ -110,6 +174,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Shell energy from the Skein smoothing at the beta-decay vertex' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "'shell energy is not a free parameter' is the conjecture's thesis, clearly flagged as conjectural with pending computations."
       }
     ],
     "da-hidden-dof": [
@@ -130,6 +210,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell energy from the Skein smoothing at the beta-decay vertex'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "shell-threading-conjecture.md:135: \"\\underbrace{f(m, k, q)}_{\\text{shell modulation}}\"",
+        "notes": "f(m,k,q) is an undetermined modulation function (the whole external-factor content); until computed it is effectively a free functional degree of freedom, though the block explicitly lists computing it as required work."
       }
     ],
     "da-non-sequitur": [
@@ -150,6 +248,22 @@
         "notes": "The argument flow in 'Shell energy from the Skein smoothing at the beta-decay vertex' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Borromean-with-one-smoothing→Hopf-link is a standard fact; two-level (internal Borromean × external nuclear) product is coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -169,6 +283,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean proof in content/quantum-observable-universe/observations/shell-threading-conjecture.lean contains a sorry, representing a divergence from the fully claimed narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark/conjecture, no Lean content to compare (sibling .lean exists but block is conjectural)."
       }
     ],
     "da-citation-misuse": [
@@ -189,6 +319,22 @@
         "notes": "No citations are present in 'Shell energy from the Skein smoothing at the beta-decay vertex', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "References internal terminal-resolution / threading-link / molecular-hopf-ring; benzene T(2,6) example consistent."
       }
     ],
     "da-definitional-ambiguity": [
@@ -209,6 +355,24 @@
         "notes": "Key terms and symbols in 'Shell energy from the Skein smoothing at the beta-decay vertex' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "shell-threading-conjecture.md:135: \"$f(m, k, q)$\"",
+        "notes": "f(m,k,q) is named but not defined (only 'depends on chain length m and position k'); the central modulation object is left as an undefined function pending computation."
       }
     ],
     "da-empirical-fragility": [
@@ -267,6 +431,22 @@
         "notes": "The physical concepts described in 'Shell energy from the Skein smoothing at the beta-decay vertex' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Shell closures at n=8, α-clustering, threading-through-closed-sub-link are physically reasonable nuclear-structure framings."
       }
     ],
     "da-reproducibility": [
@@ -287,6 +467,22 @@
         "notes": "The derivation steps and formal definitions in 'Shell energy from the Skein smoothing at the beta-decay vertex' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "[1][2]/[3]≈0.66, Δ_{T(2,6)}=3.044, and the N(6,8) crossing arithmetic all reproduced independently."
       }
     ],
     "da-referee-verdict": [
@@ -308,6 +504,23 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/shell-threading-conjecture.lean contains 'sorry' placeholders, rendering the proof of 'Shell energy from the Skein smoothing at the beta-decay vertex' incomplete.",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Well-structured conjecture with verified sub-numbers and an explicit open-computation list; strongest objection is that the headline 'shell energy is computable, not phenomenological' rests entirely on the undefined modulation f(m,k,q)."
       }
     ],
     "voice-status-leak": [
@@ -1152,5 +1365,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

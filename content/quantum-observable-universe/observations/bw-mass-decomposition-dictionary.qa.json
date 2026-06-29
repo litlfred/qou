@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.070Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "BW-to-Schur-Weyl dictionary is an observations-chapter interpretation."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Verified a_V=2[2]_q[7]_q·m_e=15.671 MeV at q_0 (target 15.67) — claim holds."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' presents substantial mathematical content: corresponds to a specific stratum of the Schur–Weyl decomposition ([Schur–Weyl m...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark with interprets backing; substantive dictionary."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Coefficients claimed forced by H_q(λ), not fit; no smuggled BW input."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Explicit 'Scope' paragraph: does NOT claim nuclei well-described by these strata alone — appropriately hedged."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +196,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "bw-mass-decomposition-dictionary.md:17: \"$2[2]_q[7]_q \\cdot m_e$\"",
+        "notes": "The specific shape 2[2]_q[7]_q (factor 2, index 7) reproduces 15.67 MeV but its canonical-chain origin is asserted, not derived here; reads as a chosen q-integer combination."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +232,21 @@
         "notes": "The argument flow in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "A^{2/3} from Weyl dimension formula, sign-alternation from two Hecke eigenvalues — plausible identifications, cited."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +265,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +299,21 @@
         "notes": "No citations are present in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Internal references to schur-weyl-mass-decomposition / gb-residue-spectral-sum; no external mis-citation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +333,21 @@
         "notes": "Key terms and symbols in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "BW terms, H_q(λ), strata all referenced to defining blocks."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +367,21 @@
         "notes": "The algebraic and logical relations in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "a_V match verified independently to quoted 15.67; not inside fit noise for a single coefficient."
       }
     ],
     "da-physical-implausibility": [
@@ -270,6 +437,21 @@
         "notes": "The derivation steps and formal definitions in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Reproduced 15.671 MeV at q_0; consistent with prose."
       }
     ],
     "da-referee-verdict": [
@@ -290,6 +472,21 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b88d52d8c1b7",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Well-scoped dictionary remark with verified headline number."
       }
     ],
     "voice-status-leak": [
@@ -1099,5 +1296,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

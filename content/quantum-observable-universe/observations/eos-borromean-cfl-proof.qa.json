@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "EoS / Borromean-vs-CFL stiffness proof — observations."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "P∝n^{5/3}/M, P_D/P_B=(M_B/M_D)·3^{5/3}, conformal c_s^2→1/3 (ε≈3P) are standard Fermi-gas results."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive EoS derivation sketch."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Stiffness ratio derived from mass parameters, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Conformal limit correctly stated as ultra-relativistic (E_F≫M) limit; Borromean phase needing ~749 Skein units flagged as unphysical compression."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "M_B=Vol_q(β_B)/ℏ_q^2, M_D=(q+q^-1)/3 fixed by q and topology; 3^{5/3} from n_q=3n_B."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Vol_q(β_{L_H})=0 ⇒ no volume term for CFL Hopf braid; each EoS step follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Proof block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "References internal algebraic-quantum-volume; no external mis-cite."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "M_B, M_D, Vol_q, CFL/Borromean phases defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No numerical match claimed; ratios symbolic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "c_s^2→1/3 conformal bound and stiffer-CFL reading are consistent with dense-matter EoS expectations."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No witness; symbolic."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "85e672618b3f",
+          "ts": "3c5802dd55f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Standard Fermi-gas EoS argument adapted to the q-mass parameters; coherent."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.442Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Strangelet stability / Witten interpretation belongs in observations."
       }
     ],
     "da-false-claim": [
@@ -80,6 +95,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Witten' presents substantial mathematical content: Witten \\cite{witten1984} conjectured that **strange quark matter** (SQM) — bulk ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive comparative argument (crossing gain vs Jones cost)."
       }
     ],
     "da-circular": [
@@ -99,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Witten'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Conclusion (SQM not ground state) follows from cost>gain, not assumed."
       }
     ],
     "da-overclaim": [
@@ -117,6 +162,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Witten' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-witten-stability.md:109: \"The inner cores of massive neutron stars are strangelets.\"",
+        "notes": "Strong assertion stated flatly; the threshold/density estimates are order-of-magnitude and the identification with NS cores is speculative — better framed as 'the framework predicts'."
       }
     ],
     "da-hidden-dof": [
@@ -136,6 +198,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Witten'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "V_B, |J| values, crossing counts all from fixed knot data at q_0; no free fit parameter."
       }
     ],
     "da-non-sequitur": [
@@ -155,6 +232,21 @@
         "notes": "The argument flow in 'Witten' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Cost≈168 vs gain≈1.80 ⇒ factor ~93; threshold E_F via 168/749×938 — arithmetic consistent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -173,6 +265,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -192,6 +299,21 @@
         "notes": "Citations to witten1984 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "witten1984 correctly attributed for the SQM ground-state conjecture and the 'strange force'."
       }
     ],
     "da-definitional-ambiguity": [
@@ -211,6 +333,21 @@
         "notes": "Key terms and symbols in 'Witten' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Skein units, V_B, |J| defined/tabulated; q_gold≈0.382 named."
       }
     ],
     "da-empirical-fragility": [
@@ -230,6 +367,21 @@
         "notes": "The algebraic and logical relations in 'Witten' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Verified |Ju|=0.973,|Jd|=0.960,|Js|=1.176, (|Js|-|Jd|)/|Jd|=0.225, 2q^-1=1.80 — all match the .md."
       }
     ],
     "da-physical-implausibility": [
@@ -249,6 +401,23 @@
         "notes": "The physical concepts described in 'Witten' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-witten-stability.md:93: \"\\approx  210  \\mathrm{MeV}\"",
+        "notes": "Threshold/density numbers (E_F~210 MeV, ρ~2-3ρ0, cores as strangelets) are rough scalings hedged as 'consistent with', but the flat 'cores ARE strangelets' verdict exceeds what the order-of-magnitude estimate supports."
       }
     ],
     "da-reproducibility": [
@@ -268,6 +437,21 @@
         "notes": "The derivation steps and formal definitions in 'Witten' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "All numerical claims (Jones values, 168 Skein units, factor 93) reproduced independently at q_0."
       }
     ],
     "da-referee-verdict": [
@@ -288,6 +472,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Witten' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9b8e459b0d88",
+          "ts": "929b4dde4480"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Internally consistent comparative argument with verified numbers; strongest objection is the unhedged 'NS cores ARE strangelets' physical assertion built on order-of-magnitude thresholds."
       }
     ],
     "voice-status-leak": [
@@ -1097,5 +1297,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

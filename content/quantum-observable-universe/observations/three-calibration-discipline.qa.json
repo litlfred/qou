@@ -67,6 +67,22 @@
         "severity": "minor",
         "evidence": "three-calibration-discipline.md:62-123: '## Discussion' section with sub-points 1-4 (interpretation, overdetermination, audit consequence) follows the proposition statement in the same block.",
         "notes": "The block carries a substantial '## Discussion' with motivation/audit-consequence prose rather than routing it to a linked interprets: remark. Borderline: much of the Discussion is scope/applicability clarification (the m_e^a m_pi^c Q(q0) discipline and its audit hook) which is arguably part of the statement's meaning, not external physical interpretation. Flagged warn rather than fail since no clean physical-interpretation remark is mislocated and the prose stays on the dimensional-discipline claim."
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Statement is the three-input/factorisation claim; the extended Discussion is clearly separated and appropriate for a discipline-hook proposition."
       }
     ],
     "fit-section-chapter": [
@@ -102,6 +118,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Calibration discipline / audit hook — observations."
       }
     ],
     "wall-side-statement": [
@@ -137,6 +169,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Q_X(q)∈ℚ(q) stays algebraic; q_0∈ℝ archimedean eval explicitly placed on the far side of the wall (Lean docstring §7c)."
       }
     ],
     "wall-side-proof": [
@@ -172,6 +220,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No narrative Proof body; the Lean is a class+projection, not an archimedean argument."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -207,6 +271,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "theorem threeCalibrationDiscipline states mass X = m_e^a·m_π^c·towerValue X, matching the narrative factorisation m_e^a m_π^c Q_X(q_0)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -363,6 +443,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Last commit 19d0cf1d relabeled docstrings to the decay-width framing across .md/.ts/.lean together (owner ruling 2026-06-26, PR #2866 in authorNotes); the theorem signature mass X = m_e^a·m_pi^c·towerValue X is structurally unchanged. lean.ref resolves to the class-conditional theorem (no sorryAx)."
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Statement faithfully encodes the discipline as a class field; no weakening/axiom injection beyond the declared structural assumption."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -401,6 +497,24 @@
         "severity": "critical",
         "evidence": "three-calibration-discipline.lean:139-146: 'theorem threeCalibrationDiscipline ... : c.mass X = c.m_e^... * c.m_pi^... * c.towerValue X := c.mass_factorisation X' — the class field mass_factorisation (lines 128-133) has a type IDENTICAL to the theorem conclusion.",
         "notes": "Verbatim projection of the class field whose type IS the declaration's conclusion (P ⊢ P). The sibling hypothesis fields m_e_pos, q_0_pos, m_pi_pos are unused; the proof composes nothing. Per §3b-cond non-degeneracy clause this is the vacuous self-assuming projection pattern (class axiomatises the block's own conclusion rather than genuine sub-hypotheses). Mitigating context: AGENTS.md states this proposition is deliberately a §3b structural-assumption 'class', not a free-standing theorem — but the headline theorem still merely returns the assumed field. Routes to lean-proof-review."
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "three-calibration-discipline.lean:146: \":= c.mass_factorisation X\"",
+        "notes": "The theorem is a verbatim projection of the class field mass_factorisation whose type IS the conclusion. This is the §3b structural-assumption-class pattern (honest, doc-declared), but it matches the self-assuming-projection anti-pattern: the theorem derives nothing beyond the field."
       }
     ],
     "proof-no-trivial-true": [
@@ -437,6 +551,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Conclusion is a real equation mass X = m_e^a·m_pi^c·towerValue X, not True/rfl-tautology."
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Conclusion is a substantive equation, not True/x=x; the class carries content (positivity, q_0>1, the factorisation)."
       }
     ],
     "proof-no-false-premise": [
@@ -472,6 +602,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Class fields (m_e>0, q_0>1, m_π>0) are consistent/satisfiable."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -510,6 +656,22 @@
         "severity": "major",
         "evidence": "three-calibration-discipline.lean:98-99,104-105,110-111: class fields m_e_pos (0 < m_e), q_0_pos (1 < q_0), m_pi_pos (0 < m_pi) are declared but never referenced by theorem threeCalibrationDiscipline (lines 139-146), which uses only mass_factorisation.",
         "notes": "The positivity hypotheses are part of the conditional-class interface but play no role in deriving the factorisation; the headline theorem ignores all three. This is consistent with the self-assuming-projection finding above — the only field used is the one equal to the goal. Routes to lean-proof-review."
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "The projection uses mass_factorisation directly; positivity fields are part of the discipline's content even if not consumed by this one theorem (acceptable for a class definition)."
       }
     ],
     "proof-no-decide-masking": [
@@ -545,6 +707,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No decide; direct field projection."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -591,6 +769,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean formalization and narrative for 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Lean factorisation matches the narrative; no divergence (only the projection-vacuity noted separately)."
       }
     ],
     "da-overclaim": [
@@ -684,6 +878,22 @@
         "notes": "Key terms and symbols in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "CAL-1/2/3, proxies, Q_β, exponents a/c all defined; matches AGENTS.md convention precisely."
       }
     ],
     "da-hidden-dof": [
@@ -794,6 +1004,22 @@
         "notes": "Citations to jones1985, kock2004, wenzl1988 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "jones1985/kock2004/wenzl1988 are standard backing for Markov trace / Frobenius / Wenzl weights."
       }
     ],
     "da-referee-verdict": [
@@ -834,6 +1060,23 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Canonical, AGENTS.md-aligned discipline statement; only objection is that the Lean 'theorem' is a §3b class-field projection (vacuous on its own), which is the standard but weakest formalization pattern."
       }
     ],
     "da-false-claim": [
@@ -854,6 +1097,22 @@
         "notes": "No false claims identified in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Consistent with the AGENTS.md decay-width cheat-sheet (CAL-1 m_e, CAL-2 𝔇_β via m_μ/m_e, CAL-3 𝔇_π; Q_β = CAL-2 proxy); 2+1=3 H^1 DOF count is the canonical alignment."
       }
     ],
     "da-vacuous": [
@@ -873,6 +1132,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' presents substantial mathematical content: calibration inputs — the three real degrees of freedom of the first cohomology o...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "three-calibration-discipline.lean:139-146",
+        "notes": "The headline theorem is a content-free field projection; its non-vacuity rests entirely on the class fields being genuinely assumed. Honest for a discipline class, but the 'theorem' itself adds nothing over the field."
       }
     ],
     "da-circular": [
@@ -913,6 +1190,22 @@
         "notes": "The argument flow in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "The cohomological-alignment argument (rank-2 W-plane scale+modulus + 1 orthogonal class = 3) is internally consistent and matches calibration-cohomology-alignment."
       }
     ],
     "da-empirical-fragility": [
@@ -933,6 +1226,22 @@
         "notes": "The algebraic and logical relations in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Q_β as 0.17% cross-check and the m_μ/m_e pin are stated per the current convention; m_p re-pin correctly framed as precision substitution, not a 4th calibration."
       }
     ],
     "da-physical-implausibility": [
@@ -953,6 +1262,22 @@
         "notes": "The physical concepts described in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Vol(4_1)=2Λ(π/3)≈2.0299, m_μ/m_e=Vol(4_1)/ℏ_q^2 identity is the canonical figure-eight relation; no physical contradiction."
       }
     ],
     "da-reproducibility": [
@@ -973,6 +1298,22 @@
         "notes": "The derivation steps and formal definitions in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No standalone witness; references calibration-cohomology-alignment Lean witness for the count claim."
       }
     ],
     "voice-status-leak": [
@@ -2010,5 +2351,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

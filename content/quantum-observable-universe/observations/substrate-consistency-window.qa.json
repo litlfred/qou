@@ -28,6 +28,23 @@
         "reviewed_at": "2026-06-22T02:56:52.299Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "substrate-consistency-window.md:19: \"This is the central empirical result of the QOU\"",
+        "notes": "Proposition body carries substantive editorial/interpretive prose ('central empirical result', 'entire Standard Model parameter space collapses to a single point') rather than a bare claim."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +64,21 @@
         "reviewed_at": "2026-06-22T02:56:52.617Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Overdetermination of q belongs in observations."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +98,21 @@
         "reviewed_at": "2026-06-22T02:56:53.063Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Statement is about a real q-window [1.109,1.112]; archimedean, but the block is an observations-layer consistency claim — appropriate."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +132,21 @@
         "reviewed_at": "2026-06-22T02:56:53.456Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No narrative Proof body; tables only."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +166,23 @@
         "reviewed_at": "2026-06-22T02:56:53.814Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "evidence": "substrate_consistency_window.lean:55: \"q_lo k ≤ q_star ∧ q_star ≤ q_hi k\"",
+        "notes": "Lean proves only that q_star lies between q_star-ε and q_star+ε (q_lo_def/q_hi_def hardcode the windows centered on q_star). It does NOT formalize the narrative content — that INDEPENDENT measurement classes overlap. The overdetermination is assumed by construction."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +419,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "substrate_consistency_window.lean:7: \"**Placeholder canonical** ... full Lean statement and proof are pending\"",
+        "notes": "Declared a placeholder; the Lean theorem is weaker than the narrative proposition (a centering tautology), so the formal statement does not capture the claim."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +489,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Not a field projection; proof is two linarith from epsilon_nonneg + the *_def equations."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +540,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "critical",
+        "evidence": "substrate_consistency_window.lean:37: \"q_lo k = q_star - epsilon k\" + epsilon_nonneg ⇒ goal is q_star-ε≤q_star≤q_star+ε",
+        "notes": "The goal is a content-free tautology once q_lo/q_hi are defined as q_star∓ε with ε≥0: any q_star satisfies it. The substantive overdetermination claim is not what is proved."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +610,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Premises (ε≥0, the def equations) are satisfiable; no False."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +678,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "epsilon_nonneg, q_lo_def, q_hi_def all used by the two linarith calls."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +729,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Uses linarith, not decide/trivial-masking."
       }
     ],
     "da-false-claim": [
@@ -590,6 +763,21 @@
         "notes": "No false claims identified in 'Overdetermination of the substrate parameter': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Narrative window claim is an empirical statement; the three-sector agreement to within ~0.3% is supported by sibling blocks (fine-structure q=1.11023, etc.)."
       }
     ],
     "da-vacuous": [
@@ -608,6 +796,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Overdetermination of the substrate parameter' presents substantial mathematical content: The QOU framework has **one free parameter**: the substrate parameter $q$.  Ever...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "evidence": "substrate_consistency_window.lean:55: theorem reduces to q_star∈[q_star-ε,q_star+ε]",
+        "notes": "The Lean encoding is content-free: by hardcoding all windows centered on q_star it asserts overlap rather than deriving it; the formal claim adds nothing to ε≥0."
       }
     ],
     "da-circular": [
@@ -627,6 +832,23 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Overdetermination of the substrate parameter'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "substrate_consistency_window.lean:30: \"The unique substrate parameter `q_star`\"",
+        "notes": "Lean assumes a single q_star and centers every class window on it (q_lo_def/q_hi_def), which presupposes the overdetermination it claims to record — circular at the formal level (narrative is the honest empirical statement)."
       }
     ],
     "da-overclaim": [
@@ -645,6 +867,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Overdetermination of the substrate parameter' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "substrate-consistency-window.md:19: \"the entire Standard Model parameter space collapses to a single point\"",
+        "notes": "Rhetorically strong relative to a window of width ~3e-3 in q derived from a few sectors; the 'entire SM parameter space' framing overstates the demonstrated scope."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +903,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Overdetermination of the substrate parameter'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "One free parameter q is the explicit thesis; consistent with 3-calibration discipline."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +937,21 @@
         "notes": "The argument flow in 'Overdetermination of the substrate parameter' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Window-overlap-from-three-sectors logic is sound at the narrative level (relies on tables)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +970,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/substrate-consistency-window.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "evidence": "substrate_consistency_window.lean:55-63",
+        "notes": "Lean proves a strictly weaker/vacuously-implied statement (centering tautology) than the .md (independent-sector overdetermination)."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +1006,21 @@
         "notes": "No citations are present in 'Overdetermination of the substrate parameter', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No external citation; references internal fine-structure/crossing-energy blocks."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1040,21 @@
         "notes": "Key terms and symbols in 'Overdetermination of the substrate parameter' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Window [1.109,1.112] explicit; 'consistency window' defined operationally."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1074,21 @@
         "notes": "The algebraic and logical relations in 'Overdetermination of the substrate parameter' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Window is wide relative to sector spreads; consistent with fine-structure q=1.11023 and mass-ratio pins."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1108,21 @@
         "notes": "The physical concepts described in 'Overdetermination of the substrate parameter' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No unit/conservation issue; a dimensionless q window."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1142,21 @@
         "notes": "The derivation steps and formal definitions in 'Overdetermination of the substrate parameter' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Table data not inspected at value level; no witness path cited in .md."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1177,22 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/substrate-consistency-window.lean is missing, preventing formal verification of the claims in 'Overdetermination of the substrate parameter'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "5d79d0be891b",
+          "ts": "f04a44b16945"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "notes": "Narrative is a defensible empirical observation, but the Lean 'canonical' is a content-free centering tautology that assumes the overdetermination it purports to record, and the statement carries editorial overclaim ('central empirical result', 'entire SM')."
       }
     ],
     "voice-status-leak": [
@@ -1818,5 +2195,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

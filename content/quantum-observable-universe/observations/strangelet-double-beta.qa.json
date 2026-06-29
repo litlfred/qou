@@ -31,6 +31,24 @@
         "reviewed_at": "2026-06-22T02:56:53.199Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-double-beta.md:5: \"The interaction occurs in the **degree-2 fiber** of the chiral fibration\"",
+        "notes": "Proposition statement is largely physical-process narrative (descent, EM-dark sector, beta decays) rather than a bare claim; the falsifiable content is Γ∝s^4 with s=q^{1/2}-q^{-1/2}."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +69,22 @@
         "reviewed_at": "2026-06-22T02:56:53.684Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Strangelet double-beta proposition — observations."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +105,22 @@
         "reviewed_at": "2026-06-22T02:56:54.057Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Block declares archimedean ℝ specialisation up front (.md line 1, .lean ground ring ℝ) per §7c — appropriate for a numerical-eval observation."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +141,22 @@
         "reviewed_at": "2026-06-22T02:56:54.436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No narrative Proof body."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +177,24 @@
         "reviewed_at": "2026-06-22T02:56:54.769Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-double-beta.lean:65: \"strangelet_double_beta (q : ℝ) (hq : 1 < q) : double_beta_rate q = (skein_amplitude q) ^ 4\"",
+        "notes": "The narrative claim is the physical descent + Γ∝s^4 as a parameter-free prediction; the Lean 'theorem' is just the definitional unfolding of double_beta_rate (defined as (skein_amplitude q)^4). The descent content is in separate crossing-count lemmas (5-3=2, 5→4→3)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +287,22 @@
         "reviewed_at": "2026-06-22T02:56:56.298Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Signature unchanged; no axiom injected."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:56:56.631Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Not a structure-field projection; it's an unfold of a definition."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:56:57.044Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "critical",
+        "evidence": "strangelet-double-beta.lean:34: \"double_beta_rate (q) := (skein_amplitude q)^4\" then theorem proves double_beta_rate q = (skein_amplitude q)^4",
+        "notes": "The headline theorem proves X = X after unfold — the goal is definitionally true (double_beta_rate is DEFINED as (skein_amplitude q)^4). No content beyond rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:56:57.411Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Premise 1<q satisfiable; no False."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,24 @@
         "reviewed_at": "2026-06-22T02:56:57.808Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "evidence": "strangelet-double-beta.lean:65-67: \"(hq : 1 < q) ... unfold double_beta_rate\"",
+        "notes": "Hypothesis hq : 1 < q is never used — the proof is a bare unfold; the hypothesis is decorative on a definitional identity."
       }
     ],
     "proof-no-decide-masking": [
@@ -323,6 +491,22 @@
         "notes": "The claim in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Narrative numerics s=0.104, s^2≈0.0109, s^4≈1.19e-4 verified at q_0; minor 4-digit-q rounding in the .md's s=0.1041."
       }
     ],
     "da-vacuous": [
@@ -342,6 +526,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Strangelet interactions descend from the degree-2 fiber via double beta decay' presents substantial mathematical content: Let $\\mathcal{S}$ be a strangelet and let $\\mathfrak{p}$ be an ordinary hadron i...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-double-beta.lean:65",
+        "notes": "Main theorem is a definitional tautology (X=X); the genuine content (crossing descent 5→4→3) is in trivial arithmetic lemmas (5-3=2, omega). The Lean carries little of the proposition's substance."
       }
     ],
     "da-circular": [
@@ -419,6 +621,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Strangelet interactions descend from the degree-2 fiber via double beta decay'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s=q^{1/2}-q^{-1/2} fixed by q; no free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -439,6 +657,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/strangelet-double-beta.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Two crossing changes ⇒ s^2 amplitude ⇒ s^4 rate; minimal 5→3 path needs 2 changes — coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -458,6 +692,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-double-beta.lean:65-67",
+        "notes": "Lean proves a definitional restatement (and trivial crossing-count arithmetic), materially less than the narrative physical-descent proposition."
       }
     ],
     "da-citation-misuse": [
@@ -478,6 +730,22 @@
         "notes": "No citations are present in 'Strangelet interactions descend from the degree-2 fiber via double beta decay', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Ref [manuscript] Ch.7; internal links only."
       }
     ],
     "da-definitional-ambiguity": [
@@ -498,6 +766,22 @@
         "notes": "Key terms and symbols in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Skein relation, s, degree-2/1 fibers, cinquefoil/trefoil all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -518,6 +802,22 @@
         "notes": "The algebraic and logical relations in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s^4≈1.18e-4 stable; the small s discrepancy (0.1041 vs 0.1044) is 4-digit-q rounding, not fit noise."
       }
     ],
     "da-physical-implausibility": [
@@ -576,6 +876,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1 — content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s, s^2, s^4 reproduced independently at q_0."
       }
     ],
     "da-referee-verdict": [
@@ -597,6 +913,23 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean contains compilation errors: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "notes": "Narrative numerics are fine, but the 'canonical' Lean theorem strangelet_double_beta is a definitional tautology (double_beta_rate := s^4, proved double_beta_rate = s^4) with an unused 1<q hypothesis; the proposition's descent content is not formalized beyond trivial arithmetic."
       }
     ],
     "voice-status-leak": [
@@ -1634,5 +1967,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

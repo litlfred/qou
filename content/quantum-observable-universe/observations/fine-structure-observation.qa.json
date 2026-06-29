@@ -816,7 +816,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "alpha_EM(q) observation — observations chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Verified q[9]_q[10]_q=136.823, bare discrepancy -0.155%, inversion q_CODATA=1.11023, sensitivity≈-20 — all match."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "alpha predicted from q; the inversion is presented as a cross-check, not used to fix q."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "fine-structure-observation.md:34: \"reduces the discrepancy by a factor of $120$ ... with zero additional parameters\"",
+        "notes": "The CS correction is 'zero additional parameters' only if the two force-carrier knots T_{2,9},T_{3,5} are fixed independently; the choice of those two knots (and crossing numbers 9,10) is the load-bearing assumption referenced to force-knot-identification."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive predictive formula."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "fine-structure-observation.md:25: \"The crossing numbers $9$ and $10$ are determined by the force-carrier generators $T_{2,9}$ and $T_{3,5}$\"",
+        "notes": "The selection of indices 9,10 (and knots T_{2,9},T_{3,5}) is the discriminating degree of freedom that lands 136.8≈137; justified only by reference to force-knot-identification, so the 'no free parameter' claim hinges on that upstream identification."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Bare→CS-corrected formula and the sensitivity derivative follow algebraically."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "References internal em-coupling-projection/force-knot-identification; no external mis-cite."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "δ_CS defined explicitly; [9]_q,[10]_q,ℏ_q clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "fine-structure-observation.md:35: \"from $0.155\\%$ to $2.1\\;\\mathrm{ppm}$\"",
+        "notes": "The 2.1 ppm post-CS residual is a single-anchor number; the bare formula already lands within 0.155%, and the CS correction is small — fragility lies in whether the knot selection driving the correction is independently fixed (cross-anchor stability not shown here)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "alpha^-1≈137 from q with sensitivity ~20 — no unit/conservation issue."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Independently reproduced 136.823, -0.155%, q_CODATA=1.11023 at q_0."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4f34769493d5",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Verified-numeric q-prediction of alpha; strongest objection is that the 'zero-parameter' headline rests on the upstream selection of the two force-carrier torus knots (indices 9,10)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

@@ -1046,7 +1046,458 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Statement is a bare iff (s∈{3,5}); no interpretive prose."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "S5-equivariant knot classification supporting lepton identification — observations."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Pure finite-group/topology statement; ground ring ℤ — correct (no archimedean)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No narrative Proof body in the .md."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "evidence": "s5-equivariant-torus-knots.lean:46: \"(s ∈ s5OddOrdersGe3) ↔ (s = 3 ∨ s = 5)\" with s5OddOrdersGe3 := {3,5}",
+        "notes": "The narrative claims existence of an S5-equivariant EMBEDDING into Σ iff s∈{3,5}. The Lean proves only s∈{3,5}↔s=3∨s=5 with {3,5} hardcoded — it says nothing about embeddings, Riemann surfaces, or even that S5 element orders are {1,..,6}; both s5ElementOrders and s5OddOrdersGe3 are literal Set ℕ constants."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "s5-equivariant-torus-knots.lean:44: \"theorem s5_equivariant_classification (s : ℕ) (hs : 3 ≤ s) (hodd : Odd s)\"",
+        "notes": "Lean signature does not mention Σ/Aut=S5/embedding at all; it is a set-membership restatement, materially weaker than the proposition."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Not a field projection; rcases on the membership."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "critical",
+        "evidence": "s5-equivariant-torus-knots.lean:32: \"def s5OddOrdersGe3 : Set ℕ := {3, 5}\"",
+        "notes": "The proved iff is the definitional membership tautology x∈{3,5}↔x=3∨x=5 — a content-free restatement, not the equivariant-classification claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Premises 3≤s, Odd s are satisfiable; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "s5-equivariant-torus-knots.lean:45: \"(hs : 3 ≤ s) (hodd : Odd s)\"",
+        "notes": "Neither hs nor hodd is used in the proof (it is pure rcases on the membership); they are decorative on a tautological iff."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No decide; rfl/rcases only."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "The narrative math claim is plausibly true: odd element orders ≥3 in S5 are exactly {3,5} (orders in S5 are {1,2,3,4,5,6}); an order-s cyclic symmetry needs an order-s automorphism."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "evidence": "s5-equivariant-torus-knots.lean:27-32: hardcoded {1,2,3,4,5,6} and {3,5}",
+        "notes": "Lean is vacuous: it proves {3,5}={3,5} (membership), with the S5-order content baked in as a constant rather than computed from Equiv.Perm (Fin 5)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "s5-equivariant-torus-knots.lean:32: \"s5OddOrdersGe3 : Set ℕ := {3, 5}\"",
+        "notes": "The answer {3,5} is asserted as a definition and then 'proved' equal to itself — the classification is assumed at the definitional layer."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "s5-equivariant-torus-knots.lean:39: \"The proof reduces to finding an element of order s in S_5.\"",
+        "notes": "Docstring claims a reduction (embedding ↔ order-s element) that is asserted, not formalized; the Lean does not establish the reduction nor the order table."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Narrative reduction (cyclic Z_s symmetry needs order-s automorphism) is reasonable; the gap is that Lean doesn't carry it."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "evidence": "s5-equivariant-torus-knots.lean:46",
+        "notes": "Lean proves a strictly weaker, vacuously-implied set-membership iff; the embedding-into-Σ content is entirely absent from the formalization."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Ref [manuscript] Ch.7; uses def:brings-surface as paradigmatic example — appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "s5-equivariant-torus-knots.md:6: \"admits an *equivariant* embedding into $\\Sigma$ ... preserving its intrinsic cyclic symmetry\"",
+        "notes": "'Equivariant embedding preserving Z_s' is given an informal gloss; the precise notion (which homomorphism Z_s→Aut(Σ), what 'preserving' means as a map of the knot) is not pinned down, leaving the iff's meaning slightly open."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Pure math statement; the lepton tie-in is elsewhere."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "aa70b4117701",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "notes": "Narrative claim is plausibly correct, but the 'canonical' Lean is a vacuous membership tautology x∈{3,5}↔x=3∨x=5 with the S5 order-table hardcoded — it does not formalize the classification, the embedding reduction, or even the orders-of-S5 fact, and its hypotheses are unused."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

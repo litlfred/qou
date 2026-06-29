@@ -1046,7 +1046,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Statement is the closed-form claim plus a factored-form identity; categorical reading is below in tables/prose, acceptable for a proposition."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "u-d split / substrate-pure derivation squarely belongs in observations."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "q-integer/algebraic statement; archimedean eval at q_0 flagged as approx — correct wall placement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No narrative Proof body in this .md (proof lives in companion); nothing archimedean to mis-place."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "flavor-split-substrate.lean:20: \"theorem flavor_split_substrate : True := by trivial\"",
+        "notes": "Sibling .lean is a :True shadow stub; the genuine decl is in lean/QOU/HadronicMass.lean (proves the algebraic identity + CODATA<0.02MeV). Ref resolves to the library decl per candidate-2, so claim is formalised, but the sibling stub shadows it."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Library theorem flavor_split_substrate states the factored=poly/3 identity + |Δm-1.293|<0.02; matches narrative."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Library proof derives via delta_m_over_M_N_eq_factored_over_3, not a self-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "flavor-split-substrate.lean:20: \": True := by trivial\"",
+        "notes": "Sibling stub concludes :True; the real (non-vacuous) proof is in the library file. Honest sibling-resolution stub but matches the trivial-true anti-pattern locally."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No false/contradictory premise; library proof uses q_0>0 numerics only."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Library theorem has no spurious hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No decide; library uses norm_num on explicit numerics."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Verified (q-1)^2(1-q^-4)/3=1.376e-3 and hbar^2 h_q [2]_q=4.127e-3 at q_0, and identity h_q z_mkv=z0=hbar√q — all hold."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "flavor-split-substrate.lean:20: \"theorem flavor_split_substrate : True := by trivial\"",
+        "notes": "The narrative content is non-vacuous; only the sibling stub is :True (real decl elsewhere is substantive)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Claims no calibration to u-d difference; uses only q_0 and M_N — checked, no smuggled u-d input in either form."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "flavor-split-substrate.md:6: \"(q - 1)^2 (1 - q^{-4})/3\"",
+        "notes": "Presented as derived closed form; the per-quark split form h_q^2·ℏ_q/√q is an ansatz (Lean docstring: 'The hypothesis is...'). Match is -0.10% (poly) / -0.49% (factored) — should read as ansatz-level, not exact derivation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Only q_0 and M_N enter; no off-menu coefficient — the /3 and [2]_q factors have categorical readings."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Factored-to-polynomial equivalence is via a verified identity; categorical factor table is consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "flavor-split-substrate.lean:20: \": True := by trivial\"",
+        "notes": "Sibling stub diverges (proves True); the library decl is faithful. Flag is the shadowing stub, not the math."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No external citations invoked in the .md statement."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "ℏ_q, h_q, [2]_q, z_0, z_mkv all defined inline; μ_avg defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "flavor-split-substrate.md:28: \"to within $-0.10\\%$\"",
+        "notes": "Two 'equivalent' forms give different residuals (-0.10% vs -0.49%); residual exceeds q_0 precision (~10ppb), so this is an ansatz-level near-match (acknowledged in interpretation remark)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Δm≈1.287MeV vs CODATA 1.293; right sign/magnitude, no unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Reproduced all three table values at 50-dps q_0 independently; match to quoted digits."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "44a0d137cdc6",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Sound substrate-pure near-match; strongest objection: the per-quark split form is an ansatz (Lean docstring 'hypothesis'), and the sibling .lean is a :True stub shadowing the genuine library proof."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

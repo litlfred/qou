@@ -762,7 +762,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Worked half-life examples (tritium, C-14) — observations."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Mirror-nuclei q↔q^-1 conjugation, ℓ_net binomials (C(1,2)-C(2,2)=-1 etc.), |J_{N(0,2)}|≈q+q^-1≈2.01 all check."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive two-case worked example."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Predictions (12.4 yr, 6690 yr) compared to observed, not back-fit; g_A explicitly left as open computation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "17% C-14 residual openly attributed to unresolved shell correction; not claimed as a precision success."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "half-life-shell-worked.md:162: \"$\\delta E_{\\mathrm{shell}} \\approx 0.17 \\times Q_0 / 5 \\approx 0.005$ MeV\"",
+        "notes": "δE_shell is back-solved from the 17% miss (Δt/t≈-5 δE/Q) then declared 'consistent with the expected p-shell scale' — the residual is explained by a quantity inferred from the residual itself."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Q^5 phase-space scaling and mirror-overlap-maximality arguments follow standard beta-decay logic."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Example, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "References internal blocks; standard g_V^2+3g_A^2 parametrisation correctly invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Parent/daughter links, ℓ_net, shell correction defined; mirror pair explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "half-life-shell-worked.md:72: \"$t_{1/2} \\approx 12.4$ yr vs observed 12.3 yr (ratio 1.01)\"",
+        "notes": "Tritium 1.01 agreement is strong but g_A is an 'open computation' (the g_V^2+3g_A^2 weight not derived), so the matrix element entering t_1/2 has an unfixed input; the close match should be read with that caveat."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "log ft 3.05 (superallowed) and 9.04 (C-14) are the correct empirical magnitudes; Q^5 scaling standard."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "|J_{N(0,2)}|≈2.01 reproduced; binomial ℓ_net values verified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7f9d0c20a7e7",
+          "ts": "c1948f38330d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Honest worked example with disclosed open inputs (g_A, shell correction); strongest objection is that δE_shell is inferred from the very residual it explains, and the t_1/2 values depend on an underived g_A."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

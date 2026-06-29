@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.487Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "CP-violation evidence + QOU interpretation — observations."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'sec:cp-violation-evidence': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Cronin-Fitch K_L→ππ ~2e-3, BaBar/Belle B^0→J/ψK_S, LHCb D-meson 2019, Sakharov conditions, n_B/n_γ~6e-10 — all standard and correct."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'sec:cp-violation-evidence' presents substantial mathematical content: CP symmetry is the combined operation of charge conjugation C (swap particle $\\l...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive evidence review + interpretation (prose block)."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:cp-violation-evidence'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "The θ_res ansatz is presented as an order-of-magnitude scaling, explicitly a 'quantitative gap', not back-fit."
       }
     ],
     "da-overclaim": [
@@ -136,6 +196,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:cp-violation-evidence'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "cp-violation-evidence.md:67: \"$\\theta_{\\mathrm{res}} \\sim \\tanh(\\ln q) \\cdot \\alpha_{\\mathrm{EM}}$\"",
+        "notes": "θ_res is introduced as an undetermined residual phase, then given an ad-hoc scaling (tanh(ln q)·α_EM) to land δ_CP~1e-3; the scaling has no canonical-chain derivation — a free knob, though honestly flagged as a 'gap'."
       }
     ],
     "da-non-sequitur": [
@@ -155,6 +232,21 @@
         "notes": "The argument flow in 'sec:cp-violation-evidence' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Phase-accumulation δ_CP~n_c θ_res for multi-crossing composites is a plausible mechanism within the complex-q framework."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -173,6 +265,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Prose block, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -192,6 +299,21 @@
         "notes": "Citations to christenson1964, aubert2001 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "christenson1964, aubert2001 correctly attributed (Cronin-Fitch kaons, BaBar B-mesons)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -211,6 +333,21 @@
         "notes": "Key terms and symbols in 'sec:cp-violation-evidence' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "CP, C, P, δ_CKM, Sakharov conditions clearly defined; QOU complex-q reading referenced to conj:complex-chirality-rotation."
       }
     ],
     "da-empirical-fragility": [
@@ -230,6 +367,23 @@
         "notes": "The algebraic and logical relations in 'sec:cp-violation-evidence' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "cp-violation-evidence.md:69: \"then $\\delta_{\\mathrm{CP}} \\sim 10^{-3}$, which is the right order of magnitude for kaon CP violation\"",
+        "notes": "δ_CP~1e-3 'right order of magnitude' for kaons is obtained only via the unmotivated θ_res~tanh(ln q)·α_EM scaling; an order-of-magnitude coincidence built on a fitted ansatz, conceded as still failing baryogenesis."
       }
     ],
     "da-physical-implausibility": [
@@ -249,6 +403,21 @@
         "notes": "The physical concepts described in 'sec:cp-violation-evidence' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Experimental facts are correct; the geometric-CKM-phase interpretation is speculative but not in contradiction with measurement."
       }
     ],
     "da-reproducibility": [
@@ -268,6 +437,21 @@
         "notes": "The derivation steps and formal definitions in 'sec:cp-violation-evidence' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-evidence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "tanh(ln q)≈0.104 reproduced; experimental rates match cited literature."
       }
     ],
     "da-referee-verdict": [
@@ -288,6 +472,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'sec:cp-violation-evidence' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Accurate, well-cited CP-violation review; the QOU interpretation's δ_CP~1e-3 'right order of magnitude' rests on an ad-hoc θ_res scaling honestly labeled a quantitative gap."
       }
     ],
     "voice-status-leak": [
@@ -1061,5 +1261,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

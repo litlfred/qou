@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.711Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "q-Gaussian washout / macroscopic-observer interpretation — observations."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "η_q=(2q-1)/q^3≈0.892 at q_0; braid-relation global correlation ⇒ q-Gaussian (Marsh et al.) is correctly invoked."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' presents substantial mathematical content: a deterministic substrate.** A macroscopic observer is bounded by the operationa...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive q-CLT/washout argument."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Probabilistic appearance derived as q-CLT attractor; not assumed."
       }
     ],
     "da-overclaim": [
@@ -121,6 +181,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "q-Gaussian deformation parameter = substrate q; no extra free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +215,21 @@
         "notes": "The argument flow in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Global braid correlations ⇒ violate asymptotic independence ⇒ q-Gaussian (not Gaussian) attractor — coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +248,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +282,21 @@
         "notes": "Citations to marsh2006, blitvic2012 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "marsh2006 (Marsh-Fuentes-Moyano-Tsallis) correctly attributed for q-Gaussian attractors under global correlations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +316,21 @@
         "notes": "Key terms and symbols in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "η_q, q-CLT, q-Gaussian G_{q_0}, κ_2 referenced/defined."
       }
     ],
     "da-empirical-fragility": [
@@ -249,6 +384,23 @@
         "notes": "The physical concepts described in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "archimedean-macroscopic-washout.md:26: \"differs from a classical Gaussian ... at $O(10^{-3})$ in the tails — falsifiable in next-generation precision experiments\"",
+        "notes": "A substrate-wide O(10^-3) tail deviation from Gaussianity in macroscopic measurements is a sweeping claim; no observable/system is specified, so 'falsifiable in next-generation experiments' is asserted without a concrete test."
       }
     ],
     "da-reproducibility": [
@@ -268,6 +420,21 @@
         "notes": "The derivation steps and formal definitions in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "η_q≈0.892 reproduced; conj:q-clt-non-commutative is the named (conjectural) backing."
       }
     ],
     "da-referee-verdict": [
@@ -288,6 +455,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Coherent q-CLT washout reading resting on conj:q-clt-non-commutative; strongest objection is the unspecified O(10^-3) tail-deviation 'falsifiable' claim."
       }
     ],
     "voice-status-leak": [
@@ -1097,5 +1280,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.258Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Double-magic Ca-40 worked diagram — observations."
       }
     ],
     "da-false-claim": [
@@ -82,6 +97,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' presents substantial mathematical content: $^{40}\\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive example (LR fusion, rigidity, empirical binding)."
       }
     ],
     "da-circular": [
@@ -101,6 +131,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Rigidity ⇒ exceptional binding argument; not back-fit to 342 MeV."
       }
     ],
     "da-overclaim": [
@@ -119,6 +164,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "double-magic-Ca40-diagram.md:79: \"there are *no* off-diagonal Wedderburn channels at $A = 40$\"",
+        "notes": "Strong rigidity claim ('no available binding-energy channels', 'as bound as the algebraic structure allows') asserted for a representative partition that is not in fact the saturated one (see false-claim note); conclusion outruns the illustrative setup."
       }
     ],
     "da-hidden-dof": [
@@ -138,6 +200,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No numerical free parameter; binding 342.05 MeV is empirical input for comparison."
       }
     ],
     "da-non-sequitur": [
@@ -157,6 +234,23 @@
         "notes": "The argument flow in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "double-magic-Ca40-diagram.md:32: \"is symmetric under transposition, with arms equal to legs: $\\sum c(x) = 0$\"",
+        "notes": "The 'arms=legs ⇒ ∑c=0' inference is applied to (5,4,4,4,3), which is not self-conjugate (∑c=-5), so the stated consequence does not follow for the chosen diagram."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -175,6 +269,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Example, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -194,6 +303,23 @@
         "notes": "Citations to geckpfeiffer2000 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "double-magic-Ca40-diagram.md:22: \"the self-conjugate hook-staircase of size $20$ \\cite{geckpfeiffer2000}\"",
+        "notes": "geckpfeiffer2000 is cited for '(5,4,4,4,3) is the self-conjugate hook-staircase of size 20', but that partition is NOT self-conjugate — the citation backs a false attribution of self-conjugacy."
       }
     ],
     "da-definitional-ambiguity": [
@@ -213,6 +339,21 @@
         "notes": "Key terms and symbols in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Double-magic, self-conjugate, LR fusion, content sum all defined/referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -232,6 +373,21 @@
         "notes": "The algebraic and logical relations in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Ca-40 binding 342.05 MeV / 8.55 MeV/nucleon are correct empirical values; the rigidity reading is qualitative, not a fitted number."
       }
     ],
     "da-physical-implausibility": [
@@ -251,6 +407,21 @@
         "notes": "The physical concepts described in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Ca-40 doubly-magic at Z=N=20 is correct nuclear physics; binding-per-nucleon peak near A=40-56 is standard."
       }
     ],
     "da-reproducibility": [
@@ -270,6 +441,21 @@
         "notes": "The derivation steps and formal definitions in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Computed conjugate of (5,4,4,4,3)=(5,5,5,4,1) and ∑c=-5 — reproducibly NOT self-conjugate, contradicting the prose."
       }
     ],
     "da-referee-verdict": [
@@ -290,6 +476,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "major",
+        "notes": "The representative diagram (5,4,4,4,3) is asserted self-conjugate with ∑c(x)=0, but it is not (conjugate (5,5,5,4,1), ∑c=-5); the parenthetical disclaims it as 'representative' yet the body states the false identity and a citation to geckpfeiffer2000. The structural conclusion is sound in spirit (a self-conjugate λ⊢20 exists, e.g. from distinct odd parts), but the illustrated diagram contradicts its own stated properties."
       }
     ],
     "voice-status-leak": [
@@ -1045,5 +1247,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

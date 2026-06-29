@@ -28,6 +28,23 @@
         "severity": "major",
         "evidence": "file:50: The double beta decay is a fiber descent: the interaction products ... cascade through two Skein smoothings",
         "notes": "Interpreting double beta decay as a sequence of purely topological Skein smoothings from a genus-2 surface down to a genus-1 surface via a Higgs-like figure-eight knot is highly speculative. It completely ignores the established electroweak mechanism of beta decay."
+      },
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-double-beta-interpretation.md:65: \"approximately $2.3$ MeV in physical units\"",
+        "notes": "Endpoint 'set by q^-1, not by a nuclear mass difference' contradicts the standard 2β endpoint = Q-value (a nuclear mass difference); a domain expert would dispute a q^-1-set endpoint for a real detector signal."
       }
     ],
     "voice-status-leak": [
@@ -835,7 +852,231 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Double-beta interpretation/observable signature — observations."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s≈0.104≈tanh(ln q), Γ∝(EM/strong)^4≈1e-4, descent 5→4→3 crossings — all consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive predictive interpretation (endpoint, angular correlation, suppression)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s=EM/strong identity is asserted-and-checked, not back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strangelet-double-beta-interpretation.md:74: \"detectable in underground experiments ... (GERDA, MAJORANA, nEXO, LEGEND)\"",
+        "notes": "Frames a strangelet-2β signature with a specific 2.3 MeV endpoint and parity-symmetric angular distribution as detectable in 0νββ detectors — a strong experimental claim resting on the speculative strangelet-interaction premise."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s, endpoint 2q^-1 fixed by q_0; scaling factor m_p/(V_B/ℏ_q^2) is the standard unit conversion."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Two L_0 smoothings ⇒ s^2 amplitude ⇒ s^4 rate; genus-2→genus-1 descent coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Internal references only (crossing-energy-decomposition, building-block-knots)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Skein units, L_0 smoothing, 4_1 intermediate all defined/referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s^4≈1.18e-4 reproduced; J(4_1)=1.033 close to 1 — internally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "s and s^4 reproduced at q_0."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Numerically self-consistent, but the experimental-signature claims (q^-1-set endpoint, 0νββ-detector visibility) rest on the speculative strangelet-interaction premise and partly contradict standard 2β kinematics."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

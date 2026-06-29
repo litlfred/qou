@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.734Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Strutinsky-as-graded-trace-split analogy — observations."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Strutinsky': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Strutinsky E=Ẽ+δE_shell decomposition is correctly stated; the tr_M=tr_gr+Res_GB split is cited to graded-trace-residue-split."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Strutinsky' presents substantial mathematical content: (Strutinsky, Nucl. Phys. A 95, 1967) decomposes nuclear binding energies as*...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive analogy with an exactness argument."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Strutinsky'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Identification, not derivation of a target number; no back-fit."
       }
     ],
     "da-overclaim": [
@@ -138,6 +198,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Strutinsky'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No numerical parameter; structural correspondence."
       }
     ],
     "da-non-sequitur": [
@@ -157,6 +232,23 @@
         "notes": "The argument flow in 'Strutinsky' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "strutinsky-from-graded-trace.md:45: \"hence $\\delta E_{\\mathrm{shell}} = \\mathrm{Res}_{\\mathrm{GB}}$\"",
+        "notes": "The exact equality δE_shell=Res_GB is asserted from a qualitative correspondence ('oscillations encode exactly the GS rewriting defects'); the 'exactness' step is a strong identification stated without a quantitative bridge (the Scope para concedes no quantitative Strutinsky calc was done)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -175,6 +267,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Remark, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -194,6 +301,21 @@
         "notes": "No citations are present in 'Strutinsky', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Strutinsky Nucl. Phys. A 95 (1967) correctly attributed for the shell-correction method."
       }
     ],
     "da-definitional-ambiguity": [
@@ -213,6 +335,21 @@
         "notes": "Key terms and symbols in 'Strutinsky' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Symbol map, graded trace, GB residue, filtration referenced to defining blocks."
       }
     ],
     "da-empirical-fragility": [
@@ -232,6 +369,21 @@
         "notes": "The algebraic and logical relations in 'Strutinsky' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No numerical match (Scope explicitly defers a quantitative comparison)."
       }
     ],
     "da-physical-implausibility": [
@@ -251,6 +403,21 @@
         "notes": "The physical concepts described in 'Strutinsky' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Strutinsky macroscopic/microscopic split is established nuclear physics; the categorical mapping is an interpretation."
       }
     ],
     "da-reproducibility": [
@@ -270,6 +437,21 @@
         "notes": "The derivation steps and formal definitions in 'Strutinsky' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No witness; Scope defers numerical comparison."
       }
     ],
     "da-referee-verdict": [
@@ -290,6 +472,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Strutinsky' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Appealing structural analogy, honestly scoped as interpretation; strongest objection is the asserted EXACT equality δE_shell=Res_GB without a quantitative bridge."
       }
     ],
     "voice-status-leak": [
@@ -1099,5 +1297,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

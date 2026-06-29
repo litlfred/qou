@@ -762,7 +762,254 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Proof that G is the deep-tower residue prefactor — observations."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No false algebraic claim; the k≥4 no-hyperbolic-ideal step cites universal-residue/plancherel-term-7."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Substantive proof sketch with corollaries."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "gravity-spectral-prefactor-proof.md:8: \"whose normalisation is $\\alpha = m_e \\cdot 8 G$ by the Planck-unit convention\"",
+        "notes": "G is 'solved for' from a normalisation α=m_e·8G that itself encodes G — the prefactor is fixed by convention then 'derived', so the derivation of G's value is definitional rather than predictive (corollary 1 admits 'fixed by Planck-unit normalisation')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "gravity-spectral-prefactor-proof.md:24: \"*No fitting.* $G$ is not an independent parameter\"",
+        "notes": "Claims G is not independent, but its value is set by the Planck-unit normalisation convention (corollary 1), so 'no fitting' means 'fixed by convention', not 'predicted from q' — the wording overstates derivation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "gravity-spectral-prefactor-proof.md:8: \"$\\alpha = m_e \\cdot 8 G$\"",
+        "notes": "The factor 8 in α=m_e·8G is a normalisation choice with no derivation given here; reads as a convention-absorbed coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "k≥4 ⇒ only dualizing-complex residue survives ⇒ its normalisation = α ⇒ solve for G — internally consistent given the cited results."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Proof block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "References internal unified-mass-formula / plancherel-term-7 / full-pole-structure appropriately."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "Dualizing-complex residue, co-Casimir tail, Planck-unit convention referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No numerical match claimed (G fixed by convention)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "evidence": "gravity-spectral-prefactor-proof.md:34: \"Any deviation of the deep-tower mass from $\\alpha \\cdot \\sum_{k \\geq 4} \\Phi_k$ would imply ... a violation of Plancherel completeness\"",
+        "notes": "Emergent-gravity-as-spectral-tail is speculative physics; the falsifiability corollary is honest, but identifying Newton's G with a Hecke Plancherel residue is well outside established results."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a2e0cf2137e4",
+          "ts": "dec281768379"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:15:19.302Z",
+        "reviewed_sha": "f915d2721ffa177ac79bab47d12a50eadf61d9fe",
+        "severity": "minor",
+        "notes": "Coherent proof sketch conditional on Plancherel completeness; strongest objection is that 'G is not fitted' really means 'G is fixed by the Planck-unit convention (incl. the factor 8)', i.e. definitional, not predictive."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:15:19.302Z"
 }

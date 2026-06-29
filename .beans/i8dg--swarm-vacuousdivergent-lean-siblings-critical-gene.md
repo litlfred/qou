@@ -72,3 +72,7 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 47, observations)
 - neutron-prediction-comparison.lean:58 (exists n_obs |n_pred-n_obs|<=8 closed by n_obs:=n_pred; vacuous "formal witness"; critical)
 - brane-tower-q-laplacian-decay.lean:67 (:= ctx.remainder_bound); q-plancherel-asymptotic-skeleton.lean:77 (:= ctx.char_variance_bound) self-assuming
+
+## More instances (batch 48, observations)
+- s5-equivariant-torus-knots.lean:46 (proves s in {3,5} membership tautology, hardcoded; nothing about embeddings/S5 orders; unused 3<=s/Odd s)
+- substrate-consistency-window.lean:55 (q*-eps<=q*<=q*+eps hardcoded); strangelet-double-beta.lean:65 (rate=amplitude^4 is the def, X=X unfold)
