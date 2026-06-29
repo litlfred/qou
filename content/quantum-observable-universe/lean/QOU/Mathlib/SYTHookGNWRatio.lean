@@ -17,7 +17,7 @@ Pure `ℕ`/`ℚ` combinatorics; nothing archimedean; no fit.
 namespace QOU.Mathlib.SYTBetaLagrange
 
 open Finset
-open QOU.BraidKnot.IdentityI (prodHooks)
+open QOU.BraidKnot.IdentityI (prodHooks colLen)
 
 /-- `betaNatVal (l.set c v)` agrees with `l` off index `c`. -/
 theorem betaNatVal_set_ne (l : List ℕ) (c v : ℕ) {i : ℕ} (hi : i ≠ c) :
@@ -267,6 +267,80 @@ theorem prodHooks_ratio (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ
   rw [hil, ← hil', ← betaNat_eq l c]
   ring
 
+/-! ## (R3) Row-drop corner: `removeCorner` agrees with the `set`-decrement under `prodHooks` -/
+
+/-- `colLen` ignores a trailing zero row (`0` is never `> j`). -/
+theorem colLen_append_zero (m : List ℕ) (j : ℕ) :
+    colLen (m ++ [0]) j = colLen m j := by
+  unfold colLen
+  rw [List.filter_append]
+  simp
+
+/-- Appending a zero-length row leaves `prodHooks` unchanged: the new last row has empty inner
+product (factor `1`) and contributes to no other cell's leg (`colLen` unchanged). -/
+theorem prodHooks_append_zero (m : List ℕ) :
+    prodHooks (m ++ [0]) = prodHooks m := by
+  unfold prodHooks
+  rw [List.length_append, List.length_singleton, List.range_succ, List.map_append,
+      List.prod_append]
+  have h0 : (m ++ [0]).getD m.length 0 = 0 := by
+    rw [List.getD_eq_getElem?_getD, List.getElem?_append_right (Nat.le_refl _)]
+    simp
+  have hlast : ((List.range ((m ++ [0]).getD m.length 0)).map fun j =>
+      ((m ++ [0]).getD m.length 0 - j) + (colLen (m ++ [0]) j - m.length) - 1).prod = 1 := by
+    rw [h0]; simp
+  simp only [List.map_singleton, List.prod_singleton, hlast, mul_one]
+  congr 1
+  apply List.map_congr_left
+  intro i hi
+  rw [List.mem_range] at hi
+  have hrow : (m ++ [0]).getD i 0 = m.getD i 0 := by
+    rw [List.getD_eq_getElem?_getD, List.getD_eq_getElem?_getD, List.getElem?_append_left hi]
+  rw [hrow]
+  congr 1
+  apply List.map_congr_left
+  intro j _
+  rw [colLen_append_zero]
+
+/-- Filtering zeros out of a weakly-decreasing list leaves `prodHooks` unchanged: the zeros form a
+tail suffix, each removable by `prodHooks_append_zero`. -/
+theorem prodHooks_filter_zero_sorted :
+    ∀ (xs : List ℕ), List.Sorted (· ≥ ·) xs →
+      prodHooks (xs.filter (· != 0)) = prodHooks xs := by
+  intro xs
+  induction xs using List.reverseRecOn with
+  | nil => intro _; rfl
+  | append_singleton ys a ih =>
+    intro hxs
+    have hys : List.Sorted (· ≥ ·) ys := hxs.sublist (List.sublist_append_left _ _)
+    by_cases ha : a = 0
+    · subst ha
+      have hz : ([0] : List ℕ).filter (· != 0) = [] := by decide
+      rw [List.filter_append, hz, List.append_nil, ih hys, prodHooks_append_zero]
+    · -- a > 0 ⇒ every element is ≥ a > 0, so the whole list is positive and `filter` is the identity
+      have hpos : ∀ x ∈ ys ++ [a], x ≠ 0 := by
+        have hxs' : List.Pairwise (· ≥ ·) (ys ++ [a]) := hxs
+        rw [List.pairwise_append] at hxs'
+        obtain ⟨_, _, hcross⟩ := hxs'
+        intro x hx
+        rw [List.mem_append] at hx
+        rcases hx with hx | hx
+        · have := hcross x hx a (List.mem_singleton_self a); omega
+        · rw [List.mem_singleton] at hx; omega
+      rw [List.filter_eq_self.mpr]
+      intro x hx
+      simpa using hpos x hx
+
+/-- **(R3) `removeCorner` vs the `set`-decrement agree under `prodHooks`.** The only difference is the
+trailing zero row dropped by the row-drop corner (`l[c]=1`); for a sorted shape that zero is a tail
+suffix, invisible to `prodHooks`. -/
+theorem prodHooks_removeCorner (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    prodHooks (QOU.Mathlib.SYTEnum.removeCorner l c)
+      = prodHooks (l.set c (l.getD c 0 - 1)) := by
+  rw [QOU.Mathlib.SYTEnum.removeCorner]
+  exact prodHooks_filter_zero_sorted _ (QOU.Mathlib.SYTEnum.sorted_set_corner l c hl hcorner)
+
 /-!
 ## Remaining design — the gap ratio, row-drop, and assembly (next pieces)
 
@@ -287,8 +361,11 @@ Split `erase c = range c ∪ Ioo c k`.
 `prodHooks·betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`, `betaProdGap_pos`):
 `prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.
 
-**(R3) Row-drop corner** (`l[c]=1`, last row, `k→k−1`) — separate but the same product
-formula holds (β shifts uniformly; the βNat algebra still gives the same per-corner value).
+**(R3) Row-drop corner** (`l[c]=1`, last row, `k→k−1`) — DONE (`prodHooks_removeCorner`).
+`removeCorner l c = (l.set c (l[c]−1)).filter (·≠0)`; the filtered list is sorted
+(`sorted_set_corner`), and filtering zeros from a sorted list is `prodHooks`-invariant
+(`prodHooks_filter_zero_sorted`, via the trailing-zero lemma `prodHooks_append_zero`), so
+`prodHooks(removeCorner l c) = prodHooks(l.set c (l[c]−1))` and (R2) applies directly.
 
 **(R4) Assembly** — sum over `corners l`; non-corner rows vanish (`β_c−1 = β_{c+1}`); bridge
 `corners ↔ Fin k` and apply `betaLagrange (betaVec l)` + `sum_betaVec_sub` (`= sz l`).
