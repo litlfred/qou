@@ -84,9 +84,13 @@ proved invariant licenses (b). Coordinate on #2722 / #2744 before constructing.
 falsifiable constraint on the owner-gated search (a localization whose weight is unnormalized or
 chirality-asymmetric cannot be the Hecke Plancherel measure). It does **not** close residual (i).
 
-**Coupling found:** the `D² = Σ d_q² = [n]_q!` identity (`wedderburn_trace_identity`) is itself a
-`sorry` pending the q-Wedderburn–Artin layer (sibling #2743) — residual (i)'s normalization leg
-depends on it. Carried here abstractly via `globalDim_ne` (`D² ≠ 0`).
+**Coupling found (CORRECTED 2026-06-29):** I first wrote `D² = Σ d_q² = [n]_q!`. The `= [n]_q!` is
+**false** — `Σ d_q² = [n]_q!` does not hold at generic q (disproved n=2..5; see
+[`2026-06-29-wedderburn-trace-identity-false-at-generic-q.md`](../audits/2026-06-29-wedderburn-trace-identity-false-at-generic-q.md)).
+`D² = Σ d_q²` is its own q-polynomial; `heckeLocalization` carries `D² ≠ 0` as a hypothesis (via
+`globalDim_ne`) and never needs `[n]_q!`. For `1 < q` it is discharged directly from positivity
+(`qBracket_pos`/`qFactorial_pos` ⇒ `d_q > 0`), independent of any Wedderburn identity — a clean
+follow-up increment.
 
 ## Infrastructure (2026-06-29) — keystone Lean cone builds; `lake build` is unusable here
 
@@ -130,8 +134,10 @@ against the real cone via the lean-direct recipe below).
   corpus-proved `QOU.BraidKnot.IdentityI.qDim_conj`** — no longer carried abstractly.
 - Consequence: C1 (`loc_isProbabilityMeasure`) + C2 (`loc_conj_eq`) now hold for the **actual** Hecke
   Plancherel measure of any conjugate-closed sorted block set `P`, modulo only `D² ≠ 0`.
-- `D² ≠ 0` is the sole remaining structural input — downstream of the still-open
-  `Σ_λ d_q² = [n]_q!` (`wedderburn_trace_identity`, #2743). Honest open coupling.
+- `D² ≠ 0` is the sole remaining structural input — `D² = Σ d_q²` is its own q-polynomial, **not**
+  `[n]_q!` (that identity is false at generic q; audit
+  [`2026-06-29-wedderburn-trace-identity-false-at-generic-q.md`](../audits/2026-06-29-wedderburn-trace-identity-false-at-generic-q.md)).
+  Dischargeable from positivity for `1 < q`; carried as a hypothesis.
 
 ## Open log
 
@@ -140,4 +146,7 @@ against the real cone via the lean-direct recipe below).
 - 2026-06-29: built the keystone Lean cone; recorded the `lean`-direct recipe (`lake build` is
   destructive + proxy-blocked here). Increment 1 re-verified against the real cone (exit 0).
 - 2026-06-29: Increment 2 — `heckeLocalization` wires the real `qDim` + corpus-proved `qDim_conj`
-  into the obligation (sorry-free, cone-verified); only `D² ≠ 0` (#2743) remains as input.
+  into the obligation (sorry-free, cone-verified); only `D² ≠ 0` remains as input.
+- 2026-06-29: picking up "#2743" (`Σ d_q² = [n]_q!`) found the target is **false** at generic q
+  (disproved n=2..5); wrote audit, corrected the conflation. The correct q-identity is the Poincaré
+  `[n]_q! = Σ_λ f^λ·q^{b(λ)}·d_q(λ)`; the vector-space `Σ(f^λ)²=n!` is already proved (#2724).
