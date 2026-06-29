@@ -77,4 +77,27 @@ theorem betaProdGap_cast_pairs (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
   rw [betaProdGap_cast l hl]
   exact Finset.prod_congr rfl (fun i _ => row_range_eq_Ioo l i)
 
+/-- `betaNat = betaNatVal` as a `ℚ` cast. -/
+theorem betaNat_eq (l : List ℕ) (i : ℕ) : betaNat l i = (betaNatVal l i : ℚ) := by
+  unfold betaNat betaNatVal; push_cast; ring
+
+/-- `betaNat (l.set c v)` agrees with `l` off `c` (cast of `betaNatVal_set_ne`). -/
+theorem betaNat_set_ne (l : List ℕ) (c v : ℕ) {i : ℕ} (hi : i ≠ c) :
+    betaNat (l.set c v) i = betaNat l i := by
+  rw [betaNat_eq, betaNat_eq, betaNatVal_set_ne l c v hi]
+
+/-- `betaNat (l.set c (l[c]−1))` at `c` is `betaNat l c − 1`. -/
+theorem betaNat_set_self (l : List ℕ) (c : ℕ) (hc : c < l.length) (hpos : 1 ≤ l.getD c 0) :
+    betaNat (l.set c (l.getD c 0 - 1)) c = betaNat l c - 1 := by
+  have h1 : 1 ≤ betaNatVal l c := by unfold betaNatVal; omega
+  rw [betaNat_eq, betaNatVal_set_self l c hc hpos, Nat.cast_sub h1, betaNat_eq]
+  norm_num
+
+/-- `betaProdGap` as a single product over the pairs `(i, j)` with `i < j < k`. -/
+theorem betaProdGap_cast_sigma (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    ((QOU.Mathlib.SYTEnum.betaProdGap l : ℕ) : ℚ)
+      = ∏ p ∈ (Finset.range l.length).sigma (fun i => Finset.Ioo i l.length),
+          (betaNat l p.1 - betaNat l p.2) := by
+  rw [betaProdGap_cast_pairs l hl, Finset.prod_sigma']
+
 end QOU.Mathlib.SYTBetaLagrange
