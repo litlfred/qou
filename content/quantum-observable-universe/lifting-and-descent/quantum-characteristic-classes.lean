@@ -37,8 +37,10 @@ structure QuantumCharacteristicClass where
   [addCommGroup : AddCommGroup ObstructionSpace]
   /-- The obstruction value κₙ ∈ H²(𝒮, ℬ). -/
   kappa : ObstructionSpace
-  /-- Zero of the obstruction space. -/
-  zero : ObstructionSpace := (0 : ObstructionSpace)
+
+/-- Expose the obstruction space's group structure to instance resolution. -/
+instance (qcc : QuantumCharacteristicClass) : AddCommGroup qcc.ObstructionSpace :=
+  qcc.addCommGroup
 
 /-- The extension is unobstructed iff κₙ = 0. -/
 def QuantumCharacteristicClass.isUnobstructed (qcc : QuantumCharacteristicClass) : Prop :=
@@ -56,13 +58,16 @@ structure QuantumCharacteristicSequence where
   eulerChar : ObstructionSpace
   /-- κ₀ equals the Euler class. -/
   kappa_zero_euler : kappa 0 = eulerChar
-  /-- Jet corrections at level n live in a complementary subgroup. -/
-  /-- Jet corrections at level n do not cancel κ₀: the correction
-      at each level is independent of the base obstruction.
-      Encoded: if κₙ ≠ 0 then κ_{n+1} ≠ 0 (persistence). -/
+  /-- Jet corrections at level n live in a complementary subgroup, so they
+      do not cancel κ₀: the correction at each level is independent of the
+      base obstruction. Encoded: if κₙ ≠ 0 then κ_{n+1} ≠ 0 (persistence). -/
   corrections_persistent : ∀ n,
     kappa n ≠ (0 : ObstructionSpace) →
     kappa (n + 1) ≠ (0 : ObstructionSpace)
+
+/-- Expose the sequence's obstruction-space group structure to resolution. -/
+instance (qcs : QuantumCharacteristicSequence) : AddCommGroup qcs.ObstructionSpace :=
+  qcs.addCommGroup
 
 /-- If κ₀ ≠ 0 and corrections are complementary, then κₙ ≠ 0 for all n.
 
