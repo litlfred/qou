@@ -1,5 +1,22 @@
 # 2026-06-28 — Δ_λ frontier: the Borromean per-braid tower as a magnitude-adding A-scaling lever
 
+> **⚠ CORRECTION (2026-06-29) — the "extensive bulk = universal `2·m_e·8G·A`"
+> claim in this doc (and its follow-on three-piece test) is WRONG; it contradicts
+> existing corpus that I failed to grep.** Per
+> [`2026-06-24-magic-a-truncation-overclaim-correction.md`](2026-06-24-magic-a-truncation-overclaim-correction.md),
+> `2·m_e·A·8G` (8G = Vol(L6a4)) is the **⁴He-specific doubly-magic formula** (the
+> n=4 body-order term of [`prop:binding-manybody-jet-filtration`](../../content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.md)),
+> **NOT** a universal A-linear bulk — extrapolating it to D / ⁶Li / ⁵⁶Fe is exactly
+> the conflation that correction forbids. Moreover the body-order series
+> **diverges** (`λ₊ = 2.185 > 1`, Lean `lambdaPlus_gt_one`), so there is no
+> "bulk × kernel" product to close — binding is the additive (resummed) body-order
+> series `B(K)=Σ_n B_n`, `B_n=m_e·a_D^(n)`, with **n=2** (`m_e·Vol(6₂)`, +1.09%)
+> and **n=4** (the magic formula, +5.87%) derived and **n=3 open** (#1790). The
+> "A-scaling diagnostic" below stands only as raw `B_AME/(A·8G)` ratios; their
+> interpretation as a bulk-vs-kernel decomposition is retracted. See
+> [`2026-06-25-sw-jet-prolongation-explicit-and-fork.md`](2026-06-25-sw-jet-prolongation-explicit-and-fork.md)
+> for the resolved fork and the canonical body-order framing.
+
 **Branch:** `claude/delta-lambda-borromean-ascaling-2026-06-28`
 **Goal:** Δ_λ binding-closure (Track-A / Option-E)
 **Scope tag:** (a) scope-limited — positions a magnitude-side lever + sharpens the open item to the A-scaling. **No 7th fit-based ansatz; no closure claimed.**
