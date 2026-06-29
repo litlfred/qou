@@ -85,20 +85,48 @@ is suggestive but is also exactly the signature of an underived `h^k`
 shape-fix that the production-vs-exploratory discipline exists to catch
 (cf. AGENTS.md §production-vs-exploratory: "where does this h^k come from").
 
-**This is a (a)-scope flag, not a refutation:** the factor may well be
-correct; the point is it is *unproven and unlabelled* while living in
-production at 50-dps precision. Required disposition (one of):
+**Stronger finding — `(1+ℏ_q³)` is not even the right number.** The exact
+correction CODATA demands is `C_true = (Δm_pn/M_N)_CODATA / leading =
+1.0012784`, i.e. `C_true − 1 = 1.278e-3`. But `(1+ℏ_q³)` supplies only
+`ℏ_q³ = 0.973e-3` — the ratio `(C_true−1)/ℏ_q³ = 1.314`, so **`(1+ℏ_q³)`
+delivers just 76% of the needed correction** (it cuts the residual from
+0.128% to 0.0305%, not to 0). No clean single `ℏ_q`-power reproduces
+`C_true−1` (tested `ℏ_q³`, `ℏ_q³·[2]_q/2`, `ℏ_q²·h_q`, `ℏ_q⁴·[3]_q`, `h_q³`,
+`ℏ_q³(1+ℏ_q)` — closest 0.84×). So `(1+ℏ_q³)` is a **partial, posited
+shape-fix**, not merely an unproven-but-correct factor.
 
-1. **Derive it** — a content block / Lean lemma showing the substrate-Planck
-   correction is `(1 + ℏ_q³)` (and whether the series continues — see Part B's
-   geometric `1/(1−ℏ_q³)` hypothesis, which is the natural next question
-   *only if* the factor is shown to be geometric).
-2. **Label it** — mark `flavor_split_subleading` as `posited` / `fitted` (not
-   `canonical`) per the production-vs-exploratory tiering, so downstream
-   consumers and the canonical-watcher see it is an unproven correction.
+**Consequence for "derive `(1+ℏ_q³)`":** it is the *wrong derivation target*.
+There is no principle that *should* yield exactly `(1+ℏ_q³)`, because that
+factor does not close the gap. The genuine open problem is the **full**
+subleading correction to the derived leading `ℏ_q²·h_q·[2]_q/3`. Chasing a
+clean closed form for `C_true−1` directly is the c_k-flip-flop trap
+(`docs/coordination/1ppq-qbeta.md`) and is explicitly **not** the path.
 
-Until one of these is done, `(1 + ℏ_q³)` should not be cited as a derived
-result.
+**The disciplined direction (formalize-first).** The leading term is a
+*2-strand* object — the `u↔d` swap is `σ` on a 2-strand sub-braid, giving
+`[2]_q` and two action quanta `ℏ_q²` (content-block accounting). The
+baryon is a *3-quark / 3-strand* state, so the missing correction should be
+**derived from the third (spectator) strand's substrate coupling** — a
+3-strand categorical extension of the 2-strand leading object — not fit as
+an `ℏ_q`-power. That extension is part of the open Archimedean-mass-functor
+per-block action (the same R&D gating Δ_λ), and is not closed here.
+
+**Required disposition (one of):**
+
+1. **Derive the full correction** — a 3-strand categorical extension of the
+   leading 2-strand object that yields `C_true ≈ 1.00128` from the spectator
+   strand's coupling. (NOT "derive `(1+ℏ_q³)`" — that factor is wrong by 24%.)
+   This is open Archimedean-mass-functor R&D.
+2. **Label it** — until (1) lands, mark `flavor_split_subleading` as
+   `posited` (not `canonical`) per the production-vs-exploratory tiering, and
+   consider reporting Δm_pn at the **derived leading** residual (−0.13%)
+   rather than the posited-factor residual (0.0305%), since shipping the
+   76%-fix improves the apparent number without justification (the
+   "fitting below σ_theory" anti-pattern).
+
+Until one of these is done, `(1 + ℏ_q³)` must not be cited as a derived
+result, and its 0.0305% Δm_pn residual must not be cited as the framework's
+achieved accuracy on the splitting.
 
 ## Recommendations (follow-ups, not done here)
 
