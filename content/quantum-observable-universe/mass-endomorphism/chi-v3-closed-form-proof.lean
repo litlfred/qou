@@ -166,9 +166,11 @@ coefficients for the V_(3) difference (k = 0..12). We cross-check
 the closed form at concrete sample points `ε = 0.5` and `ε = 1`. -/
 
 -- Ref: [manuscript] rem:chi-v3-closed-form-proof
-/-- At `q = 1` (ε = 0): the polynomial part is `0`. -/
+/-- At `q = 1` (ε = 0): the polynomial part is `−(1 + 1 − 1)/4 = −1/4`.
+    Together with the geometric part `1/4` (below) this gives the full
+    difference `0` at `q = 1`, consistent with `chi_V3_difference_at_one`. -/
 theorem chi_V3_polynomial_part_at_one :
-    chi_V3_polynomial_part 1 = 0 := by
+    chi_V3_polynomial_part 1 = -1 / 4 := by
   unfold chi_V3_polynomial_part
   norm_num
 
