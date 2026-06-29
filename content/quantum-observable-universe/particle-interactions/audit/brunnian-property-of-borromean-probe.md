@@ -35,3 +35,7 @@ Once those three pieces exist, the proof of
 `borromean_brunnian` is a finite computation: exhibit the
 explicit R-move sequence taking $(\sigma_0^{-1})^3 \in B_2$ to
 the empty braid in $B_2$ (which closes to $U_2$).
+
+## Location of the computation
+
+The energetic cost attached to the unlinking move — the bare topological mass that distinguishes a confined Borromean baryon from three free unknots — is the hyperbolic-volume contribution computed in the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula); the corresponding Bloch-group element lives in [Borromean Bloch-group element](#conj:borromean-bloch-group-element). The formal Lean counterpart is [Brunnian property of $\mathcal{B}_3$](#conj:brunnian-property-of-borromean), which states that every two-component sub-link of the Borromean rings is the unlink and traces the formalisation gap to the absence of Mathlib Reidemeister-move primitives.
