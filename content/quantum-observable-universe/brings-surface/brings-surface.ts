@@ -173,6 +173,7 @@ export default chapter({
         "light-cone-affine",
         "chirality-trefoil",
         "brings-curve",
+        "brings-q-hyperbolic-geometry",
       ],
     }),
     section({
