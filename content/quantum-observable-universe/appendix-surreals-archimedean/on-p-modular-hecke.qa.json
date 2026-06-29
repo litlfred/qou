@@ -855,7 +855,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Characteristic-p companion (modular Hecke at ζ_p ↔ nimber surreals On_p); fits the 'Characteristic-p companion at substrate' section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "On_2 = ∪ F_{2^{2^k}} (Conway/Lenstra) and the A_{p-1} fusion graph at ζ_p are correct; the Hecke↔nimber bijection is presented as conjecture, not theorem."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Substantive (nimber background, p-ary fusion, surviving/broken-structure table, layered proof strategy)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No circularity; q_0 explicitly noted generic (not a root of unity) so this conjecture is non-load-bearing for the main paper."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Physical readings (pentaquark, three-generations) are explicitly tagged 'highly speculative ... These are conjectural'; the math claim is separated from them."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No free parameter; p ranges over primes structurally."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "The 'p-ary fusion at ζ_p ⟹ p-ary combinatorics replacing binary Hoefsmit' chain is standard quantum-group truncation; the KL-cell replacement at non-semisimple ζ_p is correctly invoked."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Conjecture with lean stub (validation: stub); no proved Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "conway1976 (nimbers/On_2), gonshor1986, ehrlich2012 correctly attributed to surreal/nimber theory."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "nim-addition/multiplication, KLcells_n(ζ_p), On_p^[n] p-adic depth are each defined; characteristic-p regime explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "The pentaquark/three-generation readings are explicitly disclaimed as speculative, so they are not advanced as physical predictions."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No backing compute witness; cites classical nimber-field results."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "921be9e975f8",
+          "ts": "4f467f314a92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Honest characteristic-p companion conjecture; cleanly separates established nimber theory from the open Hecke-cell↔nimber bijection and disclaims the speculative physics."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:55:11.596Z"
 }

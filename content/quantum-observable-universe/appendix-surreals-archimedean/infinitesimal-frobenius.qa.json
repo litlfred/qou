@@ -855,7 +855,253 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "ε-relaxed Frobenius axiom over No; fits 'Speculative reformulations at q_0'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Standard-part recovery (St(ε·δ)=0 since ε infinitesimal) is correct; the strict-generalisation half is explicitly open."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Concrete ε-deformation proposal (Δ_ε = Δ + ε(δ⊗1)∘Δ) + falsification path; non-trivial."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No back-fitting; the CODATA-deviation 'use' is offered as a speculative absorption, not a derivation of the deviation from the target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "minor",
+        "evidence": "infinitesimal-frobenius.md:74: \"the QOU mass formula's ~4% MAE on Q-values may be partly attributable to a small non-Frobenius deviation\"",
+        "notes": "Hedged ('may be partly attributable') but floats absorbing the ~4% mass-formula error into a single free ε-parameter — a speculative move toward a hidden DOF. Properly conditional, so warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "minor",
+        "evidence": "infinitesimal-frobenius.md:77: \"would absorb such deviations into a single ε-parameter\"",
+        "notes": "The δ deviation / ε-parameter is an explicitly new free parameter; flagged here only because §significance suggests using it to absorb the 4% Q-value error, which would be an undisclosed fit if promoted. Kept as conjecture so warn, not fail."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "The standard-part-recovery steps follow (ε·δ infinitesimal ⟹ St kills it); the gauge-equivalence question is correctly identified as the open gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Conjecture with lean stub (validation: stub); no proved Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "robinson1966 correctly backs standardPart_of_infinitesimal."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "minor",
+        "evidence": "infinitesimal-frobenius.md:122: \"standardPart_add (axiomatic; reduces to IsFinite_decomposition)\"",
+        "notes": "Calls standardPart_add 'axiomatic', but the library StandardPart.lean PROVES standardPart_add (sorry-free); the proof-strategy note understates the available infrastructure. Minor inaccuracy."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "The 4% MAE is mentioned only as a speculative motivation, not advanced as a numerical match of the ε-axiom; no fitted-value claim to be fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Möbius-energy regularisation read as ε-Frobenius deviation is interpretive and labelled speculative; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No backing compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a72b3f2fd38b",
+          "ts": "b1d5766ff002"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "minor",
+        "evidence": "infinitesimal-frobenius.md:74: \"~4% MAE on Q-values may be partly attributable to a small non-Frobenius deviation\"",
+        "notes": "Sound speculative conjecture, but the suggestion to absorb the mass-formula error into a free ε-parameter risks a hidden-DOF interpretation if ever promoted; the 'standardPart_add axiomatic' note is also stale."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:55:11.596Z"
 }

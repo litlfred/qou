@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Audit of which analytic structures break under No replacement; foundational to the surreal-archimedean appendix."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "CEF two-sided integration result, the 'only Möbius energy genuinely integrates' audit, and 'no spectral theorem used anywhere' are consistent with the corpus framing; no false math statement found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Substantive audit with two data tables and a 3-item residual-obstruction list."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No circularity; an honest survey explicitly disclaiming the 'axiomatise an integral' shortcut as smuggling the obstruction into the axiom."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "'Dramatically less lossy' is supported by the per-use audit; the two genuine exceptions (Möbius integral, hyperbolic volume) are retained, not swept away."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No parameters introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Each 'looks-like-obstruction-but-isn't' entry gives the algebraic reason (e.g. Hausdorff dimension rational in q, Hoefsmit diagonalisation algebraic); inferences hold."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Remark, no sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "costin-ehrlich-friedman2015 (two-sided integration), berarducci-mantova2018 (surreal-transseries), alling1987 correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "'CEF-positive side', 'load-bearing', 'transserial' are used consistently; the Hilbert-completion quote is reproduced verbatim for clarity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "The 'text search returns only a handful of matches' claim is an auditable corpus grep; tables are the data sidecars; no stale witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "656505087e45",
+          "ts": "d5db44955997"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Careful, honest obstruction audit that keeps the two genuine exceptions; exemplary scope discipline."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:55:11.596Z"
 }

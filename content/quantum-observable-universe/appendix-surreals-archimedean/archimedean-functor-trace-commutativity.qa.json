@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Standard-part as 'Archimedean Functor' mapping binding traces to observables; fits the archimedean-appendix section interpreting def:standard-part-functor."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Trace commutativity (m-B_sym)=(m-B_qCLT) holds when B_sym=B_qCLT (trivially); B_sym/B_qCLT/E_0 numbers match the witness (E_0=4.18598, T more bound than 3He: B_sym 9.07>6.80)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Carries a substantive numerical-realization section (E_0 definition, s/L/B_sym/B_qCLT formulas, bond-type resolution) beyond the diagram."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "E_0 explicitly 'a derived quantity, not a free parameter ... neither Q_β nor a deuteron-pinned fit'; the witness keeps E_0_derived and alpha_D_pinned as separate columns, confirming E_0 is not back-fitted to binding."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Accuracy claims are scoped: '≈1.2× for non-anomalous A=3', undershoot '≈1.6×' for Li, ⁴He needs shell-closure — all matched by witness miss_x (T 0.935, 3He 1.136, 6Li 1.595, 7Li 1.555); no derived-as-exact overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "E_0 = m_e/(q_0(q_0-1)) is fully determined by the canonical pin (no fourth calibration); bond-type ratios V_i come from sub-braid Markov traces, not fitted."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "B_lin = leading term of B_sym = αL with L = -ln(1-s) = s + s²/2 + ... is correct; the qCLT factorization (per-bond independent sum) is clearly stated as an A→∞ approximation, not an identity."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Remark interpreting def:standard-part-functor; the only related sibling .lean (archimedean_mass_commutes) lives on standard-part-functor and is a tautology, but this remark makes no formal-equivalence claim against it."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No cites[] on this remark."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "s(K), L(K), B_sym, B_qCLT, V_i, and the three bond types are each defined inline; E_0 regime is the archimedean substrate value."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Match factors (1.07-1.14× for A=3, ~1.6× undershoot for Li) are coarse order-of-magnitude, not precision claims inside fit noise; q_0 pin consistent with witness E_0=4.18598."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Units consistent (MeV binding); tritium>3He ordering matches AME2020; no broken conservation. The ~1.2-1.6× accuracy is honestly presented as approximate."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "binding-single-pipeline-comparison.witness.json exists; E_0_MeV=4.185981, B_sym and miss_x values for D/T/3He/4He/6Li/7Li reproduce the prose claims."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c5fe3b1fb988",
+          "ts": "43aa017b96d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Numerically grounded interpretive remark; claims match the cited witness and are honestly scoped as approximate."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:55:11.596Z"
 }

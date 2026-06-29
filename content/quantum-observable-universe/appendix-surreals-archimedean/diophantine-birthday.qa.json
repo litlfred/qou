@@ -855,7 +855,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Birthday-trajectory vs diophantine approximation, applied to q_0's algebraic status; fits 'Speculative reformulations at q_0' section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Liouville/Roth statements correctly quoted (Roth exponent 2+δ); the speculative birthday-trajectory claims are flagged as conjecture, not asserted theorems."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Substantive (4-part conjecture + proof strategy + falsification path); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Does not assume q_0's algebraic status; explicitly leaves it open ('decide its algebraic status (open in the main paper)')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Conjecture kind; the discussion honestly says 'Open, but the reduction to continued fractions is classical' and 'restates Roth/Liouville in surreal language'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No free parameter; q_0 quoted at 50dps from the canonical pin."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Proof-strategy steps (dyadic birthday, CF convergents, Lagrange periodicity, Roth bound) are individually standard; the conjectural linkage is labelled as such."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Conjecture with lean stub (validation: stub); no proved Lean claim to diverge from."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "conway1976/gonshor1986/ehrlich2012 are the standard surreal-number references; correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "minor",
+        "evidence": "diophantine-birthday.md:115: \"Every real number has birthday exactly ω (the dyadic rationals have finite birthday; every other real has birthday ω)\"",
+        "notes": "The lead clause 'every real has birthday exactly ω' contradicts its own parenthetical (dyadics are finite); self-corrects in the same sentence but the opening universal is loose. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No numerical match claimed; q_0 status is the open question, not a fitted value."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Number-theory conjecture; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No backing compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "64fd96fe450e",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Honest, well-scoped conjecture; the only blemish is the loose 'every real has birthday ω' lead clause (self-corrected)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:55:11.596Z"
 }

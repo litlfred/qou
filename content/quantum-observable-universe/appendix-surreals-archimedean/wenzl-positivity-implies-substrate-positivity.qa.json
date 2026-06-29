@@ -894,7 +894,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Reduces the substrate C*-Frobenius positivity axiom to Wenzl positivity at q_0; fits 'Substrate-positivity and millennium bounds'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Wenzl unitarity range (q a root of unity e^{iπ/N} OR q ∈ R_{>0}) is correctly stated; q_0≈1.10998 ∈ R_{>1} ⊂ R_{>0} is in range. Müger/BKLR positive-Frobenius framework correctly invoked."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Substantive (identifies (a) theorem vs (b) axiom and asserts (a)⟹(b) as the bridge); the lean class field `holds : Prop` is a thin conjecture carrier but the narrative carries the real content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No circularity; reduces an axiom to a classical theorem rather than assuming the conclusion. The 'q_0 locked by unitarity' remark is a consistency observation, not a derivation of q_0."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Conjecture kind; explicitly '(a) is a theorem; (b) is the substrate axiom. The conjecture asserts that (a) implies (b)' and names it 'the only genuinely conjectural input'. Honest scoping."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Three 'free parameters' (C*-norm choice, positivity, antipode-compat) are enumerated openly and argued to be fixed by Müger/BKLR; no undisclosed DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Chain (Wenzl-unitary ⟹ unitary C*-tensor category ⟹ every Frobenius algebra positive via Müger/BKLR ⟹ substrate axiom) is logically connected; the remaining gap (is the substrate the standard Frobenius algebra) is acknowledged as the conjecture."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Sibling .lean is an honest §3b-cond conjecture class (class WenzlPositivity... where holds : Prop, sorry=conjecture), not a vacuous theorem; matches the conjecture kind. validation: not_checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "wenzl1988/wenzl1990/kazhdanwenzl1993 correctly attributed to the positivity criterion and its SU(N)/sl_n generalisations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "C*-norm candidates, Müger norm, antipode-twisted Frobenius pairing, and Reeb half are all defined or cross-linked; q regime q_0 ∈ R_{>1} explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No numerical match; categorical positivity argument."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "The Yang-Mills mass-gap / Wightman-reconstruction framing is presented conditionally ('if this conjecture is proved'); no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No backing compute witness; cites classical theorems."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "90c8c18197f9",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Well-structured conjecture honestly separating established (Wenzl, Müger/BKLR) from open (the identification bridge)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:55:11.596Z"
 }

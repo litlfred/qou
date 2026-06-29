@@ -816,7 +816,255 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Compares the Hausdorff-dimension recurrence and q-Collatz contraction at q_0; fits 'Substrate-positivity and millennium bounds'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "critical",
+        "evidence": "collatz-hausdorff-comparison.md:20: \"Because the contraction gap is q itself: [2]_q^2 - [3]_q = q.\"",
+        "notes": "FALSE: [2]_q²-[3]_q = (q+q⁻¹)²-(q²+1+q⁻²) = 2-1 = 1, not q (numerically 0.99999... not 1.10998). The 'gap = q' premise is wrong; correct value is 1."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Substantive comparison (Lyapunov Φ, entropy budget, discrete phase transition, Planck-step commensurability); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No back-fitting of a target; a structural dynamics comparison."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Carefully does NOT claim to prove Collatz; explicitly states the gap is 'smooth vs discrete contraction, must be verified orbit by orbit'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "q_0 from the canonical pin; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "major",
+        "evidence": "collatz-hausdorff-comparison.md:24: \"|ΔΦ| = log_q([2]_q^2/[3]_q) = log_q(1 + q/[3]_q)\"",
+        "notes": "The second equality requires [2]²/[3] = 1 + q/[3], i.e. [2]²-[3]=q — the false identity from line 20. Since actually [2]²-[3]=1, the correct form is log_q(1 + 1/[3]); the q/[3] step does not follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Remark, no sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "No cites[] on this remark."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Φ = log_q|P|, valuation v, contraction ratio R(v), η_q are each defined; q regime is q_0."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "minor",
+        "evidence": "collatz-hausdorff-comparison.md:31: \"At q_0 = 1.109978595554181...: |ΔΦ| ≈ 2.76 per cycle.\"",
+        "notes": "Recomputed log_q([2]²/[3]) = 2.72 at q_0, not 2.76 (~1.5% off); likely a stale/rounded value. The downstream |ΔΦ|/ℏ_q ≈ 2.9 also reads ~2.7 in my recompute. Minor numeric drift, not the headline error."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "notes": "Entropy-budget framing (η_q q-bits) is interpretive; R(1)≈1.51, R(2)≈0.75, R(3)≈0.37 reproduce correctly, so the phase-transition claim itself is sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "minor",
+        "evidence": "collatz-hausdorff-comparison.md:31: \"|ΔΦ| ≈ 2.76\"",
+        "notes": "No witness sidecar for these inline numerics; my independent recompute gives 2.72 (vs prose 2.76) and confirms R(1/2/3), so values are mostly reproducible but the 2.76 and the implied [2]²-[3]=q are inconsistent with direct computation."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "96d2e4d50353",
+          "ts": "4918345214ee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:55:11.596Z",
+        "reviewed_sha": "de68ddf65afb04baa8ffacba130e35b443dae4cd",
+        "severity": "critical",
+        "evidence": "collatz-hausdorff-comparison.md:20: \"[2]_q^2 - [3]_q = q\"",
+        "notes": "Otherwise a careful comparison, but it rests on a false algebraic identity [2]²-[3]=q (correct is 1), which propagates to the |ΔΦ| = log_q(1+q/[3]) form; the headline 'contraction gap is q' is wrong."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:55:11.596Z"
 }
