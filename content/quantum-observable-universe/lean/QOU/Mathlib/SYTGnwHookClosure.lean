@@ -272,4 +272,57 @@ theorem betaProdGap_removeCorner_middle_Fin (l : List ℕ) (c : ℕ)
       rw [hpt p.val p.2 (by rw [← hlen]; exact p.2), hpt q.val q.2 (by rw [← hlen]; exact q.2)]
       congr 1 <;> (apply Fin.ext; simp)
 
+/-- **Vandermonde-side of the per-corner ratio (middle corner), cross-multiplied.**
+
+    betaProdGap(l∖c) · ∏_{j≠c}(βc − βj)  =  betaProdGap(l) · ∏_{j≠c}(βc − 1 − βj).
+
+Both `betaProdGap`s are put in Fin-`k` Vandermonde form (`betaProdGapFin`,
+`betaProdGap_removeCorner_middle_Fin`) and split with `splitVand` at the pivot `cF = ⟨c,_⟩`.  The
+`rest` factors (pairs avoiding `cF`) are equal since `β' = betaVec l` only changed at `cF`; the
+`c`-row/`c`-col factors of `β'` are `βc−1−βq` / `βp−βc+1`, and `wall_split` (cleared of denominators)
+recombines them into the `∏_{j≠c}` factors — exactly this cross-multiplied identity. -/
+theorem vand_ratio_middle (l : List ℕ) (c : ℕ)
+    (hl : List.Sorted (· ≥ ·) l) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hmid : 2 ≤ l.getD c 0) :
+    ((betaProdGap (removeCorner l c) : ℕ) : ℚ)
+        * (∏ j ∈ univ.erase (⟨c, hc.1⟩ : Fin l.length), (betaVec l ⟨c, hc.1⟩ - betaVec l j))
+      = ((betaProdGap l : ℕ) : ℚ)
+        * (∏ j ∈ univ.erase (⟨c, hc.1⟩ : Fin l.length), (betaVec l ⟨c, hc.1⟩ - 1 - betaVec l j)) := by
+  set cF : Fin l.length := ⟨c, hc.1⟩ with hcF
+  set β := betaVec l with hβdef
+  set β' := Function.update β cF (β cF - 1) with hβ'
+  have hinj : Function.Injective β := betaVec_injective l hl
+  rw [betaProdGapFin l hl, betaProdGap_removeCorner_middle_Fin l c hl hc hpos hmid,
+      splitVand (fun p q => β' p - β' q) cF, splitVand (fun p q => β p - β q) cF]
+  have hR : (∏ p ∈ univ.erase cF, ∏ q ∈ (univ.filter (p < ·)).erase cF, (β' p - β' q))
+      = ∏ p ∈ univ.erase cF, ∏ q ∈ (univ.filter (p < ·)).erase cF, (β p - β q) := by
+    apply Finset.prod_congr rfl; intro p hp
+    apply Finset.prod_congr rfl; intro q hq
+    rw [mem_erase] at hp; rw [mem_erase] at hq
+    rw [hβ', Function.update_of_ne hp.1, Function.update_of_ne hq.1]
+  have hcrow : (∏ q ∈ univ.filter (cF < ·), (β' cF - β' q))
+      = ∏ q ∈ univ.filter (cF < ·), (β cF - 1 - β q) := by
+    apply Finset.prod_congr rfl; intro q hq
+    rw [mem_filter] at hq
+    rw [hβ', Function.update_self, Function.update_of_ne (ne_of_gt hq.2)]
+  have hccol : (∏ p ∈ univ.filter (· < cF), (β' p - β' cF))
+      = ∏ p ∈ univ.filter (· < cF), (β p - β cF + 1) := by
+    apply Finset.prod_congr rfl; intro p hp
+    rw [mem_filter] at hp
+    rw [hβ', Function.update_self, Function.update_of_ne (ne_of_lt hp.2)]; ring
+  rw [hR, hcrow, hccol]
+  have hws := wall_split β hinj cF
+  have hd1 : ∀ p ∈ univ.filter (· < cF), β p - β cF ≠ 0 := by
+    intro p hp; rw [mem_filter] at hp; exact sub_ne_zero.mpr (fun e => (ne_of_lt hp.2) (hinj e))
+  have hd2 : ∀ q ∈ univ.filter (cF < ·), β cF - β q ≠ 0 := by
+    intro q hq; rw [mem_filter] at hq; exact sub_ne_zero.mpr (fun e => (ne_of_gt hq.2) (hinj e.symm))
+  have hd3 : ∀ j ∈ univ.erase cF, β cF - β j ≠ 0 := by
+    intro j hj; rw [mem_erase] at hj; exact sub_ne_zero.mpr (fun e => hj.1 (hinj e).symm)
+  rw [Finset.prod_div_distrib, Finset.prod_div_distrib, Finset.prod_div_distrib] at hws
+  have hP1 : (∏ p ∈ univ.filter (· < cF), (β p - β cF)) ≠ 0 := Finset.prod_ne_zero_iff.mpr hd1
+  have hP2 : (∏ q ∈ univ.filter (cF < ·), (β cF - β q)) ≠ 0 := Finset.prod_ne_zero_iff.mpr hd2
+  have hP3 : (∏ j ∈ univ.erase cF, (β cF - β j)) ≠ 0 := Finset.prod_ne_zero_iff.mpr hd3
+  field_simp [hP1, hP2, hP3] at hws
+  linear_combination (∏ p ∈ univ.erase cF, ∏ q ∈ (univ.filter (p < ·)).erase cF, (β p - β q)) * hws
+
 end QOU.Mathlib.SYTBetaLagrange
