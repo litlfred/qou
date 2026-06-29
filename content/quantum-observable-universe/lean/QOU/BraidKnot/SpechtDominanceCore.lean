@@ -22,14 +22,17 @@ This module is an **independent** reduction of *that same statement* (it imports
 `SpechtTriangularCore`). Where `SpechtTriangularCore` reduced the *triangular
 bundle* to this `LinearOrder`-and-`support` existential, this file peels the
 `LinearOrder` construction **and** the `Finsupp`/`support` plumbing off it too,
-isolating the irreducible combinatorial heart as a single, `LinearOrder`-free,
-`support`-free, **relation-level** core:
+**constructs the dominance partial order concretely**, and isolates the
+irreducible combinatorial heart as a single, `LinearOrder`-free, `support`-free,
+**relation-level** core:
 
-> `dominance_relation_exists` — there is a partial order `dom` on `Tabloid μ`
-> (reflexive, transitive, antisymmetric) under which **column permutations weakly
-> decrease the tabloid** (`π ∈ C_t ⟹ dom {π•t} {t}`).
+> `dominance_colStab_lemma` — under the concrete dominance order `domRel` (a
+> proved partial order on `Tabloid μ`), **column permutations weakly decrease the
+> tabloid** (`π ∈ C_t ⟹ domRel {π•t} {t}`). This is Sagan's §2.4 dominance lemma.
 
-Everything else is discharged `sorry`-free:
+The dominance order itself is no longer opaque: `dominance_relation_exists` is now
+**`sorry`-free**, built from the explicit partial-sum order `domRel` whose three
+order axioms + decidability are all discharged. Everything else is `sorry`-free:
 
 * **Layer 1** (`support_subset_colStab_image`) — `supp(e_T) ⊆ {{π•t} : π ∈ C_t}`,
   pure `Finsupp` plumbing.
@@ -42,13 +45,26 @@ Everything else is discharged `sorry`-free:
   relation.
 * **The tabloid↔row-pattern bridge** (`tabloidRowPattern`,
   `tabloidRowPattern_injective`) — a tabloid *is* its row pattern
-  (`rowEquiv_iff`), so `Tabloid μ ↪ (Fin n → ℕ)`. A sorry-free bonus pinning
-  down what the core's antisymmetry concretely asserts.
+  (`rowEquiv_iff`), so `Tabloid μ ↪ (Fin n → ℕ)`. Pins down what the dominance
+  order's antisymmetry concretely asserts.
+* **The concrete dominance order** (`domCount`, `domRel`, `domRel_refl`,
+  `domRel_trans`, `domRel_antisymm`, `domRel_decidable`) — the dominance count
+  `domCount f i m = #{l : l<m ∧ f l ≤ i}`; the order `domRel a b ≡ ∀ i m,
+  domCount(a) ≤ domCount(b)`; reflexivity/transitivity are pointwise, antisymmetry
+  is `domCount_inj` (the marginal `domCount f i (l+1) − domCount f i l = [f l ≤ i]`
+  recovers the row pattern) composed with `tabloidRowPattern_injective`, and
+  decidability is the clamp `domCount_clamp` (saturation past `n`, via the cell
+  row-index bound `rowPattern t l < n`) reducing `∀ i m : ℕ` to a bounded
+  quantifier. **All sorry-free.**
+* **The assembly** (`dominance_relation_exists`) — packages `domRel` + the four
+  sorry-free order/decidability proofs + the one cited `dom_colStab` field into
+  `DominanceData`. `sorry`-free (its only conjectural ingredient is the core
+  lemma below, passed as the `dom_colStab` field).
 * **Layers 2–3 wiring** (`exists_order_colStab_decreasing`,
-  `standardPolytabloid_dominance_order'`) — the lever turns the core's partial
-  order into the required `LinearOrder`; Layer 1 + the colStab-decrease field of
-  the core supply the support bound. The verbatim brick-4 target
-  `standardPolytabloid_dominance_order'` follows `sorry`-free modulo the one core.
+  `standardPolytabloid_dominance_order'`) — the lever turns `domRel` into the
+  required `LinearOrder`; Layer 1 + the colStab-decrease field supply the support
+  bound. The verbatim brick-4 target `standardPolytabloid_dominance_order'`
+  follows `sorry`-free modulo the one core.
 
 ## sorry-free ↔ stubbed map
 
@@ -57,15 +73,21 @@ Everything else is discharged `sorry`-free:
 | `support_subset_colStab_image` (Layer 1) | **sorry-free** |
 | `exists_linearOrder_of_partialOrder` (Szpilrajn-for-Fintypes lever) | **sorry-free** |
 | `tabloidRowPattern`, `tabloidRowPattern_injective` (tabloid↔row-pattern) | **sorry-free** |
+| `row_lt_card`, `rowPattern_lt_nOf`, `tabloidRowPattern_lt_nOf` (cell row bound) | **sorry-free** |
+| `domCount`, `domCount_succ`, `singleton_filter_card`, `domCount_marginal`, `domCount_inj` (count + antisymm engine) | **sorry-free** |
+| `domCount_sat_m`, `domCount_sat_i`, `domCount_clamp` (saturation for decidability) | **sorry-free** |
+| `domRel`, `domRel_refl`, `domRel_trans`, `domRel_antisymm`, `domRel_iff_bounded`, `domRel_decidable` (the concrete partial order) | **sorry-free** |
 | `DominanceData` (the core's bundled data) | structure (no proof obligation) |
-| `dominance_relation_exists` (the single combinatorial core) | **STUB** `sorry` — `-- Ref: [sagan2001]` Thm 2.5.2 |
+| `dominance_colStab_lemma` (Sagan's §2.4 dominance lemma — the single combinatorial core) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 / Thm 2.5.2 |
+| `dominance_relation_exists` (concrete `DominanceData`) | **sorry-free MODULO `dominance_colStab_lemma`** |
 | `exists_order_colStab_decreasing` (Layer 2) | **sorry-free MODULO the single core** |
 | `standardPolytabloid_dominance_order'` (verbatim brick-4 target) | **sorry-free MODULO the single core** |
 
 `#print axioms` at the file end confirms `sorryAx` enters
-`standardPolytabloid_dominance_order'` *only* through `dominance_relation_exists`;
-the lever, Layer 1, and the row-pattern bridge are all
-`[propext, Classical.choice, Quot.sound]`.
+`standardPolytabloid_dominance_order'` *only* through `dominance_colStab_lemma`
+(the single core); the lever, Layer 1, the row-pattern bridge, the entire
+concrete dominance order (`domRel` + refl/trans/antisymm/decidability), and the
+count engine are all `[propext, Classical.choice, Quot.sound]`.
 
 ## References
 - [sagan2001] Sagan, *The Symmetric Group*, §2.5 (the standard basis, Thm 2.5.2;
@@ -201,13 +223,235 @@ theorem tabloidRowPattern_injective :
   have : Specht.rowPattern s = Specht.rowPattern t := h
   exact Quotient.sound this
 
+/-! ## The dominance order on tabloids via partial-sum counts (sorry-free)
+
+The dominance partial order is built concretely from the **dominance count**
+`domCount f i m = #{l : (l:ℕ) < m ∧ f l ≤ i}` of a row pattern `f` — "among the
+`m` smallest labels, how many lie in rows `≤ i`".  The relation
+`domRel a b :≡ ∀ i m, domCount (rowPat a) i m ≤ domCount (rowPat b) i m`
+is then a genuine partial order, all three order axioms discharged `sorry`-free:
+
+* **reflexivity / transitivity** are pointwise `le_refl` / `le_trans`.
+* **antisymmetry** is the substantive sorry-free fact: equal counts everywhere
+  force equal row patterns (`domCount_inj`, via the marginal
+  `domCount f i (l+1) − domCount f i l = [f l ≤ i]`), whence equal tabloids
+  (`tabloidRowPattern_injective`).
+* **decidability** comes from clamping both indices into `[0, n]` (the counts
+  saturate past `n`, using the row-index bound `rowPattern t l < n`), reducing
+  the `∀ i m : ℕ` to a decidable bounded quantifier.
+
+All of this is `ℕ`-valued (§7c-clean: no `ℝ`, no ordering on `q`). -/
+
+/-- The row index of any cell of a Young diagram is `< ν.card`: the `i+1` cells
+`(0,0), …, (i,0)` lie in `ν` by down-closure, so `i + 1 ≤ ν.card`. -/
+theorem row_lt_card (ν : YoungDiagram) (i j : ℕ) (h : (i, j) ∈ ν) : i < ν.card := by
+  classical
+  have hsub : (Finset.range (i + 1)).image (fun i' => (i', 0)) ⊆ ν.cells := by
+    intro c hc
+    rw [Finset.mem_image] at hc
+    obtain ⟨i', hi', rfl⟩ := hc
+    rw [Finset.mem_range] at hi'
+    rw [YoungDiagram.mem_cells]
+    exact YoungDiagram.up_left_mem ν (Nat.lt_succ_iff.mp hi') (Nat.zero_le _) h
+  have hcard : ((Finset.range (i + 1)).image (fun i' => (i', 0))).card = i + 1 := by
+    rw [Finset.card_image_of_injective]
+    · rw [Finset.card_range]
+    · intro a b hab; simpa using hab
+  have hle : i + 1 ≤ ν.card := by
+    show i + 1 ≤ ν.cells.card
+    rw [← hcard]; exact Finset.card_le_card hsub
+  omega
+
+/-- The row pattern of a tableau is bounded by `nOf μ`. -/
+theorem rowPattern_lt_nOf (t : Specht.Tableau μ) (l : Fin (Specht.nOf μ)) :
+    Specht.rowPattern t l < Specht.nOf μ := by
+  have hmem : ((t l : ℕ × ℕ).1, (t l : ℕ × ℕ).2) ∈ μ := (t l).2
+  exact row_lt_card μ _ _ hmem
+
+/-- The row pattern of a tabloid is bounded by `nOf μ` (descends from tableaux). -/
+theorem tabloidRowPattern_lt_nOf (a : Specht.Tabloid μ) (l : Fin (Specht.nOf μ)) :
+    tabloidRowPattern a l < Specht.nOf μ := by
+  refine Quotient.inductionOn a (fun t => ?_)
+  exact rowPattern_lt_nOf t l
+
+/-- **The dominance count.** `domCount f i m` is the number of the `m` smallest
+labels whose row (under the pattern `f`) is `≤ i`. -/
+def domCount (f : Fin (Specht.nOf μ) → ℕ) (i m : ℕ) : ℕ :=
+  (Finset.univ.filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m ∧ f l ≤ i)).card
+
+/-- **Marginal decomposition.** Passing from `m` to `m+1` adds the labels with
+val `= m` and row `≤ i`. -/
+theorem domCount_succ (f : Fin (Specht.nOf μ) → ℕ) (i m : ℕ) :
+    domCount f i (m + 1) =
+      domCount f i m
+        + (Finset.univ.filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) = m ∧ f l ≤ i)).card := by
+  classical
+  unfold domCount
+  rw [← Finset.card_union_of_disjoint]
+  · congr 1
+    ext l
+    simp only [Finset.mem_filter, Finset.mem_union, Finset.mem_univ, true_and]
+    constructor
+    · rintro ⟨hlt, hf⟩
+      rcases Nat.lt_succ_iff_lt_or_eq.mp hlt with h | h
+      · exact Or.inl ⟨h, hf⟩
+      · exact Or.inr ⟨h, hf⟩
+    · rintro (⟨h, hf⟩ | ⟨h, hf⟩)
+      · exact ⟨Nat.lt_succ_of_lt h, hf⟩
+      · exact ⟨h ▸ Nat.lt_succ_self m, hf⟩
+  · rw [Finset.disjoint_left]
+    intro l hl hl'
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hl hl'
+    exact absurd hl'.1 (Nat.ne_of_lt hl.1)
+
+/-- The "val `= l₀`" filter is the singleton `{l₀}` or empty, by `Fin.val`
+injectivity. -/
+theorem singleton_filter_card (f : Fin (Specht.nOf μ) → ℕ) (i : ℕ)
+    (l₀ : Fin (Specht.nOf μ)) :
+    (Finset.univ.filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) = (l₀ : ℕ) ∧ f l ≤ i)).card
+      = if f l₀ ≤ i then 1 else 0 := by
+  classical
+  by_cases hf : f l₀ ≤ i
+  · rw [if_pos hf, Finset.card_eq_one]
+    refine ⟨l₀, ?_⟩
+    ext l
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_singleton]
+    constructor
+    · rintro ⟨hval, _⟩; exact Fin.ext hval
+    · rintro rfl; exact ⟨rfl, hf⟩
+  · rw [if_neg hf, Finset.card_eq_zero]
+    ext l
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.notMem_empty, iff_false]
+    rintro ⟨hval, hfl⟩
+    have : l = l₀ := Fin.ext hval
+    rw [this] at hfl
+    exact hf hfl
+
+/-- **The marginal at a label is the indicator of "row `≤ i`".** -/
+theorem domCount_marginal (f : Fin (Specht.nOf μ) → ℕ) (i : ℕ)
+    (l₀ : Fin (Specht.nOf μ)) :
+    domCount f i ((l₀ : ℕ) + 1) = domCount f i (l₀ : ℕ) + (if f l₀ ≤ i then 1 else 0) := by
+  rw [domCount_succ, singleton_filter_card]
+
+/-- **Counts determine the row pattern (the antisymmetry engine, sorry-free).**
+If two row patterns have equal dominance counts everywhere, they are equal:
+the marginals recover, for each label `l₀` and threshold `i`, the bit
+`f l₀ ≤ i`, and a natural is determined by the set of `i` dominating it. -/
+theorem domCount_inj (f g : Fin (Specht.nOf μ) → ℕ)
+    (h : ∀ i m, domCount f i m = domCount g i m) : f = g := by
+  funext l₀
+  have hiff : ∀ i, (f l₀ ≤ i ↔ g l₀ ≤ i) := by
+    intro i
+    have e1 := domCount_marginal f i l₀
+    have e2 := domCount_marginal g i l₀
+    rw [h i ((l₀ : ℕ) + 1), h i (l₀ : ℕ)] at e1
+    rw [e2] at e1
+    have hcancel : (if f l₀ ≤ i then (1 : ℕ) else 0) = (if g l₀ ≤ i then (1 : ℕ) else 0) :=
+      (Nat.add_left_cancel e1).symm
+    by_cases hf : f l₀ ≤ i <;> by_cases hg : g l₀ ≤ i <;>
+      simp [hf, hg] at hcancel ⊢
+  exact Nat.le_antisymm ((hiff (g l₀)).mpr le_rfl) ((hiff (f l₀)).mp le_rfl)
+
+/-- **Saturation in `m`.** For `m ≥ n` every label has val `< m`, so the count
+no longer moves. -/
+theorem domCount_sat_m (f : Fin (Specht.nOf μ) → ℕ) (i m : ℕ)
+    (hm : Specht.nOf μ ≤ m) : domCount f i m = domCount f i (Specht.nOf μ) := by
+  classical
+  unfold domCount
+  apply congrArg Finset.card
+  apply Finset.filter_congr
+  intro l _
+  have h1 : (l : ℕ) < m := lt_of_lt_of_le l.2 hm
+  have h2 : (l : ℕ) < Specht.nOf μ := l.2
+  simp [h1, h2]
+
+/-- **Saturation in `i`.** For `i ≥ n` every row index (which is `< n`) is `≤ i`,
+so the count no longer moves. -/
+theorem domCount_sat_i (f : Fin (Specht.nOf μ) → ℕ) (i m : ℕ)
+    (hbound : ∀ l, f l < Specht.nOf μ) (hi : Specht.nOf μ ≤ i) :
+    domCount f i m = domCount f (Specht.nOf μ) m := by
+  classical
+  unfold domCount
+  apply congrArg Finset.card
+  apply Finset.filter_congr
+  intro l _
+  have h1 : f l ≤ i := le_of_lt (lt_of_lt_of_le (hbound l) hi)
+  have h2 : f l ≤ Specht.nOf μ := le_of_lt (hbound l)
+  simp [h1, h2]
+
+/-- **Clamp both indices into `[0, n]`.** The counts depend only on
+`min i n`, `min m n`, by saturation. -/
+theorem domCount_clamp (f : Fin (Specht.nOf μ) → ℕ) (i m : ℕ)
+    (hbound : ∀ l, f l < Specht.nOf μ) :
+    domCount f i m = domCount f (min i (Specht.nOf μ)) (min m (Specht.nOf μ)) := by
+  classical
+  rcases le_or_gt (Specht.nOf μ) i with hi | hi
+  · rw [domCount_sat_i f i m hbound hi, min_eq_right hi]
+    rcases le_or_gt (Specht.nOf μ) m with hm | hm
+    · rw [domCount_sat_m f (Specht.nOf μ) m hm, min_eq_right hm]
+    · rw [min_eq_left (le_of_lt hm)]
+  · rw [min_eq_left (le_of_lt hi)]
+    rcases le_or_gt (Specht.nOf μ) m with hm | hm
+    · rw [domCount_sat_m f i m hm, min_eq_right hm]
+    · rw [min_eq_left (le_of_lt hm)]
+
+/-- **The dominance relation on tabloids.** `domRel a b` — "`a` is dominated by
+`b`" — holds when every dominance count of `a` is `≤` the corresponding count of
+`b`.  A genuine partial order (refl/trans/antisymm sorry-free below). -/
+def domRel (a b : Specht.Tabloid μ) : Prop :=
+  ∀ i m : ℕ, domCount (tabloidRowPattern a) i m ≤ domCount (tabloidRowPattern b) i m
+
+theorem domRel_refl (a : Specht.Tabloid μ) : domRel a a := fun _ _ => le_refl _
+
+theorem domRel_trans (a b c : Specht.Tabloid μ) :
+    domRel a b → domRel b c → domRel a c :=
+  fun hab hbc i m => le_trans (hab i m) (hbc i m)
+
+/-- **Antisymmetry (sorry-free).** Mutual domination forces equal counts, hence
+(by `domCount_inj` + `tabloidRowPattern_injective`) equal tabloids. -/
+theorem domRel_antisymm (a b : Specht.Tabloid μ) :
+    domRel a b → domRel b a → a = b := by
+  intro hab hba
+  apply tabloidRowPattern_injective
+  apply domCount_inj
+  intro i m
+  exact le_antisymm (hab i m) (hba i m)
+
+/-- The unbounded relation is equivalent to its clamp to a decidable bounded
+quantifier over `[0, n] × [0, n]`. -/
+theorem domRel_iff_bounded (a b : Specht.Tabloid μ) :
+    domRel a b ↔
+      ∀ i ∈ Finset.range (Specht.nOf μ + 1), ∀ m ∈ Finset.range (Specht.nOf μ + 1),
+        domCount (tabloidRowPattern a) i m ≤ domCount (tabloidRowPattern b) i m := by
+  constructor
+  · intro h i _ m _; exact h i m
+  · intro hbdd i m
+    rw [domCount_clamp (tabloidRowPattern a) i m (tabloidRowPattern_lt_nOf a),
+        domCount_clamp (tabloidRowPattern b) i m (tabloidRowPattern_lt_nOf b)]
+    refine hbdd (min i (Specht.nOf μ)) ?_ (min m (Specht.nOf μ)) ?_
+    · rw [Finset.mem_range]; exact Nat.lt_succ_of_le (min_le_right _ _)
+    · rw [Finset.mem_range]; exact Nat.lt_succ_of_le (min_le_right _ _)
+
+/-- **Decidability of the dominance relation (sorry-free).** -/
+instance domRel_decidable : DecidableRel (domRel (μ := μ)) := fun a b =>
+  decidable_of_iff _ (domRel_iff_bounded a b).symm
+
 /-! ## The single combinatorial core (one cited `sorry`)
 
 We bundle exactly Sagan 2.5.2's dominance content into one structure: a relation
 `dom` on `Tabloid μ` that is a partial order (refl/trans/antisymm) under which
 column permutations weakly decrease the tabloid. This is `LinearOrder`-free and
 `support`-free — all the order-construction and `Finsupp` plumbing has been
-peeled off by the lever and Layer 1. -/
+peeled off by the lever and Layer 1.
+
+The data is now supplied **concretely** by `domRel` (the partial-sum dominance
+order above): its reflexivity, transitivity, antisymmetry, and decidability are
+all discharged `sorry`-free, so `dominance_relation_exists` is `sorry`-free and
+the **single** remaining cited `sorry` is the genuine combinatorial heart —
+`dominance_colStab_lemma`, Sagan's §2.4 dominance lemma (a column permutation
+weakly decreases the tabloid). The opaque `Nonempty (DominanceData)` stub has
+become "concrete dominance order, fully a partial order, reduced to exactly
+Sagan's dominance lemma." -/
 
 /-- **The core's bundled data (Sagan 2.5.2's dominance content).** A reflexive,
 transitive, antisymmetric relation `dom` on tabloids of shape `μ` such that every
@@ -229,17 +473,41 @@ structure DominanceData (μ : YoungDiagram) where
   dom_colStab : ∀ (t : Specht.Tableau μ) (π : Specht.colStab t),
     dom (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t)) (Specht.Tabloid.mk t)
 
-/-- **STUB — the single combinatorial core (Sagan Thm 2.5.2).** The dominance
-partial order on tabloids of shape `μ` exists and column permutations weakly
-decrease it. This is the irreducible combinatorial heart of the standard-basis
-independence proof, isolated here free of any `LinearOrder` construction or
-`Finsupp`/`support` plumbing. -/
-theorem dominance_relation_exists (μ : YoungDiagram) : Nonempty (DominanceData μ) := by
-  -- Ref: [sagan2001] Thm 2.5.2 (dominance order on tabloids; a column permutation
-  -- π ∈ C_t sends {t} to a tabloid {π•t} weakly dominated by {t}, so {T} is the
-  -- maximum of supp(e_T)). See also the dominance lemma §2.4 and
-  -- [james1984representation] §8. The irreducible core of brick 4.
+/-- **STUB — Sagan's dominance lemma (the single combinatorial core).** A column
+permutation `π ∈ C_t` sends `{t}` to a tabloid `{π•t}` that is weakly **dominated
+by** `{t}` in the concrete dominance order `domRel`
+(`domCount {π•t} i m ≤ domCount {t} i m` for all `i, m`).  This is the irreducible
+combinatorial heart of the standard-basis independence proof — Sagan §2.4's
+dominance lemma — now stated against the concrete `domRel` built above, with no
+`LinearOrder`/`Finsupp` plumbing and **all order axioms already discharged**: only
+this single inequality remains.
+
+The concrete content (verified TRUE on the `n = 2` single-column case: with
+`t = id` the swap `π` moves label `0` from row `0` down to row `1`, dropping
+`domCount` at `(i = 0, m = 1)` from `1` to `0`, so `{π•t}` is strictly below
+`{t}`; the converse `domRel {t} {π•t}` fails there) is the column-by-column
+domination of Sagan's lemma — left as the one cited `sorry`. -/
+theorem dominance_colStab_lemma (t : Specht.Tableau μ) (π : Specht.colStab t) :
+    domRel (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+      (Specht.Tabloid.mk t) := by
+  -- Ref: [sagan2001] §2.4 the dominance lemma (a column permutation π ∈ C_t sends
+  -- {t} to a tabloid {π•t} weakly dominated by {t}, so {T} is the maximum of
+  -- supp(e_T)); cf. Thm 2.5.2 and [james1984representation] §8. The single
+  -- irreducible core of brick 4 — the order axioms are all proved above.
   sorry
+
+/-- **The single combinatorial core, reduced (sorry-free modulo
+`dominance_colStab_lemma`).** The dominance partial order on tabloids of shape
+`μ` exists: it is the concrete `domRel`, whose reflexivity, transitivity,
+antisymmetry, and decidability are all `sorry`-free; the only conjectural field is
+`dom_colStab`, supplied by the single cited `dominance_colStab_lemma`. -/
+theorem dominance_relation_exists (μ : YoungDiagram) : Nonempty (DominanceData μ) :=
+  ⟨{ dom := domRel
+     domDec := domRel_decidable
+     dom_refl := domRel_refl
+     dom_trans := domRel_trans
+     dom_antisymm := domRel_antisymm
+     dom_colStab := dominance_colStab_lemma }⟩
 
 /-! ## Layers 2–3 wiring (sorry-free modulo the single core) -/
 
