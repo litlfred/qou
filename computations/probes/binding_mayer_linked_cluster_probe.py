@@ -100,13 +100,15 @@ def main():
     print("  ~4x the 2-body -- the irreducible cluster operator (option-e PROBE 2) that")
     print("  ADDS TO / re-weights the proved interface structure. (b2 = the deuteron itself.)")
 
-    witness = {
-        "computation": "binding-mayer-linked-cluster-decomposition",
-        "description": ("Mayer linked-cluster decomposition of light-nuclei binding. b2 "
-                        "identified from the deuteron (unique 2-body nucleus); residual b3, b4 "
-                        "forced by A=3,4 data. Large b3/b2=0.64, b4/b2=4.16 => binding is "
-                        "irreducibly cooperative; no pairwise interface factor can close it."),
-        "scriptFile": "computations/probes/binding_mayer_linked_cluster_probe.py",
+    sys.path.insert(0, str(COMP))
+    sys.path.insert(0, str(COMP / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    description = ("Mayer linked-cluster decomposition of light-nuclei binding. b2 "
+                   "identified from the deuteron (unique 2-body nucleus); residual b3, b4 "
+                   "forced by A=3,4 data. Large b3/b2=0.64, b4/b2=4.16 => binding is "
+                   "irreducibly cooperative; no pairwise interface factor can close it.")
+    verdict = "strongly_cooperative_measures_4body_target"
+    data_payload = {
         "parameters": {"free_parameters": 0, "b2_source": "deuteron (unique 2-body nucleus)"},
         "data": {
             "per_bond_MeV": {k: mp.nstr(perbond[k], 12) for k in perbond},
@@ -114,17 +116,25 @@ def main():
             "b3_3He_MeV": mp.nstr(b3_He, 12), "b4_4He_MeV": mp.nstr(b4, 12),
             "b3_over_b2": mp.nstr(b3 / b2, 8), "b4_over_b2": mp.nstr(b4 / b2, 8),
             "pairwise_only_pred_MeV": {k: mp.nstr(pairwise[k], 12) for k in pairwise},
-            "verdict": "strongly_cooperative_measures_4body_target",
+            "verdict": verdict,
             "scope_note": ("does NOT rule out the interface program: the trace product "
                            "1-PROD f already carries cross-bond cooperative terms, and the "
                            "per-bond factors are Lean-proved exact (a permanent correct "
                            "contribution). Measures the size of the missing cluster operator."),
         },
     }
-    out = COMP / "binding-mayer-linked-cluster-decomposition.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
+    wb = WitnessBuilder.wrap_legacy(
+        "binding-mayer-linked-cluster-decomposition", data_payload,
+        script_path=__file__, engine="mpmath", output_dir=COMP)
+    wb.set_description(description)
+    wb.add_assertion("verdict == strongly_cooperative_measures_4body_target",
+                     computed=int(verdict == "strongly_cooperative_measures_4body_target"),
+                     expected=1)
+    # Preserve the legacy full-path scriptFile (build() emits the basename).
+    out = wb.save(extra={
+        "scriptFile":
+        "computations/probes/binding_mayer_linked_cluster_probe.py"})
+    print(f"\nwitness -> {out}")
     return 0
 
 
