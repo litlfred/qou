@@ -1,0 +1,40 @@
+**Consistency with prior usage.** The existing Frobenius--Hopf substrate
+$A_q$ of
+[Frobenius--Hopf substrate](#def:frobenius-hopf-substrate)
+is recovered as the evaluation of the $\varepsilon$-expansion
+
+$$
+A_q = A_1 + \varepsilon \, \phi_1 + \varepsilon^2 \, \phi_2 + \cdots
+$$
+
+where the classical algebra $A_1$ and the deformation cocycles
+$\phi_n \in HH^2(\mathcal{U}_q, \mathrm{Ad})$ are exactly those of
+the Drinfeld--Jimbo expansion already pinned down by
+[classical limit obstruction](#def:classical-limit-obstruction).
+Thus **nothing in the existing $q$-theory changes**: every identity
+previously written with $q - 1$ is now written with $\varepsilon$,
+and the classical point $\varepsilon = 0$ coincides with $q = 1$.
+
+**Motivation for taking $\varepsilon$ as primitive.** Two reasons.
+
+1. **Categorical origin.** The substrate parameter $q$ is a scalar
+   attached to the $R$-matrix.  The Reeb infinitesimal $\varepsilon$
+   is the tangent vector of the Reeb flow, a structure intrinsic to
+   $A$ before any braiding is chosen.  Declaring $\varepsilon$
+   primitive places the deformation direction inside the category
+   rather than outside it.
+2. **Exact error bounds.** With $\varepsilon$ primitive and living
+   in an ordered field with infinitesimals, the scaling laws
+   $\Delta_q \asymp \varepsilon^3$,
+   $\Omega_q \asymp \varepsilon^{-1}$,
+   $\mathrm{enstrophy} \asymp \varepsilon^{-4/3}$
+   become **literal arithmetic inequalities**, not asymptotic
+   $O(\cdot)$ statements — see
+   [surreal rate calculus](#prop:surreal-rate-calculus).
+
+**Notational convention for the remainder of the paper.** Throughout,
+$q - 1$ is identified with $\varepsilon$ and $q = 1$ with
+$\varepsilon = 0$.  The two conventions are logically identical;
+the $\varepsilon$-convention is the one in which the millennium-problem
+squeeze lemmas ([surreal squeeze](#lem:surreal-squeeze)) are literal,
+not asymptotic.
