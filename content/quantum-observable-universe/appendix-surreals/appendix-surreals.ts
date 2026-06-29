@@ -55,6 +55,7 @@ export default chapter({
             // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
             "b1-soft-sharpness-theorem",
             "b1-soft-sharpness-theorem-proof",
+            "b1-soft-sharpness-significance",
             // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
             "b1-figure-8-row-theorem",
             "b1-figure-8-row-theorem-proof",
@@ -123,6 +124,7 @@ export default chapter({
       blocks: [
         "surreal-blowup-calculus",
         "surreal-blowup-calculus-table-data",
+        "surreal-blowup-examples",
         // Möbius energy renormalization as a difference of infinite surreals
         // (the surreal-essential showcase; interprets prop:mobius-energy).
         "mobius-surreal-renormalization",
@@ -186,7 +188,10 @@ export default chapter({
           label: "sec:millennium-bsd-rh-ym",
           blocks: [
             // BSD
+            "categorical-mordell-weil",
             "q-birch-swinnerton-dyer",
+            "q-bsd-rank-zero",
+            "q-bsd-classical-limit",
             "bsd-surreal-bound",
             // RH
             "rh-surreal-bound",
@@ -204,6 +209,9 @@ export default chapter({
             "p-vs-np-surreal-bound",
             // Collatz family
             "q-collatz-conjecture",
+            "two-q-adic-valuation",
+            "collatz-contact-boundary-defn",
+            "collatz-parity-to-divisor",
             "collatz-contact-boundary",
             "collatz-no-cycles",
             "collatz-no-cycles-proof",
