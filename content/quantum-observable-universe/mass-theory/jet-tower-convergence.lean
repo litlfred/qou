@@ -34,7 +34,7 @@ private lemma tsum_sum_add_tail {f : ℕ → ℝ} (hf : Summable f) (N : ℕ) :
   | succ m ih =>
     rw [ih]
     have hshift : ∑' k, f (k + m) = f m + ∑' k, f (k + (m + 1)) := by
-      rw [tsum_eq_zero_add (hf.nat_add m)]
+      rw [Summable.tsum_eq_zero_add ((summable_nat_add_iff m).mpr hf)]
       simp only [zero_add]
       congr 1
       apply tsum_congr; intro k; ring
@@ -58,14 +58,15 @@ lemma summable_tower_terms {r : ℝ} (hr0 : 0 ≤ r) (hr1 : r < 1)
     Summable (fun n : ℕ => r ^ (n + 1) * Δ (n + 1)) := by
   -- Ref: [leitner2026]
   -- Weierstrass M-test against the convergent ∑ r^(n+1) · Δmax.
-  apply summable_of_norm_bounded (fun n => r ^ (n + 1) * Δmax)
+  apply Summable.of_norm_bounded (g := fun n => r ^ (n + 1) * Δmax)
   · -- The bounding series r^(n+1)*Δmax is summable: factor as (r^n*r)*Δmax.
     have hg : Summable (fun n : ℕ => r ^ (n + 1)) := by
       have : (fun n : ℕ => r ^ (n + 1)) = fun n => r ^ n * r := funext (fun n => by ring)
       rw [this]
       exact (summable_geometric_of_lt_one hr0 hr1).mul_right r
     exact hg.mul_right Δmax
-  · intro n; exact abs_term_le_geom hr0 hbound n
+  · intro n
+    rw [Real.norm_eq_abs]; exact abs_term_le_geom hr0 hbound n
 
 /-- Tail bound for the geometric series `∑_{k} r^k = r^N / (1 - r)`
 after truncation at N. -/
@@ -112,16 +113,17 @@ theorem jet_tower_tail_bound
     have hsplit := tsum_sum_add_tail hsum N
     have hcong : ∑' k, (fun n : ℕ => r ^ (n + 1) * Δ (n + 1)) (k + N) =
                  ∑' k, r ^ (k + N + 1) * Δ (k + N + 1) :=
-      tsum_congr (fun k => by simp; ring)
+      tsum_congr (fun k => by simp)
     linarith [hsplit, hcong.symm]
   -- Step 2: the tail terms are summable.
   have htail_summable : Summable (fun k : ℕ => r ^ (k + N + 1) * Δ (k + N + 1)) := by
-    apply summable_of_norm_bounded (fun k => r ^ (k + N + 1) * Δmax)
+    apply Summable.of_norm_bounded (g := fun k => r ^ (k + N + 1) * Δmax)
     · have : (fun k : ℕ => r ^ (k + N + 1) * Δmax) =
              fun k => r ^ (N + 1) * r ^ k * Δmax := funext (fun k => by ring)
       rw [this]
       exact ((summable_geometric_of_lt_one hr0 hr1).mul_left _).mul_right _
-    · intro k; exact abs_term_le_geom hr0 hbound (k + N)
+    · intro k
+      rw [Real.norm_eq_abs]; exact abs_term_le_geom hr0 hbound (k + N)
   -- Step 3: bound |tail| ≤ ∑' k, r^(k+N+1)*Δmax = Δmax*r^(N+1)/(1-r).
   rw [← htail_eq]
   have hbound_sum : Summable (fun k : ℕ => r ^ (k + N + 1) * Δmax) := by
@@ -131,11 +133,12 @@ theorem jet_tower_tail_bound
     exact ((summable_geometric_of_lt_one hr0 hr1).mul_left _).mul_right _
   calc |∑' k, r ^ (k + N + 1) * Δ (k + N + 1)|
       ≤ ∑' k, |r ^ (k + N + 1) * Δ (k + N + 1)| := by
-          have h := norm_tsum_le_tsum_norm htail_summable.norm
-          simp only [Real.norm_eq_abs] at h; exact h
+          have h := norm_tsum_le_tsum_norm (f := fun k => r ^ (k + N + 1) * Δ (k + N + 1))
+            (by simpa only [Real.norm_eq_abs] using htail_summable.abs)
+          simpa only [Real.norm_eq_abs] using h
     _ ≤ ∑' k, r ^ (k + N + 1) * Δmax :=
           tsum_le_tsum (fun k => abs_term_le_geom hr0 hbound (k + N))
-            (by simpa [Real.norm_eq_abs] using htail_summable.norm) hbound_sum
+            htail_summable.abs hbound_sum
     _ = Δmax * r ^ (N + 1) / (1 - r) := by
           simp_rw [show ∀ k : ℕ, r ^ (k + N + 1) * Δmax = r ^ (N + 1) * Δmax * r ^ k
             from fun k => by ring]
@@ -160,7 +163,7 @@ theorem jet_levels_for_precision
   have hprod : 0 < E₀ * Δmax := mul_pos hE₀ hΔmax
   -- Set the threshold c = ε*(1-r)/(E₀*Δmax); we need r^(N+1) ≤ c.
   set c := ε * (1 - r) / (E₀ * Δmax) with hc_def
-  have hc : 0 < c := by unfold_let c; positivity
+  have hc : 0 < c := by rw [hc_def]; positivity
   rw [Metric.tendsto_atTop] at hr_tendsto
   obtain ⟨N₀, hN₀⟩ := hr_tendsto c hc
   refine ⟨N₀, ?_⟩
@@ -168,9 +171,10 @@ theorem jet_levels_for_precision
     have h := hN₀ (N₀ + 1) (Nat.le_succ _)
     simp only [Real.dist_eq, sub_zero, abs_of_nonneg (pow_nonneg hr0.le _)] at h
     exact h
-  rw [div_le_iff h1r]
+  rw [div_le_iff₀ h1r]
   have h2 : E₀ * Δmax * r ^ (N₀ + 1) < E₀ * Δmax * c :=
     mul_lt_mul_of_pos_left hrN hprod
+  apply le_of_lt
   calc E₀ * Δmax * r ^ (N₀ + 1) < E₀ * Δmax * c := h2
     _ = ε * (1 - r) := by rw [hc_def]; field_simp
 

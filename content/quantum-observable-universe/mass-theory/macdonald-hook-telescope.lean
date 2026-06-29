@@ -51,11 +51,12 @@ representation) lives in a follow-up file. -/
 
 /-- The Wenzl-bridge normalisation `Z_n = Σ_{λ ⊢ n} f_λ · s_{λ,X}(Q)`,
     abstractly. The sum is encoded by the value `Z_n` on the right of
-    the telescope identity below; this `constant` records its
+    the telescope identity below; this `axiom` records its
     semantics for downstream lemmas without depending on the full
     partition combinatorics machinery (which lives in
     `y-lambda-closed-form-wenzl-bridge.lean`). -/
-opaque wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ
+-- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
+axiom wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ
 
 /-- The right-hand side of the telescope: a single geometric ratio. -/
 noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
@@ -111,7 +112,8 @@ single geometric factor, giving the canonical hook-content form. -/
 
 /-- Per-partition Wenzl Schur element value, abstracted (full
     definition in `y-lambda-closed-form-wenzl-bridge.lean`). -/
-opaque wenzlSchurElementValue (Q X : ℝ) (lamHookContent : ℝ → ℝ → ℝ) : ℝ
+-- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
+axiom wenzlSchurElementValue (Q X : ℝ) (lamHookContent : ℝ → ℝ → ℝ) : ℝ
 
 /-- The clean closed form for `y_λ`: numerator is the Schur
     principal-specialisation product, denominator is the telescope. -/

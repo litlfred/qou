@@ -17,7 +17,7 @@
 
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Ring.Defs
-import Mathlib.LinearAlgebra.BilinearForm.Basic
+import Mathlib.LinearAlgebra.BilinearForm.Properties
 import Mathlib.Data.Fintype.Basic
 
 namespace QOU.BraidsAndKnots
@@ -66,7 +66,7 @@ structure KnotOperatorFamily
     generically a singleton (Schrijver §7.4).
 -/
 class KnotOperatorLPSelection
-    (R : Type*) [OrderedCommRing R]
+    (R : Type*) [CommRing R] [PartialOrder R] [IsOrderedRing R]
     (H : Type*) [Ring H] [Algebra R H]
     (ops : KnotOperatorFamily R H)
     where
@@ -114,7 +114,7 @@ class KnotOperatorLPSelection
   the dependency chain.
 -/
 theorem knot_operator_lp_selection
-    {R : Type*} [OrderedCommRing R]
+    {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRing R]
     {H : Type*} [Ring H] [Algebra R H]
     {ops : KnotOperatorFamily R H}
     [_inst : KnotOperatorLPSelection R H ops]
