@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T04:02:48.903592+00:00",
-  "commitSha": "56bd29634b58f096923c9b4dfb06e99ebfc9b622",
+  "computedAt": "2026-06-29T17:22:46.103608+00:00",
+  "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5693,
+  "durationMs": 4810,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
   "scriptHash": "5457f04c7a7b",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,7 +19,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -29,7 +28,7 @@
     "q_0": "1.1099785955573347198997632204832250266562084087802",
     "method": "branching",
     "precision": "mpfr",
-    "dps": 0,
+    "dps": 50,
     "compute_dps": 70,
     "output_dps": 60,
     "target_dps": 60,
@@ -198,7 +197,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.388286490193505902319026768174638266689714414217919028368540",
+        "tr_M_q0_canonical_50dps": "0.388286471559303623300996013421437400033851516133983663589779",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -446,7 +445,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.104071098057639042716804228175825563169808644040657202657810",
+        "tr_M_q0_canonical_50dps": "0.104071069302087155715930731656888594077582419765481193981033",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -694,7 +693,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.206578528451580983097309993915859294473273969512315619623954",
+        "tr_M_q0_canonical_50dps": "0.206578475087402999475884105137140936875259423866238020984115",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1017,7 +1016,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0553584434002387645739770751801330760538092460961447770308063",
+        "tr_M_q0_canonical_50dps": "0.0553584262667831064698520474984377403163310367353238237927138",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1415,7 +1414,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0294467609690993515889051603348699632346840215311245880584935",
+        "tr_M_q0_canonical_50dps": "0.0294467557534109300253585700600884843589248235802397696689877",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1888,7 +1887,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.00789107551120110442043351523048319302063747852562078331452555",
+        "tr_M_q0_canonical_50dps": "0.00789107411351287580185243018802502180402798151173307369898942",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2436,7 +2435,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.00211463232879233412344867356007078268896309426133241789246551",
+        "tr_M_q0_canonical_50dps": "0.00211463195424304618240987136613495345966827885576167834844658",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2456,19 +2455,19 @@
     "upstream_witness_hashes": [
       {
         "path": "mass-table-ppb.witness.json",
-        "sha256": "5d233070afc1e040c178db70a5b7e2fd9a4827308be04eedf7c6f6a8d80c5a95",
-        "size_bytes": 11855,
-        "commitSha": "90dd066330aff54abe40ca0dbbee78b0763a7cb3",
-        "scriptCommitSha": "90dd066330aff54abe40ca0dbbee78b0763a7cb3",
-        "computedAt": "2026-06-14T23:18:28.728451+00:00"
+        "sha256": "72c93a1ae5c1ad8154a4660c97b0aee985e18e6a8b5d2e903588dd512914b89b",
+        "size_bytes": 11913,
+        "commitSha": "cf175829ea7eb4cb53526e1c0955680945eb935e",
+        "scriptCommitSha": "fb92449d6b0184c1e5d73617fc033973591bfaa3",
+        "computedAt": "2026-06-22T12:36:08.687751+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "ea657db3db19393412c7d16536695e9fda01d1d69975673b043f1ea5c4ff27d8",
-        "size_bytes": 9127,
-        "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
-        "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
-        "computedAt": "2026-06-02T17:01:05.154086+00:00"
+        "sha256": "cb4b76b51ef58f364fcc1a6e9a5c5ece4529dfffe098ce3a96b5e61f73f47819",
+        "size_bytes": 9112,
+        "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+        "computedAt": "2026-06-22T13:19:41.230571+00:00"
       }
     ]
   }
