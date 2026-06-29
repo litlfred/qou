@@ -234,4 +234,36 @@ noncomputable def heckeLocalizationOfPos
     BeasleyWittenLocalization ℝ :=
   heckeLocalization q P hsorted hconj (ne_of_gt (sum_qDimSq_pos hq hP))
 
+/-! ## C6 — full support (derived): every block carries strictly positive Plancherel weight
+
+A necessary condition the keystone's `W_λ` index must satisfy, and the colour-arena lever against
+a finite-`N` Sasakian (`ColourArenaBlockCount.lean`, #2605): the genuine Hecke Plancherel measure
+`d_q²/D²` is **strictly positive on every block** for `q > 1` — no Wedderburn block is dropped. This
+is *derived* from `qDim_pos` (no fit, no extra hypothesis), so any gauge datum claiming to realize
+the localization must reproduce full support; a measure that zeroed a block could not match. -/
+
+/-- **C6 — full support (derived).** For `q > 1` every block of the real Hecke localization carries
+strictly positive Plancherel weight: `loc p = d_q(p)²/D² > 0`. -/
+theorem heckeLocalizationOfPos_loc_pos
+    (q : ℝ) (hq : 1 < q) (P : Finset (List ℕ))
+    (hsorted : ∀ l ∈ P, l.Sorted (· ≥ ·))
+    (hconj : ∀ l ∈ P, Partition.conjugate l ∈ P)
+    (hP : P.Nonempty) (p : List ℕ) :
+    0 < (heckeLocalizationOfPos q hq P hsorted hconj hP).loc p := by
+  show 0 < qDim q p ^ 2 / (∑ m ∈ P, qDim q m ^ 2)
+  exact div_pos (pow_pos (qDim_pos hq p) 2) (sum_qDimSq_pos hq hP)
+
+/-- **C6 strengthened — the support is *all* of `P`.** The set of blocks with nonzero Plancherel
+weight is exactly the full block set: no block is dropped (`full support`, the no-finite-`N`-Sasakian
+necessary condition). -/
+theorem heckeLocalizationOfPos_full_support
+    (q : ℝ) (hq : 1 < q) (P : Finset (List ℕ))
+    (hsorted : ∀ l ∈ P, l.Sorted (· ≥ ·))
+    (hconj : ∀ l ∈ P, Partition.conjugate l ∈ P)
+    (hP : P.Nonempty) :
+    P.filter (fun p => (heckeLocalizationOfPos q hq P hsorted hconj hP).loc p ≠ 0) = P := by
+  apply Finset.filter_true_of_mem
+  intro p _
+  exact ne_of_gt (heckeLocalizationOfPos_loc_pos q hq P hsorted hconj hP p)
+
 end QOU.BraidKnot.Keystone

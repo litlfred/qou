@@ -134,4 +134,33 @@ instance plancherelSnData_four : PlancherelSnData 4 where
   sum_dim_sq := by decide
   two_sum_dim_sq_content := by decide
 
+/-- **Non-vacuity witness — `PlancherelSnData 3`.** Partitions `[3],[2,1],[1,1,1]` with genuine
+`dimHLF = 1,2,1`; `Σ dim² = 1+4+1 = 6 = 3!` and `2·Σ dim²·Σc² = 2·18 = 36 = 3·2·3!`. -/
+instance plancherelSnData_three : PlancherelSnData 3 where
+  parts := {[3], [2, 1], [1, 1, 1]}
+  parts_sorted := by decide
+  parts_sz := by decide
+  dim := dimHLF
+  sum_dim_sq := by decide
+  two_sum_dim_sq_content := by decide
+
+/-- **The keystone's own case — `PlancherelSnData 5`.** The s5-so3 keystone is the `S₅` Hecke
+trace, so `n = 5` is the case Identity I is actually consumed at (`W_λ` runs over the seven
+partitions of `5`). With the genuine `dimHLF = 1,4,5,6,5,4,1`:
+
+* **(i)** `Σ dim² = 1+16+25+36+25+16+1 = 120 = 5!` (`sum_dim_sq`); and
+* **(ii)** `2·Σ dim²·Σc² = 5·4·5! = 2400` (`two_sum_dim_sq_content`), the cleared content-square
+  Plancherel mean over the seven partitions.
+
+Both check against real `S₅` combinatorics by `decide`, so `two_sum_dim_sq_hooks` /
+`twoM_eq_plancherel_hook_sum` are non-degenerate at the keystone's own `n` — Identity I's
+`twoM 5 = 5(3·5−1) = 70` equals the genuine Plancherel squared-hook sum (cleared) at `n = 5`. -/
+instance plancherelSnData_five : PlancherelSnData 5 where
+  parts := {[5], [4, 1], [3, 2], [3, 1, 1], [2, 2, 1], [2, 1, 1, 1], [1, 1, 1, 1, 1]}
+  parts_sorted := by decide
+  parts_sz := by decide
+  dim := dimHLF
+  sum_dim_sq := by decide
+  two_sum_dim_sq_content := by decide
+
 end QOU.BraidKnot.IdentityI
