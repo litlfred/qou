@@ -525,10 +525,6 @@ def main() -> int:
         ],
     }
     from witness_base import WitnessBuilder
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     out_path = (
         WitnessBuilder.wrap_legacy(
             "atomic-mass-via-rho-k",
