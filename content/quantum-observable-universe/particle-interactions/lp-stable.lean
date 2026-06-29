@@ -30,8 +30,8 @@ def LPStable (G : GramMatrix) (x : H3Vector) : Prop :=
   ∀ i, 0 ≤ (G.mulVec x) i
 
 /-- The zero element is LP-stable for every Gram matrix. -/
-theorem lpStable_zero (G : GramMatrix) : LPStable G (fun _ => 0) := by
+theorem lpStable_zero (G : GramMatrix) : LPStable G (0 : H3Vector) := by
   intro i
-  simp [LPStable, Matrix.mulVec, Matrix.dotProduct]
+  simp [LPStable, Matrix.mulVec_zero]
 
 end QOU.ParticleInteractions
