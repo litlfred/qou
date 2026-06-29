@@ -61,8 +61,12 @@ def main() -> int:
 
 def _emit_witness(ratios, spread, mr):
     import hashlib
-    import json
+    import os as _os
     import subprocess
+    import sys as _sys
+    _sys.path.insert(0, _os.path.join(HERE, ".."))
+    _sys.path.insert(0, _os.path.join(HERE, "..", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
     script = os.path.abspath(__file__)
     try:
         sha = subprocess.check_output(
@@ -72,19 +76,18 @@ def _emit_witness(ratios, spread, mr):
         sha = None
     with open(script, "rb") as f:
         script_hash = hashlib.sha256(f.read()).hexdigest()[:12]
-    out = {
+    description = ("B_obs/|tr_M| across D,T,³He under the canonical Markov "
+                  "trace (include_inter=True). Tests whether the Path-3 "
+                  "single-prefactor binding model B=α_M·|tr_M| has a FORCED "
+                  "universal α_M (= m_e·ρ_binding, constant). Finding: the "
+                  "ratio varies ~182% (D 5.73, T 81.5, ³He 37.4), so α_M is "
+                  "NOT a forced constant — the model is a deuteron-anchored "
+                  "approximation that fails at A=3. Scope (a): tr_M as an "
+                  "ingredient is NOT excluded; only the constant-prefactor "
+                  "assumption is refuted. The D ratio 5.728 reproduces the "
+                  "published α_M 5.729 (cross-validates the pipeline).")
+    data_payload = {
         "name": "rho-binding-constancy",
-        "description": "B_obs/|tr_M| across D,T,³He under the canonical Markov "
-                       "trace (include_inter=True). Tests whether the Path-3 "
-                       "single-prefactor binding model B=α_M·|tr_M| has a FORCED "
-                       "universal α_M (= m_e·ρ_binding, constant). Finding: the "
-                       "ratio varies ~182% (D 5.73, T 81.5, ³He 37.4), so α_M is "
-                       "NOT a forced constant — the model is a deuteron-anchored "
-                       "approximation that fails at A=3. Scope (a): tr_M as an "
-                       "ingredient is NOT excluded; only the constant-prefactor "
-                       "assumption is refuted. The D ratio 5.728 reproduces the "
-                       "published α_M 5.729 (cross-validates the pipeline).",
-        "auditOnly": True,
         "probe": True,
         "substrate": {"q0": Q0, "q0_pin": "muon (computations-layer canonical)"},
         "ratios_B_over_trM": {k: float(v) for k, v in ratios.items()},
@@ -93,11 +96,17 @@ def _emit_witness(ratios, spread, mr):
         "witness": {"scriptCommitSha": sha, "scriptHash": script_hash,
                     "producer": "computations/probes/rho_binding_constancy_probe.py"},
     }
-    dest = os.path.join(HERE, "..", "rho-binding-constancy.witness.json")
-    with open(dest, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    print(f"[witness] wrote {os.path.normpath(dest)}")
+    wb = WitnessBuilder.wrap_legacy(
+        "rho-binding-constancy", data_payload,
+        script_path=__file__, engine="python",
+        output_dir=os.path.join(HERE, ".."))
+    wb.set_description(description)
+    wb.add_assertion("ratios computed for all 3 atoms",
+                     computed=int(len(ratios)), expected=3)
+    # auditOnly was a bare boolean in the legacy witness; preserve it
+    # verbatim (set_audit_only expects a report-path string instead).
+    out = wb.save(extra={"auditOnly": True})
+    print(f"[witness] wrote {os.path.normpath(str(out))}")
 
 
 if __name__ == "__main__":
