@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_DEUTERON_MEV_VALIDATION, M_E_MEV
 """
 Δ_λ multi-atom joint constraint with bar-involution.
 
@@ -41,7 +42,7 @@ q0_str = Q_50_DIGIT_STR
 q0 = mpf(q0_str)
 q0f = float(q0)
 h_q = float(q0 - 1/q0)
-m_e = 0.51099895069
+m_e = M_E_MEV
 
 # ══════════════════════════════════════════════════════════════════
 #  LOAD CHI-CACHE DATA
@@ -189,7 +190,7 @@ rho_pred = rho_LO + delta_rho / abs_tr_M_D
 m_D_pred = m_e * rho_pred
 m_D_codata = mpf(M_D_MEV_VALIDATION)  # MeV (codata_constants registry)
 B_D_pred = (mpf(M_P_MEV_VALIDATION) + mpf(M_N_MEV_VALIDATION)) - m_D_pred + m_e  # Z*m_p + N*m_n - M_D + Z*m_e
-B_D_AME = 2.22452  # MeV
+B_D_AME = AME_B_DEUTERON_MEV_VALIDATION  # MeV
 
 print(f"\n── Deuteron binding prediction (bar-symmetric min-norm) ──")
 print(f"  |tr_M| = {abs_tr_M_D:.10f}")
@@ -233,6 +234,6 @@ witness = {
     "allPassed": True,
 }
 
-with open(HERE / "delta-lambda-bar-involution.witness.json", "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
 print(f"\nWitness: delta-lambda-bar-involution.witness.json")

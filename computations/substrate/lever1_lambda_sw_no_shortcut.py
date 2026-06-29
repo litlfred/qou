@@ -96,7 +96,8 @@ witness = {
     ),
 }
 out = os.path.join("computations", "substrate", "lever1-lambda-sw-no-shortcut.witness.json")
-with open(out, "w") as f: json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-lambda-sw-no-shortcut", witness, script_path=__file__).save()
 
 print(f"tau_seed (forced by wired anchors) = {results['tau_seed_forced_by_wired_anchors']}")
 print(f"  integer? {results['tau_seed_is_integer']}   nearest {results['nearest_integer']}   golden tau(phi^2)={results['golden_tau_phi2']}")

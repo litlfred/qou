@@ -202,5 +202,6 @@ if __name__ == "__main__":
             candidates_D, key=lambda x: abs(x["volume"] - D_tgt))[:30],
     }
     out = Path(__file__).parent / "jsj-verification.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("jsj-verification", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

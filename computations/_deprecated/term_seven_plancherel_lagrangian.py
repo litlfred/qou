@@ -213,6 +213,6 @@ out = {
     "isotopes": results
 }
 out_path = Path(__file__).parent / "term-seven-plancherel-lagrangian.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("canonical-isospin-pyhecke", out, script_path=__file__).save()
 print(f"\nWitness: {out_path}")

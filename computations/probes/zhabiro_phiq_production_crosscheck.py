@@ -172,7 +172,8 @@ def main() -> int:
         },
     }
     out = HERE.parent / "zhabiro-phiq-production-crosscheck.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("zhabiro-phiq-production-crosscheck", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0 if ok else 1
 

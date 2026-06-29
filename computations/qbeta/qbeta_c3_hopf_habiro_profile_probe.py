@@ -243,7 +243,8 @@ def main() -> int:
     }
     witness["allPassed"] = all(a["passed"] for a in assertions)
     out = here / "qbeta-c3-hopf-habiro-profile.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("qbeta-c3-hopf-habiro-profile", witness, script_path=__file__).save()
 
     print("✓ qbeta-c3-hopf-habiro-profile.witness.json")
     print(f"  classical_limit(J_bal) = {cl_bal.real:+.6f}  (proven c_3 = -2)")

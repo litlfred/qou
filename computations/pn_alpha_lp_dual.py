@@ -560,5 +560,6 @@ if __name__ == "__main__":
         "best_alpha_for_binding": best,
     }
     out = Path(__file__).parent / "pn-alpha-lp-dual.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("pn-alpha-lp-dual", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

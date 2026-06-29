@@ -211,7 +211,8 @@ def main():
     # Write next to this script (Path(__file__).parent), not via a
     # multi-level parent chain — robust to invocation from any cwd.
     out_path = Path(__file__).parent / "hoefsmit-ew-cell-content.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("hoefsmit-ew-cell-content", out, script_path=__file__).save()
     print(f"\nWrote: {out_path}")
 
 

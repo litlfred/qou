@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 """
 Option E v6 — combined canonical formula.
 
@@ -37,15 +38,15 @@ from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
 
 
-M_E_MEV = mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 Q_0 = mpf("1.1097090249")
 
 H = Q_0 - 1 / Q_0
 HBAR_Q = 1 - 1 / Q_0
 MU_0 = M_E_MEV / (mpf(3) * H / mpf(2))
 
-AME_MeV = {"D": mpf("2.224566"), "T": mpf("8.481798"),
-           "3He": mpf("7.71806")}
+AME_MeV = {"D": mpf("2.224566"), "T": AME_B_TRITIUM_MEV_VALIDATION,
+           "3He": AME_B_HE3_MEV_VALIDATION}
 N_STRANDS = {"D": 6, "T": 9, "3He": 9}
 
 
@@ -276,7 +277,8 @@ def main() -> int:
         / "option-e-v6-combined-canonical.witness.json"
     )
     with out_path.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("atom-chi-rust-{fn_map[atom_label]}", witness, script_path=__file__).save()
     print(f"\nWrote {out_path}")
     return 0
 

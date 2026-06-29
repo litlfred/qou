@@ -207,6 +207,6 @@ out = {
     ]
 }
 out_path = Path(__file__).parent / "path-a-extended-light-isotopes.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("path-a-extended-light-isotopes", out, script_path=__file__).save()
 print(f"Witness: {out_path}")

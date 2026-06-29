@@ -166,6 +166,6 @@ out = {
                 "additional q-rational correction term.")
 }
 out_path = Path(__file__).parent / "f1-spectral-reconciliation.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("f1-spectral-reconciliation", out, script_path=__file__).save()
 print(f"Witness: {out_path}")

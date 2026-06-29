@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Probe — truncate Φ_q at SDP filtration depth k_max (Yekutieli finite slice).
 
 Per atom-knot-mass-derivation §"Architecture": Yekutieli's non-abelian
@@ -61,7 +62,7 @@ def main():
     HERE = Path(__file__).parent
     sdp = json.loads((HERE / "joint-tower-sdp-h6-h9.witness.json").read_text())
 
-    AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+    AME = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
     Z_N = {"deuteron": (1,1), "tritium": (1,2), "he3": (2,1)}
     sigma_3A_witness = json.loads(
         (HERE / "probe-term4-conventions.witness.json").read_text()

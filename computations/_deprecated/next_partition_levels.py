@@ -698,6 +698,5 @@ if __name__ == "__main__":
 
     witness_path = Path(__file__).parent / \
         'next-partition-levels.witness.json'
-    with open(witness_path, 'w') as f:
-        json.dump(witness, f, indent=2)
-    print(f"\nWitness → {witness_path}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-mass-complete-wedderburn", witness, script_path=__file__).save()

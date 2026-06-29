@@ -587,7 +587,8 @@ def main():
         },
     }
 
-    WITNESS_PATH.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("qbeta-habiro-p8-deep", witness, script_path=__file__).save()
     print(f"\nWrote witness → {WITNESS_PATH}")
     print(f"Total wall: {duration_ms} ms")
 

@@ -387,11 +387,7 @@ def main():
 
     here = os.path.dirname(os.path.abspath(__file__))
     wpath = os.path.join(here, "qbeta-root-of-unity.witness.json")
-    with open(wpath, "w") as f:
-        json.dump(out, f, indent=2)
-    print(f"\n  witness → {wpath}")
-    return out
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("qbeta-root-of-unity", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

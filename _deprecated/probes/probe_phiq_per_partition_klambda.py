@@ -54,6 +54,7 @@ Class C (diagnostic / probe) per three-calibration-discipline audit.
 Output: `probe-phiq-per-partition-klambda.witness.json`.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 
 import sys
 from pathlib import Path
@@ -83,7 +84,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 # carry the Laurent-form sign convention (only the bridge product
 # is wrapped in abs()). Per Gemini cycle-7 review on this file.
 
-AME_MEV = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+AME_MEV = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
 
 # ── Dominant-partition contributions per atom at k=1, 2, 3 ─────
 # Per-atom dominant partition (largest |contrib_λ(k=2)|) and its

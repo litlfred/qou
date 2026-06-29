@@ -243,13 +243,7 @@ def main():
     }
 
     out_path = Path(__file__).parent / "nv-pslq-extended-basis.witness.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2)
-    print()
-    print(f"Conclusion: {conclusion}")
-    print(verdict)
-    print(f"Witness: {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("nv-pslq-extended-basis", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

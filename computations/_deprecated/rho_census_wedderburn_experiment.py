@@ -269,10 +269,7 @@ def main():
             "4He": rows[3]["delta_rho"],
         },
     }
-    with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"\n→ wrote {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("rho-census-wedderburn-experiment", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

@@ -211,9 +211,7 @@ def main():
         "allPassed": bool(bulk_not_inv and hooks_also_vary and f_reproduces),
     }
     out = HERE/"kl-betti-cell-dependence.witness.json"
-    with open(out, "w", encoding="utf-8") as fh:
-        json.dump(witness, fh, indent=2, default=str)
-    print(f"\nWitness: {out.name}  allPassed={witness['allPassed']}  ({time.time()-t0:.0f}s)")
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
 if __name__ == '__main__':
     main()

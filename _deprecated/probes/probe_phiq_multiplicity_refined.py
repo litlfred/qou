@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Multiplicity-refined `n_⋆` probe + Type-B-folded-crystal-depth
 candidate for `conj:brane-tower-z-habiro`.
 
@@ -53,7 +54,7 @@ from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder
 from hecke_core import atom_per_generator_volumes, partition_is_self_conjugate
 
-AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+AME = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "he3": (2, 1)}
 RHO_MAP = {"deuteron": 1, "tritium": 2, "he3": 2}
 # k_Hecke per atom from joint-tower-sdp-h6-h9.witness.json conventions.

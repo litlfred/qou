@@ -125,18 +125,7 @@ def main():
         os.path.dirname(script_path),
         "dilog-archimedean-limit-partA.witness.json",
     )
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
-    print(f"all_within_bound_and_monotone = {all_ok}")
-    for row in results:
-        print(f"  x={row['x']}  Li2={row['Li2_x']}")
-        for s in row["sweep"]:
-            print(f"    eps={s['eps']}  n={s['n']:>7}  "
-                  f"err={s['abs_error']}  bound={s['predicted_bound']}  "
-                  f"ok={s['within_bound']} shrink={s['error_shrinks']}")
-    print(f"witness -> {out}")
-    sys.exit(0 if all_ok else 1)
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("dilog-archimedean-limit-partA", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

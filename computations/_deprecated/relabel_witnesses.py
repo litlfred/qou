@@ -47,7 +47,8 @@ def relabel_one(path: Path, dry_run: bool = False) -> bool:
         modified = True
 
     if modified and not dry_run:
-        path.write_text(json.dumps(data, indent=2, default=str))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("*", data, script_path=__file__).save()
     return modified
 
 

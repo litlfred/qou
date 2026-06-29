@@ -263,13 +263,7 @@ def main():
             ),
         },
     }
-    with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n→ wrote {out_path}")
-    print(f"  PSD pass: {witness['summary']['psd_pass']} / "
-          f"PSD fail: {witness['summary']['psd_fail']} / "
-          f"deferred: {witness['summary']['deferred']}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("ew-higgs-sdp-probe", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

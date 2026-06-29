@@ -150,4 +150,5 @@ w = {"computation":"3-channel-tower","timestamp":datetime.now(timezone.utc).isof
          ),
      },
      "results":results,"mean_err":float(np.mean(errs)),"max_err":float(max(errs))}
-json.dump(w, open("full-tower-mass.witness.json","w"), indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("full-tower-mass", w, script_path=__file__).save()

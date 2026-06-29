@@ -207,5 +207,6 @@ if __name__ == "__main__":
         "check_2_norm_factor": norm_results,
     }
     out = Path(__file__).parent / "derivation-checks.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("derivation-checks", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

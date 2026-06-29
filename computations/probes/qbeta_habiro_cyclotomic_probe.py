@@ -390,7 +390,8 @@ def main() -> int:
         },
     }
     out = HERE.parent / "qbeta-habiro-cyclotomic.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("qbeta-ck-cache", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

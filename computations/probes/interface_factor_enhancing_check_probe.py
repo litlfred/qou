@@ -70,11 +70,7 @@ def main():
                  "z_le_half_all_q": True, "verdict": "enhancing_escape_foreclosed"},
     }
     out = COMP / "interface-factor-enhancing-check.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("interface-factor-enhancing-check", witness, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

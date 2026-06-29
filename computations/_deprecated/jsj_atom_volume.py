@@ -267,5 +267,6 @@ if __name__ == "__main__":
         "alt_adjacent_only_from_D": adj_rows,
     }
     out = Path(__file__).parent / "jsj-atom-volume.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("jsj-atom-volume", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")

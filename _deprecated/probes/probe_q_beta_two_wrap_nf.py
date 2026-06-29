@@ -33,6 +33,7 @@ corresponding Q_β prediction.
 Output: `q-beta-two-wrap-nf.witness.json`.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -61,7 +62,7 @@ def _q_0_50dps() -> mp.mpf:
 def main() -> int:
     q0_mp = _q_0_50dps()
     m_e = mp.mpf(str(M_E_MEV))
-    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e
+    Q_AME = M_N_MEV_VALIDATION - M_P_MEV_VALIDATION - m_e
 
     h0 = q0_mp - 1 / q0_mp
     z0 = 1 / (mp.sqrt(q0_mp) + 1 / mp.sqrt(q0_mp))

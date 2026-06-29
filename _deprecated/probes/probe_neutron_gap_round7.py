@@ -22,6 +22,7 @@ measurements, 3 inputs, no fitting). Predictions on ⁴He, ⁶Li, ⁷Li,
 Output: neutron-gap-probes-round7.witness.json
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 import json
 import sys
 from pathlib import Path
@@ -39,9 +40,9 @@ _DPS = 50
 # AME 2020 binding energies (MeV)
 B_AME_MEV = {
     "deuteron":   2.22456612,    # ²H
-    "tritium":    8.4817984,     # ³H
+    "tritium":    AME_B_TRITIUM_MEV_VALIDATION,     # ³H
     "helium-3":   7.7180375,     # ³He
-    "helium-4":  28.295673,      # ⁴He (α)
+    "helium-4":  AME_B_HE4_MEV_VALIDATION,      # ⁴He (α)
     "lithium-6": 31.99405,       # ⁶Li
     "lithium-7": 39.244626,      # ⁷Li
     "beryllium-9": 58.16498,     # ⁹Be

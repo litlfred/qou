@@ -417,7 +417,8 @@ def main(ns: list[int] | None = None) -> int:
         }
         existing["computedAt"] = datetime.now(timezone.utc).isoformat()
         existing["summary_by_n"] = summary_by_n
-        out_path.write_text(json.dumps(existing, indent=2))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("y-lambda-symbolic-validate", existing, script_path=__file__).save()
 
     print(f"\n{'='*70}")
     print(f"OVERALL: "

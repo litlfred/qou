@@ -7,7 +7,7 @@ Background.  The substrate-pure leading-order identity
   Δm / M_N  ≈  (q-1)² · (1 - q⁻⁴) / 3  =  ℏ_q² · h_q · [2]_q / 3
 
 closes the CODATA proton–neutron split to **-1277 ppm** (at precise
-M_p = 938.272088 / M_n = 939.565421 / Δm/M_N = 0.001377471).
+M_p = M_P_MEV_VALIDATION / M_n = M_N_MEV_VALIDATION / Δm/M_N = 0.001377471).
 The needed multiplicative correction is **+0.128 %**.
 
 DERIVABLE RESULT (mechanically obtainable from substrate machinery —
@@ -54,7 +54,9 @@ Caveats.
     analysis (cross-paper / cross-branch dependency, PR #682 wires
     Li_2^q production).
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys

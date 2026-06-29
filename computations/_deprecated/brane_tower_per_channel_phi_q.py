@@ -272,7 +272,8 @@ def main() -> int:
         "codata_T_minus_3He_MeV": 0.019,
     }
     out = HERE / "brane-tower-per-channel-phi-q-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("brane-tower-per-channel-phi-q-probe", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

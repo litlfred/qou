@@ -121,9 +121,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "binding-qaskey-product-probe.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("binding-qaskey-product-probe", witness, script_path=__file__).save()
 for label, v in product_test.items():
     print(f"[{label}] simple product form? {v['all_laurent_product_form']}")
 print(f"\nsimple q-Askey product form (any normalization): {simple_product_form}")

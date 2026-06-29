@@ -239,5 +239,6 @@ if __name__ == "__main__":
         ),
     }
     out = Path(__file__).parent / "mass-endomorphism-magic-interpolation.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("mass-endomorphism-magic-interpolation", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

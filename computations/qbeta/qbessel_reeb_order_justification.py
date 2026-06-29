@@ -230,7 +230,8 @@ def main():
     }
     wp = HERE.parent / "probes" / "qbessel-reeb-order-justification.witness.json"
     wp.parent.mkdir(parents=True, exist_ok=True)
-    wp.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-chi-rust-d", out, script_path=__file__).save()
     print(f"\n  witness → {wp}")
     return 0
 

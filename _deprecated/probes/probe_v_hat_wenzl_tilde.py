@@ -32,7 +32,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -56,7 +58,7 @@ from derive_m_p_hecke_full_tower_50dps import _t5_cat_units_for  # noqa: E402
 set_compute_dps()
 
 from codata_constants import M_E_MEV  # CODATA-2022 full precision
-M_P_CODATA = mpf("938.27208816")
+M_P_CODATA = M_P_MEV_VALIDATION
 RHO_K_CODATA_P = mpf("1723.6")  # from atomic-mass-gb-nf.md line 62
 
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Probe — apply paper formula B(H) = m_e · ρ · tr_M(T_w(H)) to D, T, ³He
 using SDP-canonical braid words + ρ_factor from joint-tower-sdp-h6-h9.
 
@@ -83,7 +84,7 @@ def main():
         return {tuple(w["partition"]): float(w["y_lambda_numeric"])
                 for w in yw["tables_by_n"][str(n)]["weights"]}
 
-    B_AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+    B_AME = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
 
     print("=" * 92)
     print("SDP-canonical paper-formula probe: B = m_e · ρ · tr_M(T_w)")

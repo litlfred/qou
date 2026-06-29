@@ -62,6 +62,7 @@ combinatorics (hook-length + Young-subgroup longest-element sign).
 Producer for: computations/delta-lambda-l1-ceiling-sign-prune.witness.json
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 import json, math, os, hashlib, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -113,13 +114,13 @@ def witness_provenance(path: str) -> dict:
 
 
 # CODATA m_e; B_AME values from delta-lambda-canonical-residual.witness.json
-M_E_MEV = 0.51099895069
+M_E_MEV = M_E_MEV
 ISOTOPES = {
     # name : (chi witness, n=3A key, B_AME MeV, Z, N, A)
     "D":   ("atom-chi-rust-d.witness.json",   "6",  2.224566, 1, 1, 2),
-    "T":   ("atom-chi-rust-t.witness.json",   "9",  8.481798, 1, 2, 3),
+    "T":   ("atom-chi-rust-t.witness.json",   "9",  AME_B_TRITIUM_MEV_VALIDATION, 1, 2, 3),
     "3He": ("atom-chi-rust-3he.witness.json", "9",  7.718043, 2, 1, 3),
-    "4He": ("atom-chi-rust-4he.witness.json", "12", 28.295673, 2, 2, 4),
+    "4He": ("atom-chi-rust-4he.witness.json", "12", AME_B_HE4_MEV_VALIDATION, 2, 2, 4),
 }
 
 
@@ -202,18 +203,7 @@ def main() -> None:
         "allPassed": all_below,
     }
     out = os.path.join(HERE, "delta-lambda-l1-ceiling-sign-prune.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1)
-    # human-readable summary
-    print(f"{'iso':>4}{'net/tgt':>9}{'‖c‖₁/tgt':>10}{'net/‖c‖₁':>10}")
-    for r in rows:
-        print(f"{r['atom']:>4}{r['net_over_target']:>9.3f}"
-              f"{r['l1_ceiling_over_target']:>10.3f}{r['net_over_l1_survival']:>10.3f}")
-    print(f"\nall ‖c‖₁ below target: {all_below}  "
-          f"(ceiling range {witness['data']['l1_ceiling_over_target_range'][0]:.3f}"
-          f"–{witness['data']['l1_ceiling_over_target_range'][1]:.3f})")
-    print(f"wrote {out}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

@@ -77,9 +77,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "frakV-descent-zeta4-partner-probe.witness.json")
-with open(out, "w", encoding="utf-8") as f:
-    json.dump(witness, f, indent=2, ensure_ascii=False)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("frakV-descent-zeta4-partner-probe", witness, script_path=__file__).save()
 print(f"V0(η+iπ/2) = {lhs}")
 print(f"partner = −conj V0(η)? {partner_eq_negconj};  = −cosh+i·sinh? {partner_eq_explicit}")
 print(f"\nVERDICT: {verdict}")

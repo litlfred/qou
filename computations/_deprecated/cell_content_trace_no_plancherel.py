@@ -147,7 +147,8 @@ def main() -> int:
         "audit": "docs/audits/2026-05-05-path-alpha-bring-refinement.md",
     }
     out_path = Path(__file__).parent / "cell-content-trace-no-plancherel.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("cell-content-trace-no-plancherel", out, script_path=__file__).save()
     print(f"\nWrote: {out_path}")
     return 0
 

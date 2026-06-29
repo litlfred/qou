@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import M_E_MEV, M_PI_PM_MEV_VALIDATION, M_P_MEV_VALIDATION
 """
 Δ_λ closure probe: does m_π as CAL-3 tighten per-isotope binding?
 
@@ -56,7 +57,7 @@ HERE = Path(__file__).resolve().parent
 
 q0 = mpf(Q_50_DIGIT_STR)
 h_q = q0 - 1/q0
-m_e = mpf('0.51099895069')
+m_e = M_E_MEV
 
 # ══════════════════════════════════════════════════════════════════
 #  H_3(q) — 3 Wedderburn blocks (from witness data)
@@ -244,8 +245,8 @@ witness = {
         "q0": str(q0),
         "h_q": str(h_q),
         "m_e_MeV": str(m_e),
-        "m_pi_MeV": "139.57039",
-        "m_p_MeV": "938.27208816",
+        "m_pi_MeV": M_PI_PM_MEV_VALIDATION,
+        "m_p_MeV": M_P_MEV_VALIDATION,
     },
     "data": {
         "h3_meson_coefficients": {str(k): float(v) for k, v in coeffs_h3.items()},
@@ -265,7 +266,6 @@ witness = {
 }
 
 out_path = HERE / "delta-lambda-m-pi-constraint-probe.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2, default=str)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("delta-lambda-m-pi-constraint-probe", witness, script_path=__file__).save()
 print(f"Witness: {out_path.name}")

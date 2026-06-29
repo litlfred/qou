@@ -143,6 +143,6 @@ witness = {
     "allPassed": True,
 }
 
-with open(HERE / "kaon-pion-ratio-7-8.witness.json", "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("kaon-pion-ratio-7-8", witness, script_path=__file__).save()
 print(f"\nWitness: kaon-pion-ratio-7-8.witness.json")

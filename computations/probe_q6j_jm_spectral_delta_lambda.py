@@ -24,6 +24,7 @@ EXPLORATORY (per production-vs-exploratory-discipline): asserts the
 refutation (expected-negative ⇒ CI-safe). Touches no production. Δ_λ open.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV
 
 import json
 import sys
@@ -37,12 +38,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 40
 HERE = Path(__file__).parent
 
-M_E_MEV = mp.mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 AME_B = {
     "deuteron": mp.mpf("2.2245662"),
     "tritium": mp.mpf("8.4818"),
     "helium-3": mp.mpf("7.7180"),
-    "helium-4": mp.mpf("28.29566"),
+    "helium-4": AME_B_HE4_MEV_VALIDATION,
 }
 CHI_CACHE = {
     "deuteron": "chi-deuteron-h6-at-q0-50dps.witness.json",

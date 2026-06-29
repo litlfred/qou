@@ -92,9 +92,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "zeta4-complex-volume-moderator-probe.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("zeta4-complex-volume-moderator-probe", witness, script_path=__file__).save()
 print(f"(1) cosh(η+iπ/2)−i·sinh(η) = {mod_cosh}   sinh(η+iπ/2)−i·cosh(η) = {mod_sinh}")
 print(f"(2) Φ₄(i)={phi4_at_i}  [2]_q(i)={even_at_i} (bar-even→0)  h(i)={odd_at_i} (bar-odd→2i)")
 print(f"\nallPassed = {all_passed}")

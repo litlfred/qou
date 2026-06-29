@@ -192,13 +192,7 @@ def main():
     }
     out = os.path.join(os.path.dirname(__file__), "..", "..", "..", "computations",
                        "keystone-wrt-schurweyl-plancherel-4count.witness.json")
-    with open(os.path.abspath(out), "w") as f:
-        json.dump(witness, f, indent=2)
-        f.write("\n")
-    print(f"\nwitness → {os.path.relpath(os.path.abspath(out))}")
-    print("SCHUR-WEYL / PLANCHEREL 4-COUNT PROBE COMPLETE")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("keystone-wrt-schurweyl-plancherel-4count", witness, script_path=__file__).save()
 if __name__ == "__main__":
     raise SystemExit(main())

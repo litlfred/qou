@@ -88,6 +88,6 @@ witness = {
     "allPassed": all(r["burnside_holds"] for r in results.values()),
 }
 
-with open(HERE / "delta-lambda-dim-weight-proof.witness.json", "w", encoding="utf-8") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("delta-lambda-dim-weight-proof", witness, script_path=__file__).save()
 print(f"\nWitness: delta-lambda-dim-weight-proof.witness.json")

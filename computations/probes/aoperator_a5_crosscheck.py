@@ -325,7 +325,8 @@ def main() -> int:
             el = time.time() - t0
             eta = el / done * (len(lams) - done) if done else 0
             print(f"   λ {done}/{len(lams)}  elapsed {el:.0f}s  ETA {eta:.0f}s", flush=True)
-            CHI_CKPT.write_text(json.dumps({str(k): v for k, v in chi_comb.items()}))
+            from witness_base import WitnessBuilder
+            WitnessBuilder.wrap_legacy("aoperator-a5-crosscheck", witness, script_path=__file__).save()
     comb_secs = time.time() - t0
     print(f"[A5] combiner all-λ χ (float64): {comb_secs:.0f}s", flush=True)
 
@@ -386,7 +387,8 @@ def main() -> int:
         "auditOnly": True,
     }
     wpath = Path(__file__).with_suffix("").as_posix() + ".witness.json"
-    Path(wpath).write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("aoperator-a5-crosscheck", witness, script_path=__file__).save()
     print(f"[A5] witness → {wpath}  allPassed={witness['allPassed']}", flush=True)
     return 0
 

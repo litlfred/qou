@@ -366,13 +366,7 @@ def main():
             ],
         },
     }
-    with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n→ wrote {out_path}")
-    print(f"  atoms: {witness['summary']['n_atoms']}, "
-          f"cvxpy-checked: {witness['summary']['checked_via_cvxpy']}, "
-          f"deferred-to-rust: {witness['summary']['deferred_to_rust']}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("joint-tower-sdp-h6-h9", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

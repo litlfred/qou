@@ -245,7 +245,8 @@ def main() -> int:
         "y_lambda_equals_w_lambda_over_f_lambda": all_y_match_w,
     }
     out = HERE / "factor-2-normalization-trace.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("factor-2-normalization-trace", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

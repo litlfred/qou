@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Empirical falsifiability test of `he3_vs_tritium_shell_cancels`.
 
 The Lean theorem `he3_vs_tritium_shell_cancels` in
@@ -41,7 +42,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from witness_base import WitnessBuilder
 
-AME = {"tritium": 8.481798, "he3": 7.71806}
+AME = {"tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
 COULOMB_HE3_MINUS_H3_MEV = 0.7  # approximate single p-p pair @ ~2 fm
 EXPECTED_BRANE_DIFF_MEV = (AME["he3"] - AME["tritium"]
                               - COULOMB_HE3_MINUS_H3_MEV)

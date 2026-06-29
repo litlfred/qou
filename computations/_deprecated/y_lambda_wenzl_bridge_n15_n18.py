@@ -190,10 +190,7 @@ def main():
         "precision": "symbolic_q",
         "truncation_eps": 0.0,
     }
-    with open(out_path, "w") as fp:
-        json.dump(full, fp, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("y-lambda-wenzl-bridge-n15-n18", full, script_path=__file__).save()
 if __name__ == "__main__":
     main()

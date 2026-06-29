@@ -36,6 +36,7 @@ DISCIPLINE: this probe is DIAGNOSTIC. Per AGENTS.md, do NOT use the
 result to WIRE a new factor; report the verdict honestly.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_TRITIUM_MEV_VALIDATION
 
 
 # Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
@@ -112,12 +113,12 @@ def main() -> int:
     # v8_base is the v9-PRIOR framework prediction (before (1+q)/2),
     # an upstream PROBE INPUT — not a CODATA constant; carried over from
     # the Option-E master ledger v8 row (PR #1594).
-    # The target B_T - B_³He = 8.4817983 - 7.7180428 = 0.7637555 MeV
+    # The target B_T - B_³He = AME_B_TRITIUM_MEV_VALIDATION - 7.7180428 = 0.7637555 MeV
     # is derived from AME 2020 isotope binding values (³H, ³He).
     # (AME isotope bindings are not yet centralized in
     # experimental_constants.py; if/when added, swap these literals.)
     v8_base_MeV = mp.mpf("0.7232")  # PROBE INPUT from v8 audit
-    B_T_AME_MeV = mp.mpf("8.4817983")    # AME 2020 ³H binding
+    B_T_AME_MeV = AME_B_TRITIUM_MEV_VALIDATION    # AME 2020 ³H binding
     B_He3_AME_MeV = mp.mpf("7.7180428")  # AME 2020 ³He binding
     target_MeV = B_T_AME_MeV - B_He3_AME_MeV
     required_factor = target_MeV / v8_base_MeV

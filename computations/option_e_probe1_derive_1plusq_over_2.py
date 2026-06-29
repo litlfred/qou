@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """
 Option-E PROBE 1 — DERIVE-OR-FALSIFY the v9 mirror-pair (1+q)/2 closure factor.
 
@@ -51,7 +52,7 @@ M_PI_MEV = mp.mpf(M_PI_PM_MEV_VALIDATION)           # CAL-3 pion mass (input)
 STALE_Q0 = mp.mpf("1.1097090249")        # the v9 hardcoded muon-anchor literal
 
 # AME binding energies (MeV) — same source as the v9 script.
-AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.71806")}
+AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
 DIFF_TARGET = AME["T"] - AME["3He"]      # B_T - B_³He (target)
 
 REPO = Path(__file__).resolve().parent.parent.parent
@@ -308,7 +309,8 @@ def main() -> int:
     }
     out = COMP / "option-e-probe1-derive-1plusq-over-2.witness.json"
     with out.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("chi-{name}-at-q0-50dps", witness, script_path=__file__).save()
     print(f"Wrote {out}")
     print(f"Elapsed {elapsed:.3f}s")
     return 0

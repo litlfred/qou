@@ -484,12 +484,7 @@ def main():
     }
 
     witness_path = Path(__file__).parent / 'deuterium-optimal-nf.witness.json'
-    with open(witness_path, 'w') as f:
-        json.dump(witness, f, indent=2, default=str)
-
-    print(f"  Written to: {witness_path}")
-    print(f"\n  Done.")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("deuterium-optimal-nf", witness, script_path=__file__).save()
 if __name__ == '__main__':
     main()

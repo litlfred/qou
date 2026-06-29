@@ -195,5 +195,6 @@ witness = {
     "err_n_sym_pct": (float(m_n_H_sym)*E0_sym - M_N_MEV)/M_N_MEV*100,
 }
 out = Path(__file__).parent / "tower-with-frobenius-fix.witness.json"
-out.write_text(json.dumps(witness, indent=2, default=str))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("tower-with-frobenius-fix", witness, script_path=__file__).save()
 print(f"  Witness: {out}")

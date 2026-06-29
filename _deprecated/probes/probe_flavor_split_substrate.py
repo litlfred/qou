@@ -54,7 +54,9 @@ q_0 itself (~10 ppb), so the formula is APPROXIMATE — likely missing
 a subleading (q-1)^k correction.  This is a research-grade
 substrate match, not a proof.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -85,8 +87,8 @@ MU_D = mpf("312.39")
 MU_AVG = (MU_U + MU_D) / 2
 DELTA_MU = MU_D - MU_U  # 1.29 MeV by construction
 
-M_P_CODATA = mpf("938.272088")
-M_N_CODATA = mpf("939.565421")
+M_P_CODATA = M_P_MEV_VALIDATION
+M_N_CODATA = M_N_MEV_VALIDATION
 DELTA_M = M_N_CODATA - M_P_CODATA  # 1.293333 MeV
 M_N_AVG = (M_P_CODATA + M_N_CODATA) / 2
 

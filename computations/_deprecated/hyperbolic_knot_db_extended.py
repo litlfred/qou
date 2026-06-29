@@ -368,7 +368,8 @@ def main():
         'knots': db,
     }
     out = Path(__file__).parent / "hyperbolic-knot-db-extended.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("hyperbolic-knot-db-extended", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
 
 

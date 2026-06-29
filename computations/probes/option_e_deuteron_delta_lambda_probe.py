@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import M_E_MEV
 """
 Option E deuteron Δ_λ probe — experimental verification harness.
 
@@ -17,7 +18,7 @@ Inputs:
 - computations/chi-deuteron-h6-at-q0-50dps.witness.json
   (y_λ, χ^λ(β_D) for each of the 11 partitions of 6)
 - AME binding energy B_D = 2.224566 MeV
-- m_e = 0.51099895069 MeV
+- m_e = M_E_MEV MeV
 
 Path-D prediction:
   B_pred / m_e = Σ_λ y_λ · χ^λ(β_D) · Δ_λ
@@ -112,7 +113,7 @@ def main() -> int:
 
     # AME data
     B_D_MeV = mpf("2.224566")
-    m_e_MeV = mpf("0.51099895069")
+    m_e_MeV = M_E_MEV
     target = -B_D_MeV / m_e_MeV
     closure_threshold = mpf("0.10") * B_D_MeV
 
@@ -250,7 +251,8 @@ def main() -> int:
         / "option-e-deuteron-delta-lambda-probe.witness.json"
     )
     with out_path.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("chi-deuteron-h6-at-q0-50dps", witness, script_path=__file__).save()
 
     print(f"Wrote {out_path}")
     print(f"Best rule: {best['rule_name']}")

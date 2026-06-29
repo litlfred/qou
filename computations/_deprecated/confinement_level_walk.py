@@ -58,7 +58,8 @@ def load_witness():
 
 def save_witness(w):
     w["timestamp"] = datetime.now(timezone.utc).isoformat()
-    WITNESS_FILE.write_text(json.dumps(w, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("confinement-level-walk", w, script_path=__file__).save()
 
 
 # ── LEVEL 1: meson (quark pair σ_ud in H_2) ─────────────────────────

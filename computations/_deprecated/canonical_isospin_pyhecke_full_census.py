@@ -155,7 +155,8 @@ def main() -> int:
     }
 
     out_path = Path(__file__).parent / "canonical-isospin-pyhecke-full-census.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("canonical-isospin-pyhecke-full-census", witness, script_path=__file__).save()
     print(f"\n  Witness: {out_path}")
     return 0
 

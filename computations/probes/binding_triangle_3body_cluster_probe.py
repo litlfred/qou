@@ -114,11 +114,7 @@ def main():
         "data": {"rows": rows, "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"},
     }
     out = COMP / "binding-triangle-3body-cluster.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("binding-triangle-3body-cluster", witness, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

@@ -185,5 +185,6 @@ witness = {
     "lp_verification": {"feasible": lp_feas.get("frobenius_positive"), "t23_unconditional": True},
 }
 out = DIR / "comparison-table.witness.json"
-out.write_text(json.dumps(witness, indent=2))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("branching-qvalue-chain", witness, script_path=__file__).save()
 print(f"  Witness written to {out.name}")

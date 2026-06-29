@@ -307,12 +307,7 @@ def main():
         })
 
         # Save partial witness incrementally so a timeout doesn't lose work
-        with open(out_path, "w") as fp:
-            json.dump(out, fp, indent=2)
-
-    print()
-    print(f"Witness: {out_path}")
-
-
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("term-seven-exact", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

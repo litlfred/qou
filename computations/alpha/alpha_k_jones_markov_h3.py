@@ -212,6 +212,6 @@ out = {
     }
 }
 out_path = Path(__file__).parent / "alpha-k-jones-markov-h3.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("alpha-k-jones-markov-h3", out, script_path=__file__).save()
 print(f"\nWitness: {out_path}")

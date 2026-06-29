@@ -122,7 +122,8 @@ def main() -> int:
         "ratios_T3_T2_squared": ratios_T3_T2sq if pair_data else [],
     }
     out = HERE / "piece2-linked-cluster.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("paper-six-term-isotope-sweep", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

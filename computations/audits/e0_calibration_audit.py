@@ -296,7 +296,8 @@ def main() -> int:
     # differs only in ephemeral meta fields (commitSha, computedAt,
     # durationMs, scriptCommitSha). See witness_base._witnesses_substantively_equal.
     from witness_base import _witnesses_substantively_equal
-    new_bytes = json.dumps(out, indent=2, ensure_ascii=False)
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("e0-calibration-audit", out, script_path=__file__).save()
     if OUT.exists():
         try:
             existing = json.loads(OUT.read_text())

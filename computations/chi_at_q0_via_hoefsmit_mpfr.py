@@ -64,7 +64,8 @@ def _save_partial(out_path: Path, payload: dict) -> None:
     so an interrupt mid-write can't leave the witness corrupted.
     """
     tmp = out_path.with_suffix(out_path.suffix + ".partial")
-    tmp.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-{atom_name}-h{n}-at-q0-50dps", payload, script_path=__file__).save()
     tmp.replace(out_path)
 
 
@@ -338,7 +339,8 @@ def save_witness(record: dict) -> Path:
         "tr_M_at_q0": record["tr_M_at_q0"],
         "by_partition": record["by_partition"],
     }
-    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-{atom_name}-h{n}-at-q0-50dps", payload, script_path=__file__).save()
     return out
 
 

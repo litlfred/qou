@@ -114,9 +114,8 @@ witness = {
 }
 
 out = os.path.join(os.path.dirname(__file__), "lever1-binding-monodromy-hyperbolicity.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-binding-monodromy-hyperbolicity", witness, script_path=__file__).save()
 for k, v in results.items():
     print(f"  {k:32s} = {v}")
 print()

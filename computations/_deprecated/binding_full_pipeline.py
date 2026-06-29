@@ -297,5 +297,6 @@ if __name__ == "__main__":
         "results": results,
     }
     out_path = Path(__file__).parent / "binding-full-pipeline.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("binding-full-pipeline", witness, script_path=__file__).save()
     print(f"\nWitness: {out_path}")

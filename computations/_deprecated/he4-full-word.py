@@ -463,5 +463,6 @@ witness = {
     'gram_signature': {'pos': n_pos, 'neg': n_neg, 'zero': n_zero},
 }
 out = Path(__file__).with_suffix('.witness.json')
-out.write_text(json.dumps(witness, indent=2, default=float))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("he4-full-word", witness, script_path=__file__).save()
 print(f"\n  Witness: {out.name}")

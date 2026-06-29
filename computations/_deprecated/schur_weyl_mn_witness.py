@@ -209,5 +209,6 @@ if __name__ == "__main__":
         "results_by_atom": results,
     }
     out = Path(__file__).parent / "schur-weyl-mn.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("schur-weyl-mn", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

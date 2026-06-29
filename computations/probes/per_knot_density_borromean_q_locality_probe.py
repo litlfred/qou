@@ -237,7 +237,8 @@ def main() -> None:
 
     # Write witness
     out_path = Path(__file__).parent / "per-knot-density-borromean-q-locality-probe.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("per-knot-density-borromean-q-locality-probe", witness, script_path=__file__).save()
     print(f"\nWitness written to: {out_path.relative_to(Path.cwd())}")
 
 

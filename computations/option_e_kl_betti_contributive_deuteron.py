@@ -17,7 +17,7 @@ the per-partition magnitude:
     Σ_f = Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ      (canonical ansatz)
     Σ_b = Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · B_λ      (KL-Betti magnitude)
 
-B(D) = m_e · |Σ|.  AME 2020: B(D) = 2.22452 MeV.
+B(D) = m_e · |Σ|.  AME 2020: B(D) = AME_B_DEUTERON_MEV_VALIDATION MeV.
 
 Discipline note (AGENTS.md §"Before declaring refuted"): this is a
 SCOPE-LIMITED measurement of the size of a candidate contribution, not a
@@ -30,6 +30,7 @@ The B_λ computation is identical to the on-main probe
 P_{e,w}(1) over the canonical left cell of each shape.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_DEUTERON_MEV_VALIDATION, M_E_MEV
 
 import json
 import math
@@ -43,8 +44,8 @@ from kazhdan_lusztig import permutations_S_n, kl_polynomial
 mp.dps = 50
 HERE = Path(__file__).resolve().parent
 
-m_e = mpf("0.51099895069")          # CAL-1, matches the canonical producer
-B_AME_D = mpf("2.22452")            # AME 2020 deuteron binding (MeV)
+m_e = M_E_MEV          # CAL-1, matches the canonical producer
+B_AME_D = AME_B_DEUTERON_MEV_VALIDATION            # AME 2020 deuteron binding (MeV)
 N = 6                               # deuteron = H_6 / S_6
 
 # ── KL-Betti helpers (verbatim from probe_option_e_probe4_kl_batch.py) ──────
@@ -239,7 +240,8 @@ def main():
         "wallSeconds": round(time.perf_counter() - t0, 2),
     }
     out = HERE / "option-e-kl-betti-contributive-deuteron.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str), encoding="utf-8")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
     print(f"\nWitness: {out.name}  ({witness['wallSeconds']}s)")
 
 

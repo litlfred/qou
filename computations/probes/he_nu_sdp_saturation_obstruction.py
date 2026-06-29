@@ -151,7 +151,8 @@ def main() -> int:
         "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
     }
     o = HERE.parent / "he-nu-sdp-saturation-obstruction.witness.json"
-    o.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("he-nu-sdp-saturation-obstruction", witness, script_path=__file__).save()
     print(f"  witness: {o}")
     return 0
 

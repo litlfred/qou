@@ -286,7 +286,8 @@ def main() -> int:
         "isotopes": out_rows,
     }
     out = Path(__file__).parent / "tower-isotope-absolute.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("tower-isotope-absolute", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

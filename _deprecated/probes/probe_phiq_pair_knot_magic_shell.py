@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Pair-knot magic-shell probe for the ³He brane-tower gap +
 operator-selection LP dual confirmation.
 
@@ -54,8 +55,8 @@ from witness_base import WitnessBuilder
 from hecke_core import atom_per_generator_volumes
 from lp_dual_solver import solve_operator_selection_lp
 
-AME = {"deuteron": 2.224566, "tritium": 8.481798,
-       "he3": 7.71806, "he4": 28.295674}
+AME = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION,
+       "he3": AME_B_HE3_MEV_VALIDATION, "he4": AME_B_HE4_MEV_VALIDATION}
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2),
        "he3": (2, 1), "he4": (2, 2)}
 RHO_MAP = {"deuteron": 1, "tritium": 2, "he3": 2, "he4": 3}

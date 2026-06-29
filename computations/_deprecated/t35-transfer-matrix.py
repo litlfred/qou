@@ -342,6 +342,6 @@ witness = {
 }
 
 out_path = Path(__file__).parent / "t35-transfer-matrix.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("t35-transfer-matrix", witness, script_path=__file__).save()
 print(f"\nWitness: {out_path}")

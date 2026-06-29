@@ -106,7 +106,8 @@ def main() -> int:
         "by_partition": per_partition,
     }
     out = HERE / f"chi-{atom}-h{n}-at-q0-50dps-matrix-m.witness.json"
-    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-{atom}-h{n}-at-q0-50dps-matrix-m", payload, script_path=__file__).save()
 
     wb = WitnessBuilder("chi-at-q0-rust-lossless-helium-4", engine="python",
                         start_time=t0)

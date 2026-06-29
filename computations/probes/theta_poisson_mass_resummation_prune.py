@@ -86,8 +86,7 @@ if __name__ == "__main__":
     }
     path = os.path.join(os.path.dirname(__file__),
                         "theta-poisson-mass-resummation-prune.witness.json")
-    with open(path, "w") as fh:
-        json.dump(witness, fh, indent=2)
-    print(json.dumps(result, indent=2))
-    print("\nVERDICT:", witness["verdict"])
-    print(f"witness -> {path}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("theta-poisson-mass-resummation-prune", witness, script_path=__file__).save()
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("theta-poisson-mass-resummation-prune", witness, script_path=__file__).save()

@@ -133,15 +133,7 @@ def main():
     out = os.path.join(
         os.path.dirname(script_path), "chebyshev-pairing-engine.witness.json"
     )
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
-    print(f"all_ok = {all_ok}")
-    for r in per_q:
-        print(f"  q={r['q']:>8}  max_resid={r['max_residual']}  "
-              f"identity={r['identity_holds']}  sign_alt={r['sign_alternation_ok']}")
-    print(f"witness -> {out}")
-    sys.exit(0 if all_ok else 1)
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chebyshev-pairing-engine", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

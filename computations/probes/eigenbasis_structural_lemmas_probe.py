@@ -233,12 +233,8 @@ def _emit_witness(assertions, signs):
                     "producer": "computations/probes/eigenbasis_structural_lemmas_probe.py"},
     }
     dest = os.path.join(here, "..", "eigenbasis-structural-lemmas.witness.json")
-    with open(dest, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False, default=str)
-        f.write("\n")
-    print(f"[witness] wrote {os.path.normpath(dest)}", flush=True)
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("eigenbasis-structural-lemmas", out, script_path=__file__).save()
 if __name__ == "__main__":
     try:
         sys.exit(main())

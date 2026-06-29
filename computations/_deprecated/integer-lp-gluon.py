@@ -285,5 +285,6 @@ except ImportError as _e:
 witness["sdp_lift"] = _sdp_reports
 
 witness_path = Path(__file__).parent / "integer-lp-gluon.witness.json"
-witness_path.write_text(json.dumps(witness, indent=2))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("integer-lp-gluon", witness, script_path=__file__).save()
 print(f"\nWitness: {witness_path.name}")

@@ -420,8 +420,7 @@ witness = {
 }
 
 out_path = Path(__file__).parent / "g-a-g-action-derivation.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("g-a-g-action-derivation", witness, script_path=__file__).save()
 print()
 print(f"→ wrote {out_path}")

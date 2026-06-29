@@ -31,12 +31,14 @@ Ratio (n/p) of integrals = (μ_u·μ_d²)/(μ_u²·μ_d) = μ_d/μ_u = 1.0041
 
 So m_n/m_p ≈ (μ_d/μ_u)^(1/3) or similar A-dependent ratio.
 
-Test against CODATA: m_n/m_p = 939.565/938.272 = 1.00138.
+Test against CODATA: m_n/m_p = M_N_MEV_VALIDATION/M_P_MEV_VALIDATION = 1.00138.
 
 This probe tests several flavor-weighting schemes and compares to
 CODATA Δm.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys

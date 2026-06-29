@@ -256,7 +256,8 @@ def main() -> int:
         "rows": rows,
     }
     out = Path(__file__).parent / "exact-binding-per-operation.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("exact-binding-per-operation", witness, script_path=__file__).save()
     print(f"\n  Wrote {out}")
     return 0
 

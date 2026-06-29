@@ -500,7 +500,8 @@ def main():
 
     print(f"\nElapsed: {time.time() - t0:.1f}s")
     outpath = HERE / "yekutieli-volume-join.witness.json"
-    json.dump(witness, open(outpath, "w"), indent=2)
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-proton-h3", witness, script_path=__file__).save()
     print("Witness →", outpath)
     return witness
 

@@ -157,5 +157,6 @@ if __name__ == "__main__":
         "rows": rows,
     }
     out = Path(__file__).parent / "combined-tower-isotope-sweep.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("combined-tower-isotope-sweep", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

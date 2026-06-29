@@ -215,11 +215,7 @@ def main():
     print("\nVERDICT:\n" + verdict)
 
     wpath = "computations/keystone-step1-gate-wrt-vs-wlambda.witness.json"
-    with open(wpath, "w") as fh:
-        json.dump(out, fh, indent=2)
-    print(f"\nwitness -> {wpath}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("keystone-step1-gate-wrt-vs-wlambda", out, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

@@ -1,10 +1,11 @@
 ---
 # 46ke
 title: 'Integration: canonical watcher - hidden codata literals rollup (53 scripts)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-21T21:44:26Z
-updated_at: 2026-06-21T21:44:26Z
+updated_at: 2026-06-29T13:45:30Z
 ---
 
 

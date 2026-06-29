@@ -1,3 +1,4 @@
+from computations.substrate.codata_constants import M_E_MEV
 import mpmath as mp
 import _path_bridge
 from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402 (codata sweep)
@@ -23,7 +24,7 @@ def main():
             res *= q_int(i)
         return res
     
-    m_e = mp.mpf('0.51099895069')
+    m_e = M_E_MEV
     m_mu_codata = mp.mpf(M_MU_MEV_VALIDATION)
     vol_4_1 = 2 * mp.clsin(2, mp.pi/3)
     m_mu_pred = m_e * vol_4_1 / (1 - 1/q)**2

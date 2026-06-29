@@ -315,10 +315,7 @@ def main():
     }
 
     out_path = Path(__file__).parent / 'terminal-resolution-deuteron.witness.json'
-    with open(out_path, 'w') as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("terminal-resolution-deuteron", witness, script_path=__file__).save()
 if __name__ == '__main__':
     main()

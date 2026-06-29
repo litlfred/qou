@@ -235,5 +235,6 @@ if __name__ == "__main__":
         "isotope_predictions": results,
     }
     out = Path(__file__).parent / "universal-three-calibration.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("universal-three-calibration", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")

@@ -111,10 +111,7 @@ def main():
         "truncation_eps": 0.0,
     }
     out_path = Path(__file__).parent / "isotope-mass-from-y-lambda-tower.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("depth-resolved-phi-k-hoefsmit", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

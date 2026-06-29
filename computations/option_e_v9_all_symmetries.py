@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV, M_PI_PM_MEV_VALIDATION
 """
 Option E v9 — try ALL remaining symmetries on top of v8 baseline.
 
@@ -31,14 +32,14 @@ from pathlib import Path
 from mpmath import mpf, mp, fabs, acos, sqrt
 
 
-M_E_MEV = mpf("0.51099895069")
-M_PI_MEV = mpf("139.57039")
+M_E_MEV = M_E_MEV
+M_PI_MEV = M_PI_PM_MEV_VALIDATION
 Q_0 = mpf("1.1097090249")
 H_Q = 1 - 1 / Q_0
 H = Q_0 - 1 / Q_0
 MU_0 = M_E_MEV / (mpf(3) * H / mpf(2))
 
-AME_MeV = {"T": mpf("8.481798"), "3He": mpf("7.71806")}
+AME_MeV = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
 
 
 def dim_sn(lam):
@@ -235,7 +236,8 @@ def main() -> int:
     out = (repo_root / "folio-assistant" / "computations"
            / "option-e-v9-all-symmetries.witness.json")
     with out.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("atom-chi-rust-{fn_map[atom_label]}", witness, script_path=__file__).save()
     print(f"\nWrote {out}")
     print(f"\nBest: {sorted_results[0][0]} (err {sorted_results[0][1]['err_pct']:+.2f}%)")
     return 0

@@ -297,11 +297,7 @@ def main():
     }
 
     out_path = HERE / "nv1_candidate_a_doubleprime.witness.json"
-    with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2)
-    print(f"\nWitness written: {out_path}")
-    return witness
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("nv1_candidate_a_doubleprime", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

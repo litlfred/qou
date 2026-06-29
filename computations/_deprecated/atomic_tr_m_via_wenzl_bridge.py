@@ -218,7 +218,8 @@ def main() -> int:
             "q_0_50dps": q0_str,
             "results": results,
         }
-        OUT.write_text(json.dumps(out, indent=2))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("atomic-tr-m-wenzl-bridge", out, script_path=__file__).save()
         print(f"\n  Output: {OUT.relative_to(HERE.parent.parent)}")
         return 0
 

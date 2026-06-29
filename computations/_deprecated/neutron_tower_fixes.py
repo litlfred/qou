@@ -249,5 +249,6 @@ witness = {
     "fix2_JO_weights": {"m_n_corr": m_n2_corr, "err_pct": (m_n2_corr - M_N_MEV) / M_N_MEV * 100 if m_n2_corr else None},
     "fix3_inter_cross": {"m_n_corr": m_n3_corr, "err_pct": (m_n3_corr - M_N_MEV) / M_N_MEV * 100 if m_n3_corr else None},
 }
-Path("neutron-tower-fixes.witness.json").write_text(json.dumps(witness, indent=2, default=str))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("neutron-tower-fixes", witness, script_path=__file__).save()
 print("\n  Witness: neutron-tower-fixes.witness.json")

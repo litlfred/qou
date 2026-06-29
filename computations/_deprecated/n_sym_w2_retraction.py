@@ -239,7 +239,8 @@ def main() -> int:
         "open_question": "Derive N_v from categorical pipeline (currently CODATA G_F input)",
     }
     out_path = Path(__file__).parent / "n-sym-w2-retraction.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("n-sym-w2-retraction", out, script_path=__file__).save()
     print(f"Wrote: {out_path}")
     return 0
 

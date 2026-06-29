@@ -152,7 +152,8 @@ class KnotOperationCache:
             "factorizations": [asdict(f) for f in self.factorizations],
             "saved_at": datetime.now(timezone.utc).isoformat(),
         }
-        self.path.write_text(json.dumps(out, indent=2, default=str))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("knot-operation-cache", out, script_path=__file__).save()
 
     def add_operation(self, op: KnotOperation, discovered_in: str) -> str:
         """Register an operation; if already present, merge metadata."""

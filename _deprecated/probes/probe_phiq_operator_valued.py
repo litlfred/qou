@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Operator-valued Φ_q brane-tower probe — per-eigenvalue, signed,
 operator-trace form.
 
@@ -59,7 +60,7 @@ from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 from wedderburn_jones_markov import y_lambda_at
 from mass_at_3A_proper import atom_braid_word_3A
 
-AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+AME = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "he3": (2, 1)}
 RHO_MAP = {"deuteron": 1, "tritium": 2, "he3": 2}
 SWEEP_K = [1, 2, 3, 4, 5, 6, 8, 10]

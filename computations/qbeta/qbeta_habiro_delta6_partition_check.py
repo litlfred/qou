@@ -260,7 +260,8 @@ def main():
         "allPassed": True,
         "durationMs": duration_ms,
     }
-    WITNESS_PATH.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("qbeta-habiro-delta6-partition", witness, script_path=__file__).save()
 
     print(f"\nWrote witness → {WITNESS_PATH}")
     print(f"Total wall: {duration_ms} ms")

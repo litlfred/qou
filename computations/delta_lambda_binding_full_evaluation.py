@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, M_E_MEV
 """
 Δ_λ binding formula — full numerical evaluation for D, T, ³He, ⁴He.
 
@@ -21,8 +22,8 @@ from mpmath import mp, mpf, fabs
 mp.dps = 50
 HERE = Path(__file__).resolve().parent
 
-m_e = mpf('0.51099895069')
-B_AME = {'D': 2.22452, 'T': 8.48180, '3He': 7.71804, '4He': 28.29567}
+m_e = M_E_MEV
+B_AME = {'D': AME_B_DEUTERON_MEV_VALIDATION, 'T': 8.48180, '3He': AME_B_HE3_MEV_VALIDATION, '4He': AME_B_HE4_MEV_VALIDATION}
 
 def n_stat(lam):
     return sum(i * lam[i] for i in range(len(lam)))
@@ -147,6 +148,6 @@ witness = {
     "allPassed": True,
 }
 
-with open(HERE / "delta-lambda-binding-full-evaluation.witness.json", "w", encoding="utf-8") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("rho-k-h3a-lp-dual", witness, script_path=__file__).save()
 print(f"\nWitness: delta-lambda-binding-full-evaluation.witness.json")

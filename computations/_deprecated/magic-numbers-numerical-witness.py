@@ -198,7 +198,8 @@ def main():
 
     out_path = Path("docs/audits/2026-05-02-magic-numbers-numerical-witness.json")
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("magic-numbers-numerical-witness", witness, script_path=__file__).save()
     print()
     print(f"Wrote {out_path}")
 

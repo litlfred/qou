@@ -1161,9 +1161,8 @@ witness = {
 }
 
 witness_path = "tritium-he3-groebner-nf.witness.json"
-with open(witness_path, 'w') as f:
-    json.dump(witness, f, indent=2, default=str)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("tritium-he3-groebner-nf", witness, script_path=__file__).save()
 print(f"  Written to: {witness_path}")
 print()
 print("=" * 80)

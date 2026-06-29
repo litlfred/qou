@@ -326,24 +326,9 @@ def main():
         # Write witness file
         filename = f"{name.lower()}.json"
         filepath = REGISTRY_DIR / filename
-        with open(filepath, 'w') as f:
-            json.dump(witness, f, indent=2, default=str)
-
-    # Write index
-    index = {
-        'registry': 'nuclear-braid-registry',
-        'description': 'Ground-state braid orderings and Markov traces for all nuclei',
-        'timestamp': datetime.now(timezone.utc).isoformat(),
-        'q': Q_VAL,
-        'nuclei': [name for name, *_ in nuclei],
-        'files': {name.lower(): f"{name.lower()}.json" for name, *_ in nuclei},
-    }
-    with open(REGISTRY_DIR / 'index.json', 'w') as f:
-        json.dump(index, f, indent=2)
-
-    print()
-    print(f"Registry: {len(nuclei)} nuclei written to {REGISTRY_DIR}/")
-
-
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("braid-registry", witness, script_path=__file__).save()
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("braid-registry", witness, script_path=__file__).save()
 if __name__ == '__main__':
     main()

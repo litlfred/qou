@@ -460,7 +460,8 @@ def main() -> int:
         "design_note": "docs/audits/2026-06-01-e0-lambda-tryall-results.md",
     }
     out = HERE / "e0-lambda-tryall.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-neutron-h3-at-q0-50dps", witness, script_path=__file__).save()
     print(f"\n{'=' * 90}")
     print("SUMMARY: " + "  ".join(f"{r['candidate']}={r['verdict']}"
                                    for r in results))

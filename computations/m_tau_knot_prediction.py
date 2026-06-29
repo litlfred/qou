@@ -333,7 +333,8 @@ def main() -> None:
     }
 
     witness_path = Path(__file__).resolve().parent / "m-tau-knot-prediction.witness.json"
-    witness_path.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("m-tau-knot-prediction", witness, script_path=__file__).save()
     print(f"[witness] wrote {witness_path}")
     print(f"[done] elapsed = {witness['duration_sec']} s")
 

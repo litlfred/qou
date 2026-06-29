@@ -160,5 +160,6 @@ witness = {
     "verdict": verdict,
 }
 out = pathlib.Path(__file__).parent / "qbessel-second-order-qdifference-equation.witness.json"
-out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("qbessel-second-order-qdifference-equation", witness, script_path=__file__).save()
 print(f"\nwitness → {out}")

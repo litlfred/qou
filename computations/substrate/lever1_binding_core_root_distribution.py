@@ -135,6 +135,6 @@ out = {
 }
 witness_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             "lever1-binding-core-root-distribution.witness.json")
-with open(witness_path, "w") as f:
-    json.dump(out, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-binding-correction-cyclotomic-structure", out, script_path=__file__).save()
 print("witness ->", os.path.relpath(witness_path, os.getcwd()), flush=True)

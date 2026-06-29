@@ -134,9 +134,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "lever1-binding-habiro-qexponential.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-binding-habiro-qexponential", witness, script_path=__file__).save()
 print(f"\n  classical limit exp(x+x²/2)? {classical_ok}   log truncates at z²? {truncates_at_2}")
 print(f"  higher L_(≥3) all vanish at q=1 (carry q-1)? {higher_all_vanish_at_q1}")
 for m in range(1, MMAX + 1):

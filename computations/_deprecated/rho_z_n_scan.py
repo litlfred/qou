@@ -183,10 +183,7 @@ def main():
             "this scan provides the baseline data to compare against."
         ),
     }
-    with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"\n→ wrote {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("rho-z-n-scan", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

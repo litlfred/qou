@@ -326,8 +326,8 @@ full_witness = {
 }
 
 out = Path("inductive-atom-witness.json")
-with open(out, "w") as f:
-    json.dump(full_witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("inductive-atom-witness", full_witness, script_path=__file__).save()
 print(f"\nFull witness: {out}")
 print(f"  Size: {out.stat().st_size / 1024:.1f} KB")
 

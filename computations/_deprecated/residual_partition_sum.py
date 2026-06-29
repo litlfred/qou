@@ -193,7 +193,8 @@ def main() -> int:
         "sub_ratio_n_over_p": float(ratio),
     }
     out = Path(__file__).parent / "residual-partition-sum.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("residual-partition-sum", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

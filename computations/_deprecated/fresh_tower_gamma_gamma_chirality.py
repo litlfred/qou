@@ -193,5 +193,6 @@ witness = {
     "m_n_geom_MeV": float(m_n_geom) * calib,
 }
 out = Path(__file__).parent / "fresh-tower-gamma-gamma-chirality.witness.json"
-out.write_text(json.dumps(witness, indent=2, default=str))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("fresh-tower-gamma-gamma-chirality", witness, script_path=__file__).save()
 print(f"\n  Witness: {out}")

@@ -332,7 +332,8 @@ def main() -> int:
     out_path = Path(__file__).with_name(
         "schrodinger-color-falsifiability-fit.witness.json",
     )
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("schrodinger-color-falsifiability-fit", witness, script_path=__file__).save()
     print(f"  wrote {out_path}", flush=True)
     return 0 if witness["allPassed"] or v != "falsification-of-direct-identification" else 1
 

@@ -164,7 +164,8 @@ def main() -> int:
         "heavy_atom_benchmarks": results,
     }
     out_path = Path(__file__).parent / "rust-canonical-bridge-analysis.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("rust-canonical-bridge-analysis", witness, script_path=__file__).save()
     print(f"\n  Witness: {out_path}")
     return 0
 

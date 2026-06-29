@@ -169,7 +169,8 @@ def extend_y_lambda_tower(up_to_n: int, witness_path: Path | str = CANONICAL,
         "owns_n": sorted(set(prev) | set(newly)),
         "up_to_n": max(up_to_n, W["extension"].get("closed_form_tower", {}).get("up_to_n", 0)),
     }
-    witness_path.write_text(json.dumps(W, indent=2) + "\n", encoding="utf-8")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("y-lambda-tower-infra", W, script_path=__file__).save()
     return {"rows": rows, "gate": gate}
 
 

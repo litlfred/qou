@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import M_E_MEV
 """
 Option E deuteron Δ_λ probe v2 — richer rules from BK content-residue
 + shifted-tableau-depth candidates.
@@ -78,7 +79,7 @@ def main() -> int:
         })
 
     B_D_MeV = mpf("2.224566")
-    m_e_MeV = mpf("0.51099895069")
+    m_e_MeV = M_E_MEV
     closure_threshold = mpf("0.10") * B_D_MeV
 
     # Richer Δ_λ candidate rules
@@ -233,7 +234,8 @@ def main() -> int:
     )
     with out_path.open("w") as f:
         witness["lean_uniqueness_ref"] = lean_uniqueness_ref("deuteron (²H)")
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("chi-deuteron-h6-at-q0-50dps", witness, script_path=__file__).save()
 
     print(f"Wrote {out_path}")
     print(f"\n=== v2 results (11 BK content-based rules) ===")

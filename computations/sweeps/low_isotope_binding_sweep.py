@@ -285,7 +285,8 @@ def main() -> int:
     }
 
     out_path = Path(__file__).parent / "low-isotope-binding-sweep.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("low-isotope-binding-sweep", witness, script_path=__file__).save()
     print(f"\n  Wrote {out_path}")
     return 0
 

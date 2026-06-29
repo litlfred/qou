@@ -175,5 +175,6 @@ if __name__ == "__main__":
                        "paper_4He": (1 - H_VAL ** 2) ** 2},
     }
     out = Path(__file__).parent / "chirality-variants-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chirality-variants-probe", witness, script_path=__file__).save()
     print(f"Witness: {out}")

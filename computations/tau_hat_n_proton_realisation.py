@@ -499,7 +499,8 @@ def main():
     }
     out = Path(__file__).parent / "tau-hat-n-proton-realisation.witness.json"
     witness["lean_uniqueness_ref"] = lean_uniqueness_ref("proton")
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("tau-hat-n-proton-realisation", witness, script_path=__file__).save()
     print(f"\n[witness] -> {out}")
 
 

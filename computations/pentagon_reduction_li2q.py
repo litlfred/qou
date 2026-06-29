@@ -375,7 +375,8 @@ def main() -> int:
     # the legitimate annotation for non-bound-state observables.
     out_data = json.loads(out.read_text())
     out_data["observable_type"] = "raw_trace"
-    out.write_text(json.dumps(out_data, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("binding-via-interface-knot", out_data, script_path=__file__).save()
 
     print()
     print(f"  Witness: {out.name}")

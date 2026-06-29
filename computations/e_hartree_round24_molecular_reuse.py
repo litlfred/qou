@@ -226,7 +226,8 @@ def main() -> None:
     }
 
     out_path = _HERE / "e-hartree-round24-molecular-reuse.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("e-hartree-round24-molecular-reuse", witness, script_path=__file__).save()
 
     print("=" * 74)
     print("conj:e-hartree ROUND 24 — the molecular-reuse residual")

@@ -19,6 +19,7 @@ Assembles each term from its canonical source:
 Output: `multi-term-canonical-assembly.witness.json`
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_P_MEV_VALIDATION
 import json
 import sys
 from itertools import combinations
@@ -88,7 +89,7 @@ def main() -> int:
 
     atoms = [
         ("D",   "deuteron", 1, 1, 2.22456612, 1),  # ρ=1 per ℓ≤1 rule
-        ("T",   "tritium",  1, 2, 8.4817984,  1),
+        ("T",   "tritium",  1, 2, AME_B_TRITIUM_MEV_VALIDATION,  1),
         ("3He", "helium-3", 2, 1, 7.7180375,  1),
     ]
 
@@ -135,7 +136,7 @@ def main() -> int:
     print("  " + "-" * 75)
 
     # E_0 from proton calibration
-    m_p_AME = 938.27208816
+    m_p_AME = M_P_MEV_VALIDATION
     tr_p = tr_M["proton"]
     E_0 = m_p_AME / tr_p
 

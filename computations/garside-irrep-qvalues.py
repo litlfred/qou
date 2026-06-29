@@ -484,6 +484,5 @@ if __name__ == '__main__':
     }
 
     witness_path = Path(__file__).parent / 'garside-irrep-qvalues.witness.json'
-    with open(witness_path, 'w') as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"\nWitness: {witness_path.name}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("garside-irrep-qvalues", witness, script_path=__file__).save()

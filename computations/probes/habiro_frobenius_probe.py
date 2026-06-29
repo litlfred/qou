@@ -498,7 +498,8 @@ def main() -> int:
             ),
         },
     }
-    WITNESS_OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("habiro-coefficients-atomic-fast", out, script_path=__file__).save()
     print()
     print(f"Wrote: {WITNESS_OUT.name}")
     print(f"Step-2 all-atoms-compatible: "

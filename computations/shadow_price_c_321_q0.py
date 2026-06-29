@@ -170,5 +170,6 @@ if __name__ == "__main__":
         ),
     }
     out = Path(__file__).parent / "shadow-price-c-321-q0.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("higher-a-shell-diagnostic", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

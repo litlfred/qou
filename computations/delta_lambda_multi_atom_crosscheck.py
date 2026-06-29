@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, M_E_MEV
 """
 Δ_λ multi-atom cross-validation: test the corrected ansatz on D, T, ³He.
 
@@ -30,7 +31,7 @@ HERE = Path(__file__).resolve().parent
 q0 = mpf(Q_50_DIGIT_STR)
 qi = 1/q0
 h = q0 - qi
-m_e = mpf('0.51099895069')
+m_e = M_E_MEV
 
 def q_int(k):
     if k == 0: return mpf(0)
@@ -80,7 +81,7 @@ T_parts, T_chi, T_n = load_chi('atom-chi-rust-t.witness.json')
 He_parts, He_chi, He_n = load_chi('atom-chi-rust-3he.witness.json')
 
 # AME binding energies (validation targets)
-B_AME = {'D': mpf('2.22452'), 'T': mpf('8.48180'), '3He': mpf('7.71804')}
+B_AME = {'D': AME_B_DEUTERON_MEV_VALIDATION, 'T': mpf('8.48180'), '3He': AME_B_HE3_MEV_VALIDATION}
 
 # CODATA masses
 M_P = mpf(M_P_MEV_VALIDATION)
@@ -202,6 +203,6 @@ witness = {
     "allPassed": True,
 }
 
-with open(HERE / "delta-lambda-multi-atom-crosscheck.witness.json", "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
 print(f"\nWitness: delta-lambda-multi-atom-crosscheck.witness.json")

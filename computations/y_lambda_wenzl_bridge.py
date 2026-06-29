@@ -521,7 +521,8 @@ def main(ns: list[int], dps: int = 100, do_symbolic: bool = True) -> None:
             "weights": rows,
         }
         # Incremental save.
-        out_path.write_text(json.dumps(out, indent=2))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("y-lambda-wenzl-bridge", out, script_path=__file__).save()
 
     print(f"Wrote {out_path}")
 

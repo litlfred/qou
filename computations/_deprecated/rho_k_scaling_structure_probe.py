@@ -245,7 +245,8 @@ def main() -> int:
         "mirror_pair_analysis": mp,
     }
     out = HERE / "rho-k-scaling-structure.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("rho-k-codata-vs-six-term", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

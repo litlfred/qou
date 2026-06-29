@@ -191,5 +191,6 @@ if __name__ == "__main__":
         "results": results,
     }
     out = Path(__file__).parent / "ribbon-content-average.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("ribbon-content-average", witness, script_path=__file__).save()
     print(f"Witness: {out}")

@@ -309,6 +309,6 @@ witness = {
 }
 
 out = Path(__file__).parent / "sequential-nucleus-builder.witness.json"
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("sequential-nucleus-builder", witness, script_path=__file__).save()
 print(f"\nWitness: {out}")

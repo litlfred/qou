@@ -214,16 +214,7 @@ def main():
         },
     }
 
-    with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, default=float)
-
-    print(f"wrote {out_path}")
-    print(f"q⋆ = {Q_STAR:.10f}")
-    print(f"P_{{7,7}}(q⋆) = {p77_at_star:.3e}  (should ≈ 0)")
-    print(f"Φ(q⋆)       = {phi_at_star:.3e}  (non-zero: Φ zero is at q_Φ ≈ 0.4656, not q⋆)")
-    print(f"P_{{7,7}}(q₀) = {toffoli_diagonal(Q0):.6f}")
-    print(f"Φ(q₀)       = {q_and_amplitude(Q0):.6f}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("toffoli-lp-stability", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

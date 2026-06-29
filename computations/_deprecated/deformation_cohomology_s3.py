@@ -240,5 +240,6 @@ if __name__ == "__main__":
         ),
     }
     out = Path(__file__).parent / "deformation-cohomology-s3.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("deformation-cohomology-s3", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

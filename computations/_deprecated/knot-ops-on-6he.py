@@ -409,5 +409,6 @@ witness = {
     } for r in results],
 }
 out = Path(__file__).with_suffix('.witness.json')
-out.write_text(json.dumps(witness, indent=2, default=float))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("knot-ops-on-6he", witness, script_path=__file__).save()
 print(f"\n  Witness: {out.name}")

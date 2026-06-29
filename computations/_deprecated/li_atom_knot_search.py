@@ -215,28 +215,7 @@ def main():
         "truncation_eps": 0.0,
     }
     out_path = Path(__file__).parent / "li-atom-knot-search.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
-
-    # Summary
-    print()
-    print("=" * 78)
-    print("BEST MATCHES")
-    print("=" * 78)
-    for label in ["6Li", "7Li"]:
-        if not results[label]:
-            continue
-        # Find the (ρ, knot) with smallest error percentage
-        best = min(results[label].items(),
-                   key=lambda kv: abs(kv[1]["err_pct"]))
-        rho, info = best
-        print(f"\n  {label}: ρ = {rho}, K = {info['best_knot']}")
-        print(f"     Vol = {info['vol']:.6f}")
-        print(f"     B_pred = {info['B_pred']:.4f} MeV  vs  B_AME = "
-              f"{B_AME_6Li if label == '6Li' else B_AME_7Li:.4f} MeV")
-        print(f"     err = {info['err_pct']:+.4f}% = {info['err_ppb']:+.2e} ppb")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("li-atom-knot-search", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

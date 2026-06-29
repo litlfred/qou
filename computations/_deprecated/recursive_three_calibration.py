@@ -316,5 +316,6 @@ if __name__ == "__main__":
         "flavour_A_nucleon": fit_and_predict(TRAIN, TEST, "A"),
     }
     out = Path(__file__).parent / "recursive-three-calibration.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("recursive-three-calibration", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

@@ -265,7 +265,8 @@ def main() -> int:
     }
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(summary, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("frobenius-pairing-compute-audit", summary, script_path=__file__).save()
 
     print(f"Scanned {len(scripts)} scripts under {args.root}")
     for b in ("A", "B", "C", "skip"):

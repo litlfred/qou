@@ -43,7 +43,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -168,7 +170,7 @@ def main() -> int:
     print(f"    ∏ roots (udd) = {prod_n:.6f}")
     rel_diff = abs(prod_p - prod_n) / abs(prod_p) * 100
     print(f"    Relative difference: {rel_diff:.4f} %")
-    print(f"    Expected Δm/m_p = {(939.565 - 938.272)/938.272 * 100:.4f} %")
+    print(f"    Expected Δm/m_p = {(M_N_MEV_VALIDATION - M_P_MEV_VALIDATION)/M_P_MEV_VALIDATION * 100:.4f} %")
     print()
     print("  Verdict: E3 PRODUCES a flavor-distinguishing shift in the")
     print("  product, but the magnitude depends on the choice of μ_u, μ_d.")

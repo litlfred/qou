@@ -274,9 +274,8 @@ out = {
 }
 
 out_path = Path(__file__).parent / "probe-option-e-phase2-crystal-vertex-candidates.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("option-e-phase1-gram-h6", out, script_path=__file__).save()
 print("=" * 72)
 print(" Option-E PROBE 4 (cheap pass) — crystal-vertex candidates @ H_6")
 print("=" * 72)

@@ -233,7 +233,8 @@ def main() -> int:
             ),
         },
     }
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-deuteron-h6", witness, script_path=__file__).save()
     print()
     print(f"witness written: {out.relative_to(HERE.parent.parent)}")
     return 0

@@ -125,7 +125,8 @@ def main():
         "verdict": verdict,
     }
     wp = HERE / "lpdual-active-set-vs-edge-set-negative.witness.json"
-    wp.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("deuteron-real-sdp", out, script_path=__file__).save()
     print(f"\nwitness → {wp}")
     return 0
 

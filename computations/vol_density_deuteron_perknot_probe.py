@@ -85,5 +85,6 @@ witness = {
     "m_D_uniform_MeV": mp.nstr(m_uniform, 12), "err_uniform": mp.nstr(err_un, 15),
     "m_D_AME_MeV": str(M_D_AME), "per_knot_improves": bool(better),
 }
-(HERE / "vol-density-deuteron-perknot.witness.json").write_text(json.dumps(witness, indent=2, ensure_ascii=False))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("vol-density-deuteron-perknot", witness, script_path=__file__).save()
 print("witness -> vol-density-deuteron-perknot.witness.json")

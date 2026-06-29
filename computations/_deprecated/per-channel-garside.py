@@ -415,6 +415,7 @@ witness = {
     },
 }
 out = DIR / "per-channel-garside.witness.json"
-out.write_text(json.dumps(witness, indent=2))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("per-channel-garside", witness, script_path=__file__).save()
 print(f"\n  Witness written to {out.name}")
 print("=" * 70)

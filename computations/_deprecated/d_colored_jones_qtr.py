@@ -399,7 +399,8 @@ def main() -> int:
         "n_nf_terms": nf.n_terms(),
         "results_by_N": {str(k): v for k, v in results.items()},
     }
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("d-colored-jones-qtr", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

@@ -30,6 +30,7 @@ the + sign; the question is whether any proved-sign magnitude variant lands on
 the target. EXPECTED NEGATIVE on magnitude (CI-safe). Δ_λ stays open.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import M_E_MEV
 
 import json
 import sys
@@ -45,7 +46,7 @@ from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 50
 HERE = Path(__file__).resolve().parent
-M_E_MEV = mp.mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 AME_B = {"tritium": AME_B_TRITIUM_MEV_VALIDATION, "helium-3": mp.mpf("7.7180")}
 CHI = {"tritium": "chi-tritium-h9-at-q0-50dps.witness.json",
        "helium-3": "chi-helium-3-h9-at-q0-50dps.witness.json"}

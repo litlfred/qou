@@ -397,10 +397,7 @@ def main():
     }
 
     out_path = Path(__file__).parent / 'nuclear-braid-exact.witness.json'
-    with open(out_path, 'w') as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("nuclear-braid-exact", witness, script_path=__file__).save()
 if __name__ == '__main__':
     main()

@@ -197,10 +197,7 @@ def main():
         if res:
             out["by_n"][str(n)] = res
 
-    with open(Path(__file__).parent / "r-k-h5-h6-adaptive.witness.json", "w") as fp:
-        json.dump(out, fp, indent=2, default=str)
-    print(f"\nWitness saved.")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("r-k-h5-h6-adaptive", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

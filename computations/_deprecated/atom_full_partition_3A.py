@@ -281,7 +281,8 @@ def main() -> int:
         'isotopes': rows_out,
     }
     out = Path(__file__).parent / "atom-full-partition-3A.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-full-partition-3A", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

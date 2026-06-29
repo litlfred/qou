@@ -350,7 +350,8 @@ def main() -> int:
         "verdict": verdict,
     }
     out_path = Path(__file__).parent / "beta-ew-delta-I-321-and-wedderburn.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("beta-ew-delta-I-321-and-wedderburn", out, script_path=__file__).save()
     print(f"\nWrote: {out_path}")
     return 0
 

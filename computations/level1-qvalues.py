@@ -244,7 +244,6 @@ witness = {
 }
 
 out_path = Path(__file__).parent / "level1-qvalues.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("level1-qvalues", witness, script_path=__file__).save()
 print(f"Witness written to {out_path}")

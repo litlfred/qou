@@ -48,6 +48,7 @@ Sub-ansätze (within the 2-row stratum):
 Output: `delta-lambda-2row-stratum.witness.json`.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
@@ -89,8 +90,8 @@ M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
 ATOMS_CODATA = {
     # Anchors (LO exact by construction; ΔM = 0; included for sector-mass
     # data only — Δ_λ ansätze trivially solve to 0):
-    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816"},
-    "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": "939.56542052"},
+    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": M_P_MEV_VALIDATION},
+    "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": M_N_MEV_VALIDATION},
     # Compound atoms (binding-energy correction non-trivial):
     "D":   {"Z": 1, "N": 1, "n": 6,  "M_MeV": "1875.61294257"},
     "T":   {"Z": 1, "N": 2, "n": 9,  "M_MeV": "2808.92113298"},

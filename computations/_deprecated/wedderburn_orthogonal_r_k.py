@@ -179,6 +179,5 @@ def compute_orthogonal_r_3():
 if __name__ == "__main__":
     out = compute_orthogonal_r_3()
     out_path = Path(__file__).parent / "wedderburn-orthogonal-r-3-h4.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("wedderburn-orthogonal-r-3-h4", out, script_path=__file__).save()

@@ -20,6 +20,7 @@ Two prefactor variants:
 Output: `round6-tau-M-canonical.witness.json`
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_TRITIUM_MEV_VALIDATION
 import json
 import sys
 from pathlib import Path
@@ -35,7 +36,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 _DPS = 50
 
-B_AME = {"deuteron": 2.22456612, "tritium": 8.4817984, "helium-3": 7.7180375}
+B_AME = {"deuteron": 2.22456612, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "helium-3": 7.7180375}
 ZN = {"deuteron": (1, 1), "tritium": (1, 2), "helium-3": (2, 1)}
 
 

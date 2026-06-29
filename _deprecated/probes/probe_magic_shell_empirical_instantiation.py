@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Unified empirical instantiation of the three load-bearing
 findings from PR #638 closure (items 1+2+3 of the user-requested
 batch).
@@ -57,9 +58,9 @@ AME = {
     "proton":   0.0,
     "neutron":  0.0,
     "deuteron": 2.224566,
-    "tritium":  8.481798,
-    "he3":      7.71806,
-    "he4":      28.295674,
+    "tritium":  AME_B_TRITIUM_MEV_VALIDATION,
+    "he3":      AME_B_HE3_MEV_VALIDATION,
+    "he4":      AME_B_HE4_MEV_VALIDATION,
 }
 Z_N = {
     "proton":   (1, 0),

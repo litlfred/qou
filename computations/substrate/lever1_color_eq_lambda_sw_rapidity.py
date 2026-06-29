@@ -172,9 +172,8 @@ witness["verdict"] = (
      "abelianisation frame/normalisation.") + " No fit; nothing wired."
 )
 out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-lambda-sw-rapidity.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2, default=str)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-color-eq-lambda-sw-rapidity", witness, script_path=__file__).save()
 print("trace-free:", trace_free, "| N validated (PF 2nd-order ODE on omega):", N_validated,
       f"(rel residual={mp.nstr(res_w,3)})")
 print("hyperbolic on path:", hyperbolic)

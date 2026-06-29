@@ -81,7 +81,8 @@ def main() -> None:
         "rows": rows,
     }
     out_path = base / "y-lambda-wenzl-vs-mpfr-cross-check.json"
-    out_path.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("wenzl-vs-mpfr-cross-check", out, script_path=__file__).save()
     print(f"\nWrote {out_path}")
 
 

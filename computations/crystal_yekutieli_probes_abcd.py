@@ -430,7 +430,8 @@ def main():
         ),
     }
     out_path = Path(__file__).parent / "crystal-yekutieli-probes-abcd.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("crystal-yekutieli-probes-abcd", witness, script_path=__file__).save()
     print(f"  Witness: {out_path.relative_to(Path.cwd())}")
 
 

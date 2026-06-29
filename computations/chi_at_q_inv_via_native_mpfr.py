@@ -164,7 +164,8 @@ def run_atom(atom: str, Z: int, N: int, dps: int = 50) -> Path:
             "pr_consumer": 1742,
         },
     }
-    out_path.write_text(json.dumps(payload, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-{atom}-h{n}-at-qinv-50dps", payload, script_path=__file__).save()
     print(f"[{atom}] wrote {out_path.name} ({out_path.stat().st_size} B)",
           flush=True)
     return out_path

@@ -459,7 +459,8 @@ def main() -> None:
         "results": results,
     }
     out_path = Path(args.out)
-    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("sdp-q-algebraic-identifier", payload, script_path=__file__).save()
     print(f"\n[witness] wrote {out_path}")
 
 

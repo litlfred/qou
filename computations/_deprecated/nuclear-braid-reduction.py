@@ -398,10 +398,7 @@ def main():
     }
 
     out_path = Path(__file__).parent / 'nuclear-braid-reduction.witness.json'
-    with open(out_path, 'w') as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"Witness written to {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("nuclear-braid-reduction", witness, script_path=__file__).save()
 if __name__ == '__main__':
     main()

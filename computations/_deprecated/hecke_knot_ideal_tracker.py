@@ -228,7 +228,8 @@ def main():
         'only_neutron': [list(s) for s in sorted(only_n)],
     }
     out = Path(__file__).parent / "hecke-knot-ideal-tracker.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("hecke-knot-ideal-tracker", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
 
 

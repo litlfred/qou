@@ -519,6 +519,6 @@ witness = {
 }
 
 out = Path("free-neutron-decay.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("free-neutron-decay", witness, script_path=__file__).save()
 print(f"\nWitness: {out} (commit: {SHA[:8]})")

@@ -189,7 +189,8 @@ def main() -> int:
             "remains outside the product algebra."),
     }
     out_path = COMPUTATIONS_ROOT / "qbeta-c4-structural-product-identities.witness.json"
-    out_path.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("qbeta-c4-structural-product-identities", out, script_path=__file__).save()
     print(f"\n  Witness: {out_path.name}")
     return 0
 

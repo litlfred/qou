@@ -311,8 +311,8 @@ if result_lp.success:
     }
 
 witness_path = Path(__file__).parent / 'knot-operator-lp.witness.json'
-with open(witness_path, 'w') as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("knot-operator-lp", witness, script_path=__file__).save()
 print(f"\n  Witness: {witness_path.name}")
 
 

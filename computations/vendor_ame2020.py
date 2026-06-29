@@ -232,7 +232,8 @@ def main(argv: list[str] | None = None) -> int:
         "entries": entries,
     }
 
-    DST.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("vendor-ame2020", out, script_path=__file__).save()
     print(f"  Wrote: {DST}")
     return 0
 

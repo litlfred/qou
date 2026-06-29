@@ -162,7 +162,8 @@ def main() -> int:
     }
     witness["allPassed"] = all(a["passed"] for a in assertions)
     out = Path(__file__).resolve().parent / "h3-markov-trace-cyclicity-preflight.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("h3-markov-trace-cyclicity-preflight", witness, script_path=__file__).save()
 
     print("✓ h3-markov-trace-cyclicity-preflight.witness.json")
     print(f"  (A) cyclicity all 36 basis pairs: {'PASS' if not pair_fails else pair_fails}")

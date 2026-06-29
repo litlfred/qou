@@ -300,7 +300,8 @@ def main() -> int:
         "n_operator_blocks": n_operator,
     }
     out = HERE / "sublemma-2-1-A-operator-extract.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("sublemma-2-1-A-operator-extract", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

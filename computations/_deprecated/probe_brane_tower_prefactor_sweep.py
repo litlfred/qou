@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 # polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """Brane-tower prefactor investigation — testing the ρ_q factor across atoms.
 
@@ -83,10 +84,10 @@ def main() -> int:
     rho_q = float(1 / hbar_q**2)
 
     atoms = [
-        ("proton",   1, 0, "mass",    938.27208816),
-        ("neutron",  0, 1, "mass",    939.56542052),
+        ("proton",   1, 0, "mass",    M_P_MEV_VALIDATION),
+        ("neutron",  0, 1, "mass",    M_N_MEV_VALIDATION),
         ("deuteron", 1, 1, "binding", 2.22456612),
-        ("tritium",  1, 2, "binding", 8.4817984),
+        ("tritium",  1, 2, "binding", AME_B_TRITIUM_MEV_VALIDATION),
         ("helium-3", 2, 1, "binding", 7.7180375),
     ]
 

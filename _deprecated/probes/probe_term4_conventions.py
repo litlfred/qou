@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 """Probe Term 4 (Frobenius co-Casimir) under all 6 conventions.
 
 Decomposes the convention question into two axes:
@@ -96,8 +97,8 @@ if __name__ == "__main__":
     ATOMS = [
         ("D",   2,  2.22457),
         ("T",   3,  8.48180),
-        ("3He", 3,  7.71806),
-        ("4He", 4, 28.29569),
+        ("3He", 3,  AME_B_HE3_MEV_VALIDATION),
+        ("4He", 4, AME_B_HE4_MEV_VALIDATION),
     ]
 
     print(f"{'atom':>5} {'A':>2}  "
@@ -160,5 +161,6 @@ if __name__ == "__main__":
         "rows": rows,
     }
     out_path = Path(__file__).parent / "probe-term4-conventions.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("probe-term4-conventions", out, script_path=__file__).save()
     print(f"\nWitness: {out_path}")

@@ -254,7 +254,8 @@ def main() -> int:
         "combined_top": combined_top,
     }
     out = Path(__file__).parent / "d-knot-extended-search.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("d-knot-extended-search", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")
     return 0
 

@@ -245,7 +245,8 @@ def main() -> int:
             "structural prediction; net Q_β precision impact is empirical."),
     }
     out_path = COMPUTATIONS_ROOT / "qbeta-c8-c10-pell-lucas-closed-form-predictions.witness.json"
-    out_path.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("q-beta-operator-valued-N3", out, script_path=__file__).save()
     print(f"  Witness: {out_path.name}")
     return 0 if all(silver_match.values()) else 1
 

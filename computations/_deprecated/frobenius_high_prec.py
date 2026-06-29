@@ -150,7 +150,8 @@ def main() -> int:
         "n3_value_MeV": mp.nstr(s_n3 * me, 30),
     }
     out = Path(__file__).parent / "frobenius-high-prec.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("frobenius-high-prec", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

@@ -190,7 +190,8 @@ def main() -> int:
         ],
     }
     out = _COMP / "em-linking-invariant-scoping.witness.json"
-    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n",
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("mirror-pair-coulomb-sign-correction", witness, script_path=__file__).save()
                    encoding="utf-8")
     print(f"\nwrote {out}   allPassed={all_passed}")
     return 0 if all_passed else 1

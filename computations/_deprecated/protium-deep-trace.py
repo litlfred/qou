@@ -254,6 +254,6 @@ witness = {
     "full_trace": "\n".join(output_lines),
 }
 out = Path("protium-deep-trace.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("protium-deep-trace", witness, script_path=__file__).save()
 print(f"\nWitness: {out}")

@@ -187,7 +187,8 @@ def main() -> int:
         },
     }
     out = HERE.parent / "signed-crossing-feasibility.witness.json"
-    out.write_text(json.dumps(w, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("ame-2020-binding-energies", w, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

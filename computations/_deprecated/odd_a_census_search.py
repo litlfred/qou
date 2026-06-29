@@ -154,7 +154,8 @@ def main() -> int:
         "rows": witness_rows,
     }
     out = Path(__file__).parent / "odd-a-census-search.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("odd-a-census-search", witness, script_path=__file__).save()
     print(f"  Wrote {out}")
     return 0
 

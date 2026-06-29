@@ -208,6 +208,6 @@ witness = {
 }
 witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
 
-with open(HERE / "meson-vol-density.witness.json", "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("meson-vol-density", witness, script_path=__file__).save()
 print(f"Witness: meson-vol-density.witness.json")

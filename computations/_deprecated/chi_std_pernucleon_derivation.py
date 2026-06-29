@@ -172,5 +172,6 @@ if __name__ == "__main__":
         "m_neutron": 9,
     }
     out = Path(__file__).parent / "chi-std-pernucleon.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-std-pernucleon", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

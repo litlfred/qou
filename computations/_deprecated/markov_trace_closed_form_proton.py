@@ -272,7 +272,8 @@ def main() -> int:
         "anti_self_reciprocity_plancherel": sym_plancherel,
     }
     out = HERE / "markov-trace-closed-form-proton.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("markov-trace-closed-form-proton", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

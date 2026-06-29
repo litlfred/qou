@@ -25,6 +25,7 @@ DEFICIT directly without going through atomic mass.
 Output: neutron-gap-probes-round6.witness.json
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_TRITIUM_MEV_VALIDATION
 import json
 import sys
 from pathlib import Path
@@ -45,7 +46,7 @@ ATOMIC_WITNESS_IN = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 # AME binding energies (MeV)
 B_AME = {
     "deuteron": 2.22456612,
-    "tritium":  8.4817984,
+    "tritium":  AME_B_TRITIUM_MEV_VALIDATION,
     "helium-3": 7.7180375,
 }
 

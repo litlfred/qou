@@ -239,7 +239,8 @@ def main() -> int:
         "candidate_formulas_mp_me": candidates_mp,
     }
     out = HERE / "piece1-dimensional-bridge.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atomic-tr-m-mpfr-50dps", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

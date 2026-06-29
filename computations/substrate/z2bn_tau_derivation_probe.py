@@ -161,6 +161,6 @@ witness = {
               "q0 never tuned."),
 }
 wpath = "computations/substrate/z2bn-tau-derivation-probe.witness.json"
-with open(wpath, "w") as fh:
-    json.dump(witness, fh, indent=2, ensure_ascii=False)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("z2bn-tau-derivation-probe", witness, script_path=__file__).save()
 print(f"\nwitness -> {wpath}")

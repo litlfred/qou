@@ -95,7 +95,8 @@ from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
 def _save_partial(out_path: Path, payload: dict) -> None:
     """Atomic incremental save (per the hoefsmit producer convention)."""
     tmp = out_path.with_suffix(out_path.suffix + ".partial")
-    tmp.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m", payload, script_path=__file__).save()
     tmp.replace(out_path)
 
 

@@ -21,6 +21,7 @@ Bound to `conj:atom-braid-exterior-algebra`. Audit-only.
 """
 
 from __future__ import annotations
+from computations.substrate.codata_constants import M_E_MEV
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
@@ -123,7 +124,7 @@ def main() -> int:
 
     # Mass interpretation (m_e · A · 8G · tr_M formula from alpha_k_jones_markov_h12)
     print("\n=== Mass interpretation ===")
-    m_e_MeV = mp.mpf("0.51099895069")
+    m_e_MeV = M_E_MEV
     vol_8G = mp.mpf("7.327724753417752")  # Kashaev vol(L6a4)
     A_he4 = 4
     factor = m_e_MeV * A_he4 * vol_8G  # ≈ 14.98 MeV per unit tr_M

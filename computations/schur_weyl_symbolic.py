@@ -462,7 +462,8 @@ if __name__ == "__main__":
         "results_by_A": results,
     }
     out = Path(__file__).parent / "schur-weyl-symbolic.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("schur-weyl-symbolic", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")
     print("\nLimitation: Specht character set to χ^λ(𝒜) = 1 (trivial).")
     print("Real braid plug-in requires Murnaghan-Nakayama evaluation at")

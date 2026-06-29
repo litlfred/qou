@@ -202,7 +202,8 @@ def main() -> int:
         "verdict": verdict,
     }
     out_path = COMPUTATIONS_ROOT / "qbeta-closed-form-wiring-n4-to-n10.witness.json"
-    out_path.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("q-beta-operator-valued-N3", out, script_path=__file__).save()
     print(f"\n  Witness: {out_path.name}")
     return 0
 

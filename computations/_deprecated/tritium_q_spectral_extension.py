@@ -165,6 +165,6 @@ out = {
     "alpha_match_pct": float(abs(best_alpha - float(alpha_4_np))/float(alpha_4_np)*100)
 }
 out_path = Path(__file__).parent / "tritium-q-spectral-extension.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("tritium-q-spectral-extension", out, script_path=__file__).save()
 print(f"Witness: {out_path}")

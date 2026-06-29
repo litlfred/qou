@@ -303,7 +303,8 @@ def main() -> int:
         ),
     }
     out = HERE / "rho-f-categorical-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("markov-peel-atomic-tr-m", witness, script_path=__file__).save()
     print(f"\n  Witness written: {out}")
     return 0
 

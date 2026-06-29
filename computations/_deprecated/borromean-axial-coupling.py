@@ -311,9 +311,8 @@ witness = {
 }
 
 out_path = Path(__file__).parent / "borromean-axial-coupling.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("borromean-axial-coupling", witness, script_path=__file__).save()
 print(f"Witness written to {out_path}")
 print(f"\nIwahori--Hecke algebra H_3(q) at q = {q}:")
 print(f"  [2]_q = {q + qi:.6f}")

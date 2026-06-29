@@ -38,7 +38,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -163,13 +165,13 @@ def main() -> int:
     print("    So testing whether ρ_K _structurally_ factors as a_0 · a_1 · ...")
     print()
     print("  PROTON:")
-    rk_p = mpf("938.27208816") / (M_E_MEV * MARKOV_TR_CODATA["proton"])
+    rk_p = M_P_MEV_VALIDATION / (M_E_MEV * MARKOV_TR_CODATA["proton"])
     print(f"    ρ_K = m_p_CODATA / (m_e · |tr_M|) = {mp.nstr(rk_p, 10)}")
     print(f"    paper's reported ρ_K = {RHO_K_CODATA['proton']}")
     print(f"    ratio = {mp.nstr(rk_p / RHO_K_CODATA['proton'], 10)} (should be 1)")
     print()
     print("  NEUTRON:")
-    rk_n = mpf("939.565") / (M_E_MEV * MARKOV_TR_CODATA["neutron"])
+    rk_n = M_N_MEV_VALIDATION / (M_E_MEV * MARKOV_TR_CODATA["neutron"])
     print(f"    ρ_K = {mp.nstr(rk_n, 10)}")
     print(f"    paper's = {RHO_K_CODATA['neutron']}")
     print(f"    ratio = {mp.nstr(rk_n / RHO_K_CODATA['neutron'], 10)}")
@@ -177,7 +179,7 @@ def main() -> int:
     print("  ρ_K(proton) / ρ_K(neutron) = "
           f"{mp.nstr(RHO_K_CODATA['proton'] / RHO_K_CODATA['neutron'], 10)}")
     print(f"  expected from m_p/m_n · tr_M_n/tr_M_p = "
-          f"{mp.nstr((mpf('938.27')/mpf('939.565')) * (MARKOV_TR_CODATA['neutron']/MARKOV_TR_CODATA['proton']), 10)}")
+          f"{mp.nstr((mpf('938.27')/M_N_MEV_VALIDATION) * (MARKOV_TR_CODATA['neutron']/MARKOV_TR_CODATA['proton']), 10)}")
     print()
     print("  → ρ_K differences between isotopes ARE NATURALLY explained by")
     print("    |tr_M(β_K)| differences.  The OVERALL scale ~1700 is the open piece.")
@@ -216,7 +218,7 @@ def main() -> int:
     w.add_data("rho_K_isotope_ratios_match_tr_M_ratios", {
         "rho_K_p_over_rho_K_n": str(RHO_K_CODATA["proton"] / RHO_K_CODATA["neutron"]),
         "expected_from_tr_M_ratio": str(
-            (mpf("938.27") / mpf("939.565")) *
+            (mpf("938.27") / M_N_MEV_VALIDATION) *
             (MARKOV_TR_CODATA["neutron"] / MARKOV_TR_CODATA["proton"])
         ),
         "note": "Per-isotope ρ_K ratios are naturally explained by |tr_M| differences; overall scale 1700 is the open piece.",
@@ -230,7 +232,7 @@ def main() -> int:
     w.add_assertion("isotope_ratios_explained_by_tr_M",
                     computed=1.0 if mp.fabs(
                         RHO_K_CODATA["proton"]/RHO_K_CODATA["neutron"] -
-                        (mpf("938.27")/mpf("939.565")) *
+                        (mpf("938.27")/M_N_MEV_VALIDATION) *
                         (MARKOV_TR_CODATA["neutron"]/MARKOV_TR_CODATA["proton"])
                     ) < 0.01 else 0.0,
                     expected=1.0)

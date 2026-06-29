@@ -222,6 +222,6 @@ out = {
     "results": results
 }
 out_path = Path(__file__).parent / "spectral-predictor-no-fit.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("spectral-predictor-no-fit", out, script_path=__file__).save()
 print(f"Witness: {out_path}")

@@ -209,7 +209,8 @@ def main() -> int:
         } if ok else {},
     }
     out = Path(__file__).parent / "predictive-binding-from-braid.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-mass-atomic-braid", witness, script_path=__file__).save()
     print(f"\n  Wrote {out}")
     return 0
 

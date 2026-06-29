@@ -25,6 +25,7 @@ r/g across the isotopes. CV ≈ 0 ⇒ that factor collapses the residual.
 Run:  python3 -u computations/delta_lambda_shape_probe.py 2>&1 | tee /tmp/dl.log
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION
 
 import _path_bridge  # noqa: F401, E402
 import math
@@ -150,7 +151,7 @@ def _test_option_e_delta_lambda(me: float) -> None:
     from q_parameter import Q as Q0
 
     iso = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
-    b_ame = {"2H": 2.224566, "3H": 8.481821, "3He": 7.718058, "4He": 28.295673}
+    b_ame = {"2H": 2.224566, "3H": 8.481821, "3He": 7.718058, "4He": AME_B_HE4_MEV_VALIDATION}
 
     print("\n### option-e Δ_λ = sgn(w0^{S_λ'})·dim(V_λ) — does it recover A=3,4?")
     print("  B_Δ = m_e·Σ_λ y_λ X_λ Δ_λ;  X_λ = χ^λ_atom (gate) | χ^λ_free−χ^λ_atom (defect)")

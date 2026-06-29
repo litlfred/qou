@@ -198,7 +198,8 @@ def write_witness(payload):
     ]
     payload["status"] = "exploratory"
     out_path = Path(__file__).parent / "pyhecke-h3-vs-h3a-impact-comparison.witness.json"
-    out_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("pyhecke-h3-vs-h3a-impact-comparison", payload, script_path=__file__).save()
     print(f"  Witness: {out_path.relative_to(Path.cwd())}")
 
 

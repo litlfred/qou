@@ -201,12 +201,8 @@ def _emit_witness(thetas, gf, baro, abs_contents, assertions):
                     "producer": "computations/probes/chi_content_eigenbasis_probe.py"},
     }
     dest = os.path.join(here, "..", "chi-content-eigenbasis.witness.json")
-    with open(dest, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False, default=str)
-        f.write("\n")
-    print(f"[witness] wrote {os.path.normpath(dest)}", flush=True)
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-content-eigenbasis", out, script_path=__file__).save()
 if __name__ == "__main__":
     try:
         sys.exit(main())

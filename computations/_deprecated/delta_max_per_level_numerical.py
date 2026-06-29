@@ -174,7 +174,8 @@ def main():
         })
 
     out_path = Path("docs/audits/2026-05-02-delta-max-per-level-witness.json")
-    out_path.write_text(json.dumps(out, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("delta-max-per-level-numerical", out, script_path=__file__).save()
     print()
     print(f"Wrote {out_path}")
     print()

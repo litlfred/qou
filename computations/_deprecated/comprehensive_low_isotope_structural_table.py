@@ -224,6 +224,6 @@ out = {
     "mass_results": mass_results,
 }
 out_path = Path(__file__).parent / "comprehensive-low-isotope-structural-table.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("depth-resolved-phi-k-hoefsmit", out, script_path=__file__).save()
 print(f"\nWitness: {out_path}")

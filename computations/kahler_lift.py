@@ -399,5 +399,6 @@ if __name__ == "__main__":
         "canonical_B_MeV": canon_MeV,
     }
     out = Path(__file__).parent / "kahler-lift.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("kahler-lift", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

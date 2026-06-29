@@ -241,7 +241,8 @@ def _write_witness(path: Path, key: str, body: dict, q0_float: float,
         "tr_M_at_q0_via_u_poly": body["tr_M_at_q0_via_u_poly"],
         "tr_M_at_q0_rel_err": body["tr_M_at_q0_rel_err"],
     }
-    path.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("habiro-coefficients-atomic", witness, script_path=__file__).save()
     print(f"  Witness: {path}")
 
 

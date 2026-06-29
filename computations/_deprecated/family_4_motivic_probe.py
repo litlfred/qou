@@ -110,7 +110,8 @@ def main():
         },
     }
 
-    OUT_PATH.write_text(json.dumps(witness, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("family-4-motivic-probe", witness, script_path=__file__).save()
     print(f"Wrote {OUT_PATH}")
 
     # Human-readable summary

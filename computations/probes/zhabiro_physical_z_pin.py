@@ -231,7 +231,8 @@ def main() -> None:
         ],
     }
     out = self_path.parent.parent / "zhabiro-physical-z-pin.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("terms-2-3-atom-per-gen-mpfr-50dps", cross, script_path=__file__).save()
     print(f"\nwrote {out}")
 
 

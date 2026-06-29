@@ -109,7 +109,8 @@ def main() -> int:
             "m_e_mev_50dps": str(M_E_MEV),
             "results_by_atom": rows,
         }
-        OUT.write_text(json.dumps(out, indent=2))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("q-pinning-50-digit", out, script_path=__file__).save()
         print(f"\n  Output: {OUT.relative_to(HERE.parent.parent)}")
         return 0
 

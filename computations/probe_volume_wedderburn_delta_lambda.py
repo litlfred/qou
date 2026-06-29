@@ -28,6 +28,7 @@ tables in `chi-{deuteron,tritium,helium-3,helium-4}-*-at-q0-50dps.witness.json`.
 It does NOT touch production. Δ_λ remains an open gate (GAP-A-3/A-4).
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV
 
 import json
 import sys
@@ -42,7 +43,7 @@ mp.mp.dps = 50
 HERE = Path(__file__).parent
 
 # CAL-1 electron mass (CODATA, the binding energy scale ρ).
-M_E_MEV = mp.mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 
 # AME2020 binding energies (MeV) for the four light isotopes whose
 # χ^λ caches exist. These are the *targets*, never inputs to Vol_λ.
@@ -50,7 +51,7 @@ AME_B = {
     "deuteron": mp.mpf("2.2245662"),
     "tritium": mp.mpf("8.4818"),
     "helium-3": mp.mpf("7.7180"),
-    "helium-4": mp.mpf("28.29566"),
+    "helium-4": AME_B_HE4_MEV_VALIDATION,
 }
 CHI_CACHE = {
     "deuteron": "chi-deuteron-h6-at-q0-50dps.witness.json",

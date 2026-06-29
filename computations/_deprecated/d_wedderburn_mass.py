@@ -264,7 +264,8 @@ def main() -> int:
         "err_std_only_ppb": str(err_std * 10**9),
     }
     out = Path(__file__).parent / "d-wedderburn-mass.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("d-wedderburn-mass", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

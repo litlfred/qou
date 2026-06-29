@@ -151,7 +151,8 @@ def main() -> int:
         "rows": rows_audited,
     }
 
-    OUT.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("low-isotope-mass-table", out, script_path=__file__).save()
     print(f"\n  Audit complete. {n} isotopes; {n_at_floor} at f64 floor "
           f"(< {F64_FLOOR_PPB:.2e} ppb).")
     print(f"  Max assembly-step residual: {max_assembly_residual:.3e} ppb")

@@ -584,9 +584,8 @@ for nucleon_name, quark_types in [("proton", ['u', 'u', 'd']),
     witness["candidates"][nucleon_name] = nuc_results
 
 out_path = Path(__file__).parent / "confinement-operator-selection.witness.json"
-with open(out_path, 'w') as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("confinement-operator-selection", witness, script_path=__file__).save()
 print(f"\n\nWitness written to: {out_path.name}")
 print("Done.")
 

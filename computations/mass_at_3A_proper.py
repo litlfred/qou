@@ -243,7 +243,8 @@ def _cached_seminormal(shape: tuple[int, ...]):
         # cold-cache load via mmap_mode="r" above.
         np.savez(npz_path,
                  **{f"sig{i}": M for i, M in enumerate(dense)})
-        json_path.write_text(json.dumps({
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("mass-at-3A-proper", witness, script_path=__file__).save()
             "dim": int(dim),
             "n_sigmas": len(dense),
             "syts": [{str(k): int(v) for k, v in d.items()} for d in syts],
@@ -839,5 +840,6 @@ if __name__ == "__main__":
         "tower_path": results_tw,
     }
     out = Path(__file__).parent / "mass-at-3A-proper.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("mass-at-3A-proper", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

@@ -202,7 +202,8 @@ def main() -> int:
         "relative_error_ppb": rel * 1e9,
     }
     out = Path(__file__).parent / "d-nf-weighted-vol.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("d-nf-weighted-vol", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

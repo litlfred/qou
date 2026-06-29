@@ -201,7 +201,8 @@ def main(ns: list[int]) -> None:
             print(f"  λ = {lam}: y_λ = {sp.sstr(sp.factor(y_sym))}")
         print()
 
-    out_path.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("y-lambda-symbolic", out, script_path=__file__).save()
     print(f"Wrote {out_path}")
 
 

@@ -106,7 +106,8 @@ def main() -> int:
         'results': results,
         'generated_at': datetime.now(timezone.utc).isoformat(),
     }
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("a3_tr_M_symbolic", witness, script_path=__file__).save()
     print(f"\nwitness: {out.name}")
     return 0
 

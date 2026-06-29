@@ -142,7 +142,8 @@ def main() -> int:
                    'pending neutron-tower gap resolution',
     }
     out = Path(__file__).parent / "brane-tower-distance-weighted.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("brane-tower-distance-weighted", witness, script_path=__file__).save()
     print(f"  Witness: {out}")
     return 0
 

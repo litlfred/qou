@@ -259,5 +259,6 @@ if __name__ == "__main__":
         "results": all_results,
     }
     out = Path(__file__).parent / "multi-level-sdp.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("multi-level-sdp", witness, script_path=__file__).save()
     print(f"Witness: {out}")

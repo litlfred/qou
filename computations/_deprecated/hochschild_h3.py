@@ -350,7 +350,8 @@ if __name__ == "__main__":
         "cup_product_inner_pair_at_q0_polynomial_q": expose_polynomial(cup_pairing_diag, q),
     }
     out = Path(__file__).parent / "hochschild-h3.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("hochschild-h3", witness, script_path=__file__).save()
     print(f"Witness: {out}")
 
 

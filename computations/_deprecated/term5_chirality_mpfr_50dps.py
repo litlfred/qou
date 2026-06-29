@@ -92,7 +92,8 @@ def main() -> int:
         "h_squared_50dps": str(h_sq),
         "chirality_factors": rows,
     }
-    OUT.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("q-pinning-50-digit", out, script_path=__file__).save()
     print(f"\n  Output: {OUT.relative_to(HERE.parent.parent)}")
     return 0
 

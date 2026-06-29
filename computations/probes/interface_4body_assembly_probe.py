@@ -171,11 +171,7 @@ def main():
                                         "AME": mp.nstr(sc_ame, 12)}},
     }
     out = COMP / "interface-4body-assembly.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("interface-4body-assembly", witness, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

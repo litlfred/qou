@@ -226,10 +226,8 @@ def load_shas():
 
 
 def save_shas(shas):
-    with open(SHAS_PATH, "w") as f:
-        json.dump(shas, f, indent=2, sort_keys=True)
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("mass-table-ppb", shas, script_path=__file__).save()
 def update():
     """Recompute SHAs for all known artifacts and their dependencies."""
     shas = load_shas()

@@ -515,7 +515,8 @@ witness = {
 
 witness_path = Path(__file__).parent / "meson-nucleon-nf.witness.json"
 with witness_path.open("w") as f:
-    json.dump(witness, f, indent=2, default=str)
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("beta-decay-energy-scale", witness, script_path=__file__).save()
 print(f"\n  Witness written to {witness_path.name}")
 
 print("\n" + "=" * 72)

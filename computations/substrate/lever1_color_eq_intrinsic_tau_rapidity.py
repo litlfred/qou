@@ -145,9 +145,8 @@ witness["verdict"] = (
     + " No fit; nothing wired."
 )
 out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-intrinsic-tau-rapidity.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2, default=str)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-color-eq-intrinsic-tau-rapidity", witness, script_path=__file__).save()
 for r in (r1, r0):
     print(f"[{r['label']}] j={r['j_curve']} (kleinj {r['j_from_tau_kleinj']}, ok={r['j_validates']})")
     print(f"    tau_E={r['tau_E']}  Im={r['Im_tau_E']}")

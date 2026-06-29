@@ -280,6 +280,7 @@ witness = {
     },
 }
 out = DIR / "tower-mass-neutrino.witness.json"
-out.write_text(json.dumps(witness, indent=2))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("beta-decay-energy-scale", witness, script_path=__file__).save()
 print(f"\n  Witness written to {out.name}")
 print("=" * 70)

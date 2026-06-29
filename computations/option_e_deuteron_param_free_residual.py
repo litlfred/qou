@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import M_E_MEV
 """
 Option E — honest parameter-free deuteron Δ_λ residual.
 
@@ -28,7 +29,7 @@ from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mpmath import mpf, mp
 
 
-M_E_MEV = mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 B_D_AME_MEV = mpf("2.224566")  # deuteron binding (AME), as used in v6/v7
 Q_0 = mpf("1.1097090249")
 
@@ -176,7 +177,8 @@ def main() -> int:
            / "option-e-deuteron-param-free-residual.witness.json")
     with out.open("w") as f:
         witness["lean_uniqueness_ref"] = lean_uniqueness_ref("deuteron (²H)")
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
     print(f"\nWrote {out}")
     print("\nclosure_status: does_not_close (parameter-free margin −82.9%)")
     return 0

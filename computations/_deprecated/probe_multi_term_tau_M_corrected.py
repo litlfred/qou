@@ -44,6 +44,7 @@ T, ³He where the Wenzl-bridge τ_M is unambiguous.
 Output: `multi-term-tau-M-corrected.witness.json`
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_TRITIUM_MEV_VALIDATION
 import json
 import sys
 from itertools import combinations
@@ -162,7 +163,7 @@ def main() -> int:
     # available (e.g. via PR #484's generalized per-λ infrastructure).
     atoms = [
         ("D",   "deuteron", 1, 1, 2.22456612, 1),
-        ("T",   "tritium",  1, 2, 8.4817984,  1),
+        ("T",   "tritium",  1, 2, AME_B_TRITIUM_MEV_VALIDATION,  1),
         # ("3He", "helium-3", 2, 1, 7.7180375,  1),  # τ_M unverified — see audit
     ]
 

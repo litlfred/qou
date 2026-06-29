@@ -578,8 +578,7 @@ witness = {
 }
 
 out_path = Path(__file__).parent / "four-term-photon-to-atoms.witness.json"
-with open(out_path, 'w') as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("beta-decay-energy-scale", witness, script_path=__file__).save()
 print(f"\nWitness written to: {out_path.name}")
 print("Done.")

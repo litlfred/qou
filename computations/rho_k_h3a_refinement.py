@@ -556,7 +556,8 @@ def main() -> int:
         ),
     }
     out = HERE / "rho-k-h3a-refinement.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atomic-tr-m-mpfr-50dps", witness, script_path=__file__).save()
     print(f"\n  Wrote {out.name} ({out.stat().st_size} bytes).")
     print("=" * 96)
     return 0 if sw_match else 2

@@ -21,6 +21,7 @@ no 7th ansatz proposed; this positions the per-braid kernel among the
 magnitude-side levers (z2bn/w5tg/thb7/PROBE-2) with a derive-or-refute signature.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV
 
 import json
 import sys
@@ -33,7 +34,7 @@ from borromean_binding_recompute import borromean_binding  # noqa: E402
 
 # AME2020 totals (MeV) — comparison target only.
 AME = {"D": (1, 1, 2.224573), "T": (1, 2, 8.481821), "3He": (2, 1, 7.718058),
-       "4He": (2, 2, 28.295673), "6Li": (3, 3, 31.994564),
+       "4He": (2, 2, AME_B_HE4_MEV_VALIDATION), "6Li": (3, 3, 31.994564),
        "12C": (6, 6, 92.161728), "16O": (8, 8, 127.619), "56Fe": (26, 30, 492.254)}
 
 # canonical flat sgn(w₀)·dim net/target (classic q-dim), read from the
@@ -136,7 +137,7 @@ def main() -> int:
     # ---- the bulk is EXTENSIVE (A-linear), not the A² pair tower. Compare the
     #   tower's A² net/target to the extensive shell term 2·m_e·8G per nucleon
     #   (8G = Vol(L6a4), the Borromean shell residue). A-linear ⇒ flat ~1 for A≥4.
-    G = float(__import__("mpmath").catalan); per_nuc = 2 * 0.51099895069 * 8 * G
+    G = float(__import__("mpmath").catalan); per_nuc = 2 * M_E_MEV * 8 * G
     mag = [(Z + N) * per_nuc / B for _, (Z, N, B) in AME.items()]
     mag_heavy = [(Z + N) * per_nuc / B for nm, (Z, N, B) in AME.items()
                  if Z + N >= 4]
@@ -164,7 +165,8 @@ def main() -> int:
            "tower_net_over_target_spread": spread_t, "rows": rows,
            "edge_set_test": edge, "extensive_bulk": extensive}
     p = HERE / "delta-lambda-borromean-ascaling.witness.json"
-    p.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("delta-lambda-cancellation-ascaling-probe", out, script_path=__file__).save()
     print(f"\n  witness → {p.name}")
     return 0
 

@@ -345,11 +345,7 @@ def main():
         },
     }
     outp = COMP / "pauli-young-spin-isospin-delta-lambda.witness.json"
-    with open(outp, "w") as f:
-        json.dump(witness, f, indent=1)
-    print(f"\nwitness -> {outp.relative_to(REPO)}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("y-lambda-at-q0", witness, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

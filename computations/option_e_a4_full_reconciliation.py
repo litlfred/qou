@@ -18,6 +18,7 @@ with f^λ as the fallback for uncomputed shapes, and the Betti *coverage*
 result is honest.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV
 
 import json
 import math
@@ -35,8 +36,8 @@ from kl_betti_smoothness_pruned import (
 mp.dps = 50
 HERE = Path(__file__).resolve().parent
 N = 12
-m_e = mpf("0.51099895069")
-AME_HE4 = mpf("28.295660")
+m_e = M_E_MEV
+AME_HE4 = AME_B_HE4_MEV_VALIDATION
 BETTI_WALL_BUDGET_S = 25.0    # cap the Rust Betti loop; rest fall back to f^λ
 NMAX_BETTI = 1                # only n(λ) ≤ this (instant cells). EMPIRICAL: even
                              # shallow (10,2) (n=2) is ~100s/shape in Rust (w_0-deep

@@ -114,7 +114,7 @@ if __name__ == "__main__":
         "precision_dps": mp.mp.dps,
     }
     path = os.path.join(os.path.dirname(__file__), "d14-theta-bar-side.witness.json")
-    with open(path, "w") as fh:
-        json.dump(witness, fh, indent=2)
-    print(json.dumps(result, indent=2))
-    print(f"\nwitness -> {path}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("d14-theta-bar-side", witness, script_path=__file__).save()
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("d14-theta-bar-side", witness, script_path=__file__).save()

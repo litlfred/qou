@@ -74,6 +74,6 @@ out = {
   "no_fit": True,
 }
 wpath = "computations/substrate/z2bn-pf-monodromy-synthesis.witness.json"
-with open(wpath, "w") as fh:
-    json.dump(out, fh, indent=2, ensure_ascii=False)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("z2bn-pf-monodromy-synthesis", out, script_path=__file__).save()
 print("witness ->", wpath)

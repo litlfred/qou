@@ -260,5 +260,6 @@ if __name__ == "__main__":
         "atoms": rows,
     }
     out = Path(__file__).parent / "sym-alt-mirror-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("sym-alt-mirror-probe", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

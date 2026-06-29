@@ -259,7 +259,8 @@ def apply_fix(path: Path, expected: str, basis: str) -> bool:
     w["convention_inferred_by"] = (
         f"chi_convention_audit.py --fix ({basis})"
     )
-    path.write_text(json.dumps(w, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-*", w, script_path=__file__).save()
     return True
 
 

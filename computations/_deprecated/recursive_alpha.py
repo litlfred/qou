@@ -268,6 +268,5 @@ if __name__ == "__main__":
     }
 
     outpath = Path(__file__).parent / args.output
-    with open(outpath, 'w') as f:
-        json.dump(out, f, indent=2, default=str)
-    print(f"\n  Witness: {outpath.name}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("recursive-alpha", out, script_path=__file__).save()

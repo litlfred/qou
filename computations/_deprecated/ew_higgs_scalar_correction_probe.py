@@ -174,10 +174,7 @@ def main():
             "y_λ split per spin), not fit from a candidate basket.",
         ],
     }
-    with open(out_path, "w") as f_out:
-        json.dump(witness, f_out, indent=2)
-    print(f"\n→ wrote {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("ew-higgs-scalar-correction-probe", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

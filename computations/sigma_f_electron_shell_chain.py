@@ -371,7 +371,8 @@ def _emit_witness(records, qclt, obs, findings):
             "witness_builder_note": f"WitnessBuilder unavailable: {e}",
         }
         out = Path(__file__).with_name("sigma-f-electron-shell-chain.witness.json")
-        out.write_text(json.dumps(witness, indent=2, default=str))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("sigma-f-electron-shell-chain", witness, script_path=__file__).save()
         print(f"\nWitness (plain): {out}")
 
 

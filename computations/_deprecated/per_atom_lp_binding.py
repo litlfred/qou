@@ -207,7 +207,8 @@ def main():
                             "active_set, primal_obj, dual_obj, duality_gap",
     }
     out_path = Path(__file__).parent / "per-atom-lp-binding.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("confinement-lp", out, script_path=__file__).save()
     print()
     print(f"Witness: {out_path.relative_to(Path(__file__).parent.parent.parent)}")
 

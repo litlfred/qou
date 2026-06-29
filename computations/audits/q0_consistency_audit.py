@@ -179,7 +179,8 @@ def main() -> int:
         "hits": all_hits,
     }
     out = HERE / "q0-consistency-audit.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("q0-consistency-audit", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")
 
     if args.strict and prod:

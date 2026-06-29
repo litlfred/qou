@@ -8,8 +8,8 @@ Tests N candidate substrate-only formulas for ρ_K against the
 5-atom empirical table from atomic-mass-gb-nf.md line 60-67:
 
   atom    A   |tr_M|     M_CODATA   ρ_K_CODATA
-  p       1   1.0653     938.272    1723.6
-  n       1   0.9232     939.565    1991.6
+  p       1   1.0653     M_P_MEV_VALIDATION    1723.6
+  n       1   0.9232     M_N_MEV_VALIDATION    1991.6
   D       2   0.3883    1875.613    9453.0
   T       3   0.1041    2808.921   52828.5
   ³He     3   0.2065    2808.392   26609.2
@@ -35,7 +35,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -60,9 +62,9 @@ h_q = q - q_inv
 # Empirical table from atomic-mass-gb-nf.md
 ATOMS = {
     "p":   {"A": 1, "Z": 1, "N": 0, "n_strands": 3,  "tr_M": mpf("1.0653"),
-            "M_CODATA": mpf("938.272"),  "rho_K": mpf("1723.6")},
+            "M_CODATA": M_P_MEV_VALIDATION,  "rho_K": mpf("1723.6")},
     "n":   {"A": 1, "Z": 0, "N": 1, "n_strands": 3,  "tr_M": mpf("0.9232"),
-            "M_CODATA": mpf("939.565"),  "rho_K": mpf("1991.6")},
+            "M_CODATA": M_N_MEV_VALIDATION,  "rho_K": mpf("1991.6")},
     "D":   {"A": 2, "Z": 1, "N": 1, "n_strands": 6,  "tr_M": mpf("0.3883"),
             "M_CODATA": mpf("1875.613"), "rho_K": mpf("9453.0")},
     "T":   {"A": 3, "Z": 1, "N": 2, "n_strands": 9,  "tr_M": mpf("0.1041"),
@@ -160,7 +162,7 @@ def C6_telescope_hat_V(atom: dict) -> mpf:
 def C7_M_e_factor(atom: dict) -> mpf:
     """C7: ρ_K = (m_p/m_e) · |tr_M(p)|/|tr_M(K)|   (anchored to proton)"""
     # = 1836.15 · 1.0653 / atom["tr_M"]   constant for proton, varies for others
-    m_p_over_m_e = mpf("938.272") / M_E_MEV
+    m_p_over_m_e = M_P_MEV_VALIDATION / M_E_MEV
     tr_M_p = ATOMS["p"]["tr_M"]
     return m_p_over_m_e * tr_M_p / atom["tr_M"]
 
@@ -170,8 +172,8 @@ def C8_constituent_M_over_trM(atom: dict) -> mpf:
        This is m_e · ρ_K = LO sum / |tr_M|, so ρ_K = (LO sum / m_e) / |tr_M|.
        BY DEFINITION matches CODATA for proton; uses m_p_CODATA as input."""
     m_e = M_E_MEV  # from codata_constants
-    m_p = mpf("938.272")
-    m_n = mpf("939.565")
+    m_p = M_P_MEV_VALIDATION
+    m_n = M_N_MEV_VALIDATION
     Z, N = atom["Z"], atom["N"]
     lo_sum = Z * m_p + N * m_n + Z * m_e
     return lo_sum / (m_e * atom["tr_M"])
@@ -199,8 +201,8 @@ def C10_nucleon_only_LO(atom: dict) -> mpf:
                                      the binding-energy contribution.
     """
     m_e = M_E_MEV  # from codata_constants
-    m_p = mpf("938.272")
-    m_n = mpf("939.565")
+    m_p = M_P_MEV_VALIDATION
+    m_n = M_N_MEV_VALIDATION
     Z, N = atom["Z"], atom["N"]
     return (Z * m_p + N * m_n) / (m_e * atom["tr_M"])
 

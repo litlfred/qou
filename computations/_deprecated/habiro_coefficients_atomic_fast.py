@@ -120,7 +120,8 @@ def _hoefsmit_disk_cached(lam: tuple, n_strands: int) -> tuple:
     with fp.open("w") as fh:
         # `content_lookup` may contain non-JSON-serializable types
         # (e.g., sympy Rational); coerce to str-form for safety.
-        json.dump({
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("habiro-coefficients-atomic-fast", existing, script_path=__file__).save()
             "matrix_strs": matrix_strs,
             "dim": dim,
             "content_lookup": (
@@ -429,7 +430,8 @@ def main() -> int:
         "workers_used": args.workers,
         "max_m_used": args.max_m,
     }
-    out_path.write_text(json.dumps(existing, indent=2, ensure_ascii=False))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("habiro-coefficients-atomic-fast", existing, script_path=__file__).save()
     print(f"\n  Witness: {out_path.name}  (elapsed: {elapsed:.1f}s)")
     return 0
 

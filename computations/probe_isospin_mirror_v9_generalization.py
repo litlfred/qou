@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV, M_PI_PM_MEV_VALIDATION
 """EXPLORATORY shape-probe (per .claude/skills/local/production-vs-exploratory-discipline.md).
 
 Option-3 falsification probe for the PR #1570 ("v9") isospin-mirror claim.
@@ -37,15 +38,15 @@ from pathlib import Path
 
 getcontext().prec = 40
 
-M_E_MEV = D("0.51099895069")
-M_PI_MEV = D("139.57039")
+M_E_MEV = D(M_E_MEV)
+M_PI_MEV = D(M_PI_PM_MEV_VALIDATION)
 Q_0 = D("1.1097090249")
 H_Q = 1 - 1 / Q_0
 H = Q_0 - 1 / Q_0
 MU_0 = M_E_MEV / (D(3) * H / D(2))
 
 # AME2020 binding energies (MeV), same source as v7/v8/v9.
-AME_MeV = {"D": D("2.224566"), "T": D("8.481798"), "3He": D("7.71806")}
+AME_MeV = {"D": D("2.224566"), "T": D(AME_B_TRITIUM_MEV_VALIDATION), "3He": D(AME_B_HE3_MEV_VALIDATION)}
 
 
 def load_chi_atom(repo_root, atom_label):
@@ -178,7 +179,8 @@ def main() -> int:
     out = (repo_root / "folio-assistant" / "computations"
            / "probe-isospin-mirror-v9-generalization.witness.json")
     with out.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("atom-chi-rust-{fn_map[atom_label]}", witness, script_path=__file__).save()
     print(f"\nWrote {out}")
     return 0
 

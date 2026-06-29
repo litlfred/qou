@@ -77,7 +77,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -101,8 +103,8 @@ MU_U = 311.10
 MU_D = 312.39
 MU_AVG = (MU_U + MU_D) / 2
 
-CODATA_MP = 938.272088
-CODATA_MN = 939.565421
+CODATA_MP = M_P_MEV_VALIDATION
+CODATA_MN = M_N_MEV_VALIDATION
 CODATA_DM = CODATA_MN - CODATA_MP
 
 

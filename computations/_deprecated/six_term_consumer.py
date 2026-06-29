@@ -466,7 +466,8 @@ def main() -> int:
             ),
         },
     }
-    WITNESS_OUT.write_text(json.dumps(out, indent=2, default=str) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("joint-tower-sdp-rust", out, script_path=__file__).save()
     print()
     print(f"  Witness: {WITNESS_OUT}")
     return 0

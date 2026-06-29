@@ -225,7 +225,8 @@ def main() -> int:
 
     here = Path(__file__).resolve().parent
     out = here / "f-ell-derivation-via-per-braid-mass-tower.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("f-ell-derivation-via-per-braid-mass-tower", witness, script_path=__file__).save()
     print(f"Witness: {out}")
     return 0
 

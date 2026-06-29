@@ -138,5 +138,6 @@ if __name__ == "__main__":
                          "delta_K_residual": B_AME / Bt}
                         for nm, Z, N, B_AME, B0, Bt, _, _ in rows]}
     p = Path(__file__).resolve().parent / "borromean-binding-recompute.witness.json"
-    p.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("borromean-binding-recompute", out, script_path=__file__).save()
     print(f"  witness → {p.name}  (delta_K_residual = the Δ_λ scalar shadow per isotope)")

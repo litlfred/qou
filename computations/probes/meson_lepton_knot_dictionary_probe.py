@@ -354,9 +354,8 @@ witness = {
 witness['allPassed'] = all(a['passed'] for a in witness['assertions'])
 
 witness_path = Path(__file__).resolve().parent / 'meson-lepton-knot-dictionary-probe.witness.json'
-with open(witness_path, 'w') as f:
-    json.dump(witness, f, indent=2, default=str)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("meson-lepton-knot-dictionary-probe", witness, script_path=__file__).save()
 print("\n" + "=" * 72)
 print("Witness written: meson-lepton-knot-dictionary-probe.witness.json")
 print("=" * 72)

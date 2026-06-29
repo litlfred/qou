@@ -305,5 +305,6 @@ output = {
 
 out_path = Path(__file__).parent / "polarized-pair-production.witness.json"
 with out_path.open("w") as f:
-    json.dump(output, f, indent=2, ensure_ascii=False)
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("pair-production-nf", output, script_path=__file__).save()
 print(f"✓ Witness written to {out_path}")

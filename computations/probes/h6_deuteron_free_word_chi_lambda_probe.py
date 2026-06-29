@@ -156,12 +156,8 @@ def _emit_witness(results, q0, h, word_bound, word_free, sum_dim_sq,
                     "producer": "computations/probes/h6_deuteron_free_word_chi_lambda_probe.py"},
     }
     dest = os.path.join(here, "..", "h6-deuteron-free-word-chi-lambda.witness.json")
-    with open(dest, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    print(f"[witness] wrote {os.path.normpath(dest)}", flush=True)
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("h6-deuteron-free-word-chi-lambda", out, script_path=__file__).save()
 if __name__ == "__main__":
     try:
         main()

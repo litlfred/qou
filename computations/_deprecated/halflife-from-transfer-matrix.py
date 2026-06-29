@@ -177,6 +177,6 @@ witness = {
     "results": results,
 }
 out = Path(__file__).parent / "halflife-from-transfer-matrix.witness.json"
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("halflife-from-transfer-matrix", witness, script_path=__file__).save()
 print(f"\nWitness: {out}")

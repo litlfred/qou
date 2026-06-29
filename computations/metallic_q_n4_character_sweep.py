@@ -376,7 +376,8 @@ def main() -> None:
     }
 
     out = HERE / "metallic-q-n4-character-sweep.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("metallic-q-wenzl-sign-sweep", witness, script_path=__file__).save()
     print(f"\nWitness: {out}", file=sys.stderr)
 
     # Print summary

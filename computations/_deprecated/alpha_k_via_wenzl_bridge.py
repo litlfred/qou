@@ -105,11 +105,7 @@ def main() -> int:
         "tables_by_n": out_results,
     }
     out_path = HERE / "alpha-k-via-wenzl-bridge.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("alpha-k-via-wenzl-bridge", out, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

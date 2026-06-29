@@ -111,5 +111,6 @@ witness = {
         'markov_weights_symbolic.py to regenerate them on demand.'
     ),
 }
-out.write_text(json.dumps(witness, indent=2))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("wenzl_n6_closed_form", witness, script_path=__file__).save()
 print(f'\nwitness: {out.name}')

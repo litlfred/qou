@@ -143,7 +143,8 @@ def main():
     }
     p_out = (Path(__file__).parent.parent.parent
              / "docs/audits/2026-05-02-phi-q-average-attempt.witness.json")
-    p_out.write_text(json.dumps(out, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("2026-05-02-phi-q-average-attempt", out, script_path=__file__).save()
     print()
     print(f"Witness: {p_out.relative_to(Path(__file__).parent.parent.parent)}")
 

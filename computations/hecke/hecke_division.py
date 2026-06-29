@@ -958,6 +958,5 @@ if __name__ == '__main__':
     }
 
     out = Path(__file__).parent / 'hecke-division.witness.json'
-    with open(out, 'w') as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"\nWitness: {out}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("hecke-division", witness, script_path=__file__).save()

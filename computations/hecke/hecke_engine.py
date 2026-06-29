@@ -362,10 +362,7 @@ def main():
             "results": [asdict(r) for r in results],
         }
         out = Path("computations/hecke-engine.witness.json")
-        with open(out, "w") as f:
-            json.dump(witness, f, indent=2)
-        print(f"\nWitness: {out}")
-
-
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("hecke-engine", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

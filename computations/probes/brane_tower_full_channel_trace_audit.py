@@ -246,7 +246,8 @@ def main() -> None:
         ],
     }
     out_path = self_path.parent.parent / "brane-tower-full-channel-trace-audit.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("terms-2-3-atom-per-gen-mpfr-50dps", cross, script_path=__file__).save()
     print(f"\nwrote {out_path}")
 
 

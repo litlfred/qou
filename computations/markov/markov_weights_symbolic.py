@@ -327,7 +327,8 @@ def main() -> int:
         "tr_M_neutron_markov_peel_reference": 0.9232332971861535,
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("markov_weights_symbolic", witness, script_path=__file__).save()
     print()
     print(f"witness: {out.relative_to(HERE.parent.parent)}")
     return 0

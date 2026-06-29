@@ -240,7 +240,8 @@ def main() -> int:
         'rows': rows,
     }
     out = Path(__file__).parent / "alpha-ansatz-isotopes.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("alpha-ansatz-isotopes", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

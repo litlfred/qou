@@ -166,7 +166,8 @@ def main() -> int:
         "discipline": "EXPLORATORY — derive-or-refute, zero free parameters, no production rewire.",
     }
     out = HERE.parent / "chirality-topology-binding.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chirality-topology-binding", witness, script_path=__file__).save()
     print(f"\n  witness: {out}")
     return 0
 

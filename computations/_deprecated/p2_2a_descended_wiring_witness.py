@@ -163,6 +163,7 @@ witness = {
 }
 
 out_path = Path(__file__).parent.parent.parent / "docs/audits/2026-05-01-p2-2a-descended-wiring.witness.json"
-out_path.write_text(json.dumps(witness, indent=2, default=str))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("2026-05-01-p2-2a-descended-wiring", witness, script_path=__file__).save()
 print()
 print(f"Witness: {out_path.relative_to(Path(__file__).parent.parent.parent)}")

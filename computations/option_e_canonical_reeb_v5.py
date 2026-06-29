@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 """
 Option E v5 — canonical Reeb-phase BINDING via free-vs-atom difference.
 
@@ -37,7 +38,7 @@ from mpmath import mpf, mp, fabs, acos
 
 # Cheat-sheet derived μ₀ = m_e / (3(q-q⁻¹)/2)
 # Compute symbolically from q_0
-M_E_MEV = mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 Q_0 = mpf("1.1097090249") # from substrate calibration
 
 H_Q = Q_0 - 1 / Q_0           # ℏ_q at q_0
@@ -45,8 +46,8 @@ MU_0 = M_E_MEV / (mpf(3) * H_Q / mpf(2))  # ≈ 1.63 MeV
 
 AME_MeV = {
     "D":     mpf("2.224566"),
-    "T":     mpf("8.481798"),
-    "3He":   mpf("7.71806"),
+    "T":     AME_B_TRITIUM_MEV_VALIDATION,
+    "3He":   AME_B_HE3_MEV_VALIDATION,
 }
 
 
@@ -254,7 +255,8 @@ def main() -> int:
         / "option-e-canonical-reeb-v5.witness.json"
     )
     with out_path.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("atom-chi-rust-{fn_map[atom_label]}", witness, script_path=__file__).save()
     print(f"\nWrote {out_path}")
     return 0
 

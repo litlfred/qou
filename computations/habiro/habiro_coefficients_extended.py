@@ -201,7 +201,8 @@ def main() -> int:
         "results": results,
     }
     out_path = HERE / "habiro-coefficients-extended.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("habiro-coefficients-extended", out, script_path=__file__).save()
     print(f"\nWitness: {out_path}")
     return 0
 

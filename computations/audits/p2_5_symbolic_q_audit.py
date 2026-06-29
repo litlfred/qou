@@ -163,7 +163,8 @@ def main() -> int:
         "classifications": classifications,
     }
     out = COMPUTE / "p2-5-symbolic-q-audit.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("p2-5-symbolic-q-audit", witness, script_path=__file__).save()
     print(f"  Witness written to {out.relative_to(REPO).as_posix()}")
     print(f"  Files audited: {len(py_files)}")
     print(f"  Category counts:")

@@ -176,11 +176,7 @@ def main():
         "pslq_results": pslq_results,
     }
     out_path = Path(__file__).parent / "alpha-em-pslq-uniqueness-2000dps.witness.json"
-    with open(out_path, "w") as f:
-        json.dump(out, f, indent=2)
-    print()
-    print(f"Witness: {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("alpha-em-pslq-uniqueness-2000dps", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

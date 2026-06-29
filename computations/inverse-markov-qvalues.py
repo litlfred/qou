@@ -359,6 +359,6 @@ witness = {
     'timestamp': datetime.now(timezone.utc).isoformat(),
 }
 witness_path = Path(__file__).parent / 'inverse-markov-qvalues.witness.json'
-with open(witness_path, 'w') as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("inverse-markov-qvalues", witness, script_path=__file__).save()
 print(f"\n  Witness: {witness_path.name}")

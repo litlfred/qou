@@ -259,5 +259,6 @@ if __name__ == "__main__":
         "results_by_n": results_all,
     }
     out = Path(__file__).parent / "frobenius-partition-sum.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("frobenius-partition-sum", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

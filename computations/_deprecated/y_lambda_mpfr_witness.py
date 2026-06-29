@@ -158,7 +158,8 @@ def main(ns: list[int], dps: int = 50) -> None:
         )
         out["tables_by_n"][str(n)] = result
         # Incremental save so progress isn't lost on SIGTERM/timeout.
-        out_path.write_text(json.dumps(out, indent=2))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("y-lambda-mpfr-witness", out, script_path=__file__).save()
         diag = result["cross_check_vs_f64"]
         within = diag.get("all_within_1e-12")
         print(

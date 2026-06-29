@@ -158,9 +158,8 @@ witness = {
 
 # ── Write witness ────────────────────────────────────────────────
 out_path = Path(__file__).parent / "beta-decay-from-q.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("beta-decay-from-q", witness, script_path=__file__).save()
 print(f"Witness written to {out_path}")
 print(f"\nKey results:")
 print(f"  q = {q}")

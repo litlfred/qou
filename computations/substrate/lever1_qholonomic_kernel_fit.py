@@ -184,9 +184,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "lever1-qholonomic-kernel-fit.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-qholonomic-kernel-fit", witness, script_path=__file__).save()
 print(f"\n  certified order-2 q-holonomic recurrence: {certified_final is not None}")
 if certified_final:
     for i in range(3):

@@ -181,7 +181,8 @@ def _save_checkpoint(path: Path | None, ckpt: dict) -> None:
     if path is None:
         return
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(ckpt))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("sublemma-2-1-A-operator-extract-h12-nn-streamed", ckpt, script_path=__file__).save()
     tmp.replace(path)
 
 

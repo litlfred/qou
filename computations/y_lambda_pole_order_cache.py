@@ -152,7 +152,8 @@ def main(argv: list[str]) -> int:
             "compute_time_sec": time.time() - t_start,
         }
         # Save after each n so a kill mid-run preserves work.
-        CACHE.write_text(json.dumps(existing, indent=2))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("y-lambda-pole-order-cache", existing, script_path=__file__).save()
         print(f"  n={n} cache saved "
               f"({time.time() - t_start:.1f}s)", flush=True)
 

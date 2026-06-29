@@ -204,11 +204,7 @@ def main() -> int:
         "best_variant": best_label,
     }
     out_path = HERE / "probe-canonical-multi-term-D.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2)
-    print(f"  Witness: {out_path}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("mass-formula-6term", out, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

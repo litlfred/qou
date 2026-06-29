@@ -272,7 +272,8 @@ def main() -> dict:
         "allPassed": True,
     }
     out = HERE / "e0-lambda-composite.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("rho-prefactor-structural-verifier", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")
     return witness
 

@@ -143,5 +143,6 @@ if __name__ == "__main__":
         **results,
     }
     out = Path(__file__).parent / "z-power-scan.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("z-power-scan", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

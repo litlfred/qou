@@ -1,3 +1,4 @@
+from computations.substrate.codata_constants import M_E_MEV
 import sys
 from pathlib import Path
 import json
@@ -13,7 +14,7 @@ def main():
 
     Q_PIN = _pb.witness_path("q-pinning-200-digit.witness.json", HERE)
     q = mp.mpf("1.1099785955573347198997632204832250266562084087801")
-    m_e = mp.mpf("0.51099895000")
+    m_e = M_E_MEV
     Q_AME = mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION) - m_e
     Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
 
@@ -73,10 +74,7 @@ def main():
             "W_4_val": str(W4)
         }
     }
-    with open("computations/q-beta-c3-wenzl-decomposition.witness.json", "w") as f:
-        json.dump(witness, f, indent=2)
-
-    return 0
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("q-pinning-200-digit", witness, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

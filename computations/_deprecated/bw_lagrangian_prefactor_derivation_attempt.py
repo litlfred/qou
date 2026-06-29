@@ -161,6 +161,6 @@ out = {
                 "Coulomb / Pauli / pair sectors are OPEN.")
 }
 out_path = Path(__file__).parent / "bw-lagrangian-prefactor-attempt.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("bw-lagrangian-prefactor-attempt", out, script_path=__file__).save()
 print(f"Witness: {out_path}")

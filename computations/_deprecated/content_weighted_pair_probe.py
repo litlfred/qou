@@ -264,5 +264,6 @@ if __name__ == "__main__":
         'results': results,
     }
     p = Path('content-weighted-pair-probe.witness.json')
-    p.write_text(json.dumps(w, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("content-weighted-pair-probe", w, script_path=__file__).save()
     print(f"Witness: {p}")

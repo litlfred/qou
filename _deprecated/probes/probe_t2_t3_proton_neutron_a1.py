@@ -56,7 +56,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_P_MEV_VALIDATION
 
 import sys
 from pathlib import Path
@@ -200,7 +202,7 @@ def main() -> int:
             "1=structural_suppression, 2=witness_coverage_gap, 3=rederivation"
         )
         .add_data("ratio_t2t3_over_m_p_hecke", float(proton_result['t2_plus_t3'] / m_p_hecke_value))
-        .add_data("ratio_t2t3_over_codata", float(proton_result['t2_plus_t3'] / 938.272))
+        .add_data("ratio_t2t3_over_codata", float(proton_result['t2_plus_t3'] / M_P_MEV_VALIDATION))
         .add_assertion(
             name="proton_t2_t3_not_structurally_zero",
             computed=float(proton_result['t2_plus_t3']) > 1.0,

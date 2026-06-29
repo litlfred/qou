@@ -282,7 +282,8 @@ def main() -> int:
         "n_matrix_valued": len(multiplicity_geq_2),
     }
     out = HERE / "sublemma-2-1-alpha-shift-extract.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("sublemma-2-1-alpha-shift-extract", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

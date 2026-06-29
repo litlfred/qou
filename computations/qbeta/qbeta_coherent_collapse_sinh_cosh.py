@@ -159,6 +159,7 @@ witness = {
     "verdict": verdict,
 }
 out = pathlib.Path(__file__).with_name("qbeta-coherent-collapse-sinh-cosh.witness.json")
-out.write_text(json.dumps(witness, indent=2, ensure_ascii=False))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("qbeta-coherent-collapse-sinh-cosh", witness, script_path=__file__).save()
 print(f"\nallPassed={ok}; witness → {out.name}")
 raise SystemExit(0 if ok else 1)

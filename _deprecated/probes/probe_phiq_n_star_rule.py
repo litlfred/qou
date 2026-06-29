@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Probe — Yekutieli truncation at PER-ATOM n_⋆ from the brane-level-
 selection rule.
 
@@ -25,7 +26,7 @@ truncated quantum dilogarithm — and checks whether
 
   B(𝔥) = m_e · ρ · (|tr_M(T_w)| + tower^{(n_⋆)}(𝔥) + σ_{3A})
 
-closes the AME binding energies $\\{2.224566, 8.481798, 7.71806\\}$
+closes the AME binding energies $\\{2.224566, AME_B_TRITIUM_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION\\}$
 MeV to ±5% **without per-atom retuning**.  Companion to
 `probe_phiq_uniform_k.py` (uniform-k sweep); the per-atom rule is
 the empirical signature that GAP-A-3's

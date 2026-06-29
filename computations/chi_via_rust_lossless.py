@@ -145,7 +145,8 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
         "tr_M_at_q0": str(running),
         "by_partition": per_partition,
     }
-    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-{atom}-h{n}-at-q0-50dps-matrix-m", payload, script_path=__file__).save()
     print(f"  {atom:>10} LOSSLESS: {len(per_partition)} λ, "
           f"tr_M(q0)={mp.nstr(running,16)}, {elapsed:.1f}s  →  {out.name}",
           flush=True)

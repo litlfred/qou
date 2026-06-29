@@ -177,7 +177,8 @@ def main() -> int:
         "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
     }
     out = HERE.parent / "he-nu-sdp-selfconjugate-candidate.witness.json"
-    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("deuteron-real-sdp", witness, script_path=__file__).save()
     print(f"  witness: {out}")
     return 0
 

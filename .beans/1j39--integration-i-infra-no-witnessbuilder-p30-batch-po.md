@@ -1,10 +1,11 @@
 ---
 # 1j39
 title: 'Integration: I-infra-no-witnessbuilder-P30 batch port'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-06-21T21:41:08Z
+updated_at: 2026-06-29T13:45:28Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)

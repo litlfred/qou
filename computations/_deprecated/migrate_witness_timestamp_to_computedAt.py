@@ -44,23 +44,10 @@ def migrate_one(path: Path, apply: bool):
         # Already has computedAt; just remove the duplicate
         if apply:
             data.pop(key)
-            with open(path, "w") as f:
-                json.dump(data, f, indent=2)
-        return True, f"{key} (dup)"
-
-    # Rename: insert computedAt at the position of the old key
-    new_data = {}
-    for k, v in data.items():
-        if k == key:
-            new_data["computedAt"] = v
-        else:
-            new_data[k] = v
-    if apply:
-        with open(path, "w") as f:
-            json.dump(new_data, f, indent=2)
-    return True, key
-
-
+            from witness_base import WitnessBuilder
+            WitnessBuilder.wrap_legacy("*", data, script_path=__file__).save()
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("*", data, script_path=__file__).save()
 def main():
     apply = "--apply" in sys.argv
     base = Path(__file__).parent

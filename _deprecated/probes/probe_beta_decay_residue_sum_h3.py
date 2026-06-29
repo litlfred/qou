@@ -346,7 +346,8 @@ def main() -> int:
             "per_pole_records": per_pole_records,
         },
     }
-    OUT.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("beta-decay-residue-sum-h3-probe", out, script_path=__file__).save()
     print(f"\n  Wrote {OUT.name}")
     return 0
 

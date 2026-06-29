@@ -62,7 +62,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -81,8 +83,8 @@ set_compute_dps()
 
 # Data from atomic-mass-gb-nf.md table line 60-67
 ATOMS = {
-    "p":   {"M_CODATA": mpf("938.272"),  "tr_M": mpf("1.0653"), "rho_K": mpf("1723.6")},
-    "n":   {"M_CODATA": mpf("939.565"),  "tr_M": mpf("0.9232"), "rho_K": mpf("1991.6")},
+    "p":   {"M_CODATA": M_P_MEV_VALIDATION,  "tr_M": mpf("1.0653"), "rho_K": mpf("1723.6")},
+    "n":   {"M_CODATA": M_N_MEV_VALIDATION,  "tr_M": mpf("0.9232"), "rho_K": mpf("1991.6")},
     "D":   {"M_CODATA": mpf("1875.613"), "tr_M": mpf("0.3883"), "rho_K": mpf("9453.0")},
     "T":   {"M_CODATA": mpf("2808.921"), "tr_M": mpf("0.1041"), "rho_K": mpf("52828.5")},
     "He3": {"M_CODATA": mpf("2808.392"), "tr_M": mpf("0.2065"), "rho_K": mpf("26609.2")},

@@ -318,10 +318,7 @@ def main():
             out["by_n"][str(n)] = res
 
     out_path = Path(__file__).parent / "r-k-h5-h6-numeric.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2, default=str)
-    print(f"\nWitness: {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("r-k-h5-h6-numeric", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

@@ -185,5 +185,6 @@ if __name__ == "__main__":
         "c_lsq_from_all_magic": c_lsq,
     }
     out = Path(__file__).parent / "jsj-alpha-clustering.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("jsj-alpha-clustering", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

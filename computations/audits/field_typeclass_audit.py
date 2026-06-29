@@ -274,7 +274,8 @@ def main() -> int:
         "findings": [asdict(f) for f in findings],
     }
     Path(args.witness).parent.mkdir(parents=True, exist_ok=True)
-    Path(args.witness).write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n",
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("field-typeclass-audit", witness, script_path=__file__).save()
                                   encoding="utf-8")
     print(f"witness → {args.witness}")
 

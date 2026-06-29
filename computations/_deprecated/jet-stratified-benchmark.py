@@ -420,6 +420,5 @@ if __name__ == "__main__":
 
     # Write witness
     witness_path = "jet-stratified-benchmark.witness.json"
-    with open(witness_path, "w") as f:
-        json.dump(witness, f, indent=2)
-    print(f"\nWitness written to {witness_path}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("jet-stratified-benchmark", witness, script_path=__file__).save()

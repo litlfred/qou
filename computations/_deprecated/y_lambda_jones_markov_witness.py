@@ -187,7 +187,8 @@ def main(ns: list[int]) -> None:
             f"residual = {diag['linear_system_residual']:.2e}"
         )
 
-    out_path.write_text(json.dumps(out, indent=2, default=float))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("y-lambda-jones-markov-witness", out, script_path=__file__).save()
     print(f"\nWrote {out_path}")
 
 

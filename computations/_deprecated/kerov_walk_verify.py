@@ -222,7 +222,8 @@ def main() -> int:
         "plancherel_dist": {str(k): str(v) for k, v in pw.items()},
     }
     out = Path(__file__).parent / "kerov-walk-verify.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("kerov-walk-verify", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

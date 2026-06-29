@@ -189,9 +189,8 @@ out = {
 }
 
 out_path = Path(__file__).parent / "probe-option-e-h3-entry-point.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("gram-matrix-dual", out, script_path=__file__).save()
 print("Phase 2 H_3 entry-point probe complete")
 print("=" * 60)
 print(f"  G·G^-1: max diag err = {float(max_diag_err):.2e}, "

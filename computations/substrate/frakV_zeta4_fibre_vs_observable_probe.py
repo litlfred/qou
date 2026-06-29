@@ -103,9 +103,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "frakV-zeta4-fibre-vs-observable-probe.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("frakV-zeta4-fibre-vs-observable-probe", witness, script_path=__file__).save()
 print(f"(1) observable-level Re(ζ₄-rotate) = {re_part_real_eta}  (degenerate: {observable_real_part_zero})")
 print(f"    numeric Re at q₀ = {results['observable_level']['Re(zeta4_rotate)_numeric_at_q0']}")
 print(f"(2) fibre ζ₄ moderator exact: {mod_ok};  Φ₄(ζ₄)=0: {phi4_zeta4}")

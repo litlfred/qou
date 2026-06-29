@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 """
 Option E v4 — canonical q-Reeb phase derivation per cheat sheet.
 
@@ -32,11 +33,11 @@ from pathlib import Path
 from mpmath import mpf, mp, acos
 
 
-M_E_MEV = mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 AME_MeV = {
     "deuteron":  mpf("2.224566"),
-    "tritium":   mpf("8.481798"),
-    "helium-3":  mpf("7.71806"),
+    "tritium":   AME_B_TRITIUM_MEV_VALIDATION,
+    "helium-3":  AME_B_HE3_MEV_VALIDATION,
 }
 
 
@@ -185,7 +186,8 @@ def main() -> int:
         / "option-e-q-reeb-phase-probe-v4.witness.json"
     )
     with out.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("chi-deuteron-h6-at-q0-50dps", witness, script_path=__file__).save()
 
     print(f"Wrote {out}\n")
     print("=== q-Reeb phase Δ_λ = arccos(χ^λ/d_λ) ===\n")

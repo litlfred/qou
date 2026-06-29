@@ -46,7 +46,9 @@ This script:
   Ref: [manuscript] prop:depth-stratified-frobenius-reciprocity
   Ref: [manuscript] def:knot-particle-correspondence
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
@@ -86,8 +88,8 @@ KNOT_TO_PARTICLE = {
 }
 
 # Atoms with Z, N
-ATOMS = [("D", 1, 1, 6, 2.224566069), ("T", 1, 2, 9, 8.481798),
-         ("3He", 2, 1, 9, 7.718042799), ("4He", 2, 2, 12, 28.29567400)]
+ATOMS = [("D", 1, 1, 6, 2.224566069), ("T", 1, 2, 9, AME_B_TRITIUM_MEV_VALIDATION),
+         ("3He", 2, 1, 9, 7.718042799), ("4He", 2, 2, 12, AME_B_HE4_MEV_VALIDATION)]
 
 
 def depth_k(partition: tuple) -> int:

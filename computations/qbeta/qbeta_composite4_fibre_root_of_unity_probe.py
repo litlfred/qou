@@ -276,7 +276,8 @@ def main() -> int:
         "data": {"q0": Q0_STR, "c3_cal": C3_CAL_STR, **results},
     }
     witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("qbeta-composite4-fibre-root-of-unity-probe", witness, script_path=__file__).save()
     print()
     print(f"✓ Witness: {out.name}  "
           f"({len(witness['assertions'])} assertions, "

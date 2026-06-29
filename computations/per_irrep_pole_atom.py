@@ -170,7 +170,8 @@ def _write_chi_cache(
                                  key=lambda kv: tuple(-x for x in kv[0]))
         ],
     }
-    cache_path.write_text(json.dumps(cache_payload, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-{atom_name}-h{n}", cache_payload, script_path=__file__).save()
 
 
 def load_or_build_chi_atom(

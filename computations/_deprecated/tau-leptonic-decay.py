@@ -462,12 +462,7 @@ def main():
     }
 
     witness_path = Path(__file__).with_suffix(".witness.json")
-    with open(witness_path, "w") as f:
-        json.dump(witness, f, indent=2)
-
-    print(f"  Witness → {witness_path.name}")
-    print("=" * 72)
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("tau-leptonic-decay", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

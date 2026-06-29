@@ -283,7 +283,8 @@ witness = {
         "issues": r['issues'],
     } for r in results],
 }
-Path("atom-builder-lp.witness.json").write_text(json.dumps(witness, indent=2, default=str))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("atom-builder-lp", witness, script_path=__file__).save()
 print(f"\nWitness written to atom-builder-lp.witness.json")
 
 

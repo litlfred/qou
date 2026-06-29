@@ -331,9 +331,8 @@ witness = {
 }
 
 out_path = Path(__file__).parent / "electron-proton-skein-weight.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("electron-proton-skein-weight", witness, script_path=__file__).save()
 print(f"Witness written to {out_path}")
 print(f"\nC_geom target = {tanh_ln_q / (1.0/137.036):.4f}")
 print(f"tanh(ln q) = {tanh_ln_q:.6f}")

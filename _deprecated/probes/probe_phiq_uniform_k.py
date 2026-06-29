@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Probe — Yekutieli truncation at UNIFORM depth k across atoms.
 
 Question (from user): the existing probe uses per-atom k_max from
@@ -27,7 +28,7 @@ qi0 = 1.0 / Q0
 z_mark = 1.0 / (Q0**0.5 + (1.0/Q0)**0.5)
 
 # ── Atom-specific data (single source of truth) ────────────────────
-AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+AME = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "he3": (2, 1)}
 RHO_MAP = {"deuteron": 1, "tritium": 2, "he3": 2}
 TR_M_AT_Q0 = {"deuteron": 0.336821, "tritium": 0.078, "he3": 0.179}

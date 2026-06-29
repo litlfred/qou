@@ -235,7 +235,8 @@ def _save_mpm_disk(n: int):
         key = f"{shape_str}:{i}"
         payload[key] = [int(mp), int(mm)]
     try:
-        f.write_text(json.dumps(payload))
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("canonical-with-proper-tower", payload, script_path=__file__).save()
     except Exception:
         pass
 
@@ -642,5 +643,6 @@ if __name__ == "__main__":
         "results": results,
     }
     out = Path(__file__).parent / "canonical-with-proper-tower.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("canonical-with-proper-tower", payload, script_path=__file__).save()
     print(f"\nWitness: {out}")

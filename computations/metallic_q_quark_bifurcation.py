@@ -393,7 +393,8 @@ def main() -> None:
     }
 
     out = HERE / "metallic-q-quark-bifurcation.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("metallic-q-wenzl-sign-sweep", witness, script_path=__file__).save()
     print(f"\nWitness: {out}", file=sys.stderr)
 
     _print_verdict(flips)

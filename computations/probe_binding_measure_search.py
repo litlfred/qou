@@ -28,6 +28,7 @@ a positive (some structural weight closes all four) is surfaced for promotion
 review + a categorical derivation. Δ_λ / A≥3-absolute remains an open gate.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import M_E_MEV
 
 import json
 import sys
@@ -43,7 +44,7 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDA
 
 mp.mp.dps = 40
 HERE = Path(__file__).resolve().parent
-M_E = mpf("0.51099895069")
+M_E = M_E_MEV
 q0 = mpf(str(Q0))
 
 AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,

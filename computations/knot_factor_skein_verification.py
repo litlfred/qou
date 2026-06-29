@@ -129,7 +129,8 @@ def main():
     }
     out = os.path.join(os.path.dirname(script_path),
                        "knot-factor-skein-verification.witness.json")
-    json.dump(witness, open(out, "w"), indent=2)
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("knot-factor-skein-verification", witness, script_path=__file__).save()
     print(f"all_ok = {all_ok}")
     for c in checks:
         print(f"  [{c.get('equals_target')}] {c['check']}")

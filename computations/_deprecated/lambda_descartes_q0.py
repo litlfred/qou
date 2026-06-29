@@ -252,7 +252,8 @@ def main() -> int:
     }
 
     out_path = Path(__file__).parent / "lambda-descartes-q0.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("lambda-descartes-q0", witness, script_path=__file__).save()
     print(f"Wrote {out_path}")
     print(f"  j({'q_0={:.6f}'.format(Q0)}) = {j:.3f}  (paper claims ~129.9)")
     print(f"  u_root = {u:.6f}")

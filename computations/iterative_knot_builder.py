@@ -150,9 +150,7 @@ def main():
         print()
         
     out_file = HERE / "iterative-knot-builder.witness.json"
-    with open(out_file, "w") as f:
-        json.dump(results, f, indent=2)
-    print(f"Saved witness to {out_file.name}")
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("iterative-knot-builder", results, script_path=__file__).save()
 if __name__ == "__main__":
     main()

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 """Refined pair-knot probe: full Markov-trace composite volume,
 full Frobenius Gram, LP **and** SDP operator-selection duals.
 
@@ -66,7 +67,7 @@ from lp_dual_solver import (
     solve_psd_operator_selection_sdp,
 )
 
-AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+AME = {"deuteron": 2.224566, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "he3": AME_B_HE3_MEV_VALIDATION}
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "he3": (2, 1)}
 RHO_MAP = {"deuteron": 1, "tritium": 2, "he3": 2}
 N_STAR = {"deuteron": 1, "tritium": 2, "he3": 1}  # R2-op best from previous probe

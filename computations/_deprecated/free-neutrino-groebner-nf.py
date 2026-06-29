@@ -939,9 +939,8 @@ witness = {
 }
 
 witness_path = "free-neutrino-groebner-nf.witness.json"
-with open(witness_path, 'w') as f:
-    json.dump(witness, f, indent=2, default=str)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("free-neutrino-groebner-nf", witness, script_path=__file__).save()
 print(f"  Written to: {witness_path}")
 print()
 print("Done.")

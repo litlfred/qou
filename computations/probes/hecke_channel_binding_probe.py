@@ -210,7 +210,8 @@ def main() -> int:
         },
     }
     out = HERE.parent / "hecke-channel-binding.witness.json"
-    out.write_text(json.dumps(w, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("hecke-channel-binding", w, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

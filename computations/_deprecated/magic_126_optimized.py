@@ -233,10 +233,7 @@ def main():
         ),
     }
     out_path = Path(__file__).parent / "magic-126-optimized.witness.json"
-    with open(out_path, "w") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
-    print(f"\n→ wrote {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("magic-126-optimized", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

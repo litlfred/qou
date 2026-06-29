@@ -33,6 +33,7 @@ witnesses changed. Emits
 `option-e-kashiwara-crystal-delta-lambda-probe.witness.json`.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import M_E_MEV
 
 import sys as _sys
 from pathlib import Path as _Path
@@ -55,10 +56,10 @@ HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Empirical target — audit-doc convention `target_signed = -B_D / m_e`
-# (B_D ≈ 2.2245 MeV; m_e ≈ 0.51099895069 MeV → −4.35313...).  Hard-pin
+# (B_D ≈ 2.2245 MeV; m_e ≈ M_E_MEV MeV → −4.35313...).  Hard-pin
 # to the audit-doc rounded value −4.353 used for the gate test.
 TARGET_SIGNED = mp.mpf("-4.353")
-TARGET_PRECISE = mp.mpf("-2.2245") / mp.mpf("0.51099895069")
+TARGET_PRECISE = mp.mpf("-2.2245") / M_E_MEV
 
 # Canonical 50-dps q₀ — matches every chi-cache witness header.
 Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"

@@ -416,7 +416,8 @@ def main() -> int:
         },
     }
     out = Path(__file__).parent / "three-term-wedderburn.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("three-term-wedderburn", witness, script_path=__file__).save()
     print(f"  Witness: {out}")
     return 0
 

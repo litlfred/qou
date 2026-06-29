@@ -270,7 +270,8 @@ def main() -> int:
                            "err": best_n[0]},
     }
     out = Path(__file__).parent / "residual-probe-pn.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("residual-probe-pn", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

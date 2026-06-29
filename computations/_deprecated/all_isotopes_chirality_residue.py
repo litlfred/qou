@@ -280,7 +280,8 @@ def main():
         'isotopes': rows,
     }
     out = Path(__file__).parent / "all-isotopes-chirality-residue.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("all-isotopes-chirality-residue", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
 
 

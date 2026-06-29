@@ -100,5 +100,6 @@ witness = {
     "verdict": verdict,
 }
 out = pathlib.Path(__file__).parent / "qbeta-silver-rationals.witness.json"
-out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("qbeta-silver-rationals", witness, script_path=__file__).save()
 print(f"\nwitness → {out}")

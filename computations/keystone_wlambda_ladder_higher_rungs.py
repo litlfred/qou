@@ -163,11 +163,7 @@ def main():
     }
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "wlambda-ladder-higher-rungs.witness.json")
-    with open(out, "w", encoding="utf-8") as fh:
-        json.dump(witness, fh, indent=2)
-        fh.write("\n")
-    print(f"\nwrote {out}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("wlambda-ladder-higher-rungs", witness, script_path=__file__).save()
 if __name__ == "__main__":
     main()

@@ -275,7 +275,8 @@ def main():
         'codata_np_splitting_MeV': M_N_MEV - M_P_MEV,
     }
     out = Path(__file__).parent / "knot-ideals-gb-jet-locations.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("knot-ideals-gb-jet-locations", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
 
 

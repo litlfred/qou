@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV, M_PI_PM_MEV_VALIDATION
 """
 Option E v7 — involution-aware Δ_λ probe with bar/transpose symmetry.
 
@@ -36,16 +37,16 @@ from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
 
 
-M_E_MEV = mpf("0.51099895069")
-M_PI_MEV = mpf("139.57039")  # PDG charged pion mass
+M_E_MEV = M_E_MEV
+M_PI_MEV = M_PI_PM_MEV_VALIDATION  # PDG charged pion mass
 Q_0 = mpf("1.1097090249")
 
 H_Q = 1 - 1 / Q_0
 H = Q_0 - 1 / Q_0
 MU_0 = M_E_MEV / (mpf(3) * H / mpf(2))
 
-AME_MeV = {"D": mpf("2.224566"), "T": mpf("8.481798"),
-           "3He": mpf("7.71806")}
+AME_MeV = {"D": mpf("2.224566"), "T": AME_B_TRITIUM_MEV_VALIDATION,
+           "3He": AME_B_HE3_MEV_VALIDATION}
 N_STRANDS = {"D": 6, "T": 9, "3He": 9}
 
 
@@ -322,7 +323,8 @@ def main() -> int:
         / "option-e-v7-involution-aware.witness.json"
     )
     with out_path.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("atom-chi-rust-{fn_map[atom_label]}", witness, script_path=__file__).save()
     print(f"\nWrote {out_path}")
 
     print(f"\n=== Summary ===")

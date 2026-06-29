@@ -111,7 +111,8 @@ def main():
         'error_pct': float(err_pct),
     }
     out = Path(__file__).parent / "q-beta-path-a-extended.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("q-beta-path-a-extended", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
 
 

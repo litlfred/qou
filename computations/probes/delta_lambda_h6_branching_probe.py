@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import M_E_MEV
 """
 Δ_λ H_6 branching probe: propagate H_3 sector-dependent constraints
 to the deuteron (H_6) via Littlewood-Richardson coefficients.
@@ -52,7 +53,7 @@ HERE = Path(__file__).resolve().parent
 
 q0 = mpf(Q_50_DIGIT_STR)
 h_q = q0 - 1/q0
-m_e = mpf('0.51099895069')
+m_e = M_E_MEV
 
 # ══════════════════════════════════════════════════════════════════
 #  LITTLEWOOD-RICHARDSON COEFFICIENTS: S_3 × S_3 → S_6
@@ -240,6 +241,6 @@ witness = {
     "allPassed": True,
 }
 
-with open(HERE / "delta-lambda-h6-branching.witness.json", "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("rho-k-h3a-lp-dual", witness, script_path=__file__).save()
 print(f"\nWitness: delta-lambda-h6-branching.witness.json")

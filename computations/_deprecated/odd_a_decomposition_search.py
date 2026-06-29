@@ -165,7 +165,8 @@ def main() -> int:
         "rows": witness_rows,
     }
     out = Path(__file__).parent / "odd-a-decomposition-search.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("odd-a-decomposition-search", witness, script_path=__file__).save()
     print(f"\n  Wrote {out}")
     return 0
 

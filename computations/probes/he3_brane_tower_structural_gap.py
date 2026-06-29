@@ -168,7 +168,8 @@ def main() -> None:
         "provenance": ["terms-2-3-atom-per-gen-mpfr-50dps.witness.json", "AME2020"],
     }
     out = self_path.parent.parent / "he3-brane-tower-structural-gap.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("terms-2-3-atom-per-gen-mpfr-50dps", structural, script_path=__file__).save()
     print(f"\nwrote {out}")
 
 

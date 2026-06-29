@@ -25,6 +25,7 @@ Inputs READ from canonical pinned witnesses (no recompute) — env-skew-immune.
 Producer for: computations/delta-lambda-magnitude-deficit-profile.witness.json
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 import json, math, os, hashlib, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -58,12 +59,12 @@ def delta_sgndim(part):
     return sgn_w0_young(conj(part)) * dim_irrep(part)
 
 
-M_E_MEV = 0.51099895069
+M_E_MEV = M_E_MEV
 ISOTOPES = {
     "D":   ("atom-chi-rust-d.witness.json",   "6",  2.224566, 2),
-    "T":   ("atom-chi-rust-t.witness.json",   "9",  8.481798, 3),
+    "T":   ("atom-chi-rust-t.witness.json",   "9",  AME_B_TRITIUM_MEV_VALIDATION, 3),
     "3He": ("atom-chi-rust-3he.witness.json", "9",  7.718043, 3),
-    "4He": ("atom-chi-rust-4he.witness.json", "12", 28.295673, 4),
+    "4He": ("atom-chi-rust-4he.witness.json", "12", AME_B_HE4_MEV_VALIDATION, 4),
 }
 
 
@@ -128,7 +129,8 @@ def main():
         "data": out_rows,
     }
     out = os.path.join(HERE, "delta-lambda-magnitude-deficit-profile.witness.json")
-    json.dump(witness, open(out, "w"), indent=1)
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
 
     for name, r in out_rows.items():
         doms = ", ".join(f"{d['partition']}({d['sign']:+d})" for d in r["dominant_blocks"][:4])

@@ -24,6 +24,7 @@ production. The cheat-sheet's prior "A=3 mirror to 2% no fit" was RETRACTED as a
 C_knot fit; this probe re-tests honestly with minimal parameters. Δ_λ stays open.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import M_E_MEV
 
 import json
 import sys
@@ -39,7 +40,7 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 
 mp.mp.dps = 40
 HERE = Path(__file__).parent
-M_E = mpf("0.51099895069")
+M_E = M_E_MEV
 q0 = mpf(str(Q0))
 # derived per-crossing scale μ₀ = m_e / (3·(q−q⁻¹)/2)  (cheat-sheet §3 Bind)
 h0 = q0 - 1 / q0

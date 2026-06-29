@@ -345,7 +345,8 @@ def main() -> int:
         ],
     }
     out = HERE.parent / "deuteron-fpn-wlambda-wiring.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("deuteron-fpn-wlambda-wiring", witness, script_path=__file__).save()
     print(f"\n  witness: {out}")
     print("=" * 84)
     return 0

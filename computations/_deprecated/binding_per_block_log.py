@@ -792,5 +792,6 @@ if __name__ == "__main__":
         "kahler_results": kahler_results,
     }
     out = Path(__file__).parent / "binding-per-block-log.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("binding-per-block-log", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")

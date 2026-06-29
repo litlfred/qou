@@ -163,7 +163,8 @@ def main() -> int:
     witness = build_witness()
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("binding-bring-enhancement-compare", witness, script_path=__file__).save()
     print(f"witness emitted: {out_path}")
     if args.print:
         print()

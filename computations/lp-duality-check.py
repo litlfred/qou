@@ -253,6 +253,7 @@ except ImportError as _e:
     print(f"  (cvxpy not available: {_e})")
 
 out_path = DIR / "lp-duality-check.witness.json"
-out_path.write_text(json.dumps(witness, indent=2))
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("confinement-lp", witness, script_path=__file__).save()
 print(f"\n  Witness written to {out_path.name}")
 print("=" * 70)

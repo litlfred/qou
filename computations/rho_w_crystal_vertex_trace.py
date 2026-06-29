@@ -428,7 +428,8 @@ def main() -> int:
         "design_note": "docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md",
     }
     out_path = HERE / "rho-w-crystal-vertex-trace.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("chi-deuteron-h6-at-q0-50dps", witness, script_path=__file__).save()
     print(f"\n[rho_w] closure_status = {closure_status}")
     print(f"[rho_w] witness -> {out_path}")
     print(f"[rho_w] done in {time.time()-t0:.1f}s")

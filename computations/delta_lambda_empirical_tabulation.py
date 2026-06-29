@@ -68,6 +68,7 @@ Atoms covered: {D, T, ³He, ⁴He}.  Cached χ data is loaded from
 Output: `delta-lambda-empirical-tabulation.witness.json`.
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
@@ -113,9 +114,9 @@ M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
 
 ATOMS_CODATA = {
     # Anchors (LO is exact by construction; ΔM = 0):
-    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816",
+    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": M_P_MEV_VALIDATION,
             "chi_witness": "chi-proton-h3.witness.json"},
-    "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": "939.56542052",
+    "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": M_N_MEV_VALIDATION,
             "chi_witness": "chi-neutron-h3.witness.json"},
     # Compounds (binding-energy correction non-trivial):
     "D":   {"Z": 1, "N": 1, "n": 6,  "M_MeV": "1875.61294257",

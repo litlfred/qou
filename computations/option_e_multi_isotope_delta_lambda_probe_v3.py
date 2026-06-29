@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from computations.substrate.codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 """
 Option E v3 — per-knot extension: test content-sum-negated on D, T, ³He,
 and probe candidate per-knot corrections f(K).
@@ -69,11 +70,11 @@ def parse_rows(chi_data):
 # AME binding energies (MeV)
 AME_MeV = {
     "deuteron":  mpf("2.224566"),
-    "tritium":   mpf("8.481798"),
-    "helium-3":  mpf("7.71806"),
+    "tritium":   AME_B_TRITIUM_MEV_VALIDATION,
+    "helium-3":  AME_B_HE3_MEV_VALIDATION,
 }
 
-M_E_MEV = mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 
 
 def evaluate_rule_per_atom(atom_name, rows, rule_fn):
@@ -225,7 +226,8 @@ def main() -> int:
         / "option-e-multi-isotope-delta-lambda-probe-v3.witness.json"
     )
     with out.open("w") as f:
-        json.dump(witness, f, indent=2)
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("chi-{name}-at-q0-50dps", witness, script_path=__file__).save()
 
     # Print summary
     print(f"Wrote {out}\n")

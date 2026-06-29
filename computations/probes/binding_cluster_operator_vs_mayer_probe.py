@@ -93,11 +93,7 @@ def main():
                  "verdict": "scale_matches_sign_opposed_scope_limited"},
     }
     out = COMP / "cluster-operator-vs-mayer-b3.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
-    return 0
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("three-body-joint-trace-a3", witness, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

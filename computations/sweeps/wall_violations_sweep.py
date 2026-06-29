@@ -250,7 +250,8 @@ def main() -> int:
         },
     }
     out = REPO / "folio-assistant" / "computations" / "wall-violations-sweep.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("wall-violations-sweep", witness, script_path=__file__).save()
     print(f"  Witness written to {out.relative_to(REPO).as_posix()}")
     print(f"  Files swept:        {len(files)}")
     print(f"  Files with hits:    {len(flagged)}")

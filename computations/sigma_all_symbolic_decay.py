@@ -170,10 +170,7 @@ def main():
         ],
     }
     out_path = Path(__file__).parent / "sigma-all-symbolic-decay.witness.json"
-    with open(out_path, "w") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n→ wrote {out_path}")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("sigma-all-symbolic-decay", out, script_path=__file__).save()
 if __name__ == "__main__":
     main()

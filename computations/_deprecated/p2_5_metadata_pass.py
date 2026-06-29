@@ -148,7 +148,8 @@ def update_witness(witness_path: Path, annotation: dict, dry_run: bool) -> bool:
     data["p2_5_compliance"] = annotation
     if dry_run:
         return True
-    witness_path.write_text(json.dumps(data, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("p2-5-symbolic-q-audit", data, script_path=__file__).save()
     return True
 
 

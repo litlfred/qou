@@ -69,10 +69,7 @@ def run_probe():
         "description": "Option E PROBE 2 A=4 interface operator traces for dominant partitions (nu=(2,1) block).",
         "results": {str(lam): float(total_trace) for lam in results.keys()}
     }
-    with open("computations/probes/he4-9-3-interface-operator-probe.witness.json", "w") as f:
-        json.dump(witness, f, indent=2)
-    print("Wrote computations/probes/he4-9-3-interface-operator-probe.witness.json")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("he4-9-3-interface-operator-probe", witness, script_path=__file__).save()
 if __name__ == "__main__":
     run_probe()

@@ -154,9 +154,8 @@ witness = {
     "verdict": verdict,
 }
 out = os.path.join("computations", "substrate", "lever1-qholonomic-order3-fit.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
-
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("lever1-qholonomic-order3-fit", witness, script_path=__file__).save()
 print(f"\n  order-3 certified: {o3_cert is not None}")
 if o3_cert:
     for j, P in o3_cert["recurrence"].items():

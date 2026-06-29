@@ -110,7 +110,8 @@ def main() -> int:
         "bean": "fvxq", "sibling": "claude/fvxq-atomic-mass-registry-2026-06-21",
     }
     out = HERE.parent / "ame-registry-routing-triage.witness.json"
-    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n",
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("ame-registry-routing-triage", witness, script_path=__file__).save()
                    encoding="utf-8")
     print(f"\n  witness: {out}")
     return 0

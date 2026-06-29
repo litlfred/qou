@@ -241,7 +241,8 @@ def main() -> int:
     }
     here = Path(__file__).resolve().parent
     out = here / "t6-three-halves-factor-probes.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("t6-three-halves-factor-probes", witness, script_path=__file__).save()
     print(f"Witness: {out}")
     return 0
 

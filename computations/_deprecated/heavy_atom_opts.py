@@ -53,7 +53,8 @@ def load_cache():
 
 def save_cache(cache):
     cache["computedAt"] = datetime.now(timezone.utc).isoformat()
-    CACHE_FILE.write_text(json.dumps(cache, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("heavy-atom-opts", cache, script_path=__file__).save()
 
 
 # ── OPT 2: Per-nucleon character cache ──────────────────────────────

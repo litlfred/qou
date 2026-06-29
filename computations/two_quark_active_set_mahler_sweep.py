@@ -348,7 +348,8 @@ def main() -> None:
         ],
     }
     out_json = HERE / "two-quark-active-set-mahler-sweep.witness.json"
-    out_json.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("two-quark-active-set-mahler-sweep", witness, script_path=__file__).save()
     print(f"Saved witness: {out_json}", file=sys.stderr)
 
     print(f"\nActive-set transitions found: {len(transitions)}")

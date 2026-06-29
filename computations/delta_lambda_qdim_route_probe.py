@@ -58,6 +58,7 @@ Inputs READ from canonical pinned witnesses (mpmath 50 dps on stored y_λ,
 Producer for: computations/delta-lambda-qdim-route-probe.witness.json
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 import json, math, os, hashlib, datetime
 from mpmath import mp, mpf
 
@@ -125,12 +126,12 @@ CONVENTIONS = {
     "fake_degree": dim_fake,
 }
 
-M_E_MEV = mpf("0.51099895069")
+M_E_MEV = M_E_MEV
 ISOTOPES = {
     "D":   ("atom-chi-rust-d.witness.json",   "6",  2.224566),
-    "T":   ("atom-chi-rust-t.witness.json",   "9",  8.481798),
+    "T":   ("atom-chi-rust-t.witness.json",   "9",  AME_B_TRITIUM_MEV_VALIDATION),
     "3He": ("atom-chi-rust-3he.witness.json", "9",  7.718043),
-    "4He": ("atom-chi-rust-4he.witness.json", "12", 28.295673),
+    "4He": ("atom-chi-rust-4he.witness.json", "12", AME_B_HE4_MEV_VALIDATION),
 }
 
 
@@ -198,7 +199,8 @@ def main():
         },
     }
     out = os.path.join(HERE, "delta-lambda-qdim-route-probe.witness.json")
-    json.dump(witness, open(out, "w"), indent=1)
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("atom-chi-rust-d", witness, script_path=__file__).save()
 
     cols = ["classic"] + list(CONVENTIONS)
     print(f"q_0={float(q0):.5f}   ‖c‖₁(conv)/|target|")

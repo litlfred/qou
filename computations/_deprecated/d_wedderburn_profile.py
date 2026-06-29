@@ -262,7 +262,8 @@ def main() -> int:
         "alt_chi_abs": str(abs(alt_chi)),
     }
     out = Path(__file__).parent / "d-wedderburn-profile.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("binding-canonical", witness, script_path=__file__).save()
     print(f"\n  Witness: {out}")
     return 0
 

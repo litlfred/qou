@@ -34,6 +34,7 @@ from the calibration choice.
 Output: `neutron-gap-probes-round5.witness.json`
 """
 from __future__ import annotations
+from computations.substrate.codata_constants import AME_B_TRITIUM_MEV_VALIDATION
 import sys
 from pathlib import Path
 
@@ -53,7 +54,7 @@ _DPS = 50
 # AME binding energies (MeV) — same as round-4
 B_AME = {
     "deuteron": 2.22456612,
-    "tritium":  8.4817984,
+    "tritium":  AME_B_TRITIUM_MEV_VALIDATION,
     "helium-3": 7.7180375,
 }
 

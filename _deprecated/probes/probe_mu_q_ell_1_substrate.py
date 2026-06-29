@@ -44,7 +44,9 @@ The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
+
 from __future__ import annotations
+from computations.substrate.codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 import json
 import sys
@@ -67,8 +69,8 @@ h_q = q - q_inv
 
 from codata_constants import M_E_MEV  # CODATA-2022 full precision
 # Class-A audit-only: hardcoded CODATA comparison anchors, not prediction inputs.
-M_P_MEV = mpf("938.272")  # noqa: P31 — comparison anchor per docstring banner
-M_N_MEV = mpf("939.565")  # noqa: P31 — comparison anchor per docstring banner
+M_P_MEV = M_P_MEV_VALIDATION  # noqa: P31 — comparison anchor per docstring banner
+M_N_MEV = M_N_MEV_VALIDATION  # noqa: P31 — comparison anchor per docstring banner
 M_N_AVG = (M_P_MEV + M_N_MEV) / 2
 
 MU_U_HARDCODED = mpf("311.10")

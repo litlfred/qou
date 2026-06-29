@@ -188,7 +188,8 @@ def main():
     out_path = (
         Path(__file__).parent / "wedderburn-strata-witness.json"
     )
-    out_path.write_text(json.dumps(out, indent=2, default=float))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("wedderburn-strata-witness", out, script_path=__file__).save()
     print(f"Wrote {out_path}")
     for n_str, table in out["tables"].items():
         print(

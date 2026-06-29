@@ -351,7 +351,5 @@ if __name__ == "__main__":
     }
 
     out = Path(__file__).parent / "inductive-quark-atoms.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2, default=str)
-    print(f"\nWitness: {out}")
-    print(f"  Commit: {COMMIT_SHA}")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("inductive-quark-atoms", witness, script_path=__file__).save()

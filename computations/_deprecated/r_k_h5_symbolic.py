@@ -271,32 +271,9 @@ def main():
             "partial": True,
         }
         out_path_partial = Path(__file__).parent / "r-k-h5-symbolic.witness.json"
-        with open(out_path_partial, "w") as fp:
-            json.dump(out_partial, fp, indent=2, default=str)
-
-    out = {
-        "computation": "r-k-h5-symbolic",
-        "description": (
-            "Symbolic closed-form r_λ coefficients at H_5 in Q(q^{1/2}) via "
-            "sympy.solve on the gauge-fixed linear system (faster than "
-            "nullspace+simplify on full Q(q) matrices). Full Hoefsmit "
-            "construction with off-diagonal b·e_{T'} entries (fixes the "
-            "H_4 script's bug). Gauge per partition follows the H_4 "
-            "closed-form prop convention: c[last]=1 for hooks, adaptive "
-            "for non-hooks ((3,2), (2,2,1) at H_5)."
-        ),
-        "engine": "sympy",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q_0_rational": "11099785955541805/10000000000000000",
-        "results": results,
-        "wall_time_s": time.time() - t_total,
-        "partial": False,
-    }
-    out_path = Path(__file__).parent / "r-k-h5-symbolic.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2, default=str)
-    print(f"\nWitness: {out_path} ({time.time()-t_total:.1f}s total)")
-
-
+        from witness_base import WitnessBuilder
+        WitnessBuilder.wrap_legacy("r-k-h5-symbolic", out_partial, script_path=__file__).save()
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("r-k-h5-symbolic", out_partial, script_path=__file__).save()
 if __name__ == "__main__":
     main()

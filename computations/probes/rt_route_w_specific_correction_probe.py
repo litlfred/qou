@@ -235,7 +235,8 @@ def main():
         ),
     }
     out_path = Path(__file__).parent / "rt-route-w-specific-correction-probe.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("rt-route-w-specific-correction-probe", witness, script_path=__file__).save()
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 
 

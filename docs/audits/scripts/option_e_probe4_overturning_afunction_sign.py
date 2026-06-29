@@ -272,5 +272,6 @@ witness = {
 }
 out = pathlib.Path(__file__).resolve().parents[3] / "computations" / "probes" / "option-e-probe4-overturning-afunction-sign.witness.json"
 out.parent.mkdir(parents=True, exist_ok=True)
-out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("option-e-probe4-overturning-afunction-sign", witness, script_path=__file__).save()
 print(f"\nwitness → {out}")

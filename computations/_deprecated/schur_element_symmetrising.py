@@ -124,7 +124,8 @@ def main() -> None:
         print(f"n = {n}: {len(parts)} Schur elements computed")
 
     out_path = Path(__file__).parent / "schur-element-symmetrising-witness.json"
-    out_path.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("schur-element-symmetrising", out, script_path=__file__).save()
     print(f"Wrote {out_path}")
 
 

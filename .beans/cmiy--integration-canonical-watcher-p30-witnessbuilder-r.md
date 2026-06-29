@@ -1,10 +1,11 @@
 ---
 # cmiy
 title: 'Integration: canonical watcher - P30 WitnessBuilder rollup'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-21T21:44:26Z
-updated_at: 2026-06-21T21:44:26Z
+updated_at: 2026-06-29T13:45:28Z
 ---
 
 ## Canonical bean for the P30 WitnessBuilder rollup (dedup 2026-06-28)

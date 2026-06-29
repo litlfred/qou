@@ -355,6 +355,6 @@ witness = {
 }
 
 out_path = Path(__file__).resolve().parent / "nf-qvalues.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder
+WitnessBuilder.wrap_legacy("nf-qvalues", witness, script_path=__file__).save()
 print(f"\nWitness → {out_path.name}")

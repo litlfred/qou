@@ -295,7 +295,8 @@ def main() -> int:
 
     here = Path(__file__).resolve().parent
     out = here / "per-generator-V-hat-general.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("per-generator-V-hat-general", witness, script_path=__file__).save()
     print(f"\nWitness: {out}")
     return 0
 

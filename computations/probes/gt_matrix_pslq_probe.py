@@ -221,13 +221,7 @@ def main() -> None:
             "falsifiable prediction for g_A's next decimal.")}
 
     out_path = Path(__file__).parent / "gt-matrix-pslq-probe.witness.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2)
-    print(f"\nWitness: {out_path}\nCandidate clean closures: {len(candidates)}")
-    for c in candidates:
-        nr = c["nearest_rational"]
-        print(f"  {c['ansatz']}: a≈{nr['num']}/{nr['den']} (|Δ|={nr['abs_err']:.2e})")
-
-
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("gt-matrix-pslq-probe", out, script_path=__file__).save()
 if __name__ == "__main__":
     sys.exit(main())

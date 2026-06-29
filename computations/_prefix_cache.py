@@ -46,7 +46,8 @@ def _hash_prefix(signed_word_prefix: list[tuple[int, int]]) -> str:
     """Stable hex hash of a signed-word prefix.  16 hex chars
     (~64 bits) is more than enough to avoid collisions at our
     cache scale (≤ thousands of entries)."""
-    payload = json.dumps(
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("-prefix-cache", data, script_path=__file__).save()
         [list(t) for t in signed_word_prefix], sort_keys=True
     ).encode("utf-8")
     return hashlib.sha256(payload).hexdigest()[:16]
@@ -86,7 +87,8 @@ def save_prefix_state(
     # Write atomically via a temp file + rename so a partial write
     # never leaves a corrupt cache entry.
     tmp = path.with_suffix(".tmp")
-    tmp.write_text(json.dumps(data))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("-prefix-cache", data, script_path=__file__).save()
     tmp.replace(path)
     return path
 

@@ -190,7 +190,8 @@ def main() -> int:
 
     here = Path(__file__).resolve().parent
     out = here / "lepton-tower-probe-1-cinquefoil-muon.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("lepton-tower-probe-1-cinquefoil-muon", witness, script_path=__file__).save()
     print(f"Witness: {out}")
     return 0
 

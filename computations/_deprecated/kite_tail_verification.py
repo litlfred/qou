@@ -214,7 +214,8 @@ def main() -> int:
         "results": out_results,
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+    WitnessBuilder.wrap_legacy("kite_tail_verification", witness, script_path=__file__).save()
     print()
     print(f"witness: {out.name}")
     return 0
