@@ -172,16 +172,127 @@ theorem centralC2_coeff_one (n : ℕ) : (centralC2 (k := k) n) 1 = (n.choose 2 :
   rw [centralC2_eq_sum_jucysMurphy_sq]
   exact QOU.BraidKnot.RegularRepTrace.centralC2_coeff_one n
 
-/-! ## 4. The deep Okounkov–Vershik theorems (stated, `sorry` + `-- Ref:`) -/
+/-! ## 4. Commutativity of the Jucys–Murphy elements (the Gelfand–Zetlin algebra) -/
+
+/-- Crux 1: `(a i)(i j) = (a j)(a i)` (both are the 3-cycle `a → i → j → a`), for distinct `a,i,j`. -/
+private theorem swap_cross1 {α : Type*} [DecidableEq α] (a i j : α)
+    (hai : a ≠ i) (haj : a ≠ j) (hij : i ≠ j) :
+    Equiv.swap a i * Equiv.swap i j = Equiv.swap a j * Equiv.swap a i := by
+  ext x; simp only [Equiv.Perm.mul_apply, Equiv.swap_apply_def]
+  by_cases hx : x = a <;> by_cases hxi : x = i <;> by_cases hxj : x = j <;>
+    subst_vars <;> split_ifs <;> tauto
+
+/-- Crux 2: `(a i)(a j) = (i j)(a i)` (both are the 3-cycle `a → j → i → a`), for distinct `a,i,j`. -/
+private theorem swap_cross2 {α : Type*} [DecidableEq α] (a i j : α)
+    (hai : a ≠ i) (haj : a ≠ j) (hij : i ≠ j) :
+    Equiv.swap a i * Equiv.swap a j = Equiv.swap i j * Equiv.swap a i := by
+  ext x; simp only [Equiv.Perm.mul_apply, Equiv.swap_apply_def]
+  by_cases hx : x = a <;> by_cases hxi : x = i <;> by_cases hxj : x = j <;>
+    subst_vars <;> split_ifs <;> tauto
+
+/-- Disjoint/equal transpositions commute: `(a i)` and `(b j)` commute when they share no point. -/
+private theorem swap_comm_disjoint {α : Type*} [DecidableEq α] (a i b j : α)
+    (hai : a ≠ i) (haj : a ≠ j) (hij : i ≠ j) (hbj : b ≠ j) (hbi : b ≠ i) (hba : b ≠ a) :
+    Equiv.swap a i * Equiv.swap b j = Equiv.swap b j * Equiv.swap a i := by
+  ext x; simp only [Equiv.Perm.mul_apply, Equiv.swap_apply_def]
+  by_cases hxa : x = a <;> by_cases hxi : x = i <;> by_cases hxb : x = b <;> by_cases hxj : x = j <;>
+    subst_vars <;> split_ifs <;> tauto
+
+/-- The inner involution step. For `a < i < j` in `Fin n`, the `b`-indexed sum of
+`single (σ_{ai} σ_{bj}) 1` over `b < j` equals the same sum with the factors transposed.  The
+matching is term-by-term under the involution `φ b = if b = i then a else if b = a then i else b`
+of `{b < j}`: the two "bad" indices `b = i`, `b = a` (where `(a i)`, `(b j)` fail to commute) are
+swapped — turning each crux 3-cycle into the other — and every other `b` is a fixed point. -/
+private theorem jm_inner_swap (n : ℕ) (a i j : Fin n)
+    (hai : a.val < i.val) (hij : i.val < j.val) :
+    (∑ b ∈ Finset.univ.filter (fun b : Fin n => b.val < j.val),
+        single (Equiv.swap a i * Equiv.swap b j) (1 : k))
+      = ∑ b ∈ Finset.univ.filter (fun b : Fin n => b.val < j.val),
+          single (Equiv.swap b j * Equiv.swap a i) (1 : k) := by
+  have haine : a ≠ i := fun h => by rw [h] at hai; exact lt_irrefl _ hai
+  have hajne : a ≠ j := fun h => by rw [h] at hai; omega
+  have hijne : i ≠ j := fun h => by rw [h] at hij; exact lt_irrefl _ hij
+  refine Finset.sum_bij'
+    (fun b _ => if b = i then a else if b = a then i else b)
+    (fun b _ => if b = i then a else if b = a then i else b)
+    ?_ ?_ ?_ ?_ ?_
+  · intro b hb
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hb ⊢
+    split_ifs with h1 h2 <;> omega
+  · intro b hb
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hb ⊢
+    split_ifs with h1 h2 <;> omega
+  · intro b _
+    by_cases h1 : b = i
+    · subst h1; simp [haine]
+    · by_cases h2 : b = a
+      · subst h2; simp [haine]
+      · simp [h1, h2]
+  · intro b _
+    by_cases h1 : b = i
+    · subst h1; simp [haine]
+    · by_cases h2 : b = a
+      · subst h2; simp [haine]
+      · simp [h1, h2]
+  · intro b hb
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hb
+    dsimp only
+    by_cases h1 : b = i
+    · rw [if_pos h1, h1, swap_cross1 a i j haine hajne hijne]
+    · by_cases h2 : b = a
+      · rw [if_neg h1, if_pos h2, h2, swap_cross2 a i j haine hajne hijne]
+      · rw [if_neg h1, if_neg h2]
+        have hbj : b ≠ j := fun h => by rw [h] at hb; exact lt_irrefl _ hb
+        rw [swap_comm_disjoint a i b j haine hajne hijne hbj h1 h2]
+
+/-- Main step for `i < j`: `X_i * X_j = X_j * X_i`.  The product `X_i X_j` expands to
+`∑_{a<i} ∑_{b<j} single (σ_{ai} σ_{bj})`; transposing the order of summation in `X_j X_i` and
+matching each inner `b`-sum via `jm_inner_swap` gives equality. -/
+private theorem jm_commute_lt (n : ℕ) (i j : Fin n) (hlt : i.val < j.val) :
+    jucysMurphy (k := k) n i * jucysMurphy (k := k) n j
+      = jucysMurphy (k := k) n j * jucysMurphy (k := k) n i := by
+  have hL : jucysMurphy (k := k) n i * jucysMurphy (k := k) n j
+      = ∑ a ∈ Finset.univ.filter (fun a : Fin n => a.val < i.val),
+          ∑ b ∈ Finset.univ.filter (fun b : Fin n => b.val < j.val),
+            single (Equiv.swap a i * Equiv.swap b j) (1 : k) := by
+    rw [jucysMurphy, jucysMurphy, Finset.sum_mul]
+    refine Finset.sum_congr rfl (fun a _ => ?_)
+    rw [Finset.mul_sum]
+    refine Finset.sum_congr rfl (fun b _ => ?_)
+    rw [single_mul_single, one_mul]
+  have hR : jucysMurphy (k := k) n j * jucysMurphy (k := k) n i
+      = ∑ b ∈ Finset.univ.filter (fun b : Fin n => b.val < j.val),
+          ∑ a ∈ Finset.univ.filter (fun a : Fin n => a.val < i.val),
+            single (Equiv.swap b j * Equiv.swap a i) (1 : k) := by
+    rw [jucysMurphy, jucysMurphy, Finset.sum_mul]
+    refine Finset.sum_congr rfl (fun b _ => ?_)
+    rw [Finset.mul_sum]
+    refine Finset.sum_congr rfl (fun a _ => ?_)
+    rw [single_mul_single, one_mul]
+  rw [hL, hR]
+  rw [Finset.sum_comm (s := Finset.univ.filter (fun b : Fin n => b.val < j.val))
+        (t := Finset.univ.filter (fun a : Fin n => a.val < i.val))]
+  refine Finset.sum_congr rfl (fun a ha => ?_)
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and] at ha
+  exact jm_inner_swap n a i j ha hlt
 
 /-- **Commutativity of the Gelfand–Zetlin algebra.** The Jucys–Murphy elements pairwise commute:
 they generate a maximal commutative (Gelfand–Zetlin) subalgebra of `k[S_n]`.  This is the
-structural fact underlying the simultaneous-eigenbasis (seminormal) construction. -/
+structural fact underlying the simultaneous-eigenbasis (seminormal) construction.  Proved
+sorry-free by Jucys's classical computation (see `jm_commute_lt`). -/
 theorem jucysMurphy_commute (n : ℕ) (i j : Fin n) :
     Commute (jucysMurphy (k := k) n i) (jucysMurphy (k := k) n j) := by
-  -- Ref: [vershik-kerov1977] (the JM elements generate the commutative GZ subalgebra of k[S_n]);
-  -- brick-5 OV target.
-  sorry
+  -- Ref: [vershik-kerov1977] (the JM elements generate the commutative GZ subalgebra of k[S_n]).
+  -- Jucys's classical computation: expand the products into double sums of transpositions and match
+  -- term-by-term under the involution swapping the two non-commuting indices (b = i ↔ b = a), via
+  -- the crux 3-cycle identities `swap_cross1`/`swap_cross2`.
+  rcases lt_trichotomy i.val j.val with h | h | h
+  · exact jm_commute_lt n i j h
+  · obtain rfl : i = j := Fin.ext h
+    exact Commute.refl _
+  · exact (jm_commute_lt n j i h).symm
+
+/-! ## 5. The remaining deep Okounkov–Vershik theorems (stated, `sorry` + `-- Ref:`) -/
 
 /-- A **seminormal (Gelfand–Zetlin) eigenvector** of the Specht module `S^λ`, packaged abstractly
 so that the eigenvalue theorem can be stated at the level of brick 2's `Specht.Mtab.rep` without
