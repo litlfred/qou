@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Subject (Hecke/Wedderburn/Markov-trace mass theory) squarely in mass-theory chapter scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Checked the stated identity/arithmetic; no counterexample or failing special case found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Block carries genuine mathematical content; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Derivation does not assume its conclusion; inputs are independent of the target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Conclusion scoped to what the argument supports; status tiers honestly labelled."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Each step follows from the prior; no missing lemma in the 'therefore' chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Lean proves the same claim as the .md, not something weaker."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Cited references support the invoked results (Hoefsmit, Habiro, Kassel, etc.)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Key terms defined; base ring / q-regime stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No fit-noise match; numerical claims tiered or exact-algebraic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No unit/conservation error; physics readings consistent with measurements."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Backing witnesses/scripts referenced; values consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cd3635cfd38b",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Sound block; no decisive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:24:13.401Z"
 }

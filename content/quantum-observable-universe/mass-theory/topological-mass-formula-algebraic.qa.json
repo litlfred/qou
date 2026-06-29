@@ -1048,7 +1048,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Statement is the bare claim; interpretation sits in separate sections/remarks."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Subject (Hecke/Wedderburn/Markov-trace mass theory) squarely in mass-theory chapter scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.md:35: \"\\Phi_1(\\beta) = \\tau_arch(Vol_q(\\beta)) = ln|Vol_q0(\\beta)|\"",
+        "notes": "Billed as the algebraic ℚ(q)-side restatement, but the Statement defines Φ₁ via τ_arch incl. an archimedean ln|·| at q₀; the pre-τ algebraic identity m_alg=Φ₁/ℏ² is fine, yet embedding the post-wall ln-definition inside the 'algebraic' statement is a mild wall mix. Minor."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Proof uses algebraic/combinatorial steps; archimedean machinery only where the block is explicitly archimedean."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Lean signature matches the .md quantifiers/hypotheses/conclusion."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Signature is the genuine claim; no weakening or axiom injection of the conclusion."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Proof derives the conclusion; not a verbatim projection of a field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Goal is a substantive identity, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No False/contradictory hypothesis driving a vacuous implication."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Hypotheses are used in the argument."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No decide/trivial masking an incomplete goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Checked the stated identity/arithmetic; no counterexample or failing special case found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Block carries genuine mathematical content; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Derivation does not assume its conclusion; inputs are independent of the target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Conclusion scoped to what the argument supports; status tiers honestly labelled."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Each step follows from the prior; no missing lemma in the 'therefore' chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Lean proves the same claim as the .md, not something weaker."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Cited references support the invoked results (Hoefsmit, Habiro, Kassel, etc.)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Key terms defined; base ring / q-regime stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No fit-noise match; numerical claims tiered or exact-algebraic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No unit/conservation error; physics readings consistent with measurements."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Backing witnesses/scripts referenced; values consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "dd9151f7f88a",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.md:34: \"tau_arch(Vol_q(b)) = ln|Vol_q0(b)|\"",
+        "notes": "Sound algebraic factorisation (Lean over Field R proves m=phi1/hbar via field_simp); strongest objection is the archimedean ln-definition of Φ₁ appearing inside the nominally pre-τ statement — cosmetic, not a math error."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:24:13.401Z"
 }

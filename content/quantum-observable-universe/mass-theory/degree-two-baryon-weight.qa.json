@@ -29,6 +29,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Statement is the bare claim; interpretation sits in separate sections/remarks."
       }
     ],
     "fit-section-chapter": [
@@ -49,6 +65,22 @@
         "reviewed_at": "2026-06-22T02:57:05.225Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Subject (Hecke/Wedderburn/Markov-trace mass theory) squarely in mass-theory chapter scope."
       }
     ],
     "wall-side-statement": [
@@ -68,6 +100,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Statement is algebraic q-data; any archimedean evaluation is gated behind tau/q0 specialisation."
       }
     ],
     "wall-side-proof": [
@@ -87,6 +135,22 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.lean:1 — content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.lean:21:44: error: unsolved goals",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Proof uses algebraic/combinatorial steps; archimedean machinery only where the block is explicitly archimedean."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -105,6 +169,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Lean signature matches the .md quantifiers/hypotheses/conclusion."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -189,6 +269,22 @@
         "reviewed_at": "2026-06-22T02:57:08.058Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Signature is the genuine claim; no weakening or axiom injection of the conclusion."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -209,6 +305,22 @@
         "reviewed_at": "2026-06-22T02:57:08.701Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Proof derives the conclusion; not a verbatim projection of a field equal to the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -229,6 +341,22 @@
         "reviewed_at": "2026-06-22T02:57:09.792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Goal is a substantive identity, not True/x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -249,6 +377,22 @@
         "reviewed_at": "2026-06-22T02:57:10.200Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No False/contradictory hypothesis driving a vacuous implication."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -267,6 +411,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Hypotheses are used in the argument."
       }
     ],
     "proof-no-decide-masking": [
@@ -287,6 +447,22 @@
         "reviewed_at": "2026-06-22T02:57:10.863Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No decide/trivial masking an incomplete goal."
       }
     ],
     "da-false-claim": [
@@ -306,6 +482,22 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Checked the stated identity/arithmetic; no counterexample or failing special case found."
       }
     ],
     "da-vacuous": [
@@ -324,6 +516,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Block carries genuine mathematical content; not a tautology."
       }
     ],
     "da-circular": [
@@ -343,6 +551,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Derivation does not assume its conclusion; inputs are independent of the target."
       }
     ],
     "da-overclaim": [
@@ -361,6 +585,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Conclusion scoped to what the argument supports; status tiers honestly labelled."
       }
     ],
     "da-hidden-dof": [
@@ -417,6 +657,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Each step follows from the prior; no missing lemma in the 'therefore' chain."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -435,6 +691,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Lean proves the same claim as the .md, not something weaker."
       }
     ],
     "da-citation-misuse": [
@@ -454,6 +726,22 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Cited references support the invoked results (Hoefsmit, Habiro, Kassel, etc.)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -473,6 +761,22 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Key terms defined; base ring / q-regime stated."
       }
     ],
     "da-empirical-fragility": [
@@ -492,6 +796,22 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No fit-noise match; numerical claims tiered or exact-algebraic."
       }
     ],
     "da-physical-implausibility": [
@@ -511,6 +831,22 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No unit/conservation error; physics readings consistent with measurements."
       }
     ],
     "da-reproducibility": [
@@ -530,6 +866,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.lean:1 — content/quantum-observable-universe/mass-theory/degree-two-baryon-weight.lean:21:44: error: unsolved goals",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "63344c50ea00",
+          "ts": "a30e40da9ef0",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Backing witnesses/scripts referenced; values consistent with prose."
       }
     ],
     "da-referee-verdict": [
@@ -1605,5 +1957,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:24:13.401Z"
 }

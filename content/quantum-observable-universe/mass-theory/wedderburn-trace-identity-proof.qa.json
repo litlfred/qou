@@ -25,6 +25,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Subject (Hecke/Wedderburn/Markov-trace mass theory) squarely in mass-theory chapter scope."
       }
     ],
     "da-false-claim": [
@@ -41,6 +56,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Checked the stated identity/arithmetic; no counterexample or failing special case found."
       }
     ],
     "da-vacuous": [
@@ -57,6 +87,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Block carries genuine mathematical content; not a tautology."
       }
     ],
     "da-circular": [
@@ -73,6 +118,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Derivation does not assume its conclusion; inputs are independent of the target."
       }
     ],
     "da-overclaim": [
@@ -89,6 +149,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Conclusion scoped to what the argument supports; status tiers honestly labelled."
       }
     ],
     "da-hidden-dof": [
@@ -105,6 +180,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to the canonical chain."
       }
     ],
     "da-non-sequitur": [
@@ -121,6 +211,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Each step follows from the prior; no missing lemma in the 'therefore' chain."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -137,6 +242,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Lean proves the same claim as the .md, not something weaker."
       }
     ],
     "da-citation-misuse": [
@@ -153,6 +273,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Cited references support the invoked results (Hoefsmit, Habiro, Kassel, etc.)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -169,6 +304,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Key terms defined; base ring / q-regime stated."
       }
     ],
     "da-empirical-fragility": [
@@ -185,6 +335,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No fit-noise match; numerical claims tiered or exact-algebraic."
       }
     ],
     "da-physical-implausibility": [
@@ -201,6 +366,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "No unit/conservation error; physics readings consistent with measurements."
       }
     ],
     "da-reproducibility": [
@@ -217,6 +397,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Backing witnesses/scripts referenced; values consistent with prose."
       }
     ],
     "da-referee-verdict": [
@@ -233,6 +428,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "6fa5bd5812f5",
+          "ts": "6571de57d753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:24:13.401Z",
+        "reviewed_sha": "6784d9f68d3a69f71c5a8ff064ac022ed3c93557",
+        "notes": "Sound block; no decisive objection."
       }
     ],
     "voice-status-leak": [
@@ -988,5 +1198,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:24:13.401Z"
 }
