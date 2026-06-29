@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T15:42:13.916481+00:00",
-  "commitSha": "343097319c75ba744a10fa36f38c9f955350583d",
+  "computedAt": "2026-06-29T16:47:41.189989+00:00",
+  "commitSha": "4db09dcf214bb654e0ce261b125109cccd34fc39",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2436,6 +2436,7 @@
         "delta-lambda-feed-analysis.witness.json",
         "delta-lambda-fr-identity-phase5c.witness.json",
         "delta-lambda-full-variance-phase5e-1.witness.json",
+        "delta-lambda-imme-triplet.witness.json",
         "delta-lambda-jsj-phase3.witness.json",
         "delta-lambda-l1-ceiling-sign-prune.witness.json",
         "delta-lambda-magnitude-deficit-profile.witness.json",
