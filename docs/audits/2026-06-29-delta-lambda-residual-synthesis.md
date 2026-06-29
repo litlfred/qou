@@ -92,6 +92,35 @@ tracks the varying analog-state energy `E_x` = 3.6/16.6/1.7/15.1 MeV); the same-
 linear-(writhe)-dominated** (`|b| ≈ 1.7` vs `|c| ≲ 0.1`, vanishing), even more so
 than the A=6/8 pair alone suggested.
 
+## `κ` — formalize-first structural attempt (item 3)
+
+The constancy mechanism collapses the open content to one number, `κ = b/4 ≈
+−0.437` (the per-writhe coefficient). Formalize-first (prune the class before
+fitting): the writhe enters `tr_M(W_free) − tr_M(W_atom)` **only through the
+Markov-trace framing factor**, so `κ` is structurally forced to be the canonical
+Jones–Markov **framing exponent** — a specific categorical constant, not a free
+parameter. That reclassification is the advance: `κ` is a *derive-or-refute*
+target, not a fit.
+
+Tested against the standard framing exponents (no wide search — just the
+canonical constants):
+
+| candidate | value | vs `|κ| = 0.437` |
+|---|---|---|
+| `3/4` (Kauffman `(−A³)^{−w}`, `A=q^{−1/4}`) | 0.750 | off 1.7× |
+| `1/2` | 0.500 | off 14 % |
+| `1/4`, `1` | 0.25, 1.0 | off |
+| `√3/4` (≡ `b=−√3`) | 0.433 | 0.9 % — **flagged numerology** |
+| `7/16` | 0.4375 | 0.1 % — meaningless fraction |
+
+**Verdict (honest):** `κ` matches **no standard framing constant**; the only
+"matches" are the already-flagged `√3/4` and an arbitrary `7/16` — neither is a
+derivation. So the simple-framing-constant class is **pruned**: the value `κ`
+must come from the *actual canonical-trace writhe computation* under the
+Jones–Markov normalization `z = 1/(√q + 1/√q)` (the gated Δ_λ closure), not a
+closed-form framing shortcut. Formalize-first eliminated the obvious candidates
+without a fit; `κ`'s value stays open and gated. **Not wired.**
+
 ## The two Askey structures (one per quantum number)
 
 - **Body-order `n`:** the b-ladder `a(n+2) = 2cosh(10η₀)·a(n+1) − a(n)` (the `10`
