@@ -1,10 +1,11 @@
 ---
 # 2ti7
 title: Drain 382 broken content-sibling .lean orphans (compile sweep 2026-06-28)
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-06-28T16:49:39Z
-updated_at: 2026-06-29T13:00:00Z
+updated_at: 2026-06-29T22:20:45Z
 ---
 
 
