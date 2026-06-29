@@ -24,6 +24,7 @@
 # the identity is q-rational at fibre level.
 -/
 
+import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
