@@ -47,7 +47,7 @@ structure NonCommFourierData where
   /-- Plancherel/Markov weight `w_λ`. -/
   weight : spectrum → ℝ
   /-- All quantum dimensions are non-zero (semisimplicity). -/
-  dim_ne_zero : ∀ λ, dim λ ≠ 0
+  dim_ne_zero : ∀ lam, dim lam ≠ 0
 
 /-- The **inverse non-commutative Fourier transform reading**: the
     trace evaluates as a weighted sum of character values. The sum is
@@ -73,7 +73,7 @@ class IsInverseFourier (D : NonCommFourierData) where
   /-- Decomposition: trace as a weighted sum of `χ_λ / d_λ`. -/
   decomposition :
     ∀ β, D.tr β =
-      (indexFin.map (fun λ => D.weight λ * D.chi λ β / D.dim λ)).sum
+      (indexFin.map (fun lam => D.weight lam * D.chi lam β / D.dim lam)).sum
 
 /-- A re-export theorem in the same shape used by
     `QOU.WedderburnMass.atomicMass`: given the inverse-Fourier
@@ -84,7 +84,7 @@ class IsInverseFourier (D : NonCommFourierData) where
 theorem peter_weyl_decomposition
     (D : NonCommFourierData) [F : IsInverseFourier D] (β : D.carrier) :
     D.tr β =
-      (F.indexFin.map (fun λ => D.weight λ * D.chi λ β / D.dim λ)).sum :=
+      (F.indexFin.map (fun lam => D.weight lam * D.chi lam β / D.dim lam)).sum :=
   F.decomposition β
 
 end QOU.WedderburnFourier
