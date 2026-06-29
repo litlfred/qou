@@ -48,17 +48,6 @@ weighted by powers of $(q - q^{-1})$. The weight function $W(\cdot;
 q)$ is Blitvić's $(q, t)$-Gaussian moment kernel at parameter $t = 1$,
 $q = $ the QOU substrate.
 
-**Status: provable.** The decomposition above is a direct
-consequence of:
-1. The Hecke quadratic relation (algebra-level, no analysis).
-2. The Markov property of $\mathrm{tr}_M$ ([`thm:jones-markov-trace`](#thm:jones-markov-trace)).
-3. Wenzl's product factorisation
-   ([`prop:trace-locality-meets-gs-non-locality`](#prop:trace-locality-meets-gs-non-locality)).
-
-No new mathematics introduced; the proof in
-[`prf:hecke-satisfies-blitvic-hypothesis`](#prf:hecke-satisfies-blitvic-hypothesis)
-is an explicit reduction.
-
 **Corollary: the q-CLT input is verified.** With this proposition
 established, Blitvić's CLT
 [`blitvic2012`, Theorem 1.1] applies directly: the rescaled centred

@@ -4,7 +4,7 @@ export default remark({
   label: "rem:bar-involution-properties",
   interprets: "def:bar-involution",
   title:
-    "Bar-involution properties: the $P_{\\mathrm{avg}}$ / $P_{\\mathrm{skew}}$ projections, the canonical classification of QOU quantities by bar-type, the key algebraic identities ($c_5$, Hoefsmit-Quantum-2, half-step factorization of $h$), the geometric / Kac–Sunada readings, and the $\\mathbb{Z}/2\\mathbb{Z}$ bar-grading proofs",
+    "Bar-involution: the $P_{\\mathrm{avg}}$ / $P_{\\mathrm{skew}}$ canonical projections and the QOU bar-type classification",
   uses: [
     "def:bar-involution",
     "prop:c5-involution-leibniz-decomposition",

@@ -23,4 +23,16 @@ export default proposition({
     "established",
   ],
   proofs: ["prf:trace-locality-meets-gs-non-locality"],
+  authorNotes: [
+    {
+      kind: "status",
+      body:
+        "**provable from existing infrastructure.** The proof in `prf:trace-locality-meets-gs-non-locality` assembles three already-established QOU components: `thm:jones-markov-trace`, the Gröbner–Shirshov reduction algorithm (as instrumented in QOU's Hecke / Descartes Lean modules), and Wenzl's 1988 vertex-volume factorisation [`wenzl1988`]. No new mathematics is introduced.",
+    },
+    {
+      kind: "note",
+      body:
+        "**Summary.** The proposition resolves the apparent tension between Markov locality and Gröbner–Shirshov non-locality as sequential operations bridged by Wenzl's product factorisation, with the proof a straightforward assembly of cited existing components.",
+    },
+  ],
 });
