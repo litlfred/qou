@@ -139,6 +139,16 @@ against the real cone via the lean-direct recipe below).
   [`2026-06-29-wedderburn-trace-identity-false-at-generic-q.md`](../audits/2026-06-29-wedderburn-trace-identity-false-at-generic-q.md)).
   Dischargeable from positivity for `1 < q`; carried as a hypothesis.
 
+## Increment 3 (2026-06-29) — `D² ≠ 0` discharged from positivity (last input derived)
+
+Same file, sorry-free, cone-verified. `qDim_pos` (`1 < q ⇒ 0 < d_q(λ)`, from `qFactorial_pos` +
+`qBracket_pos` + `one_le_hookLength` + a `foldl_mul_pos` helper) ⇒ `sum_qDimSq_pos`
+(`0 < Σ_λ d_q²` on nonempty `P`) ⇒ `heckeLocalizationOfPos` builds the obligation class with
+`globalDim_ne` **derived** (no longer a hypothesis), for `1 < q` (the substrate regime) and
+nonempty `P`. So residual (i)'s necessary conditions C1+C2 now hold for the actual Hecke Plancherel
+measure with **zero** remaining structural inputs beyond `1 < q`, `P` sorted + conjugate-closed +
+nonempty — none of them the false `Σ d_q² = [n]_q!`.
+
 ## Open log
 
 - 2026-06-29: branch + intent; corpus map of residual (i) dispatched.
@@ -150,3 +160,5 @@ against the real cone via the lean-direct recipe below).
 - 2026-06-29: picking up "#2743" (`Σ d_q² = [n]_q!`) found the target is **false** at generic q
   (disproved n=2..5); wrote audit, corrected the conflation. The correct q-identity is the Poincaré
   `[n]_q! = Σ_λ f^λ·q^{b(λ)}·d_q(λ)`; the vector-space `Σ(f^λ)²=n!` is already proved (#2724).
+- 2026-06-29: Increment 3 — discharged `D² ≠ 0` from positivity (`qDim_pos`, `1 < q`), so
+  `heckeLocalizationOfPos` has no remaining structural input beyond the trivial block-set facts.
