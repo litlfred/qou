@@ -1,6 +1,8 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -22,31 +24,26 @@ LaTeX label: `prop:topological-mass-formula`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [thurston1978] https://doi.org/10.1007/978-1-4612-9903-6
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring**: this is the *archimedean* (post-fibre-functor)
+realisation, so every quantity is a real number. The substrate ground
+ring `R_q = ℤ[q, q⁻¹]` carries no ordering or division and cannot host
+`ℏ_q = (q-1)/q`, `div_pos`, or the positivity statements below; the
+specialisation `ι : R_q → ℝ, q ↦ q₀` is taken *before* these
+statements, per AGENTS.md §7c (archimedean constructs ⇒ `ℝ`).
 -/
 
 namespace QOU.Torsion
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
-
 /-- The quantum Planck constant ℏ_q = (q - 1)/q = 1 - 1/q. -/
-noncomputable def quantumPlanck (q : R_q) : R_q := (q - 1) / q
+noncomputable def quantumPlanck (q : ℝ) : ℝ := (q - 1) / q
 
 /-- ℏ_q is positive for q > 1. -/
--- theorem quantumPlanck_pos (q : R_q) (hq : 1 < q) : 0 < quantumPlanck q := by  -- (archimedean; not meaningful over R_q)
+theorem quantumPlanck_pos (q : ℝ) (hq : 1 < q) : 0 < quantumPlanck q := by
   unfold quantumPlanck
   apply div_pos (by linarith) (by linarith)
 
 /-- The archimedean mass formula: m(K) = Vol(K) / ℏ_q². -/
-noncomputable def archimedeanMass (q : R_q) (vol : R_q) : R_q :=
+noncomputable def archimedeanMass (q : ℝ) (vol : ℝ) : ℝ :=
   vol / (quantumPlanck q) ^ 2
 
 /-- **Archimedean Mass Formula** (Proposition):
@@ -68,9 +65,9 @@ noncomputable def archimedeanMass (q : R_q) (vol : R_q) : R_q :=
 -- Ref: [manuscript] §4/topological-mass-formula
 -- Ref: [thurston1978] The Geometry and Topology of Three-Manifolds — see content/schema/references.ts
 theorem ArchimedeanMassFormula
-    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
-    -- (vol : R_q) (hvol : 0 < vol)  -- (archimedean; not meaningful over R_q)
-    (baseline : R_q) (exceptional : R_q)
+    (q : ℝ) (hq : 1 < q)
+    (vol : ℝ)
+    (baseline : ℝ) (exceptional : ℝ)
     (h_baseline : baseline = vol)
     (h_exceptional : exceptional = vol * (1 / (quantumPlanck q) ^ 2 - 1))
     : baseline + exceptional = archimedeanMass q vol := by
@@ -85,8 +82,8 @@ theorem ArchimedeanMassFormula
 
 /-- The archimedean mass is positive for hyperbolic knots (Vol > 0). -/
 -- Ref: [manuscript] §4/topological-mass-formula
--- theorem archimedeanMass_pos (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
-    -- (vol : R_q) (hvol : 0 < vol) :  -- (archimedean; not meaningful over R_q)
+theorem archimedeanMass_pos (q : ℝ) (hq : 1 < q)
+    (vol : ℝ) (hvol : 0 < vol) :
     0 < archimedeanMass q vol := by
   unfold archimedeanMass
   exact div_pos hvol (pow_pos (quantumPlanck_pos q hq) 2)
