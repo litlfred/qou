@@ -80,6 +80,42 @@ and does **not** need this identity. It is discharged directly from positivity (
 `qBracket_pos`/`qFactorial_pos` ⇒ `qDim > 0` ⇒ `Σ dim_q² > 0`), independent of the false claim. The
 earlier workplan/docstring note "`D² = Σ d_q² = [n]_q!`" is corrected to "`D² = Σ d_q² ≠ [n]_q!`".
 
+## Consumer investigation (2026-06-29) — verdict (a), and the false claim is NON-load-bearing
+
+A corpus sweep of the consumers settles the disposition and bounds the blast radius.
+
+**Verdict: (a) — the statement is false under its only coherent reading.** The `.md` explicitly
+defines `dim_q(λ)` as the hook specialization `[n]_q!/∏[h_c]_q` (= `QPartitionCombinatorics.qDim`),
+the `.lean` uses that concrete `qDim`, and every consumer expects the partition-indexed hook-qDim.
+It is **not** a `.lean`↔`.md` `dim_q` mismatch (option (b) is ruled out).
+
+**Consumers (cite the identity):** `wigner-coefficient-derivation(.ts/-proof.md)`,
+`em-spectral-completeness.ts`, `symbolic-character-table.ts`, `mass-categorical-descent.md`,
+`mass-coefficient-shadow-price-proof.md`, `appendix .../mba-step05-wedderburn.ts`.
+
+**But the false identity is invoked, not used.** What the consumers actually depend on is sound:
+- `[n]_q!` as an **algebraic scale** (e.g. `λ_W = [5]_q!·m_e`) — well-defined, independent of the
+  sum equality.
+- `w̃_λ := d_q(λ)²/[n]_q!` as a **per-block weight ratio** (LP duality / shadow prices /
+  `wedderburn-weight-canonical.md`) — a ratio, which does **not** require `Σ_λ d_q² = [n]_q!`.
+- The genuine normalization is a **different, true** identity:
+  `Σ_λ d_λ·y_λ(q) = 1` (ordinary dim `d_λ=f^λ` × Markov weight `y_λ`), Plancherel completeness
+  in [`y-lambda-recipe-from-partition.lean`](../../content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean)
+  (verified < 10⁻¹⁵, n≤12). Note `y_λ = w̃_λ` only on **self-conjugate** λ; they differ (ratio
+  0.14–2.54 at q₀) off the diagonal (`wedderburn-weight-canonical.md`) — so even the
+  `w̃_λ = d_q²/[n]_q!` weight is not the Markov weight in general.
+
+So the "partition of the total Markov weight" the proposition claims to provide is really carried by
+`Σ_λ d_λ·y_λ = 1`, not by `Σ_λ d_q² = [n]_q!`.
+
+**Recommended fix (owner adjudicates):** restate `prop:wedderburn-trace-identity` as one of —
+1. the **Markov normalization** `Σ_λ d_λ·y_λ(q) = 1` (the identity consumers actually rely on; already
+   formalized), **or**
+2. the **Poincaré/maj** `[n]_q! = Σ_λ f^λ·q^{b(λ)}·d_q(λ)` (the genuine q-identity for `[n]_q!`), **or**
+3. the **vector-space** `Σ_λ (f^λ)² = n!` (#2724, already sorry-free) —
+and update the ~6 consumers' citations (mechanical; their real dependency is sound). The `sorry` in
+`wedderburn_trace_identity.lean` must **not** be "proved" (its statement is false).
+
 ## Reproduce
 
 ```bash

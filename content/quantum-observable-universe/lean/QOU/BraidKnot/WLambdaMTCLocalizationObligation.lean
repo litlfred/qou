@@ -177,4 +177,61 @@ noncomputable def heckeLocalization
   loc := fun p => qDim q p ^ 2 / (∑ m ∈ P, qDim q m ^ 2)
   loc_matches := fun _ _ => rfl
 
+/-! ## Discharging `D² ≠ 0` from positivity (no Wedderburn identity needed) -/
+
+/-- Multiplicative `foldl` over positive factors is positive. -/
+private theorem foldl_mul_pos {α : Type*} (g : α → ℝ) (L : List α)
+    (h : ∀ x ∈ L, 0 < g x) : 0 < L.foldl (fun a x => a * g x) 1 := by
+  have aux : ∀ (M : List α) (acc : ℝ), 0 < acc → (∀ x ∈ M, 0 < g x) →
+      0 < M.foldl (fun a x => a * g x) acc := by
+    intro M
+    induction M with
+    | nil => intro acc hacc _; simpa using hacc
+    | cons x xs ih =>
+      intro acc hacc hm
+      simp only [List.foldl_cons]
+      exact ih (acc * g x) (mul_pos hacc (hm x (by simp)))
+        (fun y hy => hm y (List.mem_cons_of_mem _ hy))
+  exact aux L 1 one_pos h
+
+/-- A genuine cell's hook length is at least `1`. -/
+private theorem one_le_hookLength {lam : List ℕ} {i j : ℕ}
+    (hj : j < (lam.get? i).getD 0) : 1 ≤ Partition.hookLength lam i j := by
+  unfold Partition.hookLength
+  cases hgi : lam.get? i with
+  | none => rw [hgi, Option.getD_none] at hj; exact absurd hj (Nat.not_lt_zero j)
+  | some row_i =>
+    rw [hgi, Option.getD_some] at hj
+    simp only [hj, if_true]
+    omega
+
+/-- **`d_q(λ) > 0` for `q > 1`** — the genuine Hecke q-dimension is positive in the substrate
+regime. Numerator `[n]_q! > 0` (`qFactorial_pos`); the denominator is a product of
+`qBracket q h > 0` over genuine cells (`qBracket_pos`, hooks `≥ 1`). -/
+theorem qDim_pos {q : ℝ} (hq : 1 < q) (lam : List ℕ) : 0 < qDim q lam := by
+  unfold qDim
+  apply div_pos (qFactorial_pos hq _)
+  apply foldl_mul_pos
+  intro i _
+  apply foldl_mul_pos
+  intro j hj
+  exact qBracket_pos hq (one_le_hookLength (List.mem_range.mp hj))
+
+/-- **`D² = Σ_λ d_q(λ)² > 0`** on a nonempty block set for `q > 1` — so `globalDim_ne` holds
+directly from positivity, **without** the (false) `Σ d_q² = [n]_q!` identity. -/
+theorem sum_qDimSq_pos {q : ℝ} (hq : 1 < q) {P : Finset (List ℕ)} (hP : P.Nonempty) :
+    0 < ∑ m ∈ P, qDim q m ^ 2 := by
+  obtain ⟨m, hm⟩ := hP
+  exact Finset.sum_pos' (fun i _ => sq_nonneg _) ⟨m, hm, pow_pos (qDim_pos hq m) 2⟩
+
+/-- **`heckeLocalization` with `D² ≠ 0` discharged from positivity** (`q > 1`, `P` nonempty) —
+the last structural input is now *derived*, not assumed. -/
+noncomputable def heckeLocalizationOfPos
+    (q : ℝ) (hq : 1 < q) (P : Finset (List ℕ))
+    (hsorted : ∀ l ∈ P, l.Sorted (· ≥ ·))
+    (hconj : ∀ l ∈ P, Partition.conjugate l ∈ P)
+    (hP : P.Nonempty) :
+    BeasleyWittenLocalization ℝ :=
+  heckeLocalization q P hsorted hconj (ne_of_gt (sum_qDimSq_pos hq hP))
+
 end QOU.BraidKnot.Keystone
