@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.067Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Interface table mapping categorical structures to physics names; fits the observations chapter as the naming layer."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Claims that physics names are q_0-dependent labels; consistent with the framework, no false mathematical statement."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' presents substantial mathematical content: condensate, valence shell, isospin, etc.) are convenient labels for recurring **...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Defines the interface and the cache/lookup mechanism; not content-free."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Names mapped from cache keys (categorical) to physics; the directionality (categorical is source of truth) is explicit, not circular."
       }
     ],
     "da-overclaim": [
@@ -138,6 +198,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "physics-names-knot-operations.md:44: \"requires $w_{(3,3,3,3)}(q_0)$ to dominate the depth-3 chirality cells of $H_{12}$ — at $q_0$ this weight is $\\sim 0.024$, the largest contribution at depth 3\"",
+        "notes": "The 'alpha particle' identification depends on a specific weight dominating at q_0; this is a q_0-tuned selection (the block admits it must be 're-derived' at other q_0), which is a substrate-specific selection effect bordering on a hidden selection DOF, though honestly flagged."
       }
     ],
     "da-non-sequitur": [
@@ -157,6 +234,21 @@
         "notes": "The argument flow in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Categorical-structure-persists / numerical-weight-depends-on-q_0 distinction is logically clean."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -175,6 +267,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Remark; no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -230,6 +337,21 @@
         "notes": "Key terms and symbols in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Cache keys, physics-names lookup, dim_q V_λ all specified."
       }
     ],
     "da-empirical-fragility": [
@@ -249,6 +371,23 @@
         "notes": "The algebraic and logical relations in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "physics-names-knot-operations.md:44: \"this weight is $\\sim 0.024$, the largest contribution at depth 3\"",
+        "notes": "The 'largest at depth 3' ranking is a q_0-specific numerical claim with no witness/precision; whether 0.024 robustly dominates is not pinned to a reproducible computation in the block."
       }
     ],
     "da-physical-implausibility": [
@@ -268,6 +407,21 @@
         "notes": "The physical concepts described in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The labels-are-derived stance is a framework-internal claim, not in conflict with measurement."
       }
     ],
     "da-reproducibility": [
@@ -287,6 +441,23 @@
         "notes": "The derivation steps and formal definitions in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "physics-names-knot-operations.md:21: \"discovery cache (computations/knot-operation-cache.json ...)\"",
+        "notes": "References knot-operation-cache.json and physics-names.json but the cited link on line 14 is an empty anchor (#); the cache artifacts are named but not hash-pinned, so the 0.024 weight is not directly reproducible from the block."
       }
     ],
     "da-referee-verdict": [
@@ -307,6 +478,23 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "physics-names-knot-operations.md:14: \"[cite knot-operation-cache.json](#)\"",
+        "notes": "Verdict: accept with minor fixes. Strongest objection: the q_0-specific weight rankings (alpha-particle ~0.024) lack a hash-pinned witness, and the cache citation on line 14 is a broken empty anchor."
       }
     ],
     "voice-status-leak": [
@@ -1116,5 +1304,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

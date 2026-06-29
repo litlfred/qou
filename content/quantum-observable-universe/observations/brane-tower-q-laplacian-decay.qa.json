@@ -58,6 +58,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is the tower-sum definition + the boxed bound; the 'Physical reading' material is interpretive but is a separate labelled section and the block is itself the proposition+bound (no companion remark required since interpretation is clearly demarcated as discussion, not woven into the claim). Borderline but the boxed Bound is the operative statement."
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Statement + Bound + Mechanism are mathematical; no extraneous physical interpretation in the proposition."
       }
     ],
     "fit-section-chapter": [
@@ -92,6 +107,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "observations chapter; brane-tower convergence / non-local integration bound is on-scope (tagged issue-649, established)."
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Brane-tower convergence bound supports the non-local integration used in mass observables; fits chapter."
       }
     ],
     "wall-side-statement": [
@@ -126,6 +156,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "observations is an explicitly-archimedean chapter; the bound is a real-valued L² norm inequality with q in the Wenzl regime q>1 and q₀≈1.110, which is legitimately archimedean for this chapter. The Lean sibling explicitly notes q specialised to ℝ because it is a real-valued norm inequality."
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Real-valued L^2 norm bound with q>1 ordering is archimedean by nature; the .ts annotates ℝ specialisation."
       }
     ],
     "wall-side-proof": [
@@ -160,6 +205,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Geometric-series tail bound with q^{-2}<1 is an archimedean estimate matching an archimedean statement; consistent."
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Geometric-series + spectral argument is archimedean and the statement is archimedean, so machinery matches the regime."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -194,6 +254,23 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Lean theorem brane_tower_q_laplacian_decay [ctx] : |T_rho − ℏ_q²·Δ⁽¹⁾| ≤ ℏ_q⁴·‖ρ‖·(q⁻²/(1−q⁻²)) faithfully encodes the boxed Bound in brane-tower-q-laplacian-decay.md:17-23. Hypotheses (Wenzl regime, bounded L² norm) are carried as context-class fields. The proof rw[←ctx.ratio_eq]; exact ctx.remainder_bound matches the bound; agreement up to the context-class packaging."
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "brane_tower_q_laplacian_decay.lean:62: \"theorem ... := by rw [← ctx.ratio_eq]; exact ctx.remainder_bound\"",
+        "notes": "The .md derives the remainder bound from the q-integer asymptotics and geometric series; the Lean theorem's conclusion IS the class field ctx.remainder_bound (modulo a ratio_eq rewrite), so the Lean assumes the bound rather than proving it."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -430,6 +507,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The stated bound matches the .md's boxed inequality; not weakened in shape."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -483,6 +575,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "critical",
+        "evidence": "brane_tower_q_laplacian_decay.lean:67: \"exact ctx.remainder_bound\"",
+        "notes": "Self-assuming projection: the theorem conclusion equals the class field remainder_bound; the proof is a verbatim projection of the field whose type is the declaration's conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -534,6 +643,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is a genuine real inequality (|T−ℏ²Δ¹| ≤ …), not True/rfl; the remainder_bound field carries the actual inequality content."
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Goal is a real inequality, not True/x=x; the defect is projection, not tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -587,6 +711,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No False hypothesis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -640,6 +779,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "ratio_eq and remainder_bound both consumed."
       }
     ],
     "proof-no-decide-masking": [
@@ -691,6 +845,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof uses rw + exact; no decide/trivial masking."
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No decide; the issue is projection (covered above)."
       }
     ],
     "da-false-claim": [
@@ -710,6 +879,21 @@
         "notes": "No false claims identified in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Verified the geometric-series tail: with ratio q^{-2}hbar_q^2<1 in the substrate range the sum converges; bound is correct."
       }
     ],
     "da-vacuous": [
@@ -728,6 +912,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' presents substantial mathematical content: requires summing over the brane tower — an infinite jet prolongation*...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "brane_tower_q_laplacian_decay.lean:41: \"remainder_bound : |T_rho - hbar_q^2*delta1_rho| ≤ hbar_q^4*rho_L2*geometric_ratio\"",
+        "notes": "The narrative argument is non-vacuous, but its Lean encoding assumes the bound as a class field and re-emits it; the Lean carries no independent content."
       }
     ],
     "da-circular": [
@@ -747,6 +948,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No back-fit to an observable target."
       }
     ],
     "da-overclaim": [
@@ -765,6 +981,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Claims absolute convergence + leading-order domination, which the geometric series supports."
       }
     ],
     "da-hidden-dof": [
@@ -784,6 +1015,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "hbar_q=(q-1)/q and the q-Laplacian spectrum are canonical; no free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -803,6 +1049,21 @@
         "notes": "The argument flow in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Exponential damping of high modes -> geometric tail is a valid chain."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -821,6 +1082,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "brane_tower_q_laplacian_decay.lean:67: \"exact ctx.remainder_bound\"",
+        "notes": "Lean proves a vacuously-implied projection of an assumed bound; .md proves the bound from first principles. Divergence in content."
       }
     ],
     "da-citation-misuse": [
@@ -840,6 +1118,21 @@
         "notes": "Citations to wenzl1988 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "cites wenzl1988 for the positivity regime; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -859,6 +1152,21 @@
         "notes": "Key terms and symbols in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Wenzl regime, q-integer, iterated Laplacian all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -878,6 +1186,21 @@
         "notes": "The algebraic and logical relations in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No fitted numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -897,6 +1220,21 @@
         "notes": "The physical concepts described in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Exponential mode damping is physically standard for a spectral Laplacian."
       }
     ],
     "da-reproducibility": [
@@ -916,6 +1254,21 @@
         "notes": "The derivation steps and formal definitions in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Analytic bound, no compute witness required."
       }
     ],
     "da-referee-verdict": [
@@ -936,6 +1289,23 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, preventing formal verification of the claims in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "7cfc9af36875",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "brane_tower_q_laplacian_decay.lean:67: \"exact ctx.remainder_bound\"",
+        "notes": "Verdict: minor revisions (math sound). Strongest objection: the Lean canonical is a self-assuming projection of the bound it claims to prove; the narrative argument is the only real proof."
       }
     ],
     "voice-status-leak": [
@@ -1938,5 +2308,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

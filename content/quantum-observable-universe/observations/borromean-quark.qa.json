@@ -46,6 +46,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Keystone quark-as-Borromean conjecture; fits the Particle Identification Conjectures section."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -130,6 +146,22 @@
         "notes": "No false claims identified in 'Quarks as Borromean-linked unknots in the exceptional divisor': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Borromean Brunnian property, vanishing pairwise linking, μ̄_123=±1, eight gluons from C(3,2)·SU(3) — topological facts stated correctly."
       }
     ],
     "da-vacuous": [
@@ -149,6 +181,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Quarks as Borromean-linked unknots in the exceptional divisor' are non-vacuous as they make concrete conjectures about 'Quarks are not fundamental knots.  A quark is a **neutrino (...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Rich structural conjecture content."
       }
     ],
     "da-circular": [
@@ -169,6 +217,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Mass-from-linking analogy to QCD (99% gluon binding) is an analogy, not a back-fit derivation."
       }
     ],
     "da-overclaim": [
@@ -188,6 +252,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Quarks as Borromean-linked unknots in the exceptional divisor' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "borromean-quark.md:55: \"This matches the QCD result: approximately 99% of the proton's 938 MeV comes from gluon binding energy\"",
+        "notes": "Presents a qualitative analogy (Borromean volume ↔ gluon binding) as 'matching the QCD result'; the match is conceptual, not a computed 99% from the framework. Tolerable in a conjecture but 'matches' slightly overstates."
       }
     ],
     "da-hidden-dof": [
@@ -208,6 +290,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Vol(B_3)=7.32772 is a topological invariant; no fitted parameter."
       }
     ],
     "da-non-sequitur": [
@@ -228,6 +326,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/borromean-quark.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Brunnian property -> color confinement analogy is internally coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -247,6 +361,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/borromean-quark.lean uses a class-conjecture pattern, matching the conjectural nature of 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Conjecture; Lean ref is an axiomatised-conjecture placeholder, not a proof claim."
       }
     ],
     "da-citation-misuse": [
@@ -267,6 +397,22 @@
         "notes": "No citations are present in 'Quarks as Borromean-linked unknots in the exceptional divisor', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No external citations in the block."
       }
     ],
     "da-definitional-ambiguity": [
@@ -325,6 +471,22 @@
         "notes": "The algebraic and logical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No precision numerical match claimed; the 99% is the known QCD figure used as analogy."
       }
     ],
     "da-physical-implausibility": [
@@ -345,6 +507,24 @@
         "notes": "The physical concepts described in 'Quarks as Borromean-linked unknots in the exceptional divisor' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "borromean-quark.md:62: \"Coulomb charge contribution: +2/3 ... -1/3 of the proton charge\"",
+        "notes": "Assigning fractional electric charge to crossing orientation within B_3 is a conjectural mechanism with no charge-quantization derivation shown; physically the +2/3,-1/3 are inputs from observation, not derived from the orientation labels here. Acceptable as conjecture but the charge assignment is asserted."
       }
     ],
     "da-reproducibility": [
@@ -365,6 +545,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/borromean-quark.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.lean:1 — content/quantum-observable-universe/observations/borromean-quark.lean:35:16: error(lean.unknownIdentifier): Unknown constant `Finset.univ.sum`"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Conjecture; Vol(B_3) verified elsewhere (knot-volumes-verification)."
       }
     ],
     "da-referee-verdict": [
@@ -386,6 +582,22 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Accept as a keystone conjecture; topological facts correct, charge/orientation mechanism appropriately conjectural. Strongest objection: 'matches QCD 99%' is analogy, not computed."
       }
     ],
     "voice-status-leak": [
@@ -1271,5 +1483,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

@@ -894,7 +894,271 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Higgs particle-identification conjecture; fits the Particle Identification Conjectures section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "higgs-t28.md:46: \"one winds +4 and the other -4 around the Reeb direction. The total angular momentum is J = +4 + (-4) = 0\"",
+        "notes": "Equating winding numbers (+4,-4) with angular momenta and summing to J=0 to declare a spin-0 scalar is heuristic, not a rigorous spin assignment; tolerable in a conjecture but the spin-0 conclusion is asserted, not derived."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Conjecture carries substantive structural content (genus-3 spanning all three divisors)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Identification of T(2,8) as Higgs is structural, not back-fit to 125 GeV (mass is a downstream consequence)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "higgs-t28.md:86: \"gives it a mass of $\\sim 125$ GeV\"",
+        "notes": "The ~125 GeV mass is asserted as 'determined by the Skein polynomial at q_0' but no computed value or witness is given; conditional-as-derived for a conjecture-tier block."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "higgs-t28.md:91: \"m_H = Vol(Seifert(T(2,8)))/hbar_q^2 · lambda_{scale}\"",
+        "notes": "Reintroduces lambda_scale, which AGENTS.md explicitly purged (absorbed 2026-05-23); the canonical mass shape is m_e·Vol·rho/hbar_q^2 with no separate lambda_scale constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Genus-divisor-spanning ladder T(2,2k) is internally consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Conjecture; Lean ref is a placeholder for the axiomatised conjecture, not a proof claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Cross-refs internal blocks only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Exceptional divisors, color tubes, T(2,2k) genus all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "higgs-t28.md:86: \"a mass of $\\sim 125$ GeV\"",
+        "notes": "125 GeV match has no precision/witness; cannot assess whether it is inside fit noise."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Higgs-as-spin-0 boson and mass-via-crossing are conjectural but not in conflict with a measurement (it targets the right particle)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "higgs-t28.md:87: \"evaluated at $q = q_0$\"",
+        "notes": "No witness JSON or script cited for the Skein-polynomial mass evaluation."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3d792a809bfb",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "higgs-t28.md:91: \"\\cdot \\lambda_{\\mathrm{scale}}\"",
+        "notes": "Verdict: acceptable as a conjecture but needs revision. Strongest objection: the mass formula reintroduces the purged lambda_scale constant (AGENTS.md guardrail)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

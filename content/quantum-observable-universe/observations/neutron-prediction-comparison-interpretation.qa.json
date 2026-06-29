@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Interpretation of the beta-stability prediction residuals; fits the observations chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Calcium n_obs=20 / Ba n_obs=82 at magic numbers; standard nuclear data, correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Substantive interpretation of where the smooth formula's residuals concentrate."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Attributes residuals to shell structure (open question), not back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Says the smooth formula captures the trend; residuals encode shell structure (open) — appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Single parameter q; the residual shell structure is explicitly an open question, not a hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Residual-clustering-at-magic-numbers reasoning follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Interpretation remark; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No external citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Stability pairs, smooth formula clearly referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Discrepancies at Ca/Ba are real (4 neutrons) and attributed, not hidden."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Magic-number clustering of stable isotopes is standard nuclear physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Interpretive; numbers backed by the parent proposition's table."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e785565030c1",
+          "ts": "b477f4f38c38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Accept; correctly frames residuals as shell structure beyond the smooth one-parameter trend."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

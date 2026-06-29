@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.817Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Statement is the bare variance formula + positivity + numerical value; no extraneous interpretation (that lives in the -interpretation remark)."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:56:54.271Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "q-CLT variance positivity; fits the substrate-statistics observations."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:56:54.601Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Uses q^{1/2}+q^{-1/2}>2 ordering and a numerical q_0 value; genuinely archimedean, .md flags the ℝ specialisation note."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:56:54.986Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Proof uses the Wenzl ordering bound (archimedean) for an archimedean positivity statement; machinery matches."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,23 @@
         "reviewed_at": "2026-06-22T02:56:55.386Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "centered_hecke_variance_positive.lean:31: \"term1_pos : 0 < (q - q⁻¹) * z\" and \"term2_pos : 0 < 1 - z ^ 2\"",
+        "notes": "The .md proof DERIVES term-positivity from the Wenzl bound (z^2<1/4, u-u^{-1}>0); the Lean ASSUMES term1_pos and term2_pos as class fields, then linarith. Lean proves a weaker conditional (given the two positivities) than the .md (given only the Wenzl regime)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The Lean conclusion (var_formula ∧ 0<Var) matches the .md statement's shape; not weakened to a tautology."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +485,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "centered_hecke_variance_positive.lean:59: \"linarith [ctx.var_formula, ctx.term1_pos, ctx.term2_pos]\"",
+        "notes": "Borderline: positivity is composed via linarith from per-term positivity FIELDS rather than projected verbatim, but those fields axiomatise exactly the Wenzl-regime facts the narrative proves, so the Lean is near-self-assuming for the positivity half."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +538,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Goal is a real conjunction (formula + strict positivity), not True."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +606,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No False; the class fields are satisfiable in the Wenzl regime."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +674,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "var_formula, term1_pos, term2_pos all used."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +725,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "linarith, no decide masking."
       }
     ],
     "da-false-claim": [
@@ -605,6 +774,21 @@
         "reviewed_at": "2026-06-28T18:08:18.384Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "The algebraic derivation of the centered Hecke variance is mathematically exact: expanding (\\sigma_i - z)^2 under the Hecke quadratic relation precisely yields (q - q^{-1})z + 1 - z^2."
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Verified Var = (q-q^{-1})z + 1 - z^2 from the Hecke quadratic relation and tr_M(σ)=z; formula and the >3/4 bound are correct."
       }
     ],
     "da-vacuous": [
@@ -623,6 +807,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime' presents substantial mathematical content: Let $z = 1/(q^{1/2}+q^{-1/2})$ be the Markov parameter and $\\tilde\\sigma_i := \\s...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Statement and narrative proof have real content; the Lean weakness is captured under self-assuming-projection above."
       }
     ],
     "da-circular": [
@@ -642,6 +841,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No back-fit."
       }
     ],
     "da-overclaim": [
@@ -660,6 +874,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Claims positivity only in the Wenzl regime, with the vacuity outside it explicitly noted (proof line 46-49)."
       }
     ],
     "da-hidden-dof": [
@@ -679,6 +908,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "z=1/(q^{1/2}+q^{-1/2}) is the canonical Markov parameter; no free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -698,6 +942,21 @@
         "notes": "The argument flow in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Wenzl bound -> z^2<1/4 and u-u^{-1}>0 -> Var>3/4 is a valid chain (verified)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -716,6 +975,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/centered-hecke-variance-positive.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "centered_hecke_variance_positive.lean:54: \"theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext]\"",
+        "notes": "The .md proof establishes positivity from the Wenzl regime; the Lean assumes per-term positivity as instance fields, so the Lean proves strictly less than the narrative."
       }
     ],
     "da-citation-misuse": [
@@ -735,6 +1011,21 @@
         "notes": "No citations are present in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Uses thm:jones-markov-trace and the non-commutative-probability dictionary internally; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -754,6 +1045,21 @@
         "notes": "Key terms and symbols in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Markov parameter, centred generator, Wenzl regime all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -773,6 +1079,21 @@
         "notes": "The algebraic and logical relations in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Var≈0.855 at q_0 is a direct evaluation, robust; not a fitted match."
       }
     ],
     "da-physical-implausibility": [
@@ -792,6 +1113,21 @@
         "notes": "The physical concepts described in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Mathematical positivity statement, no physics measurement."
       }
     ],
     "da-reproducibility": [
@@ -811,6 +1147,21 @@
         "notes": "The derivation steps and formal definitions in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Numerical value backed by the -table-data block; directly recomputable from the formula."
       }
     ],
     "da-referee-verdict": [
@@ -831,6 +1182,23 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/centered-hecke-variance-positive.lean is missing, preventing formal verification of the claims in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "f6b00b5194eb",
+          "ts": "efc4b44132e4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "centered_hecke_variance_positive.lean:31: \"term1_pos : 0 < (q - q⁻¹) * z\"",
+        "notes": "Verdict: math correct (formula + bound verified); but the Lean canonical assumes the per-term positivity the narrative proves. Tighten the Lean to derive positivity from the Wenzl hypothesis."
       }
     ],
     "voice-status-leak": [
@@ -1833,5 +2201,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

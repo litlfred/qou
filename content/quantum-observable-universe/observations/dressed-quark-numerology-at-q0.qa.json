@@ -70,6 +70,23 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "dressed-quark-numerology-at-q0.md:22: \"The CODATA value m_n - m_p ≈ 1.293 MeV is no longer an input — it is a prediction at -0.53% residual\"",
+        "notes": "Calls m_n-m_p a 'prediction at -0.53%' but the block's title is 'numerology' and the split derivation leans on M_N (CODATA-anchored) plus a δ shift fixed post-hoc; the prediction status is weaker than stated."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -98,6 +115,21 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Remark; no Lean sibling."
       }
     ],
     "da-empirical-fragility": [
@@ -126,6 +158,23 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "dressed-quark-numerology-at-q0.md:13: \"μ_d - μ_u ≈ 1.286 MeV\"",
+        "notes": "Block self-labels 'numerology'; the μ_d-μ_u≈1.286 MeV result sits at 33% of a 3.88 MeV bound whose tightening is 'open', and the constituent-quark masses ~311 MeV are themselves model-dependent (not unique). The near-match to m_n-m_p is suggestive but rests on the post-hoc δ adjustment."
       }
     ],
     "da-referee-verdict": [
@@ -146,6 +195,23 @@
         },
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "dressed-quark-numerology-at-q0.md:55: \"shift ... down by a uniform amount δ ≈ 1.23 MeV per quark\"",
+        "notes": "Verdict: appropriately self-labelled numerology, but the -0.53% m_n-m_p 'prediction' relies on a post-hoc δ Skein shift and a CODATA-anchored M_N. Strongest objection: the Skein cross-term δ is fixed by the very gap it explains."
       }
     ],
     "da-false-claim": [
@@ -165,6 +231,21 @@
         "notes": "No false claims identified in 'Dressed-quark numerology at $q_0$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Arithmetic checks: M_N/3≈312.97, (311.10+312.39)/2=311.745, m_n-m_p pred 1.286 vs CODATA 1.293 (-0.53%) — all internally consistent."
       }
     ],
     "da-vacuous": [
@@ -183,6 +264,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Dressed-quark numerology at $q_0$' presents substantial mathematical content: At the substrate parameter $q_0 = 1.109978595554181\\ldots$ (50 dps), combining [...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Substantive reduction from a 4-input fit to a 2-input substrate form."
       }
     ],
     "da-circular": [
@@ -202,6 +298,23 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Dressed-quark numerology at $q_0$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "dressed-quark-numerology-at-q0.md:55: \"shift the per-quark contribution down by a uniform amount δ ≈ 1.23 MeV per quark\"",
+        "notes": "The Skein cross-term shift δ≈1.23 MeV is introduced to reconcile the naive M_N/3=312.97 with the per-quark 311.745; δ is fixed by the discrepancy it is meant to explain, which is mildly self-referential (δ is not independently derived in the block)."
       }
     ],
     "da-hidden-dof": [
@@ -257,6 +370,21 @@
         "notes": "The argument flow in 'Dressed-quark numerology at $q_0$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Slack-ratio 1/3·(q^{1/2}+q^{-1/2})/(q+q^{-1}) reasoning follows from the cited bound."
       }
     ],
     "da-citation-misuse": [
@@ -276,6 +404,21 @@
         "notes": "No citations are present in 'Dressed-quark numerology at $q_0$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "References flavor-split-substrate and the mass-splitting bound theorems internally; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -295,6 +438,21 @@
         "notes": "Key terms and symbols in 'Dressed-quark numerology at $q_0$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "μ_u, μ_d, M_N, δ (Skein shift) all defined."
       }
     ],
     "da-physical-implausibility": [
@@ -314,6 +472,21 @@
         "notes": "The physical concepts described in 'Dressed-quark numerology at $q_0$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Constituent-quark masses ~311 MeV are in the right ballpark for constituent (not current) quark masses; not implausible."
       }
     ],
     "da-reproducibility": [
@@ -333,6 +506,23 @@
         "notes": "The derivation steps and formal definitions in 'Dressed-quark numerology at $q_0$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "dressed-quark-numerology-at-q0.md:55: \"δ ≈ 1.23 MeV per quark (so 6δ ≈ 7.4 MeV total)\"",
+        "notes": "The δ Skein-correction is quoted without a witness/derivation; the 'consistent with' check is internal arithmetic, not an independent compute."
       }
     ],
     "voice-status-leak": [
@@ -1142,5 +1332,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

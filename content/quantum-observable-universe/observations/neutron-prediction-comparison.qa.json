@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:53.397Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Statement is the beta-stability formula + comparison metric; quantitative, not interpretive."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:53.775Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Beta-stability prediction vs AME2020; fits the observations chapter."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:54.103Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Evaluation at q_0 against experimental data; archimedean by nature, .md flags the ℝ specialisation."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:54.552Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No narrative Proof. body; the block is a statement + witness pointer."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:56:54.928Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "neutron-prediction-comparison.lean:56: \"theorem stable_neutron_max_error : ∀ p, 1≤p → p≤103 → ∃ n_obs, |predicted_neutron_number p - n_obs| ≤ 8\"",
+        "notes": "The .md claims the theorem asserts |Δn|≤8 against the OBSERVED AME2020 n_obs(p); the Lean states ∃ n_obs (existentially quantified), which is trivially closed by n_obs:=n_pred (discrepancy 0) — the Lean's own comment admits this. Lean proves vastly less than the .md narrative."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:56:56.524Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "critical",
+        "evidence": "neutron-prediction-comparison.lean:48: \"the conclusion is an existential ∃ n_obs ..., which is trivially closeable by n_obs := n_pred (giving discrepancy 0)\"",
+        "notes": "The Lean statement is weakened (existential over n_obs) so that the intended 'discrepancy vs observed data ≤ 8' becomes a trivial existence; the .md's 'Formal witness ... theorem asserting |Δn|≤8 for every element' misrepresents what the Lean proves."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:56:56.874Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Not a class-field projection; the defect is the weakened existential statement, covered under proof-statement-integrity."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:56:57.280Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "critical",
+        "evidence": "neutron-prediction-comparison.lean:60: \"refine ⟨predicted_neutron_number p, ?_⟩; simp\"",
+        "notes": "The proof ignores the intended observed-data constraint and closes the existential with the trivial witness n_obs:=n_pred, making the goal vacuously true (|x-x|=0≤8). This is a trivially-discharged goal in the proof-no-trivial-true sense."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:56:57.732Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No False premise; the defect is vacuous existence, not a contradictory hypothesis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,24 @@
         "reviewed_at": "2026-06-22T02:56:58.176Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "neutron-prediction-comparison.lean:59: \"intro p _ _\"",
+        "notes": "The hypotheses 1≤p and p≤103 are introduced and immediately discarded (named _); the proof never uses the proton-range bound, confirming the statement is weaker than intended (range-independent trivial witness)."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +471,22 @@
         "reviewed_at": "2026-06-22T02:56:58.558Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Uses simp on a trivial goal, not decide; but the masking is via the trivial witness (flagged under proof-no-trivial-true)."
       }
     ],
     "da-false-claim": [
@@ -323,6 +507,22 @@
         "notes": "The claim in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The .md narrative claim (mean |Δn|=1.7, max |Δn|=8 at No/Lr) is a correct empirical statement about the AME2020 comparison table; the formula c=0.01497 is consistent."
       }
     ],
     "da-vacuous": [
@@ -342,6 +542,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' presents substantial mathematical content: At $q = q_0$, the beta-stability formula ([beta-stability](#prop:beta-stability)...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "neutron-prediction-comparison.lean:58: \"∃ (n_obs : ℤ), |predicted_neutron_number p - n_obs| ≤ 8\"",
+        "notes": "The Lean 'formal witness' theorem is vacuous: ∃ n_obs with |n_pred - n_obs|≤8 is closed by n_obs:=n_pred. It encodes none of the observed AME2020 data, so the formal witness backing claimed by the .md is content-free."
       }
     ],
     "da-circular": [
@@ -362,6 +580,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The narrative comparison itself is not circular; c is from a_C/(2a_A)."
       }
     ],
     "da-overclaim": [
@@ -381,6 +615,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "neutron-prediction-comparison.md:24: \"Formal witness. ... the theorem stable_neutron_max_error asserting |Δn| ≤ 8 for every element\"",
+        "notes": "Overclaims formal backing: the .md says the Lean theorem 'asserts |Δn|≤8' against observed data, but the Lean proves a trivial existential that asserts nothing about the AME2020 observations."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +653,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Single coefficient c from the BW a_C/a_A ratio; no hidden DOF in the narrative formula."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +689,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/neutron-prediction-comparison.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Narrative smooth-formula vs observed comparison is logically clean."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +724,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "neutron-prediction-comparison.lean:48: \"NOTE on theorem strength: ... trivially closeable by n_obs := n_pred\"",
+        "notes": "Lean proves a trivial existential (discrepancy 0 by choosing n_obs=n_pred); the .md claims it formally certifies |Δn|≤8 against AME2020. Clear divergence — the Lean is weaker/vacuously-implied vs the .md claim."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +762,22 @@
         "notes": "No citations are present in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "AME2020/NUBASE2020 correctly cited for the observed stable isotopes."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +798,22 @@
         "notes": "Key terms and symbols in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "p*(A), c, n_pred clearly defined; the ambiguity is in the Lean, not the .md statement."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +834,22 @@
         "notes": "The algebraic and logical relations in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Mean |Δn|=1.7 across 103 elements with max 8 at transuranics is a robust aggregate, not a cherry-picked match."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +870,22 @@
         "notes": "The physical concepts described in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Beta-stability valley with ~1.7-neutron mean error and worst case at poorly-determined transuranics is physically sensible."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +906,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1 — content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "neutron-prediction-comparison.lean:42: \"predicted_neutron_number ... ⌊predicted_mass_number p + 0.5⌋ - p\"",
+        "notes": "The Lean 'witness data' does not actually carry the observed AME2020 table; the predicted side is recomputable but the comparison the .md describes is not reproducible from the Lean (no observed column)."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +945,24 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean contains compilation errors: content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "8b68a90896b5",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "critical",
+        "evidence": "neutron-prediction-comparison.lean:58: \"∃ (n_obs : ℤ), |predicted_neutron_number p - n_obs| ≤ 8\"",
+        "notes": "Verdict: the empirical prediction (.md) is sound (mean |Δn|=1.7), but the claimed 'formal witness' is vacuous — stable_neutron_max_error is a trivial existential (n_obs:=n_pred ⇒ discrepancy 0) that certifies nothing about the AME2020 data. The .md overstates this as a formal |Δn|≤8 certificate."
       }
     ],
     "voice-status-leak": [
@@ -1598,5 +2000,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

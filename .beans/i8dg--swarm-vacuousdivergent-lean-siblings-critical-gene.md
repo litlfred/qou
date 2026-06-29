@@ -68,3 +68,7 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 45, molecular-construction)
 - shell-filling-rule.lean:91 (projects ctx fields gated on aufbau_active; docstring admits : ctx.holds := sorry; critical)
 - ilp-covalent-bond.lean:22-23 (theorem covalent_bond_is_ilp_optimal: length=3 := rfl; real binding in axiom h2_binding_energy; "zero fitted" vs -10.9% C-C miss)
+
+## More instances (batch 47, observations)
+- neutron-prediction-comparison.lean:58 (exists n_obs |n_pred-n_obs|<=8 closed by n_obs:=n_pred; vacuous "formal witness"; critical)
+- brane-tower-q-laplacian-decay.lean:67 (:= ctx.remainder_bound); q-plancherel-asymptotic-skeleton.lean:77 (:= ctx.char_variance_bound) self-assuming

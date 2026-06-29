@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.282Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Statement is the bare mathematical claim with explicit established/conjectural clauses; no physical interpretation injected."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:56:53.711Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Asymptotic q-Plancherel / CFS comparison content supports the substrate-statistics observations; fits chapter."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:56:54.037Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Measure-theoretic / GNS statement is genuinely analytic, so ℝ/operator-algebra machinery is on the correct wall side."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:56:54.393Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Established parts (1)(2) cite analytic literature appropriately; analytic machinery matches an analytic statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,23 @@
         "reviewed_at": "2026-06-22T02:56:54.747Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "QPlancherelAsymptoticSkeleton.lean:74: \"theorem ... := ctx.constant_eq_one ▸ ctx.char_variance_bound\"",
+        "notes": "Lean formalizes only the Féray–Méliot variance bound (part 2) as an assumed class field; the .md proposition's substantive content includes parts (1) and (3a)/(3b) which the Lean does not express."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The .md honestly partitions established vs conjectural; the Lean does not weaken a provable claim, it only encodes part 2."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +485,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "critical",
+        "evidence": "QPlancherelAsymptoticSkeleton.lean:77: \"ctx.constant_eq_one ▸ ctx.char_variance_bound\"",
+        "notes": "The theorem conclusion is the class field char_variance_bound (with C=1 substituted); proof is a verbatim projection of the field whose type is the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +538,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Goal is a real variance inequality, not a tautology; defect is projection."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +606,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No False premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +674,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "char_variance_bound and constant_eq_one both used."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +725,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No decide masking; the defect is projection."
       }
     ],
     "da-false-claim": [
@@ -622,6 +791,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' presents substantial mathematical content: q-deformed Wedderburn weight on partitions of $n$ ([Wedderburn weight canonical ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "QPlancherelAsymptoticSkeleton.lean:30: \"char_variance_bound : ... char_variance n ≤ C / Real.sqrt ((n:ℝ)-3)\"",
+        "notes": "Lean encoding is a projection of an assumed variance bound; carries no independent proof content (the established result lives in the literature, not in this Lean)."
       }
     ],
     "da-circular": [
@@ -641,6 +827,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No back-fitting."
       }
     ],
     "da-overclaim": [
@@ -659,6 +860,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Block carefully separates established (1)(2) from conjectural (3); does not overclaim the limit identification."
       }
     ],
     "da-hidden-dof": [
@@ -678,6 +894,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No fitted parameters."
       }
     ],
     "da-non-sequitur": [
@@ -697,6 +928,21 @@
         "notes": "The argument flow in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Variance bound consistent-with but not implying convergence; the block explicitly says so (line 47-48)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -715,6 +961,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "QPlancherelAsymptoticSkeleton.lean:74: \"theorem QPlancherelAsymptoticSkeleton ... char_variance n ≤ 1/Real.sqrt((n:ℝ)-3)\"",
+        "notes": "Lean expresses only part (2) and assumes it; the .md proposition is a multi-clause statement (existence of Omega_q, pushforward maps, parts 1/2/3). Lean proves strictly less."
       }
     ],
     "da-citation-misuse": [
@@ -734,6 +997,21 @@
         "notes": "Citations to kerov1981, biane1998, feray2010 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "kerov1981/biane1998/feray2010 correctly attributed to Thoma-simplex convergence and the variance CLT."
       }
     ],
     "da-definitional-ambiguity": [
@@ -753,6 +1031,23 @@
         "notes": "Key terms and symbols in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "q-plancherel-asymptotic-skeleton.md:6: \"There exists a topological space $\\Omega_q$ (the q-deformed Thoma simplex)\"",
+        "notes": "Omega_q is asserted to exist as 'the' q-deformed Thoma simplex without a construction; part of the conjectural surface but stated existentially in the proposition statement."
       }
     ],
     "da-empirical-fragility": [
@@ -772,6 +1067,21 @@
         "notes": "The algebraic and logical relations in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No numerical observable match."
       }
     ],
     "da-physical-implausibility": [
@@ -791,6 +1101,21 @@
         "notes": "The physical concepts described in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Pure asymptotic-representation-theory statement."
       }
     ],
     "da-reproducibility": [
@@ -810,6 +1135,21 @@
         "notes": "The derivation steps and formal definitions in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Literature-backed; no compute witness."
       }
     ],
     "da-referee-verdict": [
@@ -830,6 +1170,23 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, preventing formal verification of the claims in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "9c014a66e49a",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "QPlancherelAsymptoticSkeleton.lean:77: \"ctx.constant_eq_one ▸ ctx.char_variance_bound\"",
+        "notes": "Verdict: math sound and honestly scoped, but the Lean canonical is a self-assuming projection of only part 2. Strongest objection: Lean/narrative divergence on a multi-clause statement."
       }
     ],
     "voice-status-leak": [
@@ -1832,5 +2189,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

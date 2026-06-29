@@ -46,6 +46,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "W-boson/Higgs vertex δq predictions; fits the 'Terminal resolution and the W-boson discrepancy' section."
       }
     ],
     "da-false-claim": [
@@ -66,6 +82,22 @@
         "notes": "The claim in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "CDF pp̄ valence vs LHC sea-quark production, χ(Σ_4)=-6, Gauss-Bonnet ∫K=2πχ — standard facts stated correctly."
       }
     ],
     "da-vacuous": [
@@ -85,6 +117,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' presents substantial mathematical content: This remark applies the local substrate proposition ([local substrate $q$](#prop...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Detailed forward-prediction framework with explicit δq formula."
       }
     ],
     "da-circular": [
@@ -105,6 +153,24 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "w-boson-mass-discrepancy.md:143: \"The backward-inferred δq ... restate the mass deviations in units of the substrate parameter — they are not independent measurements\"",
+        "notes": "The block is careful to flag the inferred δq as restatement; but the 'forward prediction matches' test (line 163-167) compares a single δq scale to one data split, with the geometric factor 1/6 and α/2π chosen to land near the CDF 77 MeV — risk of post-hoc tuning, partially mitigated by the explicit honesty."
       }
     ],
     "da-overclaim": [
@@ -124,6 +190,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "w-boson-mass-discrepancy.md:167: \"Forward prediction: 9.9 × 10^{-5} (pp̄) vs ≲10^{-6} (pp). Match.\"",
+        "notes": "Declares 'Match' for the W collision-type split, but the underlying CDF W-mass anomaly is itself in tension with the world average and may be a CDF systematic; presenting a one-channel agreement as a confirmed match overstates a contested measurement."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +228,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "w-boson-mass-discrepancy.md:53: \"δq(vertex) = (q_0-1)·α/2π·1/|χ(Σ_4)|\"",
+        "notes": "The geometric projection factor 1/|χ|=1/6 (one color tube of six curvature units) and the topological charge α/2π are plausible but each is a modelling choice that fixes the magnitude to match CDF; the 'zero-free-parameter' framing (line 3) understates these structural choices."
       }
     ],
     "da-non-sequitur": [
@@ -164,6 +266,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Sea-quark x^2 suppression -> δq<10^{-6} at LHC is a coherent argument."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -183,6 +301,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Remark; no Lean sibling proof claim."
       }
     ],
     "da-citation-misuse": [
@@ -203,6 +337,22 @@
         "notes": "No citations are present in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "PDG 2024 averages and SM m_W references used appropriately."
       }
     ],
     "da-definitional-ambiguity": [
@@ -223,6 +373,22 @@
         "notes": "Key terms and symbols in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "δq, Q_top, Levi form, χ(Σ_4) all defined or referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -243,6 +409,24 @@
         "notes": "The algebraic and logical relations in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "w-boson-mass-discrepancy.md:171: \"$\\overline{\\delta q}(\\gamma\\gamma) = +1.5 \\times 10^{-4}$ ... With only ~3 measurements per channel, the signal is not statistically significant\"",
+        "notes": "The Higgs channel split rests on ~3 measurements per channel (block admits not significant); the W collision-type 'Match' compares to the CDF anomaly which is itself in tension with the world average. The pattern-matching is fragile against the small samples and a contested input."
       }
     ],
     "da-physical-implausibility": [
@@ -301,6 +485,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:1 — content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:57:27: error: unknown tactic"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "w-boson-mass-discrepancy.md:66: \"See [Table 1]\"",
+        "notes": "All numerical predictions are deferred to -table-data blocks; no witness JSON cited for the δq computations, so the forward predictions are not directly reproducible from this block."
       }
     ],
     "da-referee-verdict": [
@@ -322,6 +524,24 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean contains compilation errors: content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:57:27: error: unknown tactic, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "w-boson-mass-discrepancy.md:167: \"Match.\"",
+        "notes": "Verdict: needs revision. Strongest objection: declaring a 'Match' to the CDF W-mass anomaly (a contested measurement) and labelling the δq formula 'zero-free-parameter' despite the structural 1/6 and α/2π modelling choices risks confirmation bias."
       }
     ],
     "voice-status-leak": [
@@ -1168,5 +1388,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

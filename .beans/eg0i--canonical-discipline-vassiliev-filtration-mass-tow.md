@@ -7,3 +7,6 @@ created_at: 2026-06-29T22:28:58Z
 updated_at: 2026-06-29T22:28:58Z
 ---
 
+
+## More instances
+- higgs-t28.md:91 reintroduces purged lambda_scale in mass formula (da-hidden-dof; same guardrail)

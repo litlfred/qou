@@ -28,6 +28,23 @@
         "reviewed_at": "2026-06-22T02:56:53.353Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "sdp-regime-switch.md:9: \"with isolated zeros that mark nuclear-structure regime switches — shell closures, pairing transitions, and jet-level crossings\"",
+        "notes": "Statement embeds physical interpretation (shell closures/pairing transitions) inside the proposition body; this is interpretive material that belongs in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +64,21 @@
         "reviewed_at": "2026-06-22T02:56:53.741Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "SDP cross-channel / isotope-scan content fits the mass-predictions methodology scope of the observations chapter."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +98,21 @@
         "reviewed_at": "2026-06-22T02:56:54.145Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Observations chapter is an archimedean realization chapter (q_0 fixed, Z/N integers); PSD/SDP statement legitimately archimedean."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +132,21 @@
         "reviewed_at": "2026-06-22T02:56:54.550Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No narrative Proof. body; the .md gives only a QED mark and a witness pointer."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +166,23 @@
         "reviewed_at": "2026-06-22T02:56:54.909Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "SDPRegimeSwitch.lean:84: \"theorem SDPRegimeSwitch ... 0 ≤ (μ l - y_0 - y l)*x0^2 + ...\"",
+        "notes": "Lean proves only the 2x2 Sylvester PSD criterion (holds throughout, all (Z,N)); the .md claim is the existence of DISCRETE REGIME SWITCHES at c->0 (rank drop, active-set jump, decoherence). The regime-switch content is not formalized."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +419,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Lean statement (2x2 PSD) is a genuine, non-weakened claim; the SDP doc itself notes it was de-projected from a prior holds-restatement."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +487,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "SDPRegimeSwitch.lean derives PSD via nlinarith from diag_nonneg+det_cond inputs; conclusion (quadratic form >=0) is NOT a verbatim class field."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +538,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Goal is a real PSD inequality, not a tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +606,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No False/contradictory hypothesis; diag_nonneg/det_cond are satisfiable feasibility inputs."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +674,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Both diag_nonneg and det_cond are used (case split on d>0 / d=0)."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +725,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Uses nlinarith with explicit Sylvester identity, not decide/trivial masking."
       }
     ],
     "da-false-claim": [
@@ -590,6 +759,21 @@
         "notes": "No false claims identified in 'Discrete regime switches in SDP cross-channel couplings across isotopes': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The 2x2 PSD block and the c->0 rank-drop description are mathematically correct."
       }
     ],
     "da-vacuous": [
@@ -608,6 +792,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Discrete regime switches in SDP cross-channel couplings across isotopes' presents substantial mathematical content: operator-selection framework ([BW coefficient shadow price](#prop:mass-coefficie...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Lean is a genuine Sylvester derivation, not vacuous."
       }
     ],
     "da-circular": [
@@ -627,6 +826,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Discrete regime switches in SDP cross-channel couplings across isotopes'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No back-fitting to a target observable."
       }
     ],
     "da-overclaim": [
@@ -645,6 +859,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Discrete regime switches in SDP cross-channel couplings across isotopes' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "sdp-regime-switch.md:42: \"$\\square$\"",
+        "notes": "QED mark on a proposition whose physical regime-switch correspondence (c->0 == shell closures/pairing transitions/jet crossings) is asserted, not proved; the only backing is a cvxpy witness script and a PSD lemma."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +895,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Discrete regime switches in SDP cross-channel couplings across isotopes'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Couplings c_{ll'} are determined by atom observables per the statement; no undeclared free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +929,21 @@
         "notes": "The argument flow in 'Discrete regime switches in SDP cross-channel couplings across isotopes' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "c->0 => rank-2 block drops to rank-1 is a correct linear-algebra step."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +962,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "SDPRegimeSwitch.lean:71: \"SDP dual block is positive semidefinite\"",
+        "notes": "Lean formalizes a PSD criterion that holds for ALL (Z,N); the .md's substantive claim (discrete regime switches at isolated c->0 zeros) is not what the Lean proves."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +998,21 @@
         "notes": "No citations are present in 'Discrete regime switches in SDP cross-channel couplings across isotopes', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "No external citations in this block."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1032,23 @@
         "notes": "Key terms and symbols in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "sdp-regime-switch.md:9: \"regime switches — shell closures, pairing transitions, and jet-level crossings\"",
+        "notes": "'Regime switch' is identified with three distinct physical phenomena without a criterion distinguishing which c->0 zero maps to which; the correspondence is left implicit."
       }
     ],
     "da-empirical-fragility": [
@@ -794,6 +1104,21 @@
         "notes": "The physical concepts described in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Shell-closure regime switches are physically reasonable; no conservation/units violation."
       }
     ],
     "da-reproducibility": [
@@ -813,6 +1138,23 @@
         "notes": "The derivation steps and formal definitions in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "sdp-regime-switch.md:44: \"Witness. computations/sdp_cross_channel.py ... falls back to scalar LP if cvxpy unavailable\"",
+        "notes": "Witness is a script reference with no committed *.witness.json output cited; reproducibility of the regime-switch zeros is not pinned to a hashed witness."
       }
     ],
     "da-referee-verdict": [
@@ -833,6 +1175,23 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, preventing formal verification of the claims in 'Discrete regime switches in SDP cross-channel couplings across isotopes'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "sdp-regime-switch.md:42: \"$\\square$\"",
+        "notes": "Verdict: minor revisions. Strongest objection: the Lean proves a generic 2x2 PSD lemma, but the proposition's real content (discrete regime switches at c->0 correlating with shell closures) is asserted with a QED mark and only a script witness — narrative/Lean gap."
       }
     ],
     "voice-status-leak": [
@@ -1835,5 +2194,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

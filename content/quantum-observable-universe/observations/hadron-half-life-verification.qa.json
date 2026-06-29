@@ -798,7 +798,271 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Half-life verification example; core observations-chapter content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Sensitivity formula ∂lnΓ/∂lnq=(q^2-1)/(q^2+1)+5(q^2+1)/(q^2-1)≈48 at q_0 checks out; α^{-1}≈137.036 with CS correction stated honestly with 2.1 ppm error."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Detailed verification with error budgets; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "hadron-half-life-verification.md:134: \"From NNDC: Q_exp and log ft values (for the nuclear matrix element |M|^2)\"",
+        "notes": "The 'full computation' half-lives (line 124, <3%) import Q_exp and log ft from NNDC for |M|^2; so the headline <3% agreement is not a from-q prediction. The block does separate this from the from-q Q-predictions (±8%), but the <3% number leans on experimental inputs."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "hadron-half-life-verification.md:72: \"$\\alpha_{\\mathrm{EM}}$ (fine structure constant). RESOLVED ... α^{-1} ≈ 137.036 (2.1 ppm from CODATA). This is derived from q alone — no free parameters.\"",
+        "notes": "Marks α_EM 'RESOLVED ... derived from q alone' with a bare-coupling q^{-1}/([9]_q[10]_q)≈1/136.82 then a Chern-Simons correction to 137.036; the choice of [9]_q·[10]_q and the CS correction are structural selections that make the 'no free parameters' claim optimistic for a 2.1 ppm match."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "hadron-half-life-verification.md:75: \"the bare coupling $q^{-1}/([9]_q \\cdot [10]_q) \\approx 1/136.82$\"",
+        "notes": "The specific q-integer indices [9]_q and [10]_q in the α_EM projection, and the suppression factors F=0.5904, 0.6382 for degree-2 shells (lines 179-186), are off-menu coefficients whose canonical-chain origin is asserted via cross-refs but not transparent in the block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Phase-space integral with F_q replacing the Sargent rule resolving the 10-17% overshoot is a coherent correction."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Example; Lean sibling (if any) is an archimedean stub, not a proof of the half-life table."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "NNDC/ENSDF, PDG g_A, CODATA G_F correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Skein polynomial, Q-value, |M_q|^2, sensitivity, self-deformation all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "hadron-half-life-verification.md:186: \"F = 0.5904 × 0.6382 = 0.3768. This reduces the ${}^{137}$Cs error from +171% to +2.2%\"",
+        "notes": "Degree-2-shell suppression factors take a +171% error to +2.2% via a product of two fixed factors; such large corrections landing near experiment suggest the factors absorb the residual rather than predicting it — fragile against the appearance of fitting."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "g_A≈1.277 (+0.1% from PDG), tritium half-life within error budget — physically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "hadron-half-life-verification.md:219: \"Witness: computations/t35-weak-vertex.witness.json\"",
+        "notes": "Some witnesses named (t35-weak-vertex) but the main half-life tables and the α_EM/F-factor computations cite scripts without hash-pinned witnesses in the block; full reproducibility not verifiable from the .md."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "major",
+        "evidence": "hadron-half-life-verification.md:186: \"F = 0.5904 × 0.6382 = 0.3768 ... reduces the ${}^{137}$Cs error from +171% to +2.2%\"",
+        "notes": "Verdict: substantial and largely honest, but the strongest objection is that the large degree-2 suppression factors (0.5904, 0.6382, taking +171% to +2.2%) and the [9]_q·[10]_q α_EM projection look like residual-absorbing structural choices labelled 'no free parameters'."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }

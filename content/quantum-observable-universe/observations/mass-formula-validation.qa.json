@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:53.798Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Mass-table validation methodology; core of the observations chapter."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Mass formula validation: source classification and isotope coverage': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Block is unusually honest: states the 0.0000% mass-table entries are 'by definition correct' arithmetic, not predictions; net spans 50 orders while B/A is 0-9 MeV. No false claim."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Mass formula validation: source classification and isotope coverage' presents substantial mathematical content: The atomic mass computation $M(Z,N) = Z\\mathfrak{m}_\\mathfrak{p} + N\\mathfrak{m}...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Extensive substantive content (BW table, certificate fields, open B/A problem)."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Mass formula validation: source classification and isotope coverage'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Explicitly flags the tautology: 'B/A enters our mass formula as an external AME2020 input, making M(Z,N) a tautology' (line 229-230). Honest about the circularity it does NOT claim to have closed."
       }
     ],
     "da-overclaim": [
@@ -136,6 +196,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass formula validation: source classification and isotope coverage'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "mass-formula-validation.md:45: \"Mass predictions ($k = 12$, zero fitted parameters ... categorical Chebyshev shell, knot factors from Frobenius norm)\"",
+        "notes": "Claims 'zero fitted parameters' yet the BW table relies on AME2020 B/A as input and a chosen Hecke truncation k=12 / k=11; the 0.010% mean is a recombination, which the block elsewhere admits. The 'zero fitted parameters' label sits awkwardly next to the tautology admission."
       }
     ],
     "da-non-sequitur": [
@@ -155,6 +232,21 @@
         "notes": "The argument flow in 'Mass formula validation: source classification and isotope coverage' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "The certificate-field / transfer-matrix reasoning is internally consistent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -173,6 +265,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Remark; no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -192,6 +299,21 @@
         "notes": "Citations to kerov1996 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "kerov1996 cited for the q-hook walk; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -211,6 +333,21 @@
         "notes": "Key terms and symbols in 'Mass formula validation: source classification and isotope coverage' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "net, tr_alt, F_Pauli, 6x6 transfer matrix all defined in the block."
       }
     ],
     "da-empirical-fragility": [
@@ -230,6 +367,23 @@
         "notes": "The algebraic and logical relations in 'Mass formula validation: source classification and isotope coverage' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "mass-formula-validation.md:73: \"MAE ≈ 4.4% across all six β− benchmarks\"",
+        "notes": "The 'genuine predictions' (Q-values) sit at 4.4% MAE while the headline 0.010% mass-table entries are arithmetic recombinations; care is needed not to conflate the two. The block does separate them, but the juxtaposition risks cherry-picked precision in summary citations."
       }
     ],
     "da-physical-implausibility": [
@@ -249,6 +403,21 @@
         "notes": "The physical concepts described in 'Mass formula validation: source classification and isotope coverage' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "B/A curve physics (peak near iron, 0 for H) is correctly stated."
       }
     ],
     "da-reproducibility": [
@@ -268,6 +437,23 @@
         "notes": "The derivation steps and formal definitions in 'Mass formula validation: source classification and isotope coverage' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "severity": "minor",
+        "evidence": "mass-formula-validation.md:115: \"Witness: hadron-knot-table.witness.json, transition-nf.witness.json\"",
+        "notes": "Witnesses are named but not hash-pinned in the prose; tables are referenced as separate -table-data blocks. Reproducibility hinges on those witnesses being current (not verified here)."
       }
     ],
     "da-referee-verdict": [
@@ -288,6 +474,21 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Mass formula validation: source classification and isotope coverage' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "52eb7899104a",
+          "ts": "66e52cc10ebb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:13:51.972Z",
+        "reviewed_sha": "decc84d1cb964ac05b19b093f051e268c86879a6",
+        "notes": "Accept; a notably self-critical validation block that openly labels the mass-table tautology and the open B/A-from-q problem. Strongest objection: the 'zero fitted parameters' framing sits next to the AME2020-input tautology."
       }
     ],
     "voice-status-leak": [
@@ -1101,5 +1302,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:13:51.972Z"
 }
