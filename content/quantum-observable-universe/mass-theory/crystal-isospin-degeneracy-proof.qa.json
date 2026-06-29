@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Crystal-limit isospin degeneracy proof; mass-theory isospin."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "At q=0 crystal limit sigma_i acts by sign(rho_T(i)) diagonally on SYT, sigma_i^-1 = sigma_i on the sub-quotient => eigenvalue products are sign-flip invariant => character (trace) is invariant under beta->beta'. Argument is internally valid (mu^lambda_T is per-eigenline, not the character — correctly distinguished line 35-37)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Genuine character-invariance proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The Caveat (lines 83-92) explicitly states the corollary is NOT about physical 3H vs 3He (interface types differ, not just signs) and that the legacy disjoint-product witness erases the isospin asymmetry — an honest, important limitation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No parameters; Plancherel weight w_lambda(q=1) sign-independent."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Per-eigenline sign-invariance -> trace-sum invariance (despite trace non-multiplicativity) is correctly argued."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Proof block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No external cites; internal cross-refs to crystal-graph realization, content-scaling."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "rho_T(i)=c(T(i+1))-c(T(i)), mu^lambda_T vs chi^lambda carefully distinguished."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The corollary value 0.0020612874779541296 (50 dps) is an exact equality between two disjoint-product words, not a fit-to-experiment; honest about being legacy-convention."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The block explicitly disclaims physical 3H/3He degeneracy (which WOULD be implausible since m(3H)!=m(3He)); the caveat prevents the implausible reading."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Witness term7-alpha5-crystal-derivation.witness.json named with the 50-dps value; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "0d5babfd31d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Sound crystal-limit character-invariance proof with an exemplary self-caveat (the degeneracy is a legacy-convention artifact, NOT physical 3H/3He equality). No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

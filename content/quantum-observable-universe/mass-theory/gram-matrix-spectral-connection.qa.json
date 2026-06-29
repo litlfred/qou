@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Gram matrix <-> Frobenius co-Casimir / spectral sequence; mass-theory algebra."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "tau(s0 s1 s0)=hz^2+z via Ocneanu-Wenzl (correctly NOT z^3, with the Markov-bug note); block-diagonal G_{lambda,mu}=delta . dim_q dim/[n]_q! and inverse summing to sum 1/dim_q are correct. This block is the corrected counterpart to corrected-markov-trace."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive: identifies G as the single object generating the spectral sequence."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No circularity; recovers Frobenius universal from G^-1 trace."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "det G != 0 'generically' is correctly hedged; root-of-unity Verlinde truncation correctly conditional on q=e^{i pi/kappa}."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Filtered block-triangular G -> diagonal blocks = E_0 pairings -> off-diagonal = differentials is a coherent spectral-sequence argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Remark, no .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No cites[]; internal cross-refs only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "G_{ij}=tau(b_i b_j^-1), the standard basis, e_lambda all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Symbolic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "G entries reproducible from Hecke relations; the block even flags its own stale z^3 entries as needing hz^2+z."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "eb166d2fed71",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Sound Gram<->Frobenius<->spectral-sequence remark; notably it carries the CORRECT tr_M(s0 s1 s0)=hz^2+z and flags z^3 as a bug — directly contradicting the sibling corrected-markov-trace block (see that block's finding)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

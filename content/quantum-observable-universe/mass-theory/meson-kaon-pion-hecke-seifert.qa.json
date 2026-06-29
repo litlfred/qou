@@ -1048,7 +1048,446 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Statement is the bare m_K/m_pi decomposition with three definitional clauses; no extraneous interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Meson mass ratio from Hecke characters + Seifert volumes; mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Observable mass ratio evaluated at q_0 with Seifert volumes; archimedean evaluation is appropriate for an observable claim in mass-theory."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No narrative Proof body."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Library ref meson_kaon_pion_ratio (no validation field); statement is the ratio identity, no sibling to diverge."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Ratio stated as-is."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No proof term."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Non-trivial mass-ratio prediction."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Both the Hecke character and Seifert ratio enter."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean body."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Verified numerically: chi^(2,1)(s1^5)=q0^5-q0^-5=1.0914 (=q + (-q^-1) eigenvalues^5, = h[5]_q), Seifert ratio (e(T2,5)/e(T2,3))^2=((3/10)/(1/6))^2=3.24, product=3.5361 — matches stated 3.5361 and PDG 3.5371 to ~290 ppm. All correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Non-vacuous closed-form prediction."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "q_0 is the substrate pin (independent of meson masses); m_K/m_pi is then a prediction, not back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "meson-kaon-pion-hecke-seifert.md:30: \"The exact algebraic values 3.5361 matches the PDG ratio ... to 290 ppm\"",
+        "notes": "The exponent 2 = 'number of quark constituents' and the specific torus-knot assignments T(2,5) for strange / T(2,3) for the pion are post-hoc structural choices that yield 3.5361; with two such discrete choices plus the Seifert-volume convention, a 290 ppm hit is a single-ratio match whose derivation rigor (why exactly these knots, why exponent 2 not some other) is asserted rather than derived. Per (a)/(b) this is a scope-limited near-match; minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "meson-kaon-pion-hecke-seifert.md:10: \"chi^(2,1)(sigma_1^5)\" (power 5) + the T(2,5)/T(2,3) knot choices + exponent 2",
+        "notes": "Three discrete structural choices are made to land 3.536: the power sigma_1^5 (strange-quark braid), the torus knots T(2,5) vs T(2,3), and the squaring exponent. Each is given a rationale (strangeness, quark constituents) but collectively they are enough discrete freedom to fit one ratio; not a continuous 4th calibration, so minor."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Each factor (Hecke character, Seifert volume ratio, constituent exponent) -> product is arithmetically valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No sibling .lean; library ref only."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "jones1987, kassel1995 support the Hecke-character machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "chi^(2,1), V_S, Euler number e(T(2,n)) all defined inline."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "meson-kaon-pion-hecke-seifert.md:30: \"3.5361 matches ... 3.5371 to 290 ppm\"",
+        "notes": "290 ppm agreement of a 3-factor closed form to a single PDG ratio at the fixed q_0 is a tight single-observable match; given the discrete knot/exponent choices (da-hidden-dof) the precision is the kind the fragility lens flags. Not within pure fit-noise but worth a minor flag."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "m_K/m_pi ratio dimensionless, ~3.54 is the correct order; constituent exponent 2 for q-qbar is physically sensible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Reproduced the 3.5361 value independently from the three stated factors; no witness file but fully reconstructible from the .md."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7e7901c79cdc",
+          "ts": "c32346ca48d5",
+          "lean": "3e2de7d5f873"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: arithmetically exact and reproducible (3.5361 vs PDG 3.5371, 290 ppm). Strongest objection: the result hinges on three discrete post-hoc structural choices (sigma_1^5, T(2,5)/T(2,3), exponent 2) whose canonical necessity is asserted not derived — a sharp referee would ask why these and not neighbouring choices, i.e. is the 290 ppm a derivation or a curated near-match."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

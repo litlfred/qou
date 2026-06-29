@@ -855,7 +855,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Jet-filtered knot invariant convergence; mass-theory branching/Wedderburn content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Part A denominator simplification W_sym+2W_std+W_alt=1+W_std with W_lambda=d_q^2/[3]_q! checks (for H_3: dims 1,2,1 -> 1+4+1 over [3]_q!=... and 2W_std=2*[2]_q^2/[3]_q!); a_infty form and f_mu^infty=d_q(mu)/(2+[2]_q) are internally consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive convergence statement with explicit limit forms."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Convergence derived from q-Plancherel branching, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "jet-convergence-classical-limit.md:86: \"convergence rate is $O(1/\\sqrt{k})$\" vs line 81: \"convergence rate is $O(1/k)$\"",
+        "notes": "Two different convergence rates are stated for the same quantity within the proof sketch: line 81 'convergence rate is O(1/k)' and line 86 'O(1/sqrt(k)) by the Kerov q-hook walk'. The block is a conjecture (Parts A,B proved; Part C a sketch), so this is a minor internal-rate inconsistency rather than a false-claim, but it should be reconciled."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Weights W_lambda, d_q determined by partition data; no off-menu constant. C_q=O(h^2[2]_q) is an order estimate, not a fitted DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Squared->linear scaling transition follows from the W_mu=d_q^2/[3]_q! -> d_q/sum d_q argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Conjecture; library .lean ref validation not_checked, no sibling file to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "kerov1996 (q-hook walk) and feray2010 (q-Plancherel CLT) are the correct references for the cited convergence machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "d_q(lambda), W_lambda, m_mu^lambda, f_mu^infty all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "At k=9 bound~0.11 vs actual error 0.008 is a margin claim (within bound), not a tight fit; not fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Standard-rep dominance of binding is a framework interpretation, not a falsifiable physical overreach in this block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Witness jet-knot-invariants.witness.json named; k=3..9 target (0.249,0.501,0.249) is reproducible from d_q/sum d_q at q_0."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c2481aa80980",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: sound conjecture (Parts A/B proved); strongest objection is the internal O(1/k) vs O(1/sqrt(k)) convergence-rate clash in the proof sketch (lines 81 vs 86)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

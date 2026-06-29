@@ -1050,7 +1050,442 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Statement is the conditional uniqueness claim with (C1),(C2) hypotheses + the lim_{q->1}=D(z) requirement; physical-provenance discussion sits in separate sections below."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Archimedean realization functor uniqueness underpins the mass-formula transcendental exit; appropriate here."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "This IS the substrate->archimedean wall block; D(z), Li_2, arg are archimedean by design and correctly placed on the R-exit side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No standalone narrative Proof; reduction to Bloch-Suslin pentagon-uniqueness is the appropriate archimedean-side argument."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Per §3b-cond banner: Lean takes ArchimedeanLimit + BlochSuslinUniqueness as [Instance] classes, proved sorry-free; narrative conditional matches. validation not_checked but structurally aligned."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Conditional-class structure declared; no statement weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Classes axiomatise hypotheses (continuity/antisymmetry/pentagon), not the conclusion; uniqueness is derived from them."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Uniqueness-up-to-scalar is a non-trivial conclusion."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Hypotheses (C1),(C2) are non-contradictory established results awaiting Mathlib."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Both pentagon-coherence (C1) and Bloch-Suslin (C2) are load-bearing in the reduction."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean body in .md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Bloch-Suslin: D is the unique (up to scalar) continuous antisymmetric pentagon-coherent fn on C\\{0,1} — correct (Bloch/Suslin/Zagier). 5-term form line 38-41 standard."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive uniqueness reduction, not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Uniqueness imported from external Bloch-Suslin theorem, not self-justified."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "archimedean-functor-uniqueness.md:151: \"Forecloses arbitrary pi-imports ... is excluded ... ruled out structurally\"",
+        "notes": "Corollary (b) asserts any closed form with a transcendental not derivable from D (or D_n) is 'excluded ... structurally'. This is a strong structural-exclusion claim that rests on conjectural inputs (C1 pentagon-coherence is itself conj:dilogarithm-archimedean-limit, and multivariate D_n pentagon-uniqueness is admitted OPEN at line 184-190). Per AGENTS.md (a)/(b) discipline, this is at best a (a) scope-limited statement conditional on the conjectures, not an unconditional (b) structural exclusion. Downgrade to minor since the block is explicitly conditional and flags D_n as open."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The 'single multiplicative real scalar' is explicitly disclosed as the one residual DOF; no hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "pentagon-coherence + Bloch-Suslin -> forced D coincidence is a valid implication."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Lean conditional theorem matches the narrative conditional (per §3b-cond banner); no divergence detected (validation not_checked, not verified live)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "suslin1991, bloch2000, zagier1986 correctly cited for the pentagon characterisation; kashaev1997/murakami for volume conjecture."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "D(z) defined explicitly (line 28); B(C), tau_arch defined via cross-refs."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Vol(4_1)=2Cl_2(pi/3)~2.0299 cited via :val; uniqueness claim is structural, no fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No falsifiable physical prediction; transcendental-provenance discussion is mathematical."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Witness q-pinning-50-digit named (status verified); uniqueness claim itself needs no witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "470f261fbc56",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: sound conditional uniqueness result (rigorous modulo two named classes). Strongest objection: corollary (b)'s 'forecloses arbitrary pi-imports ... structurally' overstates an exclusion that is conditional on the (admittedly open) multivariate D_n pentagon-uniqueness — re-scope to (a)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

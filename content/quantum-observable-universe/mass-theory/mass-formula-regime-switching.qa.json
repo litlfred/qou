@@ -1048,7 +1048,450 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "mass-formula-regime-switching.md:3: \"Empirically, however, different term subsets dominate ... naive additive summation produces double-counting\"",
+        "notes": "The Proposition block is dominated by long interpretive/empirical narrative (regime mechanism, 'category error', 'recommended update', double-counting discussion) far beyond the bare regime-switched formula. Per voice rule this discursive content belongs in a linked remark; flagged minor as the criterion intends."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Binding-energy regime switching is core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Mass-theory chapter is an archimedean/observable chapter; MeV values and AME comparison are appropriate here."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No formal Proof body; empirical regime documentation."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No proof / no sibling .lean to compare; library ref validation not_checked."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Piecewise formula stated as-is; no integrity violation."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No proof term."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Non-trivial empirical claim (matches AME <=5% for A<=4)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No formal hypothesis list."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean body."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Claims are empirical/qualitative; A=2 BW breakdown 31.3-27.4-8.4=-4.5 MeV arithmetic checks; no false math identity asserted."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive regime-switching content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The lambda_V/lambda_S q-integer relations are derived from Hecke crossing ratios, not back-fitted to AME."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Honestly scoped: 'matches AME to <=5% for A<=4', 'at present this is empirical; categorical derivation of w_A is open' (line 196). Does not overclaim derivation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "mass-formula-regime-switching.md:84: \"the deuteron braid is rho_p . rho_n . sigma_pn\" + line 18 SW+Frob branch",
+        "notes": "The piecewise formula selects different term-subsets per A regime (the regime boundaries A=2 / 3<=A<=4 / A>=5 and the chirality assignments 1-h^2, (1-h^2)^2). The choice of which subset per regime is empirically motivated (line 196 admits w_A categorical derivation is open), so the regime selector itself acts as a discrete model-selection DOF. The block discloses this honestly, so minor not major."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Topological satellite-vs-Borromean argument for the A=2 switch is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No cites[]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "mass-formula-regime-switching.md:97: \"D chirality canonical evaluation the formal derivation verified this\" and repeated 'the formal derivation' / 'canonical evaluation' garbled placeholders",
+        "notes": "Multiple sentences contain garbled redaction artifacts ('canonical evaluation the formal derivation', 'the formal derivation tested 13 alternatives') that obscure which compute script verified the claim — readability/traceability defect (systemic in this batch)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "mass-formula-regime-switching.md:112: \"B_D^pred ~ 2.27 MeV vs B_AME = 2.22 MeV (+2.1%)\"",
+        "notes": "Headline D match (+2.1%) and the universal Frobenius correction m_e(2+1/[2]_q)~1.28 MeV being just-enough to close D is a single-isotope match; not within fit-noise but worth flagging since the 'no fitted constants beyond q_0,m_e' claim (line 202) coexists with empirically-chosen regime boundaries. Minor."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Negative bulk binding at A=2 (no droplet) is the physically-correct reason BW fails for the deuteron; argument is sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "mass-formula-regime-switching.md:198: \"Integrated witness table (from the formal derivation)\"",
+        "notes": "Witness/script provenance is referenced only as 'the formal derivation' (garbled); the .ts has no computation block, so the AME-comparison numbers cannot be traced to a named witness from the manifest."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: honest, well-hedged empirical regime-switching proposition (openness flagged repeatedly). Strongest objection: it is structurally a long discursive remark mislabelled as a proposition, with empirically-chosen regime boundaries (a soft model-selection DOF) and untraceable 'the formal derivation' witness provenance. No false math."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

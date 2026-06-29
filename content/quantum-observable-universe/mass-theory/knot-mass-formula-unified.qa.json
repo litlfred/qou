@@ -1048,7 +1048,446 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "knot-mass-formula-unified.md:77: \"the boxed Kashaev specialisation ... is Markov-invariance-broken at q_0 and produces hundreds-of-MeV isospin pathologies\"",
+        "notes": "A theorem block whose statement is followed by extensive interpretive / critical narrative (brane-tower-evaluation note diagnosing the boxed formula as Markov-broken, three remediation paths, empirical path-3 results). Much belongs in linked remarks. Minor per criterion."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Unified knot mass formula is the chapter centerpiece."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Mass-theory is an observable chapter; Li_2^q, Phi_q at q_0 and MeV evaluation are appropriately archimedean here."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No standalone narrative Proof; constructed via cited tower/Frobenius derivations."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Conditional theorem (on conj:knot-factor-frobenius-pairing); library ref knot_mass_unified validation not_checked, no live divergence detected."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Boxed three-term formula stated with conditional banner; not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No proof term in .md."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Non-trivial mass formula."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Conditional on a stated conjecture; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "All three pieces (descended/tower/Frobenius) appear in the formula."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean body."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Frobenius co-Casimir trace tr_M(C)=sum_lambda 1/dim_q(lambda) and the n=3 classical 5/2 reduction are correct; m_e(2+1/[2]_q)~1.276 MeV checks. The block does not claim the boxed Kashaev form is accurate (it flags it broken)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive synthesis of three independently-derived pieces."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "m_e is the single disclosed calibration; no target back-fit (proton residual 0.14% is a cross-check)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Strikingly honest: explicitly states the boxed Kashaev specialisation is the wrong evaluation step (predicts T-3He ~ -737 MeV vs CODATA +0.019), and labels rho_K spectral closure 'open'. Per AGENTS.md this is a correctly-scoped (a)-style negative, NOT a theorem overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "knot-mass-formula-unified.md:253: \"Isotope binding: chirality factors are a FOURTH tier\" a_K in {1+h, 1-h^2, (1-h^2)^2}",
+        "notes": "The chirality factor a_K is introduced as a per-knot fourth structural layer with values assigned per isotope {D,T,4He}. While each is a q-bracket form, the assignment of WHICH a_K to which knot is knot-type-dependent and (per sibling mass-formula-regime-switching) empirically validated, functioning as a discrete model-selection DOF. Disclosed openly (line 253-288) so minor."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "per-3A vs per-A Frobenius argument (partitions of 3A not A copies of H_3) is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No sibling .lean to compare; validation not_checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "kassel1995 supports the Hecke/braid machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Li_2^q, [n]_q, C_dim_q, hat V_i, z all defined inline or via cross-ref."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Block itself reports the boxed form FAILS empirically (5% at A=1, 22-31% under-prediction at A=2,3) — opposite of cherry-picked precision; honest."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The block itself flags the -737 MeV isospin pathology as the symptom of a wrong evaluation step, not as a prediction. No implausible claim asserted as truth."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "knot-mass-formula-unified.md:95: \"path-b-habiro-mass-canonical evaluation.witness.json\"",
+        "notes": "Several witness names are garbled by redaction ('path-b-habiro-mass-canonical evaluation.witness.json', 'the formal derivation') making the cited sub-1% path-3 result hard to trace to an actual file; .ts computation status is 'experimental'. Minor traceability defect."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "72aad1711d7d",
+          "ts": "3e86217c7233",
+          "lean": "a7763e26e086"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: an unusually self-critical theorem — the boxed formula is the correct algebraic skeleton but the block openly documents that its Kashaev evaluation breaks Markov-invariance at q_0; rho_K spectral closure is flagged open. Strongest objection: a 'theorem' that simultaneously presents and refutes its own boxed evaluation, plus garbled witness provenance, would confuse a referee — it reads as a working note. Math content itself is sound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

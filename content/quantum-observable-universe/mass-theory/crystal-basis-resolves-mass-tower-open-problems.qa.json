@@ -1050,7 +1050,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Statement is the conditional reduction claim (three open problems -> crystal-graph combinatorics) with the §3b-cond banner; reductions detailed in body, appropriate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Crystal-basis reduction of mass-tower open problems; mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Crystal/KLR content is pre-archimedean integer combinatorics (the block itself stresses Bloch values are on the OTHER side of tau_arch, line 135-144); base ring generic. No wall violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No formal Proof body; reduction argument."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Library ref crystal_basis_reduction validation not_checked; conditional reduction, no sibling divergence found."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "authorNote correctly states it does NOT close the problems, only reduces them — no statement inflation."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean proof term in .md."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Non-trivial reduction claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Conditional on Brundan-Kleshchev / Lecouvey (real theorems/conjectures); no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Each upstream conjecture feeds a specific reduction (KL classical limit -> reduction 3, etc.)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean body."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Brundan-Kleshchev H_n(R,q) ≅ cyclotomic KLR, KL canonical->classical sign, Type-B folding giving symmetric crystals — all correctly attributed; no false math asserted as proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive reductions (3 of 4 problems to finite crystal computations)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No circularity; conditional on named upstream correspondences."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Honest: 'does not close', reductions are 'sorry-free conditional', the 4th problem (Bloch decomposition of 2/(3pi)) is explicitly NOT resolved (transverse). Properly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No free parameters; reductions are structural."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "crystal-basis-resolves-mass-tower-open-problems.md:89: \"The shell-closure sign alpha_5 < 0 is now a structural consequence ... the binding-enhancing sign follows from the Demazure sub-crystal structure\"",
+        "notes": "Reduction 2 asserts the sign alpha_5<0 'follows from' the Demazure sub-crystal structure ('incomplete topological state lowers the energy budget'). The connection between Demazure-incompleteness and a NEGATIVE binding-correction sign is stated as a consequence but the actual sign-determining computation is precisely what is deferred to the 'finite crystal computation' — so 'is now a structural consequence' slightly overstates; the sign is reduced-to, not derived. Minor (conditional reduction context)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No built sibling; validation not_checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "brundankleshchev2009, kashiwara1991, khovanovlauda2009, lecouvey2007 are the correct KLR/crystal references for each invoked result."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Cryst(sl_n), R^Lambda_alpha, Demazure sub-crystal, height/depth all defined or standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No numerical match claimed; structural reduction."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No falsifiable physical prediction; combinatorial reduction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Structural; the residual computations are flagged as the open work."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8beef9ec5a1f",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Well-scoped conditional reduction (3 of 4 open problems to finite crystal-graph computations), honest about the transverse 4th. Minor: the alpha_5<0 sign is reduced-to rather than derived. No substantive defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

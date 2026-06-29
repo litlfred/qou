@@ -1050,7 +1050,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Statement (categorical pre-archimedean form + mass identity) is the bare construction; the 173x shortfall caveat is embedded in the statement but is a genuine scoping disclosure, not interpretive padding."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "End-to-end atomic binding-energy derivation; mass-theory core."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Pre-archimedean object explicitly in Q(q); R enters exactly once at q:=q_0 with m_e — the wall is correctly drawn (lines 136-139)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Categorical pipeline stays in Q(q); archimedean realization is the single explicit functor application — no archimedean machinery leaking into the algebraic side."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Library ref atom_knot_mass_derivation validation not_checked; no sibling .lean to compare directly. NOTE: .ts title still says B = nu_SDP . m_e . Vol_hyp(T_w) (the volume form) while the .md statement uses the multi-term tr_M+tower+Frobenius form — a title/statement mismatch (see da-definitional-ambiguity)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Multi-term form stated; the retired single-term shorthand is explicitly marked deprecated, not silently swapped."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean proof term in .md."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Non-trivial pipeline; states an actual 173x shortfall, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "T_w, ell, n_0, nu_SDP all enter the pipeline."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No Lean body."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Spectral-sequence collapse at E_2 for semisimple H_n(q) generic q, E_infty -> Wedderburn, nu_SDP values (D=1,T=2,3He=2) all internally consistent; cemetery prune 13088->138 stated as a compute result."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive end-to-end derivation; honestly reports the 173x gap and open rho_K."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Explicitly FORBIDS the reverse volume-match search (lines 284-287) that would back-fit the knot from the AME target — the block actively guards against circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "States the structural form UNDER-predicts m_p by ~173x and that rho_K substrate derivation is open; does not overclaim closure."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.md:71: \"the closure requires the additional categorical density rho_K ... whose substrate-only derivation is open\"",
+        "notes": "rho_K (CODATA-fit scalar ~1723.6 per the authorNote) is the factor that closes the 173x gap and its substrate derivation is OPEN — i.e. a per-knot real density currently fixed by CODATA. The block discloses this honestly as open (not smuggled), and nu_SDP is a disclosed integer multiplicity, so minor not major; but rho_K is effectively an un-derived per-observable scalar."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "E_2 collapse -> finite-slice suffices -> finite Q(q) computation is a coherent chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No built sibling .lean; ref validation not_checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Kashaev/Murakami (volume conjecture, correctly labelled BORROWED not used), Wenzl/Jones (bridge), Kassel-Turaev, AME2020 all appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.ts title: \"B = nu_SDP . m_e . Vol_hyp(T_w-hat)\" vs .md:19 multi-term M = nu_SDP[tr_M+tower+tr_M(C)]",
+        "notes": "The .ts manifest title still expresses B via Vol_hyp(T_w) (the post-archimedean volume-conjecture name) while the .md statement uses the pre-archimedean multi-term tr_M+tower+Frobenius form and explicitly says the volume conjecture is NOT used in the derivation. Title/statement are out of sync — a reader keying off the manifest gets the deprecated form. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.md:276: \"Steps 5-8 currently substitute Vol_hyp(K) from SnapPy for tr_M(T_w)|q0 on entries flagged manual-historical-volume-match (2H,3H,3He)\"",
+        "notes": "For 2H/3H/3He the pipeline currently substitutes SnapPy hyperbolic volumes for the (unevaluated) Markov trace — i.e. the 'principled' values for those isotopes are NOT yet from the categorical pipeline but from external knot-volume tables. The block discloses this clearly and quarantines it, so it is honest, but any accuracy claim on those three isotopes rests on the volume-conjecture identification, not the derivation. Minor."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Binding energies in MeV, AME comparison; dimensionally sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.ts computation.status: \"not_run\"; .md cites 'the canonical formalism' (garbled) for the python prototypes",
+        "notes": "The .ts computation status is 'not_run' (witnesses d-from-scratch / unified-low-isotope-predictor not freshly run), and several script references are redacted to 'the canonical formalism'. The 99% cemetery-prune and nu_SDP values are stated against r5-full-canonical-knot-solver.witness.json but the manifest's own compute is not_run — traceability gap. Minor."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "edc2bfcf593d",
+          "ts": "13b56a346374",
+          "lean": "1bb45b0a1336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: careful, anti-circular pipeline spec that honestly quarantines its gaps (173x shortfall, open rho_K, SnapPy substitution for 3 isotopes, forbidden reverse-search). Strongest objection: the manifest title still advertises the deprecated Vol_hyp form, computation status is not_run, and the headline low-isotope 'predictions' currently borrow external hyperbolic volumes rather than evaluating the categorical trace — so the 'end-to-end derivation' label outruns what is actually computed pre-archimedean today."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

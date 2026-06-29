@@ -894,7 +894,268 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Isospin from the bowtie interface; mass-theory / nuclear isospin closure (duality D9)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The correction note explicitly fixes the earlier bar-vs-isospin parity misclassification; bar parities (h bar-odd, [2]_q bar-even, hbar_q mixed) are correctly tabled. No false claim survives."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Conjecture with content: regularised crystal functional + isospin-Z/2 residue identification."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.md:138: \"Evaluated at q=q_0, the leading-order residue is exactly the substrate flavor split ... ~305 ppm (CODATA: (m_n-m_p)/M_N ~ 305 ppm)\"",
+        "notes": "The '305 ppm match' is the headline. The closed form Delta m/M_N = hbar_q^2 h [2]_q (1+hbar_q^3)/3 is computed at q_0 and compared to the CODATA n-p split. Since q_0 is itself pinned on nucleon/lepton ratios, an exact-to-305ppm hit of the n-p mass split has some risk of indirect calibration overlap; the block correctly frames this as a conjectural categorical IDENTIFICATION of an already-computed closed form (line 155), not a from-scratch derivation, so not fully circular. Minor."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.md:76: \"replace the divergent -h/2 shift with a finite Cesaro limit ... q_k = 1/k so that h(q_k)=1/k-k has Cesaro mean -N/2 + O(log N)/N\"",
+        "notes": "The Cesaro regularisation of a linearly divergent series (h(q_k)=1/k-k, mean ~ -N/2) is presented as producing a finite regulator-independent residue, but a Cesaro mean of -N/2+... is itself N-divergent, not finite; the claim that 'the regulator absorbs the divergent part' and the residue is regulator-independent is asserted, not shown. Conjecture-appropriate but the finiteness step is an overclaim of rigor. Minor (kind=conjecture, flagged open in Open R&D)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The regulator choice is disclosed as open (Open R&D item 2); residue closed form has no off-menu constant (all hbar_q,h,[2]_q)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Swap residue = -n_pp/nn . h . omega(q) follows from tr_M(sigma^-1)-tr_M(sigma); the categorical-identification step is explicitly conjectural."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Lean is a sketch class (IsospinFromCanonicalBowtie), validation not_checked; no built sibling to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "kashiwara1991 (crystals), wenzl1988, lusztig1990, wigner1937 (SU(4) supermultiplet) appropriately invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "bowtie_K, S_reg_crystal, isospin-Z/2 vs bar parity all carefully disambiguated (the whole point of the correction note)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.md:7: \"The 305 ppm match to CODATA holds at 0.03% rel diff\"",
+        "notes": "A 0.03% match of a four-factor q-closed-form to the n-p split at a single q_0 anchor is a tight single-point fit; the block attributes it to flavor-split-substrate and frames it as the open categorical identification, but the residual-matching at this precision is the kind of single-anchor match the da-empirical-fragility lens flags. Minor since explicitly conjectural and cross-referenced to a separate proved closed form."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "m_n-m_p > 0 carried by the bar-odd/isospin-odd h factor is physically sensible (isospin breaking is odd under p<->n)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.md:152: \"already computed in the canonical formalism and consumed by the canonical formalism\"",
+        "notes": "The compute provenance is redacted to 'the canonical formalism' repeatedly; .ts names script _li_2_q_util.py + witness m-p-borromean-verification-50dps.witness.json (status verified) but the prose's flavor_split_subleading(q_0) cross-check target is not pinned to a specific named witness value in-block. Minor."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bd7d5a267400",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: honest, carefully-corrected isospin conjecture (the bar-vs-isospin parity fix is a genuine improvement). Strongest objection: the Cesaro regularisation's finiteness/regulator-independence is asserted not shown (a divergent -N/2 mean), and the 305 ppm single-anchor match carries empirical-fragility risk. All flagged open; conjecture kind is appropriate."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

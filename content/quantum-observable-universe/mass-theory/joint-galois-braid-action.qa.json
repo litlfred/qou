@@ -855,7 +855,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Joint motivic-Galois x braid action on the bi-filtration; tier-S research conjecture, mass-theory/motivic content placement OK."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Stated as conjecture; the supporting fact sum_{k=1}^4 Li_3(zeta_5^k) = -(24/25)zeta(3) is the correct cyclotomic orbit-sum (standard). Commutativity prediction is conjectural, not asserted true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Substantive joint-action conjecture with concrete predictions at (3,zeta_5) and (2,4_1)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No circularity; structural commutativity conjecture."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "joint-galois-braid-action.md:83: \"canonical evidence: the orbit-sum ... is both Galois-invariant and S_5-invariant ... consistent with the prediction\"",
+        "notes": "The (2,4_1) 'concrete prediction' says the joint action 'stabilises the entire stratum BY DEFINITION' (line 102) and the (3,zeta_5) check is an orbit-sum that is invariant under both actions almost tautologically (a single symmetric sum is invariant under any group permuting its summands). Presenting these near-tautological consistency checks as 'evidence' for the non-trivial commutativity claim slightly overstates; the authorNote honestly says the real discharge target (5_2) is untested. Minor, conjecture-appropriate."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Disjoint-structure motivation (Galois on q-coeffs, braid on Hecke argument) -> natural commutativity conjecture is a reasonable (if heuristic) inference, presented as conjecture."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "lean ref JointGaloisBraidAction validation 'stub'; no proof to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "kontsevich1995, bloch2000 plus Goncharov 2001 / Kontsevich-Zagier appropriately cited for motivic-Galois period machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "G_mot, B_{n_K}, bi-filtration H_q^{(n,K)}, semidirect vs direct product usage all defined/cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No numerical experimental match; period-algebra structure."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Orbit-sum -(24/25)zeta(3) reproducible from cyclotomic Li_3 identity; conjecture needs no witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ad72efd9d532",
+          "ts": "3eb04de3d688"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: mathematically natural tier-S conjecture, honestly flagged as untested on a non-trivial pair. Strongest objection: the two 'concrete predictions' offered as support are near-tautological invariance checks ('by definition' / single symmetric orbit-sum), not genuine tests of joint commutativity — the real discharge target (5_2) is admitted open."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

@@ -764,7 +764,254 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Bar-even kernel invariant for Q_beta; mass-theory weak-sector ladder."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "1-u^2=1-b^2 hbar_q^4 is a trivially-correct ring identity; b^2(q^-1)=b^2(q) bar-even and hbar_q^4=t^4+O(t^5) (from hbar_q=t-t^2+...) leading-bar-even claims are consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "q-beta-bar-even-kernel-invariant-proof.md:1: \"Proof (one-line ring identity)\" 1-u^2=1-b^2 hbar_q^4",
+        "notes": "The 'proof' is the trivial algebraic identity 1-u^2=1-(b hbar_q^2)^2; the SUBSTANTIVE content (that both factors are bar-even) is asserted via 'verified in the canonical formalism chain' + a leading-order Taylor argument, not proved here. The ring identity itself is near-vacuous; the bar-evenness — the actual claim — is the part deferred. Minor: it is a proof block and the bar-even reasoning is sketched, but a referee would note the ring step proves little."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "q-beta-bar-even-kernel-invariant-proof.md:16: \"hbar_q^4 = t^4 + O(t^5) — the odd-in-t content sits at orders t^5 and higher, which the bar-even ladder absorbs trivially\"",
+        "notes": "Claims hbar_q^4 is bar-even because it is t^4+O(t^5) 'to leading order', then that the odd-in-t content 'is absorbed trivially'. But hbar_q=(q-1)/q is the 'mixed' (non-bar-classifiable) quantity per the sibling isospin block's own table — hbar_q^4 is NOT exactly bar-even, only leading-order even. Stating the kernel is 'bar-even' (the proposition title) on the strength of a leading-order Taylor argument is an overclaim of the exactness; the proof itself hedges ('to leading order') but the conclusion blacksquare presents it as established. Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "b, hbar_q are framework quantities; no free constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "The contrast table (alpha_EM bar-even kernel clean vs Q_beta operator-level singular) coherently follows from the bar-even discriminant."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Proof block, no .lean sibling visible."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No external cites."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "q-beta-bar-even-kernel-invariant-proof.md:3: \"With u = b . hbar_q^2\" and t introduced (line 16) without explicit definition",
+        "notes": "The variable t (in hbar_q=t-t^2+O(t^3)) is used for the Taylor argument without being defined in-block (presumably t=q-1 or a substrate small parameter); 'bar-even at the Taylor level' vs exactly bar-even is left slightly ambiguous. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Symbolic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "q-beta-bar-even-kernel-invariant-proof.md:13: \"verified in the the canonical formalism chain\"",
+        "notes": "The load-bearing bar-evenness of b^2(q) is attributed to 'the the canonical formalism chain' (garbled redaction, double 'the'); no named witness/script, so the key claim is not traceable from this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a2b34b060c58",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "notes": "Verdict: the ring identity is correct but near-trivial; the substantive bar-even claim rests on a leading-order Taylor argument (hbar_q is actually bar-'mixed', not exactly even) plus an untraceable 'canonical formalism chain' reference. Strongest objection: the proposition title says the kernel IS bar-even while the proof only establishes leading-order bar-evenness — a scope/exactness gap a referee would press."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }

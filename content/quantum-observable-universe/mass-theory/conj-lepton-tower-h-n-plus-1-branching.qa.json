@@ -892,7 +892,278 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Lepton-tower closure factor; mass-theory lepton sector. Placement OK."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "major",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:8 boxed: \"xi_m = [2m-1]_q . [m]_q / [2m]_q . 1/hbar_q^2\" vs verification table line 134-137 values 1.000/1.48931/2.48736/3.50311",
+        "notes": "INTERNAL INCONSISTENCY: the boxed unifying formula includes a 1/hbar_q^2 factor (~101.86 at q_0), but the verification table (lines 132-137) and the muon/tau matches use ONLY [2m-1]_q[m]_q/[2m]_q WITHOUT 1/hbar_q^2 (I computed: [3]_q[2]_q/[4]_q=1.48931 matches the table's 1.48931, while the FULL boxed formula gives 151.7 for muon, 253.4 for tau). So either the boxed formula is wrong (spurious 1/hbar_q^2) or the table is wrong (missing it). The two cannot both be the conjecture's claim. Same contradiction appears in the duplicate boxed formula at line 127. The xi_3 tau candidate at line 69-77 DOES include 1/hbar_q^2 (giving ~161.7), adding a third inconsistent value."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Not vacuous; the Lean-proved algebraic identities ([6]_q=[2]_q[3]_q(1+h^2) etc.) are real content even though the boxed formula's calibration is muddled."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:33: \"the closed-form fit (matching 28 candidate ratios to 0.034%, the best by 20x over the next best)\"",
+        "notes": "The factor [3]_q[2]_q/[4]_q was 'canonical identified ... as the closed-form fit (matching 28 candidate ratios to 0.034%, best by 20x)'. This is an explicit best-of-28 selection against the muon target — i.e. the form was chosen because it matched, then the unifying [2m-1][m]/[2m] pattern was reverse-engineered. The categorical derivation 'remains open' (line 164). This is fit-first-then-rationalise, a soft circularity. Minor since the block is a conjecture and discloses the fit origin."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "major",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:135: \"Muon ... +0.001 %\" / line 136: \"Tau ... +0.79 %\"",
+        "notes": "The unifying formula is presented as the 'correct unifying formula' (line 124) with the muon at +0.001% — but per da-false-claim the table omits the boxed 1/hbar_q^2, so the +0.001% is for a DIFFERENT expression than the boxed one. Claiming a +0.001% closure while the very formula in the box would give 151.7 (off by 100x) overclaims agreement that the consistent reading does not support. The tau +0.79% is a near-match, not the 'closure' the boxed/unifying framing implies."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:50: \"**Wait** — the empirical match is for muon ... So the conjecture's n=2m+1 indexing is wrong; the actual indexing is n=m+1\"",
+        "notes": "The indexing scheme (n=2m+1 vs n=m+1 vs m+2) is adjusted mid-block to make the muon match — i.e. the index map is itself a tuned discrete DOF chosen post-hoc. Combined with the best-of-28 ratio selection, the lepton factor has multiple discrete degrees of freedom fitted to 2 data points (muon, tau). Disclosed (the scratchpad shows the tuning), so minor."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "major",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:127 boxed (with 1/hbar_q^2) vs line 130-137 verification table (without)",
+        "notes": "The verification table is presented as confirming the boxed formula ('canonical structural verification at q_0 ... | Muon | [3]_q[2]_q/[4]_q | 1.48931 |'), but the tabulated expression drops the boxed formula's 1/hbar_q^2 factor with no explanation. The 'therefore verified' does not follow from the stated formula — the table verifies a different expression than the boxed claim. A missing-step/inconsistent-evaluation non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:151: \"three_halves_factor_eq_q_brackets — (3+h^2)/(2+h^2) = [3]_q[2]_q/[4]_q\"",
+        "notes": "The Lean lemmas listed prove the q-bracket ALGEBRAIC identities (e.g. [3]_q[2]_q/[4]_q=(3+h^2)/(2+h^2), [6]_q=[2]_q[3]_q(1+h^2)) — NOT the physical xi_m mass-ratio closure including 1/hbar_q^2. So the Lean backs the bracket arithmetic (which is the bracket form WITHOUT 1/hbar_q^2), consistent with the table but NOT with the boxed formula. The Lean 'lepton_xi' definitions exist but the divergence is that the narrative's headline boxed formula (with 1/hbar_q^2) is not what the verification table or the bracket lemmas establish. Minor."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "No cites[] on this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "major",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:8 boxed xi_m WITH 1/hbar_q^2; line 135 table WITHOUT; line 69 tau candidate WITH; line 30 'the factor [3]_q[2]_q/[4]_q'",
+        "notes": "The central object xi_m has at least three incompatible definitions in one block: (i) boxed [2m-1][m]/[2m] . 1/hbar_q^2 (lines 8, 127); (ii) the verification-table value [2m-1][m]/[2m] alone (line 135, numerically 1.489 for muon); (iii) tau candidate d_q((4,1))[2]_q/[5]_q . 1/hbar_q^2 (line 69). A reader cannot determine what xi_m actually IS — whether the 1/hbar_q^2 belongs. This is the definitional ambiguity that produces the da-false-claim/non-sequitur flags."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "major",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:135: \"Muon ... 1.48931 | 1.48929 | +0.001 %\"",
+        "notes": "A +0.001% (10 ppm) agreement of a 2-bracket-ratio with no continuous free parameter, at the single muon anchor, is a striking match — but it was SELECTED as best-of-28 candidate ratios (line 33) with the indexing tuned post-hoc (the 'Wait' scratchpad). The 0.001% is therefore an in-sample best-fit, not an out-of-sample prediction; the tau extension only reaches +0.79% (790x worse), exactly the signature of an over-fitted single-anchor selection. Classic empirical-fragility per the brief."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "notes": "Lepton mass-ratio factors of O(1-3.5) are not physically implausible per se; the issue is derivation rigor (above), not a physics contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "minor",
+        "evidence": "conj-lepton-tower-h-n-plus-1-branching.md:130: \"canonical structural verification at q_0 ~ 1.110 (the formal derivation witness)\"",
+        "notes": "The verification witness is redacted to 'the formal derivation witness' with no named file; given the boxed-vs-table inconsistency, the actual computed xi_m values cannot be traced/reproduced to confirm which expression the witness used. The bracket identities ARE reproducible (I confirmed 1.48931, 2.48736), but the headline xi_m with 1/hbar_q^2 is not."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1889a8a0f947",
+          "ts": "add94bb5cc02",
+          "lean": "373e2c203fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:57:03.265Z",
+        "reviewed_sha": "c8c438130c12ab6d03842cea51fc9db7eb296b1b",
+        "severity": "major",
+        "notes": "Strongest objection: irreconcilable boxed-formula vs verification-table mismatch (1/hbar_q^2 present in one, absent in the other) compounded by best-of-28 fit-then-rationalise provenance and unredacted scratchpad reasoning."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:57:03.265Z"
 }
