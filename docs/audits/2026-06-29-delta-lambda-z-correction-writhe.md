@@ -139,6 +139,29 @@ independent (as the writhe split predicts).
   **not attempted** (Δ_λ gate). Honest statement: O(−1.5)/excess-proton,
   sign-fixed, magnitude open.
 
+## Mirror cancellation — Lean-proved (why the splits are clean)
+
+*Why* is the mirror split a clean number while the absolute deviations are huge
+and A-dependent? Because the bar-even baseline cancels in a mirror pair. This is
+now proved (`DeltaLambdaExponentKeystone.lean`, sorry-free):
+
+| decl | statement |
+|---|---|
+| `crossing_sum_mirror_invariant` | `σ+σ⁻¹(Z,N) = σ+σ⁻¹(N,Z)` — the bar-even sum is `Z↔N`-symmetric (A-only) |
+| `averaged_count_mirror_invariant` | `2A+1` is mirror-invariant — the second bar-even statistic is A-only too |
+| `writhe_mirror_difference` | `writhe(Z,N) − writhe(N,Z) = 4(Z−N)` — the writhe is the **unique** crossing statistic that moves under the mirror |
+| `mirror_baseline_cancels` | given `f Z N = baseline(Z+N) + zCorr(Z−N)`, the mirror difference `f Z N − f N Z = zCorr(Z−N) − zCorr(N−Z)` — baseline cancels **exactly** |
+
+The first three are pure `omega`/`ring` facts about the crossing bookkeeping: the
+two bar-even statistics are mirror-invariant, so the writhe is the sole
+distinguishing crossing content. The fourth proves the baseline cancellation is
+**unconditional** *given* the additive separation `f = baseline(A) + zCorr(Z−N)`.
+That separation is the only hypothesis — it is supplied (the additive-channel
+ansatz, data-supported), not proved; the cancellation given it is exact. This is
+the rigorous content of "the mirrors cancel": the symmetry is proved at the
+crossing-invariant level; the binding-level cancellation is conditional on the
+one named, auditable ansatz.
+
 ## Net picture (updated)
 
 - **bar-even leading (`10A−5`)**: downgraded — a **light-nucleus (A≤4)
