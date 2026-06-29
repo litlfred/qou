@@ -83,12 +83,46 @@ auto-stamped (honest flag, not a guess):
 Classifying these is a follow-up; each needs its producer inspected before a
 label is stamped.
 
-## Note on PR #3029 (A=4 reconciliation, merged same day)
+## Canonical reconciliation — which convention is canonical
+
+Going to the canonical derivation (`docs/canonical-derivation-cheat-sheet.md`
+§Phase 5q + the prior `docs/audits/2026-06-09-binding-trace-convention-split.md`)
+settles which of the two conventions is canonical. The convention-split audit
+already enumerated these exact two values:
+
+| this audit's label | convention-split label | deuteron χ^(6) | status |
+|---|---|---|---|
+| **`sign-only-crossings`** | **A** (matrix-M / `chi_q_via_gp`; the production χ infra #2062/#2080) | **11.02 = q₀²³** | **canonical per-λ character** |
+| **`averaged-crossings`** | **B** (`markov_trace_3A` Plancherel) | **1.56** | **DEPRECATED for binding** |
+
+**`sign-only-crossings` (A) is canonical** for the per-λ character:
+
+- It is the **production** character convention — `marshal_to_chi_lambda_braid`
+  maps the averaged p-n form `(c=1, d=−h/2)` → `(sign=+1)` (the explicit
+  `# averaged → σ convention` line), so production `chi_lambda_braid` and the
+  `derived_chi_catalogue` use sign-only.
+- It is **consistent with the canonical Jones–Markov trace C**
+  (`markov/markov_trace_canonical.tr_M_element`, `prop:categorical-mass-markov`).
+
+**`averaged-crossings` (B) is deprecated for binding** — `markov_trace_3A`'s
+own docstring: *"This is NOT the canonical Jones–Markov trace… Do not use for
+new binding calculations."* It survives only as an opt-in audit-trail probe
+(`pn_convention="strict_averaged"`). The audit reports these as
+**off-canonical** (informational; they are valid probes, not errors, so they
+do not fail `--strict`).
+
+**Corpus state (this audit):** of 38 labeled χ caches, **12 are canonical
+(sign-only / A)** and **26 are off-canonical (averaged / B)**. A downstream
+*binding* consume should use the sign-only sibling; whether any specific
+consumer currently misuses an averaged cache is a separate follow-up
+(compute-integration-watcher), not asserted here.
+
+## Note on PR #3029 (A=4 reconciliation, merged same day) — CORRECTED
 
 The A=4 `f^λ` binding in #3029 used the **`sign-only-crossings`** `-matrix-m`
-χ. The Option-E binding-trace convention is the **averaged** one ("NOT the
-averaged-crossing binding trace" is how the sign-only producer distinguishes
-itself). This does **not** change #3029's qualitative verdict — A=4 lands at
-−80% under sign-only and the averaged convention is no closer to closing 28.30
-MeV — but the convention used should be stated explicitly when that number is
-cited. Tracked here rather than reopening the merged PR.
+χ — which the reconciliation above shows is the **canonical (A)** per-λ
+convention, *not* an off-convention choice. (An earlier draft of this note had
+the canonicity backwards, calling the averaged form the binding-canonical one;
+the convention-split audit corrects that — averaged (B) is the deprecated form.)
+So #3029 used the right convention. Its verdict (A=4 does not close, −80%)
+stands and is convention-robust.
