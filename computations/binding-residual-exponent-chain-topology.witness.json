@@ -1,0 +1,144 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-29T14:22:43.391378+00:00",
+  "commitSha": "c831fe6650a7cc22b95f9fe85059b889f4259396",
+  "assertions": [
+    {
+      "name": "len_W_free_eq_11A",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "11 crossings/nucleon (g0=7,g1=4)"
+    },
+    {
+      "name": "law_eq_five_times_units",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "10A−5 = 5·(2A−1) over the chain units"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "binding-residual-exponent-chain-topology",
+  "scriptFile": "binding_residual_exponent_chain_topology.py",
+  "scriptHash": "d3cc4eb51c98",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Chain-topology decomposition of the binding residual exponent: 10A−5 = 5·(2A−1) = 5·(A nucleons + (A−1) bonds), read from the atom_braid_word_3A chain. NEAR-MATCH TIER: the 2A−1 is derived (chain topology); the per-unit weight 5 is the reduced open constant. Companion Lean QOU/Mass/BindingResidualExponent.lean (sorry-free).",
+  "data": {
+    "Z1N1": {
+      "atom": "Z1N1",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "strands_3A": 6,
+      "len_W_free": 22,
+      "len_W_atom": 23,
+      "crossings_per_nucleon": 11,
+      "interface_crossings": 1,
+      "bonds_A_minus_1": 1,
+      "chain_units_2A_minus_1": 3,
+      "law_10A_minus_5": 15,
+      "five_times_units": 15,
+      "bond_types": {
+        "pp": 0,
+        "pn": 1,
+        "nn": 0
+      }
+    },
+    "Z1N2": {
+      "atom": "Z1N2",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "strands_3A": 9,
+      "len_W_free": 33,
+      "len_W_atom": 35,
+      "crossings_per_nucleon": 11,
+      "interface_crossings": 2,
+      "bonds_A_minus_1": 2,
+      "chain_units_2A_minus_1": 5,
+      "law_10A_minus_5": 25,
+      "five_times_units": 25,
+      "bond_types": {
+        "pp": 0,
+        "pn": 1,
+        "nn": 1
+      }
+    },
+    "Z2N1": {
+      "atom": "Z2N1",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "strands_3A": 9,
+      "len_W_free": 33,
+      "len_W_atom": 35,
+      "crossings_per_nucleon": 11,
+      "interface_crossings": 2,
+      "bonds_A_minus_1": 2,
+      "chain_units_2A_minus_1": 5,
+      "law_10A_minus_5": 25,
+      "five_times_units": 25,
+      "bond_types": {
+        "pp": 1,
+        "pn": 1,
+        "nn": 0
+      }
+    },
+    "Z2N2": {
+      "atom": "Z2N2",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "strands_3A": 12,
+      "len_W_free": 44,
+      "len_W_atom": 47,
+      "crossings_per_nucleon": 11,
+      "interface_crossings": 3,
+      "bonds_A_minus_1": 3,
+      "chain_units_2A_minus_1": 7,
+      "law_10A_minus_5": 35,
+      "five_times_units": 35,
+      "bond_types": {
+        "pp": 1,
+        "pn": 1,
+        "nn": 1
+      }
+    },
+    "Z3N3": {
+      "atom": "Z3N3",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "strands_3A": 18,
+      "len_W_free": 66,
+      "len_W_atom": 71,
+      "crossings_per_nucleon": 11,
+      "interface_crossings": 5,
+      "bonds_A_minus_1": 5,
+      "chain_units_2A_minus_1": 11,
+      "law_10A_minus_5": 55,
+      "five_times_units": 55,
+      "bond_types": {
+        "pp": 2,
+        "pn": 1,
+        "nn": 2
+      }
+    }
+  }
+}
