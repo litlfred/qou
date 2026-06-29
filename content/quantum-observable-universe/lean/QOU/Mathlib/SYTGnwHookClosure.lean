@@ -369,4 +369,81 @@ theorem per_corner_ratio_middle (l : List ℕ) (c : ℕ)
     - (β cF) * (∏ j ∈ univ.erase cF, (β cF - β j)) * h2q
     + (β cF) * (prodHooks (removeCorner l c) : ℚ) * hvand
 
+/-! ## Row-drop corner structure (the `l[c] = 1` case)
+
+A **row-drop corner** is a corner `c` with row length `l[c] = 1`.  Because the shape is sorted-positive,
+this forces `c = k − 1` (the last row): `l[c+1] < l[c] = 1` means `l[c+1] = 0`, impossible for a row
+strictly inside a positive shape.  Deleting it removes the whole last row, so `removeCorner l c = take c`
+and the length drops `k → k − 1`.  The staircase shift `(length − 1 − j)` then drops by one for every
+`j`, so `betaNat`/`betaNatVal` **shift uniformly by `−1`** (all nodes, not just `c`) — the structurally
+different feature from the middle corner. -/
+
+/-- A row-drop corner is the last row. -/
+theorem rowdrop_c_last (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) : c = l.length - 1 := by
+  have hclt : c < l.length := hc.1
+  have hnext : l.getD (c+1) 0 < l.getD c 0 := hc.2
+  rw [hone] at hnext
+  by_contra hne
+  have hc1 : c + 1 < l.length := by omega
+  have : 0 < l.getD (c+1) 0 := by
+    rw [QOU.Mathlib.SYTEnum.getD_eq_getElem' l (c+1) hc1]
+    exact hpos _ (List.getElem_mem hc1)
+  omega
+
+/-- Deleting a row-drop corner truncates the last row: `removeCorner l c = l.take c`. -/
+theorem removeCorner_eq_take_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) :
+    removeCorner l c = l.take c := by
+  have hclt : c < l.length := hc.1
+  have hclast : c = l.length - 1 := rowdrop_c_last l c hc hpos hone
+  have hdrop : l.drop (c+1) = [] := List.drop_eq_nil_of_le (by omega)
+  unfold removeCorner
+  rw [hone, List.set_eq_take_append_cons_drop, if_pos hclt, hdrop, List.filter_append]
+  have htake : (l.take c).filter (· != 0) = l.take c := by
+    rw [List.filter_eq_self]; intro a ha
+    simpa using (hpos a (List.mem_of_mem_take ha)).ne'
+  rw [htake]; simp
+
+/-- The length drops by one for a row-drop corner. -/
+theorem removeCorner_length_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) :
+    (removeCorner l c).length = l.length - 1 := by
+  rw [removeCorner_eq_take_rowdrop l c hc hpos hone, List.length_take]
+  have := rowdrop_c_last l c hc hpos hone
+  omega
+
+/-- **Uniform β-number shift (row-drop, `ℕ`).**  `betaNatVal(l∖c) j = betaNatVal l j − 1` for every
+`j < c`: deleting the last row drops the staircase shift `(length − 1 − j)` by one. -/
+theorem betaNatVal_removeCorner_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) (j : ℕ) (hj : j < c) :
+    betaNatVal (removeCorner l c) j = betaNatVal l j - 1 := by
+  have hlen := removeCorner_length_rowdrop l c hc hpos hone
+  have htake := removeCorner_eq_take_rowdrop l c hc hpos hone
+  have hclast := rowdrop_c_last l c hc hpos hone
+  unfold betaNatVal
+  rw [hlen, htake]
+  have hgd : (l.take c).getD j 0 = l.getD j 0 := by
+    rw [QOU.Mathlib.SYTEnum.getD_eq_getElem' (l.take c) j (by rw [List.length_take]; omega),
+        QOU.Mathlib.SYTEnum.getD_eq_getElem' l j (by omega), List.getElem_take]
+  rw [hgd]; omega
+
+/-- **Uniform β-number shift (row-drop, `ℚ`).**  `betaNat(l∖c) j = betaNat l j − 1` for `j < c`. -/
+theorem betaNat_removeCorner_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) (j : ℕ) (hj : j < c) :
+    betaNat (removeCorner l c) j = betaNat l j - 1 := by
+  have hlen := removeCorner_length_rowdrop l c hc hpos hone
+  have htake := removeCorner_eq_take_rowdrop l c hc hpos hone
+  have hclast := rowdrop_c_last l c hc hpos hone
+  unfold betaNat
+  rw [hlen, htake]
+  have hgd : (l.take c).getD j 0 = l.getD j 0 := by
+    rw [QOU.Mathlib.SYTEnum.getD_eq_getElem' (l.take c) j (by rw [List.length_take]; omega),
+        QOU.Mathlib.SYTEnum.getD_eq_getElem' l j (by omega), List.getElem_take]
+  rw [hgd]
+  have h1 : ((l.length - 1 - 1 - j : ℕ) : ℚ) = ((l.length - 1 - j : ℕ) : ℚ) - 1 := by
+    have he : l.length - 1 - 1 - j = (l.length - 1 - j) - 1 := by omega
+    rw [he, Nat.cast_sub (by omega : 1 ≤ l.length - 1 - j), Nat.cast_one]
+  rw [h1]; push_cast; ring
+
 end QOU.Mathlib.SYTBetaLagrange
