@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Strutinsky macroscopic+shell interpretation of the graded trace; mass-theory placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Strutinsky E=Ẽ+δE_shell and Gaussian smoothing are correctly described; analogy to symbol map σ is stated as analogy."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Substantive physical-interpretation remark."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No derivation; an interpretation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "'not only a formal analogy' is a measured claim identifying smoothing with the symbol map; not over-asserted as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "graded trace↔liquid-drop, residue↔shell correction mapping is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Remark; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No external citations; Strutinsky procedure correctly characterized."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Ẽ, δE_shell, symbol map σ on gr H_n(R,q) all referenced clearly."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Strutinsky shell-correction method is standard nuclear physics; the categorical analogy is plausible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0e732308c004",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Sound, concise physical-interpretation remark. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

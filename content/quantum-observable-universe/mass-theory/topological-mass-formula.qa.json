@@ -1048,7 +1048,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is m(K)=Vol(K)/ℏ_q² with the descent setup; the three-step derivation is clearly delimited."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Archimedean topological mass formula (§4); mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "§4 archimedean; ℏ_q=1-1/q with the substrate q, real division — appropriate post-fibre-functor; the .lean explicitly documents the R_q→ℝ specialisation before division."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lean uses field_simp/positivity over ℝ for an archimedean statement; appropriate. Step 1-2 identifications are hypotheses (disclosed)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "ArchimedeanMassFormula proves baseline+exceptional=Vol/ℏ² given the two identification hypotheses, matching the .md Step-3 combination; the .md states this isolation explicitly."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement not weakened; the Step-1/Step-2 identifications are honest explicit hypotheses (§3b pattern), disclosed in the .md."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The combination Vol+Vol(1/ℏ²-1)=Vol/ℏ² is a genuine algebraic identity proved by field_simp;ring, not a class-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The arithmetic identity is non-trivial (requires ℏ²≠0); not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "hq:1<q satisfiable; the identification hypotheses are the disclosed conditional inputs, not False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "h_baseline, h_exceptional, hq all used (rewrite + ℏ²≠0)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "field_simp/ring/positivity; no decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "1+(ℏ⁻²-1)=ℏ⁻² and m=Vol·ℏ⁻² are correct; CS/volume correspondence invoked as the geometric input."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Genuine conditional formalization; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Determines q from mass ratios (scale-cancelling); the formula is structural, not back-fit to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "topological-mass-formula.md:20: m(K) = Vol(K)/ℏ_q²",
+        "notes": "This Vol/ℏ_q² form omits the m_e and density ρ(K) factors of the canonical mass formula m_e·Vol·ρ/ℏ_q² (AGENTS.md banner). It is presented at the categorical-decomposition level and used via ratios, so not an absolute-mass overclaim, but the bare 'm(K)=Vol/ℏ²' is an incomplete shape vs the canonical."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No fitted parameters; ℏ_q from substrate q."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Step 1 (holonomy→Vol) and Step 2 (dilog sum→(1/ℏ²-1)Vol) are disclosed as imported geometric inputs / Kashaev-Murakami-restricted hypothesis; Step 3 combination is rigorous."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lean matches the Step-3 combination with the two identifications as hypotheses, as the .md states."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "thurston1978, kock2004 cited; Kashaev–Murakami volume conjecture invoked explicitly as a (restricted) hypothesis, not as proved."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "ℏ_q=1-1/q, descent involution, Vol(K), the desc/trans eigenspaces all defined/referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No numerical CODATA match in this block (q determined from ratios elsewhere)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Mass∝volume/ℏ² is the framework's standing categorical-archimedean identification; internally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The algebraic combination is reproducible; geometric inputs cited."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8e504f086606",
+          "ts": "075466dde826",
+          "lean": "13a4384e1534"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Clean conditional formalization (Step-1/2 as disclosed hypotheses, Step-3 proved). Minor: the bare m=Vol/ℏ² omits the m_e·ρ factors of the full canonical formula, but ratios are scale-invariant."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

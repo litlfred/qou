@@ -857,7 +857,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Bundled §3b-cond Lean fillers for mass-tower scaffolding; mass-theory placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "HH^1(H_3)=0, HH^2(R[S_3])=0 (Burghelea), semisimplicity statements are correct; no false math."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Describes five real Lean carriers (height-6 enumeration, Demazure predicate, KL functor, BlochGroup carrier, pentagon surrogate) with honest status tags."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No circular derivation; an infrastructure summary."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Explicitly labels (C) as ansatz, (D)/(E) as typeclass hypotheses, and lists three substantive upstream-open items; does not claim closure."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No fitted parameters introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The cross-paper/uploads scan and remaining-work breakdown are coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Remark accurately describes the bundled .lean carriers and their status; no overstated Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Burghelea's theorem (group cohomology vanishing in char 0) correctly invoked; fred2005 F-crystal distinction noted accurately."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Each filler (A)-(E) clearly delimited; Demazure vs F-crystal 'crystal' ambiguity explicitly disambiguated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Infrastructure remark; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "HH computations (dim Der=dim Inner=3) are reproducible symbolic facts."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Honest scaffolding remark with correct cohomology facts and clearly-labeled open items. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

@@ -779,7 +779,228 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Φ_q-tower algebraic stratification proof; mass-theory placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Stratification, term-by-term level identification, and the no-level-≥3 argument via pentagon ascension are coherent; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Genuine multi-step proof with explicit algebraic-vs-archimedean separation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Derives from skein smoothing + mass tower formula; not back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Explicitly separates the unconditional algebraic stratification from the conjectural JSJ interpretation; does not overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Step 3 (pentagon ascension) cites the jet-tower remark; the iteration argument is reasonable for the algebraic-side claim."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Proof block; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Internal cross-references (mass tower, jet-tower, algebraic quantum volume) used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Strata β_S, Φ_q as formal product, GB-filtration truncation defined; 'no convergence on |q| needed' clarifies regime."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Algebraic-side statement; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c1a0c9bb4f15",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Symbolic argument; no witness drift concern."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

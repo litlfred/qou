@@ -1050,7 +1050,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Structural claim boxed cleanly; physical/empirical material is in clearly-separated sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Q_β c_3 ladder is mass-theory weak-sector content; placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Block declares 'archimedean specialisation over ℝ' with generic combinatorial content; statement regime declared correctly."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lean jones_hopf_at_q_eq_one_eq_neg_two uses norm_num on a real polynomial — appropriate archimedean evaluation at q=1."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "q-beta-c3-hopf-three-fold-markov.lean:100-103: theorem concludes h.c_3 = jonesHopf 1 via rw[h.c_3_eq_neg_two,...]",
+        "notes": "The .md asserts the categorical chain DERIVES c_3=-2; the Lean's 'derivation' is rewriting the class field c_3_eq_neg_two (which already states c_3=-2) and jonesHopf 1=-2. The chain (Facts 1-3) is not formalized."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the §3b-cond conditional form (under ThreeFoldMarkovHopfExtraction); kind/signature not weakened beyond the disclosed conditionality."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "critical",
+        "evidence": "q-beta-c3-hopf-three-fold-markov.lean:73-79,100-103: class field c_3_eq_neg_two : c_3 = -2; theorem proves c_3 = jonesHopf 1 by rw[h.c_3_eq_neg_two]",
+        "notes": "Per AGENTS.md §3b-cond rule 5: the class carries the block's own conclusion (c_3=-2) as a field; the theorem merely projects it (+ trivial jonesHopf 1=-2). This is a vacuous self-assuming projection — the class axiomatises the conclusion, not the combinatorial hypotheses."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Conclusion c_3 = jonesHopf 1 is not literally True/x=x; jones_hopf_at_q_eq_one is a genuine norm_num fact. The vacuity is the projection (flagged separately), not a True-goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No False premise; the class hypothesis is satisfiable (the conjectural input)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The class instance h is used via h.c_3_eq_neg_two."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "norm_num/rw only; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "J_Hopf(q)=-q²(1+q²), J_Hopf(1)=-2 is self-consistent; no false stated identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "q-beta-c3-hopf-three-fold-markov.lean:79,103: c_3_eq_neg_two : c_3 = -2 is the conclusion; theorem only composes it with jonesHopf 1=-2",
+        "notes": "The Lean export adds essentially nothing over the class field that asserts the result; substantive content (Facts 1-3 factorization) is unformalized — the 'theorem' is a near-tautological re-expression."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The .md does not back-fit c_3 to a target; it identifies c_3 with a topological invariant. Not circular (the empirical c_3≈-2.0216 is independently extracted)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "q-beta-c3-hopf-three-fold-markov.md:83: \"giving c_3 = -2 as a structural prediction, not an empirical fit\"",
+        "notes": "Headline 'structural prediction not empirical fit' is partially mitigated by the explicit 'Near-match tier (not Taylor-exact)' section (residual ≈0.58%); but the boxed claim still leans stronger than AGENTS.md's c_3 = near-match (q0-dependent, up to ~3% cross-anchor) canon allows."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "c_3 is a derived/identified coefficient, not a free fit; b (Hoefsmit factor) is substrate-derived."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "q-beta-c3-hopf-three-fold-markov.md:31-83: Facts 1-4 are a heuristic chain, not a proof, before the boxed c_3=-2",
+        "notes": "The 'per-step categorical chain' is a sketch (e.g. Fact 3 'dominant contribution' is asserted, not derived); the .md itself flags this as the open combinatorial input, so the gap is disclosed but the 'therefore c_3=-2' is not rigorous."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "q-beta-c3-hopf-three-fold-markov.lean:100-103 vs .md:83",
+        "notes": "Lean proves only the equality c_3 = jonesHopf 1 by projecting the assumed class field; the .md's claimed structural derivation of c_3=-2 from the 3-fold-Markov/Hopf chain is not what the Lean certifies."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "jones1985, kashiwara1990-duke (KL crystal) cited consistently with the §7b decategorification framing."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "c_3, ℏ_q, J_Hopf normalisation, near-match tier all defined; q-fibre vs archimedean handled."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "q-beta-c3-hopf-three-fold-markov.md:104-110: residual ≈0.58% (was ≈0.004% pre-drift), c_3^emp≈-2.0216",
+        "notes": "The match is a near-match with a documented cross-anchor swing (0.004%→0.58% under the N=3 refresh); honestly reported as 'size of the near-match gap', so disclosed rather than cherry-picked."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "112× tightening reported above CODATA floor; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Witnesses (q-beta-operator-valued-N3, c3-hopf-habiro-analysis) named with the post-drift values disclosed; consistent prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "458b246f52bc",
+          "ts": "80eca5defcb7",
+          "lean": "2c61855c9776"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "notes": "Block is honest about the near-match tier lower down but the Lean and the headline frame the result more strongly than the underlying argument supports."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

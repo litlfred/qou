@@ -1009,7 +1009,424 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the three-case chirality-factor classification; the Derivation sketch is clearly separated."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Chirality from Frobenius self-pairing; mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is in h = q - q^{-1} (Hecke deformation), algebraic; no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Derivation uses Fricke trace / character identities (algebraic), not archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No .lean sibling exists."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No Lean sibling."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No Lean proof."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No Lean proof."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No Lean proof."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No Lean proof."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No Lean proof."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "chirality-from-frobenius-self-pairing.md:7-9 vs :55-60: item 1 states a_K = 1 + w(K)·h, but the derivation shows trefoil (w=3≠0) gives ββ*=1 ⇒ a_K=1",
+        "notes": "Statement item 1 (a_K=1+w(K)h for chiral knots) is contradicted by the block's own derivation: for any single-strand power ββ*=σ^k σ^{-k}=1 ⇒ a_K=1, including the chiral trefoil w=3. The writhe-linear term is not exhibited (deferred to unshown 'higher Markov moments')."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The amphichiral case (a_K=1-c_K h², figure-8 c_K=1) is substantive and the q-arithmetic 2-[3]_q=-1-h² is correct."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No back-fitting; uses Fricke trace and character values."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "chirality-from-frobenius-self-pairing.md:7-9,55-60: writhe-linear first-order term asserted but derivation gives a_K=1 at the self-pairing level",
+        "notes": "Item 1 overstates: the self-pairing a_K=τ(ββ*)/τ(1) is ≡1 for the worked chiral examples, so the claimed leading 1+w(K)h term is not supported by the presented argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "c_K is a topological invariant, not a fit; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "chirality-from-frobenius-self-pairing.md:57-60: \"The non-trivial (1+h) chirality factor arises from higher Markov moments... not as an abstract algebra element.\"",
+        "notes": "Logical gap: having shown ββ*=1 ⇒ a_K=1 for the trefoil, the block asserts the 1+h term 'arises from higher Markov moments' without deriving it — the conclusion (item 1) does not follow from the presented steps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Fricke trace identity for SL₂ correctly stated and applied at A=T_1,B=T_2^{-1} in H_3."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "chirality-from-frobenius-self-pairing.md:1-5: a_K(β)=τ(ββ*)/τ(1) defined, but β* (mirror vs antipode) interacts with the closure-vs-algebra-element distinction left implicit",
+        "notes": "The derivation switches between 'abstract algebra element' (ββ*=1) and 'morphism 1→A closure' readings of a_K to rescue item 1; which reading is canonical for the statement is ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "figure-8 a_{4_1}=1-h² is exact (from χ_{4_1}((2,1))=-1-h²), not a fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Chirality/writhe framing is standard knot theory; ⁴He=(1-h²)² is the framework's identification."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "2-[3]_q=-1-h² and Fricke values reproducible symbolically."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "74ac82331aae",
+          "ts": "91ef11739f72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "notes": "The amphichiral/figure-8 result is correct; the chiral first-order claim is unsupported by the presented argument and should be downgraded to conjectural or actually derived."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

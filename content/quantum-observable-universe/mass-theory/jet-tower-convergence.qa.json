@@ -1048,7 +1048,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the convergence + truncation-error bound; physical/engineering content is in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Jet/brane-tower convergence for the mass endomorphism; mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Convergence/geometric-tail is genuinely archimedean (limits, |·|, real series); ℝ is correct here, not a leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lean uses Mathlib summability/geometric-series (archimedean) for an archimedean convergence claim — appropriate."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "jet_tower_tail_bound matches the .md tail bound Δ_max·ℏ_q^{2(N+1)}/(1-ℏ_q²); jet_levels_for_precision matches the N-bound corollary."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the conditional convergence (boundedness hypothesis explicit); not weakened. Genuine Mathlib proof."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Real analytic proof via summable_tower_terms / geometric_tail_bound; no class-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Conclusion is a genuine HasSum + explicit error bound, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "hr0:0≤r, hr1:r<1, hbound satisfiable; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "hr0/hr1/hbound/hΔmax all used (summability, M-test, tail geometric sum)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Genuine analytic tactics; no decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Geometric tail bound is correct; the N-precision log-formula follows."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Substantive, fully-proved conditional result."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No circularity; boundedness is an explicit named-conjecture hypothesis, not assumed silently."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Result is correctly framed as reducing convergence to the boundedness conjecture; not claimed unconditional."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Δ_max is a bound, not a fit; ℏ_q from substrate."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Steps (M-test summability, tsum split, geometric tail) chain correctly in the Lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lean and .md state the same conditional bound; exemplary §3b-cond formalization."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "[leitner2026] self-reference for the bound; Mathlib lemmas used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "ℏ_q=(q-1)/q, Δ^(n), Δ_max, T(ρ) all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "uniform_bound_pass true for D,T,³He across n=1..7 is witness-backed and framed as supporting (not proving) the boundedness conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Geometric convergence of the binding tower is physically reasonable (ℏ_q²<1)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "jet-tower-delta-max.witness.json named; the proof is self-contained Mathlib."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ba1ea3ff9f02",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Strong, fully-proved conditional convergence result with honest reduction to a named boundedness conjecture. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

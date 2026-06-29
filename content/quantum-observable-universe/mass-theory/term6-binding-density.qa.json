@@ -44,6 +44,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark interprets prop:gb-spectral-sequence, placed in sec:phi-q-markov-residue-habiro alongside the Term-6 residue/binding blocks. The per-nucleon binding density built on the level-3 GS stratum (Term 6) fits the residue/Habiro section. Calibrated-fit content is honestly flagged (kind=remark + authorNotes status), so the calibration is not a misfiled provable claim."
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Term-6 binding-density decomposition; mass-theory placement correct."
       }
     ],
     "da-reproducibility": [
@@ -72,6 +87,21 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Term6-scaling-heavy.witness.json and the α-derivation attempt witness named; fit values consistent with the stated panel."
       }
     ],
     "da-overclaim": [
@@ -99,6 +129,21 @@
         },
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Remark explicitly tagged 'calibrated; shape derived' and segregates 'Empirical content (not yet derived)'; α=339.4, β=1.14 honestly labeled fitted."
       }
     ],
     "da-vacuous": [
@@ -126,6 +171,21 @@
         },
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Substantive structural+empirical content; clearly separates derived shape from fitted values."
       }
     ],
     "da-referee-verdict": [
@@ -180,6 +240,21 @@
         "notes": "No false claims identified in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$'; the algebraic relation involving $(Z, N)$ is mathematically consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "T_6 = z³ Σ Φ_q(|tr_M(ξ_ijk)|) over triples, A³~C(A,3) normalization, and the candidate m_e[7]_q[8]_q[9]_q=361.2 MeV are correctly stated as facts/attempts."
       }
     ],
     "da-circular": [
@@ -199,6 +274,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$'. The construction is derived from prop:wigner-np-pairing, prop:categorical-neutrality-saturated-shells.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Shape derived from the GB spectral sequence + triple combinatorics; α,β fitted but not back-fitting the structure to itself."
       }
     ],
     "da-hidden-dof": [
@@ -218,6 +308,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$'. All constants are canonically derived.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "term6-binding-density.md:18,90-95: α≈339.4 MeV, β≈1.14 MeV fit to the 16-atom AME panel (R²=0.84)",
+        "notes": "Two empirical coefficients (α,β) are introduced for binding energy — adjacent to a 4th/5th-calibration concern under the 3-calibration discipline. They are DISCLOSED as fitted (not hidden) and the block is a remark explicitly flagged calibrated/exploratory, so it is honest; noting for the discipline ledger."
       }
     ],
     "da-non-sequitur": [
@@ -237,6 +344,21 @@
         "notes": "The argument flow in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' is logically sound, mapping onto the cited dependencies: prop:wigner-np-pairing, prop:categorical-neutrality-saturated-shells.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "A³ normalization from C(A,3) triple count follows; δ_M magic-shell vanishing at large A is consistent with the fit absorbing it."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -255,6 +377,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Remark; no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -274,6 +411,21 @@
         "notes": "Citations to bethe1936, weizsacker1935, geckpfeiffer2000 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Internal cross-refs (gb-spectral-sequence, markov-trace-factorization, categorical-neutrality-saturated-shells) used correctly."
       }
     ],
     "da-definitional-ambiguity": [
@@ -293,6 +445,21 @@
         "notes": "Key terms and symbols (including $(Z, N)$) in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "T_6, S_3(Z,N), ξ_ijk∈H_9, δ_M cases, M (magic set) all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -312,6 +479,23 @@
         "notes": "The algebraic and logical relations in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "term6-binding-density.md:90-94,120-123: R²=0.84, σ_resid=0.76 MeV; candidate m_e[7][8][9]=361.2 MeV is 7%, 'outside the ±3% fit window'",
+        "notes": "Modest fit quality (R²=0.84) for a 2-parameter binding model, and the closest categorical candidate for α misses by 7%; honestly reported, but the empirical leg is fragile (these are fits, not derivations)."
       }
     ],
     "da-physical-implausibility": [
@@ -331,6 +515,21 @@
         "notes": "The physical concepts described in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1d1480991ff8",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Magic-shell enhancement and per-nucleon binding scaling are physically reasonable; Δ_M≈2.5 MeV at ⁴He plausible."
       }
     ],
     "voice-status-leak": [
@@ -1140,5 +1339,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

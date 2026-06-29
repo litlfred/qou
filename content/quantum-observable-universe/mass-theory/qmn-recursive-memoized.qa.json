@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the algorithm + complexity claim; no physical-interpretation embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Memoised q-MN compute for atom-knot ID; mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Combinatorial MN recursion; the .md statement is regime-neutral. (Lean uses ℝ but the statement is algebraic.)"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No narrative Proof. body; the .md describes a proposed compute extension."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "qmn-recursive-memoized.lean:61-62: chi_qMN_partition lam rho q := 0 * ((lam.length:ℝ)+rho.length+q)",
+        "notes": "Every Lean 'theorem' (chi_classical_recursive, chi_q_recursive_halverson_ram, chi_memoized_correct, markov_trace_via_...) holds because chi_qMN_partition ≡ 0; the MN recursion the .md states is NOT what the Lean proves (both sides are identically 0)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "critical",
+        "evidence": "qmn-recursive-memoized.lean:59-62: comment 'Content-bearing placeholder 0·_ ... while removing the := 0 placeholder syntax'",
+        "notes": "Per AGENTS.md §1a (no audit-dodging): the `0·_` model is explicitly a workaround to make `:= 0` look content-bearing; the theorems' real content is hollowed out — the stated recursion is satisfied vacuously by the zero model."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Not a class-field projection; the vacuity is via the zero-model (flagged under trivial-true), not self-assumption."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "critical",
+        "evidence": "qmn-recursive-memoized.lean:82,110,140,177: all proofs are `simp [chi_qMN_partition]` collapsing both sides to 0",
+        "notes": "The goals are tautologies under the zero-model: chi_qMN_partition≡0 so each recursion identity reduces to 0 = (sum of 0s). The proofs discharge a vacuous goal state — the substantive MN content is absent."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Hypotheses (hq:q>0, hrho:rho≠[]) are satisfiable; no False premise (the issue is vacuity, not contradiction)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "qmn-recursive-memoized.lean:97-104: hq, hrho, strips unused; theorem closes by simp on the 0-model",
+        "notes": "hq/hrho/parts_complete/parts_nodup are all unused — symptomatic of the vacuous zero-model: the recursion holds independent of any hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Uses simp not decide/native_decide; the masking is via the zero-model definition, flagged under proof-no-trivial-true."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The .md MN/Halverson-Ram recursion and complexity claims are mathematically correct in their own right; no false stated math."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "qmn-recursive-memoized.lean:61: chi_qMN_partition := 0·(...)",
+        "notes": "The Lean formalization is content-free: every character is modeled as 0, so all four 'theorems' are vacuously true. This is the canonical da-vacuous pattern (a 0·_ disguise of `:= 0`)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No circular derivation in the prose."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "qmn-recursive-memoized.md:112-117: 'Open: Implement... Profile: confirm ~50× speedup empirically'",
+        "notes": "Block is a proposition but describes an unimplemented optimization with the speedup explicitly flagged 'Open'/to-be-confirmed; honest, but presenting a proposed compute as a proposition is borderline (Lean is a zero-model placeholder)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No fitted parameters; a compute-complexity proposition."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Memoisation/storage arguments follow from the recursion structure and partition counts."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "qmn-recursive-memoized.lean:61: chi_qMN_partition≡0 vs .md MN recursion over real characters",
+        "notes": "Lean proves a trivial zero-model; the .md states genuine MN/Halverson-Ram character recursion — a stark divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "halverson-ram broken-strip rule, ram1991 Frobenius formula, macdonald1995 §I.7 correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Border strip, height, q-weight, cache all defined in prose; Lean defs are placeholders but named."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The ~50× speedup is a projection explicitly flagged as to-be-profiled (Open), not a claimed measured result."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Compute-complexity claim; no physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Storage/op estimates are arithmetic; no witness drift (no value pinned)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1dc3666d5e9c",
+          "ts": "07987c140bd8",
+          "lean": "93b82daf09d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "notes": "The .md mathematics is sound; the Lean formalization is a zero-model and the block is really a proposed-but-unimplemented compute optimization."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

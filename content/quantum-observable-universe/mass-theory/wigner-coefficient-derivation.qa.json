@@ -1046,7 +1046,460 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "One-line conditional statement with the §3b-cond banner; bare claim, no interpretation embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Wigner-term coefficient [5]_q!·m_e in the BW mass formula; mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the q-factorial coefficient (algebraic); the q₀/m_e evaluation is the archimedean side, handled in the .lean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No narrative Proof. body in the .md (bare conditional statement)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation.lean:35-44: theorem proves |wignerCoefficient 5 q₀ m_e - 68.896|/68.896 < 0.03 (a 3% near-match bound), via an axiom",
+        "notes": "The .md states the Wigner coefficient IS [5]_q!·m_e (exact identification); the Lean proves only a 3% closeness of [5]_q!·m_e to a fitted 68.896 MeV (and via wigner_coefficient_axiom) — a different, weaker, approximate claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation.lean:40-44 vs .md:1-4",
+        "notes": "The Lean substitutes a 3%-near-a-fitted-value bound for the .md's structural-equality claim; the formalized statement is materially different (and weaker) than the proposition."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "wigner-coefficient-derivation.lean:40-44: wigner_coefficient := wigner_coefficient_axiom ...",
+        "notes": "The theorem is a verbatim projection of an axiom whose signature equals its conclusion; honest as an external-axiom encoding but adds nothing."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "critical",
+        "evidence": "wigner-coefficient-derivation.lean:77-83: wigner_coefficient_conditional concludes ∀c, ∃value, 0 ≤ value (satisfied by value:=0)",
+        "notes": "The conditional theorem's goal ∃value, 0≤value is a tautology (value=0 works); the class field coeffs_are_q_rational similarly only asserts ∃value, value=r·m_e (existentially trivial). Neither captures 'coefficient = [5]_q!·m_e'."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "hme:0≤m_e and the class instance are satisfiable; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "In wigner_coefficient the q₀/m_e hypotheses feed the axiom; in the conditional, the class field and hme are used (to get value≥0)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No decide; the masking is the vacuous existential (flagged under trivial-true) and the axiom."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "[5]_q! = [2]_q[3]_q[4]_q[5]_q is correct ([1]_q=1); the conditional statement itself is not false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation.lean:66-83: class field ∃value,value=r·m_e and theorem ∀c,∃value,0≤value",
+        "notes": "The §3b-cond conditional theorem is vacuous: its goal ∃value,0≤value holds for value=0 regardless of the Wigner-coefficient content; the class encodes only an existentially-trivial ratio assertion."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Conditional on conj:q-integer-mass-formula; not back-fitting the coefficient to itself in the prose."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation.md:2-4: \"has coefficient [5]_q!·m_e\" vs lean:26 comment \"[5]_q!·m_e ≈ 67.1 MeV (2.6% from fitted 68.9)\"",
+        "notes": "The .md presents [5]_q!·m_e as the exact Wigner coefficient (approximate-as-exact); the Lean reveals it is a ~2.6–3% NEAR-MATCH to a FITTED 68.896 MeV target, which the .md omits entirely. The structural-identification framing overstates an empirical near-match to a fit."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "wigner-coefficient-derivation.lean:38: target 68.896 is a 'fitted' BW Wigner coefficient",
+        "notes": "The comparison target 68.896 MeV is a fitted value; the .md does not disclose it, so a reader sees only the structural [5]_q!·m_e form without the fitted anchor it is matched against."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Σ dim_q(λ)²=[5]_q! Wedderburn-Artin trace identity (Lean docstring) supports the [5]_q! structural form; the gap is the omitted near-match disclosure, not a logic break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation.lean:40-44 (3% bound on fitted 68.896, axiom-backed) vs .md exact [5]_q!·m_e identification",
+        "notes": "Lean proves a 3% near-match to a fitted value (via axiom) plus a vacuous ∃value,0≤value; the .md asserts an exact structural equality — divergent claims."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lean cites [manuscript] conj:q-integer-mass-formula; the Wedderburn-Artin Σdim_q²=[n]_q! identity is correctly used."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "[5]_q!, the Wigner term index (term 9), and the conditional dependency on conj:q-integer-mass-formula are clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation.lean:26,38: \"[5]_q!·m_e ≈ 67.1 MeV (2.6% from fitted 68.9)\" / |...-68.896|/68.896 < 0.03",
+        "notes": "[5]_q!·m_e is a 2.6–3% near-match to a FITTED 68.896 MeV — comfortably inside fit noise for a 16-atom binding fit; presenting it as the coefficient (md) conceals that it is a loose empirical near-match. Also an internal inconsistency: comment says 67.1 MeV (2.6%) while the bound is <3% of 68.896."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Wigner-energy term coefficient ~68.9 MeV order-of-magnitude is reasonable for the BW asymmetry term scale."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "wigner-coefficient-derivation.lean:35-38: numerical near-match asserted via axiom, no witness JSON cited",
+        "notes": "The [5]_q!·m_e ≈ 67.1/68.896 numbers are asserted via an axiom with no referenced reproducible witness; the 67.1-vs-68.896 figures are internally inconsistent."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ecc4be7a84fe",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "notes": "The [5]_q! algebra is correct, but the block conflates an exact structural form with a loose empirical near-match to a fitted value, and the Lean is axiom-backed + vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

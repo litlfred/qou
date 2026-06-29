@@ -1048,7 +1048,458 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the closed-form κ formula; no embedded physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Chern-Simons Gram-determinant ratio for the genus-4 torus pair; §5 archimedean mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement works over R=ℤ[q^{±1/2},(q-q^{-1})^{-1}]; κ∈R is algebraic. dim_q at q₀ is the archimedean evaluation, appropriately scoped."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No narrative Proof. body."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "gram-determinant-plancherel-ratio.lean:58-62: theorem proves ∃κ, κ = gramKappa(...) by ⟨gramKappa(...),rfl⟩",
+        "notes": "The .md claims κ=det G^cl/det G^q EQUALS the Plancherel product; the Lean proves only 'there exists a real equal to gramKappa' (a tautology) — the defining identity (κ = the determinant ratio) is absent. The numerical κ≈1.722 is an axiom on a vacuous existential."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "critical",
+        "evidence": "gram-determinant-plancherel-ratio.lean:61: conclusion ∃κ, κ = gramKappa(...) instead of κ = det-ratio",
+        "notes": "The Lean statement is weakened to a vacuous existential (∃x,x=f) and the numeric value is an axiom; neither captures the proposition's content (κ equals the CS Gram-determinant ratio AND the Plancherel product)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "gram-determinant-plancherel-ratio.lean:62: ⟨gramKappa ..., rfl⟩",
+        "notes": "The existence proof self-satisfies by constructing the very term it claims exists; closely related to the vacuity flag (∃x,x=f)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "critical",
+        "evidence": "gram-determinant-plancherel-ratio.lean:61,77-79: ∃κ,κ=gramKappa(...) and ∃κ,|κ-1.722|<0.001 are both vacuously satisfiable existentials",
+        "notes": "Both 'theorems' have goals that any real witnesses (κ:=gramKappa for the first; κ:=1.722 for the second) — neither binds κ to the actual Gram determinant, so the goals are trivially true."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No premises/False; the issue is vacuity not contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No hypotheses to leave unused (the existentials are hypothesis-free)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "rfl/axiom, not decide; masking is via the vacuous existential (flagged under trivial-true)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The Plancherel-weighted product formula for κ is plausible and not shown false; T_{2,9}/T_{3,5} are the genus-4 torus knots per the uniqueness prop."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "gram-determinant-plancherel-ratio.lean:58-62,74-79: existential-rfl theorem + axiom-backed ∃κ,|κ-1.722|<0.001",
+        "notes": "The Lean formalization is vacuous: it proves the existence of a real equal to a defined expression (tautology) and axiomatizes the numeric value behind a trivially-satisfiable existential."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No circular derivation in the prose."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "gram-determinant-plancherel-ratio.md:28-38 boxed κ formula vs lean existential-only proof",
+        "notes": "The .md presents the boxed closed-form as established ('is given by'); the Lean does not actually establish κ = det-ratio = product, so the prose is stronger than the formalization."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No fitted parameters; c_λ=χ_λ(β) are characters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The Wedderburn/Plancherel structure of the formula is internally coherent in the prose."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "gram-determinant-plancherel-ratio.lean:61: ∃κ,κ=gramKappa(...) vs md:19-38 κ=det-ratio=Plancherel-product",
+        "notes": "Lean proves a vacuous existential and an axiom; the .md's substantive defining identity (κ equals the CS Gram determinant ratio) is not what Lean certifies."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "jones1987 (Jones polynomial of torus knots) appropriately cited."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "κ, c_λ, dim V_λ vs dim_q V_λ, [n]_q! all defined; β_s=T_{2,9}, β_w=T_{3,5} fixed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "gram-determinant-plancherel-ratio.lean:74-75: axiom ∃κ,|κ-1.722|<0.001",
+        "notes": "The κ≈1.722 value is asserted only as an axiom over a vacuous existential, with no in-Lean computation or named witness; not independently verifiable from the block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Algebraic/CS-coupling quantity; no direct physics-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "gram-determinant-plancherel-ratio.lean:74: numerical κ is an axiom, no witness JSON referenced",
+        "notes": "The 1.722 value has no cited reproducible witness in the block; only an axiom asserting it."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "253cc6222dea",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "notes": "The prose closed-form is plausible but the Lean is vacuous and the numerical value lacks a reproducible witness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

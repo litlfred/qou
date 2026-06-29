@@ -892,7 +892,268 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Borromean Bloch-group/regulator conjecture tied to h^4 trace coefficient; mass-theory placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "borromean-bloch-group-element.md:50,63: \"decomposes into 8 ideal octahedra, each with cross-ratio ζ=e^{iπ/3}\" ... \"r_2[B_3] = 8·Λ(π/3) = 8G\"",
+        "notes": "Numerically false intermediate: 8·Λ(π/3)≈8·0.3383≈2.71, but 8G≈7.33. Vol(Borromean)=8G is correct, but via 2 ideal OCTAHEDRA (angle π/4, V_oct=4G), not '8 octahedra at π/3'. The Λ(π/3) attribution and the '8 octahedra' count are both wrong even though the headline 8G is right."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "borromean-bloch-group-element.lean:26-28: class BorromeanBlochGroupElement where holds : Prop",
+        "notes": "Narrative conjecture is substantive but the sibling .lean carrier is an empty 'holds:Prop' marker (the real class is only sketched in the .md); §3b stub, but the Lean encodes nothing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "h^4=-3/4 is independently from the Borromean Markov trace (route 1, 'already done'); the regulator route is a proposed alternative derivation, not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Framed as conjecture (D16) with explicit Open R&D; r_2^(2)=-6G presented as conjectural identity to be tested."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "h^4=-3/4 is the (independently computed) Markov-trace coefficient, not a fit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "borromean-bloch-group-element.md:63: '8·Λ(π/3) = 8G'",
+        "notes": "The octahedral-decomposition→regulator step has the incorrect Λ(π/3)=G identification (Λ(π/3)≈0.338≠G≈0.916), so the chain to r_2[B_3]=8G does not follow as written (overlaps the da-false-claim flag)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "borromean-bloch-group-element.lean:26-28: 'holds:Prop' carrier vs the rich .md regulator claim",
+        "notes": "Lean stub does not encode the regulator/Bloch-class content sketched in the .md; acceptable as a sibling-resolution stub but the carrier is empty."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Bloch–Suslin B(C)⊗Q≅K_3^ind(C)⊗Q and Beilinson regulator = Bloch-Wigner dilog are correctly stated."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Bloch group, regulator r_2, D(z), R_k all defined; the higher-order r_2^(2) is clearly the conjectural object."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "8G value is exact (Catalan), not a fit; the h^4=-3/4 is an exact trace coefficient."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "K-theoretic / motivic framing; no physics-measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "8G and h^4=-3/4 are cited to prop:binding-scale-catalan and the Borromean trace; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "42ead4619f15",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "notes": "Conjecture is otherwise well-framed and honestly conjectural; the geometric-decomposition arithmetic needs correction (π/4 octahedra, not π/3)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

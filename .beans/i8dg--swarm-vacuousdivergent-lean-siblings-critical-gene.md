@@ -39,3 +39,8 @@ updated_at: 2026-06-29T20:07:58Z
 - vol-through-tau.lean:36-53 (field projection v.factors; Tannaka-Krein unformalised)
 - pauli-factor-wedderburn.lean:35-36 (exists F=trAlt/trSym tautology; critical)
 - wedderburn-mass-formula.lean:91-100 (extremal_irreps_count vacuous; docstring contradicts .md on n>=4)
+
+## More instances (batch 32, mass-theory)
+- gram-determinant-plancherel-ratio.lean:61 (exists kappa=gramKappa by rfl; kappa axiom; det-ratio identity never established; critical)
+- q-beta-c3-hopf-three-fold-markov.lean:79,103 (class field c_3=-2 IS conclusion; self-assuming projection; overstates tier)
+- wigner-coefficient-derivation.lean:26,38 (forall c exists value 0<=value vacuous; hides 2.6-3% fitted 68.896 MeV)

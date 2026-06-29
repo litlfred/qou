@@ -1050,7 +1050,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the cancellation identity + the corollary on Gram/LP-dual invariance; computational, not physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Normalisation-independence of Markov-trace ratios; §5 archimedean mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "§5 archimedean; Jones factor C(n,q)=(-q^{1/2}-q^{-1/2})^{n-1} uses q^{1/2}, appropriate to the archimedean regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lean proof uses Real.sqrt positivity to show C≠0 — archimedean machinery for an archimedean §5 statement; appropriate."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Main theorem markov_trace_ratio_exact proves (C·t₁)/(C·t₂)=t₁/t₂, matching the .md ratio claim; the Gram corollary is weaker (see proof-no-trivial-true)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Main statement not weakened; requires and proves C≠0 for q>0."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Main theorem is a genuine cancellation proof (mul_div_mul_left), not a class-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "markov-trace-ratio-exact.lean:72-77: gram_entry_proportional : C*tr = C*tr := by rfl",
+        "notes": "The secondary 'corollary' gram_entry_proportional states C·tr = C·tr (syntactic x=x) and proves it by rfl — a tautology that does NOT establish the .md's Gram-matrix proportionality across two normalisations. The primary theorem is genuine."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "htr₂≠0 and hq:0<q satisfiable; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "hq used to show C≠0; htr₂ used in cancellation. (gram_entry_proportional has none beyond rfl.)"
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "simp/rw/linarith; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Ratio cancellation J₁/J₂=tr₁/tr₂ is correct; C(n,q) word-independence is the standard Jones normalisation fact."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "markov-trace-ratio-exact.lean:76: C*tr_M_ij = C*tr_M_ij := by rfl",
+        "notes": "One of the two Lean lemmas (gram_entry_proportional) is a vacuous x=x; the headline theorem is genuine, so the block is not vacuous overall, but the Gram corollary contributes no content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": ".md claim that C cancels in 'every ratio, inner product, optimality condition' is justified for ratios; the Gram/LP extension is asserted in prose (the Lean lemma is weaker but the prose is correct)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No fitted parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Gram (C²) and LP (cancellation in optimality) consequences follow from the per-trace C factor."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "markov-trace-ratio-exact.lean:72-77: gram_entry_proportional is C·x=C·x (rfl), not a two-normalisation proportionality",
+        "notes": "The .md Gram-matrix proportionality claim is not actually formalized; the Lean 'corollary' is a tautology. Main ratio theorem matches the prose."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "jones1987 §3 normalisation correctly cited."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "C(n,q), tr_M, Gram entries, shadow prices all defined/referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Algebraic/optimisation statement; no physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Cancellation proof reproducible; no witness drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a88e12811e1a",
+          "ts": "09e93aeaa7bd",
+          "lean": "6ee92a10f6a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Correct, useful normalisation-independence result. Strongest objection: the Gram-matrix 'corollary' gram_entry_proportional is a vacuous C·x=C·x rfl, not the claimed two-normalisation proportionality."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

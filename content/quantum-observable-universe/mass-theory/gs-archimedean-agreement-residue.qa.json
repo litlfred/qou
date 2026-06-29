@@ -894,7 +894,263 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Per-instance Habiro/residue agreement for the proton; mass-theory placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Numerical agreement claim T_p(√q0)≈2.1226 is conjectural and witness-backed (rel_diff=0 to machine precision); no false assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "gs-archimedean-agreement-residue.lean:19-21: class GsArchimedeanAgreementResidue where holds : Prop",
+        "notes": "Narrative conjecture is substantive, but the Lean carrier is an empty 'holds : Prop' marker (per AGENTS.md §3b-tax this is the under-specified-carrier anti-pattern); only the block-level claim is non-vacuous, the Lean stub is content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Two independent pipelines (Habiro polynomial vs cyclotomic residues) cross-validated; not self-referential."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Status sections honestly state the sorry/native_decide options and 'medium' effort; agreement framed as conjecture certified to machine precision, not proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Proton braid T_w(1,0) fixed; no fitted parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Per-instance specialisation of the generic agreement conjecture follows directly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "gs-archimedean-agreement-residue.lean:19-21: 'holds : Prop' carrier does not encode T_p(√q0)≈2.1226",
+        "notes": "Lean class is a vacuous Prop field; the substantive numerical-agreement claim of the .md is not encoded (acceptable as a §3b conjecture sibling-stub, but the carrier under-delivers)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "References are internal witnesses/audit docs; no external mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "T_p, u_0=√q0, GB mass, the two pipeline sides all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "rel_diff=0 to machine precision (bit-pattern equality) is the opposite of fit-noise; uses q0 via :val placeholder."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "GB proton mass value is a categorical quantity (2.1226 in GB units), not a MeV claim; no physics contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Backing witnesses (markov-pipeline-cross-validation, term6-full-pole-sum) named; prose value consistent."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3e3da446bb59",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Honest per-instance conjecture with machine-precision cross-validation. Strongest objection: the Lean carrier is an empty 'holds:Prop', so the conjecture has no real Lean encoding yet."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

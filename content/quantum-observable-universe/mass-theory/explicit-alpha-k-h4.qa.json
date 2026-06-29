@@ -1048,7 +1048,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is the closed-form Q(q) coefficient tables; 'Significance' is a separate section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Explicit α_λ(H_4) Wedderburn-orthogonal coefficients; mass-theory placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Statement is in Q(q) (algebraic); the q₀≈1.110 evaluation is the archimedean specialisation, appropriately delimited."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No narrative Proof. body; the .md tabulates closed forms with a witness reference."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "explicit-alpha-k-h4.lean:79-116: theorems prove |Σ coeffs|≤1, 0<0.00346<0.01, |x-x|<1e-11 on hardcoded constants",
+        "notes": "The .md claims closed-form Q(q) coefficients with χ_μ(r_λ)=0 orthogonality and witness residual <10⁻¹⁵; the Lean proves only numerical sanity bands on pinned floats — none of the three theorems formalize the orthogonality or the Q(q) forms."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "explicit-alpha-k-h4.lean:67-70: R3OrthogonalToLowerDepthsH4 := |Σ coeffs| ≤ 1 (a 'basic sanity check', not the χ_μ=0 orthogonality)",
+        "notes": "The Lean predicate substitutes a weak surrogate (coefficient-sum bound) for the stated orthogonality property — the formalized statement is materially weaker than the proposition."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Not a class-field projection; the proofs are norm_num on constants (issue is triviality, flagged elsewhere)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "critical",
+        "evidence": "explicit-alpha-k-h4.lean:109-116: alpha_3_H4_value_at_q0_approx proves ∃ε,|alpha_3_H4-0.00346|<ε∧ε<1e-10 where alpha_3_H4:=0.0034625204",
+        "notes": "Vacuous: alpha_3_H4 is DEFINED as 0.0034625204, so |alpha_3_H4-0.0034625204|=0<1e-11 trivially; the 'value verification' compares the constant to itself. Likewise alpha_3_H4_markov_pairing is a band-check on a literal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No premises beyond definitional constants; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Theorems are hypothesis-free norm_num facts."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "norm_num, not decide; the masking is the surrogate predicate (flagged under integrity/trivial-true)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Spot-checks of the table (e.g. c_{(1234)}=0 for (2,2), Φ_{(4)}=q⁶+2q⁴+2q²+1) are plausible; the witness asserts <10⁻¹⁵ consistency. No counterexample found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "explicit-alpha-k-h4.lean:109-116: |alpha_3_H4 - 0.0034625204| < ε with alpha_3_H4 := 0.0034625204",
+        "notes": "The value-verification theorem is a tautology (constant compared to its own defining literal); the orthogonality theorem proves a coefficient-sum bound, not orthogonality. The Lean content is essentially vacuous relative to the proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Coefficients from null-space solve, not back-fit to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "explicit-alpha-k-h4.lean:67-70: 'basic sanity check that the coefficients form a real linear combination' presented as the orthogonality predicate",
+        "notes": "The Lean dresses a |Σ|≤1 sanity bound as the depth-orthogonality witness; the .md's exact-Q(q)/10⁻¹⁵ claim is stronger than the Lean certifies (though the witness JSON backs the math)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "α_λ are derived Markov traces of orthogonal representatives; no fitted parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "α_3(H_4)≈0.00346 vs α_3(H_3)≈0.5514 'depth-3 dilution' follows from the y_{(1^4)} sign-indefinite weight."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "evidence": "explicit-alpha-k-h4.lean:54,79,97,109: Lean works with hardcoded floats and band/sum surrogates, not the Q(q) tables or χ_μ=0 orthogonality",
+        "notes": "Sharp divergence: the proposition is exact-symbolic; the Lean is numeric sanity bands on pinned constants, including a self-comparison value 'verification'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Schur-element/cyclotomic-denominator pattern and Hoefsmit references are appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "r_λ (Wedderburn-orthogonal representative), Φ_{(4)}, α_λ, depth all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Values are exact-algebraic at q₀ with <10⁻¹⁵ witness residual; not fit-noise."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Representation-theory coefficients; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "wedderburn-orthogonal-r-3-h4.witness.json named; coefficient sum -0.02346 matches the Lean check; reproducible via sympy null-space solve."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0dee6ace4bf9",
+          "ts": "7288b74a2ba4",
+          "lean": "cb0e09d9953c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "major",
+        "notes": "The mathematical content (witness-backed) is likely fine; the Lean formalization is numeric-surrogate and partly tautological, not the stated symbolic proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

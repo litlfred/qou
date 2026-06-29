@@ -892,7 +892,263 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Categorical Higgs/linking skeleton; mass-theory (EW mass) placement reasonable."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Skeleton conjecture; the SM Higgs-mechanism setup (4 bosons eat 3 Goldstones) is correctly stated; torus-link assignments are explicitly conjectural."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "categorical-higgs-mechanism.lean:40-48,99-100: MassEigenstateCountThree:=True, CategoricalMassFormula:=True; fields discharged by trivial",
+        "notes": "Two of the four class fields are literally `:= True` (closed by trivial); the other two reference real sibling classes. The conjecture's narrative is substantive, but the Lean carrier is partly vacuous (honest skeleton)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No circular derivation; the broken-generator count is taken from the SM, flagged as needing categorical derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Explicitly 'skeleton (work-in-progress)' with four open Requirements; mass formula flagged as interpretation, not deriving CODATA W/Z/H."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "θ_W and per-pattern multiplicities flagged as open derivations, not hidden fits."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Steps A–D are a labeled sketch; the chain is hedged and the gaps enumerated as Requirements."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "The .md calls it a skeleton with class hypotheses; the Lean is correspondingly a class with two real and two True fields — consistent with the prose."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "peskin1995 Ch20 (Higgs mechanism) correctly cited for the SM background."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Lk_R, the boson↔link map, Hoefsmit projector all defined-or-flagged-open; generic-q hypothesis explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No numerical CODATA match claimed; deriving m_W/m_Z/m_H is explicitly gated/open."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "categorical-higgs-mechanism.md:38-47: (W±,π±)→T(2,4), (Z,π^Z)→T(2,6), Higgs→T(2,8), photon→T(2,9)",
+        "notes": "The specific torus-link assignments to gauge bosons are speculative with no derivation yet (the lk=1 'encodes broken-generator multiplicity' is asserted); a domain expert would want the assignment justified. Mitigated by explicit skeleton/conjecture framing."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No backing witness/compute (skeleton)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ed116e40a978",
+          "ts": "f41fe4a8e212",
+          "lean": "ff7c36ea2ab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Honestly-labeled skeleton conjecture with enumerated open requirements. Strongest objection: the torus-link↔boson assignments are unjustified and two Lean class fields are True-placeholders — acceptable for a flagged WIP."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }

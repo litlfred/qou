@@ -892,7 +892,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Atom-braid Wedderburn shape-class orthogonality is core mass-theory content; placement is correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Claims are empirical patterns at A=4,6, explicitly conjectural; no false math asserted."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Conjecture content is substantive (disjoint shape classes, η→∞); Lean carrier class has real fields encoding disjointness/separation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No back-fit; the η separation is measured from the Lanczos probe, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Explicit 'Non-claims' section bounds the conjecture; specific dominant shape not claimed universal."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "No fitted parameter; q0 is the substrate value, no off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Structural-interpretation steps follow from the tabulated y_lambda/eps_min data."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "severity": "minor",
+        "evidence": "conj-psd-trace-orthogonality.lean:114-118: \"∃ (_inst : PSDTraceOrthogonalDecomp A), True := by ... refine ⟨...instances A hA, trivial⟩\"",
+        "notes": "Top theorem concludes ∃ inst, True (vacuous wrapper), but the carrier class PSDTraceOrthogonalDecomp encodes the real disjointness/eta fields; acceptable §3b conjecture stub, minor weakness only."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "cites[] empty; references to probe scripts are internal witnesses, not external attributions."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Trace-dominant/PSD-dominant families and eps_min defined explicitly; isTallNarrow heuristic is flagged as heuristic in Lean."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "η(4)≈1.6e5, η(6)≈9e8 are large OOM separations, not fit-noise; values tabulated per partition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Categorical structural claim; no physics-measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Backing probes named; values internally consistent; could not re-run but no drift signal in prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "89616f7c8148",
+          "ts": "0ab285aa9aee",
+          "lean": "fe2b106bd512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:41:49.970Z",
+        "reviewed_sha": "2dde4fc85ab197fa5b1d6f28be99febf1017a37a",
+        "notes": "Sound, well-bounded empirical conjecture. Strongest objection: the Lean carrier's isTallNarrow is a heuristic threshold (maxRow ≤ 7), so the disjointness 'theorem' is weaker than the prose pattern; honest as a §3b stub."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:41:49.970Z"
 }
