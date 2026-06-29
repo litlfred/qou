@@ -15,7 +15,7 @@ namespace QOU.AppendixSurreals.B1HyperbolicRowsTheorem
 /-- **CONJECTURE.** B1 at additional hyperbolic-knot rows (Borromean, Whitehead, twist knots) conditionally reduces to Volume Conjecture. -/
 -- Ref: [manuscript] conj:b1-hyperbolic-rows-theorem
 axiom b1_hyperbolic_rows
-    (n_hyperbolic_rows_verified : ℕ)
+    (n_hyperbolic_rows_verified : Nat)
     (bloch_suslin van_der_veen : Prop) :
     bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified
 
