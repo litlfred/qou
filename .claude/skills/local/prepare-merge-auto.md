@@ -135,7 +135,7 @@ architectural decision, multiple valid approaches), use
 After all review comments are resolved (or the user has answered
 all escalated questions):
 
-1. Run `bun run validate` one final time.
+1. Run `bun run scripts/run-validate.ts content/<paper>` one final time.
 2. Check CI status via `mcp__github__pull_request_read get_check_runs`.
 3. If all green: merge via `mcp__github__merge_pull_request` with
    `merge_method: "merge"` (default per AGENTS.md — preserves
