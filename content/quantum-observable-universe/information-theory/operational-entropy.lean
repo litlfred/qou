@@ -1,4 +1,6 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -39,6 +41,5 @@ theorem hausdorff_eq_entropy_mul_lyapunov {k : Type*} [Field k] (q : k)
   -- d_{H,q} = (2q-1)²/q³ = ((2q-1)/q³) · (2q-1) = η_q · (2q-1)
   unfold qHausdorffDimension operationalEntropy
   field_simp [hq]
-  ring
 
 end QOU.Information

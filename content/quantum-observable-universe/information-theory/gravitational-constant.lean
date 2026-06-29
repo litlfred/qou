@@ -1,4 +1,6 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -50,6 +52,5 @@ theorem gravitational_planck_eq_one {k : Type*} [Field k] (q : k)
   unfold gravitationalConstant
   simp only
   field_simp [hq0, sub_ne_zero.mpr hq1]
-  ring
 
 end QOU.Information

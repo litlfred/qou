@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
+
 -- Ref: [manuscript] Ch. 4
 -- Borromean baryon: three unknots Borromean-linked + Hopf-bound.
 -- Generic definition, not specific to any Euler characteristic.
