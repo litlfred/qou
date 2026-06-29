@@ -1,6 +1,6 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
+export default conjecture({
   label: "prop:p-vs-np-boundary",
   lean: { ref: "qou:QOU.PvsNPBoundary.boundary_dichotomy" },
   title:
@@ -16,8 +16,8 @@ export default proposition({
   ],
   uses: [
     "prop:p-bandwidth-bound",
-    "def:observable-subcategory",
-    "def:skein-resolution-obstruction",
+    "def:polynomial-observable-subcategory",
+    "def:computational-boundary",
     "rem:substrate-gm-torsion",
   ],
   cites: ["cook1971", "freedman2003"],

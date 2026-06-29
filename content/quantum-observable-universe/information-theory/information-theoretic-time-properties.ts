@@ -15,9 +15,10 @@ export default remark({
   uses: [
     "def:information-theoretic-time",
     "prop:reeb-operations-per-planck",
-    "prop:ordering-jet-compatibility",
     "prop:local-substrate-q",
     "def:planck-time",
     "ex:q-reeb-flow",
+    "rem:information-theoretic-time-julia-microscopic",
+    "rem:information-theoretic-time-arrow",
   ],
 });

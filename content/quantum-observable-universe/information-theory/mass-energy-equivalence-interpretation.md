@@ -29,30 +29,11 @@ This large amplification factor is the QOU explanation for why
 nuclear energy ($E = mc^2$) releases vastly more energy than the
 rest mass would suggest in everyday units.
 
-**Consistency check: electron.**
-The electron (left trefoil $T_{2,3}$) has $n_c = 3$ positive
-crossings:
-
-* Crossing energy: $E_{e^-} = 3q \approx 3.330$
-  Skein units.
-* Predicted mass: $\mathfrak{m}_{e^-} = E \cdot (q-1)^2 = 3q(q-1)^2$.
-
-At $q = q_0$: $\mathfrak{m}_{e^-} = 3 q_0 \times 0.01203 \approx 0.0401$ (in Reeb mass units).
-
-**Pair creation reinterpreted.**
-The pair production threshold
-([pair creation energy](#rem:pair-creation-energy)) becomes:
-
-$$
-  E_{\gamma}  \geq 
-  (\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}) \cdot c_q^2
-  =  \frac{\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}}{(q-1)^2}.
-$$
-
-The net crossing energy of the pair is
-$E_{e^-} + E_{e^+} = 3(q - q^{-1}) \approx 0.630$ (pure Coulomb repulsion).  But the minimum photon
-energy must supply both **absolute** crossing energies:
-$|E_{e^-}| + |E_{e^+}| = 3q + 3q^{-1} = 3(q + q^{-1}) = 6\cosh(\ln q) \approx 6.033$ Skein units.
+The concrete electron consistency check
+([electron consistency check](#rem:mass-energy-electron-check))
+and the pair-creation reinterpretation
+([pair creation reinterpreted](#rem:mass-energy-pair-creation))
+are worked separately.
 
 **Archimedean realisation.**
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's

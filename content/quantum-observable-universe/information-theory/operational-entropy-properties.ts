@@ -14,10 +14,10 @@ export default remark({
   ],
   uses: [
     "def:operational-entropy",
-    "def:gravitational-constant",
     "prop:reeb-operations-per-planck",
     "def:planck-time",
     "rem:julia-set-reeb",
     "rem:golden-ratio-degeneration",
+    "rem:operational-entropy-self-consistency",
   ],
 });

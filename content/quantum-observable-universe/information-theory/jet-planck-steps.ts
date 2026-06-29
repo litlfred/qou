@@ -19,7 +19,9 @@ export default remark({
   ],
   uses: [
     "rem:discrete-planck-step",
-    "ex:photon-wavefront",
-    "rem:virtual-particles-exceptional-divisor",
+    "prop:jet-prolongation",
+    "def:recursive-brane-tower",
+    "prop:color-elliptic",
+    "rem:golden-ratio-degeneration",
   ],
 });

@@ -11,8 +11,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:cmb-boundary-datum",
-    "def:information-theoretic-time",
-    "rem:bundle-category",
+    "def:observable-subcategory",
+    "def:jet-horizon",
   ],
 });

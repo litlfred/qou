@@ -12,11 +12,8 @@ export default remark({
     "cosmological-arrow",
     "gravitational-constant",
   ],
-  uses: ["def:gravitational-constant"],
-  cites: [
-    "bowen1979",
-    "ruelle1982",
-    "mcmullen1998",
-    "shishikura1998",
+  uses: [
+    "def:gravitational-constant",
+    "rem:hausdorff-dimension-classical-comparison",
   ],
 });
