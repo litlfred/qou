@@ -81,16 +81,20 @@ order axioms + decidability are all discharged. Everything else is `sorry`-free:
 | `domCount_sat_m`, `domCount_sat_i`, `domCount_clamp` (saturation for decidability) | **sorry-free** |
 | `domRel`, `domRel_refl`, `domRel_trans`, `domRel_antisymm`, `domRel_iff_bounded`, `domRel_decidable` (the concrete partial order) | **sorry-free** |
 | `DominanceData` (the core's bundled data) | structure (no proof obligation) |
-| `dominance_colStab_lemma` (Sagan's §2.4 dominance lemma — the single combinatorial core) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 / Thm 2.5.2 |
-| `dominance_relation_exists` (concrete `DominanceData`) | **sorry-free MODULO `dominance_colStab_lemma`** |
-| `exists_order_colStab_decreasing` (Layer 2) | **sorry-free MODULO the single core** |
-| `standardPolytabloid_dominance_order'` (verbatim brick-4 target) | **sorry-free MODULO the single core** |
+| `syt_col_entry_gap`, `syt_col_entry_strictMono`, `syt_col_row_lt_of_entry_lt`, `entry_sytToTableau`, `sytToTableau_mem`, `syt_rowPattern_strictMono_in_col` (standardness core) | **sorry-free** |
+| `card_filter_perm`, `col_downsets_nested`, `col_count_le` (abstract column-count inequality) | **sorry-free** |
+| `dominance_colStab_lemma` (Sagan's §2.4 dominance lemma — the former combinatorial core) | **PROVED sorry-free** (column-decomposition + nested-down-sets) |
+| `dominance_relation_exists` (concrete `DominanceData`) | **sorry-free** |
+| `exists_order_colStab_decreasing` (Layer 2) | **sorry-free** |
+| `standardPolytabloid_dominance_order'` (verbatim brick-4 target) | **sorry-free** |
 
-`#print axioms` at the file end confirms `sorryAx` enters
-`standardPolytabloid_dominance_order'` *only* through `dominance_colStab_lemma`
-(the single core); the lever, Layer 1, the row-pattern bridge, the entire
-concrete dominance order (`domRel` + refl/trans/antisymm/decidability), and the
-count engine are all `[propext, Classical.choice, Quot.sound]`.
+`#print axioms` at the file end confirms **no `sorryAx`** enters
+`standardPolytabloid_dominance_order'` (or `dominance_colStab_lemma`): every
+declaration — the lever, Layer 1, the row-pattern bridge, the entire concrete
+dominance order (`domRel` + refl/trans/antisymm/decidability), the count engine,
+the standardness core, and the abstract column-count inequality — depends only on
+`[propext, Classical.choice, Quot.sound]`. The brick-4 independence chain is now
+fully sorry-free.
 
 ## References
 - [sagan2001] Sagan, *The Symmetric Group*, §2.5 (the standard basis, Thm 2.5.2;
@@ -439,7 +443,7 @@ theorem domRel_iff_bounded (a b : Specht.Tabloid μ) :
 instance domRel_decidable : DecidableRel (domRel (μ := μ)) := fun a b =>
   decidable_of_iff _ (domRel_iff_bounded a b).symm
 
-/-! ## The single combinatorial core (one cited `sorry`)
+/-! ## The single combinatorial core (now PROVED sorry-free)
 
 We bundle exactly Sagan 2.5.2's dominance content into one structure: a relation
 `dom` on `Tabloid μ` that is a partial order (refl/trans/antisymm) under which
@@ -447,14 +451,15 @@ column permutations weakly decrease the tabloid. This is `LinearOrder`-free and
 `support`-free — all the order-construction and `Finsupp` plumbing has been
 peeled off by the lever and Layer 1.
 
-The data is now supplied **concretely** by `domRel` (the partial-sum dominance
-order above): its reflexivity, transitivity, antisymmetry, and decidability are
-all discharged `sorry`-free, so `dominance_relation_exists` is `sorry`-free and
-the **single** remaining cited `sorry` is the genuine combinatorial heart —
+The data is supplied **concretely** by `domRel` (the partial-sum dominance order
+above): its reflexivity, transitivity, antisymmetry, and decidability are all
+discharged `sorry`-free, and the last combinatorial heart —
 `dominance_colStab_lemma`, Sagan's §2.4 dominance lemma (a column permutation
-weakly decreases the tabloid). The opaque `Nonempty (DominanceData)` stub has
-become "concrete dominance order, fully a partial order, reduced to exactly
-Sagan's dominance lemma." -/
+weakly decreases the tabloid) — is **now proved sorry-free** (column-decomposition
++ nested-down-sets argument; see its docstring). Hence
+`dominance_relation_exists` and the whole brick-4 independence chain are
+sorry-free. The opaque `Nonempty (DominanceData)` stub has become "concrete
+dominance order, a full partial order, with Sagan's dominance lemma proved." -/
 
 /-- **The core's bundled data (Sagan 2.5.2's dominance content).** A reflexive,
 transitive, antisymmetric relation `dom` on tabloids of shape `μ` such that for
@@ -487,15 +492,254 @@ structure DominanceData (μ : YoungDiagram) where
     dom (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • sytToTableau T))
       (Specht.Tabloid.mk (sytToTableau T))
 
-/-- **STUB — Sagan's dominance lemma (the single combinatorial core).** For a
-**standard** tableau `T` with filling `t = sytToTableau T`, every column
-permutation `π ∈ C_t` sends `{t}` to a tabloid `{π•t}` weakly **dominated by**
-`{t}` in the concrete dominance order `domRel`
-(`domCount {π•t} i m ≤ domCount {t} i m` for all `i, m`). This is the irreducible
-combinatorial heart of the standard-basis independence proof — Sagan §2.4's
-dominance lemma — against the concrete `domRel` built above, with no
-`LinearOrder`/`Finsupp` plumbing and **all order axioms already discharged**: only
-this single inequality remains.
+/-! ## Standardness core: within a column, the row is strictly monotone in the label
+
+The single place where standardness (`col_strict`) enters. For a standard tableau
+`T` with filling `t = sytToTableau T`, two labels in the same column have their
+*rows* ordered the same way as the labels: smaller label ⟹ higher up. This makes
+the "row `≤ i`" set within any column a **down-set** of that column (under the
+label order), which is the combinatorial fact the dominance lemma rests on. -/
+
+/-- **Column entries are strictly monotone in the row.** From `col_strict`
+(adjacent cells), by induction on the gap: for two cells of the same column
+`(i₁, j), (i₂, j) ∈ μ` with `i₁ < i₂`, `entry i₁ j < entry i₂ j`. -/
+theorem syt_col_entry_gap (T : StandardYoungTableau μ) (j : ℕ) (i₁ : ℕ) :
+    ∀ d : ℕ, (i₁ + d + 1, j) ∈ μ → T.entry i₁ j < T.entry (i₁ + d + 1) j := by
+  intro d
+  induction d with
+  | zero =>
+    intro hmem
+    -- goal: entry i₁ j < entry (i₁ + 0 + 1) j; col_strict gives entry i₁ j < entry (i₁+1) j
+    simpa using T.col_strict i₁ j (by simpa using hmem)
+  | succ d ih =>
+    intro hmem
+    -- (i₁ + (d+1) + 1, j) ∈ μ; predecessor cell (i₁ + d + 1, j) ∈ μ by up_left_mem
+    have hmem_pred : (i₁ + d + 1, j) ∈ μ :=
+      YoungDiagram.up_left_mem μ (by omega) (le_refl j) hmem
+    have hstep : T.entry (i₁ + d + 1) j < T.entry (i₁ + (d + 1) + 1) j := by
+      have hc := T.col_strict (i₁ + d + 1) j (by
+        have : i₁ + d + 1 + 1 = i₁ + (d + 1) + 1 := by ring
+        rw [this]; exact hmem)
+      have heq : i₁ + d + 1 + 1 = i₁ + (d + 1) + 1 := by ring
+      rw [heq] at hc; exact hc
+    exact lt_trans (ih hmem_pred) hstep
+
+theorem syt_col_entry_strictMono (T : StandardYoungTableau μ) (j : ℕ)
+    {i₁ i₂ : ℕ} (hmem₂ : (i₂, j) ∈ μ) (hlt : i₁ < i₂) :
+    T.entry i₁ j < T.entry i₂ j := by
+  obtain ⟨d, rfl⟩ := Nat.exists_eq_add_of_lt hlt
+  have heq : i₁ + d + 1 = i₁ + (d + 1) := by ring
+  have := syt_col_entry_gap T j i₁ d (by rw [heq] at hmem₂ ⊢; exact hmem₂)
+  rw [heq] at this; exact this
+
+/-- **Recovering the row order from the entry order, within a column.** If two
+cells of the same column have ordered entries, their rows are ordered the same way
+(strict mono is injective + an order iso onto its image). -/
+theorem syt_col_row_lt_of_entry_lt (T : StandardYoungTableau μ) (j : ℕ)
+    {i₁ i₂ : ℕ} (hmem₁ : (i₁, j) ∈ μ) (_hmem₂ : (i₂, j) ∈ μ)
+    (hentry : T.entry i₁ j < T.entry i₂ j) : i₁ < i₂ := by
+  rcases lt_trichotomy i₁ i₂ with h | h | h
+  · exact h
+  · exact absurd (h ▸ hentry) (lt_irrefl _)
+  · exact absurd (syt_col_entry_strictMono T j hmem₁ h) (not_lt.mpr (le_of_lt hentry))
+
+/-- **The label sitting in a cell of `t = sytToTableau T` is exactly its entry.**
+`t = (cellLabel T)⁻¹`, and `cellLabel T c` has val `entry c.1.1 c.1.2`, so the
+cell `t l` satisfies `entry (t l).1.1 (t l).1.2 = (l : ℕ)`. -/
+theorem entry_sytToTableau (T : StandardYoungTableau μ) (l : Fin (Specht.nOf μ)) :
+    T.entry ((sytToTableau T l : ℕ × ℕ).1) ((sytToTableau T l : ℕ × ℕ).2) = (l : ℕ) := by
+  have h : cellLabel T (sytToTableau T l) = l := by
+    rw [sytToTableau]
+    exact Equiv.ofBijective_apply_symm_apply (cellLabel T) (cellLabel_bijective T) l
+  -- read off the val of cellLabel
+  have hval : ((cellLabel T (sytToTableau T l) : Fin (Specht.nOf μ)) : ℕ) = (l : ℕ) := by rw [h]
+  simpa [cellLabel] using hval
+
+/-- Each cell of `t = sytToTableau T` lies in `μ`. -/
+theorem sytToTableau_mem (T : StandardYoungTableau μ) (l : Fin (Specht.nOf μ)) :
+    ((sytToTableau T l : ℕ × ℕ).1, (sytToTableau T l : ℕ × ℕ).2) ∈ μ := by
+  have := (sytToTableau T l).2
+  rwa [YoungDiagram.mem_cells] at this
+
+/-- **The standardness down-set fact.** For `t = sytToTableau T`, two labels in the
+same column have rows ordered as the labels: `(l₁:ℕ) < (l₂:ℕ)` and same column
+⟹ `rowPattern t l₁ < rowPattern t l₂`. Hence within a column the labels with row
+`≤ i` form an initial segment (down-set) of the labels (in val-order). -/
+theorem syt_rowPattern_strictMono_in_col (T : StandardYoungTableau μ)
+    {l₁ l₂ : Fin (Specht.nOf μ)}
+    (hcol : Specht.colPattern (sytToTableau T) l₁ = Specht.colPattern (sytToTableau T) l₂)
+    (hlt : (l₁ : ℕ) < (l₂ : ℕ)) :
+    Specht.rowPattern (sytToTableau T) l₁ < Specht.rowPattern (sytToTableau T) l₂ := by
+  -- `colPattern t l = (t l).2`, `rowPattern t l = (t l).1` by definition
+  -- entries equal the labels; col_strict ⇒ smaller entry has smaller row
+  have hmem₁ := sytToTableau_mem T l₁
+  have hmem₂ := sytToTableau_mem T l₂
+  have he₁ := entry_sytToTableau T l₁
+  have he₂ := entry_sytToTableau T l₂
+  -- the common column value c := (t l₁).2 = (t l₂).2 (hcol unfolds colPattern)
+  have hcol' : (sytToTableau T l₂ : ℕ × ℕ).2 = (sytToTableau T l₁ : ℕ × ℕ).2 := hcol.symm
+  -- entry of cell 1 < entry of cell 2 since labels do; rewrite cell 2's column to c
+  have hentry : T.entry ((sytToTableau T l₁ : ℕ × ℕ).1) ((sytToTableau T l₁ : ℕ × ℕ).2)
+      < T.entry ((sytToTableau T l₂ : ℕ × ℕ).1) ((sytToTableau T l₁ : ℕ × ℕ).2) := by
+    rw [he₁, ← hcol', he₂]; exact hlt
+  -- both cells in column (t l₁).2; apply the row-from-entry lemma
+  have hmem₂' : ((sytToTableau T l₂ : ℕ × ℕ).1, (sytToTableau T l₁ : ℕ × ℕ).2) ∈ μ := by
+    rw [← hcol']; exact hmem₂
+  exact syt_col_row_lt_of_entry_lt T ((sytToTableau T l₁ : ℕ × ℕ).2) hmem₁ hmem₂' hentry
+
+/-! ## The abstract column-count inequality (sorry-free, no standardness)
+
+After reindexing the `π`-twisted count by `π` (Step A below), the dominance
+inequality decomposes column-by-column into a purely finite-combinatorial fact:
+within one column the "row `≤ i`" set `D₂` and the "label `< m`" set `E` are two
+**down-sets of a chain**, hence **nested**; a `σ`-image of a sub-collection of `D₂`
+lands (via column preservation) inside `E`, so it is bounded by both `#D₂` and
+`#E`, hence by `#(D₂ ∩ E)`. Summed over columns this is the whole inequality. -/
+
+omit [CharZero k] in
+/-- **Reindexing a filtered cardinality by a permutation.** For a permutation `σ`
+of a fintype and a decidable predicate `p`, `#{l | p (σ l)} = #{l | p l}`
+(substitute `l ↦ σ l`). -/
+theorem card_filter_perm {α : Type*} [Fintype α] [DecidableEq α]
+    (σ : Equiv.Perm α) (p : α → Prop) [DecidablePred p] :
+    (Finset.univ.filter (fun l => p (σ l))).card = (Finset.univ.filter p).card := by
+  classical
+  refine Finset.card_bij' (fun l _ => σ l) (fun l _ => σ.symm l) ?_ ?_ ?_ ?_
+  · intro l hl; rw [Finset.mem_filter] at hl ⊢; exact ⟨Finset.mem_univ _, hl.2⟩
+  · intro l hl; rw [Finset.mem_filter] at hl ⊢
+    refine ⟨Finset.mem_univ _, ?_⟩; rw [Equiv.apply_symm_apply]; exact hl.2
+  · intro l _; exact σ.symm_apply_apply l
+  · intro l _; exact σ.apply_symm_apply l
+
+/-- **Two down-sets of a chain are nested.** Inside a fixed column-fiber
+`C = {l | c l = v}`, the "row `≤ i`" set `D₂ = {l ∈ C | f l ≤ i}` and the
+"label `< m`" set `E = {l ∈ C | (l:ℕ) < m}` satisfy `D₂ ⊆ E ∨ E ⊆ D₂`, using only
+that `f` is strictly monotone in the label within the column (`hmono`). -/
+theorem col_downsets_nested {n : ℕ} (f c : Fin n → ℕ) (i m v : ℕ)
+    (hmono : ∀ l₁ l₂, c l₁ = v → c l₂ = v → (l₁ : ℕ) < (l₂ : ℕ) → f l₁ < f l₂) :
+    ((Finset.univ.filter (fun l : Fin n => c l = v)).filter (fun l : Fin n => f l ≤ i))
+        ⊆ ((Finset.univ.filter (fun l : Fin n => c l = v)).filter (fun l : Fin n => (l : ℕ) < m)) ∨
+      ((Finset.univ.filter (fun l : Fin n => c l = v)).filter (fun l : Fin n => (l : ℕ) < m))
+        ⊆ ((Finset.univ.filter (fun l : Fin n => c l = v)).filter (fun l : Fin n => f l ≤ i)) := by
+  classical
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨hne1, hne2⟩ := hcon
+  -- a ∈ D₂ \ E, b ∈ E \ D₂
+  obtain ⟨a, haD, haE⟩ := Finset.not_subset.mp hne1
+  obtain ⟨b, hbE, hbD⟩ := Finset.not_subset.mp hne2
+  rw [Finset.mem_filter] at haD haE hbE hbD
+  -- a ∈ C, f a ≤ i, ¬((a:ℕ) < m) ⇒ m ≤ (a:ℕ)
+  have hca : c a = v := (Finset.mem_filter.mp haD.1).2
+  have hfa : f a ≤ i := haD.2
+  have ham : m ≤ (a : ℕ) := by
+    by_contra h; rw [not_le] at h; exact haE ⟨haD.1, h⟩
+  -- b ∈ C, (b:ℕ) < m, ¬(f b ≤ i) ⇒ i < f b
+  have hcb : c b = v := (Finset.mem_filter.mp hbE.1).2
+  have hbm : (b : ℕ) < m := hbE.2
+  have hfb : i < f b := by
+    by_contra h; rw [not_lt] at h; exact hbD ⟨hbE.1, h⟩
+  -- (b:ℕ) < m ≤ (a:ℕ), same column ⇒ f b < f a ≤ i, contradicting i < f b
+  have hba : (b : ℕ) < (a : ℕ) := lt_of_lt_of_le hbm ham
+  have : f b < f a := hmono b a hcb hca hba
+  omega
+
+omit [CharZero k] in
+/-- **The abstract per-everything column-count inequality (sorry-free).** Given a
+column function `c`, a row function `f` strictly monotone in the label within each
+column (`hmono`), and a permutation `σ` preserving columns (`hcol`), the
+`σ`-twisted dominance count is `≤` the untwisted one:
+`#{l | (σ l : ℕ) < m ∧ f l ≤ i} ≤ #{l | (l : ℕ) < m ∧ f l ≤ i}`.
+The only place column structure / standardness is used. -/
+theorem col_count_le {n : ℕ} (f c : Fin n → ℕ) (σ : Equiv.Perm (Fin n)) (i m : ℕ)
+    (hcol : ∀ l, c (σ l) = c l)
+    (hmono : ∀ l₁ l₂, c l₁ = c l₂ → (l₁ : ℕ) < (l₂ : ℕ) → f l₁ < f l₂) :
+    (Finset.univ.filter (fun l : Fin n => (σ l : ℕ) < m ∧ f l ≤ i)).card
+      ≤ (Finset.univ.filter (fun l : Fin n => (l : ℕ) < m ∧ f l ≤ i)).card := by
+  classical
+  -- decompose both cards by the column value c
+  set cols : Finset ℕ := Finset.image c Finset.univ with hcols
+  have hmem_cols : ∀ x : Fin n, c x ∈ cols := by
+    intro x; rw [hcols]; exact Finset.mem_image_of_mem c (Finset.mem_univ x)
+  have hLfib :
+      (Finset.univ.filter (fun l : Fin n => (σ l : ℕ) < m ∧ f l ≤ i)).card
+        = ∑ v ∈ cols,
+            ((Finset.univ.filter (fun l : Fin n => (σ l : ℕ) < m ∧ f l ≤ i)).filter
+              (fun l => c l = v)).card := by
+    refine Finset.card_eq_sum_card_fiberwise ?_
+    intro x _; exact hmem_cols x
+  have hRfib :
+      (Finset.univ.filter (fun l : Fin n => (l : ℕ) < m ∧ f l ≤ i)).card
+        = ∑ v ∈ cols,
+            ((Finset.univ.filter (fun l : Fin n => (l : ℕ) < m ∧ f l ≤ i)).filter
+              (fun l => c l = v)).card := by
+    refine Finset.card_eq_sum_card_fiberwise ?_
+    intro x _; exact hmem_cols x
+  rw [hLfib, hRfib]
+  refine Finset.sum_le_sum ?_
+  intro v _
+  -- per-column comparison; introduce the two down-sets D₂ (row ≤ i) and E (label < m)
+  set C : Finset (Fin n) := Finset.univ.filter (fun l : Fin n => c l = v) with hC
+  set D₂ : Finset (Fin n) := C.filter (fun l : Fin n => f l ≤ i) with hD₂
+  set E : Finset (Fin n) := C.filter (fun l : Fin n => (l : ℕ) < m) with hE
+  -- reshape the two fiber-filters
+  set LHSv : Finset (Fin n) :=
+    (Finset.univ.filter (fun l : Fin n => (σ l : ℕ) < m ∧ f l ≤ i)).filter (fun l => c l = v)
+    with hLHSv
+  set RHSv : Finset (Fin n) :=
+    (Finset.univ.filter (fun l : Fin n => (l : ℕ) < m ∧ f l ≤ i)).filter (fun l => c l = v)
+    with hRHSv
+  -- RHSv = D₂ ∩ E
+  have hRHSv_eq : RHSv = D₂ ∩ E := by
+    rw [hRHSv, hD₂, hE, hC]
+    ext l
+    simp only [Finset.mem_filter, Finset.mem_inter, Finset.mem_univ, true_and]
+    tauto
+  -- LHSv ⊆ D₂
+  have hLHSv_subD₂ : LHSv ⊆ D₂ := by
+    rw [hLHSv, hD₂, hC]
+    intro l hl
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hl ⊢
+    exact ⟨hl.2, hl.1.2⟩
+  -- σ maps LHSv into E (column preserved, σ l < m), injectively ⇒ #LHSv ≤ #E
+  have hLHSv_leE : LHSv.card ≤ E.card := by
+    refine Finset.card_le_card_of_injOn (fun l => σ l) ?_ ?_
+    · intro l hl
+      simp only [Finset.mem_coe, hLHSv, hE, hC, Finset.mem_filter, Finset.mem_univ,
+        true_and] at hl ⊢
+      refine ⟨?_, hl.1.1⟩
+      rw [hcol l]; exact hl.2
+    · intro a _ b _ hab; exact σ.injective hab
+  -- the nestedness dichotomy from standardness
+  have hnest := col_downsets_nested f c i m v
+    (fun l₁ l₂ h1 h2 hlt => hmono l₁ l₂ (h1.trans h2.symm) hlt)
+  -- conclude: LHSv.card ≤ RHSv.card
+  rw [hRHSv_eq]
+  rcases hnest with hsub | hsub
+  · -- D₂ ⊆ E ⇒ D₂ ∩ E = D₂
+    rw [Finset.inter_eq_left.mpr hsub]
+    exact Finset.card_le_card hLHSv_subD₂
+  · -- E ⊆ D₂ ⇒ D₂ ∩ E = E
+    rw [Finset.inter_eq_right.mpr hsub]
+    exact hLHSv_leE
+
+/-- **PROVED (sorry-free) — Sagan's dominance lemma (the former single combinatorial
+core).** For a **standard** tableau `T` with filling `t = sytToTableau T`, every
+column permutation `π ∈ C_t` sends `{t}` to a tabloid `{π•t}` weakly **dominated
+by** `{t}` in the concrete dominance order `domRel`
+(`domCount {π•t} i m ≤ domCount {t} i m` for all `i, m`). This is the combinatorial
+heart of the standard-basis independence proof — Sagan §2.4's dominance lemma.
+
+**Proof.** Reindex the `π`-twisted count by `π` (`card_filter_perm`), then
+decompose column-by-column (`Finset.card_eq_sum_card_fiberwise` keyed by
+`colPattern t`). Within one column standardness (`col_strict`, packaged as
+`syt_rowPattern_strictMono_in_col`) makes the "row `≤ i`" set `D₂` and the "label
+`< m`" set `E` two **down-sets of a chain**, hence **nested** (`col_downsets_nested`);
+since `π` preserves columns (`mem_colStab`), the `π`-image of the twisted column
+count lands inside `E`, so it is bounded by both `#D₂` and `#E`, hence by
+`#(D₂ ∩ E)` — the untwisted column count (`col_count_le`). Summed over columns this
+is the whole inequality. No `LinearOrder`/`Finsupp` plumbing; all order axioms were
+already discharged above. The brick-4 independence chain is now sorry-free.
 
 **Why standard `T` (not all tableaux).** The statement is true precisely *because*
 `T` is standard: columns increase downward (`col_strict`), so each column already
@@ -512,18 +756,57 @@ theorem dominance_colStab_lemma (T : StandardYoungTableau μ)
     (π : Specht.colStab (sytToTableau T)) :
     domRel (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • sytToTableau T))
       (Specht.Tabloid.mk (sytToTableau T)) := by
-  -- Ref: [sagan2001] §2.4 the dominance lemma (for STANDARD t, a column permutation
-  -- π ∈ C_t sends {t} to a tabloid {π•t} weakly dominated by {t}, so {T} is the
-  -- maximum of supp(e_T)); cf. Thm 2.5.2 and [james1984representation] §8. The
-  -- single irreducible core of brick 4 — the order axioms are all proved above.
-  -- (Standard t is essential: over all t the claim is false — see the docstring.)
-  sorry
+  classical
+  -- abbreviations (no `set` on `sytToTableau T` to avoid disturbing π's dependent type)
+  set σ : Equiv.Perm (Fin (Specht.nOf μ)) := (π : Equiv.Perm (Fin (Specht.nOf μ))) with hσ
+  set f : Fin (Specht.nOf μ) → ℕ := Specht.rowPattern (sytToTableau T) with hf
+  -- column preservation of σ: σ ∈ colStab t ⇒ colPattern t (σ l) = colPattern t l
+  have hcol : ∀ l, Specht.colPattern (sytToTableau T) (σ l)
+      = Specht.colPattern (sytToTableau T) l := by
+    intro l
+    have hstab : σ • Specht.colPattern (sytToTableau T) = Specht.colPattern (sytToTableau T) :=
+      Specht.mem_colStab.mp π.property
+    have hc := congrFun hstab (σ l)
+    -- (σ • colPattern t) (σ l) = colPattern t (σ.symm (σ l)) = colPattern t l
+    rw [Specht.arrow_smul_apply, σ.symm_apply_apply] at hc
+    exact hc.symm
+  -- monotonicity within a column from standardness
+  have hmono : ∀ l₁ l₂, Specht.colPattern (sytToTableau T) l₁
+      = Specht.colPattern (sytToTableau T) l₂ → (l₁ : ℕ) < (l₂ : ℕ) → f l₁ < f l₂ := by
+    intro l₁ l₂ hc hlt
+    exact syt_rowPattern_strictMono_in_col T hc hlt
+  -- prove the dominance inequality at each (i, m)
+  intro i m
+  -- rewrite both counts to row-pattern filters
+  rw [tabloidRowPattern_mk, tabloidRowPattern_mk]
+  -- LHS: rowPattern (σ • t) l = f (σ.symm l); reindex by σ to {l | (σ l) < m ∧ f l ≤ i}
+  have hLHS : domCount (Specht.rowPattern (σ • sytToTableau T)) i m
+      = (Finset.univ.filter (fun l : Fin (Specht.nOf μ) => (σ l : ℕ) < m ∧ f l ≤ i)).card := by
+    unfold domCount
+    -- rowPattern (σ • t) = σ • f, so rowPattern (σ•t) l = f (σ.symm l)
+    have hrw : ∀ l, Specht.rowPattern (σ • sytToTableau T) l = f (σ.symm l) := by
+      intro l; rw [Specht.rowPattern_smul, Specht.arrow_smul_apply]
+    -- reindex via card_filter_perm with the permutation σ.symm
+    have hcongr : (Finset.univ.filter
+          (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m ∧ Specht.rowPattern (σ • sytToTableau T) l ≤ i))
+        = (Finset.univ.filter
+          (fun l : Fin (Specht.nOf μ) => (σ (σ.symm l) : ℕ) < m ∧ f (σ.symm l) ≤ i)) := by
+      apply Finset.filter_congr
+      intro l _
+      rw [hrw l, σ.apply_symm_apply]
+    rw [hcongr]
+    exact card_filter_perm σ.symm (fun l => (σ l : ℕ) < m ∧ f l ≤ i)
+  -- RHS: domCount f i m is literally the untwisted filter card
+  have hRHS : domCount (Specht.rowPattern (sytToTableau T)) i m
+      = (Finset.univ.filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m ∧ f l ≤ i)).card := by
+    rfl
+  rw [hLHS, hRHS]
+  exact col_count_le f (Specht.colPattern (sytToTableau T)) σ i m hcol hmono
 
-/-- **The single combinatorial core, reduced (sorry-free modulo
-`dominance_colStab_lemma`).** The dominance partial order on tabloids of shape
-`μ` exists: it is the concrete `domRel`, whose reflexivity, transitivity,
-antisymmetry, and decidability are all `sorry`-free; the only conjectural field is
-`dom_colStab`, supplied by the single cited `dominance_colStab_lemma`. -/
+/-- **The dominance partial order exists (sorry-free).** It is the concrete
+`domRel`, whose reflexivity, transitivity, antisymmetry, and decidability are all
+`sorry`-free; the `dom_colStab` field is supplied by the **proved**
+`dominance_colStab_lemma` (Sagan §2.4). Fully sorry-free. -/
 theorem dominance_relation_exists (μ : YoungDiagram) : Nonempty (DominanceData μ) :=
   ⟨{ dom := domRel
      domDec := domRel_decidable
@@ -532,12 +815,12 @@ theorem dominance_relation_exists (μ : YoungDiagram) : Nonempty (DominanceData 
      dom_antisymm := domRel_antisymm
      dom_colStab := dominance_colStab_lemma }⟩
 
-/-! ## Layers 2–3 wiring (sorry-free modulo the single core) -/
+/-! ## Layers 2–3 wiring (fully sorry-free) -/
 
-/-- **Layer 2 (sorry-free modulo the core).** Under a suitable `LinearOrder`,
-every column permutation `π ∈ C_t` sends `{t}` to a tabloid `≤ leadTab T = {T}`.
-The lever turns the core's partial order `dom` into the `LinearOrder`; the core's
-`dom_colStab` field supplies the inequality. -/
+/-- **Layer 2 (sorry-free).** Under a suitable `LinearOrder`, every column
+permutation `π ∈ C_t` sends `{t}` to a tabloid `≤ leadTab T = {T}`. The lever
+turns the (now fully proved) partial order `dom` into the `LinearOrder`; the
+proved `dom_colStab` field supplies the inequality. -/
 theorem exists_order_colStab_decreasing :
     ∃ _ : LinearOrder (Specht.Tabloid μ),
       ∀ T : StandardYoungTableau μ,
@@ -559,10 +842,10 @@ theorem exists_order_colStab_decreasing :
 
 omit [CharZero k] in
 /-- **Verbatim brick-4 target** (a restatement of
-`SpechtTriangularCore.standardPolytabloid_dominance_order`), proved `sorry`-free
-**modulo the single core** `dominance_relation_exists`. Layer 1 reduces the
-support membership to a column-orbit image; Layer 2 (lever + core) supplies the
-dominance bound. -/
+`SpechtTriangularCore.standardPolytabloid_dominance_order`), now **fully
+`sorry`-free** (`dominance_relation_exists` is proved). Layer 1 reduces the
+support membership to a column-orbit image; Layer 2 (lever + the proved dominance
+lemma) supplies the dominance bound. -/
 theorem standardPolytabloid_dominance_order' :
     ∃ _ : LinearOrder (Specht.Tabloid μ),
       ∀ T : StandardYoungTableau μ,
@@ -574,3 +857,4 @@ theorem standardPolytabloid_dominance_order' :
   exact hdec T π
 
 end QOU.BraidKnot.SpechtDominanceCore
+
