@@ -40,13 +40,11 @@ noncomputable def double_slit_q_phase_diff (q : ℝ) (hq : q ≠ 0)
 theorem double_slit_q_phase_classical (Phi_geom Phi_Reeb : ℝ) :
     double_slit_q_phase 1 one_ne_zero Phi_geom Phi_Reeb = Phi_geom := by
   simp [double_slit_q_phase, inv_one]
-  ring
 
 /-- At q = 1, the phase difference reduces to the standard Young formula. -/
 theorem double_slit_q_phase_diff_classical (d_slit lambda_ theta Delta_phi_Reeb : ℝ) :
     double_slit_q_phase_diff 1 one_ne_zero d_slit lambda_ theta Delta_phi_Reeb
     = 2 * Real.pi * d_slit * Real.sin theta / lambda_ := by
   simp [double_slit_q_phase_diff, inv_one]
-  ring
 
 end QOU.Experimental

@@ -69,6 +69,5 @@ theorem alpha_em_shift_chain
     chainIndices = bareIndices := by
   unfold chainIndices bareIndices
   rw [alpha_shift_torus_knot 2 9, alpha_shift_torus_knot 3 5]
-  rfl
 
 end QOU.Archimedean.AlphaEmShiftChain
