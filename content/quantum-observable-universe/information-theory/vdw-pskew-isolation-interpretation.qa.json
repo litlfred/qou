@@ -820,7 +820,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "vdw-pskew-isolation-interpretation.md:1: \"Van der Waals is the bar-odd residual sinh(2λ)(e_+-e_-)\"",
+        "notes": "Primary subject (van der Waals / α_EM as a Hopf bar-odd channel) is more naturally binding/EM-sector material than information theory; not squarely a different chapter's exclusive scope, so warn not fail."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q-arithmetic checks: [2]_q=q+q⁻¹=2coshλ, δ_q(T_{2,k})=q^k-q^{-k}=h[k]_q, H=[2]_q(1-h²α) consistent; bar even/odd split standard."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive isolation argument with sorry-free Lean sibling."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Properly scoped: the bar-odd residual is exact, but the molecular-energy scaling (1/r^6) is explicitly flagged 'open, not fitted' — a correct (a)-scope statement."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "α_EM formula uses δ_q(T_{2,9})δ_q(T_{3,5}); the open piece (separation r) is disclosed, not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "vdW and α_EM both being the e_- antisymmetric channel follows from the 2-strand idempotent decomposition cited."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean sibling QOU.VdwPskew (hopf_bar_even_odd_decomposition pure-ring, vdw_is_bar_odd_residual) matches the narrative isolation claim; both sorry-free per the note."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Internal cross-references (crossing-energy-decomposition, em-spectral-completeness, alpha-em-habiro) used appropriately."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "bar-involution, P_skew, e_±, λ all defined/cross-referenced; Im(q) caveat explicitly resolves a known ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "cosh(2λ) and bar-odd residual are :val-pinned to vdw-pskew-sinh-probe.witness.json (present) and marked exact/no-fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "vdW being small/sinh-suppressed and absent from the mass formula is physically reasonable; the open r-scaling is acknowledged."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Backing witness computations/vdw-pskew-sinh-probe.witness.json exists on disk; values are :val-pinned."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b2a1c061cc29",
+          "ts": "9ee382237fec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Well-scoped, witness-backed, sorry-free-Lean isolation remark with correct (a)-scope on the open piece. Only mild note: topic placement leans EM/binding sector."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:26.095Z"
 }

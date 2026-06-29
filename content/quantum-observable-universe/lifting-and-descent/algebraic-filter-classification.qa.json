@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:28.114Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is the bare commutator dichotomy; the 'Fermionic (matter)' / 'Bosonic (radiation)' labels are terse parentheticals, not substantive interpretive prose."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:28.467Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sits in sec:betti-harmonic, uses the q-harmonic basis on branes; placement coherent."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:28.905Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is algebraic (commutator [F_A,α]=0 vs ≠0) over a generic substrate; no archimedean (Real.*/ordering) machinery invoked in the claim."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:29.303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No narrative Proof. body in this block (proof not present)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:56:29.642Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "algebraic-filter-classification.lean:22-34: \"inductive AlgebraicFilterClass ... algebraic_filter_exhaustive ... cases c <;> simp\"",
+        "notes": "Lean proves only that a 2-constructor enum is exhaustive/exclusive by LEM; it never mentions F_A, α, the commutator, or the q-harmonic basis. The .md claim (every harmonic form is classified by [F_A,α]) is NOT what the .lean establishes."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:56:31.238Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "algebraic-filter-classification.ts:84: \"ref: qou:QOU.Torsion.algebraic_filter_classification ... validation: not_checked\"",
+        "notes": "lean.ref names QOU.Torsion.algebraic_filter_classification but no declaration of that name exists in the .lean (only AlgebraicFilterClass + algebraic_filter_exhaustive/exclusive); the referenced theorem is the trivial enum dichotomy, weaker than the stated curvature classification."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:56:31.586Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No structure-field projection pattern; proofs are cases/noConfusion, not d.claim."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:56:31.969Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "algebraic-filter-classification.lean:28: \"c = AlgebraicFilterClass.fermionic ∨ c = AlgebraicFilterClass.bosonic := by cases c <;> simp\"",
+        "notes": "The proved goal is a tautology over a 2-element enum (any inhabitant is one of its two constructors) — trivially discharged, carrying none of the substantive [F_A,α] content the .md asserts."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:56:32.357Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No false/contradictory hypothesis; AlgebraicFilterClass is inhabited."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,22 @@
         "reviewed_at": "2026-06-22T02:56:32.709Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Helper theorems have no spurious hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +469,22 @@
         "reviewed_at": "2026-06-22T02:56:33.075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Uses simp/noConfusion, not decide/trivial to mask a goal; the vacuity issue is structural (wrong goal), flagged under proof-no-trivial-true/lean-equiv."
       }
     ],
     "da-false-claim": [
@@ -322,6 +504,22 @@
         "notes": "The mathematical claims in 'Proposition.' are verified by the compiling Lean proof.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "As a partition statement ([F_A,α]=0 vs ≠0 exhaust and exclude) the claim is true; the physics labels are definitional, not falsifiable here."
       }
     ],
     "da-vacuous": [
@@ -341,6 +539,24 @@
         "notes": "The claims in 'Proposition.' are non-vacuous and backed by a sorry-free formalization.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "algebraic-filter-classification.md:7: \"the commutator [F_A, α] classifies α into exactly one of two types\"",
+        "notes": "The mathematical core (a quantity is zero or nonzero) is excluded-middle; the substance lives entirely in the fermion/boson labeling, which the block does not justify. The Lean confirms only the LEM partition. Borderline-vacuous as a standalone proposition."
       }
     ],
     "da-circular": [
@@ -360,6 +576,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proposition.'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fit; a definitional dichotomy."
       }
     ],
     "da-overclaim": [
@@ -378,6 +610,24 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Proposition.' is appropriately qualified and verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "algebraic-filter-classification.md:10-13: \"Fermionic (matter) ... Bosonic (radiation)\"",
+        "notes": "Calling a trivial zero/nonzero dichotomy a fermion-vs-boson 'classification' is stronger than the bare algebra supports; the matter/radiation identification is asserted without derivation in this block."
       }
     ],
     "da-hidden-dof": [
@@ -397,6 +647,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proposition.'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical parameter."
       }
     ],
     "da-non-sequitur": [
@@ -416,6 +682,22 @@
         "notes": "The argument flow in 'Proposition.' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The two-way classification follows from LEM; internally valid."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -434,6 +716,24 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The narrative claims in 'Proposition.' are fully aligned with the verified Lean proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "algebraic-filter-classification.lean:27-29: \"theorem algebraic_filter_exhaustive ... cases c <;> simp\"",
+        "notes": "Lean proves a strictly weaker/different statement (enum exhaustiveness) than the .md curvature-commutator classification; classic proof-statement-integrity divergence."
       }
     ],
     "da-citation-misuse": [
@@ -453,6 +753,22 @@
         "notes": "No citations are present in 'Proposition.', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Only [manuscript] Ch.3 §7 cited; no external attribution to misuse."
       }
     ],
     "da-definitional-ambiguity": [
@@ -472,6 +788,24 @@
         "notes": "Key terms and symbols in 'Proposition.' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "algebraic-filter-classification.md:2: \"Let $F_A$ be the curvature of the substrate parameter\"",
+        "notes": "The commutator [F_A, α] presupposes F_A and α live in a common algebra with a bracket; the bracket/base-ring is left implicit, and 'fermionic=matter' depends on an interpretation not fixed here."
       }
     ],
     "da-empirical-fragility": [
@@ -491,6 +825,22 @@
         "notes": "The algebraic and logical relations in 'Proposition.' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -510,6 +860,22 @@
         "notes": "The physical concepts described in 'Proposition.' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Commuting-with-curvature ↔ radiation is a plausible heuristic; no unit/conservation violation."
       }
     ],
     "da-reproducibility": [
@@ -529,6 +895,22 @@
         "notes": "The derivation steps and formal definitions in 'Proposition.' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -549,6 +931,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Proposition.' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "d757efcfce30",
+          "ts": "29d9c776c53d",
+          "lean": "74c487ea5bbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "Verdict: the proposition's algebraic core is excluded-middle and the named Lean theorem proves a trivial enum dichotomy, not the stated curvature classification (lean.ref decl QOU.Torsion.algebraic_filter_classification is absent; validation:not_checked). Strongest objection: the fermion/boson 'classification' is a labeled LEM partition whose substance is unproved here."
       }
     ],
     "voice-status-leak": [
@@ -1586,5 +1985,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:27.784Z"
 }

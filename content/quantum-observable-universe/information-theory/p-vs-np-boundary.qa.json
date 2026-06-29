@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is the boxed equivalence plus its formal restatement; minimal interpretive prose."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Block sits in sec:p-vs-np-boundary; on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is over q0 in G_m^nt(R); the field-dependence is part of the content, archimedean specialization acknowledged."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No narrative Proof body in this block (it is the statement/conjecture; sibling proof elsewhere)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p-vs-np-boundary.ts:5: \"lean: { ref: \\\"qou:QOU.PvsNPBoundary.boundary_dichotomy\\\" }\"",
+        "notes": "The .md claims P!=NP <=> exists NP-complete L with H_c!=0; the ref'd Lean boundary_dichotomy only proves boundaryEmpty<->not boundaryNonempty (an abstract De Morgan tautology over a Prop predicate), not the P-vs-NP content. Statement and Lean express different claims."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p-vs-np-boundary.lean:107: \"theorem boundary_dichotomy ... : boundaryEmpty extractable <-> not boundaryNonempty extractable\"",
+        "notes": "The ref'd theorem is a generic logical dichotomy, not a formalization of the boxed P-vs-NP equivalence; the .md's substantive claim is not the theorem proved."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "boundary_dichotomy is proved by constructor/by_contra, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p-vs-np-boundary.lean:109: \"boundaryEmpty extractable <-> not boundaryNonempty extractable\"",
+        "notes": "Conclusion is not literally True, but it is a near-tautological negation-duality; the substantive P-vs-NP claim of the .md is not what is discharged."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No false/contradictory hypothesis; proof is honest classical logic."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p-vs-np-boundary.lean:108: \"[forall c d, Decidable (extractable c d)]\"",
+        "notes": "The Decidable instance is declared but the proof uses classical by_contra/push_neg; the instance appears unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial masking; tactics are constructor, by_contra, push_neg."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The conjectural equivalences are stated as conjecture (not asserted true); no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p-vs-np-boundary.lean:107: \"boundary_dichotomy\"",
+        "notes": "The Lean decl bearing the proposition label is a content-light logical duality; the real (P-vs-NP) content remains unformalized."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No self-assumption of the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p-vs-np-boundary.ts:3: \"export default proposition({ label: \\\"prop:p-vs-np-boundary\\\"\"",
+        "notes": "Block kind is 'proposition' but the content is the open P-vs-NP problem (the .md and Lean docstring both label it 'conjecture' / conj:p-vs-np-boundary). Declaring an open problem a proposition overclaims its proof status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The stated equivalences are conjectural; no claimed deductive 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p-vs-np-boundary.lean:107: \"boundary_dichotomy ... : boundaryEmpty <-> not boundaryNonempty\"",
+        "notes": "Lean proves a weaker abstract dichotomy than the .md's P!=NP <=> non-empty horizon claim; classic statement/Lean divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "cook1971 (NP-completeness) and freedman2003 (topological QC) are correctly invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "H_c, polynomial observable subcategory, G_m-torsion all reference upstream definitions."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Complexity-as-horizon analogy is a framework claim, not a measurable physics contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "Strongest objection: the block is kind=proposition but is the open P-vs-NP problem, and its lean.ref points to a near-trivial logical dichotomy rather than the boxed equivalence. Re-classify as conjecture or point lean.ref at a conjecture class; current state overclaims proof status (da-overclaim + da-lean-narrative-divergence)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

@@ -762,7 +762,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proof of parallel-fibre non-interaction in sec:optical-fibre-1d-qou."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Split-link multiplicativity of the Markov trace (disjoint-union rule) is correct; monoid laws follow as ring identities."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Real proof content (factorization + monoid laws)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "parallel-fibre-noninteraction-proof.md:1: \"The Lean sibling proves all four over a generic commutative ring R\"",
+        "notes": "Asserts a completed Lean verification of all four monoid laws, but no Lean sibling exists for the referenced decl; the verification claim overstates the formal status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Monoid laws from product ring identities follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "parallel-fibre-noninteraction-proof.md:1: \"The Lean sibling proves all four over a generic commutative ring R (the factorisation is definitional; commutativity uses only propext)\"",
+        "notes": "The proof cites a specific Lean sibling (down to 'uses only propext') that does not exist in the lean tree; claimed Lean proof is absent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Kauffman bracket / Jones disjoint-union rule invoked correctly (no cites[])."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Split link, multiplicative trace standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No cross-talk is reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "parallel-fibre-noninteraction-proof.md:1: \"The Lean sibling proves all four\"",
+        "notes": "The asserted verification artifact (Lean sibling) is irreproducible because it is absent from the repository."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "The mathematical proof is correct, but the prose claims a non-existent Lean sibling (lean.ref OneDimChannel.parallel_noninteraction unresolved). Author the Lean or soften the verification claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

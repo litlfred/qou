@@ -1048,7 +1048,461 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Theorem statement is the bare identity E = m c_q^2 = m/(q-1)^2; no embedded interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Mass-energy equivalence in information-geometry terms (c_q=1/(q-1)); the chapter's emergent/information framing hosts it."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "mass-energy-equivalence.lean:24: \"**Ground ring**: `ℝ` ... NOT part of the formal proof chain.\"",
+        "notes": "The identity E = m/(q-1)^2 is purely algebraic (would hold over any field with q!=1), yet the Lean specialises to ℝ. The header self-declares ℝ and 'NOT part of the formal proof chain'; defensible as an archimedean realisation, hence minor, but the core relation is generic-ring."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean proof is field_simp (algebraic), not archimedean machinery; the classical-limit lemma that uses Real.sqrt is a separate auxiliary, not the main identity."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:47: \"noncomputable def categoricalMass (q : ℝ) (E : ℝ) : ℝ := E * (q - 1) ^ 2\"",
+        "notes": "The .md theorem asserts the categorical mass (Frobenius trace norm, def:mass-identity) equals E*c_q^2, i.e. two independently-defined quantities coincide. The Lean DEFINES categoricalMass q E := E*(q-1)^2, so massEnergyEquivalence reduces to E = E*(q-1)^2/(q-1)^2, i.e. E=E. The Lean does not reference an independent mass identity, so it proves a tautology, not the narrative's equivalence of independent definitions."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:59: \"theorem massEnergyEquivalence (q : ℝ) (hq : q ≠ 1) (E : ℝ) : E = categoricalMass q E * speedOfLightSq q\"",
+        "notes": "The signature quantifies over an arbitrary E with mass DEFINED as E*(q-1)^2; the 'equivalence' is true for any E by construction, so the statement is weaker than the narrative's claim that the trace-norm mass coincides with E*c_q^2. The genuine content (mass = Frobenius trace) is not in the Lean signature."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:61: \"E = categoricalMass q E * speedOfLightSq q := by unfold categoricalMass speedOfLightSq ... field_simp\"",
+        "notes": "After unfolding, the goal is E = E*(q-1)^2 * 1/(q-1)^2, discharged by field_simp — effectively E=E. The mass factor is self-supplied by the categoricalMass definition, so the 'equivalence' projects its own conclusion; not a literal structure-field projection but the same vacuity pattern."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:62: \"unfold categoricalMass speedOfLightSq ... field_simp\"",
+        "notes": "The goal reduces to the syntactic tautology E = E after substituting categoricalMass:=E*(q-1)^2 and speedOfLightSq:=1/(q-1)^2; the theorem discharges a content-free identity rather than a substantive mass-energy claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q!=1 is satisfiable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "hq : q!=1 is used (field_simp needs (q-1)!=0)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Uses field_simp, not decide/trivial."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The algebraic identity E = m/(q-1)^2 (with m=E(q-1)^2) is true; not false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:47: \"categoricalMass (q : ℝ) (E : ℝ) : ℝ := E * (q - 1) ^ 2\"",
+        "notes": "Mass is defined as energy*(q-1)^2, so 'E = m*c_q^2' is true by construction (E=E after unfolding). The Lean does not connect to an independent Frobenius-trace mass (def:mass-identity) the narrative invokes, making the formal 'equivalence' content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:47: \"categoricalMass q E := E * (q-1)^2\"",
+        "notes": "The 'equivalence' assumes its conclusion: defining mass as E*(q-1)^2 forces E = m*c_q^2. The narrative presents mass and energy as independently defined and found equal; the Lean back-defines mass from energy, which is circular relative to that claim. Flagged warn (not critical) because the .md does cite def:mass-identity, so the independent mass exists in the corpus — but the Lean sibling does not use it."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.md:11: \"$E_{\\mathfrak{H}} = \\mathfrak{m}_{\\mathfrak{H}} \\cdot c_q^2$\"",
+        "notes": "Presented as a Theorem (mass-energy equivalence) but the Lean establishes only the definitional algebra; the substantive claim that the Frobenius-trace mass equals E c_q^2 is not formalised. Theorem-as-proved overstates the Lean's content."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "c_q=1/(q-1) canonical; no tuned constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Given the definitions the algebra follows; no logical gap within the stated (definitional) content."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:59: \"theorem massEnergyEquivalence (q : ℝ) (hq : q ≠ 1) (E : ℝ) : E = categoricalMass q E * speedOfLightSq q\"",
+        "notes": "Lean proves a tautology (E=E for mass DEFINED as E*(q-1)^2) over arbitrary E, strictly weaker/different from the narrative claim that the categorical (Frobenius-trace) mass coincides with E c_q^2. The crossing-energy and electron lemmas are fine, but the headline theorem diverges from the .md."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "reshetikhin1991 (ribbon trace) / yekutieli2015 (non-abelian Stokes) appropriately cited for the trace/transport framing."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "mass-energy-equivalence.md:8: \"the categorical mass ([mass identity](#def:mass-identity))\"",
+        "notes": "The .md relies on the categorical mass being independently defined (def:mass-identity) but the Lean re-defines it as E*(q-1)^2; the two notions of 'mass' are not reconciled, leaving ambiguity about which is meant in the theorem."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Algebraic identity; no fit. (The electron-check numerics live in a separate remark.)"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "E=mc^2-shaped relation with c_q=1/(q-1); framework-internal, no units violation in the stated relation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Algebraic; field_simp discharges; no external witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5339214140f7",
+          "ts": "3f635fbb7cbe",
+          "lean": "d433e2f507e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "mass-energy-equivalence.lean:47: \"categoricalMass q E := E * (q - 1) ^ 2\"",
+        "notes": "Strongest objection: the headline 'mass-energy equivalence' theorem is proved only by DEFINING mass as energy*(q-1)^2, so the Lean establishes E=E rather than the coincidence of an independent Frobenius-trace mass with E c_q^2. The narrative reads as a substantive theorem; the formalisation is circular/vacuous. Re-state the Lean to take the def:mass-identity mass as input and derive the identity."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

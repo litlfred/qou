@@ -762,7 +762,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proof of thm:qu-to-qou in sec:yekutieli-lifting-construction; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qu-to-qou-proof.md:32-35: \"total ramification $R_{tot} = 2d + |\\chi(A)|$ by Riemann--Hurwitz: $\\chi(S) = d\\cdot\\chi(\\mathbb{P}(V)) - R_{tot}$\"",
+        "notes": "Standard Riemann–Hurwitz is χ(S) = d·χ(base) − R_tot with R_tot ≥ 0 the ramification; here χ(ℙ(V))=2 (so base is ℙ^1). The asserted R_tot = 2d + |χ(A)| would give χ(S) = 2d − (2d+|χ(A)|) = −|χ(A)|, i.e. χ(S) ≤ 0, which is a strong constraint presented as if forced by RH alone — the value 2d+|χ(A)| for R_tot is asserted, not derived (RH gives a relation, not this particular ramification total). Possible quantifier/derivation slip; flagged minor pending the upstream thm statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Five substantive proof items (descent termination via Krull dimension, κ_0=Euler class, perpetual obstruction, Riemann–Hurwitz, terminal fibre); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Each item argues from established structure (Noetherian centre, Gysin sequence, cohomology images); no assumption of the QOU conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qu-to-qou-proof.md:23-29: \"When $\\kappa_0$ is non-torsion, these images are complementary, so corrections cannot cancel $\\kappa_0$.\"",
+        "notes": "The 'complementary images' claim (constant/topological H^2(𝒮,R̲) vs analytic H^2(𝒮,𝒪_𝒮)) is asserted; complementarity of these two images in H^2(𝒮,𝓑) needs the connecting maps to have zero intersection, which is not shown — the non-cancellation conclusion is stronger than the one-line argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qu-to-qou-proof.md:26-29: \"jet corrections at level n lie in the image of $H^2(\\mathcal S,\\mathcal O_{\\mathcal S}) \\to H^2(\\mathcal S,\\mathcal B)$ ... so corrections cannot cancel $\\kappa_0$.\"",
+        "notes": "Placing κ_0 in the constant image and δ_n in the analytic image does not by itself imply the two images intersect only in 0 (needed for 'cannot cancel'); the disjointness is the crux and is skipped. Minor logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proof block; no own .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No external citations (Riemann–Hurwitz, Gysin invoked by name, standard)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Krull dimension, Euler class, connecting homomorphism, ramification all standard and used unambiguously."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Pure algebro-geometric proof; no physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "Verdict: a five-item structural proof that is largely sound but compresses two crucial steps — the Riemann–Hurwitz ramification total R_tot=2d+|χ(A)| is asserted rather than derived (item 4), and the 'complementary images ⇒ cannot cancel' non-cancellation (item 3) skips the image-disjointness argument. Strongest objection: the perpetual-obstruction non-cancellation rests on an unproved complementarity of two H^2 images."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:27.784Z"
 }

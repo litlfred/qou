@@ -1048,7 +1048,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The block is a proposition+derivation of the blowup⟺obstruction-level reformulation; the summary blockquote frames scope. Acceptable for a result that intertwines statement and mechanism."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "NS-blowup-as-lifting-obstruction sits in sec:yekutieli-lifting-kummer-motivic; uses prop:descent-condition and local cohomology — on-topic for the brane-tower chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is cohomological/logical (vanishing of κ_n); Sobolev exponent s(t) appears but the smooth⟺all-κ_n-vanish equivalence is structural, not archimedean-proved."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p3-blowup-yekutieli.md:39-44: \"spectral decay becomes polynomial: |\\hat v_k(t)| ~ k^{-s} ... for n>s the n-th jet is undefined\"",
+        "notes": "The blowup mechanism mixes Sobolev/analytic (archimedean) reasoning with the categorical obstruction tower, but it is a narrative motivation, not a generic-ring algebraic identity proved by Real.* lemmas; minor."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p3-blowup-yekutieli.lean:53: \"obstruction : ℕ → ℕ\"",
+        "notes": "Lean models obstruction classes as ℕ→ℕ (distinguished zero) rather than the abelian group H^2(𝒮,𝓑) the .md states; the smooth/blowup equivalences hold abstractly, so this is a faithful abstraction but weaker on the coefficient structure."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Signature blowup_yekutieli proves both conjuncts; §3b-cond non-degenerate class documented in the .lean header; conclusion derived, not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p3-blowup-yekutieli.lean:73: \"refine ⟨ctx.smooth_iff_all_obstructions_vanish, ?_⟩\"",
+        "notes": "The FIRST conjunct is a verbatim projection of the class field smooth_iff_all_obstructions_vanish; however the SECOND conjunct (blowup direction) is genuinely derived by rw+not_forall, so the theorem is not wholly a self-assuming projection. Minor."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Goal is a non-trivial conjunction of equivalences, not True/x=x; the not_forall step does real work."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No false hypothesis; class instance is the only assumed input."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The class field is used for both conjuncts."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial; uses rw/not_forall."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "smooth⟺all-κ_n=0 (smoothness DEFINED as full lifting) and its contrapositive blowup⟺∃n* are logically correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p3-blowup-yekutieli.lean:58: \"smooth_iff_all_obstructions_vanish : smooth ↔ ∀ n, obstruction n = 0\"",
+        "notes": "The Lean's nontrivial content is the contraposition; the substantive physical claim (that NS smoothness coincides with this categorical lifting) is asserted by definition (smooth :=lifts), so the theorem is a logical restatement. Honestly flagged as definitional in the header, hence warn not fail."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Does not back-fit a numeric target; defines smoothness as lifting and derives the equivalence — disclosed, not smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p3-blowup-yekutieli.md:1: \"Finite-time NS blowup is identified with a finite obstruction level n*\"",
+        "notes": "Identifying physical Navier–Stokes finite-time blowup with the brane-tower obstruction level rests on 'smooth ⟺ lifts through the entire tower' being the correct regularity notion — an assumption, not a theorem; the millennium-problem tag risks reading the reformulation as a resolution. Scope-limited reformulation, not a proof of NS regularity."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical free parameter; n*, s(t) are determined by the solution."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "n* = ⌊s*⌋+1 follows from 'n-th jet undefined for n>s'; chain is coherent given the Sobolev framing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p3-blowup-yekutieli.lean:53: \"obstruction : ℕ → ℕ\"",
+        "notes": "Lean omits the Sobolev/n* mechanism (§ Blowup as cohomological obstruction) entirely and models κ_n in ℕ; it captures only the abstract smooth/blowup dichotomy. Weaker than the full .md narrative but consistent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "yekutieli2010 (central extensions of gerbes) cited for the κ_n ∈ H^2 obstruction framework; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "'smooth' explicitly defined as lifting through the tower; n*, s* defined; no 'the unique X' uniqueness gap."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical fit / q0 anchor involved."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No broken conservation/units; the identification of regularity with lifting is a framework hypothesis, addressed under da-overclaim not physics-implausibility."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d87ec51a5301",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "Verdict: logically clean reformulation (smooth⟺all-κ_n-vanish ⊢ blowup⟺∃n*), but the headline 'NS blowup IS a finite obstruction level' overclaims — it presupposes the lifting notion equals analytic regularity and the Lean abstracts κ_n to ℕ. Strongest objection: do not read as progress on the NS millennium problem."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:27.784Z"
 }

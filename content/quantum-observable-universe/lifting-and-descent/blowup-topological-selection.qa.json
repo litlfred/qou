@@ -816,7 +816,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Topological selection rule on the blowup obstruction in sec:yekutieli-lifting-kummer-motivic; interprets prop:blowup-yekutieli, uses prop:descent-condition; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Twisted 2-cocycle d(g_ijk)=a_ij·g_ijk·a_jk⁻¹ failing at Σ ⇒ κ_{n*} = net reconnection charge, constrained to lie in image of the character map χ:Rep(SU_q(2))→H^2(Σ,𝓑) — internally consistent with the descent-condition/representation framework."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive selection-rule claim (discrete lattice of allowed obstruction values); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Derives the selection rule from descent-condition failure + SU_q(2) representation theory; no self-reference."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "blowup-topological-selection.md:30-33: \"a **topological selection rule** on the blowup: not all vorticity concentrations are allowed, only those whose cohomological charge is compatible\"",
+        "notes": "The claim that κ_{n*} 'must lie in the image of the character map' (hence a discrete lattice) is asserted via 'must be consistent with SU_q(2) representation theory'; the necessity (why the obstruction is forced into the character image) is stated rather than argued, making the selection-rule conclusion stronger than the supporting sentence."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "blowup-topological-selection.md:18-31: \"The obstruction class must be consistent with the $\\mathrm{SU}_q(2)$ representation theory. Specifically, $\\kappa_{n^*}$ must lie in the image of the character map\"",
+        "notes": "The step from 'consistent with representation theory' to 'lies in the image of χ:Rep(SU_q(2))→H^2(Σ,𝓑)' is a non-trivial inference presented as a 'Specifically' restatement; the constraint that the character map's image captures all admissible obstruction classes is not justified. Minor gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Remark, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No external citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Twisted 2-cocycle, singular set Σ, reconnection charge, character map all defined/referenced; vortex-reconnection via rem:vortex-reconnection."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Quantized reconnection charge / discrete vorticity lattice is physically reasonable for a topological obstruction; no conservation/units violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6c88a78722c6",
+          "ts": "443725d73f77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "notes": "Verdict: coherent topological-selection-rule remark, well-anchored to the descent condition and representation theory. Strongest objection: the necessity that κ_{n*} lies in the character-map image (the crux of the 'selection rule') is asserted via a 'must be consistent' sentence rather than argued."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:27.784Z"
 }

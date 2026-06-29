@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:26.759Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Discrete Planck step / Reeb discretization belongs in sec:golden-julia-dynamics."
       }
     ],
     "da-false-claim": [
@@ -46,6 +61,21 @@
         "notes": "No false claims identified in 'Discrete time at the Big Bang: one Planck step of Reeb flow': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "t_P=q/(q-1) and l_P=hbar_q*t_P=1 verified algebraically; correct."
       }
     ],
     "da-vacuous": [
@@ -63,6 +93,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Discrete time at the Big Bang: one Planck step of Reeb flow' presents substantial mathematical content: The continuous Reeb flow $\\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) admits a ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Non-trivial content (l_P identically 1, regime table)."
       }
     ],
     "da-circular": [
@@ -81,6 +126,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Discrete time at the Big Bang: one Planck step of Reeb flow'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fitting."
       }
     ],
     "da-overclaim": [
@@ -98,6 +158,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Discrete time at the Big Bang: one Planck step of Reeb flow' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The 'information processing rate increases as it cools' is framed as interpretive remark content, not a derived bound."
       }
     ],
     "da-hidden-dof": [
@@ -116,6 +191,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Discrete time at the Big Bang: one Planck step of Reeb flow'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No hidden parameter; q-dot in the counting integral is acknowledged as an external rate, not a fitted constant."
       }
     ],
     "da-non-sequitur": [
@@ -134,6 +224,21 @@
         "notes": "The argument flow in 'Discrete time at the Big Bang: one Planck step of Reeb flow' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Steps follow; the N(q0,q) integral is heuristic but flagged as a discrete sum over F_p."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -151,6 +256,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Remark, no Lean."
       }
     ],
     "da-citation-misuse": [
@@ -169,6 +289,21 @@
         "notes": "Citations to thooft2016 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "thooft2016 correctly invoked for the ontological-CA Planck tick."
       }
     ],
     "da-definitional-ambiguity": [
@@ -187,6 +322,21 @@
         "notes": "Key terms and symbols in 'Discrete time at the Big Bang: one Planck step of Reeb flow' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Terms reference upstream definitions."
       }
     ],
     "da-empirical-fragility": [
@@ -205,6 +355,21 @@
         "notes": "The algebraic and logical relations in 'Discrete time at the Big Bang: one Planck step of Reeb flow' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "t_P~10.1 at q0 consistent with hbar_q=0.0988; no fragile fit claimed."
       }
     ],
     "da-physical-implausibility": [
@@ -223,6 +388,21 @@
         "notes": "The physical concepts described in 'Discrete time at the Big Bang: one Planck step of Reeb flow' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Big Bang / classical limits internally consistent."
       }
     ],
     "da-reproducibility": [
@@ -241,6 +421,21 @@
         "notes": "The derivation steps and formal definitions in 'Discrete time at the Big Bang: one Planck step of Reeb flow' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/discrete-planck-step.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -260,6 +455,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Discrete time at the Big Bang: one Planck step of Reeb flow' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "3185c91a7a52",
+          "ts": "bcef71f35377"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sound interpretive remark; the cosmological-rate narrative is heuristic but flagged as such."
       }
     ],
     "voice-status-leak": [
@@ -1069,5 +1279,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "QOU-is-CCC proof (Penrose conformal cyclic cosmology); emergent-gravity/cosmology scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "CCC-1/2/3 each reduced to definitions (horizon conformal invariance, aeon adjacency, jet-horizon A_0=0 + Frobenius non-degeneracy); internally valid given those."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qou-is-ccc-proof.md:2: \"(CCC-1) is the content of [conformal invariance at the jet horizon](#prop:horizon-conformal-invariance).\"",
+        "notes": "CCC-1 is discharged by citing prop:horizon-conformal-invariance, whose Lean backing is a `: True := trivial` shadowing stub (see that block's findings). So this proof step rests on an unproved proposition; the CCC proof is only as strong as its weakest cited lemma. Minor at the .md level (the narrative reductions are reasonable) but inherits the upstream vacuity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Reductions to definitions, not to the conclusion; not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Explicit 'Limitations of the claim' section disclaims chart-existence, infinite chain, and metric rescaling; well-scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Each CCC property follows from the cited definition; the limitations section prevents over-reach."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qou-is-ccc-proof.md:2: \"(CCC-1) is the content of [conformal invariance at the jet horizon]\"",
+        "notes": "The proof block has no .lean sibling, but the JetHorizon.lean CCC lemmas (ccc_conformal_invariance, ccc_boundary_data_exists) prove only degree-0 vanishing + degree>=1 persistence, and CCC-1's cited prop is True-stubbed; the narrative CCC-2 (data inheritance) is acknowledged elsewhere as not fully formalised. Minor divergence, inherited."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Cross-refs to horizon-conformal-invariance, aeon, jet-horizon; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "CCC-1/2/3, aeon adjacency, S_b boundary, Frobenius non-degeneracy all defined/cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Penrose CCC structural analogue, explicitly distinguished from the Omega^2 g metric-rescaling mechanism; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Structural proof; no witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a34da735940b",
+          "ts": "cace7fdb2190"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qou-is-ccc-proof.md:2: \"(CCC-1) is the content of [conformal invariance at the jet horizon]\"",
+        "notes": "Well-scoped proof with an honest limitations section; strongest objection is that CCC-1 rests on prop:horizon-conformal-invariance, whose Lean is a True-stub, so the chain is not fully formalised. The narrative reductions are nonetheless reasonable."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement gives the spectral decomposition and content-Casimir formula; explanatory clauses are about the formula's terms, no separable physical-interpretation prose to split off."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q-heat-kernel proposition; thermodynamics/heat-flow scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is archimedean (Rep(SU_q(2)), exp(-mu t), char-0 heat kernel); .ts title and Lean docstring both label it archimedean/char-0, so Real realisation is the declared regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No narrative **Proof.** body in the .md; the Lean carrier is an honestly-named conjecture (Summable), not an archimedean proof of an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-heat-kernel-peter-weyl.lean:112: \"def qHeatKernelPeterWeyl (q t : ℝ) ... : Prop := Summable (...)\"",
+        "notes": "Narrative is a Proposition asserting the full spectral decomposition u(t,x)=Sum d_lambda e^{-mu t} pi_lambda(u0); the Lean named decl only encodes (and does not prove) the Summable convergence half as a Prop carrier. Honest open-state per AGENTS.md 3b Pattern C, but the .md presents as an established proposition while Lean proves neither the decomposition nor convergence."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "muLambda content-Casimir formula matches the boxed .md formula; helper lemmas muLambda_classical/_single are honest and proved."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The named decl is a Prop definition (Summable), not a projection of a structure field equal to its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Carrier Prop is Summable(...), not True; proved helper lemmas conclude mu=0 facts, not tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Hypotheses 0<q, q!=1, t>0 are satisfiable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "q-heat-kernel-peter-weyl.lean:113: \"(_hq : 0 < q) (_hq1 : q ≠ 1) (_ht : 0 < t)\"",
+        "notes": "All three hypotheses are underscore-bound and unused in the Prop body (Summable over the exp series); for a definitional Prop carrier this is acceptable signalling of the intended regime, hence warn not fail."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial masking; helper lemmas use simp on genuine goals."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Spectral formula and content-Casimir eigenvalue are standard; single-cell mu=0 verified in Lean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive eigenvalue formula; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Diagonalisation via Schur's lemma; no target back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "q-heat-kernel-peter-weyl.md:1: \"**Proposition ($q$-heat kernel spectral decomposition).**\"",
+        "notes": "Presented as a Proposition though the convergence underpinning is only a named conjecture in Lean; the title '(archimedean)' and Lean docstring hedge it, so minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No free parameter; eigenvalues from partition data."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Coriolis cross-terms vanish by Schur's lemma — valid; classical-core and spin pieces separated correctly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-heat-kernel-peter-weyl.lean:112: \"def qHeatKernelPeterWeyl ... : Prop := Summable (...)\"",
+        "notes": "Lean encodes only the convergence Prop (unproved carrier), not the spectral-decomposition equality the .md states; weaker/different than the narrative claim. Same root as proof-narrative-lean-equiv."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No bibliographic cites; manuscript refs only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "d_lambda (Steinberg q-hook), pi_lambda, mu_lambda, [k]_q all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Heat-kernel decomposition; no physical contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "muLambda_classical/_single proved in Lean; no external witness needed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-heat-kernel-peter-weyl.lean:112: \"Prop := Summable(...)\"",
+        "notes": "Eigenvalue formula is sound and partially Lean-verified; strongest objection: the block is titled Proposition but its convergence (Mercer) claim is only a named, unproved conjecture in Lean and the decomposition equality itself is not formalised."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

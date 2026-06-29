@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qou-is-ccc.md:38: \"so no degree-0 observable can detect a difference between the two sides.\"",
+        "notes": "CCC-3 carries interpretive prose inside the statement, but it is a proposition decomposing a named cosmological criterion; minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conformal-cyclic-cosmology of aeon chains is squarely an information-theory/horizon topic in this chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is about boundary data / conformal class of the horizon ideal; no gratuitous archimedean ℝ specialisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Narrative argument is categorical (Frobenius degeneracy on A_0, quotient by horizon ideal); no archimedean machinery on an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "qou-is-ccc.lean:35: \"theorem qou_is_ccc : True := by\"",
+        "notes": "Sibling .lean is a `: True` stub that shadows the real QOU.qou_is_ccc (JetHorizon.lean) which proves only CCC-1+CCC-3, not the narrative CCC-2; lean.ref resolves sibling-first to the vacuous stub."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "qou-is-ccc.lean:35: \"theorem qou_is_ccc : True := by trivial\"",
+        "notes": "The resolved-to signature is `: True`, far weaker than the three CCC properties the narrative asserts."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Not a self-assuming projection — it is a trivial-true stub instead (covered by proof-no-trivial-true)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "qou-is-ccc.lean:35: \"theorem qou_is_ccc : True := by\\n  trivial\"",
+        "notes": "Sibling concludes `: True := trivial`; shadows the real JetHorizon decl (AGENTS.md §0b no-shadowing-stubs) and discharges vacuously."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No false/contradictory premise; the stub has no hypotheses."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Stub takes no hypotheses, so none are unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Uses `trivial` on a `True` goal, not `decide` masking a substantive goal; the vacuity is captured under proof-no-trivial-true."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The three CCC properties are correctly stated; CCC-1/CCC-3 are proved in the real JetHorizon decl, CCC-2 is honestly flagged as not yet formalised."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "qou-is-ccc.lean:35: \"theorem qou_is_ccc : True := by\"",
+        "notes": "The resolved Lean is content-free `: True := trivial`, a shadowing stub of the real declaration."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fitting; CCC properties derived from horizon-ideal vanishing, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "qou-is-ccc.md:19: \"(CCC-2) Boundary data inheritance.\"",
+        "notes": "Narrative asserts all three CCC properties as proved, but CCC-2 (CMB inheritance) is unformalised; the .md does not flag the conditional status that the .lean docstring records."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Each CCC clause follows from the observability-axiom / horizon-ideal setup."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "qou-is-ccc.lean:35: \"theorem qou_is_ccc : True\"",
+        "notes": "Lean (resolved sibling) proves `True`; even the real decl proves only CCC-1/3 of the narrative's CCC-1/2/3."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "penrose2010 (Cycles of Time) is the correct source for the CCC framework being matched."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Aeon, boundary datum, horizon ideal all cross-referenced to definitions."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Structural CCC analogue; no units/conservation claim to violate."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e068cb5a9664",
+          "ts": "7e6152c57a2c",
+          "lean": "41a27871f4d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "Sound categorical content but the Lean sibling is a shadowing `: True := trivial` stub and CCC-2 is asserted in prose while unformalised. Strongest objection: lean.ref resolves to a vacuous stub that proves nothing (AGENTS.md §0b)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:26.095Z"
 }

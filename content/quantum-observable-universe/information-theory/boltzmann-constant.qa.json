@@ -104,6 +104,22 @@
         "reviewed_at": "2026-06-22T02:56:28.285Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "k_B=1 and k_B*T_phys=hbar_q=(q-1)/q is a natural-units convention; Lean works over R_q (generic Laurent ring), no gratuitous archimedean leak in the statement."
       }
     ],
     "wall-side-proof": [
@@ -161,6 +177,22 @@
         "reviewed_at": "2026-06-22T02:56:29.051Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": ".md: k_B=1, k_B*T=hbar_q; Lean: thermalEnergy:=quantumPlanckConstant with beta_times_thermalEnergy (beta*T=1). The natural-units identification is a definition; correspondence holds."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -269,6 +301,24 @@
         "reviewed_at": "2026-06-22T02:56:30.656Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "boltzmann-constant.ts:11: \"lean: { ref: \\\"qou:QOU.Information.thermalEnergy\\\" }\"",
+        "notes": "lean.ref points at a def (thermalEnergy), not a theorem asserting k_B=1; the headline equality is conventional rather than proved. Honest as a convention but the ref is a def, not the proposition's claim."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -289,6 +339,22 @@
         "reviewed_at": "2026-06-22T02:56:31.049Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "thermalEnergy is a definition; the supporting theorems (beta*T=1) are proved by field_simp/ring, not projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -309,6 +375,22 @@
         "reviewed_at": "2026-06-22T02:56:31.424Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "k_B=1 is a units convention, not a vacuous :True proof; supporting lemmas are substantive."
       }
     ],
     "proof-no-false-premise": [
@@ -329,6 +411,22 @@
         "reviewed_at": "2026-06-22T02:56:31.836Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Supporting theorems use hq: q>1, a true regime hypothesis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -349,6 +447,22 @@
         "reviewed_at": "2026-06-22T02:56:32.194Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q>1 is used (hq_ne, hq1_ne) in the field_simp proofs."
       }
     ],
     "proof-no-decide-masking": [
@@ -369,6 +483,22 @@
         "reviewed_at": "2026-06-22T02:56:32.554Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "524743ff4692",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial masking; proofs are field_simp/ring/linarith."
       }
     ],
     "da-false-claim": [
@@ -1848,5 +1978,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

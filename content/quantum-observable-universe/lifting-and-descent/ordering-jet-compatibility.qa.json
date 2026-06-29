@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Four enumerated claims (extension, compatibility, well-foundedness, direct limit) are bare mathematical statements; no physical interpretation injected."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Admissible-ordering/Gröbner propagation in sec:direct-limit; uses def:direct-limit-algebra; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Ordering/well-foundedness/Gröbner termination are combinatorial-algebraic over the Hecke basis; no archimedean construct in the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No narrative Proof. body in this block (proof is sibling ordering-jet-compatibility-proof)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "ordering-jet-compatibility.lean:83-93: \"axiom ordering_extends ... axiom ordering_compatible ... axiom direct_limit_terminates\"",
+        "notes": "lean.ref points only to degLex_wellFounded (item 3, well-foundedness — genuinely proved). Items 1,2,4 (extension, multiplicative compatibility, direct-limit termination) are Lean AXIOMS, not theorems, so the .lean establishes one of four narrative claims; the rest are asserted. ordering_extends's conclusion literally restates its hypothesis (degLex a b ⊢ degLex a b)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Referenced decl degLex_wellFounded matches narrative item 3 well-foundedness; signature unchanged, real proof via InvImage.wf + Prod.lex_wf."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "degLex_wellFounded is not a structure-field projection; it composes Subrelation.wf with the unrestricted well-foundedness."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "ordering-jet-compatibility.lean:83-85: \"axiom ordering_extends (k) (a b) (hab : degLex a b) : degLex a b\"",
+        "notes": "The lean.ref'd theorem degLex_wellFounded is substantive (not trivial-true), so the criterion passes for the referenced decl; but the file also carries axiom ordering_extends whose conclusion is identical to its hypothesis — a vacuous (hyp⊢hyp) axiom. Flagged as warn since it is not the referenced declaration."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "hn : 0 < n is satisfiable; no contradictory premise in degLex_wellFounded."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "ordering-jet-compatibility.lean:58-66: \"theorem degLex_wellFounded (n : ℕ) (hn : 0 < n) ... apply Subrelation.wf\"",
+        "notes": "Hypothesis hn : 0 < n is never used — well-foundedness of the sub-relation {g<n} holds for all n including 0 (Subrelation.wf drops the conjunct). The n>0 binder is decorative; the proved statement is therefore stronger/independent of hn."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial; genuine well-founded-recursion lemmas."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "degLex well-founded (length-then-lex on List ℕ) is correct; admissible-ordering extension and compatibility are standard Gröbner-Shirshov facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Narrative makes four genuine claims; not content-free. (The Lean axiomatisation gap is captured under proof-narrative-lean-equiv.)"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fit; standard ordering theory."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Claims match the supporting Gröbner-Shirshov / admissible-system theory; well-foundedness is genuinely formalized."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical parameter (numNewDirs=3 is the SU(2) Ω^1 rank, fixed)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Direct-limit ordering ⋃_n ≺_n with per-level reduction termination follows from the level-wise well-foundedness."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "ordering-jet-compatibility.lean:83,91,109: \"axiom ordering_extends ... axiom ordering_compatible ... axiom direct_limit_terminates\"",
+        "notes": "Three of the four narrative items are encoded as Lean axioms rather than proved; the lean.ref captures only item 3. The .lean is materially weaker than the .md (most of the proposition is assumed, not derived)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "bergman1978 (Diamond Lemma) correctly cited for Gröbner-Shirshov reduction/termination."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "≺_n, LM, admissible ordering, direct limit all referenced to def:direct-limit-algebra / admissible-system."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Forward/backward 'time' is a metaphor for braiding/unbraiding; no physical claim to reject."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "Verdict: mathematically sound proposition; well-foundedness genuinely formalized, but items 1/2/4 are Lean axioms (ordering_extends, ordering_compatible, direct_limit_terminates) and ordering_extends is a hyp⊢hyp vacuity; hn:0<n unused. Strongest objection: the Lean attests far less than the narrative claims."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:27.784Z"
 }

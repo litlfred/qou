@@ -1046,7 +1046,455 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proposition statement is the rescaling-invariance claim; the conformal-class remark is a one-line consequence in the same statement, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Jet-horizon conformal invariance (aeon boundary); emergent-gravity/cosmology scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is over O(U)^x units and brane-tower quotients (algebraic); no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No narrative **Proof.** body in this .md (proof sketch is in the .md text/JetHorizon docstring); nothing archimedean to mis-place."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "horizon-conformal-invariance.lean:29: \"theorem horizon_conformal_invariance : True := by ... trivial\"",
+        "notes": "The sibling .lean (resolved first per AGENTS.md 0a sibling-first) proves `: True`, while the .md claims (A_1/lambda A_0, A_2/lambda A_0)|_H = (A_1/A_0, A_2/A_0)|_H. Even the real library decl (JetHorizon.lean:211) proves only s = H.algebra.zero 0 (degree-0 vanishing), not the rescaling invariance the docstring there admits 'requires a Module/quotient structure ... does not (yet) carry'. Neither Lean matches the narrative."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "horizon-conformal-invariance.lean:29: \"theorem horizon_conformal_invariance : True := by trivial\"",
+        "notes": "The proof passes by weakening the statement to `True` — a shadowing stub that replaces the rescaling-invariance proposition with a tautology (AGENTS.md 0a forbids `: True := trivial` siblings; the real decl exists in JetHorizon.lean but is shadowed by this stub)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Not a projection pattern; the defect is a True-stub (covered by proof-no-trivial-true), not a self-assuming field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "horizon-conformal-invariance.lean:29: \"theorem horizon_conformal_invariance : True := by ... trivial\"",
+        "notes": "Sibling decl concludes the tautology `True`; the substantive conformal-invariance goal is discharged vacuously. Classic trivial-true anti-pattern shadowing the real JetHorizon decl."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No false premise (the stub has no hypotheses)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sibling stub has no hypotheses to use."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "horizon-conformal-invariance.lean:30: \"trivial\"",
+        "notes": "`trivial` masks an entirely vacuous goal (`True`) where a substantive structural proof is expected — exactly the decide/trivial-masking failure mode."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The narrative rescaling-invariance claim is mathematically plausible (quotient depends only on the vanishing locus); not false — only unproved in Lean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "horizon-conformal-invariance.lean:29: \"theorem horizon_conformal_invariance : True := by trivial\"",
+        "notes": "The block's resolved Lean is `: True := trivial`, a content-free shadowing stub (AGENTS.md 0a violation) standing in for the proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Narrative argument (quotient depends on vanishing locus) is not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "horizon-conformal-invariance.md:1: \"**Proposition.**\"",
+        "notes": "Presented as a proved Proposition, but the Lean establishes only `True` (sibling) / degree-0 vanishing (library), not the rescaling-conformal-invariance claim; the proved status is overstated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conformal-class conclusion follows from rescaling invariance within the narrative."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "horizon-conformal-invariance.lean:29: \"theorem horizon_conformal_invariance : True\"",
+        "notes": "Lean proves `True` (sibling stub), vacuously implied by everything and strictly weaker than the .md rescaling-invariance proposition. Even the unshadowed library decl proves only degree-0 vanishing, not the stated invariance."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "penrose2010 cited for conformal-cyclic cosmology framing; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Jet horizon, brane tower, horizon ideal h all cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Penrose CCC conformal-invariance analogue; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness; structural claim."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "666b5468419a",
+          "ts": "cced79765a83",
+          "lean": "5cb1a77de37b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "horizon-conformal-invariance.lean:29: \"theorem horizon_conformal_invariance : True := by trivial\"",
+        "notes": "Strongest objection: the proposition is asserted as proved but its sibling Lean is a `: True := trivial` shadowing stub (AGENTS.md 0a violation) and the real library decl proves only degree-0 vanishing, not the rescaling invariance — the formal backing does not match the claim. Replace the stub with the real ref and formalise (or honestly sorry) the rescaling step."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

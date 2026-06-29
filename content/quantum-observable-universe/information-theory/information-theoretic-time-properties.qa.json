@@ -26,6 +26,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind 'remark' match validated structurally for 'Reeb time coordinate, three regimes, and the arrow of time'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Information-theoretic time regimes in sec:info-time-computation."
       }
     ],
     "da-false-claim": [
@@ -44,6 +59,21 @@
         "notes": "No false claims identified in 'Reeb time coordinate, three regimes, and the arrow of time': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Riemann-sum coarse-graining and t=hbar_q*T rescaling are correct."
       }
     ],
     "da-vacuous": [
@@ -61,6 +91,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Reeb time coordinate, three regimes, and the arrow of time' presents substantial mathematical content: The [information-theoretic time $\\mathcal{T}(q)$](#def:information-theoretic-tim...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Three-regime structure with explicit error O(1/t_P)."
       }
     ],
     "da-circular": [
@@ -79,6 +124,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Reeb time coordinate, three regimes, and the arrow of time'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -96,6 +156,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Reeb time coordinate, three regimes, and the arrow of time' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "10% Riemann error at q0 framed as marginally-detectable discreteness; scoped."
       }
     ],
     "da-hidden-dof": [
@@ -114,6 +189,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Reeb time coordinate, three regimes, and the arrow of time'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No hidden parameter."
       }
     ],
     "da-non-sequitur": [
@@ -132,6 +222,21 @@
         "notes": "The argument flow in 'Reeb time coordinate, three regimes, and the arrow of time' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Regime transitions follow from t_P limits."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -149,6 +254,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Remark."
       }
     ],
     "da-citation-misuse": [
@@ -167,6 +287,21 @@
         "notes": "No citations are present in 'Reeb time coordinate, three regimes, and the arrow of time', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No cites."
       }
     ],
     "da-definitional-ambiguity": [
@@ -185,6 +320,21 @@
         "notes": "Key terms and symbols in 'Reeb time coordinate, three regimes, and the arrow of time' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Discrete/statistical/continuous regimes precisely delimited by q."
       }
     ],
     "da-empirical-fragility": [
@@ -203,6 +353,21 @@
         "notes": "The algebraic and logical relations in 'Reeb time coordinate, three regimes, and the arrow of time' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No precision claim."
       }
     ],
     "da-physical-implausibility": [
@@ -221,6 +386,21 @@
         "notes": "The physical concepts described in 'Reeb time coordinate, three regimes, and the arrow of time' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Thermodynamic coarse-graining analogy consistent."
       }
     ],
     "da-reproducibility": [
@@ -239,6 +419,21 @@
         "notes": "The derivation steps and formal definitions in 'Reeb time coordinate, three regimes, and the arrow of time' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -258,6 +453,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Reeb time coordinate, three regimes, and the arrow of time' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "5034f48bda92",
+          "ts": "2efd319b00ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sound time-regime remark."
       }
     ],
     "voice-status-leak": [
@@ -1067,5 +1277,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

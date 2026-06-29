@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:26.525Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Computational horizon definition; Time-and-Computation section."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:26.894Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean ground ring declared R_q=LaurentPolynomial Z (generic), with archimedean q>1 predicates explicitly commented out as 'not meaningful over R_q'; narrative statement is structural (resolution tree, degree-0 sections)."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "The claim in 'Computational horizon' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "3^c leaves, degree-0/degree-1 stratification, t >= c*log3/B(q)*3^{c-c0} bound are framework definitions, internally consistent."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Computational horizon' presents substantial mathematical content: Let $L = \\hat{\\beta}$ be the braid closure of a computation $\\beta$ with $c = 3N...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Defines a genuine horizon structure with the jet-horizon analogy; content-bearing."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Computational horizon'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Definition, not a derivation; no back-fit."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Computational horizon' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The .md narrative is a careful definition with a structural-parallel table; the P=NP claims live in the conjecture block, not here."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Computational horizon'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "c_0 (sub-horizon depth) and poly bound are explicit; no hidden constant."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/computational-horizon.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Horizon-empty <-> R° non-empty equivalence is definitional and Lean-proved (horizon_empty_iff_observable)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,24 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "computational-horizon.lean:90: \"Nat.pow_le_pow_right (by norm_num) T.crossings_pos\"",
+        "notes": "leafCount_exponential references field T.crossings_pos which is commented out at lines 67-68, and DegreeZeroSection.vanishes (line 130) has an entirely commented-out body — both would fail to compile. The decorative HorizonStructure.horizon_nonempty also concludes True. The .md definition is sound but the Lean sibling has non-building/vacuous pieces diverging from a faithful formalisation."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +346,22 @@
         "notes": "No citations are present in 'Computational horizon', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "cook1971 / freedman2003 cited in Lean header for NP-completeness / topological quantum computation; appropriate framing."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +381,22 @@
         "notes": "Key terms and symbols in 'Computational horizon' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Degree-0 opacity, degree>=1 leakage, bandwidth saturation each spelled out; jet-horizon analogy explicit."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +416,22 @@
         "notes": "The algebraic and logical relations in 'Computational horizon' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +451,22 @@
         "notes": "The physical concepts described in 'Computational horizon' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Hawking-radiation analogy is illustrative, not a physical prediction."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +486,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Structural definition; no witness."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +522,24 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist, invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "0a72ff164a42",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "computational-horizon.lean:90: \"T.crossings_pos\" (field commented out at 67-68)",
+        "notes": "Narrative definition is coherent; strongest objection is the Lean sibling's broken references (crossings_pos / vanishes body commented out) and a True-concluding horizon_nonempty field, which undermine the claimed formalisation."
       }
     ],
     "voice-status-leak": [
@@ -1162,5 +1406,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

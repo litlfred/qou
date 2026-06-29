@@ -875,7 +875,277 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "G_q from information geometry belongs to the 'Emergent Gravity and Information Geometry' section; on-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Definition over generic field k (Lean uses [Field k]); only q!=0,q!=1 hypotheses, no archimedean ordering/Real.* — generic-ring side respected."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Verified both forms of G_q equal q^2/(q-1)^4 and G_Planck = G_q(hbar/c)^2 = q^2/(q-1)^4 * (q-1)^4/q^2 = 1; Lean field_simp confirms."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "G_Planck=1 is a non-trivial algebraic identity (q^2/(q-1)^4 times (q-1)^4/q^2), proved by field_simp, not : True."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "G_q assembled from independently-defined c_q, hbar_q, eta_q, S_cell; no target back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Stated as a normalisation definition with an identity, not as a derived physical-G prediction."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "All factors (c_q, hbar_q, eta_q, S_cell) are prior canonical-chain quantities; no new free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Two stated forms of G_q are equal (both reduce to c_q^3 q^2/(q-1)); algebra verified."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean gravitationalConstant matches the .md definition; gravitational_planck_eq_one proves the G_Planck=1 identity stated in prose."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "jacobson1995 / bekenstein1981 cited for the entropy-area / emergent-gravity framing; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "All symbols (c_q, hbar_q, eta_q, S_cell) cross-referenced to their defining blocks; base ring generic field."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical CODATA comparison; the claim is the dimensionless identity G_Planck=1, anchor-independent."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "G_Planck=1 in Planck units is the conventional normalisation; consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Algebraic identity; Lean field_simp discharges it; no external witness needed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "768ff3c9a17f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sound definition with a verified normalisation identity. Strongest objection: it is a definitional normalisation, so G_Planck=1 carries no predictive content on its own."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

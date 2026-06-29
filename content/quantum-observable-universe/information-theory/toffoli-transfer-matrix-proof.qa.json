@@ -762,7 +762,254 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Toffoli/q-AND amplitude proof fits the information-theory/q-computation chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "toffoli-transfer-matrix-proof.md:29: \"All three equal z.  (Algebraically: z·c + d = z holds for each (c,d)...)\"",
+        "notes": "False: the proof's own displayed V̂₁^{(mix)}=z-(q-q⁻¹)/2 and V̂₁^{(nn)}=z-(q-q⁻¹) differ from z whenever d≠0 (q=1.11: 0.395, 0.290 vs z=0.499). The 'type-blindness' Δ₁=0 lemma does not hold for mix/nn."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive (if flawed) computation, not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fitting to a target observable."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli-transfer-matrix-proof.md:35: \"Therefore Δ₁ = ... = z - z = 0 for every transition.\"",
+        "notes": "The universal-factorization conclusion P_flip=c₀₁·Φ leans on the false Δ₁=0 step; the factorization is asserted more strongly than the (broken) argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Coefficients (c,d) are fixed by crossing type; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli-transfer-matrix-proof.md:35: \"z - z = 0 for every transition\"",
+        "notes": "Non-sequitur: 'z·c+d=z holds for each (c,d)' contradicts the immediately-preceding displayed values for mix and nn where d≠0; the Δ₁=0 step does not follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proof block has no own Lean sibling; the parent proposition's Lean is reviewed under toffoli-transfer-matrix."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No external citation in the proof."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "toffoli-transfer-matrix-proof.md:31: \"the crossing coefficients satisfy c·z + d = z identically\"",
+        "notes": "The (c,d) convention shifts between the (1,d) table and a '(1,-(q-q⁻¹))' convention later in the proof; the inconsistent conventions feed the false fixed-point claim."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "P_{7,7} golden-ratio zero at q=1/φ² verified (q+√q-1=0); Φ classical-limit (q-1) factor correct."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Antisymmetry/classical-limit behaviour is physically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness invoked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3e17231874cb",
+          "ts": "18a5ad91a005"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "notes": "The key 'single-crossing type-blindness' lemma is internally contradictory: it displays V̂₁^{(mix/nn)}=z-d then claims all equal z. The Δ₁=0 step and hence the universal factorization rest on this false identity. Strongest objection: proof self-contradicts at line 29-35."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:26.095Z"
 }

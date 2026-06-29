@@ -1048,7 +1048,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "q-game-of-life.md:79: \"The classical dissipation of Conway's GoL is replaced by q-energy conservation\"",
+        "notes": "Heavy physical/interpretive prose embedded in the proposition statement; reads more like a construction-with-commentary than a bare claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q-GoL substrate automaton belongs to information theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean sibling is over R_q=ℤ[q,q⁻¹] (Laurent), generic ring; no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "qGameOfLife_stable proved via toLaurent injectivity, purely algebraic."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-game-of-life.lean:53: \"def qGameOfLife {L : Type*} (T : L → L) : L → L := T\"",
+        "notes": "Lean proves only reversible-if-involutive, unitary-if-bijective, and amplitude≠0 — a small scaffold; the proposition's substantive content (universality, bandwidth budget, energy conservation) is documented, not formalised. The .lean disposition note is honest about this."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No weakening-by-axiom: the prior masking axiom was removed and stability is the honest amplitude≠0 statement (per disposition note)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Not a structure-field projection; theorems derive from explicit hT hypotheses."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conclusions are Involutive/Bijective/≠0, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Hypotheses (involutive/bijective gate) are satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "q-game-of-life.lean:60: \"Function.Involutive (qGameOfLife T) := hT\"",
+        "notes": "Since qGameOfLife T := T definitionally, qGameOfLife_reversible/unitary are identity wrappers returning hT unchanged — the hypotheses are 'used' only trivially because the function is the gate itself."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial masking; stability uses a real injectivity argument."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Toffoli involutive ⇒ unitary CA, {Toffoli,Hadamard} universal are correct standard results; stability regime q>1 with operator zeros in (0,1] is consistent (Φ root≈0.466, P_{7,7} zero at 1/φ²≈0.382 verified)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "q-game-of-life.lean:53: \"def qGameOfLife (T : L → L) : L → L := T\"",
+        "notes": "The reversibility/unitarity theorems are content-light: qGameOfLife is definitionally the gate T, so they restate the gate's own properties; honest but near-trivial."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "q-game-of-life.md:48: \"{Toff_q, H} is universal for quantum computation\"",
+        "notes": "Universality is invoked as a proposition sub-claim but is a deep external result with no Lean model (acknowledged in the .lean disposition note); the .md states it as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "All quantities q-derived."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sub-claims (reversibility from involutivity, bandwidth bound) follow from their cited inputs."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-game-of-life.lean:7: \"This version models the tick honestly — qGameOfLife T is one application of the q-Toffoli gate T\"",
+        "notes": "Lean covers a small honest scaffold; the proposition's main content (5 sub-claims) is largely unformalised. Divergence is disclosed, not hidden."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "bennett1973/fredkin1982/toffoli1980/pena2022 correctly cited for reversible computation and q-GoL."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Toff_q, Φ(q), B(q), stability regime all cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Operator zeros (1/φ²≈0.382, ≈0.466, 1) verified; q0≈1.110 safely in stable regime."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Reversible unitary CA with conserved q-energy is physically coherent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness JSON invoked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "578529de2a72",
+          "ts": "ff64be64383e",
+          "lean": "5dc64fc97f4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "notes": "Construction is sound and the Lean is honest, but the proposition asserts substantive results (universality, energy conservation, bandwidth) the Lean only scaffolds; qGameOfLife T:=T makes the reversibility/unitarity theorems near-trivial. Strongest objection: the proposition's headline content is documented rather than proved."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:26.095Z"
 }

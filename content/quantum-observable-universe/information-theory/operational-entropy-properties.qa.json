@@ -26,6 +26,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind 'remark' match validated structurally for 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Operational entropy / Hausdorff reading in sec:golden-julia-dynamics."
       }
     ],
     "da-false-claim": [
@@ -44,6 +59,21 @@
         "notes": "No false claims identified in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "eta_q=(2q-1)/q^3=0.892, d_{H,q}=eta_q(2q-1)=(2q-1)^2/q^3=1.088 verified; golden-crossover roots q=1, phi^2 correct."
       }
     ],
     "da-vacuous": [
@@ -61,6 +91,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' presents substantial mathematical content: The operational entropy $\\eta_q = (2q-1)/q^3$ ([operational entropy](#def:operat...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive: Manning-McCluskey derivation, regime table."
       }
     ],
     "da-circular": [
@@ -79,6 +124,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Forced-not-fitted claim deferred to a separate self-consistency block; no circularity here."
       }
     ],
     "da-overclaim": [
@@ -96,6 +156,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Explicitly distinguishes d_{H,q} (exact in framework) from classical d_H; honest."
       }
     ],
     "da-hidden-dof": [
@@ -114,6 +189,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "chi_q=1/(2q-1) is derived, not a free fit."
       }
     ],
     "da-non-sequitur": [
@@ -132,6 +222,21 @@
         "notes": "The argument flow in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "d_{H,q}=eta_q/chi_q follows from the stated substitution."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -149,6 +254,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Remark."
       }
     ],
     "da-citation-misuse": [
@@ -167,6 +287,21 @@
         "notes": "No citations are present in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Manning-McCluskey invoked by name (standard); no cites[] to misuse."
       }
     ],
     "da-definitional-ambiguity": [
@@ -185,6 +320,21 @@
         "notes": "Key terms and symbols in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "eta_q, chi_q, d_{H,q} clearly defined."
       }
     ],
     "da-empirical-fragility": [
@@ -203,6 +353,21 @@
         "notes": "The algebraic and logical relations in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "3.9% gap vs classical is acknowledged as a real difference, not a fragile match."
       }
     ],
     "da-physical-implausibility": [
@@ -221,6 +386,21 @@
         "notes": "The physical concepts described in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Information-per-step interpretation consistent."
       }
     ],
     "da-reproducibility": [
@@ -239,6 +419,21 @@
         "notes": "The derivation steps and formal definitions in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -258,6 +453,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "1346ad8b2dab",
+          "ts": "f30f316a900e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Self-consistent set of q-deformed dimension formulas; honest about the classical gap."
       }
     ],
     "voice-status-leak": [
@@ -1067,5 +1277,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

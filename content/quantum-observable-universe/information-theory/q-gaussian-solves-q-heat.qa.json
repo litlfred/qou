@@ -1046,7 +1046,457 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is G_q is a fundamental solution with delta_0 initial data; no embedded interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q-Gaussian heat-kernel solution; thermodynamics/heat-flow scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is explicitly archimedean (R^n, Gaussian, delta_0); .ts title and Lean header both label char-0/R — declared archimedean regime, consistent."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No narrative **Proof.** body; the main Lean theorem concludes True (see proof-no-trivial-true), so there is no archimedean-vs-algebraic mis-placement to assess."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-gaussian-solves-q-heat.lean:37: \"theorem qGaussianSolvesQHeat (q : ℝ) (hq : 0 < q) (n : ℕ) : ∀ (t) (x), 0 < t → True := by ... trivial\"",
+        "notes": "The named proposition decl qGaussianSolvesQHeat concludes `True`, while the .md asserts dt G_q = -Delta_q G_q with delta_0 initial data. The PDE claim is entirely unproved; the Lean proves nothing about G_q solving the q-heat equation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "q-gaussian-solves-q-heat.lean:39: \"0 < t → True := by intros _ _ _; trivial\"",
+        "notes": "The decl carrying the proposition's name has its conclusion weakened to `True`; the actual fundamental-solution statement is replaced by a tautology (the comment admits 'Detailed proof relies on Mathlib's Gaussian heat-kernel lemma, which is WIP'). This is a statement-weakening to pass, with no honest sorry."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Not a projection pattern; the defect is a True-conclusion (covered by proof-no-trivial-true)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "q-gaussian-solves-q-heat.lean:39: \"... → True := by intros _ _ _; trivial\"",
+        "notes": "The named proposition theorem concludes the tautology `True`; a substantive PDE goal is expected. Hypotheses (0<q, 0<t) are all ignored. Classic trivial-true vacuity in the headline decl."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "0<q, 0<t satisfiable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-gaussian-solves-q-heat.lean:43: \"intros _ _ _; trivial\"",
+        "notes": "All hypotheses (q, hq:0<q, t, x, 0<t) are discarded — the proof closes `True` ignoring every input, the symptom of a vacuous statement weaker than intended."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "q-gaussian-solves-q-heat.lean:44: \"trivial\"",
+        "notes": "`trivial` masks the vacuous `True` goal where the substantive heat-equation proof is expected; decide/trivial-masking failure mode."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "G_q is genuinely the q^-2-rescaled classical Gaussian and does solve dt = -q^-2 Delta with delta_0 data; the .md claim is mathematically correct (just unproved in Lean). qGaussian_classical_limit and qGaussian_variance are correctly proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-gaussian-solves-q-heat.lean:39: \"0 < t → True\"",
+        "notes": "The named proposition theorem is content-free (`True`); the real PDE claim is not established. (Auxiliary qGaussian_variance is substantive, but the headline decl the .ts ref points to is vacuous.)"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No circularity in the narrative; G_q is constructed, not back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-gaussian-solves-q-heat.md:9: \"is a fundamental solution of the $q$-heat equation\"",
+        "notes": "Presented as a proved Proposition with a fundamental-solution claim, but the Lean decl proves only `True`; the proved status is overstated. (The math is true, but the formalisation does not back it.)"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No free parameter; q^-2 rescaling is canonical."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The narrative reduction to the rescaled classical heat equation is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-gaussian-solves-q-heat.lean:39: \"... → True\"",
+        "notes": "Lean qGaussianSolvesQHeat proves `True`, vacuously implied and strictly weaker than the .md fundamental-solution claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Only manuscript refs; no bibliographic misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "G_q, Delta_q (three-term expansion), delta_0 all defined/cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Gaussian heat kernel; physically standard."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "qGaussian_variance and classical-limit lemmas are proved; the PDE claim is mathematically reproducible by hand though not Lean-proved."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2ef5ebcdbabe",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "q-gaussian-solves-q-heat.lean:37: \"theorem qGaussianSolvesQHeat ... : ... → True := by ... trivial\"",
+        "notes": "The mathematics is correct, but the named proposition's Lean proof concludes `True` (WIP placeholder), so the formal backing is vacuous. Strongest objection: replace the True-conclusion with the real PDE statement and either prove it or state it as an honest sorry-bearing/conjecture decl per AGENTS.md 1a."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

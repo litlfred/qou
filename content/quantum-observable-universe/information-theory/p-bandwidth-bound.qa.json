@@ -1009,7 +1009,427 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Bare iff statement with the bandwidth formula; no interpretive prose embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "P-time-iff-bandwidth proposition; Time-and-Computation section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p_bandwidth_bound.lean:32: \"noncomputable def informationBandwidth (q : ℝ) (η_q : ℝ)\"",
+        "notes": "B(q)=q*eta_q/(q-1)^2 is a rational q-expression that would live over a generic field, but the Lean specialises to ℝ with a q>1 ordering hypothesis. The bandwidth-positivity is genuinely archimedean (needs q>1), so ℝ is defensible; flagged minor because the core formula is algebraic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No narrative **Proof.** body; the two directions are carried as class hypotheses, no archimedean proof of an algebraic statement to mis-place."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p_bandwidth_bound.lean:95: \"theorem p_bandwidth_bound [ctx : PBandwidthContext] : ctx.inP ↔ ctx.bandwidthBounded := ⟨ctx.p_to_bandwidth, ctx.bandwidth_to_p⟩\"",
+        "notes": "Narrative states the P-iff-bandwidth proposition unconditionally; Lean derives the iff only by Iff.intro of two PBandwidthContext hypothesis fields (both directions axiomatised). It is the blessed 3b-cond non-degenerate iff pattern, but the .md carries no 'conditional on ...' banner, so the narrative reads stronger than the Lean establishes."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Signature is the P-iff-bandwidth claim over an explicit context; unchanged shape, no weakening trick beyond the disclosed class hypotheses."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Neither class field IS the iff; p_bandwidth_bound derives it via Iff.intro of the two direction fields — the verified-exemplar 3b-cond pattern, not a self-assuming projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conclusion is inP <-> bandwidthBounded, not True; informationBandwidth_pos proves a real positivity goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q>1, eta_q>0 hypotheses satisfiable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Both direction fields used in Iff.intro; q_gt_one/eta_q_pos used in informationBandwidth_pos."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial masking; linarith/div_pos on real goals."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is a definitional characterisation; no false math claim (B(q)>0 for q>1 verified)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "p_bandwidth_bound.lean:70: \"p_to_bandwidth : inP → bandwidthBounded\"",
+        "notes": "The substantive content (both directions of P-iff-bandwidth) is entirely axiomatised as class fields; p_bandwidth_bound itself adds only Iff.intro. Not vacuous (informationBandwidth_pos is real), but the headline iff is established only modulo the two assumed implications."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Not circular — the two directions are explicit named hypotheses, not the conclusion smuggled in."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p-bandwidth-bound.md:1: \"**Proposition.** *A decision problem ... is in $\\mathrm{P}$ if and only if ...*\"",
+        "notes": "The .md presents a flat 'Proposition' iff with no conditional banner, while the Lean only composes two assumed implications. Per AGENTS.md 3b-cond item 3 a conditional-class theorem's narrative should open 'Proposition (conditional on ...)'; absence makes it read as a proved characterisation it is not."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "B(q) is a fixed function; no tuned constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Iff follows from the two assumed directions by Iff.intro."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p_bandwidth_bound.lean:53: \"class PBandwidthContext where ... p_to_bandwidth ... bandwidth_to_p\"",
+        "notes": "Lean conditionalises (both directions as instance hypotheses) what the narrative states unconditionally; the Lean is weaker (conditional-on-class) than the flat .md proposition. Same root as proof-narrative-lean-equiv / da-overclaim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No bibliographic cites in the .md."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "B(q), poly(c), c=3N, 'in P' all defined/cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Bandwidth-per-Planck-time framing; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "B(q) recomputable; no witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "p_bandwidth_bound.lean:95: \"⟨ctx.p_to_bandwidth, ctx.bandwidth_to_p⟩\"",
+        "notes": "B(q)>0 is genuinely proved, but the headline P-iff-bandwidth proposition is established only modulo two assumed implications, with no conditional banner in the .md — the strongest objection is the unflagged conditional status."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

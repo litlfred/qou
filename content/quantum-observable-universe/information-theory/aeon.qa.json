@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:26.976Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Aeon definition supports the CCC material of this chapter."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:27.369Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Connected-component definition; Lean structure uses List/Prop, no archimedean leak."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "The claim in 'Aeon' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Connected-component = maximal connected full subcategory; standard and correct."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Aeon' presents substantial mathematical content: Let $\\mathrm{Bun}(\\mathbb{P}(V))$ be the category of finite bundles over the pro...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean Aeon structure carries real fields (flow_step, connected via path); non-vacuous."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Aeon'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Aeon' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Maximality is a property of connected components, correctly noted."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Aeon'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No parameter."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/aeon.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Maximality-from-connectedness is sound."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/aeon.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean Aeon (connected component with flow_symm + connected) matches the narrative; adjacency defined consistently."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +344,22 @@
         "notes": "No citations are present in 'Aeon', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "penrose2010 cited for the aeon framing."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +379,22 @@
         "notes": "Key terms and symbols in 'Aeon' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Observable subcategory and jet horizon cross-referenced; 'connected component' is unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +414,22 @@
         "notes": "The algebraic and logical relations in 'Aeon' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +449,22 @@
         "notes": "The physical concepts described in 'Aeon' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Structural definition."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +484,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/aeon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/aeon.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `α`"
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No compute."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +520,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/aeon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `α`, invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "b9ab6a2fd61c",
+          "ts": "e6a3b1235ad9",
+          "lean": "b2fa9e4221ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Clean definition with substantive Lean structure; no objection."
       }
     ],
     "voice-status-leak": [
@@ -1162,5 +1402,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:26.095Z"
 }

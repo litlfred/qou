@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:27.883Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Kummer filtration / perpetual obstruction in sec:yekutieli-lifting-kummer-motivic; interprets def:quantum-characteristic-classes; on-topic."
       }
     ],
     "da-false-claim": [
@@ -46,6 +61,21 @@
         "notes": "No false claims identified in 'Stacking the Kummer sequences for all n gives the': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "κ_0 mod n = 0 ⟺ n | χ(A) and the divisor/cofinite split are arithmetically correct given κ_0=e(ξ), tr(κ_0)=χ(A) from thm:qu-to-qou."
       }
     ],
     "da-vacuous": [
@@ -63,6 +93,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'Stacking the Kummer sequences for all n gives the' are non-vacuous as they present substantial mathematical content.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive structural claims (perpetual obstruction, complementary subgroups); not content-free."
       }
     ],
     "da-circular": [
@@ -81,6 +126,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Stacking the Kummer sequences for all n gives the'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Builds on thm:qu-to-qou for κ_0=e(ξ); does not assume the perpetual-obstruction conclusion."
       }
     ],
     "da-overclaim": [
@@ -98,6 +158,23 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Stacking the Kummer sequences for all n gives the' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "kummer-tower.md:62-64: \"They cannot cancel: their sum κ_n is nonzero whenever κ_0 is non-torsion.\"",
+        "notes": "The non-cancellation relies on κ_0 and δ_n lying in 'complementary subgroups' (asserted via qu-to-qou item 3 / qu-to-qou-proof item 3); the complementarity of the two H^2 image subgroups is stated but its proof is the sibling, not shown here. Minor — properly cross-referenced."
       }
     ],
     "da-hidden-dof": [
@@ -116,6 +193,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Stacking the Kummer sequences for all n gives the'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No free numerical parameter."
       }
     ],
     "da-non-sequitur": [
@@ -134,6 +226,21 @@
         "notes": "The argument flow in 'Stacking the Kummer sequences for all n gives the' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Divisibility → finite vanishing set → density-1 persistence is sound; complementary-subgroup → non-cancellation is valid given the premise."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -151,6 +258,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Remark, no .lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -169,6 +291,21 @@
         "notes": "No citations are present in 'Stacking the Kummer sequences for all n gives the', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No external citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -187,6 +324,21 @@
         "notes": "Key terms and symbols in 'Stacking the Kummer sequences for all n gives the' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "μ_n, μ_∞, F^n H^2 = nH^2, n-divisibility all standard and defined inline."
       }
     ],
     "da-empirical-fragility": [
@@ -205,6 +357,21 @@
         "notes": "The algebraic and logical relations in 'Stacking the Kummer sequences for all n gives the' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerical fit."
       }
     ],
     "da-physical-implausibility": [
@@ -223,6 +390,21 @@
         "notes": "The physical concepts described in 'Stacking the Kummer sequences for all n gives the' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Arithmetic-topological claim; no physics units/conservation at stake."
       }
     ],
     "da-reproducibility": [
@@ -241,6 +423,21 @@
         "notes": "The derivation steps and formal definitions in 'Stacking the Kummer sequences for all n gives the' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/kummer-tower.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -260,6 +457,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Stacking the Kummer sequences for all n gives the' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "2bb8bea1d846",
+          "ts": "5221f85ac1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:27.784Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sound arithmetic remark on the Kummer filtration. Strongest objection: the complementary-subgroup non-cancellation is invoked from qu-to-qou rather than proved here, but is correctly cross-referenced."
       }
     ],
     "voice-status-leak": [
@@ -1069,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:27.784Z"
 }

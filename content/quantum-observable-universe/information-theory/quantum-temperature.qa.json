@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:26.675Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Quantum temperature in sec:stat-mech."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:27.053Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "T_q := hbar_q = (q-1)/q is algebraic; Lean over R_q (Laurent ring) generic; archimedean lemmas are sequestered/commented per §7c."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "The claim in 'Quantum temperature' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "T_q=hbar_q=(q-1)/q, beta_q=t_P, T_q=rho_q^{-1/2} all consistent (rho_q=1/hbar_q^2)."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Quantum temperature' presents substantial mathematical content: > **SUPERSEDED-$\\rho_q$ note .** Any use of the > scalar substrate density $\\rho...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive thermodynamic definition."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum temperature'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Quantum temperature' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The rho_q=1/hbar_q^2 reading is explicitly flagged SUPERSEDED (leading-order ansatz) via a top banner; honest."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum temperature'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/quantum-temperature.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conjugate-square-root identities follow algebraically."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-temperature.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean quantumTemperature := quantumPlanckConstant, with quantumTemperature_eq=(q-1)/q matching the .md."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +344,22 @@
         "notes": "No citations are present in 'Quantum temperature', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No cites[] (Kashaev ref is an internal block link)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +379,22 @@
         "notes": "Key terms and symbols in 'Quantum temperature' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "T_q, beta_q, rho_q defined; the rho_q usage is banner-flagged as superseded, removing ambiguity."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +414,22 @@
         "notes": "The algebraic and logical relations in 'Quantum temperature' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No fit."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +449,22 @@
         "notes": "The physical concepts described in 'Quantum temperature' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Temperature-as-tick-rate with classical-limit T->0 is coherent."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +484,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-temperature.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-temperature.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/quantum-temperature.lean:25:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +520,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-temperature.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/quantum-temperature.lean:25:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "8624333993d7",
+          "ts": "1fb87e20973e",
+          "lean": "fdf7c8bda7be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sound definition; the superseded rho_q reading is explicitly banner-flagged."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1400,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

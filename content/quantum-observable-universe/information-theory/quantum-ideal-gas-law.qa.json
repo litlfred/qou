@@ -1046,7 +1046,453 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is the equation of state PV = NT_q(1+correction); no embedded interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Quantum ideal gas law; thermodynamics scope of the chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean ground ring is R_q = LaurentPolynomial Z (generic); statement is algebraic with [2]_q=q+q^-1; archimedean positivity hypotheses commented out — generic side respected."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean proofs use ring/linarith/nlinarith over R_q for the algebraic decomposition; no archimedean machinery on a generic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "quantum-ideal-gas-law.lean:100: \"P_q * V_q ≥ N * quantumTemperature sp p\"",
+        "notes": "The .md states the equation of state as an EQUALITY PV = NT_q(1+hbar^2<S>/[2]_q); the Lean theorem ideal_gas_full proves only the INEQUALITY PV >= N*T_q (the correction is non-negative). The exact equation-of-state equality the narrative asserts is not formalised — Lean proves a strictly weaker bound."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "quantum-ideal-gas-law.lean:92: \"theorem ideal_gas_full ... : P_q * V_q ≥ N * quantumTemperature sp p\"",
+        "notes": "The headline result is weakened from the .md equality to a >= bound, and the leading-order theorem ideal_gas_leading_order takes the equation of state itself as hypothesis h_eos. The genuine equation-of-state derivation is assumed, not proved; the proved content is the additive decomposition (ideal_gas_decomposition by ring) plus a sign bound."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Not a structure-field projection; theorems derive via ring/linarith from an h_eos hypothesis."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conclusions are real (in)equalities, not True; though ideal_gas_full assumes h_eos, the goal is not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q>1 hypothesis satisfiable; h_eos is a substantive (not contradictory) premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "quantum-ideal-gas-law.lean:79: \"(hq : sp.field p > 1)\"",
+        "notes": "ideal_gas_leading_order takes hq : q>1 but the proof (rw [h_eos]; unfold; ring) does not use it; similarly the q>1 hypothesis appears unused in the leading-order rewrite. Suggests the bound is independent of the substrate regime. Minor."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Uses ring/linarith/nlinarith, not decide/trivial."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The equation of state with q-anomaly correction is a stated framework relation; the additive decomposition is ring-verified; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "ideal_gas_decomposition (PV = NT + N T*correction) is a genuine ring identity; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "quantum-ideal-gas-law.lean:82: \"(h_eos : P_q * V_q = N * quantumPlanckConstant sp p)\"",
+        "notes": "The leading-order law takes the equation of state as a hypothesis and concludes the same product equals N*T_q only via T_q := hbar (quantumTemperature unfolds to the Planck constant); the derivation assumes its input. Not a target-fit numerically, so minor."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "quantum-ideal-gas-law.md:13: \"$P_q \\, V_q \\;=\\; N \\, T_q (1 + ...)$\"",
+        "notes": "Narrative asserts the equality equation of state as a Proposition; Lean proves only PV >= N T_q plus an additive decomposition assuming h_eos. The exact EOS is overstated relative to what is formalised."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "<S_q>, [2]_q, hbar_q all canonical; no tuned constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "The additive decomposition and the sign bound follow correctly from the hypotheses."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "quantum-ideal-gas-law.lean:100: \"P_q * V_q ≥ N * quantumTemperature sp p\"",
+        "notes": "Lean ideal_gas_full proves the inequality PV >= N T_q, weaker than the .md equality EOS; the exact correction-factor equation is not established in Lean. (Also: correctionFactor_nonneg/ideal_gas_full reference gas.hS / hS which are commented out of the structure/signature — a likely build issue compounding the divergence.)"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "uses[] cites quantum pressure/volume + Noether callout; appropriate, no bibliographic misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "P_q, V_q, T_q, <S_q>, [2]_q all defined/cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No numerics (hydrogen tag but no fitted value in the statement)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Ideal-gas law with a second-order q-anomaly correction; dimensionally and physically sensible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Decomposition ring-verified; no external witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "24208de8b006",
+          "ts": "a33c5ef82ece",
+          "lean": "459da908f3a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "quantum-ideal-gas-law.lean:100: \"P_q * V_q ≥ N * quantumTemperature sp p\"",
+        "notes": "The additive decomposition is sound, but the headline equation-of-state EQUALITY is not formalised (Lean proves only PV>=NT_q with the EOS itself assumed as h_eos), and commented-out hS references suggest a build issue. Strengthen the Lean to derive the equality, or hedge the .md to a bound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

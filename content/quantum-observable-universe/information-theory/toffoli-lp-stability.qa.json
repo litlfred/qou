@@ -1048,7 +1048,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is the four-part LP-stability claim; interpretive content is confined to the universal-computation corollary which references prop:q-game-of-life."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Toffoli LP-stability in sec:planck-scale-computation."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Golden-ratio threshold genuinely needs q^{1/2}/ordering (archimedean); legitimately specialized, this is an applications chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean proof uses Real.sqrt/monotonicity for a genuinely archimedean threshold claim; appropriate."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Headline (LP-stable on q>1, threshold q*=1/phi^2) matches Lean toffoli_lp_stable: q* < q <-> 0 < q+sqrt(q)-1; parts 2/4 (other thresholds, substrate values) are witness-backed, not claimed as the Lean theorem."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "toffoli_lp_stable signature matches the threshold claim; the diag-numerator stub is documented as a stub, not used to weaken the main theorem."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Main iff proved via f_at_q_star + f_strict_mono, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "toffoli_lp_stable is substantive; the weaker toffoli_shadow_bounded (exists k<10) is auxiliary, not the ref'd headline."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No false premise; the q<0 branch is handled via Real.sqrt convention."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "toffoli_lp_stable takes only q; all sub-lemma hypotheses are used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proof uses nlinarith/linarith/Real.sqrt lemmas; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q*=(3-sqrt5)/2=0.382, q*+sqrt(q*)-1=0 (Lean f_at_q_star), and the threshold dichotomy are correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Substantive stability proposition with proved Lean core."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fitting; q*=1/phi^2 is derived from the numerator zero."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Stability claimed on q>1 with the threshold structure shown; universal-computation is a forward reference to q-GoL, not asserted here."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Thresholds q*, q_Phi, q=1 are zeros of named amplitudes, not free fits."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Shadow-price bound |y*| <= kappa(G)||t|| is standard LP sensitivity."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean toffoli_lp_stable matches the .md threshold claim; the diag-numerator is honestly flagged as a stub in the Lean docstring."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Internal refs (prop:toffoli-transfer-matrix, prop:lp-dual-stability) appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Gram condition number, NF coordinates well-defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "kappa(G(q0))~3.03, P_{7,7}=0.5514, Phi=0.0495 are witness-backed (computation status: verified); no cross-anchor swing claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Reversible-gate stability at substrate q is physically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": ".ts cites computations/toffoli-lp-stability.witness.json with status verified; no staleness signal observed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "effc22012174",
+          "ts": "b8e3b5f7be80",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:24.397Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Sorry-free Lean core for the golden-ratio threshold; witness-backed substrate values. Minor: the diag-numerator Lean stub does not equal the true q+sqrt(q)-1, but this is documented, not load-bearing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:24.397Z"
 }

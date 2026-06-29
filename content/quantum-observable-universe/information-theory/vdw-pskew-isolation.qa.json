@@ -1048,7 +1048,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Statement is the bar-even/bar-odd algebraic split; 'van der Waals' tag is in the title, body is the identity."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "vdw-pskew-isolation.md:3: \"**Proposition (van der Waals $=$ the bar-odd $P_{\\mathrm{skew}}$ channel).**\"",
+        "notes": "A bar-involution Hopf-link decomposition isolating the van der Waals / Coulomb-EM channel reads as mass-theory/EM-coupling content rather than information theory; primary subject (P_skew EM channel) sits closer to the EM/coupling chapters. Minor: the chapter does host thermodynamic/statistical content and the block is cross-linked there."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Stated with q, qi formal over any commutative ring (Lean variable {R}[CommRing R]); cosh/sinh are narrative gloss, the formal claim is pure-ring — generic side respected."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean proof is `ring` over generic CommRing; no archimedean machinery on an algebraic statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean hopf_bar_even_odd_decomposition: 2(q^2 a + qi^2 b) = (q^2+qi^2)(a+b)+(q^2-qi^2)(a-b) matches the .md 2 sigma_1^2 = 2cosh.1 + 2sinh(e+-e-) under q^2+-qi^2 = 2cosh/2sinh and e++e-=1."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Signature is the genuine algebraic identity; vdw_is_bar_odd_residual uses the a+b=1 hypothesis non-trivially."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proof is `ring`, not a projection of a field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conclusion is a non-trivial ring identity, not True/x=x by inspection."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No false premise; a+b=1 hypothesis is satisfiable (idempotent decomposition)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "vdw_is_bar_odd_residual genuinely uses hpart : a+b=1 (rw [hpart, mul_one])."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Uses `ring`, not decide/trivial."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "q^2-qi^2 = 2 sinh(2 lambda) with lambda=ln q (qi=q^-1) checks; bar-even/bar-odd split correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Non-trivial channel-isolation identity with a verified witness (computation status 'verified')."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Algebraic decomposition; no back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "vdw-pskew-isolation.lean:26: \"That bar-odd residual is **van der Waals**\"",
+        "notes": "Identifying the discarded bar-odd P_skew residual with the van der Waals force is a physical identification beyond the proved algebraic split (which only shows the bar-even/bar-odd decomposition). The Lean proves the identity, not the vdW interpretation; minor since the interpretive claim is in docstring/title, not the formal statement."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No free parameter; pure q-decomposition."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Split into a+b and a-b parts is algebraically exact."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Lean identity matches the narrative decomposition exactly."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "uses[] cross-refs (hopf-link decomposition, bar-involution, etc.) are appropriate; no bibliographic misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "rapidity lambda=ln q, e+/e- idempotents, bar involution all defined; q,qi formal (fibre-level, no reality)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Symbolic identity; witness vdw-pskew-sinh-probe verifies the algebra, not a fragile numeric fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "vdW as a small sinh-suppressed residual; the per rem-im-q-vs-p-skew note keeps it real at real q. No units violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "computation.witness vdw-pskew-sinh-probe.witness.json cited with status 'verified'; the algebra is also `ring`-checked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0cc61108b965",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:22.294Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Algebraic split is exact and Lean-proved; strongest objection is the interpretive vdW=P_skew identification, which is docstring-level, not part of the formal claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:22.294Z"
 }

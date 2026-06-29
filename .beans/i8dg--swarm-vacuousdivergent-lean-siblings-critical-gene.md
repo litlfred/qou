@@ -15,3 +15,9 @@ updated_at: 2026-06-29T20:07:58Z
 - q-energy.lean (exists+sorry, dangling body)
 - vertex-algebra-relations (descartes_genus trivial arith for ~26-relation prop)
 - quantum-peter-weyl.lean:46 (batch 16 — proves dim=n+1 only; peter_weyl_holds axiomatised)
+
+## More instances (batches 20-22)
+- qou-is-ccc.lean:35 (theorem : True := trivial — critical)
+- horizon-conformal-invariance.lean:29 (theorem : True)
+- mass-energy-equivalence.lean:47 (vacuous categoricalMass)
+- q-gaussian-solves-q-heat.lean, quantum-ideal-gas-law.lean (narrative-lean divergence)

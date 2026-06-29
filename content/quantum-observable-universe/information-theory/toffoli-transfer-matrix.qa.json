@@ -1009,7 +1009,440 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "toffoli-transfer-matrix.md:49: \"The Toffoli gate selects the target strand whose control-control pair has c = 1 ... this is the governor basis\"",
+        "notes": "Point 3 carries interpretive 'q-AND = governor choice' framing inside the proposition statement; would be cleaner as a linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Belongs to information-theory/q-computation."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "toffoli-transfer-matrix.lean:24: \"q_real : ℝ\" and \"Real.sqrt q_real\"",
+        "notes": "Statement uses q^{1/2} (Real.sqrt) — an archimedean construct on what is otherwise Hecke-algebraic data; acceptable as the fractional-power evaluation but the algebraic core could stay generic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Proof argument is algebraic (Hecke coefficients), not archimedean-only."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli_transfer_matrix.lean:84: \"noncomputable def toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] : (...) := ⟨ctx.claim_i..., ...⟩\"",
+        "notes": "Lean does not prove the proposition; it projects the conclusion out of class fields that are typed identically to the conclusion (placeholder canonical), so it asserts rather than derives the six sub-claims."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "toffoli_transfer_matrix.lean:23: \"class ToffoliTransferMatrixContext ... claim_ii_generator_crossing_traced : ∀ k, V_hat_1 k = z_real\"",
+        "notes": "Integrity broken two ways: (a) the conclusion is the conjunction of the context's own claim_* fields (self-assuming), and (b) claim_ii axiomatizes the false type-blindness identity as a hypothesis."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "toffoli_transfer_matrix.lean:91: \"⟨ctx.claim_i_target_flip_amplitude, ctx.claim_ii_generator_crossing_traced, ...⟩\"",
+        "notes": "Textbook self-assuming projection: each conjunct of the conclusion is returned verbatim from a class field whose type IS that conjunct."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Conclusion is a non-trivial conjunction of equalities, not True; the defect is self-assumption, not tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli_transfer_matrix.lean:44: \"claim_ii_generator_crossing_traced : ∀ k : ℕ × ℕ, V_hat_1 k = z_real\"",
+        "notes": "claim_ii encodes the false type-blindness identity (V̂₁=z for all types); any instance of the context would require an unsatisfiable field for generic q, making downstream uses vacuously safe but the hypothesis itself unrealizable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "All six claim fields are consumed in the conjunction."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No decide/trivial masking; the issue is field projection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "evidence": "toffoli-transfer-matrix.md:43: \"A single crossing carries no type information: Δ₁ = 0 for every transition.\"",
+        "notes": "Point 2 (single-crossing type-blindness) is false: V̂₁=z·c+d with d∈{0,-(q-q⁻¹)/2,-(q-q⁻¹)} gives V̂₁≠z for mix/nn, so Δ₁≠0 (verified numerically at q=1.11,1.5,2.0)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli_transfer_matrix.lean:84: \"def toffoli_transfer_matrix ... := ⟨ctx.claim_i..., ...⟩\"",
+        "notes": "The Lean 'proof' is content-free — a projection of the context's own claim fields (placeholder canonical)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No back-fit to a measured observable."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli-transfer-matrix.md:10: \"Every target-flip amplitude factors as P_flip = c · Φ\"",
+        "notes": "Universal factorization is asserted but rests on the false Δ₁=0 lemma; the claim is stronger than the (broken) argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Coefficients fixed by crossing type."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli-transfer-matrix.md:43: \"Δ₁ = 0 for every transition\"",
+        "notes": "Δ₁=0 does not follow from the stated V̂₁ values for mixed/nn control pairs; the inference is broken."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "major",
+        "evidence": "toffoli_transfer_matrix.lean:7: \"**Placeholder canonical** ... The full Lean statement and proof are pending\"",
+        "notes": "Lean is a placeholder context-projection; it does not derive the proposition, and it also encodes the false claim_ii — diverges from a genuine proof of the .md."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No misattributed citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "minor",
+        "evidence": "toffoli-transfer-matrix.md:36: \"| mixed | 1 | -(q - q^{-1})/2 |\"",
+        "notes": "Two (c,d) conventions coexist (table d-values vs the 'all c=1' convention in the proof), creating ambiguity about which feeds V̂₁."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "P_{7,7} golden zero and Φ cubic root ≈0.466 verified; values are exact algebraic, not fit-noise."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "Antisymmetry / classical limit are reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "notes": "No backing witness JSON cited."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "be05a6eee95d",
+          "ts": "428e39921d44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:12:26.095Z",
+        "reviewed_sha": "1849d45164de07a4fe3754c59989e4fff695611b",
+        "severity": "critical",
+        "notes": "Point 2 'single-crossing type-blindness' is mathematically false (V̂₁≠z for mixed/nn), undermining the universal-factorization claim, and the Lean is a self-assuming placeholder projection that also axiomatizes the false identity. Strongest objection: Δ₁=0 contradicts the proposition's own (c,d) table."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:12:26.095Z"
 }
