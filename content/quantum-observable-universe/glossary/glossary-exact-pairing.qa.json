@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "In glossary §'Duality and rigidity'; exact pairing is the foundational duality notion, correctly placed."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "ε:X⊗Y→1, η:1→Y⊗X with the two snake identities, and the right-dual-Y/left-dual-X assignment, are all textbook-correct and match Mathlib `ExactPairing`."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Precise content-bearing definition with the two triangle identities; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Definitional; no derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "States only the definition and the standard dual nomenclature; no overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No parameters; definitional."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Dual assignment follows directly from the pairing existence; no gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No sibling .lean; maps to Mathlib `ExactPairing`."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Mathlib reference `CategoryTheory.ExactPairing` and its fields (evaluation/coevaluation + the two primed identities) are accurate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Snake identities written explicitly; left/right dual convention stated; no ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Pure mathematics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a2152c080e8c",
+          "ts": "8d132bd3fafa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Textbook-correct exact-pairing glossary entry with accurate Mathlib mapping."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:13:00.973Z"
 }

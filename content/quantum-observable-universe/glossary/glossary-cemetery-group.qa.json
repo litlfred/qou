@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "In glossary §'Enrichment'; KLR-module localising subcategory is enrichment/observation-frame material, in scope as a glossary cross-reference."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Describes Z_n as the localising subcategory of graded projective KLR modules annihilated by τ; consistent with def:cemetery-group it cross-links; no false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Content-bearing pointer to def:cemetery-group + conj:cemetery-group-emergence with algorithmic interpretation; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Descriptive glossary entry deferring to a definition and conjecture; no self-referential derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Correctly routes the 'algorithmic pruning' role to a conjecture (conj:cemetery-group-emergence), not asserting it as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical parameter; categorical construction."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "'Buried word ⇒ image under observation vanishes ⇒ branch dropped' follows from being in ker τ; coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No sibling .lean; glossary remark deferring to def:cemetery-group."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "cites khovanovlauda2009 (the canonical KLR reference); correctly attributed for graded KLR modules. Reference exists in references.ts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Z_n ⊂ K_n and τ (graded Euler characteristic) are specified and cross-linked; the 'annihilated by τ' criterion is unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Algorithmic/categorical content; no direct physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a4ddf287f880",
+          "ts": "19f07421a7bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Sound glossary cross-reference; appropriately routes its main algorithmic claim to a conjecture."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:13:00.973Z"
 }

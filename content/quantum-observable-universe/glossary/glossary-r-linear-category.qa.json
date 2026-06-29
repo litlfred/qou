@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "In glossary §'Enrichment'; R-linear enrichment is the textbook enrichment notion, correctly placed."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Definition (hom-sets R-modules, composition R-bilinear; R=ℤ ⇒ preadditive) is textbook-correct and matches Mathlib `Linear R` refining `Preadditive`."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Genuine terminological mapping (paper term ↔ Mathlib `Linear R`); content-bearing glossary wrapper, the intended kind."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Pure definitional wrapper; no derivation, no assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Explicitly 'a light terminological wrapper... No semantic difference — only a naming convention'; appropriately modest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No parameters; definitional."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "The R=ℤ ⇒ preadditive remark is a correct standard fact; no logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No sibling .lean; glossary wrapper points to Mathlib `CategoryTheory.Linear R`, no local formal claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Mathlib references (`CategoryTheory.Linear`, import paths, CommSemiring R) are accurate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "R fixed as a commutative (semi)ring; the Linear vs Preadditive relationship is stated precisely."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Pure mathematics, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "21e8be02313d",
+          "ts": "0da54116cb6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Correct, modest Mathlib-wrapper glossary entry; nothing to object to."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:13:00.973Z"
 }

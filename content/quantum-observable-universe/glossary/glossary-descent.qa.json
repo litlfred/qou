@@ -855,7 +855,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "In glossary §'Geometry and transport'; descent (reverse brane-tower traversal via restriction) is a transport notion, correctly placed as a glossary cross-reference."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Descent as reverse tower traversal via r_n: A_n=J^1(A_{n-1})→A_{n-1}, terminating in finitely many steps bounded by Krulldim Z(End(A)) per thm:qu-to-qou(1); consistent with the cited theorem, no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Content-bearing pointer with the restriction morphism and termination bound; not vacuous. Lean file is a glossary structure wrapper."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Defers the finiteness claim to thm:qu-to-qou(1); does not assume its own conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "The finite-termination claim is attributed to thm:qu-to-qou(1), not asserted independently; appropriately sourced."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical parameter; the Krull-dimension bound is a structural invariant, not a free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Termination 'by thm:qu-to-qou(1)' is a cited consequence, not an unbacked 'therefore'; coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Lean file is a glossary `structure DescentData` (level:ℕ + Prop placeholder), not a theorem proving termination; nothing to diverge from."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Lean -- Ref: lurie2009 (Classification of TFTs) appropriately backs descent-data-in-a-fibered-category framing; reference exists in references.ts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Restriction morphism, jet embedding retraction, and the termination bound are each specified and cross-linked; unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical prediction."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Archimedean realisation 'restricts connection and bundle to base manifold M_{n-1}' is a coherent geometric statement; no physics violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2a8ab556b662",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Sound glossary entry; the one nontrivial claim (finite termination) is correctly sourced to thm:qu-to-qou(1)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:13:00.973Z"
 }

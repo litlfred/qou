@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "In glossary §'Duality and rigidity'; pivotal structure is a duality notion, correctly placed."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Definition (monoidal nat iso δ_X: X ≅ X^∨∨ making left/right traces coincide) is textbook-correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Content-bearing glossary wrapper with a precise definition; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Definitional; no derivation to be circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Says the involutive structure 'plays a role analogous to' a pivotal structure — appropriately hedged, not claimed identical."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No parameters; definitional."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "The 'left and right traces coincide' consequence of a pivotal structure is a correct standard fact."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No sibling .lean; points to Mathlib `PivotalCategory`."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Mathlib reference is honest, including the caveat that Mathlib pivotal-category coverage 'is still in development'."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Pivotal structure precisely specified (monoidal nat iso to double dual); base regime is categorical."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Pure mathematics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3ca2e3b2cfe1",
+          "ts": "fbfe556815b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Accurate pivotal-category glossary entry with honest Mathlib-coverage caveat."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:13:00.973Z"
 }

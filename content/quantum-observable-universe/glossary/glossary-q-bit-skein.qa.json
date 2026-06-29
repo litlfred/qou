@@ -816,7 +816,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Placed in glossary §'Groups and symmetry'; the q-bit/Skein identification is a terminological-unification remark, in scope for the glossary chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Skein form qL_+−q^{-1}L_−=(q−q^{-1})L_0 matches canonical skein-generation.md; T_{3,5}=(σ_1σ_2)^5 has 10 crossings; trefoil 3 + unknot 0 + 7 R2 = 10 is arithmetically consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Substantive interpretive content (q-bit accounting, transfer-matrix factorization, Q_cat ledger); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Identifies q-bit with crossing resolution and accounts Q-values via crossing-number difference; descriptive, not back-fitting a calibration target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "severity": "minor",
+        "evidence": "glossary-q-bit-skein.md:84: \"This is exact (not a heuristic): the crossing number is the q-bit content of the braid\"",
+        "notes": "The 'exact, not a heuristic' framing for Q_cat=(c_parent−c_daughter)·η_q is asserted in an interpretive glossary remark without a cited proof; the crossing-number-difference Q-value is at best a definitional convention, not a proved exactness. Minor overclaim in remark prose."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "η_q and n_R=q/(q-1) are canonical-chain quantities defined elsewhere; no off-menu free coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Each table row and the transfer-matrix factorization argument follow from the one-crossing=one-q-bit identification; Markov-property factorization is correctly invoked."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No sibling .lean file; remark block with no formal Lean claim to diverge from."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Cross-links to prop:skein-generation, def:categorical-transfer-matrix, rem:glossary-q-bit are all on-point; no external cites to misattribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "q-bit (=η_q), q, channels, and crossing counts are each defined or cross-linked; the binary-channel reading is unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Counts (10, 3, 0, 7) are integer crossing-number facts, not q_0-pin-dependent numerical fits; no cross-anchor swing risk."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "The information-theoretic q-bit framing is internally consistent; no units/conservation violation (the Skein convex combination conserves the ledger by construction)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No backing witness JSON; crossing-count claims are topological facts, not compute outputs."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8c57baf1e169",
+          "ts": "986b2a1aefe7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "severity": "minor",
+        "evidence": "glossary-q-bit-skein.md:84: \"This is exact (not a heuristic)\"",
+        "notes": "Sound unifying remark; the only blemish is repeated 'exact, not a heuristic' assertions (lines 41-46, 85-88) for identifications that are conventions rather than proved theorems."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:13:00.973Z"
 }

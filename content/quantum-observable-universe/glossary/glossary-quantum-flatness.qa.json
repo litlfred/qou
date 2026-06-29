@@ -855,7 +855,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Placed in glossary §'Geometry and transport'; quantum flatness is a transport/connection notion, correctly scoped to the glossary chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Derivation F_∇=B from instanton self-duality (★_q F=F ⇒ F=F^+) plus simplicity (B=F^+) is internally consistent standard self-dual-curvature reasoning; no false step."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Remark carries genuine content (the three-step derivation of F_∇=B); not a tautology. Lean file is a glossary structure wrapper, not a vacuous theorem."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "F_∇=B is derived from independent instanton+simplicity inputs, not assumed; no back-fitting or smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Explicitly states 'not an independent axiom' and shows the derivation; scope claims match the cited instanton/simplicity premises."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No free numerical parameter or off-menu coefficient; purely categorical/geometric content with no calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Three-step chain (self-dual ⇒ simplicity restricts B ⇒ F_∇=B) follows; tikzcd diagram matches the prose steps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Lean file is a glossary `structure QuantumFlatness` (Prop-typed placeholder fields), not a theorem proving the .md derivation; nothing for divergence to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Lean -- Ref: baez1995 (Knots and quantum gravity, 2-groups) appropriately backs the INN(G_q) 2-group framing; reference exists in references.ts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Terms (G_q, ∇, INN, B, F_∇) are cross-linked to their defining blocks; base regime is categorical, consistent throughout."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No numerical prediction or q_0-dependent value; purely structural glossary entry."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Self-dual-instanton/2-group transport framing is standard gauge-theory analogy; no broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "No backing compute/witness; structural glossary remark with no numerical value to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e176f4251f18",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:13:00.973Z",
+        "reviewed_sha": "1f7d56857028c218ab8a11102de157d294071f4d",
+        "notes": "Sound glossary derivation. Strongest objection: the simplicity-constraint step (B restricted to Λ^+ ⇒ B=F^+) is asserted, not proved, but acceptable for a glossary remark that defers to def:categorical-instanton."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:13:00.973Z"
 }
