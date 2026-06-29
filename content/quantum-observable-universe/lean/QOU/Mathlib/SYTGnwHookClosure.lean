@@ -1,4 +1,4 @@
-import QOU.Mathlib.SYTBetaLagrange
+import QOU.Mathlib.SYTHookGNWWiring
 
 /-!
 # QOU.Mathlib.SYTGnwHookClosure — closing `SYTHookGNW.gnwHookIdentity` (WIP scaffold)
@@ -31,13 +31,18 @@ The closure has three steps:
 3. **Assembly**: `∑_{corners} prodHooks-ratio = ∑_{corners} β-Lagrange-term = ∑_{Fin k} β-Lagrange-term
    = sz l` (steps 1 + 2 + `betaLagrange` + `sum_betaVec_sub`).
 
-Steps 2 and the algebraic core of step 1 are proved here, sorry-free.  Pure `ℚ` combinatorics; nothing
-archimedean; no fit.
+Proved here so far, sorry-free: step 2 (`betaLagrange_term_zero`), the algebraic core of step 1's
+Vandermonde side (`wall_split`), and — for a **middle corner** (`l[c] ≥ 2`, length preserved) — the
+structural `betaVec ∘ removeCorner` lemmas plus the **factorial side** of the per-corner ratio
+(`betaFactProd_ratio_middle`: `betaFactProd l = βc · betaFactProd(l∖c)`).  Remaining: the middle-corner
+`betaProdGap` ratio (the double-product reindexing onto `wall_split`), the **row-drop corner**, and the
+corner-sum assembly.  Pure `ℚ`/`ℕ` combinatorics; nothing archimedean; no fit.
 -/
 
 namespace QOU.Mathlib.SYTBetaLagrange
 
 open Finset
+open QOU.Mathlib.SYTEnum (removeCorner IsCorner)
 
 variable {k : ℕ}
 
@@ -88,5 +93,78 @@ theorem betaLagrange_term_zero (β : Fin k → ℚ) (i : Fin k)
     · rw [mem_erase]; exact ⟨hji, mem_univ j⟩
     · rw [h]; ring
   rw [hz]; simp
+
+/-! ## Middle-corner `betaVec ∘ removeCorner` structure + factorial side (step 1, middle case)
+
+A **middle corner** is a corner `c` with row length `l[c] ≥ 2`, so `removeCorner l c = l.set c (l[c]−1)`
+keeps the row (no `filter` drop) and preserves the length `k`.  Then `betaNat`/`betaNatVal` change at
+the single index `c` (by `−1`), and the factorial product picks up exactly `βc`. -/
+
+/-- For a middle corner the length is preserved (the decremented row stays positive). -/
+theorem removeCorner_length_middle (l : List ℕ) (c : ℕ)
+    (hpos : ∀ a ∈ l, 0 < a) (hmid : 2 ≤ l.getD c 0) :
+    (removeCorner l c).length = l.length := by
+  unfold removeCorner
+  rw [List.filter_eq_self.mpr (by
+    intro a ha
+    rcases List.mem_or_eq_of_mem_set ha with h | h
+    · simpa using (hpos a h).ne'
+    · subst h; simpa using Nat.sub_ne_zero_of_lt (by omega : 1 < l.getD c 0)), List.length_set]
+
+/-- `betaNat ∘ removeCorner` at a middle corner: the single index `c` drops by `1`, the rest unchanged. -/
+theorem betaNat_removeCorner_middle (l : List ℕ) (c : ℕ)
+    (hl : List.Sorted (· ≥ ·) l) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hmid : 2 ≤ l.getD c 0) (j : ℕ) :
+    betaNat (removeCorner l c) j = if j = c then betaNat l c - 1 else betaNat l j := by
+  unfold betaNat
+  rw [removeCorner_length_middle l c hpos hmid,
+      QOU.Mathlib.SYTEnum.removeCorner_getD l c hl hc j]
+  by_cases hj : j = c
+  · subst hj
+    rw [if_pos rfl, if_pos rfl]
+    have h1 : (1 : ℕ) ≤ l.getD j 0 := by omega
+    rw [Nat.cast_sub h1]; push_cast; ring
+  · rw [if_neg hj, if_neg hj]
+
+/-- `betaNatVal ∘ removeCorner` (the `ℕ`-valued β-number) at a middle corner. -/
+theorem betaNatVal_removeCorner_middle (l : List ℕ) (c : ℕ)
+    (hl : List.Sorted (· ≥ ·) l) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hmid : 2 ≤ l.getD c 0) (j : ℕ) :
+    betaNatVal (removeCorner l c) j = if j = c then betaNatVal l c - 1 else betaNatVal l j := by
+  unfold betaNatVal
+  rw [removeCorner_length_middle l c hpos hmid,
+      QOU.Mathlib.SYTEnum.removeCorner_getD l c hl hc j]
+  by_cases hj : j = c
+  · subst hj; rw [if_pos rfl, if_pos rfl]; omega
+  · rw [if_neg hj, if_neg hj]
+
+/-- The middle-corner β-number `βc` is positive (`≥ 1`). -/
+theorem betaNatVal_c_pos (l : List ℕ) (c : ℕ) (hmid : 2 ≤ l.getD c 0) :
+    1 ≤ betaNatVal l c := by unfold betaNatVal; omega
+
+/-- **Factorial side of the per-corner ratio (middle corner).**  `betaFactProd l = βc · betaFactProd(l∖c)`
+— deleting a corner cell decrements one β-number by `1`, and `(βc)! = βc · (βc−1)!`. -/
+theorem betaFactProd_ratio_middle (l : List ℕ) (c : ℕ)
+    (hl : List.Sorted (· ≥ ·) l) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hmid : 2 ≤ l.getD c 0) :
+    ((QOU.Mathlib.SYTEnum.betaFactProd l : ℕ) : ℚ)
+      = betaNat l c * ((QOU.Mathlib.SYTEnum.betaFactProd (removeCorner l c) : ℕ) : ℚ) := by
+  rw [betaFactProd_cast l, betaFactProd_cast (removeCorner l c),
+      removeCorner_length_middle l c hpos hmid]
+  have hcrange : c ∈ Finset.range l.length := Finset.mem_range.mpr hc.1
+  rw [← Finset.mul_prod_erase _ _ hcrange, ← Finset.mul_prod_erase _ _ hcrange]
+  have hprod : ∏ i ∈ (Finset.range l.length).erase c, ((betaNatVal (removeCorner l c) i).factorial : ℚ)
+      = ∏ i ∈ (Finset.range l.length).erase c, ((betaNatVal l i).factorial : ℚ) := by
+    apply Finset.prod_congr rfl
+    intro i hi
+    rw [Finset.mem_erase] at hi
+    rw [betaNatVal_removeCorner_middle l c hl hc hpos hmid i, if_neg hi.1]
+  rw [hprod, betaNatVal_removeCorner_middle l c hl hc hpos hmid c, if_pos rfl]
+  have hbc : (1 : ℕ) ≤ betaNatVal l c := betaNatVal_c_pos l c hmid
+  have hfac : (betaNatVal l c).factorial = betaNatVal l c * (betaNatVal l c - 1).factorial :=
+    (Nat.mul_factorial_pred (by omega : betaNatVal l c ≠ 0)).symm
+  have hbN : betaNat l c = (betaNatVal l c : ℚ) := by
+    unfold betaNat betaNatVal; push_cast; ring
+  rw [hbN, hfac]; push_cast; ring
 
 end QOU.Mathlib.SYTBetaLagrange
