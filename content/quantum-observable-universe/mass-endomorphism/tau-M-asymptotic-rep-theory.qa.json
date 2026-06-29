@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Statement is the boxed factorisation + a status table; the conditional banner is the 3b-cond structural banner kept in prose appropriately."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "hbar_q=(q-1)/q and cos(...) archimedean; the ladder is the post-tau evaluation, so R-side is appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "No narrative Proof body in the statement block; Lean carries the low-order pinning."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "evidence": "tau-M-asymptotic-rep-theory.lean:108-119 theorem concludes only c_k 0 = 0 AND c_k 1 = b_lambda AND JM.power_sum 1 q = 0",
+        "notes": "The .md boxed claim is the full factorisation Tr rho * cos(alpha - b hbar^2/2) * prod(1+c_k u^k); the Lean theorem proves only three low-order abstract-class facts (c_0=0, c_1=b, JM p_1=0). The boxed factorisation is NOT formalised. Partial -- but the .md is explicitly conditional on the open kernel and lean validation:not_checked, so honestly scoped."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "The conditional proposition's signature is stable; no covert weakening beyond the stated conditionality."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "minor",
+        "evidence": "tau-M-asymptotic-rep-theory.lean:115-119: exact KashiwaraCrystal.c_0_zero / c_1_eq_b / JucysMurphySpectrum.p_1_vanish q",
+        "notes": "The Lean conclusions are direct projections of class fields whose types ARE the conclusion components (c_0_zero, c_1_eq_b). Borderline self-assuming -- mitigated as the 3b-cond class pattern (classes axiomatise the open structural input), but the theorem derives nothing beyond the projected fields."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Conclusions are concrete equalities (c_0=0, c_1=b, p_1=0), not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "The four class instances are satisfiable axiomatic hypotheses; no contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "minor",
+        "evidence": "tau-M-asymptotic-rep-theory.lean:108-114: [MacdonaldZonal Lam] [HabiroResidue Lam] bound but the conclusion uses only Kashiwara + JM fields",
+        "notes": "MacdonaldZonal and HabiroResidue are bound as [Instance] hypotheses but the proved conclusion only invokes KashiwaraCrystal and JucysMurphySpectrum; the two extra class hypotheses are unused in the proof term."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Proof is field projections (exact ...), no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": ".md content (factorisation shape, hbar_q-parity, c_2=-1 seed) is substantive; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Title/banner explicitly conditional; status table tiers c_2=-1 proved-and-wired vs c_3 near-match vs k>=4 kernel-open; authorNotes debunk the over-stated 'four independent constructions'. Honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "evidence": "tau-M-asymptotic-rep-theory.lean:108-119: abstract-class low-order facts only, not the boxed ladder factorisation",
+        "notes": "Lean proves a much weaker abstract-class projection (three low-order facts) than the .md's full ladder factorisation; the factorisation itself is unformalised. Disclosed via conditional framing + validation:not_checked, but the gap is real."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the ladder factorisation, the proved-vs-open status table, and the Lean theorem scope."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "tau_M ladder rep-theory structure; on-topic Hecke u-coordinate / Q_beta ladder."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a963a500c773",
+          "ts": "cedd5782821b",
+          "lean": "860777419ba2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "notes": "Honestly-conditional proposition with correct low-order content, but the Lean only projects class fields (two of four class hypotheses unused) and does NOT formalise the boxed factorisation -- a formalisation/strength gap a referee would note."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

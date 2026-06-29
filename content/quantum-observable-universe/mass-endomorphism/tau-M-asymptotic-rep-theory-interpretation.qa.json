@@ -818,7 +818,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Four rep-theory anchors (Kashiwara/JM/Macdonald/Habiro) for the rung coefficients; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "States only Kashiwara genuinely computes b at N=1; the real-x archimedean closure of c_3 is 'refuted (PR #2300)' so identification is 'fibre-level only', rungs stay cal-anchored. Honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Kashiwara1990/Macdonald1995/Habiro2002 cited for the respective constructions; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the four-anchor synthesis and the fibre-level-only caveat; honestly scoped."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8dd4272f8b80",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Careful synthesis remark; honest about which anchor computes vs asserts, and about the open kernel."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

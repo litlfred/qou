@@ -818,7 +818,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Recomputed low-isotope mass table + Q_beta prediction; on-topic mass-derivation."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the boxed Q_beta closed form numerically at q_0 (~0.784 MeV); the direct-binding mass formula matches the canonical m_e*sum y_lambda chi^lambda Delta_lambda shape."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "p/n 0.000% rows openly labelled a 'calibration tautology, not prediction quality'; the FULL Q_beta form uses only CAL-1,CAL-2 (no CODATA mass injection)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "The calibrated LO form's injection of CODATA m_p,m_n as '4th and 5th calibration constants' is EXPLICITLY flagged as a three-calibration-discipline violation (lines 38-55), p/n rows marked tautological. Disclosed, not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Q_beta^pred~0.7836 MeV vs CODATA 0.7823 (+0.168%) verified at q_0~1.110 from the boxed closed form; consistent."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Q_beta closed form numerics and the explicit CAL-discipline disclosure; sound."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8fc817a19c7c",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Honest table with explicit calibration-discipline disclosure and a CAL-input-free Q_beta prediction; no over-claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

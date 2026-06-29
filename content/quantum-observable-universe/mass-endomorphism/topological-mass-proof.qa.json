@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Four-step proof of the topological mass decomposition theorem; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Each step cites a supporting lemma (eigenspace decomp, holonomy identification, transient localisation, dilog evaluation); chain coherent given those lemmas."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Walked the four-step lemma chain; each step invokes a named lemma, no gap under this lens."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7adf9e7b99dd",
+          "ts": "09550fec3b9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Clean lemma-chained proof of the decomposition; defers substance to cited lemmas appropriately."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

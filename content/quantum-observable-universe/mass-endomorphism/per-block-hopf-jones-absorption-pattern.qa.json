@@ -857,7 +857,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Per-Wedderburn-block leading-order pattern of the chi closed forms; on-topic Hecke-character material."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified LO arithmetic: 1*(-2)+[2]_q^2*(-1/2)+1*(-2)=-6 at q=1 ([2]_q=2); y-weighted 1/2(-2)+1/4(-1)+0=-5/4. Both correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Decomposes a proved global c_3=-2 per block; structural observation, not a back-fit (the -6 vs -5/4 distinction shows it is not tuned to a target)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "q=1 coefficients are exact algebra; the q_0 cross-check (y_lambda=(0.4154,0.2809,0.0227), tau_M~-0.142) is explicitly distinguished from q=1 values -- no hidden cross-anchor swing."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the per-block LO coefficients and both dimension- and Markov-weighted sums; all consistent."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c8336415dee5",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Careful structural remark; arithmetic verified, q=1 vs q_0 distinction handled correctly."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

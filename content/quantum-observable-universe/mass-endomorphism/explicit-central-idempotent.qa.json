@@ -1050,7 +1050,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "minor",
+        "evidence": "explicit-central-idempotent.md:71: \"### Significance\" + :78 tau_arch(e_lambda*Li_2^q(z)) in P_2/P_1 Bloch-regulator reading",
+        "notes": "The proposition .md includes a 'Significance' subsection interpreting e_lambda as a period-class generator and a Vol(4_1) Bloch-regulator reading; interpretive material arguably belongs in a linked remark."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Stated over generic Field R with q-content q^{2(j-i)}; algebraic, correctly generic-ring -- the archimedean Vol(4_1) example is flagged as numerical corroboration only."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Lean proof deferred via sorry (Murphy/Dipper-James refs); no narrative archimedean proof to mis-place."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "minor",
+        "evidence": "explicit-central-idempotent.lean:76-90 theorem proves idempotency e_lam*e_lam=e_lam with sorry; .md claims the full explicit Lagrange-interpolation formula",
+        "notes": "The Lean states idempotency (a consequence) and defers it via sorry+Ref; the .md's main content is the explicit e_lambda formula over C(n). Honest ('defers via sorry' stated line 109), but Lean covers a consequence, not the construction, and is not discharged."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Signature (idempotency over Field R) stable; the sorry is cited."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Not a projection -- the Lean theorem is a sorry'd idempotency claim, not a field projection of its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Idempotency e_lam*e_lam=e_lam is a genuine non-trivial goal (currently sorry'd), not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Generic Field R hypothesis; no false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "No spurious hypotheses in the stated idempotency theorem."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "sorry honestly present with -- Ref:; no decide/trivial used to mask it."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Murphy-element Lagrange-interpolation idempotent formula and cross-checks (sum-to-identity, orthogonality, bar-pairing) are standard and correct; Vol(4_1)=2Cl_2(pi/3) figure-8 value is the known hyperbolic volume."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Content-bearing explicit construction; the sorry'd Lean idempotency is honest deferral, not a vacuous : True."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "minor",
+        "evidence": "explicit-central-idempotent.lean:76-90,103: idempotency theorem + a second sorry; main explicit-formula construction not Lean-verified",
+        "notes": "Lean formalises only a sorry'd consequence (idempotency), not the explicit C(n)-Lagrange construction the .md presents; honestly disclosed, validation:not_checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Murphy1981 / Dipper-James1986 cited for the Z(H_n(q)) diagonalisation; SageMath/pyhecke-native as implementations. Correct provenance (.ts cites[] empty, but refs are in prose + Lean -- Ref:)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Murphy-element idempotent formula, cross-checks, and small-n examples against standard theory; correct."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Explicit central primitive idempotents via Murphy elements / Lagrange interpolation; on-topic Hecke-algebra structure."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "12a0bfb4e2d6",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Mathematically standard and correct (Murphy/Dipper-James); Lean honestly deferred (sorry+Ref). Minor voice concern (Significance interpretation in the statement block)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

@@ -1052,7 +1052,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "minor",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.md:30: \"## Categorical interpretation\" ... :44: \"## Generalization conjecture\"",
+        "notes": "The proposition .md carries a 'Categorical interpretation' subsection (Hopf antipode, Frobenius integral, parity-sign) and a 'Generalization conjecture' embedded in the statement block; interpretive/conjectural extensions arguably belong in a linked remark/conjecture."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Pure polynomial identity over Z[X]; algebraic, no gratuitous archimedean specialisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Proof is coefficient-comparison over Z[X] (ring/norm_num); algebraic, no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Lean markovTraceAntipodePolynomialSymmetry: shiftedReverse20 p = -p exactly matches the .md boxed q^20*p(1/q)=-p(q). Equivalent."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Polynomial-identity signature stable; matches the narrative claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Proved by unfold + simp + norm_num on the explicit polynomial, not a structure-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "shiftedReverse20 p = -p is a genuine non-trivial identity, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "No hypotheses; concrete Z[X] elements."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Hypothesis-free identity; nothing unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "norm_num on coeff lemmas is genuine computation of the six non-zero coefficients, not masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified q^20*p(1/q)=-p(q) by hand; correct. The trace=numerator/(12q^10) bridge is delegated to the symbolic reduction reference."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Non-trivial proved polynomial symmetry; content-bearing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Lean proves exactly the boxed identity; no divergence (the categorical-trace bridge is explicitly delegated to references, not claimed proved in Lean)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Kassel1995 Ch.III cited for Hopf antipode/Frobenius-integral motivation (delegated); Wenzl/Hoefsmit for the closed form. Appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the anti-self-reciprocity identity against the Lean theorem; equivalent and correct."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Antipode-induced polynomial symmetry of the proton Markov-trace numerator; on-topic."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bd01fdf883fe",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Correct, fully-Lean-proved polynomial symmetry; only a minor voice concern (interpretation+generalization-conjecture inside the proposition block)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

@@ -853,7 +853,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "All three V_lambda per-irrep chi-difference closed forms; the Hecke chi-character closed-forms section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified conjugate relation chi_(1,1,1)=chi_(3)/q^4 (denominators q vs q^5) and content sums c=(3,0,-3)->p=(1,3,5) via p=3-(2/3)c. Correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Hoefsmit/Wenzl/Jones/Kassel cited for the seminormal representation machinery; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the three closed forms, the q<->-q^-1 conjugate symmetry, and the content-sum/denominator mapping; sound."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9c80008a352d",
+          "ts": "20e8bef25008",
+          "lean": "0dc5e3681d4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Correct unified cyclotomic-factor exposition; arithmetic and conjugate symmetry verified."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

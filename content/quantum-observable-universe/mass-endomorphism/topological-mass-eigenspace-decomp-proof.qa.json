@@ -762,7 +762,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Proof of the mass-integrand eigenspace decomposition; in the Topological-mass section of mass-endomorphism."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "evidence": "topological-mass-eigenspace-decomp-proof.md:56: \"m(varrho) = | MI-int tau(a) | + | MI-int (a - tau(a)) |\"",
+        "notes": "Concluding an exact additive norm decomposition from a multiplicative group-valued integral over-states what the cited submultiplicativity/Pythagorean ingredients deliver; same gap as the non-sequitur flag."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "evidence": "topological-mass-eigenspace-decomp-proof.md:51: \"using the submultiplicativity of |.| (which is an equality for the orthogonal decomposition of an idempotent)\"",
+        "notes": "The step takes the GROUP PRODUCT MI-int(tau a)*MI-int(a-tau a) (eq mi-decomp) to a SUM of norms; submultiplicativity gives |xy|<=|x||y| (a product bound) not a sum, and the Pythagorean identity is on |.|^2 not |.| -- the product->sum jump is unjustified."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked against the proof's stated ingredients (descent involution, Yekutieli Prop 5.3); no defect under this lens."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7e29e0307dcf",
+          "ts": "51f856db2d61"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "notes": "Sound categorical skeleton (descent involution, Killing-form orthogonality, Yekutieli additivity) but the final product->sum-of-norms step is not justified by the invoked submultiplicativity."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

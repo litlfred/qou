@@ -855,7 +855,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Per-irrep cyclotomic-factor conjecture interpreting chi-per-irrep closed forms; on-topic Hecke chi-character section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Honestly a conjecture: title+authorNotes mark n>=4 open; n=3 tied to proved closed forms; Significance uses conditional 'if the conjecture holds'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "n=3 verification is exact algebra (Phi_4,Phi_8 vs proved closed forms); n>=4 explicitly flagged open in authorNotes."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the n=3 d_lambda=4 f_lambda table and m_lambda*phi(d_lambda)=4 arithmetic against the cited closed forms; sound."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "89e3ef011c33",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Well-scoped conjecture: exact at n=3, open beyond, Ariki-Koike literature bridge plausible. No over-claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

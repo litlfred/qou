@@ -855,7 +855,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Lean infrastructure (multi-link Jones at q=1) for the c_5/c_6 investigation; on-topic Q_beta ladder."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Jones-at-1 values (trefoil +1, Borromean -8, double-Hopf +4 via disjoint-union multiplicativity) are standard and correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Explicitly 'infrastructure, not closure'; states the simple candidates are 50-3000x off and do NOT match empirical c_5~-395, c_6~-45485."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Candidate Jones values are exact (rfl at q=1); the mismatch with empirical c_5/c_6 is reported as a failure, not papered over."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the Jones-at-1 values and the explicit mismatch documentation; sound and honestly open."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "abbacb4e1a2a",
+          "ts": "bf05ac19ffda",
+          "lean": "121d7f7441c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Honest open-R&D infrastructure block; mismatches documented, no closure claimed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

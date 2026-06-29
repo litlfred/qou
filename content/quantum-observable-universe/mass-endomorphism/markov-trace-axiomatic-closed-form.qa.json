@@ -1048,7 +1048,444 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Statement is the bare axiomatic closed form + numerical anchor; no physical-interpretation prose."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "z=1/(q^1/2+q^-1/2) (sqrt q) genuinely archimedean; numerical eval at q_0 appropriately R-side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "No separate narrative Proof block; derivation is in the .ts docstring/Lean."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "evidence": "markov-trace-axiomatic-closed-form.lean:113 markovTraceAxiomaticClosedForm proves only protonMarkovCoeff{A,B,C} polynomial identities, not the z-assembly tr_M = A z^2 + B z + C",
+        "notes": "The .md statement is the full closed form tr_M(s1^7 s2^4)=a7a4 z^2+(a7b4+b7a4)z+b7b4 with denominator q^10(q+1)^3; the Lean proves only the three coefficient polynomials A,B,C in h=X. The z-assembly (MarkovTrace-typeclass step) is NOT discharged -- docstring (lean lines 96-113) admits this. Partial coverage, honestly disclosed."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Coefficient-polynomial signature stable; no weakening vs its own claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Proves A,B,C by unfolding the recurrence + ring, not by projecting a structure field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Goal is three concrete non-trivial polynomial identities, ring-closed; not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "No false hypothesis."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Hypothesis-free polynomial identity; nothing unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "simp+ring on genuine polynomial goals, not decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified recurrence a_4=h^3+2h, b_4=h^2+1 and the anchor m_p/m_e~1836.15 / 1.63315 ~ 1124.3. Consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Coefficient-polynomial theorem is content-bearing exact algebra, not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "evidence": "markov-trace-axiomatic-closed-form.lean:113-123: theorem concludes protonMarkovCoeff{A,B,C} only; z-assembly into the rational trace not proved",
+        "notes": "Lean proves a sub-claim (the three coefficient polynomials) weaker than the .md's full rational closed form; z-assembly + denominator q^10(q+1)^3 unverified in Lean. Honestly disclosed in docstring."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Checked the recurrence, the closed-form structure, and the q_0 anchor; statement correct."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Axiomatic Markov-trace closed form for the proton braid; on-topic Markov-trace section."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "60cfd07e4555",
+          "ts": "6f0c11d19a02",
+          "lean": "6d882f57bf98"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "severity": "major",
+        "notes": "Statement and numerics correct, but the Lean covers only the polynomial coefficients, not the full z-assembled closed form claimed in the .md -- a partial-formalisation gap (disclosed in docstring; lean validation:not_checked)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

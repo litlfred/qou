@@ -855,7 +855,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Formal proof of the V_(3) chi-difference closed form; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified chi_(3)(B_p)=q^3(q+q^-1)^2/4, chi_(3)(B_n)=q(q+q^-1)^2/4, diff=-(q^2+1)^2(q^2-1)/(4q)=-(q^5+q^3-q-q^-1)/4; poly+geom eps^k split correct (k>=6 coeff=(-1)^k/4)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Jones/Wenzl/Hoefsmit cited for the 1-d irrep scalar action; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Re-derived the V_(3) closed form and the polynomial/geometric eps^k decomposition; all correct."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "22df63801b13",
+          "ts": "2a8cc6b6c276",
+          "lean": "447e825788c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Correct exact closed-form derivation with a valid eps-expansion analysis."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }

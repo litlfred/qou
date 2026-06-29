@@ -764,7 +764,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Proof of per-block chi closed forms + Lean-extension survey (surrogate delta-tau_M, Taylor coeffs, sqrt(q) class, z-recursion); on-topic Q_beta."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified antipode pairing -(q^2-1)(q^2+1)^2/(4q^5)=q^-4*[-(q^2-1)(q^2+1)^2/(4q)] (1/q^5=q^-4/q); surrogate derivative -5/6 from N'(1)=-10,D(1)=12 consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Ext#4 explicitly labels canonical sqrt(q) weights a 3b-cond conditional class (surrogate is NOT the canonical Markov trace); sorry tally zero asserted with toolchain pin."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Verified the antipode rational identity and the surrogate derivative; surrogate-vs-canonical distinction handled correctly."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Lean sorry-free claim pinned to lean v4.24.0 + a specific Mathlib commit; per-block eps^1 coeffs {-2,-1,-2} match the sibling Hopf-Jones block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "34fbfb6cb5fb",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:25:12.729Z",
+        "reviewed_sha": "2d2f5230bb91a3f4b78187b0a20402ed5f3793e8",
+        "notes": "Correct per-block proof with honest surrogate-vs-canonical distinction and a content-bearing 3b-cond class."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:25:12.729Z"
 }
