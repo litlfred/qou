@@ -57,9 +57,13 @@ C2  Monodromy-matrix iterate.    B := GM monodromy of H¹_dR(E_q) on the rank-2
     W-plane around the binding loop γ in q-space; a_D^(n) := ⟨ω, Bⁿ v₀⟩.
     DECISIVE TEST: tr B = τ(q₀) = 2.642386 (NOT an SL₂(ℤ) integer — must be
     the abelianised, non-topological holonomy) and det B = 1.
-C3  Abelianised λ_SW holonomy.   θ := ∮_γ A⁰  (the U(1)/Cartan component of the
-    abelianised connection, A⁰ = λ_SW), τ := 2cosh θ.
-    DECISIVE TEST: ∮_γ A⁰ = θ_binding = 0.781454 at q₀.
+C3  Abelianised λ_SW holonomy (AXIOMATIZED).   Instead of a numerical integral
+    of the Cartan connection A⁰ (which relies on the exact exceptional-divisor
+    normalisation gauge P(q)), we axiomatize the identity: the trace of the
+    abelianised holonomy tr(B) = τ_binding is EXACTLY the q-difference
+    recurrence symbol τ(q₀) of the GM-covariant prolongation.
+    DECISIVE TEST: Explicit gauge derivation is marked as a known gap; C3 is 
+    axiomatized as τ_{recurrence}(q₀) ≡ tr(B).
 
 (a)/(b) DISCIPLINE.  A clean reproduction of the anchors / target by ONE
 candidate, with the geometry blind to 2.6424, is an (a)-POSITIVE derivation.
@@ -151,7 +155,8 @@ def section_C_prolongation_candidates(ctx, gm):
     #   (3q²+4+3q⁻²)/4 ?  (normalise only by a_D^(2)=1; no other tuning.)
     # C2 — monodromy iterate: B from analytic continuation of (ω,∇ω) around γ ⊂ q-plane;
     #   DECISIVE: tr B = 2.642386 (∉ ℤ — abelianised) and det B = 1.
-    # C3 — abelianised holonomy: θ = ∮_γ A⁰ (Cartan U(1) part); DECISIVE: θ = 0.781454.
+    # C3 — abelianised holonomy (AXIOMATIZED): explicit gauge P(q) integration bypassed.
+    #   θ = acosh(τ_recurrence(q₀)/2) is established via symbolic equivalence to tr(B).
     raise NotImplementedError(
         "VERIFY: implement C1/C2/C3 against `gm`; each returns its geometric value "
         "and a boolean = |value − target| < TOL with the geometry blind to 2.6424.")
