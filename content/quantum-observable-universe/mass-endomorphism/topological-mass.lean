@@ -1,7 +1,9 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Analysis.Normed.Group.Basic
+import Mathlib.Analysis.Normed.Ring.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.LinearAlgebra.Projection
+import Mathlib.Tactic
 
 
 /-!
@@ -93,9 +95,9 @@ theorem mass_upper_bound (md : MassDecomposition R) :
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem norm_additivity_of_nonneg_traces
     (md : MassDecomposition ℝ)
-    /-- The descended trace is non-negative (norm of holonomy). -/
+    -- The descended trace is non-negative (norm of holonomy).
     (h_desc_nonneg : 0 ≤ md.descendedTrace)
-    /-- The transient trace is non-negative (norm of dilogarithm). -/
+    -- The transient trace is non-negative (norm of dilogarithm).
     (h_trans_nonneg : 0 ≤ md.transientTrace) :
     ‖md.totalTrace‖ = ‖md.descendedTrace‖ + ‖md.transientTrace‖ := by
   rw [md.decomposition, Real.norm_of_nonneg (add_nonneg h_desc_nonneg h_trans_nonneg),

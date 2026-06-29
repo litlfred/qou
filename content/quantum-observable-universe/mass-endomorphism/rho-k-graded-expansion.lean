@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 /-!
 # Graded expansion of the categorical density ρ_K
@@ -86,7 +87,7 @@ theorem rhoKGradedExpansion (β_K : A) :
 /-- **Definition of ρ_K from the graded expansion.** Dividing
     through by `m_e · |tr_M(β_K)|` recovers the categorical density
     factor (when `|tr_M| ≠ 0`). -/
-def rhoK (m_e : ℝ) (β_K : A) (h : absTrM (A := A) β_K ≠ 0) (h_e : m_e ≠ 0) : ℝ :=
+noncomputable def rhoK (m_e : ℝ) (β_K : A) (h : absTrM (A := A) β_K ≠ 0) (h_e : m_e ≠ 0) : ℝ :=
   atomicMass (A := A) β_K / (m_e * absTrM (A := A) β_K)
 
 /-- **The LO piece is the constituent ratio.** When the single-gen
