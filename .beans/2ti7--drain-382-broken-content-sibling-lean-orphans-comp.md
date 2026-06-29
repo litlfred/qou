@@ -160,3 +160,41 @@ but consumed ℝ-valued `SubstrateParameter.field` / used `q⁻¹`/order on `R_q
 rewired to ℝ (archimedean realisation per §7c) or generic `[Field R]` where appropriate, importing the
 canonical library module. Also `q-logarithm-exists` replaced a vacuous `∃…,True` with honest
 `Nonempty`. **45/63 of the chapter drained across waves 2+3+4 (18 remain).**
+
+## 2026-06-29 wave-5 swarm (5 agents, quantum-observable-universes remainder)
+
+Re-derived the live-broken set FIRST (wave-1 lesson #1): of the chapter's 63
+genuine.txt orphans, a fresh parallel `lean-verify-siblings.sh` sweep found
+**54 already green** (siblings + the recent `fix(pre-existing)` main commits had
+drained far more than the stale "45 done / 18 remain" count implied) — only **9
+still broken**. Swarmed those 9 across **5 agents** grouped by root-cause family.
+Outcome: **9/9 genuinely repaired, all independently re-verified `fail=0`**, 0
+flagged. Committed in 2 commits (`8592abd3` = 7 files, `7b6545bb` = final 2).
+
+The 9 + dominant fix:
+- su2-emergence, variational-equations — stranded-docstring-above-`noncomputable
+  section`; missing `import QOU.QuantumObservableUniverse.Structures` (universe
+  params); inlined cross-sibling `SpinDecomposition`; section balance.
+- substrate-parameter-planck, substrate-radial-coordinate — `unknown tactic`.
+- weight-decomposition-exists, weight-decomposition — `Function expected` /
+  `invalid binder annotation` (instance-bracket on a non-class).
+- spectral-chart-correspondence, substrate-self-duality — top-level `λ` /
+  stranded `/--` parse breakage from a malformed preceding declaration.
+- u1-equivariant-reduction — `failed to synthesize` (§7c R_q-vs-ℝ base-ring trap).
+
+Quality gate (orchestrator): vacuity scan clean (no `: True`/`native_decide`/
+fabricated-axiom/trivial-field); 0 new sorries this wave; pre-existing cited
+axiom `su2_emergence` (`[lusztig1993]`/`[deligne2007]`) left intact; §7c base
+ring kept (`R_q = LaurentPolynomial ℤ`, no gratuitous ℝ cast). The
+`quantum-observable-universes` chapter is now **fully drained** (all 63 genuine
+orphans green on this branch).
+
+**CI note:** PR #3142 `gate` + `content-sibling-compile` failed with the Actions
+**billing signature** (≤4s, `runner_id: 0` no runner, 404 logs, empty output) on
+both pushed SHAs — NOT a code defect (local lean-verify exit 0 on all 9).
+Documented `[skip-ci: billing; local verify exit 0]` on the PR; no retrigger
+pushed (billing doesn't clear on retry).
+
+**Lesson reconfirmed:** re-derive-first is essential — the genuine.txt list is
+now badly stale (mass-theory's "72" and the other chapter counts must be
+re-swept before any wave-6, not trusted).
