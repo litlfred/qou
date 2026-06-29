@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.List.Basic
 
 
@@ -17,8 +17,8 @@ noncomputable section
 
 /-- The q-momentum of a braid, computed from its crossing signs
     (mirror of `QOU.Archimedean.qMomentum`). -/
-def qMomentumP (q : LaurentPolynomial ℤ) (crossingSigns : List ℤ) :
-    LaurentPolynomial ℤ :=
+def qMomentumP {k : Type*} [Field k] (q : k) (crossingSigns : List ℤ) :
+    k :=
   crossingSigns.foldl (fun acc ε =>
     acc + (q ^ (2 * ε) - 1) / (q ^ 2 - 1)) 0
 
@@ -31,9 +31,11 @@ def qMomentumP (q : LaurentPolynomial ℤ) (crossingSigns : List ℤ) :
     `QMomentum` file. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] climax-volume-mass/q-momentum-properties
-theorem qMomentumP_additive (q : LaurentPolynomial ℤ) (s₁ s₂ : List ℤ) :
+theorem qMomentumP_additive {k : Type*} [Field k] (q : k) (s₁ s₂ : List ℤ) :
     qMomentumP q (s₁ ++ s₂) = qMomentumP q s₁ + qMomentumP q s₂ := by
   -- Ref: [manuscript] climax-volume-mass/q-momentum-properties
   sorry
+
+end
 
 end QOU.Archimedean
