@@ -1048,7 +1048,433 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is the E_bond formula and its inputs; chemical interpretation (covalent bond = inverse trefoil) is the named object, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "molecular-bond-binding-from-trefoil-insertion.md:1: \"molecular bond binding energy from inverse-trefoil insertion\"",
+        "notes": "Molecular/chemical binding (Hartree energy, covalent bonds) is somewhat adjacent to nuclear mass-theory; it extends the Wedderburn binding decomposition to the molecular scale. Defensible as an application of the same channel decomposition, but a referee might flag it as belonging in a separate applications/chemistry section rather than mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "molecular-bond-binding-from-trefoil-insertion.md:18: \"ΔΦ_λ = |ln|χ_λ(A·B)| - ln|χ_λ(A·T^{-1}·B)||\"",
+        "notes": "The statement uses real logarithms of |χ_λ| (an archimedean/real-analytic operation) and the Hartree scale E_mol=m_e α²/2, i.e. it is an observable-level (post-τ) formula. That is acceptable for a binding-energy observable, but the ln|·| makes this a genuinely archimedean statement; it should not be read as a generic-ring identity."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative **Proof.** body in the .md (statement only)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative proof body and Lean decl not inspected; nothing to align."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The E_bond channel formula is the genuine claim; no weakening visible."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No self-asserting projection; formula built from per-channel volume shifts."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Non-trivial binding formula; not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Inverse-trefoil-as-bond is a modelling premise, satisfiable; no contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "All three Wedderburn channels (sym/std/alt) and E_mol feature in the formula."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No proof body / Lean inspected."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The bond-order ratio 1:2:3 from ΔΦ∝n (n inverse trefoils) is internally consistent with the linear-in-insertion construction; no false numerical claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive extension of the confined-knot-binding decomposition to molecular bonds."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Inherits weights from prop:confined-knot-binding; no new calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "molecular-bond-binding-from-trefoil-insertion.md:24: \"bond energies scale as 1 : 2 : 3\"",
+        "notes": "Real single:double:triple bond energy ratios are not 1:2:3 (e.g. C–C ~346, C=C ~602, C≡C ~835 kJ/mol ≈ 1:1.7:2.4); the linear ΔΦ∝n prediction is an idealisation. The block does not flag this deviation from measured bond-energy ratios — the clean 1:2:3 is an over-idealised prediction."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "E_mol=m_e α²/2 is the Hartree scale derived from q; the channel weights are inherited, no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "ΔΦ∝n ⇒ E_bond∝n given fixed channel weights is a valid inference from the stated construction."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No external citation invoked; relies on the internal confined-knot-binding proposition."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "ΔΦ_λ, W_λ, E_mol all defined; the inverse trefoil T^{-1} as the bond operator is specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "molecular-bond-binding-from-trefoil-insertion.md:24: \"so bond energies scale as 1 : 2 : 3\"",
+        "notes": "No numerical comparison to measured bond energies is given; the 1:2:3 prediction is presented without empirical backing and conflicts with known single/double/triple ratios (~1:1.7:2.4), so the claim is empirically untested/fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "molecular-bond-binding-from-trefoil-insertion.md:24: \"Double and triple bonds use n inverse trefoils ... bond energies scale as 1 : 2 : 3\"",
+        "notes": "Empirically, multiple-bond energies are sub-additive (a C=C is ~1.7×, not 2×, a C–C), because π bonds are weaker than σ bonds; the strict 1:2:3 scaling contradicts standard bond-energy data. A chemistry referee would reject the linear scaling as physically wrong for real covalent bonds."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No compute witness backing the molecular formula."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d4b7e4c8cc8f",
+          "ts": "e32c4517cadb",
+          "lean": "d28da33eaa2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "molecular-bond-binding-from-trefoil-insertion.md:24: \"bond energies scale as 1 : 2 : 3\"",
+        "notes": "The channel-decomposition extension to molecular bonds is structurally reasonable, but the headline 1:2:3 bond-order scaling contradicts measured covalent bond energies (sub-additive ~1:1.7:2.4) and is given with no empirical check. Strongest objection: physically-implausible bond-energy scaling presented as a clean prediction."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

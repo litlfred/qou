@@ -1048,7 +1048,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is the jet-level mass functional decomposition; structural features and supersession are in clearly-separated follow-on sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Per-braid mass tower is the core mass-theory decomposition; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement keeps both sides in Q(q_0): tr_M algebraic, Φ_q convergent in Q(q) for |z|<q, z∈Q(q^{1/2}); the block explicitly asserts strict τ-wall compliance and no τ-image quantities appear."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative **Proof.** body; the block is statement + structural discussion + witness table (closes with $\\square$ but gives no proof steps to wall-test)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative proof and Lean decl not inspected; nothing to align element-by-element."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The decomposition (descended + jet-tower singletons/pairs + tail R_N) is the genuine claim; supersedes the per-generator form transparently."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No self-asserting field projection; tower terms are tr_M of sub-braids."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The mass functional is a substantive expansion, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "|tr_M(ξ)|<q (convergence radius) is established via the Schur–Weyl/Plancherel bound; the witness confirms max sub-trace 0.67<q_0, so the premise holds."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "All ingredients (Φ_q, z weight, jet strata, Schur–Weyl path) feature in the decomposition and witness."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative/Lean proof body inspected to assess decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The convergence argument (sub-braid traces bounded by Plancherel ⇒ |tr_M|<q ⇒ Φ_q tower converges) is sound; the cardinality counts (A singles, C(A,2) pairs) are correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive decomposition with explicit supersession of the divergent per-generator form."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting of q_0; the tower is evaluated at the fixed substrate value."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Open closed-form is explicitly conjectural (conj:mass-endomorphism); the tower is called 'empirically validated up to level 2', not proved closed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "z=1/(q^{1/2}+q^{-1/2}) and Φ_q have no free coefficients; jet levels are structurally defined."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Triple+ interactions ascending via pentagon to level n+1 is cited (pentagon-uv-commutation); the quadratic-closure-per-level claim is supported."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean decl not inspected; no narrative proof body."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Internal refs (jet-tower-convergence, schur-weyl-mass-decomposition, pentagon-uv-commutation) resolve and support the invoked facts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Strata S^{(n)}_ℓ, jet level n, descended term, tail R_N all defined; the level-0-only descended rule is justified by descent eigenspaces."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "per-braid-mass-tower.md:148: tower totals 3.70e3, 5.55e3, 7.40e3 for D, ³He/³H, ⁴He",
+        "notes": "The witness totals (~10^3–10^4) are the bare per-braid tower sums, not MeV masses, and the block does not show these reproduce binding energies — the validation is 'convergent' (max sub-trace 0.67<q_0), i.e. it demonstrates convergence vs the per-generator ~10^6 divergence, not numerical accuracy. The 'empirically validated' claim is about convergence, not mass agreement; mildly easy to over-read."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The per-braid stratification (nucleon, nucleon-pair) matching the descent/brane-tower picture is internally consistent; no measurement contradicted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "per-braid-mass-tower.md:142: witness linked on a feature branch (claude/audit-math-framework-FXlp2) under docs/audits/",
+        "notes": "Per-braid tower witness URL points at a feature branch, not main; link may not resolve post-merge. Values plausible but not re-run."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "81f39c69d434",
+          "ts": "51636bd238a8",
+          "lean": "d70b1853dcd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Well-structured convergent mass decomposition that correctly supersedes the divergent per-generator form; strongest objection is that 'empirically validated' denotes convergence (max sub-trace 0.67<q_0), not demonstrated MeV accuracy, and the witness is on a feature branch (minor)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

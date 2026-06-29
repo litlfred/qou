@@ -1009,7 +1009,417 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Theorem statement is the antipode + the two-derivation unification; physical labels (chirality, neutron-tower) are the named objects, not extraneous interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Antipode unifying Term-5 chirality and neutron-tower closure of the six-term mass formula; mass-theory core."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is algebraic (Frobenius algebra H_n(R,q), antipode S(σ_i)=σ_i^{-1}, symmetric-channel τ_sym(σ)-τ_sym(Sσ)=q-q^{-1}=h); generic-ring, no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative **Proof.** body in the .md (theorem statement only)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean ref frobenius_antipode_unifies present but no narrative proof body to compare; statement-only block, Lean decl not inspected here."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The antipode and the two derivations it unifies are the genuine claim; no weakening evident."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No evidence of a self-asserting field projection in the statement; antipode is the standard Hopf anti-homomorphism."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Conclusion (S swaps σ↔σ^{-1}, fixes the averaged ud-pair, is the common primitive of two derivations) is non-trivial."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Self-dual Frobenius hypothesis (frobenius-codim-universal) is satisfiable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Self-duality and the (c,d)-pair structure are both used by the two unified derivations."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative proof / Lean body inspected to assess decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "S(σ_i)=σ_i^{-1} as anti-homomorphism, and τ_sym(σ)-τ_sym(σ^{-1})=q-q^{-1}=h in the symmetric channel, are correct; S fixes (1,-h/2)=½(σ+σ^{-1}) since S is involutive on the symmetric combination."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Genuine unification claim (one antipode, two derivations); not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The antipode is intrinsic to the Hecke Hopf structure; chirality factor and tower closure are derived from it, not fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "frobenius-antipode-unifies-chirality-and-tower.md:1: \"unifies chirality (Term 5) and the neutron-tower closure\"",
+        "notes": "The 'unification' rests on both terms sharing the antipode as a common primitive — a structural observation. Calling it a 'Theorem' that unifies two physically-distinct corrections is a strong framing; the statement itself is sound but the headline 'unifies' leans on interpretation absent the (uninspected) Lean proof of the two derivations' common origin."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "h=q-q^{-1} is the substrate quantity; the ½(σ+σ^{-1}) blend has no free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The two derivations (chirality asymmetry; Frobenius symmetrisation of tower volumes) both genuinely use S; the common-primitive claim follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean decl not inspected; no narrative proof body to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "kassel1995 correctly cited for the Hopf antipode on the Hecke algebra."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Antipode S, (c,d)-pair notation, symmetric channel τ_sym, h all defined or referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Algebraic statement; no numerical match in-block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Chirality factor (1+sign·h) and Frobenius-symmetrised tower volume are consistent with the framework's p/n treatment; nothing contradicts measurement here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No compute witness backing this algebraic theorem."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "32d521500f1c",
+          "ts": "60776c55d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Algebraically sound antipode statement; strongest objection is the strong 'unifies' framing on a statement-only block (Lean proof not inspected), a minor presentational concern."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

@@ -855,7 +855,257 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substrate-q binding-energy correction on the Z=N line; mass/binding theory, on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "kind=conjecture; A-[A]_q = dim V^{(A-1)} - q-dim_q V^{(A-1)} for V=Sym^{A-1} of U_q(sl_2) is correct ([A]_q is the q-dim of the A-dim rep)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive conjectured correction with categorical interpretation and a falsified Z≠N restriction."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "z-eq-n-rho-correction.md:25: \"exact match at q_0=1.10998… for the four atoms\" with ×99–×103 improvement at D,⁴He",
+        "notes": "The single correction term (A-[A]_q) is evaluated at the already-fixed substrate q_0; the ×99–×103 'improvement' for D and ⁴He is a one-parameter-shape fit to AME — but ¹²C/¹⁶O 'close via propagation' through an α-cluster formula with an extra coefficient c_αα, so the four-atom match is not four independent confirmations. Borderline back-fit; flag for scrutiny though q_0 itself is not re-fit here."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "z-eq-n-rho-correction.md:25: \"exact match at q_0 = 1.10998…\"",
+        "notes": "Header says 'exact match' but the table shows residuals +0.011% to +0.152% — i.e. ~10^-3, not exact. 'Exact match' overstates; should read 'close match'. Per §7ab the corrected column should use ≈, and 'exact' is inappropriate for a 0.15% residual."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "z-eq-n-rho-correction.md:38: \"+ binom(n,2)·c_αα\" α-cluster coupling constant",
+        "notes": "The ¹²C/¹⁶O closures route through an α–α coupling c_αα whose value/derivation is not given in-block; this is an additional coefficient beyond ρ_struct and (A-[A]_q). Whether c_αα is canonical-chain-derived or fit is undisclosed here — possible hidden DOF entering the 4-atom 'match'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The dimensional-anomaly identification and the sign argument (q>1 ⇒ q-dim > dim ⇒ Kashaev overestimates) follow correctly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Conjecture; no Lean sibling inspected."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Refers to the Coulomb-q-Hecke audit for the Z≠N failure; internal audit reference, appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "ρ_struct, Vol_hyp(K_A), [A]_q, A=2k all defined; restriction to Z=N=k explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "z-eq-n-rho-correction.md:28: errs +0.011% (D), +0.057% (⁴He), +0.063% (¹²C), +0.152% (¹⁶O)",
+        "notes": "The ~100× improvement is on a Z=N line with only two genuinely-independent fits (D, ⁴He) plus α-cluster propagation; the growing residual (0.011%→0.152% with A) and the explicit Z≠N failure (³H/³He differ by 2.9%) show the form is fragile beyond the symmetric line and not a closed canonical law."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Sign of the correction (overestimate corrected downward) and the Coulomb-asymmetry attribution for Z≠N are physically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "z-eq-n-rho-correction.md:26: links per-atom-rho-deviation.witness.json via a relative ../../../computations path",
+        "notes": "Witness named but I did not re-run; the 'exact match' prose vs 0.011–0.152% witness residuals is a mild prose/value mismatch (the value is approximate, the prose says 'exact')."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e02f0bdb3cde",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "z-eq-n-rho-correction.md:25: \"exact match\" vs table residuals up to +0.152%",
+        "notes": "Conjecture is plausible as a Z=N-line correction but oversold: 'exact match' contradicts the 0.15% residuals, the 4-atom support reduces to 2 independent fits + α-cluster propagation with an undisclosed c_αα, and the form provably fails off the symmetric line. Re-scope as a scope-limited Z=N near-match, disclose c_αα provenance."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

@@ -1050,7 +1050,447 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement defines T^Dem and three properties; resonance-width interpretation is in items 2 and later sections, lightly inline — acceptable for a definitional proposition."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Demazure-fiber Markov trace as a structural replacement for the LP cost vector; mass/LP infrastructure, on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is algebraic (Demazure operators on Q[x], principal specialisation x_i↦q^{i-1}, Schur polynomials); generic-ring, no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative **Proof.** body; the verification is a worked example + deferred-sorry Lean, not a wall-testable proof."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "demazure-fiber-markov-trace.md:166: \"demazure_principal_specialization_eq_schur — ... deferred to a single sorry citing Kashiwara's refined character formula\"",
+        "notes": "One of the two Lean theorems carries a sorry (Kashiwara refined character formula); the .md presents property 1 (T^Dem(λ;w_0)=y_λ) as reducing to the hook telescope. The equivalence holds modulo that single cited sorry — acceptable but not fully discharged."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "T^Dem definition and the three properties are the genuine claims; no weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Demazure operators implemented recursively; not a self-asserting field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Properties (saturated case, resonance width, Plancherel completeness) are non-trivial; the verified n=2,3 cases reduce differences to 0 via sympy.cancel, not via : True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Crystal-graph backing is a cited conjecture (crystal-graph-realization); the proposition is stated conditionally on it, not from a false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The worked n=3 example exercises every ingredient (Demazure prefixes, principal specialisation, y_λ)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Verification via sympy.cancel and explicit tabulation; no decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "For λ=(1,1,1) the Demazure characters D_{s1}=1+q etc. and D_{w_0}=q^3 at principal specialisation are the standard key-polynomial values for the staircase; D_{w0}=s_{(1,1,1)}=x1x2x3↦q^3 is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive construction subsuming the manual LP cost vector with a complexity improvement table."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting; the cost at w_0 is unchanged (=y_λ), only the sub-block structure is added."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "demazure-fiber-markov-trace.md:115: \"W/Z resonances, hadronic decays, and virtual particles all become structural objects\"",
+        "notes": "The claim that W/Z resonances and hadronic decays become structural Demazure sub-crystals is a broad interpretive promise; only n=2,3 Demazure characters are verified, with no resonance-width number reproduced. Aspirational framing exceeds the demonstrated n≤3 verification."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No fitted coefficient; T^Dem is determined by (λ,w) and the principal specialisation."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Properties 1–3 follow from Demazure theory; D_{w_0}=Schur and Kashiwara's refined character formula are correctly invoked."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean theorems match the two .md claims; the deferred sorry is openly disclosed and cited, not a hidden divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "kashiwara1991 (refined Demazure character formula) and lecouvey2007 (crystal-basis resonances) correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Demazure operator π_i, character D_w, ratio under principal specialisation, T^Dem all explicitly defined; reduced-word independence is the standard Demazure fact."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "n=2,3 verification reduces symbolic differences to 0 — exact, not a numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Treating resonances as sub-crystals is a modelling proposal, not a falsifiable measurement claim here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "demazure-fiber-markov-trace.md:151: \"demazure-markov-trace.witness.json\"",
+        "notes": "n=2,3 witness named (22 Demazure characters); n=4 deferred. Plausible and small, but not re-run here; the n≥4 extension is openly deferred."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "demazure-fiber-markov-trace.md:115: broad resonance/decay structural claims on n≤3 evidence",
+        "notes": "Clean construction with exact n=2,3 verification; strongest objection is the aspirational leap to W/Z resonances and hadronic decays on the strength of n≤3 Demazure characters plus one deferred Kashiwara sorry."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

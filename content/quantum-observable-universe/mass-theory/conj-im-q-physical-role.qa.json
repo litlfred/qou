@@ -892,7 +892,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Im(q) physical-role conjecture sits with the q-extension / mass-formula modulus-projection material; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "kind=conjecture; the claim that the mass formula (using |·|) is insensitive to Im(q) at LO, and that Im(q_0)=0 is convention not forced, aligns with the AGENTS.md Im(q) fibre-vs-observable framing."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive catalogue of three testable candidate roles with explicit obstacles; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting; each candidate is tied to a not-yet-available observable, and exclusions explicitly rule out Im(q) as a 4th calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "All three candidate roles are framed as open/testable, with obstacles listed; Im(q)=0 default labelled 'NOT structurally forced'. Appropriately hedged."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Explicitly states Im(q) is NOT a fourth calibration (3-CAL cohomologically forced); guards against the hidden-DOF reading."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Candidate (ii)'s Apollonius-circle parametrisation (one real CAL-2 equation on two real unknowns ⇒ 1-param solution set) is a correct dimension count."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Conjecture; no Lean sibling inspected."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Kashaev volume conjecture, Bożejko–Speicher-style non-Hermitian/open-system framing invoked appropriately; internal audit refs resolve."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Distinguishes Im(q) (parameter) from Im(tr_M) (induced value) explicitly; CAL-2 anchor m_μ/m_e consistent with the cheat-sheet (proxy for 𝔇_β)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No fitted match; candidate (ii) cites the Apollonius circle center≈1.010/radius≈0.100 as a solution-set geometry, not an accuracy claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Non-Hermitian Im(q) ↔ decay widths and arg(q) ↔ chirality are plausible speculative roles, presented as open."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "References per-observable-100x-status.witness.json for the real-q sufficiency claim; no fragile new compute introduced."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c28b3f458cc1",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Careful, well-hedged catalogue of open Im(q) roles with correct exclusions (not a 4th CAL); consistent with the repo's Im(q) discipline. No material objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

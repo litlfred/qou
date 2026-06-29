@@ -1048,7 +1048,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is the product identity c_8=c_3·c_4 and the silver-ratio instantiation; categorical interpretation in Significance section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Q_β precision-ladder c_k product identity; mass-theory / Q_β infrastructure."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Stated at the fibre level (Laurent polynomial in b over Z) and verified in Q at the silver rational anchor b²=7/8; explicitly no q-archimedean evaluation — wall respected per the q-usage-discipline section."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean proof is two norm_num-closed Q-rational identities at silver; pure rational arithmetic, no archimedean machinery — appropriate for a fibre-level identity."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The .md states c_3·c_4=c_8 (and c_3·c_6=c_9) at silver; the two Lean theorems c4_eq_c8_div_c3_at_silver and c3_times_c6_eq_c9_at_silver encode exactly -2·(-49/32)=49/16 and -2·7/2=-7. Match."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The Lean proves the genuine rational identities; the 'derived' upgrade is correctly stated as conditional on the upstream c_8 categorical proof."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "norm_num arithmetic, not a self-asserting field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The identities are non-trivial rational equalities (verified: -2·-49/32=49/16, -2·7/2=-7), not x=x; though arithmetic, they encode genuine c_k relations."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Silver-ratio values c_3=-2, c_4=-49/32, c_8=49/16 are the actual ladder coefficients; no false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The norm_num identities have no hypotheses to leave unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "norm_num on rational identities is a justified use of computational reflection (closed-form Q arithmetic), not masking an incomplete structural goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Verified: c_3·c_4=(-2)(-49/32)=49/16=c_8 with c_4=-2b⁴=-49/32, c_8=4b⁴=49/16 at b²=7/8; c_3·c_6=(-2)(7/2)=-7=c_9. All arithmetic correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive: discovers the only two product hits in the closed-form set; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Per the AGENTS.md c_k tiered framing, the block honestly states c_4 holds EMPIRICAL tier until the upstream c_8 categorical proof lands, and that the product law is a relation among empirical rungs — explicitly NOT presented as unconditional derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Honest caveats section explicitly flags the product law as 'observed symbolically, not yet derived from a categorical theorem' and quotes the registry 'machinery-proved ≠ values-derived' distinction — correctly tiered per the c_k canonical-framing banner."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "qbeta-c4-from-c3-c8-product-identity.md:80: \"the derivation c_4=c_8/c_3 presupposes c_8=c_3²·b⁴ as the σ-action seed\"",
+        "notes": "The 'derivation' only relocates the freedom: c_4 is forced by c_3 and c_8, but c_8's value at q_0 is itself an open assumption (the σ-action seed). The block discloses this (caveat 3), so it's not a hidden DOF — but a referee should note the product identity does not reduce the number of independent fitted rungs unconditionally."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "c_4=c_8/c_3 follows arithmetically from c_8=c_3·c_4; the 'categorical reading' as a Markov-trace product law is explicitly flagged as conjectural, not asserted as following."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The two Lean norm_num theorems match the two .md product identities at silver; no divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "References the ck-dk-canonical-registry for the empirical-tier ruling; internal coordination ref appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "b (silver-ratio parameter, b²=7/8), c_k ladder coefficients, σ-action tower, J_Hopf seed all defined; the silver anchor q=1+√2 is explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "These are exact Z[b]/Q identities verified symbolically, not numerical near-matches; the product hits are stated to be the ONLY two in the closed-form set (c_5 outlier explicitly excluded)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Algebraic identity among ladder coefficients; no direct physics-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Independently re-verified the silver-ratio arithmetic; the symbolic-enumeration claim (two product hits) is checkable and the norm_num Lean is self-contained."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2d08b6433c23",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Exact, independently-verified rational identities with exemplary honest tiering (empirical until upstream c_8 categorical proof); fully consistent with the c_k canonical-framing discipline. No material defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

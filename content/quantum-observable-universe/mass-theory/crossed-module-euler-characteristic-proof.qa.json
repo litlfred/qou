@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Non-abelian Stokes chain (algebraic → geometric → boundary) for the Borromean braid; mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Trace of [[-6,3i],[3i,-6]] = -12 (verified), and -12 = 2·(-6) = dim(V)·χ(Σ_4) with χ(Σ_4)=2-2·4=-6 (genus-4) — arithmetic correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Concrete quaternion-trace computation yielding the Euler-characteristic identity; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The -12 is computed from the crossing quaternion images, then matched to dim·χ — not back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "crossed-module-euler-characteristic-proof.md:27: \"Bring bridge factor 2G/3 ... converts the algebraic per-cell curvature -3/2 to the geometric per-cell volume -G\"",
+        "notes": "The algebraic→geometric→boundary table presents -8G and 3/16 as derived via fixed conversion factors (×2G/3, ÷-64); these bridge factors are asserted, and the per-cell curvature -3/2 vs the half-symmetric-projection block's stated +0.5 per-cell curvature are not obviously reconciled. The chain reads as constructed-to-match rather than independently derived at the geometric/boundary layers."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "crossed-module-euler-characteristic-proof.md:27: \"Bring bridge factor 2G/3 = (4/3)Λ(π/4)\"",
+        "notes": "The 2G/3 bridge factor and the Φ_0 = -64 boundary normalisation are introduced to land -8G and 3/16; their canonical-chain provenance is not shown in-block, so they read as conversion constants rather than derived quantities. Likely fine upstream but undisclosed here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The trace computation → Euler-characteristic identity step is sound; the layer table is presented as a dictionary, not a chain of deductions."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proof block; no Lean sibling inspected."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lobachevsky function Λ, Catalan constant G=Vol(B_3)/8 invoked correctly for the Borromean octahedral volume."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Q_8 crossed module, quaternion images, signs, χ(Σ_4) all explicit; G and Λ defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The -12 = dim·χ identity is exact integer arithmetic; -8G uses the exact Catalan constant, no fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Topological/algebraic identity; no direct physics-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Trace=-12 and -12=2·(-6) independently re-verified; no external witness needed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6b4875fe3002",
+          "ts": "795825ef8574"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "crossed-module-euler-characteristic-proof.md:27: asserted bridge factors 2G/3 and Φ_0=-64",
+        "notes": "Core algebraic identity -12=dim·χ is exact and verified; strongest objection is the geometric/boundary layer relies on asserted bridge/normalisation constants (2G/3, -64) whose in-block derivation is absent."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

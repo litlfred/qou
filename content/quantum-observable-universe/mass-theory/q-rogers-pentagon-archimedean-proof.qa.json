@@ -762,7 +762,253 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proof of the q-Rogers pentagon (Li_2^q five-term) is mass-theory infrastructure for the dilog rewriting; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The q=1 limit reduces to the classical Rogers-Abel five-term identity with the correct log² correction (Lewin §1.6) — accurately stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive: classical limit + q-deformation with a numerical residual table."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No calibration; q_0≈1.110 used only to evaluate the residual, not to define the identity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "q-rogers-pentagon-archimedean-proof.md:37: \"confirming the q-deformed structure\" with a residual 0.5–1% \"that needs a longer proof\"",
+        "notes": "Titled 'archimedean proof' but the q-deformation step is numerical evidence (1.5–5× residual improvement) with an admitted O((q-1)^2) residual, i.e. it is evidence/sketch, not a completed proof of identity (R). The block is honest about the residual but the 'proof' label slightly overstates the q-generic case."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "log_q correction has no free coefficient; q_0 is the substrate value."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Classical-limit reduction is rigorous; the q-deformation is presented as natural extension + evidence, not a claimed deduction."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proof block; no Lean sibling in the .ts (uses only prop:q-rogers-pentagon-archimedean)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Rogers 1907, Abel 1826, Lewin 1981 §1.6 correctly cite the classical five-term identity."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "log_q(x)=Σ(-1)^{n+1}(x-1)^n/[n]_q is explicitly defined; identities (P) and (R) referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "q-rogers-pentagon-archimedean-proof.md:31: improvement factors \"4.0×, 1.7×, 1.6×, 5.1×\" at four hand-picked (u,v)",
+        "notes": "The 1.5–5× residual-reduction claim rests on four chosen (u,v) points; the improvement is modest and varies 1.6–5.1×, and the residual is still O(0.5–1%) near the convergence boundary. Suggestive but a small, point-selected sample — not strong evidence the q-form is canonical."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Polylog identity; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "q-rogers-pentagon-archimedean-proof.md:27: \"pentagon-reduction-li2q.witness.json\"",
+        "notes": "Residual table backed by a named witness on main; values plausible but I did not re-run the producer to confirm scriptHash currency."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "47b68852ad84",
+          "ts": "39972f5fbb10"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "q-rogers-pentagon-archimedean-proof.md:40: \"the O((q-1)^2) sub-leading correction that needs a longer proof\"",
+        "notes": "Classical-limit half is rigorous; the q-generic half is numerical evidence labelled 'proof'. Strongest objection: the title oversells — the generic-q identity (R) is not established, only evidenced over four sample points with an admitted residual."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

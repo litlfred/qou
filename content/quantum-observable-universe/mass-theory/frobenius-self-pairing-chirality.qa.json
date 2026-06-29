@@ -875,7 +875,277 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Defines the chirality factor a_K(β) via the Frobenius self-pairing; mass-theory chirality infrastructure."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Definition over a self-dual Frobenius algebra (A,τ) with antipode; generic-ring algebraic, the norm ratio is in the trace field. No archimedean leak."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "a_K(β)=τ(β·β*)/τ(1·1)=‖β‖²_τ/‖1‖²_τ is a well-formed normalised Frobenius norm; consistent definition."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Definition block naming a genuine construction (chirality factor); not a vacuous : True."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Pure definition; no calibration or self-reference."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Definition makes no claim beyond naming a_K(β); no inflation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No free parameter; a_K is determined by β and τ."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The 'equivalently' restatement as ‖β‖²_τ/‖1‖²_τ follows directly from β*=antipode and τ(β·β*) being the self-pairing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Definition block; sibling Lean required but not inspected here, and the .md makes no provable claim to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "References Jones–Markov trace internally; no external mis-cite."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Antipode β* (σ_i↦σ_i^{-1}, reversed order), τ, the normalisation by τ(1·1) all explicit; self-dual Frobenius algebra named."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Definition; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Algebraic definition; no physics-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No compute witness for a definition."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d4994e143f15",
+          "ts": "84cfcef84c1c",
+          "lean": "a25b5fa491ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Clean, well-defined chirality-factor definition over a self-dual Frobenius algebra. No material objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

@@ -892,7 +892,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Depth↔period conjecture governs which q-relations survive τ_arch — the wall-crossing criterion relevant to mass-trace residues."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Conjecture (kind=conjecture); inclusion τ_arch(G^{(n)})⊆P_n and depth-2 Bloch-Wigner instance are standard period theory, stated as open."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive structural conjecture with a stratification dictionary and discharge targets."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting; depth filtration defined intrinsically from grouplike generators."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Marked Open; sharpness and inclusion both deferred to known reductions (Goncharov motivic-Galois) — no proved-as-done inflation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No fitted constant; surreal envelope is a structural lift, not a parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Wall-crossing criterion (depth determines survival) is stated as conjecture with reduction targets, not as a forced inference."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No Lean sibling for this conjecture in the .ts inspection scope."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "bloch2000, suslin1991, kontsevich1995 + Goncharov/Mikusinski invoked for the right results (regulator, motivic polylogs, operational calculus)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "gb-depth-period-correspondence.md:16: \"G^{(n)} := ⟨ exp_q, log_q, Li_2^q, …, Li_n^q ⟩\"",
+        "notes": "The iterated-integral depth filtration is defined by a generating set with an ellipsis; the precise intermediate generators (between Li_2^q and Li_n^q) and the relationship to cellular GB-depth are explicitly left open in the same block — acceptable for a conjecture but the filtration is not fully pinned."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Depth-2 figure-8 volume 2 Cl_2(π/3) is an exact known value, not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Period-theoretic conjecture; no direct physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No compute witness backing the conjecture."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "be6b935e8724",
+          "ts": "3ab7b74153d2",
+          "lean": "ba53bb0127bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Well-scoped open conjecture with clean reductions to period theory; strongest objection is the ellipsis in the depth-filtration generating set (minor)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

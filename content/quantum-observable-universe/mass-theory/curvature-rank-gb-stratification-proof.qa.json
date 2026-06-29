@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "GB-filtration/curvature-rank stratification of the six-term mass formula; squarely mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Steps 1–4 (ideal = kernel, GB filtration = powers of I, F^r measures rewrite depth, spectral pages stratify) are internally consistent algebra."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive four-step proof with a p/n splitting corollary, not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting; the 6_1-knot std-stratum residue for the neutron is derived from the GB position, not fit to the p/n mass gap."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "curvature-rank-gb-stratification-proof.md:64: \"This residue is the algebraic origin of the proton-neutron mass splitting\"",
+        "notes": "Identifying the curvature-rank-3 std residue as 'the algebraic origin' of the p/n splitting is a strong structural claim; the proof establishes the residue exists and is absent from the proton but does not quantitatively reproduce the ~1.29 MeV splitting here. Origin-claim slightly outruns the demonstrated content."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No free parameter; strata determined by the GB filtration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Steps chain coherently: I=kernel → J^ℓ=im(I^ℓ) → F^r∈I^r → E_0 pages = curvature strata."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proof block; no Lean sibling inspected."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Bergman GB normal-form theorem invoked correctly for the Hecke basis."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Curvature 2-cocycle F, rewrite ideal I, filtration J^ℓ, curvature-rank r(T_w) all defined within the proof."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No fitted numerical match; the witness identifies ideals at GB positions structurally."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "p/n splitting having a structural origin in an extra neutron ideal is not contradicted by data."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "curvature-rank-gb-stratification-proof.md:58: \"[the formal derivation](#)\" — witness links are empty (#) placeholders",
+        "notes": "The 'Witness' paragraph references 'the formal derivation' twice with empty `#` anchors; the backing compute is not linked, so the 6_1-at-(GB depth 3) claim cannot be traced from this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ac7843a47a42",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "curvature-rank-gb-stratification-proof.md:58: empty `#` witness anchors",
+        "notes": "Algebraically coherent stratification proof; strongest objections are the 'algebraic origin of p/n splitting' over-claim and the dangling `#` witness links that prevent tracing the neutron 6_1 residue."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

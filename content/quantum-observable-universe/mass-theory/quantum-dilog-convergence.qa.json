@@ -26,6 +26,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is the bare multipliability claim; no physical interpretation in the proposition body."
       }
     ],
     "fit-section-chapter": [
@@ -45,6 +60,21 @@
         "reviewed_at": "2026-06-22T02:57:05.324Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Convergence of Phi_q underpins the brane-tower mass formula; on-topic in mass-theory."
       }
     ],
     "wall-side-statement": [
@@ -63,6 +93,21 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is explicitly archimedean (1<q real, |z|<q, real product) — appropriate for a convergence/analysis claim; ℝ is genuinely required."
       }
     ],
     "wall-side-proof": [
@@ -82,6 +127,21 @@
         "reviewed_at": "2026-06-22T02:57:06.136Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proof (in PhiQConvergence.lean) is analytic (geometric summability, multipliable_one_add_of_summable) — correctly archimedean for an archimedean statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -101,6 +161,21 @@
         "reviewed_at": "2026-06-22T02:57:06.590Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean quantumDilog_multipliable {q z : ℝ}(hq:1<q)(hz:|z|<q): Multipliable (fun k => (1 - q^(-(k+1)) z)⁻¹) matches the .md product/domain exactly."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -337,6 +412,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean signature states the genuine multipliability claim; no weakening, no injected axiom."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -390,6 +480,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proof builds from Mathlib lemmas (summable_geometric, multipliable_one_add_of_summable); not a projection of a self-asserting field."
       }
     ],
     "proof-no-trivial-true": [
@@ -426,6 +531,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Conclusion is a non-trivial Multipliable predicate, not True or x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -479,6 +599,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Hypotheses 1<q and |z|<q are satisfiable (non-empty domain); no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -532,6 +667,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Both hq:1<q and hz:|z|<q are used (hq for geometric ratio, hz for the c=1-|z|/q>0 lower bound)."
       }
     ],
     "proof-no-decide-masking": [
@@ -568,6 +718,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No decide/trivial masking; structural analytic tactics throughout."
       }
     ],
     "da-false-claim": [
@@ -586,6 +751,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The product ∏(1-q^{-k}z)^{-1} indeed converges for |z|<q,1<q — standard q-Pochhammer convergence, Lean-verified."
       }
     ],
     "da-vacuous": [
@@ -603,6 +783,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Sorry-free non-trivial multipliability theorem; substantive."
       }
     ],
     "da-circular": [
@@ -621,6 +816,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No circularity; pure analysis."
       }
     ],
     "da-overclaim": [
@@ -638,6 +848,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "authorNotes correctly scope it as the convergence half that does NOT wire to the production mass table — no overreach."
       }
     ],
     "da-hidden-dof": [
@@ -656,6 +881,21 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No parameters beyond q,z; no calibration."
       }
     ],
     "da-non-sequitur": [
@@ -674,6 +914,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Multipliability follows from log-summability via the cited Mathlib criterion; chain is gap-free."
       }
     ],
     "da-citation-misuse": [
@@ -692,6 +947,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "habiro2004cyclotomic is the standard q-Pochhammer reference; appropriately cited."
       }
     ],
     "da-definitional-ambiguity": [
@@ -710,6 +980,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Phi_q product, domain, and base ring (ℝ) are explicit and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -728,6 +1013,21 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Pure convergence theorem; no numerical match claimed."
       }
     ],
     "da-physical-implausibility": [
@@ -746,6 +1046,21 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Analytic statement; no physics claim."
       }
     ],
     "da-reproducibility": [
@@ -763,6 +1078,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean-verified sorry-free; no compute witness needed to reproduce."
       }
     ],
     "da-referee-verdict": [
@@ -815,6 +1145,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ad57283d3675",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean proves exactly the .md claim (same domain, same product)."
       }
     ],
     "voice-status-leak": [
@@ -1817,5 +2162,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

@@ -800,7 +800,211 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "q-Gaussian (Bożejko–Speicher) non-existence at q_0>1 obstruction; mass-theory substrate-regime analysis."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Verified: max crossings of a 2n-matching = C(n,2) (Step 1), T_n(q_0) values 3.11,16.7,131,1365,1.81e4,2.96e5 reproduced exactly for n=2..7, and Bożejko–Speicher positivity iff -1≤q≤1 (Step 3) — all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive three-step obstruction proof with a super-exponential moment blow-up."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting; the obstruction is derived from q_0>1 and the BS positivity bound, not from any target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The 'no representing probability measure exists' conclusion at q_0>1 is exactly the BS theorem; this is a genuine structural exclusion (cite: BS positivity fails for |q|>1), correctly scoped as (b)-type with the invariant named."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No free parameter; q_0 is the substrate value, n the matching size."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Step 2 (retain M* term ⇒ T_n≥q_0^{C(n,2)}=exp(Θ(n²))) and Step 3 (moment blow-up witnesses BS non-positivity) chain correctly to no-measure."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proof block; no Lean sibling inspected (need[] omits the proof-* Lean-equiv criteria for this block)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Bożejko–Speicher correctly cited for the iff -1≤q≤1 Fock-positivity criterion of the q-deformed commutation relations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "cr(π) (crossings of a perfect matching), T_n(q), the q-deformed CCR all defined; q_0>1 regime explicit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Non-existence of a q-Gaussian state at q_0>1 is a correct algebraic obstruction; consistent with the framework needing a different construction in that regime."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Independently reproduced T_n(q_0) for n=2..7 (3.11,16.7,131,1365,1.81e4,2.96e5) matching the prose exactly; super-exponential growth confirmed. Fully reproducible."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

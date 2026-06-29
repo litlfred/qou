@@ -1048,7 +1048,453 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The .md is the bare proposition statement; the isospin interpretation lives in the .ts docstring and a separate remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "LP-dual shadow-price invariance under the Hopf antipode (Z↔N isospin) is mass/binding infrastructure; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is generic-ring algebraic (Frobenius algebra over any R, trace, idempotents); the ≥0 constraint is parameterised, no forced ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The .md contains NO **Proof.** body (statement only, despite the .ts claiming 'see the .md'); nothing to wall-test on the narrative proof."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "spin-involution-lp-dual-invariance.lean:182: theorem spin_invariance_of_y0 ... : ∀ x, FA.trace (FA.mul c (S.sigma x)) = FA.trace (FA.mul c x)",
+        "notes": ".md claims y_0*(σ(β)) = y_0*(β) (LP-dual variable equality), but the Lean theorem named spin_invariance_of_y0 proves only cost-functional invariance τ(c·σ(x))=τ(c·x) (=Step 3). Full y_0* equality is explicitly deferred to 'Mathlib LP-duality infrastructure'. Lean proves strictly less than the .md statement."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "spin-involution-lp-dual-invariance.lean:186: \"Full y_0* equality is conditional on Mathlib LP-duality infrastructure\"",
+        "notes": "The provable-kind Lean signature (spin_invariance_of_y0) is weaker than the .md proposition conclusion; the named decl resolves to the cost-invariance lemma, not the dual-variable equality. Honestly documented in-Lean but the proposition is not fully discharged."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Steps 1–4 are concrete lemmas built from the SpinInvolution structure fields (involution, anti-mult, trace-invariance), not a projection of a field whose type is the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lemmas conclude genuine trace equalities and a bijectivity, none is : True or x=x; SpinInvolution fields encode real properties, not True placeholders."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Hypotheses (CommRing R, SpinInvolution FA, σ(c)=c) are satisfiable; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "spin-involution-lp-dual-invariance.lean:182: spin_invariance_of_y0 (c beta : FA.algebra) ... — beta is unused",
+        "notes": "The `beta` argument in spin_invariance_of_y0 / qou_isospin_invariance is never used in the body (the conclusion quantifies over all x); it is a vestige of the intended y_0*(β) statement. Harmless but signals the decl proves a β-independent fact, weaker than the β-indexed .md claim."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proofs use rw/exact on structure fields; no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Cost-functional σ-invariance (the proven part) is correct; the LP-dual equality is plausible under strong duality but unproved — not false, just unproven."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Steps 1–4 are substantive trace lemmas, not vacuous; the SpinInvolution class carries real fields."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting; isospin invariance derived from antipode properties."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "spin-involution-lp-dual-invariance.md:20: \"y_0^*(σ(β)) = y_0^*(β)\" stated as a Proposition conclusion",
+        "notes": "The proposition asserts the dual-variable equality as proved, but the formalisation only establishes the cost-functional invariance step; the LP-isomorphism→equal-dual-optima inference relies on un-formalised strong-duality regularity. Conditional-as-proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No free parameter; c is σ-invariant by hypothesis."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "spin-involution-lp-dual-invariance.lean:170: \"by strong duality ... the dual optima coincide\"",
+        "notes": "The jump from equal primal optima (Steps 1–4) to equal dual variables y_0* requires LP strong duality + a regularity condition that is asserted, not established; the intermediate lemma is missing (acknowledged in the Lean docstring)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "spin-involution-lp-dual-invariance.lean:188: \"∀ x, FA.trace (FA.mul c (S.sigma x)) = FA.trace (FA.mul c x)\"",
+        "notes": "Lean main theorem proves the weaker cost-invariance, not the .md's y_0*(σ(β))=y_0*(β). Concrete divergence: the Lean conclusion is β-free and is the Step-3 lemma, the .md is a β-indexed dual-variable equality."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "kassel1995 (Hopf antipode), murphy1992 (central elements) correctly support the framework; both are the right references."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Spin involution defined precisely (i–iii) in the .ts; Σ as σ-stable central idempotents; LP fully written out."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "y_0*(T)=y_0*(³He) and tr_M(σ_pp)=tr_M(σ_nn)=0.0622 are exact-symmetry consequences, not fitted matches."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Mirror-nucleus binding equality (isospin invariance, modulo Coulomb) is consistent with the ³H/³He data cited (~0.5% after Coulomb)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "tr_M pair-knot value 0.0622 backed by probe-phiq-pair-knot witness; symmetry is exact, no fragile fit."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3ddd432656cd",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "major",
+        "evidence": "spin-involution-lp-dual-invariance.lean:182-189: spin_invariance_of_y0 concludes only τ(c·σx)=τ(c·x)",
+        "notes": "Strongest objection: the Proposition states y_0*(σβ)=y_0*(β) but the Lean of the same name proves only the cost-functional invariance (Step 3); the dual-variable equality is conditional on un-formalised LP strong duality. Restate the .md as conditional, or complete the duality step."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

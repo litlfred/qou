@@ -875,7 +875,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Markov-trace evaluation algorithm squarely in mass-theory; supports the six-term mass formula."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Definition lives in tr_M ∈ Z[q^{1/2},q^{-1/2}], algebraic/generic-ring; no archimedean leak in the statement."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Step-1 inverse identity σ_i^{-1}=σ_i-(q-q^{-1}) and Step-3 quadratic σ_i^2=(q-q^{-1})σ_i+1 are the correct Hecke relations."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Substantive recursive algorithm; Lean stub openly disclosed as open work (#508), not a vacuous : True proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Pure evaluation procedure; no target back-fitted, no calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean status honestly stated as stub; Python supplies witness in the meantime — no proved-claim inflation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Markov weight z=1/(q^{1/2}+q^{-1/2}) is the canonical parameter-free weight; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Each step (eliminate inverse, peel top, branch quadratic, recurse) follows from the cited Markov-pair identity."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean is an explicitly noncomputable stub with open body; .md states this honestly — no claim of equivalence to defeat."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No external citations invoked beyond internal block refs (markov-pair-z2, six-term formula), which resolve."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "tr_M, GS normal form, Markov peel all defined via cited blocks; base ring Z[q^{1/2},q^{-1/2}] explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Cross-check to ~4e-16 vs Hoefsmit/Wenzl bridge witness is a tolerance check, not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Algorithmic definition; no standalone physics claim to contradict measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "markov-axiom-recursive-ascent.md:39: \"completes m(4He) end-to-end in ~60 s and m(6Li) within minutes\"",
+        "notes": "Timing/witness claims plausible and witness files named, but I could not re-run the producer; treat ~60s/4He as advisory until witness scriptHash currency confirmed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1b4b7f884121",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Sound algorithm definition with honestly-disclosed open Lean; strongest objection is unverified witness currency (minor reproducibility)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }

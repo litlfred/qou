@@ -1046,7 +1046,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Proposition statement is the algebraic decomposition; physical interpretation (smooth/oscillating, Strutinsky) is light labelling, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Filtered Markov-trace split feeds the mass-endomorphism conjecture; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Statement is algebraic (filtered algebra, symbol map, associated graded) — the residue sum is flagged 'formal cyclotomic shadow, not a C-analytic identity', wall respected."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Canonicity argument is the standard filtered-algebra symbol-map splitting — purely algebraic, no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Lean ref qou:QOU.BraidKnot.graded_trace_residue_split present but no narrative **Proof.** body to compare element-by-element; the .md gives a canonicity sketch only."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No evidence of statement weakening; decomposition is the genuine claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Splitting derived from the symbol map, not a self-asserting field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "The decomposition is a non-trivial identity, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Filtration hypotheses (compatible trace) are satisfiable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Filtration and trace compatibility both used in the canonicity argument."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No decide/trivial; argument is structural."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Any filtered trace admits tr(x)=tr_gr(σ(x))+[tr(x)-tr_gr(σ(x))] — trivially true as a tautological split; the content is identifying the second term with the GB residue, which is qualified."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "severity": "minor",
+        "evidence": "graded-trace-residue-split.md:46: \"tr(x) = tr_gr(σ(x)) + [tr(x) - tr_gr(σ(x))]\"",
+        "notes": "The displayed 'canonical splitting' is an add-and-subtract identity (vacuous as written); its content rests on identifying the bracket with the GB residue sum, which is the substantive (and only conjecturally-analytic) claim — fine but the canonicity display itself carries no information."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No back-fitting; 'neither piece involves empirical calibration' is consistent with the construction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Residue identification is explicitly qualified as a formal shadow with the convergent statement deferred to the Habiro expansion."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No free parameter; both pieces computable from T_w alone."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Reduction to the mass-endomorphism conjecture is stated as predicted content, with deviations absorbed into the residue — no unsupported 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No narrative proof body and the Lean decl not inspected here; nothing to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Internal refs (gb-residue-spectral-sum, hecke-mass-trace) resolve; no external mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Symbol map, associated graded, residue sum all defined; base regime algebraic and explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No fitted numerical match; consistency checks are structural."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Non-multiplicativity of shell corrections across nucleon boundaries is consistent with nuclear phenomenology, not contradicted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "No compute witness in the .ts to verify."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "aa1534b2ce12",
+          "ts": "64e96444c23d",
+          "lean": "2ab47c1a5077"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:55:52.456Z",
+        "reviewed_sha": "79b090102109bc81f9231ea8855f84522c553c03",
+        "notes": "Sound filtered-trace splitting; strongest objection is that the displayed canonicity identity is an add-and-subtract tautology whose content sits in the qualified residue identification (minor)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:55:52.456Z"
 }
