@@ -397,7 +397,8 @@ def _print_legend() -> None:
 | `B_lin` | LINEAR/saturating binding α·s, s = 1−e^(−B_sym/α) (leading term of B_sym; bounded by α, under-binds with A) |
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization, already bond-type (p↔n) resolved (no separate `_fac` needed) |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
-| `err sym` / `err qCLT_fac` | B_AME / B_model for the two production forms (1.00 = perfect, >1 under-binds) |
+| `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
+| `err sym` / `err qCLT_fac` / `err gate` | B_AME / B_model for the production + occupancy forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
 
 **Table 2 — Mass M + error** (values and error in one table; m_X = m_unbnd,can − B_X)
 
@@ -615,18 +616,24 @@ def main(argv=None) -> int:
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "
           "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
-    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_qCLT_fac "
-          "| err can⁰ | err sym | err qCLT_fac |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_qCLT_fac | B_gate "
+          "| err can⁰ | err sym | err qCLT_fac | err gate |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
         e_can0 = _err(r["B_AME"], r["B_can0"])
         e_sym = _err(r["B_AME"], r["B_sym"])
         e_qclt_fac = _err(r["B_AME"], r["B_qCLT_fac"])
+        # B_gate = E₀·ln(1/W_λ): the SU(4)-occupancy (entanglement-surprisal) binding.
+        # Dominant at the magic/closed-shell config (fixes ⁴He err 2.36→0.94); over-
+        # binds the loosely-bound light nuclei — the shell-filling fraction c_λ is open.
+        e_gate = _err(r["B_AME"], r.get("E_gate"))
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} |")
+              f"| {_fmt(r.get('E_gate'))} "
+              f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} "
+              f"| {_fmt(e_gate,6)} |")
 
     # chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
     val = [(r["name"], r["chain_resid"]) for r in rows
