@@ -219,12 +219,17 @@ def report(res):
         print(f"  (err " + ", ".join(midok) + ") where B_sym misses by ~2.1×, but OVER-binds")
     else:
         print(f"  where B_sym misses by ~2.1×, but OVER-binds")
-    print(f"  the LIGHT nuclei (²H 0.15 — no surface term), so the light-dominated")
-    print(f"  aggregate looks worse. B_vol is the leading SEMF term; B_AME = B_vol −")
-    print(f"  surface − Coulomb − asymmetry, and the residual carries that structure +")
-    print(f"  the ⁴He magic dip. NOT fitted (a_V is forced); the SEMF corrections are open.")
-    print(f"- NOT a fit: every term is E₀ (CAL-derived) × a Plancherel weight. c_λ(A) /")
-    print(f"  the SEMF-correction residual — is the open (non-fit) Δ_λ object.")
+    print(f"  the LIGHT nuclei (²H 0.15), so the light-dominated aggregate looks worse.")
+    print(f"- **a_V = {sat:.2f} is the flat-PLATEAU B/A, NOT the SEMF volume coeff (~15.8).**")
+    print(f"  B_vol = a_V·A reproduces the SATURATION value (~8 MeV/A) but has ZERO")
+    print(f"  A-structure. The residual R = B_vol − B_AME is NOT a liquid-drop surface")
+    print(f"  term: R/A^(2/3) CHANGES SIGN (+8.2 at ²H → 0 at ¹²C → −4.6 at ⁵⁶Fe) —")
+    print(f"  B_vol over-binds light and under-binds heavy, so no single-signed −a_S·A^(2/3)")
+    print(f"  fits. The real binding-curve shape (the rise to the iron peak + the ⁴He/¹⁶O")
+    print(f"  magic dips) is shell/Plancherel structure, not geometric surface.")
+    print(f"- NOT a fit (a_V forced by E₀ × a Plancherel weight), but NOT a derivation of")
+    print(f"  the binding either: a_V≈8 MeV/A is a parameter-free COINCIDENCE with the")
+    print(f"  saturation value; the A-dependence (c_λ / the shell residual) is the open object.")
     return best
 
 

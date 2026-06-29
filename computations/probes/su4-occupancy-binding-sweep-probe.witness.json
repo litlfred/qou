@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T19:32:58.308001+00:00",
-  "commitSha": "9fd18548118afae9ceddd6a0235e342220ad47b9",
+  "computedAt": "2026-06-29T19:37:25.158999+00:00",
+  "commitSha": "998433a4875743aa1ef589065fe7e53407698a85",
   "assertions": [
     {
       "name": "he4_occupancy_binding_matches_to_10pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 19,
   "computation": "su4-occupancy-binding-sweep-probe",
   "scriptFile": "su4_occupancy_binding_probe.py",
-  "scriptHash": "3ecb3ef5e572",
-  "scriptCommitSha": "7c3fac0c5a24256ff0ccf2e044b72d319810b567",
+  "scriptHash": "e93d96e4f75d",
+  "scriptCommitSha": "998433a4875743aa1ef589065fe7e53407698a85",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
