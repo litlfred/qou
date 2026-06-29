@@ -618,10 +618,6 @@ def main() -> int:
     # contributions) with mpmath (per-ansatz solutions); honest label
     # is "python" (mixed precision).
     from witness_base import WitnessBuilder
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     w = (WitnessBuilder("delta-lambda-empirical-tabulation", engine="python")
          .set_description(
             "Empirical tabulation of per-Wedderburn-block binding "

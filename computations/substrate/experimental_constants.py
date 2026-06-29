@@ -79,6 +79,14 @@ import math as _math
 Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
 Q_NEUTRON_MEV_ERR = _math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 
+# m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor
+# list pins m_p, m_e and the β-decay sector, deriving m_n rather than using
+# it as a 4th input. Numerically identical to M_N_MEV by construction
+# (Q_NEUTRON_MEV = M_N_MEV − M_P_MEV − M_E_MEV), so this is the same CODATA
+# value, named for the 3-input consumers. Restores the missing export that
+# delta_lambda_empirical_tabulation.py imports (bean t2vq).
+m_n_derived_3input = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV     # = M_N_MEV
+
 G_F_MEV     = 1.1663788e-11   # ± 0.0000006e-11 MeV⁻²
 G_F_MEV_ERR = 0.0000006e-11
 
