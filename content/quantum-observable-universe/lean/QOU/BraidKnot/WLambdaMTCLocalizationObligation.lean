@@ -1,6 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic
+import QOU.BraidKnot.KeystoneC2QDimTranspose
 
 /-!
 # W_λ keystone, residual (i): the MTC-matching obligation as a `§3b-cond` class
@@ -48,9 +49,11 @@ archimedean specialisation (`R := ℝ`, evaluating `d_q` at the substrate `q₀`
 is not needed for the obligation. No fit; the geometric side must *derive* the algebraically-fixed
 `τ`, never tune to it.
 
-The carried `qDim_conj` is the corpus-proved categorical input (carried abstractly only because the
-qou Hecke cone is not importable from this Mathlib-only obligation module); it is an **input**
-(a property of `d_q`), not the conclusion `loc_conj_eq`.
+The class field `qDim_conj` is an **input** (a property of `d_q`), not the conclusion `loc_conj_eq`.
+For the **genuine** Hecke q-dimension it is realized by the corpus-proved
+`QOU.BraidKnot.IdentityI.qDim_conj` (`KeystoneC2QDimTranspose.lean`, sorry-free) — see
+`heckeLocalization` below, which builds a `BeasleyWittenLocalization ℝ` on the real `qDim`,
+discharging this field from that theorem rather than carrying it abstractly.
 -/
 
 open Finset
@@ -135,3 +138,39 @@ instance localization_two : BeasleyWittenLocalization ℚ where
     rw [Finset.sum_pair (by decide : (false : Bool) ≠ true)]; norm_num
 
 end QOU.BraidKnot.Keystone.Example
+
+namespace QOU.BraidKnot.Keystone
+
+open QOU.MathlibExt.QPartitionCombinatorics QOU.BraidKnot.IdentityI
+
+/-- **Real Hecke q-Plancherel wire-up (removes the abstract `qDim_conj`).**
+
+Builds a `BeasleyWittenLocalization ℝ` from the **genuine** Hecke q-dimension
+`qDim` ([`QPartitionCombinatorics.qDim`](../MathlibExt/QPartitionCombinatorics.lean),
+`d_q(λ) = [n]_q! / ∏_c [h_c]_q`) on any conjugate-closed set of sorted partitions `P` with
+`D² = Σ_λ d_q(λ)² ≠ 0`. The `loc` IS the categorical Plancherel measure `d_q²/D²` (so `loc_matches`
+is `rfl`), and — the point of the strengthening — the `qDim_conj` field is discharged by the
+**corpus-proved** `QOU.BraidKnot.IdentityI.qDim_conj`
+([`KeystoneC2QDimTranspose.lean`](KeystoneC2QDimTranspose.lean), sorry-free), **not** carried
+abstractly. So `loc_isProbabilityMeasure` (C1) and `loc_conj_eq` (C2) hold for the *actual* Hecke
+Plancherel measure of the blocks `P`, modulo only the structural inputs (conj-closure, `D² ≠ 0`).
+
+`D² ≠ 0` is the sole remaining hypothesis; it is downstream of the still-open
+`Σ_λ d_q² = [n]_q!` (`wedderburn_trace_identity`, sibling #2743) — the honest open input. -/
+noncomputable def heckeLocalization
+    (q : ℝ) (P : Finset (List ℕ))
+    (hsorted : ∀ l ∈ P, l.Sorted (· ≥ ·))
+    (hconj : ∀ l ∈ P, Partition.conjugate l ∈ P)
+    (hD : (∑ m ∈ P, qDim q m ^ 2) ≠ 0) :
+    BeasleyWittenLocalization ℝ where
+  Part := List ℕ
+  parts := P
+  conj := Partition.conjugate
+  conj_mem := hconj
+  qDim := qDim q
+  qDim_conj := fun p hp => qDim_conj q p (hsorted p hp)
+  globalDim_ne := hD
+  loc := fun p => qDim q p ^ 2 / (∑ m ∈ P, qDim q m ^ 2)
+  loc_matches := fun _ _ => rfl
+
+end QOU.BraidKnot.Keystone

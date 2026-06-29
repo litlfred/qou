@@ -119,9 +119,25 @@ compile QOU.BraidKnot.WLambdaMTCLocalizationObligation   # exit 0, sorry-free
 now built on disk. Re-seeding to capture it is owner-gated — a force-push to a load-bearing infra
 orphan branch.)
 
+## Increment 2 (2026-06-29) — real Hecke q-Plancherel wire-up
+
+Strengthened Increment 1 (same file, now imports `KeystoneC2QDimTranspose`; compiles sorry-free
+against the real cone via the lean-direct recipe below).
+
+- `noncomputable def heckeLocalization (q P hsorted hconj hD) : BeasleyWittenLocalization ℝ` builds
+  the obligation class on the **genuine** Hecke q-dimension `qDim` (`d_q = [n]_q!/∏[h_c]_q`), with
+  `loc = d_q²/D²` (`loc_matches` = `rfl`) and the `qDim_conj` field **discharged by the
+  corpus-proved `QOU.BraidKnot.IdentityI.qDim_conj`** — no longer carried abstractly.
+- Consequence: C1 (`loc_isProbabilityMeasure`) + C2 (`loc_conj_eq`) now hold for the **actual** Hecke
+  Plancherel measure of any conjugate-closed sorted block set `P`, modulo only `D² ≠ 0`.
+- `D² ≠ 0` is the sole remaining structural input — downstream of the still-open
+  `Σ_λ d_q² = [n]_q!` (`wedderburn_trace_identity`, #2743). Honest open coupling.
+
 ## Open log
 
 - 2026-06-29: branch + intent; corpus map of residual (i) dispatched.
 - 2026-06-29: Increment 1 — MTC-matching obligation class + C1/C2 derived, sorry-free (lean-direct).
 - 2026-06-29: built the keystone Lean cone; recorded the `lean`-direct recipe (`lake build` is
   destructive + proxy-blocked here). Increment 1 re-verified against the real cone (exit 0).
+- 2026-06-29: Increment 2 — `heckeLocalization` wires the real `qDim` + corpus-proved `qDim_conj`
+  into the obligation (sorry-free, cone-verified); only `D² ≠ 0` (#2743) remains as input.
