@@ -25,6 +25,7 @@
 -/
 
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 
