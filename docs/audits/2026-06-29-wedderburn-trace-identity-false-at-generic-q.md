@@ -116,6 +116,32 @@ So the "partition of the total Markov weight" the proposition claims to provide 
 and update the ~6 consumers' citations (mechanical; their real dependency is sound). The `sorry` in
 `wedderburn_trace_identity.lean` must **not** be "proved" (its statement is false).
 
+## Resolution (2026-06-29, owner-approved option 1)
+
+Restated `prop:wedderburn-trace-identity` to the **Markov-trace normalization**
+`Σ_λ d_λ·y_λ(q) = 1` (option 1). Changes on this branch:
+
+- **Proposition** `wedderburn-trace-identity.md` / `.ts`: new statement; `lean.ref` repointed from
+  the false sorry'd `QOU.BraidKnot.wedderburn_trace_identity` → the true
+  `QOU.BraidsAndKnots.plancherel_via_recipe`; `authorNote` records the correction. The "scale vs
+  weight" distinction (`[n]_q!` scale; `w̃_λ=d_q²/[n]_q!` ratio; neither = `Σd_q²`) is now in the body.
+- **Proof** `wedderburn-trace-identity-proof.md`: replaced the bogus "q-deform each factor" step with
+  the genuine `tr_M(1)=Σ y_λ d_λ=1` derivation.
+- **Library Lean** `BraidKnot/wedderburn_trace_identity.lean`: **removed** the false sorry'd theorem +
+  its self-justifying `HeckeQHookDimension` premise (a `sorry` on a false statement is a landmine);
+  kept only `qInt`/`qFactorial`; docstring records the disproof + the true decls. Compiles exit 0.
+  Nothing imported the removed decl.
+- **Consumer prose** de-conflated (cite `[n]_q!` as the Hecke scale / the Markov normalization, not
+  the false sum): `wigner-coefficient-derivation-proof.md`, `mass-categorical-descent.md`,
+  `mass-coefficient-shadow-price-proof.md`, **plus two the top-6 sweep missed** —
+  `unified-iterative-correction-proof.md`, `frobenius-self-duality-forces-lp-dual-extraction-proof.md`.
+- **Already correct (left as-is):** `plancherel-term-7-formulation-proof.md` independently documents
+  the identity as false and uses the vector-space `Σ(dim V_λ)²=n!` — prior corpus acknowledgment.
+
+Mass/binding numbers unchanged (the false sum was never computed; consumers use `[n]_q!` directly and
+the per-block ratios). Validation infra (folio-assistant) is proxy-blocked in this env; verified by
+hand (lean.ref resolves to a real theorem; library Lean compiles; prose is schema-conforming).
+
 ## Reproduce
 
 ```bash

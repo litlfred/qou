@@ -162,3 +162,7 @@ nonempty — none of them the false `Σ d_q² = [n]_q!`.
   `[n]_q! = Σ_λ f^λ·q^{b(λ)}·d_q(λ)`; the vector-space `Σ(f^λ)²=n!` is already proved (#2724).
 - 2026-06-29: Increment 3 — discharged `D² ≠ 0` from positivity (`qDim_pos`, `1 < q`), so
   `heckeLocalizationOfPos` has no remaining structural input beyond the trivial block-set facts.
+- 2026-06-29: owner picked option 1 — restated `prop:wedderburn-trace-identity` to the Markov
+  normalization `Σ_λ d_λ·y_λ=1` (repointed lean.ref → `plancherel_via_recipe`; removed the false
+  sorry'd library theorem; de-conflated 5 consumers; `plancherel-term-7` already correct). Mass/
+  binding numbers unchanged (impact analysis: false sum never computed). See the audit's Resolution.

@@ -17,8 +17,8 @@ through their image under the Wedderburn embedding; for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.
 
-By the Wedderburn-Artin trace identity
-$\sum_\lambda \dim_q(\lambda)^2 = [k]_q!$ ($k$ fixed), the dual
+By the [Markov-trace normalization](#prop:wedderburn-trace-identity)
+(the per-level budget is the Hecke-level scale $[k]_q!$, $k$ fixed), the dual
 shadow prices satisfy a single budget constraint per Hecke
 level; by Frobenius reciprocity
 ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),

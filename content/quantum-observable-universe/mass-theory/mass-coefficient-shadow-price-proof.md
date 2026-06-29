@@ -87,9 +87,10 @@ The coefficient $C_\lambda \cdot m_e$ is the shadow price
 evaluated at the normalisation point where $S_\lambda = 1$.
 
 **Corollary (coefficient at each level).**
-By the [Wedderburn trace identity](#prop:wedderburn-trace-identity),
-$\sum_\lambda \dim_q(\lambda)^2 = [k]_q!$.  This constrains the
-total shadow-price budget: the trace identity is the dual
+By the [Markov-trace normalization](#prop:wedderburn-trace-identity)
+$\sum_\lambda d_\lambda\, y_\lambda(q) = 1$, the per-level budget is set
+by the Hecke-level scale $[k]_q!$ (the $q$-factorial at level $k$).  This
+constrains the total shadow-price budget: the normalization is the dual
 feasibility constraint ensuring all $u_\lambda^*$ are consistent.
 The budget at level $k$ is $[k]_q!$; the marginal budget from
 advancing $k \to k+1$ is $[k+1]_q! - [k]_q! = [k]_q! \cdot ([k+1]_q - 1)$.

@@ -13,14 +13,15 @@ By Frobenius reciprocity, the isospin Casimir at $H_5$ induced
 from $H_3$ has eigenvalue $T(T+1)$ in each component, weighted
 by $\dim_q(\lambda)^2$.
 
-The total weight is:
+The coefficient is set by the Hecke-level scale at $k = 5$:
 
 $$
-  \sum_\lambda \dim_q(\lambda)^2 = [5]_q!
+  [5]_q! = [1]_q [2]_q [3]_q [4]_q [5]_q ,
 $$
 
-by the Wedderburn trace identity
-([Wedderburn trace identity](#prop:wedderburn-trace-identity)).
+the $q$-factorial at level $5$, evaluated directly as this product (the
+Hecke-level coefficient of the Markov-trace normalization,
+[Markov-trace normalization](#prop:wedderburn-trace-identity)).
 
 Therefore the Wigner coefficient
 $= [5]_q! \cdot m_e \approx 67.1$ MeV, matching the fitted value
