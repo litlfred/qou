@@ -35,10 +35,20 @@ def DegLex [LT α] (w w' : List α) : Prop :=
 -- Ref: [manuscript] §2/braiding-induced-ordering
 theorem degLex_wellOrdered (n : ℕ) :
     WellFounded (DegLex (α := Fin n)) := by
-  -- DegLex w w' ↔ Prod.Lex (· < ·) (List.Lex (· < ·)) (w.length, w) (w'.length, w')
-  -- so DegLex = InvImage (Prod.Lex ...) (fun w => (w.length, w))
-  apply InvImage.wf (f := fun w => (w.length, w))
-  exact Prod.lex_wf Nat.lt_wfRel.wf (List.wellFoundedLT.wf)
+  -- DegLex is a subrelation of the inverse image of the lexicographic
+  -- product `Prod.Lex (· < ·) (List.Lex (· < ·))` under `w ↦ (w.length, w)`,
+  -- and the latter is well-founded.
+  have hwf : WellFounded
+      (InvImage (Prod.Lex (· < ·) (List.Lex (· < ·)))
+        (fun w : List (Fin n) => (w.length, w))) :=
+    InvImage.wf _ (Prod.lex_wf Nat.lt_wfRel.wf List.wellFoundedLT.wf)
+  apply Subrelation.wf _ hwf
+  intro w w' h
+  rcases h with h | ⟨he, hl⟩
+  · exact Prod.Lex.left _ _ h
+  · simp only [InvImage]
+    rw [he]
+    exact Prod.Lex.right _ hl
 
 /-- Admissibility (length component): concatenation preserves
     the length ordering. -/
@@ -57,11 +67,11 @@ theorem degLex_admissible_lex {α : Type*} [LT α]
     List.Lex (· < ·) (u ++ w ++ v) (u ++ w' ++ v) := by
   induction u with
   | nil =>
-    simp
-    exact List.Lex.append_left _ h
+    simp only [List.nil_append]
+    exact List.append_left h v
   | cons a us ih =>
-    simp [List.cons_append]
-    exact List.Lex.cons a (ih)
+    simp only [List.cons_append]
+    exact List.Lex.cons ih
 
 /-- Full admissibility: DegLex is preserved under concatenation
     with common prefix and suffix. -/

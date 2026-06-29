@@ -53,4 +53,6 @@ def CategoricalFourier.fromLaplace
     : Prop :=
   ∀ (f : A → A) (ξ : ℝ), F f ξ = L f (Complex.I * ξ)
 
+end
+
 end QOU

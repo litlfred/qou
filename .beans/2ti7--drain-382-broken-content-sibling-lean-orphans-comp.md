@@ -114,3 +114,18 @@ confirmed sibling work; a fresh `lean-verify-siblings.sh` sweep over the chapter
 first would target only live breakage. (2) Swarm output MUST be quality-gated by
 the orchestrator (the §3b-tax vacuity check caught the categorical-higgs
 trivial-field repair the per-file verifier passed — compile-green ≠ honest-content).
+
+## 2026-06-29 wave-2 swarm (9 agents × 2 files, quantum-observable-universes; live-set re-derived)
+
+Applied wave-1 lesson #1: re-derived the live broken set first (git filter — 0 of the
+chapter's 63 orphans were modified on main since 2026-06-28 ⇒ all still broken;
+spot-verified). Swarmed the first **18**. Outcome: **18/18 genuinely repaired, all
+independently re-verified `fail=0`** (parallel `lean-verify-siblings.sh` sweep), 0
+flagged — 100% yield (vs wave-1's 1/18 live). All committed. Quality gate (orchestrator):
+vacuity scan clean (no `: True`/`native_decide`/fabricated-axiom/trivial-field); 2 new
+sorries both cited (`[kassel1995]`, valid `references.ts` keys); diff-wide grep clean.
+Highlights: `braiding-induced-ordering` (real `WellFounded` proof via `Subrelation.wf`,
+no sorry); `categorical-coordinate-ring` REPLACED a fabricated `axiom …_universal_axiom`
+audit-dodge with the real theorem + one honest cited sorry; the rest were import-scoping /
+`noncomputable section`-docstring / `end`-balance / type-correct-composite repairs with
+content preserved. **Re-derive-first works** — wave-3 should continue per-chapter the same way.

@@ -1,5 +1,6 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
@@ -23,9 +24,10 @@ open CategoryTheory MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -54,9 +56,14 @@ structure CategoricalQConnection (C : Type u) [Category.{v} C]
   xi_contract_nabla : A ⟶ A
   /-- The canonical 1-form `θ_A` as a morphism `A → A ⊗ Ω¹`. -/
   theta_nabla : A ⟶ (A ⊗ Omega1)
-  /-- The deformation parameter `q`, non-zero. -/
+  /-- The deformation parameter `q`. -/
   q : R_q
-  q_ne_zero : q ≠ 0
+  /-- The inverse `q⁻¹` as an element of the ring `R_q = ℤ[q, q⁻¹]`.
+      (`R_q` is not a field, so `q⁻¹` is carried as an explicit element
+      satisfying `q * q_inv = 1`, e.g. `q_param` and `q_inv_param`.) -/
+  q_inv : R_q
+  /-- `q_inv` is a two-sided inverse of `q` in `R_q`. -/
+  q_mul_inv : q * q_inv = 1
 
 /-- The q-deformed connection morphism `∇_q : A → A ⊗ Ω¹`.
 
@@ -64,13 +71,19 @@ structure CategoricalQConnection (C : Type u) [Category.{v} C]
 noncomputable def CategoricalQConnection.nabla_q {C : Type u}
     [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear R_q C]
     (cqc : CategoricalQConnection C) : cqc.A ⟶ (cqc.A ⊗ cqc.Omega1) :=
-  cqc.q⁻¹ • cqc.nabla + (1 - cqc.q⁻¹) • (cqc.xi_contract_nabla ≫ cqc.theta_nabla)
+  cqc.q_inv • cqc.nabla + (1 - cqc.q_inv) • (cqc.xi_contract_nabla ≫ cqc.theta_nabla)
 
 /-- At `q = 1`, the q-connection reduces to the classical connection. -/
 theorem CategoricalQConnection.nabla_q_classical {C : Type u}
     [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear R_q C]
     (cqc : CategoricalQConnection C) (hq : cqc.q = 1) :
     cqc.nabla_q = cqc.nabla := by
-  simp [nabla_q, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+  have hinv : cqc.q_inv = 1 := by
+    have := cqc.q_mul_inv
+    rw [hq, one_mul] at this
+    exact this
+  simp [nabla_q, hinv, sub_self, zero_smul, one_smul, add_zero]
+
+end
 
 end QOU

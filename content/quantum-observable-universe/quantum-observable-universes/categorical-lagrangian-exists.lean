@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.GaugeTheory
+import QOU.QuantumObservableUniverses.QDifferentialGeometry
 import Mathlib.CategoryTheory.Linear.Basic
 
 
