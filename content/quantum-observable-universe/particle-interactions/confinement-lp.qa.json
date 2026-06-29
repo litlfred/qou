@@ -1046,7 +1046,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "confinement-lp.md:43: \"The objective Σ t_i x_i = tr_M(Φ) is the categorical action.\"",
+        "notes": "Interpretive framing ('categorical action', shadow-price meaning) is interleaved with the primal/dual statements; could be split into a remark. Minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Confinement operator-selection LP is core particle-interactions confinement material."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "LP over real H_3(q) coordinates with Gx≥0 is legitimately archimedean (positivity/ordering); base ring ℝ is appropriate here."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The .md gives the LP formulation + duality narrative; the substantive proof lives in library GramIndefinite.lean, not a Proof body here. No archimedean-on-algebraic misuse to flag."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "confinement-lp.lean:19: \"theorem lp_achieves_zero_trace : True := by trivial\"",
+        "notes": "The .ts lean.ref qou:QOU.Interactions.lp_achieves_zero_trace resolves to the sibling confinement-lp.lean, which is a shadowing : True := trivial stub. The real content (Gram indefiniteness, LP can reach tr_M=0) lives in QOU/Interactions/ConfinementLP.lean+GramIndefinite.lean under a DIFFERENT decl name, so the lean.ref does NOT resolve to it. The resolved Lean proves nothing of the .md proposition."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "critical",
+        "evidence": "confinement-lp.lean:19: \"theorem lp_achieves_zero_trace : True := by trivial\"",
+        "notes": "The resolved sibling theorem's conclusion is True, not the LP-selection/duality statement of the .md; the substantive proposition is replaced by a tautology (statement weakened to vacuity)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Stub is trivial, not a self-assuming projection of a structure field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "critical",
+        "evidence": "confinement-lp.lean:19: \"theorem lp_achieves_zero_trace : True := by trivial\"",
+        "notes": "Resolved sibling concludes : True via trivial for a proposition whose .md asserts a substantive LP-duality/uniqueness result — exactly the trivial-true anti-pattern; and it is a shadowing stub (§0a) hiding a real library file."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No false premise (the stub has no hypotheses)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Stub has no hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "critical",
+        "evidence": "confinement-lp.lean:19: \"theorem lp_achieves_zero_trace : True := by trivial\"",
+        "notes": "trivial discharges a vacuous : True goal where a substantive structural proof is expected — the masking pattern this criterion guards against."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The .md LP/dual formulation, strong-duality conditions, and the B_3-is-a-local-minimum caveat (with corrected trace tr_M(e⁻)=z³ giving an indefinite Gram) are internally consistent and correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "confinement-lp.lean:19: \"theorem lp_achieves_zero_trace : True := by trivial\"",
+        "notes": "While the .md prose is substantive, the formal sibling that the manifest points to is content-free (: True := trivial) and shadows the genuine library formalisation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No circular derivation in the LP formulation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The block honestly states B_3 is only a LOCAL minimum (global min at tr_M=0), avoiding overclaim; topological constraint flagged as independent."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "M (large constant) and n_target are structural LP data, not hidden fits."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Primal->dual via LP duality, strong duality from nonempty+bounded feasible set; valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "confinement-lp.lean:19: \"theorem lp_achieves_zero_trace : True := by trivial\"",
+        "notes": "Lean (resolved sibling) proves the vacuous True, radically weaker than the .md LP-selection proposition; the real GramIndefinite proof is under a different, unreferenced decl name."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Cross-refs to frobenius-gram-matrix, operator-selection-lp, corrected-markov-trace used correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "t_i, G_ij, n_target, active set, B_3 all defined or referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical CODATA match in this block (numeric probes deferred to audit:confinement-lp-numeric)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Shadow prices as binding-energy demand prices is a sensible LP interpretation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Numeric probe results referenced via audit link, not pinned in this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c652b4daf0e6",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "notes": "Prose passes; the formal layer is a §0a shadowing trivial-true stub. Cluster of proof-* fails stems from this single root."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

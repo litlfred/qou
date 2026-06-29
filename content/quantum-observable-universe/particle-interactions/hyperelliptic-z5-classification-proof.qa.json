@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Z5/hyperelliptic classification supports the Bring-surface particle structure used in this chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Order-5 PGL_2 element conjugate to x->ζ5 x with two fixed points; Riemann-Hurwitz |Branch|=2g+2; 6=5+1 unique decomposition — all correct algebraic geometry."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Substantive classification proof (orbit decomposition + branch divisor uniqueness)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Conclusion X≅X_5 derived from RH + orbit structure, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Uniqueness via branch-divisor determination of hyperelliptic curve (g≥2) is correctly invoked."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Normalisations (Möbius, rescaling a=1) are legitimate coordinate choices, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Each step (descent to P^1, order-5 normal form, orbit sizes, RH parity, 6=5+1) follows logically."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proof block; no Lean sibling for the proof itself."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No external citations in the proof body."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "φ, ι, π, branch divisor, X_5 all defined in the parent proposition/definition."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Pure algebraic geometry, no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Mathematical proof, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "15ff7c41df4d",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Correct, complete classification proof; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

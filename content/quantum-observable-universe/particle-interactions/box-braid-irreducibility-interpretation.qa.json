@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Neutrino stability / box-braid vertex structure is particle-interaction content (interprets prop:box-braid-irreducibility)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "T(3,5) crossing/braid-length 10 and unknot-neutrino claims are internally consistent; no false math identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Substantive interpretive content (box topology, vertex structure, stability mechanism)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Stability derived from the energetic barrier, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "box-braid-irreducibility-interpretation.md:79: \"The neutrino is therefore strictly stable in the Descartes universe\"",
+        "notes": "Bound E_box ≥ 10(q-q^{-1})μ0 ≫ m_ν shows suppression, not strict impossibility; 'strictly stable / no decay channels at any energy' is slightly stronger than the energetic-inaccessibility argument given. Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "μ0, q are substrate quantities; crossing number 10 is a topological invariant, not a free fit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Each stability sub-argument (no beta, no scattering, no simpler process) follows from the topology."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Remark block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Cross-refs to internal defs/remarks only; correctly used."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "photon, neutrino, T(3,5), crossing energy all defined via referenced blocks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical CODATA match; m_ν ~ μ0(q-1) is order-of-magnitude scaling, not a precision fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Neutrino long-lived/effectively-stable is physically correct; the gamma-gamma->nu-nu suppression is plausible within the model."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "59246d491157",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Sound interpretation; only minor objection is 'strictly stable' phrasing slightly exceeds the energetic-suppression argument."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

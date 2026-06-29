@@ -1050,7 +1050,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is the cos-resummation formula Q_β^{A,cos}=Q_β^A·cos((z-1)h/2); the residual numbers and decategorification rationale are in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Q_β refinement fits particle-interactions (β-decay)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "cos of a real eigenphase evaluated at q0 is an archimedean observable-level quantity; ℝ base ring appropriate (mass observable lives in classical limit)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean uses Real.cos, Real.sqrt_inv legitimately for the archimedean eigenphase; eigenphase_bar_involution discharged by ring after sqrt simplification."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "q-beta-cos-resummation.lean:159: \"theorem q_beta_cos_resummation (q) [TransferMatrixEigenphase q] : ∀ formA, ∃ formA_cos, formA_cos = formA * Real.cos (eigenphase q) ∧ ...\"",
+        "notes": "The Lean q_beta_cos_resummation proves an existential tautology (constructs formA_cos:=formA·cos α, then a ring identity for the Taylor remainder); it captures the FORM of the refinement but not the empirical-tightening claim of the .md. The substantive content (bar-evenness) is the separately-proved eigenphase_bar_involution. Disclosed; minor."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Theorem signatures match their stated (modest) content; TransferMatrixEigenphase class fields are content-bearing (bounded character)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "q_beta_cos_resummation constructs the witness and discharges by ring; not a projection of a conclusion-typed field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "q-beta-cos-resummation.lean:124: \"cos_taylor_quadratic_coeff (α) : 1 - α^2/2 - (1 - α^2/2) = 0 := by ring\"",
+        "notes": "cos_taylor_quadratic_coeff is the syntactic tautology X - X = 0; and the main theorem's second conjunct reduces to cos α = cos α by ring. These are real (non-:True) goals but near-tautological 'anchoring' lemmas that don't establish the cosine resummation's correctness. Minor."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hypothesis q>0 (eigenphase_bar_involution) satisfiable; class hypothesis inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "hq:0<q used (sqrt_eq_zero/ne_of_gt) in eigenphase_bar_involution; class hyp used to type the conditional theorem."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No decide; ring/Real lemmas used."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Markov-symmetrized eigenphase trace = cos α and bar-evenness (α->-α) are correct; the residual numbers are presented as empirical, not as identities."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "eigenphase_bar_involution is genuine content; the resummation theorem is weak but not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "cos form motivated by bar-evenness + matching the spectral-bridge perturbative expansion, not back-fitted to the CODATA residual itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "q-beta-cos-resummation.lean:148: \"the cosine is the unique entire even analytic function matching the spectral-bridge perturbative expansion at every order\"",
+        "notes": "Uniqueness claim overreaches: matching a finite-order (single-wrap) perturbative expansion does not single out cos among entire even functions; 'at every order' would require the full spectral identity, which is only axiomatized (TransferMatrixEigenphase), not proved. The empirical 5.49× improvement is real but is a selected refinement, not a derived necessity."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No free parameter: α=(z-1)h/2 fixed by q; the cos vs cos_q choice is a discrete form selection, not a continuous DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Markov cyclicity -> bar-evenness -> even resummation is valid; the leap to 'cos is unique' is the overclaim captured above, not a non-sequitur in the chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "q-beta-cos-resummation.lean:159: \"theorem q_beta_cos_resummation ... ∃ formA_cos, formA_cos = formA * Real.cos (eigenphase q) ∧ ...\"",
+        "notes": "Lean establishes the existential algebraic form of the refinement (a tautology by construction) plus bar-evenness, not the .md's empirical-tightening or uniqueness claim; the formal content is weaker than the narrative. Disclosed in the file header."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "jones1985, wenzl1988 cited for Markov trace / y_λ bridge — appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "z, h, α, Form A, cos vs cos_q all defined; conditional on prop:beta-decay-transfer-matrix flagged."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "q-beta-cos-resummation.md:64: \"cos((z-1)h/2) (classical) +305.7 ppm | cos_q((z-1)h/2) (q-deformed) +313.4 ppm ... classical cosine wins by ≈7 ppm\"",
+        "notes": "The classical-vs-q-deformed cosine is selected by a ~7 ppm residual difference (305.7 vs 313.4 ppm) — a margin well inside plausible model/stale-q0 noise — and used to argue 'classical-limit residence'. The 1677->305 ppm improvement is genuine but still a +305 ppm miss; the 7 ppm tie-break is fit-noise-grade. Residuals not re-pinned to current proton-q0 are also a staleness risk."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Trace-symmetrization giving cos of an eigenphase is standard; Q_β still misses by +305 ppm, consistent with the known CAL-2-floor limitation (not claimed solved)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "q-beta-cos-resummation.lean:153: \"Empirical evidence (from q-beta-tightening-landscape.witness.json): ... +305.7 ppm ... +1677.5 ppm — a 5.49× tightening\"",
+        "notes": "Residual numbers cite q-beta-tightening-landscape.witness.json; not verified to be current against the post-2026-05-28 proton-q0 re-pin. Q_β witnesses are a known staleness class (AGENTS.md). Flag for a freshness check; downgraded to warn."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "949c87b89e02",
+          "ts": "89465d9b8c1c",
+          "lean": "046133d415f5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "notes": "Strongest objection: uniqueness overclaim + 7 ppm fit-noise tie-break; the Lean content is sound but weaker than the narrative."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

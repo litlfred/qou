@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:22.892Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Bring-surface Z5 descent / hyperelliptic quotient supports the particle-structure geometry used in this chapter."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "S_5 order 120 acting on Bring's curve, six Sylow-5 subgroups, genus-2 quotient X_5: y²=x⁵-1 are standard facts (Edge 1978)."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' presents substantial mathematical content: '$\\mathbb{Z}_5$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Remark relates X_5 Z5 automorphism to a Sylow-5 of the S_5 Bring action — real content."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$'.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Descent stated as classical fact, not self-justified."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Explicitly defers the full descent calculation to Edge 1978; does not overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +196,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$'.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical parameter."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +230,21 @@
         "notes": "The prose arguments in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Quotient by Sylow-5 -> genus-2 X_5; discard A_5 complement -> U(1) collapse, consistent with cited reduction prop."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +263,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Remark block, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +297,21 @@
         "notes": "The citations edge1978 in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Edge 1978 correctly cited for genus-reduction quotients of Bring's curve."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +331,21 @@
         "notes": "Key terms and symbols in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "S_5, Sylow-5, X_5, Bring's surface defined/referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +365,21 @@
         "notes": "The algebraic and logical relations in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +399,21 @@
         "notes": "The physical concepts described in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "bring-z5-descent.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Algebraic-geometry remark; no direct physics claim."
       }
     ],
     "da-reproducibility": [
@@ -252,6 +432,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -272,6 +467,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Descent of $\\\\mathbb{Z}_5 \\\\subset S_5$ from Bring to $\\\\mathcal{X}_5$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "8051bf1adbb9",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Correct classical-fact remark, properly attributed; no objection."
       }
     ],
     "voice-status-leak": [
@@ -1081,5 +1291,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

@@ -76,3 +76,7 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 48, observations)
 - s5-equivariant-torus-knots.lean:46 (proves s in {3,5} membership tautology, hardcoded; nothing about embeddings/S5 orders; unused 3<=s/Odd s)
 - substrate-consistency-window.lean:55 (q*-eps<=q*<=q*+eps hardcoded); strangelet-double-beta.lean:65 (rate=amplitude^4 is the def, X=X unfold)
+
+## More instances (batch 50, particle-interactions)
+- confinement-lp.lean:19 (: True := trivial shadow stub; real proof in QOU/Interactions/ConfinementLP.lean + GramIndefinite.lean; critical sec0a)
+- atom-knot-unique.lean:24 (proves struct K1=K2 via congr<;>assumption, not Markov isotopy beta-hat1~beta-hat2)

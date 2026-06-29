@@ -77,6 +77,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "silver-ratio-beta-decay-null.md:26: \"The generator σ has eigenvalues equal to the silver-ratio conjugates themselves — a self-referential fixed point.\"",
+        "notes": "The Proposition statement embeds interpretive prose ('self-referential fixed point') inside the boxed-statement block; this interpretation would be cleaner as a follow-on remark. Minor voice flag."
       }
     ],
     "fit-section-chapter": [
@@ -143,6 +161,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "β-decay net-trace degeneracy on H_3(q) fits particle-interactions."
       }
     ],
     "wall-side-statement": [
@@ -209,6 +243,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is algebraic (Δnet=h(h-2)/2) but the silver-ratio root q=1±√2 is an archimedean/real evaluation; the Lean correctly specialises to ℝ, consistent with §7c."
       }
     ],
     "wall-side-proof": [
@@ -275,6 +325,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proof uses Real.sqrt and root-finding (archimedean) appropriately for the q=1±√2 specialisation; the symbolic Δnet derivation stays algebraic."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -341,6 +407,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean theorems (silver_ratio_polynomial_root, beta_decay_null_iff_h_zero_or_two, hecke_quadratic self-ref, b²=7/8) match the .md claims; deltaNet=h(h-2)/2 and null iff h∈{0,2} aligned."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -605,6 +687,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Signatures express the silver-ratio null/self-referential content; no weakening or axiom injection."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -671,6 +769,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proofs discharge via ring/Real.sq_sqrt/linarith, not by projecting a self-asserting field."
       }
     ],
     "proof-no-trivial-true": [
@@ -737,6 +851,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Goals are substantive (polynomial roots, iff null condition, exact 7/8 ratio); none are : True or x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -803,6 +933,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hypothesis q>0 is satisfiable; no False/0=1 premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -869,6 +1015,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "hq:q>0 used in beta_decay_null_iff (mul_eq_zero branch reasoning); other lemmas are parameter-free identities."
       }
     ],
     "proof-no-decide-masking": [
@@ -935,6 +1097,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No decide; ring/linarith/norm_num used legitimately on real identities."
       }
     ],
     "da-false-claim": [
@@ -1002,6 +1180,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Verified: h=2 ⇔ q-q⁻¹=2 ⇔ q²-2q-1=0 ⇔ q=1±√2; b²=(q⁴+q²+1)/(q²+1)²=7/8 at q=1+√2 (21+14√2 over 24+16√2, both =·(3+2√2)). Correct."
       }
     ],
     "da-vacuous": [
@@ -1069,6 +1263,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Non-trivial exact algebraic facts; not vacuous."
       }
     ],
     "da-circular": [
@@ -1136,6 +1346,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Net coefficients taken from prop:neutron-qvalue-symbolic; the null condition is derived, not assumed. q=1±√2 is a math consequence, not back-fitted to q0."
       }
     ],
     "da-overclaim": [
@@ -1203,6 +1429,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Stated as a degeneracy/null point at q=1+√2, NOT claimed to be the physical substrate q0; no accuracy overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -1270,6 +1512,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No free parameter; everything follows from h."
       }
     ],
     "da-non-sequitur": [
@@ -1337,6 +1595,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Each step (subtract net coefficients -> h(h-2)/2 -> h=2 root) follows."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1403,6 +1677,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean encodes the same content as the .md (silver-ratio roots, null condition, b²=7/8)."
       }
     ],
     "da-citation-misuse": [
@@ -1470,6 +1760,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "wenzl1988, hoefsmit1974 correctly cited for Markov-trace / seminormal forms."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1537,6 +1843,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "h=q-q⁻¹, net coefficients tabulated, silver ratio = 1+√2 unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1604,6 +1926,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No CODATA match; this is an exact algebraic null point, not a numerical fit."
       }
     ],
     "da-physical-implausibility": [
@@ -1676,6 +2014,22 @@
         "severity": "major",
         "evidence": "vanishes if and only if h = 2 if and only if q = 1 \\pm \\sqrt{2} (the silver-mean conjugates).",
         "notes": "The claim evaluates the beta-decay Q-value at q = 1 + sqrt(2) ~ 2.414. The physical universe uses q_0 ~ 1.839. Extrapolating to the silver ratio is a mathematical curiosity with no physical meaning, making physical assertions at this value implausible."
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Net(p)=net(n)=0 at the silver-ratio q is presented as a categorical degeneracy, not a physical-q claim."
       }
     ],
     "da-reproducibility": [
@@ -1743,6 +2097,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Closed-form, Lean-verified; no external witness needed."
       }
     ],
     "da-referee-verdict": [
@@ -1811,6 +2181,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Strong block: exact, Lean-backed algebraic null point. Only minor objection is interpretive prose in the statement (voice)."
       }
     ],
     "voice-status-leak": [
@@ -2852,5 +3238,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

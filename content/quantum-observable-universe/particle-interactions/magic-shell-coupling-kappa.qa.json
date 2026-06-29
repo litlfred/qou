@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.106Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The Proposition statement is the closed form κ=-E_0 log(1/h)/([2]_q[3]_q); interpretation lives in separate '## Structural interpretation' section."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:19.456Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Magic-shell coupling slope (nuclear binding) fits particle-interactions."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:19.775Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement uses log/q-brackets evaluated at real q0 — archimedean by nature (numerical κ in MeV); ℝ base ring appropriate."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:20.136Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean proofs (hParam_pos, E0_pos, kappaClosed_neg) use linarith/Real.log_pos legitimately on real archimedean quantities."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:20.535Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean kappaClosed matches the boxed .md formula; kappaClosed_neg proves κ<0 (the sign claim). The empirical-match equality is carried by the HasMagicShellCouplingKappaClosedForm class, not asserted as proved."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -359,6 +439,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "kappa_closed_form_is_categorical projects the class field kappa_closed_eq_empirical — but this is a conditional theorem over a class hypothesis (the equality is an assumed instance), structurally honest, not a weakening of an unconditional claim."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -379,6 +475,24 @@
         "reviewed_at": "2026-06-22T02:57:22.321Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "magic-shell-coupling-kappa.lean:80: \"kappa_closed_form_is_categorical [c : HasMagicShellCouplingKappaClosedForm] := c.kappa_closed_eq_empirical\"",
+        "notes": "kappa_closed_form_is_categorical IS a verbatim projection of the class field whose type is its own conclusion (kappaClosed = kappa_empirical). Per §3b this is permitted only if the class axiomatises hypotheses, but here the field IS the conclusion. The genuine content is in the separately-proved kappaClosed_neg; this theorem is a self-assuming projection. Minor (conditional-class framing partially excuses it)."
       }
     ],
     "proof-no-trivial-true": [
@@ -399,6 +513,22 @@
         "reviewed_at": "2026-06-22T02:57:22.748Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Goals are real equalities/inequalities (κ<0, [0]_q=0, h>0), not True."
       }
     ],
     "proof-no-false-premise": [
@@ -455,6 +585,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hypotheses (q>1, m_e>0, h<1, brackets>0) are satisfiable at q0; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -511,6 +657,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "kappaClosed_neg uses all four hypotheses (hq, hm via E0_pos; hhParam_lt_one for log_pos; h_brackets_pos for div_pos)."
       }
     ],
     "proof-no-decide-masking": [
@@ -549,6 +711,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No decide; structural real-analysis lemmas used."
       }
     ],
     "da-false-claim": [
@@ -569,6 +747,22 @@
         "notes": "The claim in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "κ<0 and the closed-form structure are correct; the numerical 4.1860·1.5651/6.1206≈1.0704 arithmetic checks out."
       }
     ],
     "da-vacuous": [
@@ -589,6 +783,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Substantive closed form with a non-trivial sign proof. (The empirical-equality theorem is a projection but the block is not content-free.)"
       }
     ],
     "da-circular": [
@@ -609,6 +819,24 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:46: \"E_0·log(1/h) — the universal per-shell magic-coupling magnitude, identified empirically ... at the doubly-magic anchor (2,2)\"",
+        "notes": "The 'H7a energy quantum' factor E_0·log(1/h) is stated to have been 'identified empirically at the doubly-magic anchor (2,2)', then the product κ is claimed to predict the v6 κ 'with no observed input'. If the log(1/h) magnitude was tuned to an empirical anchor, the 0.034% κ match is partly a re-expression of that calibration. Possible circular/back-fit; warrants author clarification."
       }
     ],
     "da-overclaim": [
@@ -628,6 +856,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:39: \"No observed input enters the categorical formula; all inputs are substrate parameters\"",
+        "notes": "Claims κ is a pure substrate prediction, but §Structural interpretation says the H7a quantum E_0·log(1/h) was 'identified empirically' at the (2,2) anchor. 'No observed input' overclaims if the log(1/h) magnitude rests on that empirical identification. The 0.034% single-number agreement is also presented as derivation-grade."
       }
     ],
     "da-hidden-dof": [
@@ -648,6 +894,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:46: \"identified empirically, in at the doubly-magic anchor (2,2)\"",
+        "notes": "If the H7a 'energy quantum' E_0·log(1/h) was anchored to the (2,2) doubly-magic binding, it functions as an additional empirical input behind the 'categorical' κ — a possible undisclosed DOF behind the 'single-calibration in m_e and q' claim. Warn pending the H7a derivation provenance."
       }
     ],
     "da-non-sequitur": [
@@ -668,6 +932,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "κ = -(H7a quantum)·(1/[2]_q[3]_q) decomposition is internally coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -687,6 +967,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean kappaClosed/kappaClosed_neg matches the .md formula and sign claim; the empirical equality is honestly carried as a class hypothesis, not proved-as-claimed."
       }
     ],
     "da-citation-misuse": [
@@ -707,6 +1003,22 @@
         "notes": "No citations are present in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No external citations (cites:[]); internal cross-ref to compound-beta-shell-calibration correct."
       }
     ],
     "da-definitional-ambiguity": [
@@ -727,6 +1039,22 @@
         "notes": "Key terms and symbols in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "E_0=m_e/(q(q-1)), h=q-q⁻¹, [n]_q defined; only the H7a-quantum provenance is under-specified (captured under hidden-dof)."
       }
     ],
     "da-empirical-fragility": [
@@ -747,6 +1075,24 @@
         "notes": "The algebraic and logical relations in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:38: \"The ratio is 0.999657 — within 0.034%, at the precision floor of the observation.\"",
+        "notes": "A single-number 0.034% agreement to a v6 fit κ≈-1.0708 is presented as confirmation. With the H7a magnitude itself empirically anchored, this is fit-noise-grade rather than an independent high-precision prediction; no cross-anchor spread reported, and the verifying probe is in computations/_deprecated/ (see reproducibility)."
       }
     ],
     "da-physical-implausibility": [
@@ -767,6 +1113,22 @@
         "notes": "The physical concepts described in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "κ≈-1.07 MeV/excess for the (n_pp-n_nn) magic coupling is a plausible nuclear-binding magnitude."
       }
     ],
     "da-reproducibility": [
@@ -787,6 +1149,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:1 — content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`"
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.lean:17: \"Verified numerically at q₀ in computations/probe_kappa_categorical_h7a_closed.py\"",
+        "notes": "The cited verifier probe_kappa_categorical_h7a_closed.py and its witness (kappa-categorical-h7a-closed.witness.json) are NOT at the cited path — they have been moved to computations/_deprecated/probes/ and computations/_deprecated/. The Lean docstring and .md reference a stale/deprecated compute path, so the κ=−1.0704 numerical claim is not reproducible from the cited location."
       }
     ],
     "da-referee-verdict": [
@@ -808,6 +1188,23 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean for 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' fails compilation with error: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "abed78f5f6c5",
+          "ts": "61a751b4bb3c",
+          "lean": "57139f418ade"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "notes": "Strongest objection: the 'derived, no observed input' framing is not supported given the empirically-anchored H7a factor and the deprecated probe path."
       }
     ],
     "voice-status-leak": [
@@ -1847,5 +2244,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

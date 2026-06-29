@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:19.666Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is the bare uniqueness-up-to-Markov-equivalence claim; no interpretive prose."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:20.113Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Atom-knot uniqueness fits particle-interactions atom-classification material."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:20.489Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is about braid/Markov equivalence (combinatorial); no gratuitous archimedean construct."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:20.849Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Proof body in .md; Lean uses cases/congr/assumption (structural), no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:21.277Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "atom-knot-unique.lean:24: \"K₁ = K₂ := by cases K₁; cases K₂; congr <;> assumption\"",
+        "notes": "The .md asserts the Markov CLOSURES are isotopic in S³ (β̂₁ ≅_isotopy β̂₂). The Lean instead proves structural RECORD EQUALITY K₁=K₂ given equal Z/N/protonBlock/neutronBlock/interBlock fields — i.e. extensionality of the AtomKnot struct, not topological isotopy of closures. The Lean claim is substantially weaker/different from the narrative."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:57:22.774Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "atom-knot-unique.lean:17: \"theorem AtomKnot.unique_up_to_markov (K₁ K₂ : AtomKnot) (h_Z ...)(h_inter ...) : K₁ = K₂\"",
+        "notes": "The decl name 'unique_up_to_markov' advertises Markov-equivalence uniqueness, but the conclusion K₁=K₂ is structural record equality; the name oversells the formal content relative to what is proved. No axiom injection, so minor."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:57:23.108Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proof by cases+congr+assumption on struct fields; not a projection of a conclusion-typed field."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,22 @@
         "reviewed_at": "2026-06-22T02:57:23.453Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Goal is K₁=K₂ (struct equality), a real proposition, not : True."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +395,22 @@
         "reviewed_at": "2026-06-22T02:57:23.871Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hypotheses are field-equalities, all satisfiable; no false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +431,22 @@
         "reviewed_at": "2026-06-22T02:57:24.244Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "All five field-equality hypotheses are consumed by congr <;> assumption."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +467,22 @@
         "reviewed_at": "2026-06-22T02:57:24.549Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "congr/assumption, not decide-masking."
       }
     ],
     "da-false-claim": [
@@ -323,6 +503,22 @@
         "notes": "The claim in 'Uniqueness of the atom-knot up to Markov equivalence' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The .md claim (same NF block decomposition -> isotopic Markov closures) is true under Markov's theorem; no false assertion at the narrative level."
       }
     ],
     "da-vacuous": [
@@ -342,6 +538,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Uniqueness of the atom-knot up to Markov equivalence' presents substantial mathematical content: equivalence of braid representatives:",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "atom-knot-unique.lean:24: \"cases K₁; cases K₂; congr <;> assumption\"",
+        "notes": "The Lean theorem is essentially structural extensionality (records with equal fields are equal) — near-trivial relative to the topological-isotopy content the .md asserts; the formal artifact carries little of the proposition's substance."
       }
     ],
     "da-circular": [
@@ -362,6 +576,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Uniqueness of the atom-knot up to Markov equivalence'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No circular derivation."
       }
     ],
     "da-overclaim": [
@@ -381,6 +611,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Uniqueness of the atom-knot up to Markov equivalence' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "atom-knot-unique.lean:15: \"**Uniqueness of atom-knot up to Markov equivalence.**\"",
+        "notes": "Lean docstring + decl name claim 'uniqueness up to Markov equivalence' but only prove record equality; the formal claim overstates what is established relative to the isotopy claim of the .md."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +649,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Uniqueness of the atom-knot up to Markov equivalence'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +685,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Narrative: same T_w block decomposition -> same Markov class -> isotopic closures, valid via Markov's theorem (cited thm:jones-markov-trace)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +720,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "atom-knot-unique.lean:17: \"AtomKnot.unique_up_to_markov ... : K₁ = K₂\"",
+        "notes": "Lean proves struct equality K₁=K₂ (extensionality), the .md proves isotopy of Markov closures β̂₁≅β̂₂ — different claims. The Lean is weaker (and uses an undischarged isotopy notion not at all); narrative/Lean diverge materially."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +758,22 @@
         "notes": "No citations are present in 'Uniqueness of the atom-knot up to Markov equivalence', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "-- Ref: [manuscript] thm:jones-markov-trace is the right backing for the Markov-equivalence claim."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +794,22 @@
         "notes": "Key terms and symbols in 'Uniqueness of the atom-knot up to Markov equivalence' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Atom-knot, NF block decomposition T_w, Markov equivalence, isotopy in S³ defined/referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +830,22 @@
         "notes": "The algebraic and logical relations in 'Uniqueness of the atom-knot up to Markov equivalence' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +866,22 @@
         "notes": "The physical concepts described in 'Uniqueness of the atom-knot up to Markov equivalence' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Topological/combinatorial claim; no direct physics measurement."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +902,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1 — content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +939,23 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean for 'Uniqueness of the atom-knot up to Markov equivalence' fails compilation with error: content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "fe8d800e7509",
+          "ts": "9959e9bff925",
+          "lean": "750d40814f44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "notes": "Strongest objection: Lean/narrative divergence — extensionality stands in for the topological uniqueness theorem."
       }
     ],
     "voice-status-leak": [
@@ -1598,5 +1993,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

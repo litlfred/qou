@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:20.949Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Knot-particle dictionary is the core particle-interactions content (interprets prop:knot-particle-correspondence)."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Knot–particle dictionary': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "gcd(2,n) component count for T(2,n) is correct (n odd -> 1 comp/knot, n even -> 2 comp/link); Vol(4_1)=2.0299 correct."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Knot–particle dictionary' presents substantial mathematical content: The localized knot framework (Definition) assigns a topological identity to each fundamental particle.  This dictiona...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Dictionary carries real structural content derived from q-Schur-Weyl + Markov trace."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Knot–particle dictionary'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Dictionary stated as derived from braid action + Schur-Weyl, not back-fitted."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Knot–particle dictionary' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "'derived not postulated' is supported by the cited braid-action + eigenbasis-completeness props."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +196,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Knot–particle dictionary'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "q0 value quoted is the canonical substrate pin; no off-menu constant."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +230,21 @@
         "notes": "The argument flow in 'Knot–particle dictionary' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Alexander's theorem -> Markov trace -> knot identification chain is valid."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +263,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Remark block; tables are data siblings, no Lean."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +297,21 @@
         "notes": "No citations are present in 'Knot–particle dictionary', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Internal cross-refs only; Alexander/Schur-Weyl invoked correctly."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +331,21 @@
         "notes": "Key terms and symbols in 'Knot–particle dictionary' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "V=V_{1/2}, T(2,n), quark-as-unknot-with-orientation all defined via referenced blocks."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +365,21 @@
         "notes": "The algebraic and logical relations in 'Knot–particle dictionary' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "q0 quoted to 50 dps from canonical pin; Jones values deferred to data block, not a precision-cherry-pick here."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +399,21 @@
         "notes": "The physical concepts described in 'Knot–particle dictionary' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "fermion=knot(odd, half-int spin) / boson=link(even, int spin) spin-statistics matches; torus knots Vol=0 is correct."
       }
     ],
     "da-reproducibility": [
@@ -253,6 +433,21 @@
         "notes": "The derivation steps and formal definitions in 'Knot–particle dictionary' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Numerical entries live in the table data siblings, not this prose block."
       }
     ],
     "da-referee-verdict": [
@@ -273,6 +468,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Knot–particle dictionary' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "6e73eedd3272",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Coherent derived dictionary; no substantive objection at the prose level."
       }
     ],
     "voice-status-leak": [
@@ -1082,5 +1292,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

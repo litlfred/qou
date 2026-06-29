@@ -62,6 +62,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is the bare independence claim; following text is '**Proof**' and a '## Calibration structure' table/clarification of scope, not mislocated physical motivation."
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is the bare obstruction (m_π not derivable from (m_e,q0)); calibration-structure interpretation in a separate section."
       }
     ],
     "fit-section-chapter": [
@@ -98,6 +114,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Hosted in sec:particle-interactions-orphan-reconnect after categorical-proton/neutron/meson; the m_π scale-independence claim sits with the categorical meson material it depends on (uses def:categorical-meson)."
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Meson scale independence / CAL-3 calibration structure fits particle-interactions."
       }
     ],
     "wall-side-statement": [
@@ -134,6 +166,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is about derivability of m_π from (m_e,q_0); chapter is particle-interactions. No gratuitous archimedean construct hard-coded in the narrative statement (Vol/Hopf topology is the argument, not an order/Real.* leak)."
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement about hyperbolic volume / mass-scaling map is archimedean (Vol, ℝ); Lean over ℝ appropriate."
       }
     ],
     "wall-side-proof": [
@@ -170,6 +218,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Narrative proof is representation-theoretic + topological (Vol(Hopf)=0 ⇒ no geometric invariant; Hecke character ratios fix m_K/m_π not m_π). No archimedean-only machinery (linarith/IVT/continuity) used for an algebraic statement."
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean uses norm_num/simp on real volume literals; the geometric obstruction is inherently archimedean."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -208,6 +272,24 @@
         "severity": "major",
         "evidence": "meson-scale-independence.lean:8-16: 'theorem meson_scale_independence : ¬ ∃ (f : ℝ→ℝ→ℝ), ∀ (m_e q_0 m_pi : ℝ), m_pi = f m_e q_0' proved by exhibiting f 0 0 = 0 and = 1 (witness m_e=q_0=0, m_pi∈{0,1}). The .md states the substantive rep-theoretic/topological claim that m_π is not determined by (m_e,q_0) because Vol(Hopf-complement)=0.",
         "notes": "Theorem-changing divergence. The Lean encodes a logical triviality: ¬∃f.∀ m_pi. m_pi=f(m_e,q_0) is false for ANY two-argument f (a function of (m_e,q_0) cannot equal every real m_pi), provable with zero QOU content and no Hecke/Hopf input. It does not capture the narrative claim that the QOU substrate map specifically fails to fix m_π. The .md even says (line 50) the Lean 'defers its proof via sorry' — but the actual Lean is a non-sorry vacuous restatement, contradicting the .md's own description. Routes to proof-narrative-lean-equivalence / lean-proof-review."
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "meson-scale-independence.lean:43: \"theorem meson_scale_independence : hopfComplementVolume = 0 ∧ 0 < borromeanComplementVolume ∧ ∀ m_e ℏq_inv2, m_e * hopfComplementVolume * ℏq_inv2 = 0\"",
+        "notes": "The .md proposition is 'm_π cannot be derived from (m_e,q0) alone'; the Lean proves only that Vol(Hopf)=0 and m_e·0·x=0 — the geometric MOTIVATION, not the non-derivability claim itself. The .md §Lean explicitly scopes it as 'the geometric core', so the divergence is disclosed, hence warn not fail."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -456,6 +538,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean states exactly the geometric-core facts it proves; no axiom injection, no covert weakening of a stronger stated Lean goal."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -512,6 +610,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proof by rfl/norm_num/simp on explicit volume defs; no projection of a conclusion field."
       }
     ],
     "proof-no-trivial-true": [
@@ -550,6 +664,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Goals are real (0=0 for Hopf vol is a definitional fact, but 0<7.32772 and the universally-quantified product are substantive non-True content)."
       }
     ],
     "proof-no-false-premise": [
@@ -606,6 +736,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No false premise; hypothesis-free theorem."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -662,6 +808,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hypothesis-free; nothing unused."
       }
     ],
     "proof-no-decide-masking": [
@@ -700,6 +862,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "norm_num/simp on explicit literals, not decide-masking."
       }
     ],
     "da-false-claim": [
@@ -720,6 +898,22 @@
         "notes": "No false claims identified in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hopf-link complement is a 2-torus×I / has hyperbolic volume 0; Borromean complement Vol=8G≈7.328 is correct; the scale-independence obstruction follows."
       }
     ],
     "da-vacuous": [
@@ -739,6 +933,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' presents substantial mathematical content: parameters $(m_\\mathfrak{e}, q_0)$ alone.  The Hecke algebra determines the relative meson mass spectrum (character r...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Geometric-core Lean is simple but not vacuous; the .md proposition is substantive."
       }
     ],
     "da-circular": [
@@ -759,6 +969,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Non-derivability argued from a vanishing geometric invariant, not assumed. Consistent with 3-CAL discipline (m_π=CAL-3 independent)."
       }
     ],
     "da-overclaim": [
@@ -778,6 +1004,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The 'Lean is sorry-free' claim is true and scoped to the geometric core; the full non-derivability is argued, not claimed Lean-proved."
       }
     ],
     "da-hidden-dof": [
@@ -798,6 +1040,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "CAL-1/2/3 are the canonical three calibrations; m_π via CAL-3 is on-menu, no hidden 4th input."
       }
     ],
     "da-non-sequitur": [
@@ -818,6 +1076,22 @@
         "notes": "The argument flow in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Vanishing volume -> no (m_e,q0)-derivable scale -> scale must come from CAL-3; coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -837,6 +1111,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "meson-scale-independence.lean:5: \"## Meson scale independence — geometric content\"",
+        "notes": "Lean encodes the geometric core (Vol(Hopf)=0) rather than the full 'm_π not derivable' statement; disclosed as 'geometric core' in both .md and .lean, so a transparent partial formalisation rather than a misrepresentation. Warn."
       }
     ],
     "da-citation-misuse": [
@@ -857,6 +1149,22 @@
         "notes": "Citations to jones1987, wenzl1988c are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "References prop:meson-scale-independence and CAL labels; consistent with the cheat-sheet (CAL-3=𝔇_π, proxy m_π)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -877,6 +1185,22 @@
         "notes": "Key terms and symbols in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hopf/Borromean complement volume, CAL-1/2/3, jet orders defined/tabulated; bar-involution h^1-absence explained."
       }
     ],
     "da-empirical-fragility": [
@@ -897,6 +1221,22 @@
         "notes": "The algebraic and logical relations in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No precision fit claimed; m_π is explicitly an independent calibration input, not a predicted match."
       }
     ],
     "da-physical-implausibility": [
@@ -917,6 +1257,22 @@
         "notes": "The physical concepts described in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "m_π as an independent input (139.57 MeV, SDP-validated Vol(Hopf)=0) is consistent with the framework's stated calibration structure."
       }
     ],
     "da-reproducibility": [
@@ -937,6 +1293,22 @@
         "notes": "The derivation steps and formal definitions in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "borromeanComplementVolume=7.32772 (8G) literal is a standard constant; Lean is sorry-free and self-contained."
       }
     ],
     "da-referee-verdict": [
@@ -958,6 +1330,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "ef5ad831905e",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Sound proposition with a transparently-scoped geometric-core Lean; only objection is that the Lean proves the motivation rather than the full non-derivability (disclosed)."
       }
     ],
     "voice-status-leak": [
@@ -1997,5 +2385,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

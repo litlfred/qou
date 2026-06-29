@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:20.125Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Contains borderline interpretive prose."
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is the boxed Gram-inverse dual-pairing formula for ⟨O⟩_T; physical 'expectation value' framing is intrinsic to the claim, not extraneous."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:57:20.553Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Frobenius reciprocity for LP-selected bound states fits particle-interactions confinement material."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:57:21.035Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Frobenius form / Gram-inverse pairing is algebraic over H_n(q); LP shadow prices are the only real-valued elements, appropriately archimedean."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:57:21.358Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The 'Sketch of proof' uses Frobenius reciprocity + LP complementary slackness (KKT), algebraic/LP machinery appropriate to the claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,23 @@
         "reviewed_at": "2026-06-22T02:57:21.742Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "confinement_frobenius_reciprocity.lean:73: \"def confinement_frobenius_reciprocity (ctx) : Prop := (∃ i, x_star i ≠ 0) ∧ 0 < y_0_star ∧ (∃ i, A_star i) ∧ (∀ i, A_star i ↔ 0 < y_star i) ∧ primal_obj = dual_obj\"",
+        "notes": "The Lean def-Prop encodes LP sub-claims (active-set, strong duality) but NOT the .md's central boxed result — the Gram-inverse dual-pairing formula ⟨O⟩_T = Σ u*(G⁻¹)⟨O,b⟩. The formalized Prop is a different (weaker) set of conditions than the proposition's actual conclusion."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean is an honest `def : Prop` placeholder (named conditional claim, no theorem asserting it); no self-assuming `theorem := ⟨ctx.claim⟩` projection, as the file notes."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +485,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No theorem at all — just a def naming the Prop; the file explicitly avoids the self-assuming-projection anti-pattern."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +536,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The Prop is a non-trivial conjunction (not : True); it is named, not discharged by trivial."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +604,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No false premise; def has no proof obligation."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +672,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No theorem with hypotheses (def-Prop placeholder)."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +723,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No decide/trivial discharging a goal (no proof term)."
       }
     ],
     "da-false-claim": [
@@ -590,6 +757,21 @@
         "notes": "No false claims identified in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Frobenius reciprocity on the non-degenerate Markov form, T^∨=Σ x*(G⁻¹)b, and the LP-active complementary-slackness reduction are correct; O=H reduces to the knot-factor-frobenius-pairing conjecture as claimed."
       }
     ],
     "da-vacuous": [
@@ -608,6 +790,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' presents substantial mathematical content: operator-selection LP (operator-selection LP) with primal optimum $T = \\sum_i x_i^ b_i$ and dual optimum $(y_0^, y^)$...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The .md proposition + sketch are substantive; the Lean def-Prop names a real conjunction, not a vacuous : True."
       }
     ],
     "da-circular": [
@@ -627,6 +824,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Derivation via reciprocity + KKT; the parent conjecture is recovered as the O=H special case, not assumed."
       }
     ],
     "da-overclaim": [
@@ -645,6 +857,23 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "confinement-frobenius-reciprocity.md:48: \"## Sketch of proof\"",
+        "notes": "Block kind is `proposition` with a 'Sketch of proof', and the Lean only NAMES the claim (def:Prop, no theorem). Calling it a proposition with a rigorous boxed formula while the formal layer is an un-discharged conditional is a mild status overclaim; honest as a sketch, so minor."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +893,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "u*=y*, G, A* are LP outputs, not free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +927,21 @@
         "notes": "The argument flow in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Frobenius dual + active-set substitution (KKT) -> boxed formula is a valid sketch."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +960,23 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "confinement_frobenius_reciprocity.lean:73: \"def confinement_frobenius_reciprocity (ctx) : Prop := ... primal_obj = dual_obj\"",
+        "notes": "Lean names LP-duality sub-conditions, omitting the central observable expectation-value reciprocity formula that IS the proposition; the formal artifact is weaker than and structurally different from the .md claim. Disclosed as a placeholder, hence major-warn not fail."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +996,21 @@
         "notes": "Citations to yekutieli2015, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "yekutieli2015, kassel1995 appropriate for non-abelian Stokes / Hecke-algebra background."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1030,21 @@
         "notes": "Key terms and symbols in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "A*(T), G⁻¹ on active subspace, Frobenius dual T^∨, observable-as-functional all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1064,21 @@
         "notes": "The algebraic and logical relations in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1098,21 @@
         "notes": "The physical concepts described in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Expectation values as Frobenius-dual pairings weighted by LP shadow prices is a coherent model statement."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1132,21 @@
         "notes": "The derivation steps and formal definitions in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1167,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing entirely, preventing formal verification of the claims in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'."
+      },
+      {
+        "field_hash": {
+          "md": "3509c9643def",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "notes": "Honest placeholder, but the proposition status outruns both the sketch and the Lean."
       }
     ],
     "voice-status-leak": [
@@ -1816,5 +2183,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

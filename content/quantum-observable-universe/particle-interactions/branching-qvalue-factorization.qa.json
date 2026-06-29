@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:20.290Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is the bare factorization Σ Δm_e = a^Z b^{N-1}(a-b); no interpretive prose embedded."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:57:20.625Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "β-decay channel-sum factorization fits particle-interactions."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:57:21.044Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is algebraic (channel sums a,b; per-nucleon products); no gratuitous archimedean construct."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:57:21.399Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Proof body present in the .md (statement-only block); no Lean sibling."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,21 @@
         "reviewed_at": "2026-06-22T02:57:21.816Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean sibling for this proposition."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -260,6 +335,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement well-formed; no Lean to weaken."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -296,6 +386,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-trivial-true": [
@@ -332,6 +437,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-false-premise": [
@@ -368,6 +488,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -404,6 +539,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-decide-masking": [
@@ -440,6 +590,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "da-false-claim": [
@@ -459,6 +624,21 @@
         "notes": "No false claims identified in 'Exact factorization of the branching Q-value': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Σ_{4^A configs} factoring as a^Z b^{N-1}(a-b) with a=Σ G_P, b=Σ G_N is a plausible product-of-per-nucleon-sums identity; geometric-sum/telescoping form is consistent. No counterexample found at the stated level."
       }
     ],
     "da-vacuous": [
@@ -477,6 +657,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Exact factorization of the branching Q-value' presents substantial mathematical content: The character sum over all $4^A$ channel configurations admits an exact closed-form factorization in terms of the spe...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Non-trivial closed-form claim."
       }
     ],
     "da-circular": [
@@ -496,6 +691,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Exact factorization of the branching Q-value'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Factorization stated as an algebraic identity over channel configs; not back-fitted."
       }
     ],
     "da-overclaim": [
@@ -514,6 +724,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Exact factorization of the branching Q-value' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "'exact closed-form factorization' is an algebraic claim, scoped to β⁻ of (Z,N); no accuracy overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -533,6 +758,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Exact factorization of the branching Q-value'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "a,b are channel sums of G_P,G_N (spectator normalization), not free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -552,6 +792,21 @@
         "notes": "The argument flow in 'Exact factorization of the branching Q-value' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement only; the a^Z b^{N-1}(a-b) form is the asserted result, no intervening unjustified step."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -570,6 +825,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -589,6 +859,21 @@
         "notes": "No citations are present in 'Exact factorization of the branching Q-value', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "References def:spectator-normalization only; correctly used."
       }
     ],
     "da-definitional-ambiguity": [
@@ -608,6 +893,23 @@
         "notes": "Key terms and symbols in 'Exact factorization of the branching Q-value' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "branching-qvalue-factorization.md:16: \"a = Σ_c G_P(c) and b = Σ_c G_N(c) are the per-nucleon channel sums\"",
+        "notes": "The factorization (b^{N-1} not b^N, and the (a-b) factor) implies a specific spectator/active-nucleon split that the bare statement does not fully spell out; the derivation/proof that produces b^{N-1}(a-b) is not in the block. Minor definitional gap."
       }
     ],
     "da-empirical-fragility": [
@@ -627,6 +929,21 @@
         "notes": "The algebraic and logical relations in 'Exact factorization of the branching Q-value' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -646,6 +963,21 @@
         "notes": "The physical concepts described in 'Exact factorization of the branching Q-value' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "β⁻ Q-value as a channel-sum difference is physically sensible."
       }
     ],
     "da-reproducibility": [
@@ -665,6 +997,21 @@
         "notes": "The derivation steps and formal definitions in 'Exact factorization of the branching Q-value' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No witness in this block."
       }
     ],
     "da-referee-verdict": [
@@ -685,6 +1032,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.lean is missing entirely, preventing formal verification of the claims in 'Exact factorization of the branching Q-value'."
+      },
+      {
+        "field_hash": {
+          "md": "53f9bd090113",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Plausible closed-form factorization; strongest objection is the missing derivation of the b^{N-1}(a-b) spectator split (minor)."
       }
     ],
     "voice-status-leak": [
@@ -1687,5 +2049,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

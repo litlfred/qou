@@ -892,7 +892,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Spin SU(2)_S from SO(3) fiber action (D10, nuclear-shell prereq) fits particle-interactions."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Block explicitly CORRECTS a false premise (the ℓ-truncation claim) via a character-table check, and honestly states the icosahedral-to-h4 link is 'not derivable as written'; no false claim asserted."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Conjecture kind; rich falsifiable content (ℓ=2 -> h^4=-3/4) + an honest structural-gap analysis. Placeholder stub acceptable for conjecture."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No back-fitting; the h^4=-3/4 target comes from the independent Borromean Markov-trace closed form."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Notably restrained: explicitly flags the proposed S_5(5-strand)->H_3(3-strand) link as 'the genuine missing object', not yet derivable. No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "ℓ levels and h^k orders are structural; no free fit constant introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The conjecture's three numbered claims are stated as conjectural; the block carefully separates what follows from what is missing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.lean:26: \"class SpinFromSo3Fiber where holds : Prop\"",
+        "notes": "Sibling .lean is an empty 'holds : Prop' marker; the .md sketches a content-bearing class (spherical_harmonic_decomp, ell_two_yields_h4_coefficient). Disclosed as a conjecture stub, but the marker encodes none of the claimed content. Warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "References audit docs (s5-so3, h4-coefficient-trace) and conj:s5-so3-fiber-action appropriately; the ℓ-truncation correction is sourced to the 2026-06-01 audit."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "SO(3)/S_3/S_5/A_5/I, ℓ levels, h^4 coefficient, color sheets all defined or referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "h^4=-3/4 is a structural Markov-trace coefficient, not a numerical CODATA fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Spin from SO(3) rotation on color sheets via icosahedral embedding is a coherent (if conjectural) construction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Character-table claims reference the committed audit doc; no irreproducible numerical witness relied upon."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1f9076e2aaa3",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Exemplary self-critical conjecture (corrects its own false ℓ-truncation premise, names the missing functor). Only minor objection: empty-marker Lean stub vs the richer .md sketch."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

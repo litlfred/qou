@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:19.567Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proton-as-Borromean-hadron example fits particle-interactions (interprets def:hadron)."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'The proton as a Borromean hadron': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Borromean (Brunnian) property and Milnor triple linking μ̄(123)=±1 with pairwise lk=0 are correct topology."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'The proton as a Borromean hadron' presents substantial mathematical content: The proton is a hadron — a stable knot composite — whose three constituents are linked in a Borromean configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Example has real content: uud structure, confinement via Brunnian inseparability, mass decomposition."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The proton as a Borromean hadron'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "m_p value via :val drawn from a CODATA witness, presented as an approximation; not back-fitted within this block."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,23 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'The proton as a Borromean hadron' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "hadron-proton-example.md:70: \"matching the experimental proton mass to high precision.\"",
+        "notes": "Per canonical-mass guardrail the absolute m_p comes from the muon-anchored canonical_mass facade (≈938.27); the block presents m_p as 'computed from crossing energy of β_Bor' which understates the actual derivation route. 'High precision' is loose. Minor."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +198,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The proton as a Borromean hadron'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No free fit parameter introduced in this example block; m_p sourced from witness."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +232,21 @@
         "notes": "The argument flow in 'The proton as a Borromean hadron' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Brunnian -> confinement and lightest-baryon -> stability arguments follow."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +265,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Example block, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +299,21 @@
         "notes": "No citations are present in 'The proton as a Borromean hadron', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "uses ex:crossing-energy-trefoil; correctly invoked for binding-energy computation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +333,21 @@
         "notes": "Key terms and symbols in 'The proton as a Borromean hadron' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "hadron, borromean-baryon, crossing energy defined via references; β_Bor=(σ1^{-1}σ2)^3 explicit."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +367,23 @@
         "notes": "The algebraic and logical relations in 'The proton as a Borromean hadron' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "hadron-proton-example.md:67: \":val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}\"",
+        "notes": "The displayed m_p is pinned to a CODATA witness (codata-masses), i.e. it reports the experimental value, not an independent prediction from β_Bor crossing energy as the surrounding prose implies. Risk of presenting a measured value as a derived match. Minor/warn."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +403,21 @@
         "notes": "The physical concepts described in 'The proton as a Borromean hadron' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proton mass dominated by binding not constituent masses is physically correct (QCD)."
       }
     ],
     "da-reproducibility": [
@@ -253,6 +437,21 @@
         "notes": "The derivation steps and formal definitions in 'The proton as a Borromean hadron' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "codata-masses.witness.json is a standard CODATA witness; :val pin is reproducible."
       }
     ],
     "da-referee-verdict": [
@@ -273,6 +472,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The proton as a Borromean hadron' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "81dfeef6be24",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Topologically sound example; strongest objection is the implied 'derived-from-crossing-energy' framing of an m_p that is actually CODATA-pinned (minor)."
       }
     ],
     "voice-status-leak": [
@@ -1032,5 +1246,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

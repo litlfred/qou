@@ -30,6 +30,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is the torus-knot indexing table + closure characterisation; no extraneous interpretive prose."
       }
     ],
     "fit-section-chapter": [
@@ -49,6 +65,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'proposition' match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lepton/meson torus-knot dictionary fits particle-interactions."
       }
     ],
     "wall-side-statement": [
@@ -68,6 +100,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is combinatorial (torus-knot indices, braid words in H_2/H_3); no gratuitous archimedean construct."
       }
     ],
     "wall-side-proof": [
@@ -87,6 +135,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean proof contains compilation errors.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Proof body; Lean uses ℕ index arithmetic (fin_cases/rfl), no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -106,6 +170,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "lepton-meson-torus-knot-dictionary.lean:33: \"lepton_meson_crossing_match: leptonTorusKnotIndex g = mesonCrossingCount g - leptonTorusKnotIndex 0\"",
+        "notes": "The .md proposition claims leptons (H_2) and mesons (H_3) are both indexed by T(2,n) with a specific generation correspondence. The Lean instead proves two arithmetic facts about index lists (3/5/7 and crossing sums 6/8/10). The Lean is a weaker numerological restatement, not the structural indexing claim — narrative/Lean express different content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -182,6 +264,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lean theorems are honest about what they state (index arithmetic); no axiom injection or hidden weakening of a stated stronger Lean goal."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -201,6 +299,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No self-assuming projections are used in the proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Proofs by fin_cases/rfl on concrete definitions; no self-assuming projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -220,6 +334,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof relies on sorry stubs.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Goals are concrete ℕ equalities (e.g. 6=3+3), not True."
       }
     ],
     "proof-no-false-premise": [
@@ -239,6 +369,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof assumptions are consistent and do not contain false premises.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -258,6 +404,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Hypothesis-free index theorems; nothing unused."
       }
     ],
     "proof-no-decide-masking": [
@@ -277,6 +439,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof does not use decide tactics to mask verification steps.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "fin_cases+rfl, not decide-masking."
       }
     ],
     "da-false-claim": [
@@ -297,6 +475,22 @@
         "notes": "The mathematical claims in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Lepton at gen k = closure of σ_1^{2k+1} in H_2 (trefoil/cinquefoil/septafoil for k=1,2,3) is internally consistent; index arithmetic in Lean is correct."
       }
     ],
     "da-vacuous": [
@@ -317,6 +511,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Dictionary carries real indexing content; the Lean facts, while weak, are true."
       }
     ],
     "da-circular": [
@@ -337,6 +547,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$'.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No back-fitting; the n=3,5,7 indexing is asserted structurally."
       }
     ],
     "da-overclaim": [
@@ -356,6 +582,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Stated as a correspondence/dictionary, not a quantitative mass prediction."
       }
     ],
     "da-hidden-dof": [
@@ -376,6 +618,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$'.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Generation index n is structural (odd primes), no free fit constant."
       }
     ],
     "da-non-sequitur": [
@@ -396,6 +654,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "The lepton/meson indexing parallel is asserted as a dictionary, internally coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -415,6 +689,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "major",
+        "evidence": "lepton-meson-torus-knot-dictionary.lean:38: \"meson_crossing_is_sum: mesonCrossingCount 2 = leptonTorusKnotIndex 1 + leptonTorusKnotIndex 1\"",
+        "notes": "Lean proves crossing-count = sum-of-two-quark-indices (6=3+3, 8=3+5, 10=5+5), a narrower combinatorial claim than the .md torus-knot generation dictionary; the structural lepton-meson correspondence is not what the Lean establishes."
       }
     ],
     "da-citation-misuse": [
@@ -435,6 +727,22 @@
         "notes": "The citations jones1987, kashaev1997 in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "jones1987, kashaev1997 cited for Markov trace / knot invariants — appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -455,6 +763,24 @@
         "notes": "Key terms and symbols in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "lepton-meson-torus-knot-dictionary.md:10: \"3rd | 7 | τ (tau) | s (heavy-strange) | η, φ\"",
+        "notes": "'heavy-strange' quark for the 3rd generation is non-standard terminology (the 3rd-gen quark is bottom/top, not a 'heavy strange'); the quark-flavor column is loosely defined relative to the lepton/meson columns."
       }
     ],
     "da-empirical-fragility": [
@@ -475,6 +801,22 @@
         "notes": "The algebraic and logical relations in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical CODATA match in this block."
       }
     ],
     "da-physical-implausibility": [
@@ -495,6 +837,24 @@
         "notes": "The physical concepts described in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "lepton-meson-torus-knot-dictionary.md:10: \"τ (tau) | s (heavy-strange) | η, φ\"",
+        "notes": "The 3rd-generation row maps τ (a lepton) alongside an 's (heavy-strange)' quark and η/φ mesons; η is not pure s̄s and φ≈s̄s but pairs with a 3rd-gen lepton τ — the generation/flavor assignment is physically loose. Presented as a structural dictionary so minor."
       }
     ],
     "da-reproducibility": [
@@ -515,6 +875,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.lean:1 — content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -536,6 +912,23 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "b9a66a7f4f53"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "notes": "Two minor/major objections: Lean-narrative divergence and loose 3rd-gen physics. Acceptable overall."
       }
     ],
     "voice-status-leak": [
@@ -1575,5 +1968,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

@@ -72,6 +72,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is the inductive NF step formula + term-count bound; no interpretive prose embedded."
       }
     ],
     "fit-section-chapter": [
@@ -135,6 +150,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Inductive Gröbner-Shirshov nuclear NF reduction fits particle-interactions nuclear-assembly material."
       }
     ],
     "wall-side-statement": [
@@ -198,6 +228,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement is purely algebraic/combinatorial (GS normal form, binomial term bound); no archimedean construct."
       }
     ],
     "wall-side-proof": [
@@ -261,6 +306,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Proof body in the .md; no Lean sibling."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -324,6 +384,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean sibling."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -736,6 +811,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Statement well-formed; no Lean to weaken."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -833,6 +923,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-trivial-true": [
@@ -913,6 +1018,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-false-premise": [
@@ -1010,6 +1130,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1107,6 +1242,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "proof-no-decide-masking": [
@@ -1187,6 +1337,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean proof term."
       }
     ],
     "da-false-claim": [
@@ -1252,6 +1417,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Inductive reduce-after-each-multiply NF step is standard GS practice; binomial term-count bound C(A-1,⌊(A-1)/2⌋) is plausible as a max-antichain bound."
       }
     ],
     "da-vacuous": [
@@ -1314,6 +1494,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Substantive algorithmic claim with an explicit complexity bound."
       }
     ],
     "da-circular": [
@@ -1377,6 +1572,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No circularity; reduction step defined via the GS division algorithm."
       }
     ],
     "da-overclaim": [
@@ -1441,6 +1651,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "'at most C(A-1,...) terms' is an upper bound, appropriately hedged."
       }
     ],
     "da-hidden-dof": [
@@ -1504,6 +1729,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No free parameter; connector C(.,.;σ_g) and reducer r(.,G) referenced."
       }
     ],
     "da-non-sequitur": [
@@ -1567,6 +1807,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Inductive step composes N_{≤k} with connector and next nucleon, then reduces — coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1629,6 +1884,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -1692,6 +1962,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "References nuclear-groebner-reduction prop correctly."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1755,6 +2040,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "N_{≤k}, r(.,G), C(.,.;σ_g), G defined/referenced; bound explicit."
       }
     ],
     "da-empirical-fragility": [
@@ -1818,6 +2118,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -1881,6 +2196,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Algorithmic claim, no direct physics."
       }
     ],
     "da-reproducibility": [
@@ -1943,6 +2273,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -2007,6 +2352,21 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "aa3b7cbcf8f4",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Sound algorithmic proposition with a stated complexity bound; no objection."
       }
     ],
     "voice-status-leak": [
@@ -3009,5 +3369,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }

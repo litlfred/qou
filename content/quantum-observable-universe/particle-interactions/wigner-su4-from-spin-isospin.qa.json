@@ -892,7 +892,271 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "SU(4) supermultiplet / nuclear-shell binding conjecture fits particle-interactions (nuclear physics)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Wigner SU(4)=SU(2)_S x SU(2)_I and A=4 as first SU(4) supermultiplet (totally-symmetric singlet) is correct 1937 supermultiplet theory."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Conjecture kind; rich narrative + falsifiable identification of magic-A.8G with SU(4)-singlet projection. Placeholder Lean stub acceptable for conjecture per AGENTS.md §3b."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Identifies the empirical magic-A.8G rule with a categorical structure; explicitly flagged as conjectural identification, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "wigner-su4-from-spin-isospin.md:170: \"1. [CLOSED] Verify magic A·8G constant formula numerically\"",
+        "notes": "A '[CLOSED]' R&D item asserting c_λ scaling 0.24->0.9435 'precisely dictates' and 'formally supersedes' the empirical A·8G, while the conjecture itself and its Lean class remain scaffold (D11 not closed). 'precisely dictates / ~94% of the binding' inside an open conjecture is a mild overclaim. Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "wigner-su4-from-spin-isospin.md:135: \"dynamic occupancy requirement c_λ = B_AME / E_gate\"",
+        "notes": "c_λ is defined as B_AME/E_gate — i.e. an occupancy fraction read off from the AME binding it is meant to predict; risks a per-isotope free factor. Disclosed as conjectural and not wired to production, so warn not fail."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "SU(2)_S x SU(2)_I -> SU(4) acting on 4-dim spin x isospin space is standard; A=4 antisym -> singlet follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "wigner-su4-from-spin-isospin.lean:26: \"class WignerSu4FromSpinIsospin where holds : Prop\"",
+        "notes": "Sibling .lean is an empty 'holds : Prop' marker, whereas the .md 'Lean axiomatisation' sketches a content-bearing class (a_four_yields_singlet, dynamic_capacity...). Stub is disclosed for a conjecture, but the empty-marker class encodes none of the claimed content. Warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Wigner 1937 / Elliott SU(3) referenced appropriately for supermultiplet theory."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "SU(4), supermultiplet, magic A·8G, E_gate, W_λ defined inline or via cross-refs."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "wigner-su4-from-spin-isospin.md:174: \"c_λ scales from 0.24 (²H) to 0.9435 (⁴He, where λ = (3,3,3,3))\"",
+        "notes": "0.9435 ⁴He occupancy presented as a categorical result, but c_λ=B_AME/E_gate is computed from the AME binding; the '94%' match is partly definitional. Conjectural so warn."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "notes": "Wigner SU(4) and ⁴He as closed s-shell / SU(4) singlet is established nuclear physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "wigner-su4-from-spin-isospin.md:81: \"prototype_gs_nf_shell_binding.py\"",
+        "notes": "Cites the L3 prototype script and the ~94% occupancy result without a committed witness JSON for the c_λ numbers (0.24/0.9435); claims are not pinned to a reproducible witness. Conjectural so warn."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "74f27abf3c98",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:16:57.360Z",
+        "reviewed_sha": "b05f56142a1893defb8df9b050d87378855cb5e6",
+        "severity": "minor",
+        "evidence": "wigner-su4-from-spin-isospin.md:134: \"dynamic_occupancy_c_lambda (B_AME E_gate : ℝ) : c_lam = B_AME / E_gate\"",
+        "notes": "Sound as a conjecture, but the strongest objection is that the 'closed/94%' occupancy result is partly tautological (c_λ defined from the AME binding it explains) and the Lean class is an empty marker. Acceptable for conjecture kind; flag for an author check that the occupancy result is not advertised as a derivation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:16:57.360Z"
 }
