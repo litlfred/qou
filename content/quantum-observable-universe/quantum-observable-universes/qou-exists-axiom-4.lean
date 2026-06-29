@@ -24,6 +24,8 @@ LaTeX label: `lem:qou-exists-axiom-4`
 - [manuscript] §1 Quantum Observable Universe, Axiom 4
 -/
 
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
+
 namespace QOU.QuantumObservableUniverse
 
 /-- **Axiom 4 — categorical volume constraint.**
@@ -38,11 +40,15 @@ namespace QOU.QuantumObservableUniverse
 -- review on PR #794.
 def exists_axiom_4_volume_data
     {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    letI := Q.catInst
+    letI := Q.monInst
     Q.exteriorSquare ⟶ (𝟙_ Q.C) :=
   Q.volumeForm
 
 lemma exists_axiom_4_volume
     {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    letI := Q.catInst
+    letI := Q.monInst
     Nonempty (Q.exteriorSquare ⟶ (𝟙_ Q.C)) :=
   ⟨exists_axiom_4_volume_data Q⟩
 

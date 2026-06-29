@@ -46,11 +46,14 @@ structure QHeatEquation (S : Type*) where
   evolves : ∀ (t : ℝ) (x : S), dt_u t x = -dq_u t x
 
 /-- Classical heat equation is the `q = 1` specialisation.  Over
-    `R_q`, evaluating at `q = 1` corresponds to the evaluation
-    homomorphism `LaurentPolynomial.eval 1`. -/
+    `R_q = ℤ[T; T⁻¹]`, evaluating at `q = 1` sends each monomial
+    `T^n ↦ 1`, so the value is the sum of all Laurent coefficients
+    (`LaurentPolynomial ℤ = ℤ →₀ ℤ`). -/
 -- Ref: [manuscript] §2
 def QHeatEquation.classicalLimit {S : Type*} (H : QHeatEquation S)
     (t : ℝ) (x : S) : ℤ :=
-  LaurentPolynomial.eval 1 (H.u t x)
+  (H.u t x).sum (fun _ c => c)
+
+end
 
 end QOU

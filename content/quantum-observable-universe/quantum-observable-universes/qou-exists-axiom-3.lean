@@ -21,6 +21,8 @@ LaTeX label: `lem:qou-exists-axiom-3`
 - [manuscript] §1 Quantum Observable Universe, Axiom 3
 -/
 
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
+
 namespace QOU.QuantumObservableUniverse
 
 /-- **Axiom 3 — Chern-class vanishing (categorical form).**
@@ -33,6 +35,8 @@ namespace QOU.QuantumObservableUniverse
 -- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 3
 theorem exists_axiom_3_chern
     {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    letI := Q.catInst
+    letI := Q.monInst
     Subsingleton ((𝟙_ Q.C) ⟶ Q.adjointObj) :=
   Q.adjoint_vanishing
 
