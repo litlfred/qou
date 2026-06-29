@@ -1,4 +1,7 @@
 import QOU.Mathlib.SYTLagrangeInterp
+import Mathlib.RingTheory.Polynomial.Vieta
+import Mathlib.Algebra.Polynomial.BigOperators
+import Mathlib.Algebra.Polynomial.Roots
 
 /-!
 # QOU.Mathlib.SYTBetaLagrange — the β-Lagrange identity
