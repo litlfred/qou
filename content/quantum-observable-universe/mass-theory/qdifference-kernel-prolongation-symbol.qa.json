@@ -892,7 +892,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "q-difference kernel = prolongation symbol keystone for step-9b binding closure is mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Stated as a conjecture (the identification of R with the SW jet-prolongation symbol); no false unconditional assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Lean class field kernel_eq_symbol: ∀ j, kernel j = prolongationSymbol j is content-bearing (over generic CommRing R); the §3b projection theorem is the standard conditional idiom for conjectures, not a vacuous self-assumption flag."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "'R is structurally fixed, not fitted' is argued from the precision-floor obstruction (c_k information bound can't fix R beyond low order), i.e. R is to be DERIVED from the connection — formalize-first, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "qdifference-kernel-prolongation-symbol.md:29-30: \"this conjecture is therefore the **single keystone** of the step-9b binding closure\"",
+        "notes": "'Single keystone... closes the binding program... promotes conj:binding-manybody from conditional to unconditional' is a strong consequence claim, but it is explicitly conditional on the (unproved) conjecture and the steps (C),(D),(L3) being proved. Stated as conjecture, so warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The whole point is that R has NO free DOF (read off the connection, fixed by the precision-floor obstruction); no hidden parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Given R, the recurrence determines body terms from the deuteron base case → per-term mass identity (B) → discharges the conditional input of thm:binding-closure-conditional. The chain is coherent (conditional on the conjecture)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Lean class QDifferenceKernelIsProlongationSymbol with kernel_eq_symbol matches the .md identification; theorem kernel_is_prolongation_symbol is the §3b conditional projection (acceptable for a conjecture)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "seiberg1994 cited for the SW connection context; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "R(q,x), jet-prolongation operator J^n E→J^{n+1}E, SW connection, prolongation symbol, branch-point poles all referenced via named props."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Explicitly invokes the precision-floor obstruction to ARGUE AGAINST fitting R from term data; not resting on a fragile numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Structural identification (kernel = monodromy symbol); no direct physical-observable numeric."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No witness asserted as evidence for the conjecture (it is to be derived, not searched)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6a6e0116a5dd",
+          "ts": "986dee44321c",
+          "lean": "34fdd1cb62bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Honest, well-scoped keystone conjecture with a content-bearing §3b class over generic CommRing and a formalize-first 'derive R, don't fit' stance; only the 'closes the binding program' framing is optimistic (but explicitly conditional)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

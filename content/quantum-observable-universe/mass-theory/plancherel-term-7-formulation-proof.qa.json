@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Term-7 shell-correction Wedderburn-weighted log-Frobenius functional is mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The self-correction is right: ∑_λ dim_q² ≠ [n]_q! at generic q; the classical ∑_λ(dim V_λ)²=n! holds. q_0=1.109978595554181 is the muon-anchored value (consistent with AGENTS.md)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Genuine content: boundedness of Φ_k from finiteness of weights + per-block pairings, plus the logarithmic-unbounding mechanism."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No back-fitting; the functional is derived from the HH spectral sequence collapse at E_1."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Carefully distinguishes the q-deformed Wedderburn weight w̃_λ from the classical Plancherel measure and retires the false 'q-Plancherel identity'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "plancherel-term-7-formulation-proof.md:11-13: \"The threshold k ≥ 4 is determined by ... empirically k_* = 4.\"",
+        "notes": "The depth threshold k_*=4 is set empirically rather than derived. Honestly disclosed ('empirically k_*=4'), so warn; it is a discrete selection in the Term-7 definition."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Depth-binning of e_λ by GB-filtration depth → curvature-rank decomposition follows from the cited curvature-rank stratification."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Internal references (curvature-rank stratification, spectral-sequence collapse, plancherel-weight-boundedness) used consistently."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "w̃_λ (q-Wedderburn weight) vs w_λ (classical Plancherel) explicitly distinguished; depth(λ), Φ_k defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Claims are about boundedness/structure (∑w̃_λ≈1.51 at n=12) not a precision match; the q_0 value is the canonical 50-dps muon pin."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Reaching ~30 MeV ⁴He binding via logarithmic unbounding of bounded characters is a coherent mechanism."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Witness reference (Φ_k for D,T,³He,⁴He; coulomb-subtracted-binding.witness.json) cited; prose values consistent."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4cddaa14f4aa",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Careful, self-correcting proof with proper Plancherel/Wedderburn-weight disambiguation; only the empirical k_*=4 threshold is a disclosed soft spot."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

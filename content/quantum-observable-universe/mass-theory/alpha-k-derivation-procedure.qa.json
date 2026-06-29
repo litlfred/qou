@@ -1048,7 +1048,450 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "alpha-k-derivation-procedure.md:39: \"**Formalization Goal Plausibility.** The current formalization proves the existence of a programmatic solution by effectively yielding `∃ y, y = solveJonesMarkov n S := ⟨_, rfl⟩`.\"",
+        "notes": "A proposition block carrying a long author/status-tracking meta-paragraph about formalization gaps; belongs in authorNotes per AGENTS.md §4d, not scholarly prose."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Jones-Markov y_λ derivation underlies the mass tower; on-topic for mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement over generic A=H_n(R,q) at generic q; y_λ ∈ R((z)). No gratuitous archimedean specialisation in the narrative statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "alpha-k-derivation-procedure.lean:56: \"(A : Matrix (Fin p) (Fin p) ℝ) [Invertible A]\"",
+        "notes": "Narrative is generic-ring (character matrix over R((z))) but the Lean proof specialises the linear-algebra core to ℝ. The matrix-inverse argument holds over any field; ℝ is unnecessary (could be a generic Field R). Disclosed as the archimedean specialisation in the docstring, so warn."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "alpha-k-derivation-procedure.lean:55-57: \"theorem alpha_k_derivation_procedure {p}(A)[Invertible A](b): ∃! y, A *ᵥ y = b\"",
+        "notes": "The Lean proves only the generic fact `invertible matrix ⇒ unique solution`; the substantive .md claim — that the *character matrix* [χ_λ(w_μ)] is invertible at generic q via Schur-Weyl-Hecke duality — is NOT in the Lean (the invertibility is assumed via [Invertible A]). The .md itself discloses this gap (line 39)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Signature is a standard unique-solution-of-invertible-system theorem; no axiom injected, no weakening relative to what it claims (which is narrower than the .md, see equiv flag)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Proof constructs A⁻¹·b and proves uniqueness via injectivity — genuine, not a structure-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Goal `∃! y, A *ᵥ y = b` is non-trivial; uses Matrix.mul_inv_of_invertible and one_mulVec."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "[Invertible A] is a satisfiable hypothesis, not a contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Both A's invertibility and b are used in existence and uniqueness branches."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No decide/trivial; explicit rewrite chain."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Markov-trace recursion tr_M(w_μ)=z^{n-len μ} and the linear system are standard and correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The .md proposition has real content (the explicit p(n)×p(n) system + uniqueness); the Lean is weaker but not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "y_λ derived from the Markov axioms, no back-fitting; explicitly 'no fitting'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "alpha-k-derivation-procedure.md:36: \"is invertible at generic q (Schur–Weyl-Hecke duality)\"",
+        "notes": "Invertibility of the character matrix is asserted with a parenthetical citation but neither proved here nor in the Lean; presented as established. Disclosed downstream (line 39), so minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No free parameter; y_λ are determined by the system."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Substitution of the Markov values into the central expansion yields the stated system."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "alpha-k-derivation-procedure.lean:55-57: \"∃! y : Fin p → ℝ, A *ᵥ y = b\"",
+        "notes": "Same as proof-narrative-lean-equiv: Lean proves the generic invertible-system fact, not the character-matrix invertibility that is the proposition's substance."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "jones1987 §3-4 cited for the Markov trace; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "z, e_λ, χ_λ, w_μ, p(n) all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Symbolic; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Pure algebra, no physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No witness; the linear system is reproducible from character tables."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "23a4e8e701bd",
+          "ts": "e61aeab1bc5e",
+          "lean": "22924145e75d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "notes": "Mathematically correct procedure, but the Lean theorem proves a generic linear-algebra triviality and the load-bearing claim (character-matrix invertibility at generic q) is unproved — the narrative-Lean gap is the strongest objection (disclosed in-prose)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

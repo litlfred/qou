@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Binding-energy error amplification is squarely mass-theory chapter scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "B_pred − B = −δ·M_atom is an exact algebraic identity; amplification A = M_atom/B verified against AME ratios (e.g. 1875.6/2.225≈843)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Identity is content-bearing: it quantifies the mass→binding amplification factor and its consequence (binding gated by mass precision)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No back-fitting; a purely algebraic relation between predicted/observed binding."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Conclusion (binding not separable from mass) is supported by the amplification identity."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No free parameters; δ and A are observables/derived quantities."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Each step (definition, division by B, corollary) follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No Lean sibling for this proof block."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Only an internal link to prop:binding-scale-catalan; CODATA/AME values stated generically."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "M_free, M_atom, B, δ, A all clearly defined in context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Table values are direct AME-2020 atomic masses and binding energies; ratios are arithmetic, not fits."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Binding-as-small-defect-of-large-masses is standard nuclear physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No witness needed; table values reproducible from AME-2020."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a8613a5b662d",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Sound, clean algebraic result with a useful methodological corollary (form the difference object before evaluating). No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

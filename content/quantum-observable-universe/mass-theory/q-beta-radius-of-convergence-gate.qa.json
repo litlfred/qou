@@ -1050,7 +1050,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Proposition statement (lines 1-19) is the pole/ratio-test claim + refutation criterion; checklist/composition sections are separate procedure."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Q_β c_k precision-ladder convergence gate is mass-theory/decay-width scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement concerns a convergence radius / pole location in the u-plane; u=b·ℏ_q² is the substrate quantity. Mass-theory archimedean chapter; appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The gate logic (ratio test, pole-location comparison) is analytic but operates on the archimedean u-substrate constant; no mis-placed algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "q-beta-radius-of-convergence-gate.lean:57: \"axiom qBetaLadderCoefficients : ℕ → ℝ\"",
+        "notes": "The Lean encodes the gate via axioms (qBetaLadderCoefficients, qBetaCandidatePoleLocation) and a §3b-cond class; the .md ratio-test/pole claim is mirrored but the c_k closed form is an open axiom-level target. Disclosed; the reject-theorem is conditional."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The gate theorem radius_of_convergence_gate_reject is stated as a conditional refutation criterion; no silent weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "RadiusOfConvergenceGateClass axiomatises the ratio-test signature; the reject theorem applies it rather than projecting its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The gate's content (asymptotic ratio c_{k+1}/c_k → 1/u_substrate) is a genuine analytic signature, not `: True`."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Axioms model open inputs (candidate coefficient sequence, pole location); not contradictory premises."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The reject theorem uses the candidate's ratio-limit hypothesis to derive incompatibility; no unused hypothesis evident."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No decide masking; the gate is an analytic comparison."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Ratio test lim|c_{k+1}|/|c_k| = 1/u_substrate for a simple pole at u_substrate is correct; c_3 → J_Hopf(1)=−2 q=1 shadow is consistent with the AGENTS.md tiered c_k framing."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The gate is a substantive necessary condition on candidate kernels (pole at u_substrate); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "u_substrate is fixed by the substrate (anchor-stable at 210 ppb), independent of the candidate F(q) being tested; not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "'Structurally REFUTED' is a legitimate (b) structural-exclusion: it cites a convergence invariant (ratio-test pole location must match for correct asymptotics). The (a)/(b) discipline is satisfied with a named invariant."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "u_substrate≈0.00852 is a derived substrate quantity; the gate REMOVES DOF from candidate kernels rather than adding any."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Candidate with pole ≠ u_substrate ⇒ wrong c_k asymptotics ⇒ incompatible ladder — the inference follows from the ratio test."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Lean RadiusOfConvergenceGateClass + reject theorem mirror the .md gate; the open c_k closed form is honestly an axiom/conjectural target."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "jones1987/wenzl1988/habiro2004 are appropriate for the Markov trace and Habiro-ring context; PR refs document the empirical pole test."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "g(u)=Σc_k u^k, u=b·ℏ_q², u_substrate, the four §4 invariants (a)-(d) all defined; (c)/(d) explicitly 'not yet formalised'."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Anchor-stability quantified: 210 ppb cross-anchor swing within the 1 ppm fibre-level tolerance; the c_k·u_subst^k → 2.118e-13 (0.02% spread, k=8,9,10) is a tight convergent signature, not a fragile match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Analytic gate on a generating function; no direct physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "qbeta_radius_of_convergence_gate_probe.py + witness referenced; PR #1727 cross-anchor probe documents the u_substrate=0.008517… value used in the Lean."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "dc3e5622a731",
+          "ts": "77f9a7d5c004",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Well-disciplined formalize-first gate: a (b) structural-exclusion criterion grounded in a cited convergence invariant, with c_k framed tiered (c_3→−2 q=1 shadow, not formalised). The Lean's axiom-level c_k target is the honest open status."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

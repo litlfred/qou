@@ -1046,7 +1046,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Proposition statement is the binding/mass formula; channel-percentage and accuracy commentary are in separate Derivation/Results sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Nuclear binding energy from the brane tower is mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Uses Φ_q, ln|·|, m_e — archimedean, appropriate for the observable mass-theory chapter; line 1 flags the ℝ specialisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Lean weights wedderburnStd/Sym over ℝ with hq:q>1; binding/mass are genuinely archimedean (Real.log, infinite product). Correct side of the wall."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.lean:64-67: \"noncomputable def towerBinding ... := ∑ lam, bindingCoeff ... * ∑ i, Real.log (quantumDilog ...)\"",
+        "notes": "The .md Proposition is encoded as defs (towerBinding/atomMass) plus one genuine theorem (wedderburnWeightsSum); the binding-energy equation itself is a def, not a proved theorem. The one weight-sum=1 theorem is real."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "wedderburnWeightsSum: w_sym+w_std+w_sym=1 is a substantive, correctly-stated theorem; defs faithfully encode the .md formula."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "wedderburnWeightsSum proved by simp/field_simp/ring, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.lean:41-42: \"noncomputable def wedderburnSymEqAlt (q)(hq) : wedderburnSym q hq = wedderburnSym q hq := rfl\"",
+        "notes": "wedderburnSymEqAlt is named to suggest 'w_sym = w_alt' but its type is the trivial reflexive `wedderburnSym = wedderburnSym` (same def applied to same args), provable by rfl — content-free. It is a def (not a theorem in the need-applicable kinds), but the naming overstates it."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "hq:q>1 is satisfiable; no contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "wedderburnWeightsSum uses q>1 implicitly via the well-defined weights; the substantive theorem consumes its data."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "field_simp/ring, no decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Weights w_sym=w_alt=1/([2]_q²+2), w_std=[2]_q²/([2]_q²+2) sum to 1 (Lean-verified); non-cancellation due to ln nonlinearity with V̂_sym≠V̂_alt is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Binding formula has genuine content; the weight-sum theorem is non-trivial (one named def, wedderburnSymEqAlt, is trivial — flagged separately)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Weights derived from H_3(q) Wedderburn; m_e from CODATA; 'zero fitted parameters' claim is consistent with the derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.md:116: \"Mean mass error: 0.071% across Z = 1 to 20. Zero fitted parameters.\"",
+        "notes": "Per the sibling binding-error-amplification block, a 0.071% atomic-mass error implies tens-of-% binding error; presenting 0.071% as the headline accuracy is plausible for atomic mass but understates the binding accuracy. Not false, but the framing could mislead on which quantity is accurate."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "All coefficients (w_λ, m_e, m_p, m_n) trace to canonical inputs; channel V̂ forms are read off the GS normal form."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Channel decomposition and non-cancellation argument follow from Wedderburn + ln nonlinearity."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.lean:64: \"noncomputable def towerBinding\"",
+        "notes": "The binding-energy proposition is a def in Lean; only the weight-sum=1 lemma is a theorem. Lean formalises the structure, not the predicted values — disclosed via the witness reference."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No external cites in this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "V̂^λ channel forms, Φ_q, w_λ, A/Z/N all defined; analytic continuation of Φ_q past |V̂|=q specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "tower-binding-energy.md:91-99: \"Symmetric (~20% of B) ... Standard (~65% of B) ... Alternating (~15% of B)\"",
+        "notes": "The specific channel-percentage breakdown and 0.071% mean error rest on full-tower-mass.witness.json (not inspected here); the percentages have the flavour of post-hoc attribution. Recommend confirming witness currency vs the muon-q_0 convention before treating as derived."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "M=Z·m_p+N·m_n+Z·m_e−B has correct structure/units; ~30 MeV ⁴He binding is the right order of magnitude."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.md:120: \"Witness: full-tower-mass.witness.json\"",
+        "notes": "Headline 0.071% accuracy depends on a single witness; witness hash/currency not verified in this review (could be stale vs the current q_0 pin). Flag for a witness-currency check."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ffbfb7e63114",
+          "ts": "67a003ec19b4",
+          "lean": "775599820168"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "Structurally well-formed with a Lean-verified weight-sum identity; weakest points are the trivially-named wedderburnSymEqAlt def, the binding-as-def (not theorem) status, and the unverified headline-accuracy witness. No false claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

@@ -1048,7 +1048,427 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The boxed Proposition statement (lines 3-39) is the bare closed form; significance/witness/timing live in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "y_λ closed form underlies the mass-tower trace; mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Line 1 explicitly flags the ℝ specialisation; the closed form uses z=1/(q^{1/2}+q^{-1/2}) and log_{q^2} (archimedean) but mass-theory is an archimedean chapter and the combinatorial content is noted as ring-generic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Real.sqrt/rpow appear only in the disclosed archimedean specialisation; the convention-iso content (Q=q², z_GL=q·z) is algebraic."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "y-lambda-closed-form-wenzl-bridge.lean:64: \"unique : True   -- Ref: [chlouveraki2016] HDR Theorem 6.20\"",
+        "notes": "The main closed-form theorem is conditional on MarkovTraceFamilyOneDim whose `unique` field is `: True` (opaque marker for the Chlouveraki 1-dim trace input). The .md discloses this and labels the older unconditional version 'structurally vacuous'. Honest §3b-cond, but the conditional rests on an opaque-tag field."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Convention-iso definitions discharged by rfl (wenzl_bridge_unique_definitional); the conditional theorem carries the class hypothesis explicitly — no silent weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Definitional layer is rfl on convention iso; not a projection of the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "y-lambda-closed-form-wenzl-bridge.lean:64: \"unique : True\"",
+        "notes": "The conditional-class field is literally `: True` (annotated as a tracked opaque tag, Mathlib lacking Iwahori-Hecke trace theory). Per §3b carve-out this is acceptable for an open conjectural input, but it is a True-typed field."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No contradictory hypothesis; the class is consistent (True is inhabited)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The conditional theorem genuinely consumes the 1-dim trace-family hypothesis to map trace-uniqueness onto parameter-pair uniqueness."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "rfl-discharge of definitions; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Convention iso G=qσ sending (q,−q^{-1})→(q²,−1) with z_GL=q·z and the principal-specialization Schur formula are correct; r_0≈2.5995 at q_0 is a plausible non-integer Wenzl level."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The closed form is genuine content (verified per-partition vs MPFR); only the upstream trace-uniqueness input is an opaque tag (disclosed)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "y_λ derived from Wenzl/Orellana + convention iso; not fitted to mass targets."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Uniqueness claims are split into a definitional (rfl) layer and a conditional (class) layer; the deprecated unconditional version is explicitly retired as vacuous."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Q=q², z_GL=q·z, r from the bridge equation — all forced, no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The convention-shift bridge steps (Q=q², z_GL=q·z, Wenzl formula at r) follow from the eigenvalue/Markov-axiom transport."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "wenzl1988, orellana1998, chlouveraki2016 (Thm 6.20) correctly attributed for the Schur-element weights and 1-dim trace family."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Q, d_μ=f^μ, s_λ principal specialization, r all defined; the σ-vs-g convention is explicitly bridged."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Agreement is symbolic-exact / machine-precision (10^{-16}) vs the MPFR witness at multiple n; not a fragile numerical coincidence."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Pure combinatorics; no physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "y-lambda-closed-form-wenzl-bridge.md:124: \"Witness: y-lambda-wenzl-bridge-symbolic-witness.json (6.7 MB, 270 unsimplified expressions; sympy simplify triggers RecursionError ...)\"",
+        "notes": "The symbolic witness is acknowledged to be unsimplified with sympy.simplify failing; correctness rests on sampled numerical agreement at n∈{3,4,5,6,9,12}, not full symbolic verification of all 270 entries. Reproducible but partially-validated."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "377cb422acff",
+          "ts": "dca519aba6b6",
+          "lean": "3a7e597142d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Solid convention-bridge result with strong numerical backing; weakest point is the True-typed opaque field for the cited 1-dim trace-family input and the unsimplified symbolic witness — both disclosed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

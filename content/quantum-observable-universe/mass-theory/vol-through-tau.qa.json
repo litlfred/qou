@@ -1048,7 +1048,457 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "vol-through-tau.md:56-58: \"The fibre functor τ is the *only* exit from C to the laboratory continuum\"",
+        "notes": "Proposition statement is interleaved with strong interpretive prose ('the only exit', 'no archimedean side-channel'); the bare factorization claim should be separated from the philosophical framing."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Vol-through-τ factorization underlies the archimedean mass realisation; mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement explicitly straddles the wall (tr_M into ℤ[q^{±1/2}] then τ_arch to ℝ); correctly identifies the archimedean projection."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Sketch invokes Tannaka-Krein rigidity (categorical, ring-generic) and π_∞ for the ℝ landing; the archimedean step is correctly placed at τ_arch."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "vol-through-tau.lean:50-53: \"theorem vol_through_tau_factors (v : VolThroughTau ...) : v.knotVol = v.τ.archRestriction v.algVol := v.factors\"",
+        "notes": "The .md is a substantive Tannaka-Krein uniqueness claim ('no other archimedean route', '*only* exit'); the Lean theorem merely unpacks the structure field `factors` that ASSUMES the factorization. The uniqueness/strictness content is absent from the Lean."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "The Lean does not weaken a prior theorem, but it cannot serve as an integrity guard for the .md claim since it presupposes the conclusion as a structure field."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "critical",
+        "evidence": "vol-through-tau.lean:36-53: \"structure VolThroughTau ... factors : knotVol = τ.archRestriction algVol ... theorem ... := v.factors\"",
+        "notes": "Textbook self-assuming projection: the structure carries `factors` whose type IS the theorem's conclusion, and the proof is `:= v.factors`. The theorem proves nothing beyond restating an assumed field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "vol-through-tau.lean:52-53: \":= v.factors\"",
+        "notes": "The goal is not literally `True`, but it is discharged vacuously by projecting an assumed equality; effectively content-free (subsumed by the self-assuming-projection fail)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No contradictory hypothesis; the structure is inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The factors field is used (it is the whole proof); trivially no unused hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No decide; the issue is the projection, not decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The factorization Vol(K)=τ_arch(Vol_q(β)) is consistent with the QOU volume-conjecture framing; not provably false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "vol-through-tau.lean:44: \"factors : knotVol = τ.archRestriction algVol\"",
+        "notes": "The Lean theorem is vacuous (projects an assumed field); the .md line 86 even mis-describes the Lean as an `∃ v, True` stub. Either way the formalisation carries no proof content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "vol-through-tau.lean:44,52: \"factors ... := v.factors\"",
+        "notes": "At the Lean level the 'theorem' assumes its conclusion as a hypothesis-field and returns it — circular in the projection sense. The narrative argument (Tannaka-Krein) is non-circular but is only a sketch."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "vol-through-tau.md:23: \"and there is no other archimedean route.\"",
+        "notes": "The uniqueness/strictness ('no other archimedean route', '*only* exit') is asserted at theorem strength but only sketched (Tannaka-Krein) and not formalised; conditional/sketch presented as established."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The Tannaka-Krein rigidity step (tensor/duality-preserving functor to Arch is τ up to iso) is a valid sketch inference."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "vol-through-tau.lean:50-53: \"vol_through_tau_factors ... := v.factors\"",
+        "notes": "Lean proves a vacuously-implied projection of an assumed factorization; the .md claims a Tannaka-Krein uniqueness theorem. Large divergence (self-described as a stub)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "kashaev1997/murakami-murakami2001 are appropriate for the volume-conjecture context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "τ_arch=π_∞∘τ, Arch category, Vol_q, π_∞ adelic projection all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The 'every real observable is a τ-shadow' claim is a model statement, not contradicted by measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7967ead943cf",
+          "ts": "cd2e497af6fe",
+          "lean": "bf887600e947"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "notes": "Strongest objection: the Lean 'theorem' is a self-assuming projection of an assumed `factors` field (the .md even calls it an existence stub), so the substantive Tannaka-Krein uniqueness claim is entirely unformalised and only sketched."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

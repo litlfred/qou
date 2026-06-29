@@ -1050,7 +1050,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement is the two identities (mass = |tr_M|; descended+transient decomposition); no extraneous interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Categorical-mass-as-Markov-trace is core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The Lean docstring explicitly splits Pre (R-valued Frobenius norm) from Arch (ℝ, |·|), fixing a prior wall violation; the .md |tr_M| is the archimedean realisation in an archimedean chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Pre tier keeps tr_M:H_n(R,q)→R and the Frobenius norm R-valued; archimedean |·| and positivity hypotheses are confined to the Arch tier — correct wall discipline (per the cited 2026-05-03 audit)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.lean:64-67: \"trace_decomposition : markovTrace = descendedTrace + transientTrace\"",
+        "notes": "The descended+transient decomposition is carried as a structure field (linearity of tr_M) rather than derived; the .md presents it as a descended identity. Acceptable as data (linearity is genuine), but the Lean encodes it as an assumption. (Only first ~75 lines of the Lean inspected.)"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Pre/Arch two-tier split is a faithful, audit-documented restatement; no axiom injected."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.lean:64-67: \"trace_decomposition : markovTrace = descendedTrace + transientTrace\"",
+        "notes": "If the decomposition theorem merely projects trace_decomposition it would be a self-assuming projection; but as the linearity-of-tr_M datum it is legitimate input. Borderline — flagged for the reviewer to confirm the downstream theorem derives rather than projects. (Full Lean not inspected.)"
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "categoricalMassSquaredFromMarkov is a genuine Frobenius-pairing def; no `: True` goal seen in the inspected portion."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "[Field R] + the trace data are satisfiable; no contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "trace_decomposition is the structural datum used to relate the components; no evident unused hypothesis in the inspected portion."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No decide in the inspected Lean."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "m(ϱ_β)=|tr_M(Φ_mass(β))| and the linear descended+transient split are consistent with the definitions of the Hecke mass element and mass identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The proposition fixes the categorical-mass ↔ Markov-trace identification; not content-free (though largely definitional)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No back-fitting; relates mass to the Markov trace of the mass element."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Decomposition stated as descent of the topological mass via tr_M linearity; appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Descent of the topological decomposition to H_n(R,q) follows from linearity of the Markov trace."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Lean two-tier (Pre/Arch) faithfully reflects the .md (R-valued trace + archimedean norm); validation flagged leanok."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "jones1987 / kassel1995 cited for the Markov trace and Hecke algebra; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Φ_mass(β), tr_M, descended/transient components, Frobenius norm all defined; the R-valued vs ℝ-valued norm distinction is explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "canonical-mass-table-extended.witness.json referenced; the .md statement makes no numerical accuracy claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Mass as norm of a trace is dimensionally consistent once τ supplies the scale."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Witness referenced; no contradicting numeric in prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Sound mass↔Markov-trace identification with exemplary Pre/Arch wall discipline; only soft point is whether the decomposition theorem derives or projects the linearity field (full Lean not inspected)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

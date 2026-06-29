@@ -762,7 +762,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Meson mass-ratio via Hecke character + Seifert volume is mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "χ^{(2,1)}(σ_1^n)=q^n+(−q^{-1})^n=q^n−q^{-n}=h·[n]_q for odd n is correct; V_S(T(2,5))/V_S(T(2,3))=(3π/5)/(π/3)=9/5 correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Two genuine algebraic identities plus an assembled mass-ratio; the Lean separates proved identities from the empirical exponent."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Not circular; the mass ratio is assembled from independently-derived factors, with the exponent honestly flagged as not-derived."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Explicitly states n_q=2 is 'not derived from the substrate' and the 290 ppm match is a 'witnessed near-match, not a Lean equality' — properly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "meson-kaon-pion-hecke-seifert-proof.md:28-32: \"A power scan over exponents 1, 2, 3 confirms that n_q = 2 uniquely minimises the PDG residual\"",
+        "notes": "The squaring exponent n_q is a discrete free parameter selected by a 3-point empirical scan against the PDG ratio — an off-menu choice. It is honestly DISCLOSED as not-derived (so warn not fail), but it is a hidden DOF in the mass-ratio assembly."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Each identity follows; the combination (q^5−q^{-5})·(9/5)²≈3.5361 is arithmetic."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The .md status table maps Lean decls to content honestly: chi_21_odd / seifert_ratio proved sorry-free, meson_squaring_exponent records the value, mesonMassRatio is a def — matches the prose disclosure."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "References hoefsmit-binding-amplitude internally; no mis-attributed external citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "meson-kaon-pion-hecke-seifert-proof.md:16-24: \"The Seifert Euler number of T(2,n) ... giving volumes V_S(T(2,3)) = π/3 ...\"",
+        "notes": "T(2,3),T(2,5) are torus (Seifert-fibered, non-hyperbolic) knots with zero hyperbolic volume; 'V_S' is a Seifert-invariant quantity, not hyperbolic volume. Consistently subscripted V_S, but calling it 'volume' invites confusion with the hyperbolic Vol used elsewhere."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "meson-kaon-pion-hecke-seifert-proof.md:30-32: \"290 ppm vs 444,605 ppm at n_q=1 and 799,479 ppm at n_q=3\"",
+        "notes": "The 290 ppm match is decisive vs neighbouring exponents, but it is a single-point fit with one discrete free choice (n_q). Disclosed as a witnessed near-match, not a derivation; reproducibility rests on the witness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "n_q=2 as 'two-quark composite' is a plausible physical rationale (meson = quark-antiquark); not contradicted by measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "meson-kaon-pion-derivation.witness.json cited, verifying q^5−q^{-5}=h·[5]_q and the 9/5 ratio at 50 digits; consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "54c22d972964",
+          "ts": "6f1c61d8b8f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "Algebra is exact and honestly presented; the strongest objection is the empirically-selected squaring exponent n_q=2 (a disclosed discrete DOF) and the 'V_S = volume' terminology on non-hyperbolic torus knots."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

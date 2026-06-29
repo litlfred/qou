@@ -892,7 +892,265 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "Block is a D7 parity/CPT-decomposition conjecture (braid mirror, writhe) whose natural home is braids-and-knots; its lean.ref is `qou:QOU.BraidsAndKnots.PFromBraidMirror`. It sits in mass-theory but the primary subject is duality/CPT, not mass. Borderline; not a clear different-chapter mis-placement."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "P:σ_i↦σ_i^{-1} with q fixed; P²=id and writhe sign-flip are correct; the distinction from bar-involution (q↦q^{-1} too) is mathematically sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "p-from-braid-mirror.lean:27: \"class PFromBraidMirror where  holds : Prop\"",
+        "notes": "Lean class carries only an empty `holds : Prop` placeholder — asserts nothing. Acceptable as a conjecture sibling-stub per §3b carve-out (real class sketched in .md), but the on-disk Lean encodes no content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No self-referential justification; bar = P·C·T is proposed as a derivable identity, not assumed to define P."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Stated as conjecture with explicit Open R&D; bar=P·C·T flagged as needing a Lean instance + prop block."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No numerical/free parameter; P is a discrete involution."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The factorisation table and writhe-anti-symmetry consistency follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "p-from-braid-mirror.lean:26-28: \"class PFromBraidMirror where holds : Prop\"",
+        "notes": "The on-disk Lean is an empty marker class, far weaker than the .md `PFromBraidMirror` sketch (p_involution, p_on_generator, bar_eq_p_c_t). Disclosed as a pending stub, so warn not fail."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "kassel1995/jones1987/kauffman1991 are standard braid/Hecke/knot references consistent with the content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "P, bar-involution, C (D6), T (D8) each explicitly distinguished."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Identifying parity with diagram mirror / writhe flip is a reasonable categorical model claim, stated conjecturally."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bc4fcd42e73a",
+          "ts": "31e3af739f0f",
+          "lean": "828d9508850d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "Mathematically coherent conjecture; strongest objection is the empty-marker Lean class (holds:Prop) and the mass-theory placement of a braids-and-knots/CPT topic."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

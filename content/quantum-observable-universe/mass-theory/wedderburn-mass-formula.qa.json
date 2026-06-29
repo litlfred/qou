@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "wedderburn-mass-formula.md:66: \"The formula has zero fitted parameters.\"",
+        "notes": "Theorem statement mixes the bare formula with interpretive/extremal-block commentary and a zero-fitting claim; interpretation should move to a linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Atomic mass formula is core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement uses ln|·| (archimedean) but mass-theory is an archimedean/observable chapter; Lean keeps the algebraic core over generic CommRing R (atomicMass). Appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Lean atomicMass / quantumInt stay over generic CommRing/Field R; no gratuitous ℝ."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "wedderburn-mass-formula.lean:57-61: \"def atomicMass ... : R\"",
+        "notes": "The .md 'Theorem' (the mass-formula equation + 'three invariants are complete') is encoded as a `def` (atomicMass) plus a vacuous count theorem; the equational/completeness claim is not a Lean theorem. lean.ref points at the def."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "atomicMass def faithfully encodes the .md formula structure; no axiom injected."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No structure-field projection masquerading as a proof."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "critical",
+        "evidence": "wedderburn-mass-formula.lean:91-100: \"theorem extremal_irreps_count ... ∃ d_sym d_alt d_std, d_sym = 1 ∧ d_alt = 1 ∧ d_std = n - 1 := ... ⟨1, 1, n - 1, rfl, rfl, rfl⟩\"",
+        "notes": "The only theorem in the file is vacuous: it asserts the existence of three naturals equal to literally specified values, proved by exhibiting them. It proves nothing about S_n having exactly 3 extremal irreps (the docstring claim 'no fourth invariant exists'); the n≥3 hypothesis is unused."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "n≥3 is satisfiable; no contradictory hypothesis."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "wedderburn-mass-formula.lean:99: \"intro n _\"",
+        "notes": "extremal_irreps_count discards the `n ≥ 3` hypothesis (`intro n _`); the existence witness ⟨1,1,n-1,…⟩ holds for all n, so the hypothesis is genuinely unused — symptom that the stated goal is weaker than the intended completeness claim."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No decide; rfl on concrete equalities (but the goal itself is trivial — see proof-no-trivial-true)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Sum/det/eigenvalue-ratio ↔ standard/sym×alt/sym÷alt block correspondence and [3]_q=(q^3−q^{-3})/(q−q^{-1}) are correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "wedderburn-mass-formula.lean:91-100: \"theorem extremal_irreps_count ... := ⟨1, 1, n - 1, rfl, rfl, rfl⟩\"",
+        "notes": "The supporting theorem is content-free (existence of specified naturals); the .md formula is genuine but its only theorem-level backing is vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "α=m_e·8G, [3]_q, H_A all derived from q_0/m_e; no back-fitting to atomic masses in the statement."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "wedderburn-mass-formula.lean:10-11: \"These are complete: no fourth invariant exists.\"",
+        "notes": "Docstring asserts completeness ('no fourth invariant exists') which is contradicted by the .md itself (lines 48-57: for n≥4 there are additional irreps/invariants). The 'three extremal invariants' are leading-order, not complete — the completeness phrasing overclaims."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "α, β₂=-2[3]_q, β₃≈H_A² are named with canonical-chain origins; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Invariant↔block table follows from Wedderburn decomposition of H_n(q)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "wedderburn-mass-formula.lean:91: \"theorem extremal_irreps_count\"",
+        "notes": "The .md Theorem (mass formula + completeness) is not proved in Lean; the file contains a def for the formula and a vacuous count theorem. Lean proves strictly less than the narrative claims."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "kazhdan-lusztig1979 cited for Hecke representation theory; appropriate context for irrep partitions."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "M_i transfer matrix, Φ_1/Φ_2/Φ_3, α, [3]_q, H_A all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement is the formula; no numerical accuracy claim is made in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "M(Z,N) = Z·m_p + N·m_n + Z·m_e + correction has correct additive nucleon/electron structure and units."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No witness asserted in this statement block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fe2689192275",
+          "ts": "130ddaa49744",
+          "lean": "0d0a61dce97e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "notes": "Strongest objection: the file's sole theorem (extremal_irreps_count) is vacuous and its docstring 'no fourth invariant exists' contradicts the .md's own admission that n≥4 yields more invariants. The mass formula def is fine but lacks a genuine theorem-level backing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

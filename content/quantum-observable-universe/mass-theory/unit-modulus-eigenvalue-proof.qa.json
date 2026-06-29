@@ -762,7 +762,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Unit-modulus eigenvalues of the standard rep (baryon/meson sectors) is mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "unit-modulus-eigenvalue-proof.md:7-8: \"Combined with |tr| ≤ 2 (which holds for real traces of 2×2 matrices with unit determinant)\"",
+        "notes": "The parenthetical is FALSE in general: a unit-determinant 2×2 real matrix need NOT have |tr|≤2 (counterexample diag(2,½): det=1, tr=2.5, eigenvalues off the unit circle). The conclusion holds for the specific operators in the table (where |tr|≤2 is verified case-by-case, e.g. Borromean χ=−2 ⇒ (λ+1)²), but the stated general justification is incorrect."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The eigenvalue/phase analysis and baryon-meson sign distinction are content-bearing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No back-fitting; eigenvalues derived from the Hecke quadratic and det."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "unit-modulus-eigenvalue-proof.md:7-9: \"both eigenvalues lie on the unit circle.\"",
+        "notes": "The general 'both eigenvalues on the unit circle for n even' conclusion is only valid given |tr|≤2, which is asserted but not guaranteed by det=1 alone. For the tabulated braids it holds, but as a general statement it overclaims (depends on the unproven |tr|≤2)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No free parameter; θ_L, θ_M are determined by q_0."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "unit-modulus-eigenvalue-proof.md:6-9: \"Combined with |tr| ≤ 2 (which holds for real traces of 2×2 matrices with unit determinant), both eigenvalues lie on the unit circle.\"",
+        "notes": "The inference 'det=1 ⇒ |tr|≤2 ⇒ eigenvalues on unit circle' is a logical gap: |tr|≤2 does not follow from unit determinant (it is the extra condition that must be checked per-operator). The proof needs |tr|≤2 as a verified hypothesis for each braid, not as an automatic consequence."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No external citations (internal ref to borromean-markov-trace-closed-form)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "h=q−q^{-1}, V_{(2,1)}, det, θ, L_+, meson braid all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "θ_L≈59°, θ_M≈54° are evaluations at q_0, not precision predictions; Borromean θ=180° is exact (λ=−1 from (λ+1)²)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Baryon (θ=π, (2,1) subtracts) vs meson (θ≈54°, (2,1) adds) sign structure is a coherent model claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Borromean χ_{(2,1)}=−2 is the Lean-proved closed-form value; θ values reproducible from the eigenvalue analysis."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "notes": "The eigenvalue table and baryon/meson sign distinction are correct, but the proof's general justification 'det=1 ⇒ |tr|≤2 ⇒ unit-circle' contains a false step (|tr|≤2 is not implied by unit determinant — counterexample diag(2,½)); the result must be argued per-operator via the checked traces."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

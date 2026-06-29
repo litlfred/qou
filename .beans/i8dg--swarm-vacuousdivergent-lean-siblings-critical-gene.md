@@ -33,3 +33,9 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 29, mass-theory)
 - curvature-rank-gb-stratification.lean:26-28,58 (self-assuming antisymm of its two inclusion fields; richer FilteredAlgebra sibling not the resolved ref)
 - joint-tower-sdp-confinement.lean:106 (SDP constraints -> trivial proxies; theorem := its own hypothesis; design-spec framing)
+
+## More instances (batch 31, mass-theory)
+- pentagon-uv-commutation.lean:18-21 (projects 5 ctx claim fields; critical)
+- vol-through-tau.lean:36-53 (field projection v.factors; Tannaka-Krein unformalised)
+- pauli-factor-wedderburn.lean:35-36 (exists F=trAlt/trSym tautology; critical)
+- wedderburn-mass-formula.lean:91-100 (extremal_irreps_count vacuous; docstring contradicts .md on n>=4)

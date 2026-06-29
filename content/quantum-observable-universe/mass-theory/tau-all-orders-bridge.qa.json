@@ -896,7 +896,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Fibre-functor h-expansion bridge for the Borromean mass tower is mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The dichotomy (order-mixing T vs distinct invariants) is logically exhaustive; α_6=0, α_2=−12, α_4=−6 and the κ values are stated as computed."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The block explicitly identifies that the naive arbitrary-T hypothesis is trivially inhabited and replaces it with the substantive banded-kernel constraint; neither class has an instance (honest open)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No back-fitting; f(0)=κ_2/α_2=−1/64 is a derived anchor, and the disproof of the constant kernel is a genuine constraint."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The −64 'disproved as structural' is correctly scoped to ruling out a CONSTANT T (cites α_4/κ_4=+7.92≠−64), leaving the non-constant/no-map question open — proper (a)/(b) discipline."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The kernel f has a bounded finite support — the whole point is to constrain DOF, not hide them; the band width is the explicit open parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Yekutieli non-abelian Stokes motivates a per-order fibre-functor relation (not necessarily order-preserving); the inference to possible order-mixing is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Lean TauOrderMixingMap / TauBandedKernelMap classes match the .md hypotheses; no instance (matches the open status)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "yekutieli2015 (non-abelian Stokes) and neumann-zagier1985 used appropriately."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "α_k (h^k-curvature trace), κ_k (Markov/Jones h^k coeff), T, kernel f, band width all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The block's central message is that the number-level fit is NON-discriminating; it does not rest on a fragile match — it flags the fragility itself."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Categorical invariant comparison; no direct physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Witness tau-all-orders-empirical-bridge.witness.json cited; α_6=0 and κ_6,κ_8 values stated as computed, consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6580b34cda4c",
+          "ts": "073c7ad16fd5",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Exemplary discipline: a genuinely open dichotomy with the trivial/vacuous variant explicitly excised and the structural disproof correctly scoped. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

@@ -1046,7 +1046,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The Proposition (lines 51-60) states the pentagon-applies-to-operator-lift claim; surrounding sections are the derivation/significance."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Pentagon q-factor driving the jet-tower mass ascension is mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement over H_n(R,q) with Laurent-polynomial volumes; quantum-torus uv=q·vu is algebraic, no gratuitous ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Derivation steps (Hecke braid relation, descent split, eigenvalue specialisation, operator lift) are algebraic; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "pentagon-uv-commutation.lean:7-16: \"theorem pentagon_uv_commutation_mass_theory [ctx : PentagonUvCommutationContext] : (pentagon) ∧ (braid) ∧ (involution) ∧ claim_iii ∧ claim_iv\"",
+        "notes": "The Lean conclusion is a 5-fold conjunction of the .md's derivation steps, but every conjunct is carried as a context field; the Lean does not derive any of them. The narrative presents these as a worked derivation, the Lean assumes them all."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "No prior theorem weakened, but the statement is a conjunction of assumed context fields — it cannot guard the .md derivation's integrity."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "critical",
+        "evidence": "pentagon-uv-commutation.lean:18-21: \"exact ⟨ctx.claim_pentagon_master, ctx.claim_i_hecke_braid_relation, ctx.claim_ii_descent_involution_split, ctx.claim_iii_eigenvalue_specialisation, ctx.claim_iv_operator_lift_transient⟩\"",
+        "notes": "Every conjunct of the conclusion is a verbatim projection of a context field whose type IS that conjunct — the proof is ⟨ctx.claim_*, ...⟩. Classic self-assuming projection: assumes all four derivation steps + the pentagon master and projects them out."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "The goal is not `True`, but it is discharged vacuously by projecting assumed fields (subsumed by the self-assuming-projection fail)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Context fields are satisfiable assumptions, not contradictions."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Each context field is used (projected) in the conjunction."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No decide; the issue is projection, not decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The pentagon Φ_q(v)Φ_q(u)=Φ_q(u)Φ_q(uv)Φ_q(v) under uv=q·vu is the standard quantum-dilogarithm five-term relation; scalar commutation within a level is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "pentagon-uv-commutation.lean:18-21: \"exact ⟨ctx.claim_pentagon_master, ...⟩\"",
+        "notes": "The Lean theorem is content-free: it assumes the pentagon master + all four derivation steps as context fields and returns them, proving nothing the .md derivation claims to establish."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "pentagon-uv-commutation.lean:15-16: \"ctx.claim_iii_eigenvalue_specialisation ∧ ctx.claim_iv_operator_lift_transient\"",
+        "notes": "At the Lean level the proof assumes its conclusions (claim_iii, claim_iv) as hypotheses and projects them — circular in the projection sense. The narrative derivation is not circular but is a sketch (step 4 asserts uv=q·vu)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The .md marks the derivation a 'sketch' and the role of pentagon as 'structural'; no precision claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No numerical parameter; q is the substrate variable."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "pentagon-uv-commutation.md:77-79: \"Operator lift on the transient part: the surviving non-trivial commutation ... giving the quantum-torus relation uv = q vu.\"",
+        "notes": "Derivation step 4 asserts the quantum-torus relation on the transient summand without an explicit lemma; the level-shift conjugates U_i,V_j satisfying uv=q·vu is stated, not shown. Acceptable in a sketch but the key relation is asserted."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "pentagon-uv-commutation.lean:7-21: \"theorem ... := exact ⟨ctx.claim_*, ...⟩\"",
+        "notes": "The Lean proves a conjunction-of-assumptions (projection), strictly weaker than the .md's worked derivation; it formalises nothing the narrative argues."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No external citations in this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Jet level, V̂_i, level-shift operator τ̂_n, descended/transient split, U_i/V_j all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Algebraic/structural; no direct physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a92f1167ddd7",
+          "ts": "a75a7b64ad6c",
+          "lean": "96e17d55042c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "notes": "Mathematically plausible sketch, but the Lean theorem is a self-assuming projection of all five claims (pentagon master + four derivation steps) as context fields — the formalisation establishes nothing. Strongest objection: assumes its own conclusions."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }

@@ -1048,7 +1048,455 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "pauli-factor-wedderburn.md:19: \"F_Pauli vanishes when β_K has no alternating-block content (bosonic) and is a unit when ... (fully fermionic).\"",
+        "notes": "The proposition statement appends physical-interpretation prose (bosonic/fermionic readings); belongs in a linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Pauli factor for nuclear Q-values is mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Statement over A=H_n(R,q), F_Pauli ∈ R; generic-ring, no gratuitous ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "pauli-factor-wedderburn.lean:21-24: \"structure WedderburnTraces where trAlt : ℝ ... trSym : ℝ\"",
+        "notes": "The .md ratio is ground-ring-valued (∈ R), but the Lean specialises trAlt/trSym to ℝ. The ratio is purely algebraic and could stay over a generic Field; ℝ is unnecessary."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "pauli-factor-wedderburn.lean:35-36: \"theorem pauli_factor_wedderburn (W) : ∃ F : ℝ, F = W.trAlt / W.trSym := ⟨W.trAlt / W.trSym, rfl⟩\"",
+        "notes": "The .md asserts F_Pauli equals the specific character-ratio χ_(1^n)·dim_q V_(1^n) / (χ_(n)·dim_q V_(n)); the Lean proves only the trivial `∃ F, F = trAlt/trSym`, saying nothing about the character formula."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "notes": "The Lean statement is so weak it cannot be a faithful integrity-guard for the .md proposition (it restates an existential tautology), though no axiom is injected."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Not a structure-field projection (it builds the witness ⟨trAlt/trSym, rfl⟩), though it is otherwise trivial."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "critical",
+        "evidence": "pauli-factor-wedderburn.lean:35-36: \"∃ F : ℝ, F = W.trAlt / W.trSym := ⟨W.trAlt / W.trSym, rfl⟩\"",
+        "notes": "`∃ F, F = expr` is a tautology any term discharges; the goal carries no mathematical content and ignores the (real) claim that F equals the Wedderburn character ratio."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "sym_nonzero is the only hypothesis and is satisfiable; no contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "minor",
+        "evidence": "pauli-factor-wedderburn.lean:35: \"theorem pauli_factor_wedderburn (W : WedderburnTraces)\"",
+        "notes": "The `sym_nonzero` field of W is never used (the existential is discharged regardless), consistent with the goal being trivial."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No decide; rfl on a definitional equality."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "F_Pauli as alt/sym block-trace ratio is a coherent and correct definition; vanishing/unit limiting behaviour is consistent with χ_(1^n)=0 for bosonic content."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "pauli-factor-wedderburn.lean:35-36: \"∃ F : ℝ, F = W.trAlt / W.trSym\"",
+        "notes": "The Lean theorem is a content-free existential tautology; it does not establish the character-ratio identity that is the proposition's substance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No back-fitting; the ratio is defined from block traces."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The .md statement is appropriately scoped (a definition/identification of F_Pauli)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "No free parameter; F_Pauli is determined by the braid's block characters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "The two equal forms (block integrals vs χ·dim_q ratio) follow from the trace = weighted character decomposition."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "evidence": "pauli-factor-wedderburn.lean:35-36: \"∃ F : ℝ, F = W.trAlt / W.trSym\"",
+        "notes": "Lean proves a vacuous existential, strictly weaker than the .md character-ratio identity."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "jones1987 cited for the Markov/Hecke trace context; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Alt/sym blocks, χ_λ, dim_q V_λ all standard and defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Witness status 'verified'; no numerical accuracy claim made in the .md."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Pauli statistical weight from fermionic (alternating) block content is physically sensible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "notes": "Witness pauli-factor-wedderburn-probe.witness.json referenced; not contradicted by prose (no numeric in prose)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c62e98e973dd",
+          "ts": "92c33e8be930",
+          "lean": "0cf89b1d220d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:37:06.728Z",
+        "reviewed_sha": "931e8dd50e521c4147e296b1d5816b5037ac18b4",
+        "severity": "major",
+        "notes": "The mathematics is sound but the Lean theorem is a vacuous `∃ F, F = trAlt/trSym` tautology that does not formalise the character-ratio claim — the proposition is effectively unformalised."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:37:06.728Z"
 }
