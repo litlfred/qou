@@ -1,4 +1,8 @@
-import QOU.Mathlib.SYTLagrangeInterp
+import QOU.Mathlib.SYTVandermondeKeystone
+import Mathlib.Algebra.Polynomial.Roots
+import Mathlib.RingTheory.Polynomial.Vieta
+import Mathlib.Algebra.Polynomial.BigOperators
+import Mathlib.Algebra.BigOperators.Field
 
 /-!
 # QOU.Mathlib.SYTBetaLagrange — the β-Lagrange identity
@@ -8,8 +12,9 @@ self-contained `ℚ` **β-Lagrange identity**
 
     ∑ᵢ βᵢ · ∏_{j≠i} (βᵢ − 1 − βⱼ)/(βᵢ − βⱼ)  =  (∑ᵢ βᵢ) − C(k,2).
 
-This file assembles it on the Lagrange leading-coefficient keystone
-(`SYTLagrangeInterp.interp_leadingCoeff`).
+This file assembles it on the leading-coefficient keystone
+(`SYTVandermonde.interp_leadingCoeff`, the `Matrix.det_vandermonde` route — owner-preferred over
+polynomial interpolation).
 
 **Route.** Let `Q(X) = ∏ⱼ (X − βⱼ)` (vanishes at every node `βᵢ`, since the `j=i` factor is `0`) and
 `G(X) = X · ∏ⱼ (X − (βⱼ+1))`, so `G(βᵢ) = βᵢ ∏ⱼ(βᵢ − 1 − βⱼ)`.  Removing the `j=i` factor flips a sign,
@@ -23,6 +28,7 @@ Pure `ℚ` polynomial algebra; nothing archimedean; no fit.
 namespace QOU.Mathlib.SYTBetaLagrange
 
 open Polynomial Finset
+open QOU.Mathlib.SYTVandermonde (vWeight)
 
 variable {k : ℕ}
 
@@ -46,7 +52,10 @@ theorem sum_eval_div_eq_of_decomp (β : Fin k → ℚ) (hβ : Function.Injective
     intro i
     rw [hdec, eval_add, eval_mul, nodePoly_eval, mul_zero, add_zero]
   rw [Finset.sum_congr rfl (fun i _ => by rw [hval i])]
-  exact interp_leadingCoeff β hβ hk R hR
+  -- the keystone is stated over `Fin (k'+1)`; with `hk : 0 < k` write `k = (k-1)+1`
+  obtain ⟨k', rfl⟩ : ∃ k', k = k' + 1 := ⟨k - 1, by omega⟩
+  rw [Nat.add_sub_cancel]
+  exact QOU.Mathlib.SYTVandermonde.interp_leadingCoeff β hβ R (by omega)
 
 /-- The shifted-node polynomial `∏ⱼ (X − (βⱼ+1))`, whose value at `βᵢ` is `∏ⱼ(βᵢ − 1 − βⱼ)`. -/
 noncomputable def shiftPoly (β : Fin k → ℚ) : ℚ[X] :=
