@@ -1,8 +1,8 @@
 {
   "engine": "python+canonical-binding",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T16:42:00.411240+00:00",
-  "commitSha": "6063392ca67eebc082567ea64951bcf53a1ee608",
+  "computedAt": "2026-06-29T17:30:28.608480+00:00",
+  "commitSha": "c3bcf8b27872da46181a55b4c11a458d82b1db09",
   "assertions": [
     {
       "name": "quadratic_c_nonzero",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17858,
+  "durationMs": 634164,
   "computation": "delta-lambda-imme-triplet",
   "scriptFile": "delta_lambda_imme_triplet.py",
-  "scriptHash": "5e5f961ac148",
-  "scriptCommitSha": "db146a918d5b3b69f53e8d288eca0ff8183dd4ff",
+  "scriptHash": "8dfb701566b6",
+  "scriptCommitSha": "c3bcf8b27872da46181a55b4c11a458d82b1db09",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,22 +55,22 @@
             "atom": "6He",
             "Z": 2,
             "N": 4,
-            "B_pred": 0.6419299094059542,
-            "log_q0": 36.609674727533246
+            "B_pred": 0.6419299099568216,
+            "log_q0": 36.60967471930883
           },
           "0": {
             "atom": "6Li",
             "Z": 3,
             "N": 3,
-            "B_pred": 0.7381293495624422,
-            "log_q0": 36.12398792705983
+            "B_pred": 0.7381293506559005,
+            "log_q0": 36.1239879128622
           },
           "1": {
             "atom": "6Be",
             "Z": 4,
             "N": 2,
-            "B_pred": 0.8465866377052679,
-            "log_q0": 33.156414271215475
+            "B_pred": 0.8465866398757551,
+            "log_q0": 33.15641424664396
           }
         },
         "imme_a": 36.124,
@@ -89,22 +89,22 @@
             "atom": "8Li",
             "Z": 3,
             "N": 5,
-            "B_pred": 0.6339704000542918,
-            "log_q0": 40.02328125413158
+            "B_pred": 0.6339704001328152,
+            "log_q0": 40.023281252944514
           },
           "0": {
             "atom": "8Be",
             "Z": 4,
             "N": 4,
-            "B_pred": 0.7311612971231611,
-            "log_q0": 41.664965369442044
+            "B_pred": 0.7311612972790282,
+            "log_q0": 41.664965367398956
           },
           "1": {
             "atom": "8B",
             "Z": 5,
             "N": 3,
-            "B_pred": 0.8429456298724523,
-            "log_q0": 36.433586830844455
+            "B_pred": 0.8429456301818445,
+            "log_q0": 36.43358682732678
           }
         },
         "imme_a": 41.665,
@@ -115,6 +115,74 @@
         "ias_ex_MeV": 16.626,
         "imme_a_sameT": 38.325,
         "imme_c_quadratic_sameT": -0.096
+      },
+      {
+        "A": 10,
+        "members": {
+          "-1": {
+            "atom": "10Be",
+            "Z": 4,
+            "N": 6,
+            "B_pred": 0.6238993177124182,
+            "log_q0": 44.52528835970298
+          },
+          "0": {
+            "atom": "10B",
+            "Z": 5,
+            "N": 5,
+            "B_pred": 0.7198563385361458,
+            "log_q0": 43.12078538730115
+          },
+          "1": {
+            "atom": "10C",
+            "Z": 6,
+            "N": 4,
+            "B_pred": 0.8305280967458233,
+            "log_q0": 41.07095805193226
+          }
+        },
+        "imme_a": 43.121,
+        "imme_b_linear": -1.727,
+        "imme_c_quadratic": -0.323,
+        "mirror_diff_2b": -3.454,
+        "triplet_2nd_diff_2c": -0.645,
+        "ias_ex_MeV": 1.7402,
+        "imme_a_sameT": 42.86,
+        "imme_c_quadratic_sameT": -0.062
+      },
+      {
+        "A": 12,
+        "members": {
+          "-1": {
+            "atom": "12B",
+            "Z": 5,
+            "N": 7,
+            "B_pred": 0.6136744590605429,
+            "log_q0": 46.62594892993926
+          },
+          "0": {
+            "atom": "12C",
+            "Z": 6,
+            "N": 6,
+            "B_pred": 0.7081030480651177,
+            "log_q0": 46.66165637462967
+          },
+          "1": {
+            "atom": "12N",
+            "Z": 7,
+            "N": 5,
+            "B_pred": 0.8170555267246304,
+            "log_q0": 43.191830610153254
+          }
+        },
+        "imme_a": 46.662,
+        "imme_b_linear": -1.717,
+        "imme_c_quadratic": -1.753,
+        "mirror_diff_2b": -3.434,
+        "triplet_2nd_diff_2c": -3.506,
+        "ias_ex_MeV": 15.11,
+        "imme_a_sameT": 44.945,
+        "imme_c_quadratic_sameT": -0.037
       }
     ],
     "imme_form": "log_q0 Δ_λ(T₃) = a(A) + b(A)·T₃ + c(A)·T₃²,  T₃=(Z−N)/2",
@@ -125,7 +193,9 @@
     },
     "b_by_A_linear_coeff": {
       "6": -1.727,
-      "8": -1.795
+      "8": -1.795,
+      "10": -1.727,
+      "12": -1.717
     },
     "askey": {
       "body_order_n": "b-ladder a(n+2)=2cosh(10η)a(n+1)−a(n): continuous q-Hermite / Al-Salam–Chihara three-term recurrence (Askey q-scheme)",
@@ -135,15 +205,21 @@
       "method": "T₃=0 member corrected to its T=1 IAS (measured E_x, not a fit)",
       "ias_ex_MeV": {
         "6": 3.563,
-        "8": 16.626
+        "8": 16.626,
+        "10": 1.7402,
+        "12": 15.11
       },
       "c_raw_T0_contaminated": {
         "6": -1.241,
-        "8": -3.437
+        "8": -3.437,
+        "10": -0.323,
+        "12": -1.753
       },
       "c_sameT_clean": {
         "6": -0.109,
-        "8": -0.096
+        "8": -0.096,
+        "10": -0.062,
+        "12": -0.037
       },
       "finding": "raw c (−1.24,−3.44, growing) was mostly T=0/T=1 Wigner-energy structure; the clean same-T c≈−0.1 is SMALL and A-INDEPENDENT — the residual is linear(writhe)-dominated once same-T"
     }
