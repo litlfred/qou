@@ -816,7 +816,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "JM/SYT-cell reframing of the mass tower; mass-theory remark."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "JM elements L_k commute, act diagonally as q^{2c_T(k)} on the Young basis; tr_M(L_{k1}L_{k2})=z^2 for commuting elements via Markov factorization — all standard and correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive reindexing + empirical T/3He residual-closure table."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "JM reindexing is a basis change, not back-fitting; E_0 calibrated on the proton per path, stated."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "mass-tower-syt-cells.md:146: \"3He 60.1% 0.219%\"",
+        "notes": "Table claims JM all-pairs closes T (18.0%->0.277%) and 3He (60.1%->0.219%) residuals; presented as the JM form 'captures SYT-content correlations the scalar factorization drops' — a strong improvement claim from a 'first-pass implementation', and the closing 'Open question' admits it is not established whether the SYT form reproduces the generator-indexed form."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Plancherel weights w_lambda, mu_T are determined; no free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "[L_i,L_j]=0 -> all-pairs symmetric, justified by factorization theorem."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No Lean sibling for this remark."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Cross-refs to Markov-trace factorization theorem / mass-endomorphism-tower internal; no misattribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "L_k, c_T(k), V_hat^JM, mu_T defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "mass-tower-syt-cells.md:148: \"the JM path closes the residual by carrying the per-SYT content structure missing from a scalar factorization.\"",
+        "notes": "The dramatic T/3He residual drops (18%->0.28%, 60%->0.22%) come from a 'first-pass implementation' and the block's own Open question flags that the JM-vs-generator agreement is unsettled; the improvement may be sensitive to the per-SYT content weighting choice."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Binding residuals in %; consistent with the framework."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "mass-tower-syt-cells.md:134: \"A first-pass implementation (the formal derivation) computes $\\hat V_k^{JM}$\"",
+        "notes": "JM table values attributed to 'a first-pass implementation' / 'the formal derivation' (detangled prose) with no pinned witness; the 0.277%/0.219% figures are not reproducible from the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7396f276a71e",
+          "ts": "0d0650fa1527"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "Sound JM/SYT reindexing (commuting L_k, z^2 pair weight), but the headline T/3He residual-closure (60%->0.22%) rests on a first-pass implementation whose own Open question concedes the JM-vs-generator equivalence is unsettled; the empirical win is suggestive, not established."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

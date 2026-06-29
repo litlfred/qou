@@ -1046,7 +1046,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the bare algebraic claim plus a tightly-scoped 'In particular' applying it to the Hecke q=1 specialisation; the broader physical interpretation lives in the separate proof block — acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Symmetric-point degeneration proposition, correctly in the q=1 subsection of models-of-qous."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Algebraic statement over a generic field R (char≠2); the q=1 Hecke specialisation is symbolic, no archimedean construct — correct generic-ring side of the wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Proof uses only field algebra (inv_eq_of_mul_eq_one_right, ring); no linarith/IVT/Real.* — correct generic-ring machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": ".md: field R, 2≠0, s²=1 ⇒ s⁻¹=s and (s+s⁻¹)/2=s. Lean: {R}[Field R](s)(hs:s^2=1)(h2:(2:R)≠0):s⁻¹=s ∧ (s+s⁻¹)/2=s. Same quantifiers, hypotheses, conclusion."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Signature is the genuine claim; no weakening, no injected axiom, no conclusion typed True."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Proof derives the result from hs via inv_eq_of_mul_eq_one_right + ring; not a projection of a field whose type is the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Conclusion is a substantive conjunction of equalities, not True/x=x; hypotheses are used."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Premises (s²=1, 2≠0) are satisfiable (e.g. s=1 in ℚ); no False/contradiction; type R inhabited."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Both hypotheses used: hs gives s⁻¹=s; h2 needed for div_eq_iff in (s+s⁻¹)/2=s."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No decide/trivial masking; explicit structural tactics (rw, refine, ring)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Mathematically true; checked the involution algebra directly."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Genuine content, not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "The 'collapses to a single operator' claim is exactly what the algebra gives at q=1; not overstated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "The Hecke relation (σ-q)(σ+q⁻¹)=0 at q=1 reading σ²=1 is correct, so the 'In particular' follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Lean proves the full claim sorry-free, equivalent to the .md."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No external cites; Hecke relation invoked is the repo-canonical (σ-q)(σ+q⁻¹)=0."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Field, char≠2, s with s²=1 — all explicit; no ambiguous 'unique' usage."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is algebraic; physical reading deferred to proof block and is sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No backing witness; pure algebra."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e7c0471248dd",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Verdict: correct, tight proposition with faithful sorry-free Lean. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:49.135Z"
 }

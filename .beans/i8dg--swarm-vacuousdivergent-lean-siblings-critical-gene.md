@@ -61,3 +61,6 @@ updated_at: 2026-06-29T20:07:58Z
 - universal-braid-branching.lean:38,67,77,86 (h_base self-assuming; pieri/chebyshev rfl tautologies; convergence_bound proves >=0 not MAE)
 - flavor-dressed-mass.lean:53 (axiom whose statement IS conclusion; not 3b-cond hypothesis form)
 - zeta8-witness-level2-su2.lean:113 (wenzl_annihilator exists x=0 vacuous); wedderburn-bratteli-recursion.lean:124 (y=0 witness); exterior-square-borromean.lean:32 (proves 9+36=45 only)
+
+## More instances (batch 42)
+- wenzl-qmn-synergy.lean (markovTrace=0, chi_qMN=0; main theorem 0=0; cross-validation self-assuming projection; disclosed 3b-cond but no real content)

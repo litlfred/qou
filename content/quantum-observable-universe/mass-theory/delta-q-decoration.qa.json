@@ -877,7 +877,286 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "delta_q per-irrep decoration of H_n(q) NF basis; mass-theory/braids infrastructure."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Defined over R = Z[q^±1/2,(q-q^-1)^-1]; chi_lambda traces — substrate-side, no archimedean leak."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "delta_q(T_{2,9}) = q^9 - q^-9 = h[9]_q in H_2 (eigenvalues q^9, -q^-9) is correct; Markov-trace decomposition standard."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "delta-q-decoration.lean:42: \"def delta_q (n : N) : Type := Fin n\"",
+        "notes": "The Lean sibling's actual decl is 'def delta_q (n:N) : Type := Fin n' with the real content commented out behind a sorry block; the genuine per-irrep map is Python-only. The Lean carrier is a placeholder type, not the decoration map."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Definition names a construction; no derivation/back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Lean docstring is honest that full formalization needs q-deformed Specht modules not in Mathlib."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Complexity O(l·sum f^3); H4 sum 1+27+8+27+1=64 correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "delta-q-decoration.lean:42: \"def delta_q (n : N) : Type := Fin n\"",
+        "notes": "Lean delta_q is a stub type (Fin n); the .md defines a map H_n(q)->R^|Par(n)|. The formalization captures only the index type, not the map — disclosed but divergent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "delta-q-decoration.lean:31: \"[wenzl1988b] Wenzl 1988 ... placeholder -- bib entry (title/venue to be verified)\"",
+        "notes": "Lean -- Ref tags wenzl1988b as a 'placeholder bib entry (title/venue to be verified)'; an unverified citation key flagged by the author themselves."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "delta_q, q-dimension layer, Wedderburn block trace all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "1/alpha_EM = q[9]_q[10]_q is cross-referenced, not asserted as a fit here."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Algebraic infrastructure."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "delta-q-decoration.md:88: \"delta-q-decoration.witness.json caches the per-irrep characters\"",
+        "notes": "Witness delta-q-decoration.witness.json referenced for H2,H3,H4 + T_{2,9},T_{3,5}; not pinned in .ts (no computation field), reproducibility unverified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7a6fec034bca",
+          "ts": "443585624d26",
+          "lean": "07d23508e991"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "Mathematically sound definition with correct delta_q(T_{2,9})=h[9]_q; strongest objection: the 'definition' block's required Lean sibling is a stub type (Fin n) with the real map deferred to Python, and carries a self-flagged placeholder citation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

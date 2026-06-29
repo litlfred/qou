@@ -1007,7 +1007,415 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the boxed parity-dependent orbit-sum identity; significance is in a separate section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "General-depth cyclotomic orbit sum; mass-theory/Bring period material."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Transcendental-number identity (Clausen/polylog values); archimedean by subject, appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No standalone **Proof.** body in the .md."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No lean field present in the read .ts portion / no sibling .lean; equivalence n/a."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Boxed identity stated exactly with the n-odd/even cases."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No Lean proof."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Parity-dependent closed form is non-trivial."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No Lean proof."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Verified numerically for (n,N) in {(3,5),(3,7),(5,5),(2,5),(4,5),(3,6),(5,7)}: sum_{k=1}^{N-1} Cl_n(2pik/N) = (N^{1-n}-1)zeta(n) for n odd, 0 for n even — all match to ~30 dps."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive general-depth result."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Standard polylog/Hurwitz identity; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "'extends the pattern to all n with a single proof' is consistent with the verified general formula."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Dimension consequences ((K-3)/2 odd, (K-1)/2 even) follow from the parity split."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No external citation invoked in the .md body."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Glaisher Clausen function convention (Re for odd, Im for even) stated explicitly."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Exact identity (verified at multiple (n,N)), not a fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Pure number theory."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Reproduced independently here for 7 (n,N) cases."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d66c8868e352",
+          "ts": "9aca4ce1d0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Exact, independently-verified general-depth orbit-sum identity (Hurwitz/multiplication-theorem class). No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

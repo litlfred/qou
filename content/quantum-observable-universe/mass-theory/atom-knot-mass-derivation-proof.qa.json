@@ -798,7 +798,266 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Atom-knot mass/binding derivation via categorical pipeline + Archimedean functor; mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Wedderburn for semisimple H_n(q) over Q(q^1/2), tr_M = sum y_lambda chi_lambda, E_2-collapse giving finite sum, and B(H)=m_e·nu_SDP·tr_M(T_w)|_{q0} are internally consistent; volume-conjecture naming correctly quarantined as 'borrowed, not part of derivation'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive multi-step categorical->archimedean derivation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation-proof.md:113: \"step 1 is pending; the post-Archimedean naming (volume from SnapPy) is substituted for the categorical Markov trace\"",
+        "notes": "The methodology-gating section concedes that for 'manual-historical' entries (2H,3H,3He) step 1 (joint-tower SDP) is PENDING and 'the post-Archimedean naming (volume from SnapPy) is substituted for the categorical Markov trace' — i.e. for those nuclei the volume is taken from SnapPy rather than derived, and a backwards volume-match search is explicitly excluded as reverse-engineering; so the principled derivation is complete only for electron/proton/neutron."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "atom-knot-mass-derivation-proof.md:111: \"For `manual-historical` entries (2H, 3H, 3He) step 1 is pending\"",
+        "notes": "Titled an 'atom-knot mass derivation proof' and concluding B(H)=m_e·nu_SDP·tr_M(T_w) with a QED, but by its own methodology-gating only principled-derivation entries run steps 2-6 end-to-end; manual-historical nuclei substitute SnapPy volumes — the 'proof' is complete for the nucleons, partial (substituted) for the listed nuclei."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "nu_SDP in Z_{>0} read off as Wedderburn multiplicity (=1 for principled entries); m_e the sole calibration; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Categorical leg + Archimedean functor -> B(H) follows; the SnapPy substitution is flagged, not smuggled."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No Lean sibling for this proof block (the .ts may carry a lean ref but the proof block has no independent .lean read here)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "kashaev1997, murakami-murakami2001, mostow1968, gromov1982, thurston1978 correctly cited for the volume-conjecture/rigidity naming layer."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "nu_SDP (renamed from rho to disambiguate), T_w, M(H), B(H) defined; Wedderburn over Q(q^1/2) explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No specific precision near-match asserted in-block; binding values are downstream."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "m_e·tr_M|_{q0} with MeV units via the dimensional bridge; consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation-proof.md:18: \"gb-filtration-jet-order.witness.json\" (blob URL on branch claude/mass-units-bridge-followups)",
+        "notes": "Categorical leg references 'gb-filtration-jet-order.witness.json' on a non-main branch (claude/mass-units-bridge-followups), and the manual-historical entries depend on external SnapPy volumes; reproducibility from main not assured."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "73ae820e9890",
+          "ts": "106ca55e0be6",
+          "lean": "43b6199a8f52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "The categorical->archimedean derivation is correct and the volume-conjecture naming is properly quarantined, but the block's own methodology-gating concedes the principled pipeline runs end-to-end only for electron/proton/neutron; for 2H/3H/3He it substitutes SnapPy volumes for the categorical trace, so the 'derivation proof' is complete for nucleons and substituted (not derived) for the listed nuclei."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

@@ -855,7 +855,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Block sits in sec:headline-conjectures of models-of-qous; the categorical YM existence+mass-gap conjecture is squarely a headline conjecture of the framework — correct placement."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is a conjecture (kind: conjecture); the asserted inequalities (m(ϱ)≥Δ_q>0, Δ_q≥E_×(q)(q-1)²>0 for q>1) are internally consistent — E_×(q)=½(q-q⁻¹)>0 and (q-1)²>0 for q>1; no false algebraic claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Not vacuous: lean target QOU.Torsion.YangMillsMassGap is a content-bearing structure with a positivity field, and HasYangMillsMassGap is a real conjecture class with an in-framework instance (CrossingGradedModel)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No back-fitting: the gap is bounded below by a q-only structural quantity (crossing energy from the Skein relation); no observable target is smuggled in to define Δ_q."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Honestly framed as a conjecture (kind: conjecture, validation not_checked, tier:famous/millennium); existence and mass-gap are stated as the open claims, not asserted as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Δ_q depends only on q and the Frobenius-Hopf structure of A; χ(A)=-6 is the canonical Descartes value, not a tunable parameter — no undisclosed free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Steps are conjectural interpretation (not deductive proof obligations): the Skein-energy lower bound, μ₂-vanishing, and Kummer-divisibility narrative are coherent and cross-referenced; acceptable for a conjecture block."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "kind:conjecture; lean ref is the YangMillsMassGap/HasYangMillsMassGap interface (validation not_checked) — the .md makes no claim of a discharged proof, so no weaker-Lean-vs-claim divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No external cites[]; all references are internal cross-refs (vacuum-state, topological-mass, gm-torsion, kummer-filtration) that resolve to corpus blocks."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Key terms (vacuum state, categorical mass, crossing energy, transfer matrix) are each linked to their defining blocks; 'unique G_q-invariant functional' is anchored to prop:vacuum-state."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No numerical observable match claimed; the only numbers are exact algebraic q-expressions, not fitted near-matches against experiment."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Confinement-from-gap narrative (colour singlets, glueball mass ≥ Δ_q) is physically standard; no unit error or conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No witness cited by this block; the adjacent q1-mass-gap-probe witness independently confirms the Δ_q forms used in the section and is current (commit/scriptHash present)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "da48515bf8e4",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Verdict: sound conjecture block, honestly labeled. Strongest objection a referee would raise: the Skein-energy lower bound Δ_q ≥ E_×(q)(q-1)² is asserted, not derived — acceptable for kind:conjecture but the heuristic step deserves an explicit 'conjecturally' qualifier."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:49.135Z"
 }

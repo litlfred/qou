@@ -896,7 +896,266 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Uniform per-level binding bound conjecture for the jet tower; mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No false claim: explicitly a conjecture; the geometric-decay ratio prediction hbar_q^2 ~ 0.00982 and the tail bound Delta_max·hbar_q^{2(N+1)}/(1-hbar_q^2) are correctly conditional."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive conjecture with empirical evidence + two proof avenues."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Not circular; the bound is named as hypothesis for prop:jet-tower-convergence."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Carefully tiered (provable tail bound / conjectural uniform bound / empirical at n=1,2,3); the witness table uses <empirical> placeholders, honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Delta_max(varrho) depends on the vortex but not on n, explicitly; not a hidden global DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Tail-bound application conditional on the uniform bound; logic explicit."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "jet-tower-uniform-delta-max.md:138: \"**Status: conjectural** under AGENTS.md §3b\"",
+        "notes": "A jet-tower-uniform-delta-max.lean sibling exists (per the file listing) but the .md is a conjecture with §3b status; the Lean was not read here — flag as unverified rather than divergent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "yekutieli2010 (descent rigidity) appropriately cited as a proof avenue."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Delta^(n), Delta_max, per-level binding contribution defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "jet-tower-uniform-delta-max.md:69: \"D 3 <empirical> <empirical> (yes)\"",
+        "notes": "Empirical evidence is a witness table with literal <empirical> placeholders and '(yes)' pass flags rather than concrete numbers; the '0.00982 to three significant figures at n=1,2,3' claim is asserted but the supporting numbers are not shown in-block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Binding-bound conjecture; no physics violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "jet-tower-uniform-delta-max.md:21: \"the new `jet-tower-delta-max.witness.json`\"",
+        "notes": "Witness jet-tower-delta-max.witness.json named in prose but the concrete max|Delta^(n)| / geometric-ratio values are placeholders in the .md; reproducibility of the 'consistent at n=1,2,3' claim not demonstrable from the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "206c41ff25d1",
+          "ts": "ffee6513e43b",
+          "lean": "0bc866980a6d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "Properly-scoped conjecture (provable tail bound vs conjectural uniform bound vs empirical) — sound framing; strongest objection is that the empirical-evidence table ships <empirical> placeholders rather than the concrete numbers it claims support the bound 'to three significant figures'."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

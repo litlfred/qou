@@ -1046,7 +1046,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the MassSideKernel typeclass-equivalence claim; rationale/scope are in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Formalize-first mass-side gate typeclass; mass-theory infrastructure."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "mass-side-kernel-formalize-first-gates.md:25: \"For any candidate `linking_weight` function $w : \\mathbb{R} \\to \\mathbb{R}$\"",
+        "notes": "Candidate linking_weight typed w: R->R but immediately specialised to w: ℝ->ℝ with q_mu,q_p,q_0 numerical anchors and threshold·target additive bounds — archimedean throughout; acceptable as a gate-evaluation infra but the §7c-generic option is dropped."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Composition theorem liftings are one-line field extractions; bar-even (b) routed to the CommRing R lemma. No archimedean misuse on an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Claimed: 3 parametric §3b-cond classes + MassSideKernel + 3 lifting lemmas + 1 rejection lemma, sorry-free. Consistent with the composition-theorem statement (Lean not re-read here; .md self-describes as sorry-free class defs)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "§4(c) open-gap honestly carved out (anchor: Option R, vacuous when none); statement not weakened to hide it."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Liftings extract individual gate fields, not the block's own composite conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "mass-side-kernel-formalize-first-gates.md:31: \"vacuous when `anchor = none`, requires $w(1) = a$ when `anchor = some a`\"",
+        "notes": "MassQOneShadowGateClass is 'vacuous when anchor = none' by design — a deliberately-trivial gate in the unanchored case; honest (the §4(c) open gap) but a structurally vacuous branch."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Class instances supplied at instantiation; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "swing, anchor, magnitude parameters each feed a lifting."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No decide-masking; one-line field extractions."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Additive form |m-target|<=threshold·target being more permissive than the multiplicative max(m/target,target/m)<=threshold (within same threshold) — correct scaffold relationship."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "mass-side-kernel-formalize-first-gates.md:93: \"This is **infrastructure**, not new mathematical content.\"",
+        "notes": "The §4(c) MassQOneShadowGateClass with anchor=none is intentionally vacuous, and the whole block is 'infrastructure, not new mathematical content' (does not construct the registered anchor); much of the value is deferred to the open keystone."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Gates evaluate candidates; no back-fitting of a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Repeatedly flags the §4(c) gap as owner-gated open; does not claim closure."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "mass-side-kernel-formalize-first-gates.md:98: \"a $\\Sigma f^\\lambda / 4 = 5/2$ at $n = 4$ value arising from the number of involutions in $S_4$ divided by $4$\"",
+        "notes": "Mentions a speculative anchor 'Sigma f^lambda/4 = 5/2 at n=4 (involutions in S_4 / 4)' as a *future* candidate; clearly labelled future/hypothetical, not wired, so not a live hidden DOF but worth noting as a candidate off-menu value."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Composition theorem liftings follow from class-field structure."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Lean self-described as sorry-free class scaffolding matching the .md; no claimed divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Cross-refs to q-beta-bar-even-kernel siblings + audit doc; no external citation misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Four gates (a)-(d) precisely specified with parametric class names."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "mass-side-kernel-formalize-first-gates.md:32: \"substrate target $\\approx 2.46$, the CODATA-implied near-match\"",
+        "notes": "Direction-sanity 'substrate target ~ 2.46, the CODATA-implied near-match' — a near-match to a CODATA-implied value used as the direction target; the magnitude itself is not derived (the §4(c) keystone), so the 2.46 target is a soft anchor."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Gate infrastructure, not a physics prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Verdict matrix (4x3) referenced as existing compute; no stale-witness claim made in-block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a07554fbb5af",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Honest formalize-first gate infrastructure mirroring the Q_beta pattern, with the §4(c) keystone openly deferred; vacuous-branch and CODATA-implied-target items are disclosed, not hidden. No substantive defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

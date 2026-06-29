@@ -1048,7 +1048,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the <= l(K,q0)+1 nonzero-term bound; computational consequence is in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "KLR mass-spectrum generating function truncation is mass-theory compute material."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "graded-hecke-energy-truncation-bound.lean:28: \"import Mathlib.Data.Real.Basic\"",
+        "notes": "Statement is combinatorial (grade support of a Laurent polynomial), but the Lean imports Mathlib.Data.Real.Basic and the confinement level is evaluated 'at the substrate value q_0 ~ 1.110'; the bound itself is purely about integer grades so ℝ is gratuitous though harmless."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Lean proof is a case split on d>level / d<0 using the descent class fields; no archimedean machinery on the algebraic support claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Lean graded_hecke_energy_truncation_bound (coeffs vanish outside {0..level}) + finite_support corollary faithfully encode the .md 'at most l+1 nonzero terms' claim, conditional on GradedMarkovTraceDescent (§3b-cond)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Conditional-on-conj framing explicit; statement not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "The proof derives vanishing from the descent class fields vanishes_above/below — these encode genuine hypotheses (homological boundedness), not the block's own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Conclusion 'P.coeffs k = 0 outside range' is a real support claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Class instances inhabited by construction; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Both vanishes_above and vanishes_below are used (inl/inr cases). work_bound corollary is trivial (exists N<=level+1) but is a separate schematic statement."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No decide; structural case split."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Given GS-descent, support truncation to {0..l} is correct; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "graded-hecke-energy-truncation-bound.lean:133: \"exact <0, Nat.zero_le _>\"",
+        "notes": "work_bound corollary 'exists N, N <= level+1' is discharged by N:=0, a near-vacuous existential; the substantive bound is in truncation_bound, but this corollary asserts almost nothing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Bound derived from descent hypothesis, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "§3b-cond conditional status stated; speedup table flagged 'conservative'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No free parameter; l(K,q0) is the confinement-level definition."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Truncation -> work reduction follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Lean conditional theorem matches the .md conditional bound."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "khovanovlauda2009, brundankleshchev2009 correct for KLR algebras / KLR-Hecke iso."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Confinement level, mass-spectrum generating function, grades all defined / cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Speedup table is illustrative and flagged conservative; no precision claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Compute-complexity claim, no physics observable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "graded-hecke-energy-truncation-bound.md:53: \"graded-hecke-energy-canonical evaluation.witness.json\"",
+        "notes": "Witness named 'graded-hecke-energy-canonical evaluation.witness.json' in prose (with a literal space) — likely a render artifact for a script-name; not pinned in the .ts here, reproducibility of the empirical table not verified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f0c047035caf",
+          "ts": "fb8b83a50a0f",
+          "lean": "2f404fce725f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Clean §3b-cond conditional result; Lean faithfully encodes the truncation. Minor: gratuitous ℝ import and a near-vacuous work_bound corollary. No substantive defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

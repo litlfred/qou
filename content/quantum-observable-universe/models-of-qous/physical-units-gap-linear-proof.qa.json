@@ -764,7 +764,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Proof of the physically-normalised-gap proposition; correctly placed in the symmetric-point subsection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Identity verified: ½(q-q⁻¹)(q-1)²·q²/(q-1)² = ½q²(q-q⁻¹) = ½q(q²-1) = q(q-1)(q+1)/2 — exact; matches witness value 0.1287866... at q0."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Real algebraic identity with non-trivial content (separates linear-in-h physical gap from cubic categorical gap)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Direct computation from definitions of Δ_q and ℏ_q; no assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Claims 'linear in h' for the normalised gap and 'cubic' for Δ_q; both verified — q(q-1)(q+1)/2 is O(h) and ½(q-q⁻¹)(q-1)² is O(h³) near q=1."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No free parameters; ℏ_q=(q-1)/q and E_×(q) are canonical q-only quantities."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Algebraic chain is gap-free; the 'first-order Reeb coupling (1-q⁻¹)' analogy is interpretive, not a load-bearing deductive step."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "physical-units-gap-linear-proof.md:19: \"the elementary algebraic discharge (`field_simp; ring`) is deferred via `sorry` (`-- Ref: [manuscript]`).\"",
+        "notes": "Stale: the companion physical-units-gap-linear.lean proves physical_units_gap_linear sorry-free with `field_simp; ring` (lines 21-24) and gap_bound_vanishes_at_one with `norm_num`. The prose understates the Lean (claims a sorry that no longer exists); harmless but should be corrected."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Witness link q1-mass-gap-probe.witness.json exists and carries the exact identity (exact_identities.physical_units_gap); categorical-dirac cross-ref is internal and apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "ℏ_q, Δ_q, E_×(q) all defined in the proposition / linked block; regime q∈ℝ, q≠0,1 explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "The '50-digit' witness verifies an exact identity, not a fitted near-match; no cross-anchor swing or stale-q0 risk (identity is q-symbolic)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Reading of 1/ℏ_q² normalisation buying back two of three vanishing orders is consistent and dimensionally coherent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Witness q1-mass-gap-probe.witness.json present, mpmath 70dps, scriptHash 8f50a07390c4 + scriptCommitSha recorded; physical_units value 0.1287866...@q0 matches the closed form."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "929e55860c56",
+          "ts": "065dbc5bad71"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "physical-units-gap-linear-proof.md:19: \"deferred via `sorry`\"",
+        "notes": "Verdict: mathematically correct exact-identity proof. Only blemish: the Lean-formalization note is stale (claims a sorry the companion .lean does not have); content otherwise sound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:49.135Z"
 }

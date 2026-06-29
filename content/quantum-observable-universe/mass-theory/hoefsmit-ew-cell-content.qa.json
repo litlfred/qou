@@ -1048,7 +1048,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the categorical Hoefsmit identification + multiplicities; EW physics naming (W/Z/H) is part of the identified objects, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Hoefsmit seminormal/cell-content of H_6(q) is braids/mass-theory material."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Stated over generic ring R, q generic not root of unity q!=1; eigenvalues +-q, q^{2k}; substrate-side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Minimality/orthogonality arguments are far-commutativity + Hoefsmit eigenvalue combinatorics over R; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "hoefsmit-ew-cell-content.lean:174: \"def EWIdempotentsIdentified ... : Prop := True\"",
+        "notes": "Lean proves only the far-commutativity prerequisite (WZH_indices_far_commute, totalPureMultiplicity=20) and class-axiomatizes the rest; EWIdempotentsIdentified := True is an open marker. The .md 'theorem' asserts more (full pure-pattern enumeration + boxed trace) than the sorry-free Lean discharges."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement titled 'categorical existence, Sprint 5 discharge; concrete EW-projector identifications deferred' — honestly scoped, not silently weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Far-commutativity theorems prove a genuine decidable claim; not a projection of the block conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "hoefsmit-ew-cell-content.lean:173: \"EWIdempotentsIdentified {R} (_q : R) : Prop := True\"",
+        "notes": "EWIdempotentsIdentified is encoded as ': Prop := True' (an open marker per the docstring 'Open: depends on conj:categorical-higgs-mechanism'); honest as a conjecture-gated field but is a True-typed class field."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "CommRing R, q generic; premises inhabited."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Carrier indices (1,3,5), far-commutativity used; q_generic threaded into class."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "decide on totalPureMultiplicity=20 and FarCommutes is a justified finite combinatorial check, not masking a substantive gap."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "hoefsmit-ew-cell-content.md:204: \"Substituting the multiplicities $(4, 3, 1, 2, 2, 1, 3, 4)$ and collecting powers\"",
+        "notes": "The boxed pure-trace formula (4(q^18+q^-18)+2(q^10+q^-10)+1(q^6+q^-6)+3(q^2+q^-2)) is consistent with multiplicities (4,2,1,3,3,1,2,4) (the .lean tuple), but line 204 says it is obtained by 'Substituting the multiplicities (4,3,1,2,2,1,3,4)' — that tuple actually yields 2@q^6... 6@q^10... I verified tuple (4,3,1,2,2,1,3,4) gives coefficients {18:8,10:6,6:2,2:4} per signed pair, NOT the boxed {4,2,1,3}. The boxed value is right but the substituted-tuple prose is internally contradictory."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive cell-content enumeration + dimension-collapse resolution; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Multiplicities from witness SYT enumeration, not back-fitted to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Title explicitly defers concrete EW-projector identifications and bowtie-coupling refinement; scope honestly limited."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Twist parameters k in {2,3,4} fixed by conj:electroweak-higgs-torus-link-triplet; no free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Minimality n=6 argument (three disjoint far-commuting strand-pairs) is logically sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "hoefsmit-ew-cell-content.lean:128: \"**Sorry-free discharge:** the structural prerequisite ... pairwise far-commutativity\"",
+        "notes": "Lean discharges only far-commutativity + count=20; the full pattern-multiplicity assignment and boxed trace are not Lean-verified (EWIdempotentsIdentified:=True), so Lean proves less than the .md theorem."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "hoefsmit1974, kassel1995 correctly cited for seminormal representations / braid presentation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "hoefsmit-ew-cell-content.md:29: \"multiplicities $(4, 3, 1, 2, 2, 1, 3, 4)$\" vs md:58: \"$(4, 2, 1, 3, 3, 1, 2, 4)$\"",
+        "notes": "Two different pure-pattern multiplicity tuples appear: (4,3,1,2,2,1,3,4) at lines 29 & 204 and (4,2,1,3,3,1,2,4) at lines 58,115,171 (and the .lean). They are reorderings of the same multiset (total 20) but assign different multiplicities to the same named patterns; the reader cannot tell which per-pattern assignment is canonical."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "'two differ by ~22 at q0' is a structural inequivalence note, not a precision near-match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Bar-self-duality and EW pattern reading internally consistent; no measurement contradiction asserted as fact."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "hoefsmit-ew-cell-content.md:262: \"computations/hoefsmit-ew-cell-content.witness.json\"",
+        "notes": "Witness hoefsmit-ew-cell-content.witness.json is referenced for the multiplicities, but given the two conflicting tuples in the .md the witness should be checked to resolve which tuple it actually reports; not verified here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bd2848ddc2c7",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "Core combinatorics (n=6 minimality, far-commutativity, total dim 20, bar-self-dual boxed trace value) are correct, but the block states two contradictory per-pattern multiplicity tuples and explicitly attributes the boxed trace to the tuple that does NOT reproduce it. The boxed numeric value is right; the prose derivation is internally inconsistent and must be reconciled with the .lean tuple (4,2,1,3,3,1,2,4)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

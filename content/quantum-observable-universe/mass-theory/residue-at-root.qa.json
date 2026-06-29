@@ -1048,7 +1048,444 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the well-definedness of the cyclotomic residue via Habiro projection; no detachable physical interpretation embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Cyclotomic residue / Habiro completion of the graded Markov trace is mass-theory material."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement lives purely in Habiro completion of Z[q^±1] / cyclotomic rings Q(zeta_l) — explicitly 'no analytic continuation in C', substrate-side algebraic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Block gives the statement + the algebraic replacement narrative; no separate **Proof.** body to wall-test (full Lean deferred)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "residue-at-root.md:103: \"(A full Lean formalisation of this constructive approach is a deferred multi-week effort\")",
+        "notes": "ref qou:QOU.BraidKnot.ResidueAtRoot validation:not_checked; .md explicitly says a full Lean formalisation 'is a deferred multi-week effort', so narrative<->Lean equivalence is not yet established."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Residue defined as image under cyclotomic projection pi_{n_l}; statement not weakened to a tautology."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Definition is constructive (quotient by cyclotomic polynomial); not a projection of its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Well-definedness of the residue is a non-trivial claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Hypotheses (T_w in J^l/J^{l+1}, tr_{M,l} in Q(q)) inhabited."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Confinement level, distinguished cyclotomic order n_l, graded trace all used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No Lean proof body / decide here (deferred)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Image under cyclotomic projection well-defined; Z[q]/Phi_n(q) ~ Z[zeta_n] is standard; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive: replaces a real-valued opaque 'residue : Fin -> R' with a constructive Habiro-ring quotient."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No back-fitting; algebraic construction independent of any target number."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Block is explicit that the Lean upgrade is deferred; does not claim a completed formalization."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No free parameter; n_l is combinatorially determined by GS leading order."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Three 'immediate' consequences follow from the cyclotomic-projection definition."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "residue-at-root.md:96: \"residue : Fin levelBound -> R\" (the form the proposition replaces)",
+        "notes": "Lean ResidueAtRoot is not_checked and the .md says the constructive Lean version is deferred; the existing Lean 'residue : Fin levelBound -> R' is exactly the R-valued form the .md replaces, so current Lean diverges from the narrative replacement."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "habiro2002, kassel1995, geckpfeiffer2000 appropriate for Habiro ring + Hecke characters."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Habiro ring, cyclotomic projection, n_l, residue all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Pure algebra; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No backing witness/compute claimed for this narrative-replacement block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "961488d5a264",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "Mathematically clean algebraic replacement of an over-R opaque residue; strongest objection is that the Lean sibling still carries the old R-valued form, so the 'replacement' is narrative-only pending the deferred formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

@@ -1050,7 +1050,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the LP/SDP-selection claim; physical 'shadow price' language is intrinsic to the duality result, not detachable interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "LP/SDP operator selection on H_n(q) is mass-theory/braids material; in-scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Stated over generic ring R, q generic not root of unity, q=1 excluded; q-rational energies — substrate-side, no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Proof invokes Schrijver LP strong duality / complementary slackness — combinatorial LP over R, no archimedean (Real.*/IVT/continuity) machinery on an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "knot-operator-lp-selection.ts:35: \"**Open** as a fully-formalized proposition\"",
+        "notes": "lean ref qou:QOU.BraidsAndKnots.knot_operator_lp_selection marked validation:not_checked and authorNotes flag the block 'Open as a fully-formalized proposition'; narrative-vs-Lean equivalence not yet verifiable."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Conditional-on-conj banner present; statement is the LP-selection claim, not weakened to a tautology."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No Lean projection of a self-conclusion field inspected; .md derivation goes through LP duality, not assuming its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Conclusion is a non-trivial selection/active-set claim, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Hypotheses (Frobenius-non-degenerate basis, feasible LP) are inhabited; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Supply matrix S, energies t, Gram-inverse G^-1 all used in the LP statement."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No decide/trivial masking; argument is LP duality."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "LP strong-duality + complementary-slackness active-set characterization is standard (Schrijver); no false mathematical claim found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive content: Gram-inverse dual basis, active-set extraction, witness instances (proton/neutron L_+)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Selection determined by LP optimum over supplied S,t; the witness instances are compared to independent categorical-physics IDs, not back-fitted within the statement."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "knot-operator-lp-selection.ts:35: \"Discharge the LP-feasibility <-> confinement-realisability equivalence (currently asserted ...)\"",
+        "notes": "Block kind is 'proposition' but its own authorNotes say it is Open/not-yet-formalized and step-1 feasibility<->realisability is 'currently asserted'; presented as proposition while the key equivalence is unproved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Inputs S,t,G^-1 are computed from witnesses / q; no off-menu free coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Active-set/shadow-price conclusions follow from complementary slackness; logic intact."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "knot-operator-lp-selection.ts:9: \"validation: \\\"not_checked\\\"\"",
+        "notes": "Lean ref not_checked + block self-described Open; cannot confirm Lean proves the .md selection claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Schrijver LP-duality citations (§7.2/§7.4) correctly attributed to strong duality / complementary slackness."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Demand/supply profiles, active set A*(T), Gram-inverse all defined in-block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Witness energies (t~0.152, 0.106 at q0) are illustrative instances, not a precision near-match claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Shadow-price/active-set reading of confinement is internally consistent; no units/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "knot-operator-lp-selection.ts:18: \"witness: \\\"computations/wedderburn-pair-volumes.witness.json\\\"\"",
+        "notes": "ts cites witness computations/wedderburn-pair-volumes.witness.json (status verified) but .md cross-links several other witnesses (confinement-operator-selection, knot-operator-table[-h2], gram-matrix-dual); producer/witness pinning not verified here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52",
+          "lean": "f8af9f73757a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "Sound LP-duality content but labelled 'proposition' while its own authorNotes mark it Open/unformalized with the feasibility<->realisability equivalence merely asserted; strongest objection: kind overclaims maturity."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }

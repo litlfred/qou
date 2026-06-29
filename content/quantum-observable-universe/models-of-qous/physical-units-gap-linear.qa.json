@@ -1048,7 +1048,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement gives the identity plus a one-clause consequence about linear-vs-cubic vanishing rates — these are mathematical content of the claim, not extraneous physical motivation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Symmetric-point gap proposition, correctly placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "physical-units-gap-linear.md:1: \"Let $q \\in \\mathbb{R}$ with $q \\neq 0, 1$\"",
+        "notes": "Statement is specialised to q∈ℝ (and Lean uses ℝ), but the identity Δ_q/ℏ_q²=q(q-1)(q+1)/2 is a pure rational-function identity that holds over any field where q,q-1 are invertible — no ordering/Real.* is used. Generic-ring chapter (models-of-qous) would prefer a {R}[Field R] statement; the ℝ-pin is gratuitous though harmless. Minor wall-side over-specialisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Proof is field algebra (field_simp; ring) — no archimedean machinery; the only archimedean element is the unnecessary ℝ typing of the statement, not the proof method."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": ".md: q∈ℝ, q≠0,1 ⇒ Δ_q/ℏ_q²=q(q-1)(q+1)/2. Lean physical_units_gap_linear(q:ℝ)(h0:q≠0)(h1:q≠1): (crossingEnergyGap q·(q-1)²)/((q-1)/q)² = q(q-1)(q+1)/2 — same hypotheses and conclusion."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Genuine identity; no weakening or axiom injection; conclusion is the stated closed form."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Proved by field_simp; ring from definitions, not by projecting a field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Non-trivial rational-function identity, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Premises q≠0, q≠1 are satisfiable; no contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Both h0 (q≠0, for q⁻¹/division by q) and h1 (q≠1, giving q-1≠0 to cancel (q-1)²) are required by field_simp."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No decide/trivial; field_simp + ring."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Identity verified by hand and matches the 50-dps witness value at q0; true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Substantive content separating the two vanishing rates."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Direct computation; nothing back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "'linear' / 'cubic' vanishing claims are exactly verified; 'both vanish identically at q=1' is correct."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "ℏ_q and E_× are canonical q-only; no free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Algebraic chain is gap-free."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Lean proves the same identity sorry-free; no divergence (note: the separate proof-block prose mis-states a sorry, flagged there, not here)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "uses def:crossing-energy; consistent with E_×(q)=½(q-q⁻¹) used here."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Δ_q, ℏ_q, E_× all defined; only mild point is the ℝ-vs-generic regime (covered under wall-side-statement)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Exact symbolic identity; no fitted match or q0-staleness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Dimensionally coherent; the physical-units normalisation reading is sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Witness present and current; physical-units value reproduces the closed form to 50+ dps."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5c4c0458c654",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:49.135Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Verdict: correct exact-identity proposition with faithful sorry-free Lean. Strongest objection: statement is gratuitously pinned to ℝ when the identity is purely rational-function (minor wall-side note); not a defect in the result."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:49.135Z"
 }

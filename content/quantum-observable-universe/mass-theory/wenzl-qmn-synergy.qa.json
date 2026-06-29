@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Statement is the tr_M = sum y_lambda chi_lambda decomposition + complexity; speedup table is in a separate Significance section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Wenzl-bridge + q-MN Markov-trace compute synergy; mass-theory compute."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Combinatorial identity over the q-data; the Lean ℝ specialisation is flagged in the header line and the cross-validation uses Real.sqrt legitimately (z = 1/(sqrt q + 1/sqrt q))."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Argument is central-character expansion + Markov axiom; the sqrt-q in z is the genuine Markov parameter, an honest archimedean specialisation per the header note."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "wenzl-qmn-synergy.lean:91: \"show (0 : R) = (parts.map _).sum  ... simp [chi_qMN]\"",
+        "notes": "Lean markovTrace, chi_qMN, etc. are const-0 skeletons; markov_trace_via_wenzl_qmn proves 0=0 and the cross-validation identity is §3b-cond class-axiomatized (WenzlQMNCrossValidation). Lean proves far less than the .md decomposition+identity, though disclosed."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Header + Lean docstrings disclose the skeleton; statement not silently weakened (the false-on-skeleton identity is correctly moved behind a class)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "wenzl-qmn-synergy.lean:137: \":=  h.identity_holds\"",
+        "notes": "markov_axiom_canonical_braid is := h.identity_holds, a verbatim projection of the WenzlQMNCrossValidation class field whose type IS the conclusion; the Lean docstring justifies this as §3b-cond (identity false on trivial model), but it is structurally a self-assuming projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "wenzl-qmn-synergy.lean:90: \"show (0 : R) = (parts.map _).sum\"",
+        "notes": "markov_trace_via_wenzl_qmn reduces to 0=0 on the const-zero model (a tautology on the skeleton), discharged by simp; substantive only once a real Hecke rep is supplied."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "parts_complete/parts_nodup hypotheses inhabited; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "wenzl-qmn-synergy.lean:80: \"(q : R) (hq : q > 1) ... parts_complete ... parts_nodup\" (unused in the 0=0 proof)",
+        "notes": "In markov_trace_via_wenzl_qmn, hypotheses hq:q>1, parts_complete, parts_nodup are unused (proof is 0=0 via simp); they exist to match the intended interface, not used on the skeleton."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No decide; simp on const-zero. Not masking a substantive goal beyond what the docstring discloses."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "tr_M(T_w)=z^{l(w)} on canonical permutation braids (Markov axiom + cyclicity) and tr_M = sum y_lambda chi_lambda are both correct mathematics."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "wenzl-qmn-synergy.lean:64: \"def markovTrace ... : R := 0\"",
+        "notes": "The Lean realisation is vacuous on its trivial model (0=0); the genuine content lives in the (unproved) class instance + Python. Disclosed honestly but the Lean theorem markov_trace_via_wenzl_qmn is content-free as stated."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Cross-validation against the independent Markov axiom is a check, not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "minor",
+        "evidence": "wenzl-qmn-synergy.md:32: \"combined $10^6 \\times$\"",
+        "notes": "Speedup figures (10^6x, hours->seconds) are projected from complexity counts, not benchmarked in-block; presented as achieved 'combined 10^6x' in the table."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No free parameter in the trace decomposition."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Complexity composition O(p(n)(max_hooks+n^2)) follows from the two sub-costs."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "evidence": "wenzl-qmn-synergy.lean:127: \"theorem markov_axiom_canonical_braid ... [h : WenzlQMNCrossValidation ...] := h.identity_holds\"",
+        "notes": "Lean main theorem proves 0=0 and class-axiomatizes the real identity; it proves strictly less than the .md proposition. Honest §3b-cond handling but a genuine narrative/Lean gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "wenzl1988, halverson-ram-1995, ram1991 appropriate; wenzl1988 noted verified-clean."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Canonical permutation braid, z, y_lambda, chi_lambda defined/cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "No precision near-match; speedups are complexity estimates."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Compute-method claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "notes": "Cross-validation script verifies the identity at n=3,4,5 per the .md; no stale-witness issue surfaced."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e2d09fa1a594",
+          "ts": "71c37fa81c51",
+          "lean": "defc7e949a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:01:47.088Z",
+        "reviewed_sha": "794083efd22be1059cfa5f7ebb571eec7c99d89b",
+        "severity": "major",
+        "notes": "The mathematics (tr_M=z^l(w), y_lambda·chi_lambda decomposition) is correct and the §3b-cond class handling of the skeleton is honest, but the Lean theorems are vacuous on the const-zero model (0=0 + a self-assuming class projection), so the formalization carries none of the genuine content."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:01:47.088Z"
 }
