@@ -473,6 +473,7 @@ excised). Each bound mass m_X = m_unbnd,can − B_X.
 | `W_λ` | Plancherel weight (fractional volume) of the partition in H_{3A}(q) |
 | `E_gate (MeV)` | Total dynamic capacity = E₀·ln(1/W_λ) |
 | `c_λ` | Fractional dynamic occupancy = B_AME / E_gate (measures what fraction of the actual binding is accounted for by the cluster state) |
+| `err gate (%)` | Signed % the gate capacity over(+)/under(−)-states the actual binding: (E_gate − B_AME)/B_AME × 100 (= (1/c_λ − 1)·100; 0 = E_gate exactly equals B_AME). The error analogue of the other tables' `err` columns for the gate-capacity model. |
 
 **Table 7 — Compositional B_sym (m_sym(W) = −α·ln tr_M(W))**
 
@@ -681,17 +682,23 @@ def main(argv=None) -> int:
 
     # 6. SU(4) DYNAMIC OCCUPANCY
     print("\n### SU(4) Dynamic Occupancy  (E_gate = E₀·ln(1/W_λ), c_λ = B_AME/E_gate)")
-    print("| iso | A | S | partition λ | W_λ | E_gate (MeV) | B_AME (MeV) | c_λ |")
-    print("|---|--:|--:|:--|--:|--:|--:|--:|")
+    print("| iso | A | S | partition λ | W_λ | E_gate (MeV) | B_AME (MeV) | c_λ | err gate (%) |")
+    print("|---|--:|--:|:--|--:|--:|--:|--:|--:|")
     for r in rows:
         if r['su4_partition']:
             lam_str = str(r['su4_partition']).replace(" ", "")
             S_val = NUCLEAR_SPINS.get(r['name'], 0.0)
+            # signed % by which the gate capacity over(+)/under(−)-states the
+            # actual binding: (E_gate − B_AME)/B_AME × 100. Complements c_λ
+            # (= B_AME/E_gate); err = (1/c_λ − 1)·100. ±0 = gate exactly = B_AME.
+            err_gate = (((r['E_gate'] - r['B_AME']) / r['B_AME'] * 100.0)
+                        if r['B_AME'] else None)
             print(f"| {r['name']} | {r['A']} | {S_val} | {lam_str} "
                   f"| {_fmt(r['W_lam'],8,6)} | {_fmt(r['E_gate'],8,2)} "
-                  f"| {_fmt(r['B_AME'],8,2)} | {_fmt(r['c_lam'],6,4)} |")
+                  f"| {_fmt(r['B_AME'],8,2)} | {_fmt(r['c_lam'],6,4)} "
+                  f"| {_fmt(err_gate,8,1) if err_gate is not None else '—':>8} |")
         else:
-            print(f"| {r['name']} | {r['A']} | {NUCLEAR_SPINS.get(r['name'], 0.0)} | — | — | — | {_fmt(r['B_AME'],8,2)} | — |")
+            print(f"| {r['name']} | {r['A']} | {NUCLEAR_SPINS.get(r['name'], 0.0)} | — | — | — | {_fmt(r['B_AME'],8,2)} | — | — |")
 
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
