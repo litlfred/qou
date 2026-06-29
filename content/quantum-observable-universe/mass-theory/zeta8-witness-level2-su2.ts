@@ -10,7 +10,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.Zeta8Witness.qInt_four_at_zeta8",
   },
   uses: [
-    "lemma:cyclotomic-strand-doubling",
+    "prop:cyclotomic-strand-doubling",
     "prop:habiro-pochhammer-bridge",
   ],
   cites: [
