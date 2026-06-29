@@ -1,33 +1,52 @@
 {
   "engine": "python3/mpmath",
-  "computedAt": "2026-05-27T17:58:53Z",
-  "computation": "interface-quadratic-identity",
-  "scriptFile": "interface_quadratic_identity.py",
-  "description": "PROVED: (sigma-h/2)^2 = 1+h^2/4 = [2]_q^2/4 (SCALAR). From Hecke relation sigma^2 = h*sigma + 1. Even powers are identity; odd powers are linear. 5 interface crossings = (1+h^2/4)^2 * (sigma-h/2). Lean-proved in TwoRoutesProtonMass.lean.",
-  "data": {
-    "identity": "(sigma - h/2)^2 = 1 + h^2/4",
-    "scalar_value": "1.010926554557628019439569972068656231100158100525",
-    "equals_two_q_sq_over_4": true,
-    "deuteron_5_crossings": {
-      "scalar_factor": 1.021972498709757,
-      "linear_eigenvalues": [
-        1.005448434559241,
-        -1.005448434559241
-      ],
-      "R_extremal_predicted": 1.027540648990321,
-      "R_extremal_observed": 1.005,
-      "match_pct": 2.242850645803089
-    }
-  },
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-29T12:09:25.944100+00:00",
+  "commitSha": "377bd02b0630f9ab1685a93d6f0162de096bf90c",
   "assertions": [
     {
-      "label": "scalar = [2]_q^2/4",
+      "name": "scalar = [2]_q^2/4",
+      "computed": 1,
+      "expected": 1,
       "passed": true
     },
     {
-      "label": "extremal R within 3%",
+      "name": "extremal R within 3%",
+      "computed": 1,
+      "expected": 1,
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "interface-quadratic-identity",
+  "scriptFile": "interface_quadratic_identity.py",
+  "scriptHash": "8e9d2eda5b55",
+  "scriptCommitSha": "c2e96b0af9ac61f7457508f8ef75b0e29c3e60d5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "PROVED: (sigma-h/2)^2 = 1+h^2/4 = [2]_q^2/4 (SCALAR). From Hecke relation sigma^2 = h*sigma + 1. Even powers are identity; odd powers are linear. 5 interface crossings = (1+h^2/4)^2 * (sigma-h/2). Lean-proved in TwoRoutesProtonMass.lean.",
+  "identity": "(sigma - h/2)^2 = 1 + h^2/4",
+  "scalar_value": "1.0109265545582253275545612713859007579165854379712",
+  "equals_two_q_sq_over_4": true,
+  "deuteron_5_crossings": {
+    "scalar_factor": 1.0219724987109646,
+    "linear_eigenvalues": [
+      1.0054484345595378,
+      -1.0054484345595378
+    ],
+    "R_extremal_predicted": 1.0275406489918386,
+    "R_extremal_observed": 1.005,
+    "match_pct": 2.2428506459541016
+  }
 }
