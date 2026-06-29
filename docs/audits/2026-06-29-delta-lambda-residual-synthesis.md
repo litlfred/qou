@@ -41,19 +41,34 @@ neutron `+1` fixing the **sign** (proton excess penalised). Measured values:
 |---|---|
 | 3 (³He/T) | −1.34 |
 | 6 (⁶Be/⁶He) | −1.73 |
+| 7 (⁷Be/⁷Li) | −1.77 |
 | 8 (⁸B/⁸Li) | −1.80 |
 | 10 (¹⁰C/¹⁰Be) | −1.73 |
 | 12 (¹²N/¹²B) | −1.72 |
 
 **Trend (item 3 characterization).** After an initial rise (A=3 `−1.34`),
-`b(A)` is **constant to ~3 % across A=6–12** (`−1.73, −1.80, −1.73, −1.72`) — it
-**saturates to ≈ −1.73**, *not* the `~A^{2/3}` growth a raw MeV Coulomb term
-shows. The flattening is the `log`-ratio compression that also kills `a(A)`'s
-slope: `Δ_λ` is a ratio whose logarithm grows slowly. So the bar-odd writhe
-correction contributes a **near-A-independent** charge-asymmetry exponent.
-**Honest status:** a clean constant `b ≈ −1.73` is the observation; whether it is
-a categorical Coulomb-displacement invariant is **not** derived (no fit, Δ_λ
-gate) — but the constancy is a sharper target than a growing fit would be.
+`b(A)` is **constant to ~2 % across A=6–12**: `−1.747 ± 0.030`. It is *not* the
+`~A^{2/3}` growth a raw MeV Coulomb term shows.
+
+**Why `b` is constant — the structural mechanism (Lean-proved).** The bar-odd
+writhe `4Z` splits as
+
+    4Z = 2(Z+N) + 2(Z−N) = 2A + 4·T₃ ,
+
+an isoscalar part `2A` plus an isovector part `4T₃` **whose slope (4 per unit
+T₃) is universal — independent of A** (Lean `writhe_isospin_split`,
+`writhe_isovector_mirror`). So *if* the residual's odd part is proportional to
+the writhe's odd part with an A-independent coefficient `κ`, then `b = 4κ` is
+**automatically** A-independent (Lean `constant_b_from_writhe_proportional`). The
+observed constancy is exactly this proportionality, with `κ = b/4 ≈ −0.437`. The
+*value* `κ` is the open per-writhe coefficient (no fit, Δ_λ gate); the *constancy*
+is now explained.
+
+> **Numerology guard.** `b ≈ −1.747` sits within 0.9 % of `−√3 = −1.732` — but
+> inside the ±0.03 scatter, with **no** structural derivation of `√3`. It is a
+> NEAR-MATCH only, recorded here, **not asserted** and **not wired** (cf. the c_k
+> tiering / "before declaring" disciplines). The robust, provable content is the
+> constancy *mechanism* above, not the number.
 
 ### `c(A)` — the bar-even quadratic (small, A-independent)
 
@@ -90,10 +105,14 @@ than the A=6/8 pair alone suggested.
 
 - **Form: established** (IMME degree-2; Lean-proved parity algebra).
 - **`a(A)`: light-nucleus power law only** (refuted A≥5, scope-(a)).
-- **`b(A)`: dominant and ≈ CONSTANT `−1.73`** across A=6–12 (observational; a
-  near-A-independent charge-asymmetry exponent, not a growing Coulomb term).
+- **`b(A)`: dominant and CONSTANT `−1.747 ± 0.03`** across A=6–12. The
+  **constancy is now explained** (Lean `writhe_isospin_split` +
+  `constant_b_from_writhe_proportional`): the writhe's isovector slope `4T₃` is
+  A-independent, so a writhe-proportional odd term gives `b = 4κ` constant. The
+  value `κ = b/4 ≈ −0.437` stays open. (`b ≈ −√3` is a flagged near-match, not
+  asserted.)
 - **`c(A)`: small and vanishing** (same-T `−0.11 → −0.037`) — the residual is
   strongly writhe-linear-dominated.
 - **Not wired; no fit.** Closure would need an owner reversal of the Δ_λ fit-gate.
-- **Open:** a categorical origin for the constant `b ≈ −1.73`; why same-T `c → 0`;
-  extending the ladder (A=14+) — though `b`/`c` look converged by A=12.
+- **Open:** a categorical *value* for `κ ≈ −0.437` (the per-writhe coefficient);
+  why same-T `c → 0`. `b`/`c` look converged by A=12.
