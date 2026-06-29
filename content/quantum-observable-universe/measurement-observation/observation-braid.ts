@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "def:observation",
   label: "rem:observation-braid",
-  title: "Observation as an open map on the braid: intent, crossings, and input",
+  title: "Observation as an open map: crossing injection and input",
   tags: [
     "observation",
     "braid",

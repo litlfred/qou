@@ -35,6 +35,8 @@ export default chapter({
         "quarks-borromean-picture",
         "bundle-initial-conditions",
         "observation-braid",
+        "observation-intent-energy",
+        "observation-braid-not-predetermined",
         "sorting-color-energy",
         "sorting-color-energy-proof",
         "sorting-color-energy-table-data",
