@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "H_3↓H_2 branching proof; in braids-and-knots scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Branching V_(2,1)↓=V_(2)⊕V_(1,1), V_(3)↓=V_(2), V_(1^3)↓=V_(1,1) is correct by box-removal (Pieri)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Real branching-rule proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Standard rep theory, no back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Box-removal from (2,1) gives exactly (2) and (1,1); valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No external citation in proof body."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Pieri/LR rule and partitions standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Pure rep theory."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Correct, standard branching-rule proof; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

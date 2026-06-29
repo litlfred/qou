@@ -762,7 +762,253 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Hecke generators satisfy Blitvić's pair-partition moment hypothesis; in braids-and-knots scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Odd-moment vanishing and k=2 variance reductions are correct; centred σ_i, far-commutativity, Hecke-quadratic reductions are valid."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Substantive induction."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No back-fit; derives from Markov + Hecke relations + Wenzl factorisation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "hecke-satisfies-blitvic-hypothesis-proof.md:74: \"q^{\\mathrm{cr}(\\pi)} \\cdot \\prod_{\\{a, b\\} \\in \\pi}\"",
+        "notes": "The inductive step asserts the general pair-partition formula with crossing-weight q^{cr(π)} via 'a tree of reductions ... pairs each σ_i with another of the same index', but the crossing-count weight q^{cr(π)} is introduced at the final formula without a derivation of where the q^{cr(π)} factor comes from in the reduction tree — the induction is sketched, not complete for the weighted formula."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No physical free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "hecke-satisfies-blitvic-hypothesis-proof.md:78: \"This matches Blitvić's $(q, t)$-Gaussian moment formula [`blitvic2012`, eq. (1.2)] at parameter $(q, t = 1)$.\"",
+        "notes": "Gap: the jump from 'leaves evaluate via Wenzl product factorisation' to the explicit q^{cr(π)}-weighted pair-partition sum matching Blitvić eq (1.2) at (q,t=1) is asserted, not shown; the crossing weight's emergence is the load-bearing step and is not derived."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No .lean sibling for this proof."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "hecke-satisfies-blitvic-hypothesis-proof.md:78: \"matches Blitvić's $(q, t)$-Gaussian moment formula [`blitvic2012`, eq. (1.2)] at parameter $(q, t = 1)$\"",
+        "notes": "Asserts the derived moment formula 'matches Blitvić eq (1.2) at (q, t=1)'; the t=1 specialisation and exact crossing-weight correspondence are claimed but not verified against the cited equation in-block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Centred generators, P_2(k), cr(π), z defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Algebra."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8214916cf386",
+          "ts": "dad1603bf061"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "hecke-satisfies-blitvic-hypothesis-proof.md:74: \"q^{\\mathrm{cr}(\\pi)}\"",
+        "notes": "Correct in the base/odd/k=2 cases, but the general inductive step's crossing-weighted pair-partition formula (the actual Blitvić-hypothesis claim) is sketched, not derived; the q^{cr(π)} weight's emergence is asserted."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

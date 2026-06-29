@@ -1009,7 +1009,421 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:25: \"## Implication for the $\\mathfrak{Q}_\\beta$ precision-ladder\"",
+        "notes": "Proposition block carries large downstream-implication, Remarks, and 'Mathematical Novelty' sections (Q_β ladder, c_n decomposition) beyond the bare closed-form statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Markov-trace closed form; in braids-and-knots scope. Q_β-ladder discussion is cross-referential, primary subject is the trace."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Statement is the algebraic identity over Q(q^{1/2}); .md explicitly keeps it base-ring-agnostic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Narrative §7c note correctly localises the ℝ/√q specialisation to the Lean and keeps the identity substrate-side; lean sibling empty here (lives in QOU.Braiding module), no archimedean proof of an algebraic statement in the .md."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.ts:5: \"validation: \\\"not_checked\\\"\"",
+        "notes": "ts ref points to QOU.Braiding.TrMHopfSigma1SqClosedForm with validation:not_checked and no sibling .lean present in this block dir; equivalence cannot be confirmed from the block and is marked not_checked."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Boxed identity is a definite, falsifiable claim; consistent with the proof block."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No self-asserting field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Non-trivial closed form."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No false premise; n≥2 satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "n-independence is the content; no spurious hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No in-block Lean proof to inspect."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Closed form 1+(q-1)q^{-1/2} matches the proof block and witness; correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Derived from Hecke+Markov; the explicit finding that bare-Markov ε^{2n} ≠ Q_β c_n actually argues AGAINST conflation — anti-circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Carefully states F_n are a SEPARATE decomposition, not extracted from this trace; no overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "c_n coefficients are flagged as a separate decomposition with cited derivation-status audit; no hidden DOF introduced here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "The mismatch-implies-separate-object argument is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.ts:5: \"validation: \\\"not_checked\\\"\"",
+        "notes": "Lean ref validation:not_checked and no sibling .lean in block; divergence cannot be ruled out."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Cites three canonical Markov implementations + audit doc; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "tr_M canonical Markov trace defined via thm:jones-markov-trace."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Exact identity; 50-dps cross-check across 3 implementations claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Algebraic."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Three named canonical scripts produce identical σ1² output to 50 dps; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "14d81e3761ed",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Sound, careful closed-form proposition that explicitly resists conflating bare-Markov coefficients with the Q_β ladder; only soft flag is the not_checked Lean validation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

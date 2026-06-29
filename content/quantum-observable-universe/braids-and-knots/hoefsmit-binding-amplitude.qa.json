@@ -1048,7 +1048,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "hoefsmit-binding-amplitude.md:16: \"## Physical interpretation: pion decay\"",
+        "notes": "Statement block embeds a 'Mathematical Novelty' paragraph plus '## Physical interpretation: pion decay' section with E_bind interpretation, rather than confining the proposition to b²=[3]_q/[2]_q² and moving interpretation to a remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Hoefsmit seminormal matrix element for H_3(q); in braids-and-knots scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Statement is a pure q-integer identity (algebraic); base ring not committed in the .md narrative."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "hoefsmit-binding-amplitude.lean:11: \"variable (q : ℝ) ...\" ; identity proved by field_simp;ring (no ordering/Real.* used)",
+        "notes": "Lean sibling imports Mathlib.Data.Real.Basic and states the identity over ℝ, but b²=[3]_q/[2]_q² is a pure algebraic identity over any field char≠2; proof uses only field_simp/ring (no archimedean machinery), so ℝ is gratuitous per §7c."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Lean hoefsmit_b_sq_eq_q3_over_q2sq + de_entanglement_fraction encode b²=[3]_q/[2]_q² and 1-b²=1/[2]_q², matching the .md statement (modulo the deferred b²=... naming)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Lean states [3]_q/[2]_q² = 1-1/[2]_q² and the de-entanglement fraction; genuine, no axiom injection."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Proofs rewrite via qInt3_eq_qInt2_sq_minus_one then field_simp; not a self-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Non-trivial rational identities, not tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Hypotheses q≠0, qInt2≠0 are satisfiable and necessary for division."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "hq and qInt2≠0 are needed for field_simp denominators."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No decide; field_simp/ring."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Verified: [3]_q=[2]_q²-1 ⇒ [3]_q/[2]_q²=1-1/[2]_q²; identity is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Substantive identity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Algebraic, no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "States 'holds for all q', which is true; pion-decay reading flagged as interpretation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No free parameters; b is determined."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Physical reading is heuristic but labelled; the math is self-contained."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Lean matches the .md identities."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "wenzl1988c appropriate for Hoefsmit seminormal form."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "b is the off-diagonal Hoefsmit element; [k]_q standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Exact identity for all q; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "hoefsmit-binding-amplitude.md:27: \"releases a fraction $1 - b^2 = 1/[2]_q^2$ of the pion's rest energy\"",
+        "notes": "Pion-decay energetics gloss ('releases a fraction 1-b² of the pion's rest energy as de-entanglement energy') is a heuristic identification, not a derived decay rate; presented adjacent to an exact identity it risks reading as a physical result."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No backing witness asserted; Lean is the backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8bd3b3f4149d",
+          "ts": "f654226fc036",
+          "lean": "632f7d7a728b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Exact, correctly-proved q-integer identity; only soft objection is the gratuitous ℝ base ring in Lean (§7c) and the heuristic pion-decay energetics framing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

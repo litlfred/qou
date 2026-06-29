@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Formalization-strategy note for the Markov trace; in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Describes the axiomatic encoding accurately; matches the Lean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Genuine methodological note."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Honestly states the theorem is standard with 'no new mathematical argument'; novelty claimed only for the formalization engineering."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Refers to Jones; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "R_q ground ring, structure fields defined in the interpreted theorem."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Methodological."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "36350f4873ea",
+          "ts": "a72836510023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Accurate, appropriately-humble formalization note; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "figure-eight-reeb-rotation.md:13: \"## Connection to the $q$-Reeb flow\"",
+        "notes": "Statement block is followed by extensive physical-interpretation prose (q-Reeb flow, lepton-channel mixing, mass scale) inside the same block rather than a separate interprets: remark — though a separate novelty-note remark also exists."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Figure-eight knot operator unitarity; in braids-and-knots scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Conclusion |λ_{4_1}|=1 is a genuinely archimedean (complex unit-circle) assertion; ℝ specialisation is justified, not gratuitous."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Lean proof uses Complex.normSq/nlinarith for an archimedean conclusion; archimedean machinery is appropriate for a unit-modulus claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "figure-eight-reeb-rotation.lean:90: \"theorem figure_eight_unitary_on_standard (t : ℝ) (ht : t ^ 2 < 4) (lam : ℂ) (hroot : ...)\"",
+        "notes": "Lean theorem proves a generic 2x2 lemma: GIVEN t²<4 and λ a root of λ²-tλ+1=0, ‖λ‖=1. It does NOT derive that the figure-eight operator's actual trace satisfies t²<4 nor that its eigenvalues are those roots; det=1 is a separate (-1)^4=1 lemma. The figure-eight-specific facts are hypotheses, not proved."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Signature states a real conditional unit-modulus result; no statement-weakening axiom injected; narrative acknowledges the conditional realisation."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Proof is a real argument via real/imaginary parts, not a projection of a self-asserting field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Goal ‖lam‖=1 is non-trivial; uses hypotheses ht and hroot substantively."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Hypotheses (t²<4, root eqn) are satisfiable (e.g. t=0), not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Both ht (forces b≠0) and hroot are used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "figure_eight_det_one uses norm_num on (-1)^4=1 (legit numeric); main proof uses nlinarith/linear_combination, no masking decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "The proven lemma is true; the narrative |λ|=1 claim is correct for a det-1 real-trace 2x2 with t²<4."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Genuine content; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No back-fitting of q0 or targets."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "figure-eight-reeb-rotation.md:1: \"figure-eight knot operator is unitary on $V_{(2,1)}$\"",
+        "notes": "Narrative asserts 'the knot operator ... has eigenvalues of unit modulus' as proved, but Lean leaves t²<4 and the root identity for the actual operator as unverified hypotheses — conditional-as-proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No undisclosed parameter; θ is determined by the braid."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Reeb-advance narrative is heuristic but flagged as interpretive; the formal claim is self-contained."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "figure-eight-reeb-rotation.lean:90: \"(t : ℝ) (ht : t ^ 2 < 4) ... hroot ... : ‖lam‖ = 1\"",
+        "notes": "Same as proof-narrative-lean-equiv: Lean proves the conditional generic lemma; the operator-specific premises (t²<4, eigenvalues=roots) are not discharged in Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "jones1987/wenzl1988c/kashaev1997 are appropriate for Hecke reps / Hoefsmit / volume-conjecture context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "V_{(2,1)}, M_{4_1}, h defined upstream; θ defined as arg(λ)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No numerical fit asserted in the proposition itself (Vol(4_1) link is interpretive)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Unitary operator on a finite rep — physically benign."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No backing witness asserted."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b9d1824c94fc",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "figure-eight-reeb-rotation.lean:90: \"theorem figure_eight_unitary_on_standard (t : ℝ) (ht : t ^ 2 < 4) ...\"",
+        "notes": "Statement is correct but the Lean only proves the GENERIC conditional unit-modulus lemma; the figure-eight-specific premises (t²<4, char-poly roots) are taken as hypotheses, so the .md 'is unitary' claim is realised conditionally, not end-to-end."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

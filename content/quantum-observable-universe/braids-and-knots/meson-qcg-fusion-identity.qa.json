@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "meson-qcg-fusion-identity.md:11: \"## Significance\"",
+        "notes": "Statement carries a '## Significance' section (2-body meson m_K²/m_π² interpretation, EM/Coulomb correction) and a 'Mathematical Novelty' paragraph beyond the bare q-CG identity."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "q-Clebsch-Gordan fusion identity; in braids-and-knots scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Statement is over a generic field R, q∈R^x — base-ring-agnostic, substrate-correct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Lean meson_qCG_3x4 proved over [Field R] by field_simp;ring — no archimedean machinery; correctly generic."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Lean theorem (cleared-denominator form (q³-q^{-3})(q⁴-q^{-4})=(q-q^{-1})((q²-q^{-2})+...)) is the multiplied-through equivalent of [3]_q[4]_q=[2]_q+[4]_q+[6]_q; equivalence holds for q≠0."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Genuine ring identity; classical-limit decide theorem 3·4=2+4+6 is an honest decategorification, not a weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "field_simp;ring, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Non-trivial q-integer identity."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "q≠0 satisfiable and needed."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "hq:q≠0 used by field_simp."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "decide only on meson_qCG_3x4_classical (3·4=2+4+6), a genuinely-decidable Nat identity, not masking the main q-identity."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Verified [3]_q[4]_q=[2]_q+[4]_q+[6]_q (q-CG of spin1⊗spin3/2); correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Identity is q-exact; the m_K²/m_π² application is interpretive, not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "meson-qcg-fusion-identity.lean:11: \"m_K\\u00b2/m_\\u03c0\\u00b2 = [3]_q \\u00b7 [4]_q ... to 203 ppm (derived, no fit)\"",
+        "notes": "'m_K²/m_π² = [3]_q·[4]_q ... to 203 ppm (derived, no fit)' (Lean docstring) plus the .md's 'genuinely-derived target' present the meson mass-ratio as derived, while the exact sinh-channel closure is admitted open and numerical residuals live in an audit; the ppm-accuracy 'derived' framing outruns the in-block content."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "The EM/Coulomb correction (α_em/π)(1+ℏ_q-ℏ_q²/2) is identified as the first three terms of log(1+ℏ_q); cited audit claims no fitted integers."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Fusion-identity ⇒ 2-body squared-ratio target is a stated modelling choice, internally coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Lean proves the multiplied-through fusion identity matching the .md; the mass-ratio claim is docstring context, not the theorem."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "kassel1995, jones1987 appropriate for q-rep theory."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "[k]_q, fusion, 2-body meson defined; SU(2) CG analogy explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "meson-qcg-fusion-identity.md:23: \"The derived-candidate exact sinh-channel closure form is the open categorical piece.\"",
+        "notes": "'to 203 ppm' accuracy is asserted in the Lean docstring but the actual residual + EM correction live in an external audit; the in-block claim cannot be checked here and depends on a sinh-channel closure admitted as 'the open categorical piece'."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "2-body bilinear/Casimir mass-squared is a reasonable meson model; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "meson-qcg-fusion-identity.md:21: \"recorded in audit [2026-05-28-meson-mass-ratio-derived-vs-fitted.md]\"",
+        "notes": "203 ppm residual and 'no fitted integers' are deferred to docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md; no witness JSON hash cited in-block to confirm reproducibility."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "25a84d401dfb",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "meson-qcg-fusion-identity.lean:11: \"to 203 ppm (derived, no fit)\"",
+        "notes": "The q-CG fusion identity is exact and cleanly proved generically; the objection is the 'derived to 203 ppm, no fit' meson-mass-ratio claim, whose decisive ingredient (exact sinh-channel closure) is admitted open and whose residual is offloaded to an audit."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

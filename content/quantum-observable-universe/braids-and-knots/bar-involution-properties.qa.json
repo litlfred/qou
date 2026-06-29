@@ -26,6 +26,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Bar-involution canonical projections + classification; in scope."
       }
     ],
     "da-false-claim": [
@@ -44,6 +59,21 @@
         "notes": "Checked mathematical consistency of the claim 'The two canonical projections' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "P_avg/P_skew decomposition over char≠2 and bar-type classification stated correctly."
       }
     ],
     "da-vacuous": [
@@ -61,6 +91,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'rem:bar-involution-properties'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Substantive classification + projection content."
       }
     ],
     "da-circular": [
@@ -79,6 +124,21 @@
         "notes": "Traced dependencies ['def:bar-involution', 'prop:c5-involution-leibniz-decomposition', 'prop:silver-ratio-beta-decay-null', 'def:categorical-q-reeb-flow', 'prop:chirality-residue-mass-term'] for 'rem:bar-involution-properties' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No back-fit; the 'P_avg is canonical' is labelled as the framework's empirical content."
       }
     ],
     "da-overclaim": [
@@ -96,6 +156,23 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'rem:bar-involution-properties' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "bar-involution-properties.md:24: \"$P_{\\mathrm{avg}}$ is\\n> the canonical projection\\u2014 the bar-symmetric part ... is the physical/observable content\"",
+        "notes": "'The framework's empirical content is that P_avg is the canonical projection ... the bar-anti-symmetric part is projected away' asserts a framework-wide selection principle as established; it is a stated convention/hypothesis rather than a derived result."
       }
     ],
     "da-hidden-dof": [
@@ -114,6 +191,21 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -132,6 +224,21 @@
         "notes": "Logical transitions in the derivation of 'The two canonical projections' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Decomposition and classification are internally coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -149,6 +256,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No Lean sibling required; narrative matches specifications.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No .lean sibling here (grading proofs in companion remark/bar-involution.lean)."
       }
     ],
     "da-citation-misuse": [
@@ -167,6 +289,21 @@
         "notes": "All references and uses ['def:bar-involution', 'prop:c5-involution-leibniz-decomposition', 'prop:silver-ratio-beta-decay-null', 'def:categorical-q-reeb-flow', 'prop:chirality-residue-mass-term'] cited in 'rem:bar-involution-properties' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No external citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -185,6 +322,21 @@
         "notes": "All terms and algebraic structures in 'rem:bar-involution-properties' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Includes an explicit anti-skew-vs-symmetric clarification to remove ambiguity."
       }
     ],
     "da-empirical-fragility": [
@@ -203,6 +355,21 @@
         "notes": "The algebraic statements in 'rem:bar-involution-properties' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No numerics in this block."
       }
     ],
     "da-physical-implausibility": [
@@ -221,6 +388,21 @@
         "notes": "Physical dimensions and units in 'rem:bar-involution-properties' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No falsifiable physics claim."
       }
     ],
     "da-reproducibility": [
@@ -238,6 +420,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -257,6 +454,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "feca5d73b28f",
+          "ts": "773c3f46d8c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Clean canonical-reference remark; mild flag that the 'P_avg is THE canonical projection' selection principle is asserted as empirical content rather than derived."
       }
     ],
     "voice-status-leak": [
@@ -1066,5 +1278,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }

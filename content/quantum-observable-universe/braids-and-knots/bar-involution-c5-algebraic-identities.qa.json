@@ -816,7 +816,255 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Bar-symmetric algebraic identities, c5 closed form; in braids-and-knots scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Verified: [2]_q²=h²+4, b²=1-1/[2]_q², c5=-3/2+1/[2]_q²=-3/2+1/(h²+4), c5(1)=-5/4; -3/2=-(dimV_(3)+dimV_(2,1))/2=-(1+2)/2 all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Substantive identities, Lean-proved (no sorry claimed)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "Identities are q-exact; the -3/2 Wedderburn identification is a (correct) post-hoc categorical reading, but the c5 closed form itself is not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "bar-involution-c5-algebraic-identities.md:117: \"This **confirms the hypothesis** that the $c_5$ outlier is silver-specific\"",
+        "notes": "The silver-vs-golden Fibonacci/Pell 'falsifiability' result ('confirms the hypothesis that the c5 outlier is silver-specific') reads as a derived physical conclusion from a single probe testing number-theoretic 'cleanness'; the inference from {5}-outlier to 'forced collapse into the bar-invariant fixed-point sector at the β-decay null' is interpretive, not established."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "c5 closed form has no free parameter; the -b²-1/2 decomposition's '-1/2' is categorically identified, not fitted (per the Wedderburn-dim reading)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "bar-involution-c5-algebraic-identities.md:119: \"The outlier IS the forced collapse into the bar-invariant fixed-point sector\"",
+        "notes": "'The outlier IS the forced collapse into the bar-invariant fixed-point sector at the unique null point' jumps from a Fibonacci-cleanness numerical observation to a strong structural identity without an intermediate lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No .lean sibling in this block (decls referenced live elsewhere)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No external citations; cross-refs to prop:c5-involution-leibniz-decomposition and a probe script."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "h, [2]_q, c5, P_avg, BarHeckeFunctor defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "bar-involution-c5-algebraic-identities.md:112: \"tests Fibonacci-Lucas-cleanness vs the silver-ratio Pell-Lucas test\"",
+        "notes": "Silver/golden outlier result rests on a single probe (qbeta_golden_ratio_fibonacci_probe.py) testing Fibonacci-Lucas vs Pell-Lucas 'cleanness' of c_k(q) at special q; such number-theoretic cleanliness tests are fragile and the 'confirms the hypothesis' framing risks over-reading one witness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "notes": "No direct measurable-contradiction; the β-decay-null link is interpretive."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "minor",
+        "evidence": "bar-involution-c5-algebraic-identities.md:114: \"Result (witness confirmed):\"",
+        "notes": "The silver/golden outlier claim cites a probe + 'witness confirmed' but no witness path/hash is given in the block; reproducibility of the {5}-vs-∅ outlier table is not pinned to a citable witness JSON here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c9017e8e5af2",
+          "ts": "af65dfdede0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:58:10.448Z",
+        "reviewed_sha": "a8fbf0a36a000fcc609fc7c68f6f31a97ff1a6df",
+        "severity": "major",
+        "evidence": "bar-involution-c5-algebraic-identities.md:117: \"This **confirms the hypothesis** that the $c_5$ outlier is silver-specific\"",
+        "notes": "The c5 algebraic identities are exact and well-grounded, but the silver-vs-golden Fibonacci-cleanness 'falsifiability' subsection over-reads a single number-theoretic probe as confirming a structural β-decay-null mechanism."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:58:10.448Z"
 }
