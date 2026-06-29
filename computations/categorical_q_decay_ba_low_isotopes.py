@@ -470,10 +470,6 @@ def main():
     #   - μ_u is back-solved from m_p via Skein-pair (Skein resolution
     #     would derive it from q_0 alone)
     import math
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     q_half = mp.sqrt(Q_0)
     q_inv_half = 1.0 / q_half
     Z_PAIR = q_half + q_inv_half        # q^{1/2} + q^{-1/2}

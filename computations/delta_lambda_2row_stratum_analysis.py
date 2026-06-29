@@ -313,10 +313,6 @@ def main() -> int:
     # float64 from wedderburn_jones_markov; per-stratum analysis is
     # mostly mpmath but inherits float64 precision.
     from witness_base import WitnessBuilder
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     w = (WitnessBuilder("delta-lambda-2row-stratum", engine="python")
          .set_description(
             "2-row Wedderburn stratum analysis follow-up to Proposal 1's "
