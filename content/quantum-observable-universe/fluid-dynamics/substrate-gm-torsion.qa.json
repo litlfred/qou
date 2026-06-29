@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "substrate-gm-torsion.md:8: \"The multiplicative group scheme. The substrate parameter is a section of G_m\"",
+        "notes": "Block is primarily algebraic-geometry of G_m / Neron models / torsion avoidance (substrate-parameter structure), only loosely tied to fluid dynamics via the NS-obstruction connection at the end; reads more like a substrate/braids chapter remark, though the final NS-obstruction link justifies inclusion."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "G_m torsion = roots of unity, [n]_{q_0}=0 at torsion points, mu_infty dense over C, real torsion = {1,-1} — all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive reformulation of the not-root-of-unity axiom as torsion avoidance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No circular reasoning."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Neron-model extension caveat ('but the Frobenius-Hopf structure is not a G_m-torsor ... more subtle') honestly limits the claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No free parameter; q is the substrate section."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Kummer-sequence specialisation and divisibility-by-n obstruction argument are internally coherent (relies on conj:motivic-perpetual-obstruction, cited)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Remark; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No bib citations; internal cross-refs only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "mu_n, mu_infty, G_m^nt, special fibre / component group all standard and defined inline."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Pure algebraic geometry."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "78f66bc087d6",
+          "ts": "ff53c3655321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "verdict=accept. Sound algebraic-geometry remark; only quibble is chapter placement (substrate vs fluid-dynamics)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

@@ -31,6 +31,24 @@
         "reviewed_at": "2026-06-22T02:56:46.023Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "substrate-line-bundle.md:5: \"The substrate line bundle is the trivial G_m-torsor Q = End(1) (x) G_m\"",
+        "notes": "Primarily a substrate/algebraic-geometry definition (G_m-torsor, P^1-compactification, universal differential); fluid-dynamics tie is indirect. Placement is defensible as setup for the NS-obstruction but the subject is substrate-parameter structure."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +69,24 @@
         "reviewed_at": "2026-06-22T02:56:46.430Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "major",
+        "evidence": "substrate-line-bundle.lean:1: \"import Mathlib.Data.Real.Basic\" + line 14 \"q_lower_bound : ℝ := 1\"",
+        "notes": "The .md construction is purely algebraic over a generic ring R (G_m=Spec Z[q,q^{-1}], R-points, base change along iota:Z[q,q^{-1}]->k) — explicitly NOT archimedean — yet the Lean sibling specialises to ℝ (imports Real.Basic, q : θ:M->ℝ_{>1}). Per AGENTS.md §7c the generic-ring categorical content should stay over {R : Type*}; ℝ specialisation is gratuitous here."
       }
     ],
     "da-false-claim": [
@@ -70,6 +106,22 @@
         "notes": "The claim in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' is unverified due to Lean compilation failures in sibling file.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "G_m=Spec Z[q,q^{-1}], base change recovers d_{q_0}, P^1 boundary points (q=0 pole, q=inf vertical) are correct."
       }
     ],
     "da-vacuous": [
@@ -88,6 +140,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a [QOU](#def:quantum-observable-universe) with [w...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Genuine geometric definition (universal differential d = q^{-1}d + (1-q^{-1})pi_V d)."
       }
     ],
     "da-circular": [
@@ -107,6 +175,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Definitional; no derivation to be circular."
       }
     ],
     "da-overclaim": [
@@ -125,6 +209,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No claims beyond the construction."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +244,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "q is the tautological coordinate; no hidden parameter."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +279,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Construction is self-consistent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +313,24 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "substrate-line-bundle.lean:11: \"structure SubstrateLineBundle where dim : Nat ; q_lower_bound : ℝ := 1\"",
+        "notes": "Lean stub (a 2-field structure over ℝ) is far weaker than the md's G_m-torsor + P^1-compactification + universal-family construction; it names the object but encodes almost none of the algebraic-geometry content. Acceptable as a definition stub but diverges in expressiveness."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +350,22 @@
         "notes": "No citations are present in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +385,22 @@
         "notes": "Key terms and symbols in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Q, substrate section, P^1-compactification, universal differential all defined precisely; base ring is explicitly R/k in the .md."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +420,22 @@
         "notes": "The algebraic and logical relations in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +455,22 @@
         "notes": "The physical concepts described in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Pure algebraic geometry."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +490,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:13:23: error: failed to synthesize",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No compute."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +526,24 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:13:23: error: failed to synthesize, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "d5ade26014d2",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "substrate-line-bundle.lean:1: \"import Mathlib.Data.Real.Basic\"",
+        "notes": "verdict=accept-with-minor-revisions. Strongest objection: the generic-ring algebraic-geometry definition is given an ℝ-specialised Lean stub, contra §7c base-ring discipline; and the Lean encodes little of the construction."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1408,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

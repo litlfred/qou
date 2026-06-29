@@ -1009,7 +1009,419 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Statement (a)(b)(c) is the bare spectral/Sobolev claim; no gratuitous physical interpretation in the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Spectral theory of the q-Laplacian underpinning well-posedness; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Functional-analysis statement (compact resolvent, eigenvalue growth, Sobolev embedding) over the Theta inner-product completion; archimedean machinery appropriate in this chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Proof (separate block) uses Rellich-Kondrachov adaptation + q-integer bounds; archimedean methods are correct for this analytic statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "p1-spectral-sobolev.ts:4: \"validation: \\\"not_checked\\\"\"",
+        "notes": "Lean ref p1_spectral_sobolev not_checked / no sibling in-dir; equivalence to the three-part statement unverified."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive three-part statement; not weakened to True."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Proof derives each part; not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Claims (compact resolvent, mu_k=[k]_q^2, Sobolev embedding) are non-tautological."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "q>1 premise satisfiable; no contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "q>1 is essential (convergence of sum [k]_q^{-2}); Theta inner product used for self-adjointness."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Lean not_checked; no decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "mu_k=[k]_q^2 with the stated two-sided bound q^{2k}/(q-q^{-1})^2 <= mu_k <= same*(1+q^{-4k}) is correct; C_q^2->pi^2/6 as q->1 in 1d is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive spectral proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Not circular (relies on Kelvin-dispersion eigenvalues + Peter-Weyl completeness, proved separately)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Honestly notes the 3d embedding FAILS in the classical limit (C_q diverges via (2j+1)^2 multiplicities) — a careful, non-overclaimed statement."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "(a)->(b)->(c) chain coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "p1-spectral-sobolev.ts:4: \"validation: \\\"not_checked\\\"\"",
+        "notes": "Lean not_checked; divergence unverified."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No bib cites (internal refs only)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Delta_q, H^1_q, C_q, Theta inner product all defined; q>1 explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Functional-analysis proposition."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "03efead638e1",
+          "ts": "9bd80299aa72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "verdict=accept. Carefully stated; the classical-limit failure of the 3d embedding is honestly disclosed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

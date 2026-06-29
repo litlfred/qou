@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Interpretation of the q-BKM criterion; in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "q-BKM as algebraic translation of classical Beale-Kato-Majda, finite in the bulk for q>1, obstruction-indicator at q->1: consistent with the chapter's framework."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive interpretive content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No circular reasoning."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "q-bkm-criterion-interpretation.md:2: \"the deformed Navier--Stokes system is unconditionally globally regular for q > 1\"",
+        "notes": "'unconditionally globally regular for q>1' again asserts the sketched well-posedness theorem as established (open per q-ns-research-programme Problem 1); minor since this is an interpretation remark inheriting the parent's claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "BKM shifts from PDE-survival test to obstruction indicator at the substrate boundary — coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Interpretation remark; no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Beale-Kato-Majda correctly referenced as the classical antecedent."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "q-vorticity integral inherited from the parent q-BKM criterion."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "BKM-style vorticity-integral diagnostic is physically standard."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "90c5067cf6ee",
+          "ts": "2ed57703abcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "verdict=accept. Sound interpretation; only inherits the parent's slightly-strong q>1 regularity phrasing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

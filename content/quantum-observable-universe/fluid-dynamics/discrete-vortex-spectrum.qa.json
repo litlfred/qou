@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:46.338Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Statement is the bare four-part spectral claim; classical-limit row is the mathematical limit, not gratuitous physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:46.789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Discrete vortex mode spectrum; explicitly named in the chapter intro scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:47.115Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Archimedean-chapter spectral statement (energies in ℝ); Lean context class uses ℝ with positivity fields (hbar_pos etc.) — archimedean constructs justified here."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:47.492Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Lean proofs are ring/projection over the context fields; no wall violation (the q-integer is an abstract qInt : ℕ → ℝ)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:56:47.927Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Lean discrete_vortex_spectrum conjuncts the four md bullets ((1) lam=[k]_q^2 hbar/L^2, (2) E_j=hbar/(2I)[j]_q[j+1]_q, (3) ladder selection rule, (4) classical limit q=1=>qInt k = k); projection theorems mirror each. Faithful to the md statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +283,22 @@
         "reviewed_at": "2026-06-22T02:56:49.401Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Lean states the full four-part proposition (docstring records the prior :True version was replaced); not weakened."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +319,24 @@
         "reviewed_at": "2026-06-22T02:56:49.810Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "discrete-vortex-spectrum.lean:91: \"def discrete_vortex_spectrum ... := ⟨ctx.spectrum, ctx.energy_level, ctx.ladder_transition, ctx.classical_limit⟩\"",
+        "notes": "The headline discrete_vortex_spectrum is a verbatim 4-tuple projection of the class fields (the conclusion IS the conjunction of those fields). This is the class-axiomatised-proposition pattern (the physics formulae are definitional inputs); the derived theorems discrete_vortex_transition_energy / _ladder_rule do real ring/rewrite work, so the file is not wholly vacuous, but the headline is a projection — acceptable for a context-class definition but worth noting."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,22 @@
         "reviewed_at": "2026-06-22T02:56:50.129Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Goals are the spectral formulae and a ring identity, not True/x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +393,22 @@
         "reviewed_at": "2026-06-22T02:56:50.514Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "hbar_pos/Lq_pos/Iq_pos satisfiable; no contradiction."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +429,24 @@
         "reviewed_at": "2026-06-22T02:56:50.901Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "discrete-vortex-spectrum.lean:52: \"hbar_pos : 0 < hbar\" (and Lq_pos, Iq_pos)",
+        "notes": "The positivity fields hbar_pos, Lq_pos, Iq_pos are not used by any of the proofs (all are equational projections / ring rewrites). They are descriptive constraints on the physical scales rather than load-bearing hypotheses; harmless but technically unused."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +467,22 @@
         "reviewed_at": "2026-06-22T02:56:51.254Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Proofs use ⟨...⟩/rw/ring; no decide/trivial masking."
       }
     ],
     "da-false-claim": [
@@ -322,6 +502,22 @@
         "notes": "No false claims identified in 'Discrete vortex mode spectrum': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Spectrum lam_k=[k]_q^2 hbar/L^2, energy [j]_q[j+1]_q, Delta j=±1 selection rule, and q->1 limits (k, j(j+1), dipole rule) are all consistent q-deformations of the rigid-rotor/Kelvin-wave spectra."
       }
     ],
     "da-vacuous": [
@@ -340,6 +536,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Discrete vortex mode spectrum' presents substantial mathematical content: Let $\\varrho$ be a stable vortex filament of length $L$ in the brane fluid with ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive spectral proposition with explicit formulae."
       }
     ],
     "da-circular": [
@@ -359,6 +571,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Discrete vortex mode spectrum'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Not circular."
       }
     ],
     "da-overclaim": [
@@ -377,6 +605,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Discrete vortex mode spectrum' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Claims confined to the q-deformed spectrum and its classical limit; no over-extension."
       }
     ],
     "da-hidden-dof": [
@@ -396,6 +640,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Discrete vortex mode spectrum'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "hbar_q, L_q, I_q are physical scales of the filament, not fit parameters; spectrum keyed to q."
       }
     ],
     "da-non-sequitur": [
@@ -415,6 +675,22 @@
         "notes": "The argument flow in 'Discrete vortex mode spectrum' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Spectrum -> energy levels -> ladder transitions -> classical limit chain is coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -433,6 +709,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean formalization and narrative for 'Discrete vortex mode spectrum' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Lean faithfully bundles all four md claims; no divergence (the only nuance is the headline being a projection, covered under proof-no-self-assuming-projection)."
       }
     ],
     "da-citation-misuse": [
@@ -452,6 +744,22 @@
         "notes": "No citations are present in 'Discrete vortex mode spectrum', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -471,6 +779,22 @@
         "notes": "Key terms and symbols in 'Discrete vortex mode spectrum' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "[k]_q, L_q, I_q, intensity-level j defined; classical limit modelled as qInt k -> k in Lean."
       }
     ],
     "da-empirical-fragility": [
@@ -490,6 +814,22 @@
         "notes": "The algebraic and logical relations in 'Discrete vortex mode spectrum' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -509,6 +849,22 @@
         "notes": "The physical concepts described in 'Discrete vortex mode spectrum' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Quantised Kelvin-wave / rigid-rotor spectrum with dipole selection rule is physically standard."
       }
     ],
     "da-reproducibility": [
@@ -528,6 +884,22 @@
         "notes": "The derivation steps and formal definitions in 'Discrete vortex mode spectrum' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No compute witness."
       }
     ],
     "da-referee-verdict": [
@@ -548,6 +920,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Discrete vortex mode spectrum' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e6189760a7c9",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "verdict=accept. Faithful Lean encoding of a clean q-deformed spectrum; only minor notes (headline projection, unused positivity fields)."
       }
     ],
     "voice-status-leak": [
@@ -1585,5 +1973,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

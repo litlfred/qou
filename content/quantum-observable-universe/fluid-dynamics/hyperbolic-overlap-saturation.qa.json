@@ -855,7 +855,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Vortex-collision Townsend ODE bearing on the NS obstruction; in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Verified the ODE algebra: with b=2Gamma/pi+2nu, lambda=2nu/(b+2Gamma/pi)=pi nu/(2Gamma+pi nu); the boxed kappa^2 and the factor-2 vs Burgers equilibrium are correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive explicit ODE computation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Derivation of kappa^2 from the Townsend system is not back-fitted to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Caveat 4 explicitly limits the rigorous content to the kappa^2 constant and routes blowup through conj:levi-degeneracy/conj:ns-counterexample; properly scoped per the (a)-vs-(b) discipline."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Gamma, nu are physical fluid parameters; no QOU-chain off-menu constant; the proportionality ansatz lambda is solved, not fit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Kernel-switch -> saturated strain -> linear V1 -> proportionality V2=lambda V1 chain is internally consistent; the quasi-steady ansatz is explicitly rejected with justification."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "hyperbolic-overlap-saturation.md:199: \"what ... is formalised in the sibling Lean file ... the asymptotic core-shape constant kappa^2 = pi nu/(2Gamma + pi nu)\"",
+        "notes": "The .md claims the Lean sibling formalises the kappa^2 constant; the existence of hyperbolic-overlap-saturation.lean is confirmed but its content was not verified here (no validation run), so equivalence is asserted not checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Saffman 1992 §6.3, Moffatt-Kida-Ohkitani 1994, Townsend correctly invoked for the vortex-in-strain saturation model."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "V1, V2, kappa^2=V2/V1, alpha_hyp, beta all defined; q-regime not relevant (classical fluid ODE), base-ring note at top clarifies generic-ring combinatorial content vs ℝ Lean."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "kappa^2=pi nu/(2Gamma+pi nu) is a closed-form ODE attractor, not a precision-tuned experimental match; high-Re limit clearly stated."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Caveat 1 marks the kernel switch as a phenomenological dimensional ansatz (not a derivation), so the physical modelling is appropriately disclaimed; Burgers-vortex-in-strain physics is standard."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Closed-form result reproducible by hand (and via the integrating-factor cross-check given in-block); no external witness needed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bf034d3d2f38",
+          "ts": "159d8a9bbd4e",
+          "lean": "30883f7f5273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "verdict=accept. Exemplary: explicit ODE, two-way cross-check, four caveats that correctly scope rigorous (kappa^2 constant) vs conjectural (NS blowup)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

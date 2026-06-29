@@ -1046,7 +1046,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "acoustic-horizon-conditions.md:93: \"As q -> 1, T_H -> 0: the classical limit has no Hawking radiation\"",
+        "notes": "Proposition statement mixes physical interpretation (classical-limit narrative, 'Physical analogue' table column) into the claim; such commentary belongs in the linked interpretation remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Acoustic horizons / analogue gravity of the brane fluid; in fluid-dynamics chapter scope (intro names acoustic horizons)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Fluid-dynamics is an archimedean chapter; statement uses Real c_s, v, T_H, q>1 — archimedean machinery is appropriate here, no gratuitous-R issue."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No narrative Proof. body in the .md (the .lean proves the Mach-criterion + Hawking identity)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "acoustic-horizon-conditions.lean:82: \"acoustic_horizon_criterion_iff ... vAbs = cs <-> mach = 1\"",
+        "notes": "Lean (ref'd decl acoustic_horizon_conditions) proves only the Mach=1 criterion + Hawking-temperature identity from class fields; the md's three formation conditions and r_H/[1/2]_q[3/2]_q computation are axiomatised as fields, not derived — narrower than the full md statement but honestly bundled."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Lean states the real Mach-criterion equivalence and brane Hawking identity (not :True); the file docstring records the prior :True version was fixed. Integrity intact."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "acoustic-horizon-conditions.lean:98: \"def acoustic_horizon_regularity ... := ⟨ctx.nondegenerate, ctx.energy_condition⟩\"",
+        "notes": "acoustic_horizon_regularity is a verbatim projection of two class fields; the two load-bearing theorems (criterion_iff, hawking_temperature) genuinely derive from mach_def/hbar_brane, so the headline is not a self-assuming projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Goals are substantive (a/c=1 <-> a=c; field_simp identity), not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "cs_pos (0<cs) and q_gt_one (1<q) are satisfiable; no contradictory hypothesis."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "criterion_iff uses cs_pos+mach_def; hawking uses hawking+hbar_brane. Class carries extra descriptive fields (gradMachSq, T00) consumed by the regularity def. Acceptable for a bundled context class."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Proofs use rw/field_simp, no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Verified [1/2]_q[3/2]_q = (q^2+q^{-2}-q-q^{-1})/(q-q^{-1})^2 = 0.7507 at q=1.110 (matches stated ~0.75); acoustic-metric form and T_H=hbar kappa/(2 pi c_s) are standard analogue-gravity results."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Rich content (metric, sound speed, three conditions, surface gravity, q-dependent r_H); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No back-fitting; horizon conditions derived from the equation of state, not from a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Hawking-temperature claim is 'by analogy with Unruh' (explicitly analogue), not asserted as literal black-hole physics."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "All quantities (c_q, hbar_q, Gamma_q=[j]_q[j+1]_q) trace to q; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Each step (EoS -> c_s, |v|=c_s -> horizon, surface gravity -> T_H) follows standard analogue-gravity logic."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "acoustic-horizon-conditions.lean:42: \"class AcousticHorizonContext where ... transonic : vAbs = cs\"",
+        "notes": "Lean encodes the three formation conditions as axiomatic class fields rather than deriving them; it proves the Mach equivalence and Hawking identity. The .md asserts more (r_H formula, energy-condition automaticity) than the Lean derives, but the file is honest about this scoping."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Unruh analogue-gravity attribution is correct; no formal cites[] to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "c_s, Mach number, kappa_H, T_H all defined inline; q-regime (q>1) explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Only an order-of-magnitude r_H ~ ell_q and ~0.75 q-integer value; no precision-sensitive numerical match to experiment."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Acoustic-metric / analogue-Hawking construction is standard (Unruh, Visser); units and limits (q->1 => T_H->0) are consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No witness JSON backing; symbolic claims only."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "88ad0412610d",
+          "ts": "bf1e65b12b9b",
+          "lean": "82860b342436"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "acoustic-horizon-conditions.lean:66: \"transonic : vAbs = cs\" (class field, not derived)",
+        "notes": "verdict=accept-with-minor-revisions. Strongest objection: Lean axiomatises the formation conditions as class fields and proves only the Mach + Hawking identities, so the formal backing is narrower than the md proposition; statement also carries classical-limit interpretation that should sit in the linked remark."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

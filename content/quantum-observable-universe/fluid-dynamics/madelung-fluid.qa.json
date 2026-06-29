@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:46.167Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Madelung-split quantum-Euler foundation for the chapter's fluid dynamics; in scope."
       }
     ],
     "da-false-claim": [
@@ -46,6 +61,21 @@
         "notes": "No false claims identified in 'Madelung transformation: quantum fluid, geodesics, and divisor topology': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Madelung transform psi=sqrt(rho)exp(JS/hbar_q), continuity + quantum-Euler with Bohm pressure Q_q=-(hbar_q^2/2)Delta_q sqrt(rho)/sqrt(rho) is the standard hydrodynamic form; correct."
       }
     ],
     "da-vacuous": [
@@ -63,6 +93,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Madelung transformation: quantum fluid, geodesics, and divisor topology' presents substantial mathematical content: Write $\\psi = \\sqrt{\\rho}\\exp(JS/\\hbar_q)$ to decompose the [q-deformed Schrödin...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive (Madelung split + mass-as-line-integral)."
       }
     ],
     "da-circular": [
@@ -81,6 +126,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Madelung transformation: quantum fluid, geodesics, and divisor topology'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No circularity; reproduces def:mass-identity, not re-derives it from itself."
       }
     ],
     "da-overclaim": [
@@ -98,6 +158,23 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Madelung transformation: quantum fluid, geodesics, and divisor topology' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "madelung-fluid.md:24: \"this resistance is the inertial mass of the brane\"",
+        "notes": "Identifying quantum-pressure incompressibility with 'the inertial mass of the brane' is a strong physical identification stated without derivation here; it cross-links to def:mass-identity but the bare equation 'resistance = inertial mass' overstates what the Madelung remark establishes. Minor for an interpretive remark."
       }
     ],
     "da-hidden-dof": [
@@ -116,6 +193,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Madelung transformation: quantum fluid, geodesics, and divisor topology'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "q controls brane thickness / quantum pressure; no off-menu constant."
       }
     ],
     "da-non-sequitur": [
@@ -134,6 +226,21 @@
         "notes": "The argument flow in 'Madelung transformation: quantum fluid, geodesics, and divisor topology' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Bosonic-geodesic / fermionic-vortex split and vacuum |psi|^2=0 description follow coherently from the Madelung framework."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -151,6 +258,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Remark; no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -169,6 +291,21 @@
         "notes": "No citations are present in 'Madelung transformation: quantum fluid, geodesics, and divisor topology', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -187,6 +324,21 @@
         "notes": "Key terms and symbols in 'Madelung transformation: quantum fluid, geodesics, and divisor topology' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "rho=|psi|^2, v=nabla_A S, Q_q, hbar_q defined/cross-referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -205,6 +357,21 @@
         "notes": "The algebraic and logical relations in 'Madelung transformation: quantum fluid, geodesics, and divisor topology' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -223,6 +390,21 @@
         "notes": "The physical concepts described in 'Madelung transformation: quantum fluid, geodesics, and divisor topology' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Madelung hydrodynamics is a textbook reformulation of the Schrodinger equation; physically sound."
       }
     ],
     "da-reproducibility": [
@@ -241,6 +423,21 @@
         "notes": "The derivation steps and formal definitions in 'Madelung transformation: quantum fluid, geodesics, and divisor topology' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No compute."
       }
     ],
     "da-referee-verdict": [
@@ -260,6 +457,21 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Madelung transformation: quantum fluid, geodesics, and divisor topology' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d947a08e50e8",
+          "ts": "1eaaecb0ede7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "verdict=accept. Standard Madelung split; minor: 'resistance = inertial mass' is a strong identification stated without local derivation."
       }
     ],
     "voice-status-leak": [
@@ -1069,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:46.336Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "The chapter's core definition (q-deformed NS equation); in scope."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:46.749Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Categorical statement (morphisms in C, Omega^k(A)) plus archimedean realisation under tau; fluid-dynamics chapter — the archimedean coordinate form is the appropriate post-wall realisation, no gratuitous-ℝ on the categorical side. Lean QNavierStokes uses ℝ for nu_q>0 (ordering), which is an archimedean construct (justified)."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "The claim in '$q$-deformed Navier--Stokes equation' is unverified due to Lean compilation failures in sibling file.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "nu_q=(1-q^{-1})/2=hbar_q/2 with q-viscosity>0 for q>1 (Lean q_viscosity_pos) and =0 at q=1 (q_viscosity_at_one) are correct; quantum-pressure / viscous-stress forms are the standard Madelung/NS structures."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block '$q$-deformed Navier--Stokes equation' presents substantial mathematical content: The [quantum Euler equation](#rem:madelung-fluid) describes inviscid flow in the...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive definition with full equation system."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in '$q$-deformed Navier--Stokes equation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Definitional; nu_q derived from q, not back-fitted."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents '$q$-deformed Navier--Stokes equation' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "States 'viscosity arises from substrate parameter alone — not an independent physical constant'; this is a definitional consequence, correctly stated."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-deformed Navier--Stokes equation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "nu_q, Q_q, sigma_q all expressed via q (and density/pressure fields); no off-menu constant."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Categorical-to-archimedean translation via tau is consistent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,24 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "q-navier-stokes.lean:16: \"structure QNavierStokes where q : ℝ ; q_gt_one ; viscosity := (1 - q⁻¹)/2 ; dim := 3\"",
+        "notes": "Lean QNavierStokes encodes only (q, q>1, nu_q, dim=3) and two viscosity lemmas — far less than the md's full PDE system (advection, quantum pressure, viscous stress, continuity). Reasonable as a definition stub naming the object + the key viscosity property, but the Lean asserts much less than the narrative defines."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +346,22 @@
         "notes": "No citations are present in '$q$-deformed Navier--Stokes equation', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +381,22 @@
         "notes": "Key terms and symbols in '$q$-deformed Navier--Stokes equation' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "All fields (v,rho,p,nabla_q,mu,Q_q,sigma_q,nu_q) defined inline; q>1 regime explicit."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +416,22 @@
         "notes": "The algebraic and logical relations in '$q$-deformed Navier--Stokes equation' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +451,22 @@
         "notes": "The physical concepts described in '$q$-deformed Navier--Stokes equation' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Compressible NS with Madelung quantum pressure and a deformed viscous stress is a physically coherent equation system."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +486,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No witness compute."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +522,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "06ed452e89a4",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "verdict=accept. Clean q-NS definition; Lean stub is honest but narrower than the narrative (definition stub)."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1402,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

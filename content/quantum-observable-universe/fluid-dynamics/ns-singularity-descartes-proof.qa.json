@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Proof of the NS-singularity theorem; in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Step 1 arithmetic (for k>=4, 2k>=8>6=|chi|, so 2k ∤ -6) is correct; obstruction-survival logic follows the Kummer specialisation."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Four-step proof with real content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "major",
+        "evidence": "ns-singularity-descartes-proof.md:29: \"Step 4 (dynamics). Non-degenerate Levi form implies bounded core aspect ratio, which gives the vorticity lower bound ... which gives BKM divergence\"",
+        "notes": "Steps 3-4 chain through prop:core-levi-form and prop:vorticity-lower-bound to BKM divergence and hence classical NS blowup. Per hyperbolic-overlap caveat 4, core-levi-form is itself conditional on the regularity-breakdown programme, so the proof of the classical-NS-blowup consequence is conditional; presenting it as a flat 'Proof.' (no conditional qualifier) overstates its status — same defect as the parent theorem."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "chi(A)=-6 fixed; no fit parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "ns-singularity-descartes-proof.md:18: \"The total obstruction kappa_n|_Sigma = kappa_0|_Sigma + delta_n|_Sigma is nonzero because the topological term kappa_0|_Sigma != 0 cannot be cancelled by the analytic term delta_n|_Sigma\"",
+        "notes": "Step 2's non-cancellation relies on kappa_0 and delta_n living in complementary subgroups (perpetual obstruction, thm:qu-to-qou item 3) — that complementarity is the load-bearing lemma and is asserted rather than shown here; acceptable as a cited dependency but the 'cannot be cancelled' inference hinges entirely on it."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Proof block; parent theorem Lean is not_checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No bib cites; internal refs (Kummer specialisation, perpetual obstruction, core-Levi, vorticity bound, q-BKM) only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "kappa_0, kappa_n, delta_n, NS(A) defined via the obstruction-tower/def:ns-obstruction."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "BKM-divergence route to blowup is the standard analytic criterion; no implausible physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "99748a3fbc4b",
+          "ts": "279110715d71"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "major",
+        "evidence": "ns-singularity-descartes-proof.md:29: BKM-divergence step via conditional core-Levi",
+        "notes": "verdict=accept-with-revisions. Strongest objection: the proof of the classical-NS-blowup consequence routes through prop:core-levi-form (conditional on the regularity-breakdown programme) and the asserted complementary-subgroup non-cancellation, yet is presented as an unqualified 'Proof.'; it should be flagged conditional, matching the parent theorem fix."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }

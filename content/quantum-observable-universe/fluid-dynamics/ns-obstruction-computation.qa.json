@@ -1009,7 +1009,429 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Computation proposition; the (a)-(d) structure is the computation itself, not external physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "NS-obstruction computation for the Descartes universe; the chapter's main computational result."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Cohomological/topological computation (Euler class, local cohomology, jets); fluid-dynamics archimedean chapter — jet-divergence analysis is appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Excision/local-cohomology + Biot-Savart jet asymptotics; no algebraic statement proved by archimedean-only machinery in a wall-violating way."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "ns-obstruction-computation.ts:5: \"validation: \\\"not_checked\\\"\"",
+        "notes": "Lean ref ns_obstruction_computation not_checked / no sibling in-dir; equivalence unverified."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive computation (kappa_n|_Sigma != 0); not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Derives nonvanishing from jet divergence + complementary-subgroup non-cancellation, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "kappa_n|_Sigma != 0 is non-tautological."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "chi(A)=-6 true; anti-parallel-pair Biot-Savart setup is a valid configuration."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "chi=-6 enters the Euler-class term; lk=1 and the anti-parallel jet structure are used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Lean not_checked; no decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "major",
+        "evidence": "ns-obstruction-computation.md:38: \"Bring's surface has real dimension 4 as a complex surface\" vs :17 \"Since H^2(Sigma_4, Z) ... closed orientable surface\"",
+        "notes": "Internal inconsistency: line 17 treats Sigma_4 (Bring's surface) as a closed orientable real-2-dim surface with H^2 = Z; line 38 calls it 'real dimension 4 as a complex surface' to run D^4/S^3 excision. Bring's surface is the genus-4 Riemann surface (a complex CURVE, real dim 2), not a complex surface (real dim 4). The excision step H^2_{p}(Sigma_4) = H^2(D^4,S^3) = Z uses the wrong dimension."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Substantive (non-vacuous) computation despite the dimension slip."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Not circular; nonvanishing derived from jet asymptotics + perpetual-obstruction complementarity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "Conclusion (NS-singular for chi=-6) matches the computed nonvanishing; the .ts note correctly records the computation is unconditional and Levi-degeneracy is only the illustrated scenario."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "chi=-6, lk=1 are fixed data; no fit parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "major",
+        "evidence": "ns-obstruction-computation.md:122: \"Therefore Obs_∂(A) = 0 and the Descartes universe is NS-singular.\"",
+        "notes": "The block concludes kappa_n|_Sigma != 0 (line 110-113), yet line 122 writes 'Obs_∂(A) = 0 and ... NS-singular'. Per def:ns-obstruction, NS(A)=0 <=> NS-REGULAR, so an obstruction '=0' reading is the opposite of singular. Obs_∂ is undefined in the block (distinct symbol from kappa_n / NS(A)); the '=0 => singular' step is either a sign-convention slip or a typo and does not follow as written."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "ns-obstruction-computation.ts:5: \"validation: \\\"not_checked\\\"\"",
+        "notes": "Lean not_checked; divergence unverified."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No bib cites; internal refs only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "ns-obstruction-computation.md:122: \"Obs_∂(A) = 0\"",
+        "notes": "Symbol Obs_∂(A) is used in the conclusion but never defined in the block, and its '=0 => NS-singular' usage conflicts with def:ns-obstruction's NS(A)=0 <=> regular. The reader cannot resolve whether Obs_∂ is obstruction-to-regularity (opposite sign) or a typo."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No numerical fit (the -6, jet exponents are topological/asymptotic)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "minor",
+        "evidence": "ns-obstruction-computation.md:38: \"Bring's surface has real dimension 4 as a complex surface\"",
+        "notes": "The dimension misstatement (genus-4 Riemann surface = complex curve, real dim 2, not a complex surface of real dim 4) is a geometric error that a domain expert would reject; it propagates into the excision computation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "notes": "No witness compute backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:17:40.345Z",
+        "reviewed_sha": "d44c58566db68fa7346a01873baa90d3fc59e58e",
+        "severity": "major",
+        "evidence": "ns-obstruction-computation.md:38 + :122",
+        "notes": "verdict=major-revisions. Two real defects: (1) the dimension of Bring's surface is misstated as real-4 'complex surface' (it is a real-2 complex curve), corrupting the H^2_{p} excision step; (2) the conclusion writes 'Obs_∂(A) = 0 and ... NS-singular', contradicting the earlier kappa_n|_Sigma != 0 and def:ns-obstruction (NS=0 <=> regular) via an undefined symbol. Both should be corrected before the computation is sound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:17:40.345Z"
 }
