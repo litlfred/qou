@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-28T23:44:47.521023+00:00",
-  "commitSha": "45fcc880efe773a215fc41e9d8384398896d3388",
+  "computedAt": "2026-06-29T00:02:26.158080+00:00",
+  "commitSha": "6f56d74e1f5ea98f800a483d2f4c33499484f882",
   "assertions": [
     {
       "name": "no_convention_mismatch",
@@ -24,20 +24,20 @@
     },
     {
       "name": "no_unlabeled_chi_witness",
-      "computed": 20,
+      "computed": 0,
       "expected": 0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "unit": "count",
       "source": "audit (this script)"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 4,
   "computation": "chi-convention-audit",
   "scriptFile": "chi_convention_audit.py",
-  "scriptHash": "6b4b8c2abacb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "64e3c02ea2a7",
+  "scriptCommitSha": "0c20c489281c78e4c5b2b23389742dacfee1e4d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,39 +80,41 @@
       },
       {
         "path": "chi-content-eigenbasis.witness.json",
-        "computation": "chi-content-eigenbasis.witness",
+        "computation": "chi-content-eigenbasis",
         "declared": null,
         "expected": null,
-        "expected_basis": "none",
+        "expected_basis": "not-applicable",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "not-applicable",
+        "reason": "twist-eigenbasis rewrite of the Lean-proved H₃ χ relations — not a braid-word evaluation"
       },
       {
         "path": "chi-content-single-mode.witness.json",
-        "computation": "chi-content-single-mode.witness",
+        "computation": "chi-content-single-mode",
         "declared": null,
         "expected": null,
-        "expected_basis": "none",
+        "expected_basis": "not-applicable",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "not-applicable",
+        "reason": "isolates the c=0 (2,1)-block winding tower (q-Bessel test) — not a full atom-braid character"
       },
       {
         "path": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
         "computation": "chi-deuteron-free-h6-at-q0-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-deuteron-free-h6-at-qinv-50dps.witness.json",
         "computation": "chi-deuteron-free-h6-at-qinv-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
@@ -128,7 +130,7 @@
         "computation": "chi-deuteron-h6-at-q0-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
       },
@@ -137,45 +139,45 @@
         "computation": "chi-deuteron-h6-at-qinv-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-qinv-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
         "status": "ok"
       },
       {
         "path": "chi-deuteron-h6.witness.json",
-        "computation": "chi-deuteron-h6.witness",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "computation": "chi-deuteron-h6",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "producer:delta_lambda_empirical_tabulation.py",
         "producer": "delta_lambda_empirical_tabulation.py",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-free-via-lr.witness.json",
         "computation": "chi-free-via-lr",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "producer:chi_free_via_lr.py",
         "producer": "chi_free_via_lr.py",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-helium-3-free-h9-at-q0-50dps.witness.json",
         "computation": "chi-helium-3-free-h9-at-q0-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-helium-3-free-h9-at-qinv-50dps.witness.json",
         "computation": "chi-helium-3-free-h9-at-qinv-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
@@ -191,7 +193,7 @@
         "computation": "chi-helium-3-h9-at-q0-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
       },
@@ -200,36 +202,36 @@
         "computation": "chi-helium-3-h9-at-qinv-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-qinv-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
         "status": "ok"
       },
       {
         "path": "chi-helium-3-h9.witness.json",
-        "computation": "chi-helium-3-h9.witness",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "computation": "chi-helium-3-h9",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "producer:delta_lambda_empirical_tabulation.py",
         "producer": "delta_lambda_empirical_tabulation.py",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
         "computation": "chi-helium-4-free-h12-at-q0-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
         "computation": "chi-helium-4-free-h12-at-qinv-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
@@ -245,7 +247,7 @@
         "computation": "chi-helium-4-h12-at-q0-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
       },
@@ -254,45 +256,47 @@
         "computation": "chi-helium-4-h12-at-qinv-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-qinv-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
         "status": "ok"
       },
       {
         "path": "chi-helium-4-h12-numeric.witness.json",
-        "computation": "chi-helium-4-h12-numeric.witness",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "computation": "chi-helium-4-h12-numeric",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "producer:delta_lambda_empirical_tabulation.py",
         "producer": "delta_lambda_empirical_tabulation.py",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-helium-4-h12.witness.json",
-        "computation": "chi-helium-4-h12.witness",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "computation": "chi-helium-4-h12",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-[a-z0-9-]+-h\\d+$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-lambda-he4-full-partition-table.witness.json",
         "computation": "chi-lambda-he4-full-partition-table",
         "declared": null,
         "expected": null,
-        "expected_basis": "none",
+        "expected_basis": "not-applicable",
         "producer": "chi_lambda_he4_full_partition_table.py",
-        "status": "missing-ambiguous"
+        "status": "not-applicable",
+        "reason": "heuristic 4·Borromean tensor template, not atom_braid_word_3A — different braid"
       },
       {
         "path": "chi-lambda-multi-block-first-measurement.witness.json",
         "computation": "chi-lambda-multi-block-first-measurement",
         "declared": null,
         "expected": null,
-        "expected_basis": "none",
+        "expected_basis": "not-applicable",
         "producer": "chi_lambda_multi_block_first_measurement.py",
-        "status": "missing-ambiguous"
+        "status": "not-applicable",
+        "reason": "exploratory multi-block first-measurement (pyhecke chi_lambda_braid); no per-partition atom-braid cache"
       },
       {
         "path": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
@@ -326,18 +330,18 @@
         "computation": "chi-neutron-h3-at-q0-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
       },
       {
         "path": "chi-neutron-h3.witness.json",
-        "computation": "chi-neutron-h3.witness",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "computation": "chi-neutron-h3",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "producer:delta_lambda_empirical_tabulation.py",
         "producer": "delta_lambda_empirical_tabulation.py",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-proton-h3-at-q0-50dps-matrix-m.witness.json",
@@ -353,36 +357,36 @@
         "computation": "chi-proton-h3-at-q0-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
       },
       {
         "path": "chi-proton-h3.witness.json",
-        "computation": "chi-proton-h3.witness",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "computation": "chi-proton-h3",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "producer:delta_lambda_empirical_tabulation.py",
         "producer": "delta_lambda_empirical_tabulation.py",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-tritium-free-h9-at-q0-50dps.witness.json",
         "computation": "chi-tritium-free-h9-at-q0-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
         "computation": "chi-tritium-free-h9-at-qinv-50dps",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
@@ -398,7 +402,7 @@
         "computation": "chi-tritium-h9-at-q0-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
       },
@@ -407,18 +411,18 @@
         "computation": "chi-tritium-h9-at-qinv-50dps",
         "declared": "averaged-crossings",
         "expected": "averaged-crossings",
-        "expected_basis": "computation-id:/^chi-(?!.*-free-).*-at-qinv-50dps$/",
+        "expected_basis": "computation-id:/^chi-.*-at-qinv-50dps$/",
         "producer": "",
         "status": "ok"
       },
       {
         "path": "chi-tritium-h9.witness.json",
-        "computation": "chi-tritium-h9.witness",
-        "declared": null,
-        "expected": null,
-        "expected_basis": "none",
+        "computation": "chi-tritium-h9",
+        "declared": "averaged-crossings",
+        "expected": "averaged-crossings",
+        "expected_basis": "producer:delta_lambda_empirical_tabulation.py",
         "producer": "delta_lambda_empirical_tabulation.py",
-        "status": "missing-ambiguous"
+        "status": "ok"
       },
       {
         "path": "chi-via-rust-lossless-general.witness.json",
@@ -432,12 +436,16 @@
     ],
     "totals": {
       "scanned": 42,
-      "ok": 22,
+      "ok": 38,
       "mismatch": 0,
       "unknown_convention": 0,
       "missing_inferable": 0,
-      "missing_ambiguous": 20,
+      "missing_ambiguous": 0,
+      "not_applicable": 4,
       "parse_error": 0
-    }
+    },
+    "stamped_this_run": [
+      "chi-helium-4-h12.witness.json"
+    ]
   }
 }
