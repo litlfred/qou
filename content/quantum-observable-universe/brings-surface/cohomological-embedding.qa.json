@@ -1048,7 +1048,460 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "cohomological-embedding.md:97: \"**Gravity** is not a knot — it is the categorical trace ... It acts universally on all knot-particles.\"",
+        "notes": "The proposition .md mixes the formal four-part statement with extensive physical interpretation (Higgs mechanism, gravity, force-operator table); much of this interpretive prose would belong in linked remarks."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Cohomological embedding / H^1(Σ4) torus-knot basis is core Ch 7 cohomological-defect content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is cohomological/combinatorial; Lean over ℕ/Fin, no gratuitous ℝ in the substantive claim (seifertRank, embeddable are Nat)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No narrative **Proof.** body; argument is in the .lean existence construction."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "cohomological-embedding.lean:101: \"theorem cohomological_embedding : ∃ (ce : CohomologicalEmbedding), ce.genus = 4 ∧ ce.spanning_rank = 5\"",
+        "notes": "The .md proposition has four substantive parts (embeddability=representation iff, fiber degree, Jones-polynomial SPANNING/rank-5 completeness, genus-4 forced); the Lean only constructs a structure with genus=4 and a stored spanning_rank=5 field — the rank-5 spanning (part iii) is asserted as a structure field (spanning_rank_eq := rfl), not proved, so the Lean is materially weaker than the narrative completeness claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "cohomological-embedding.lean:86-87: \"spanning_rank : ℕ ... spanning_rank_eq : spanning_rank = 5\"",
+        "notes": "Completeness (part iii, the 6x5 character matrix has rank 5) is encoded as a hand-set structure field, not derived; the existence theorem trivially satisfies it by rfl. The substantive spanning claim is not formalized."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The existence theorem builds an explicit witness, not a projection of a field equal to the conclusion; genus/rank are constructed, not assumed via a field typed as the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "cohomological-embedding.lean:108-118: \"genus := 4 ... spanning_rank := 5 ... spanning_rank_eq := rfl\"",
+        "notes": "The theorem's two conjuncts (genus=4, spanning_rank=5) are satisfied by construction (the witness sets both literally), so the existence claim is near-trivial; the genuine content (rank-5 spanning) is parked in an unproved structure field rather than the goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "all_embeddable is genuinely discharged (fin_cases/omega) and the coprimality witnesses (by decide) hold; no false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The existence theorem takes no hypotheses; all_embeddable field is actually verified per knot."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "cohomological-embedding.lean:112: \"⟨2, 3, by decide⟩, ⟨2, 5, by decide⟩, ...\"",
+        "notes": "decide here discharges only finite coprimality facts (legitimate), but the deeper spanning_rank=5 content is rfl on a hand-set field rather than a decided/derived computation — the rank-5 character-matrix claim is asserted, not checked."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Checked: H_2(q) has 2 irreps, H_3(q) has 3 (incl. 2-dim standard); 2+3=5 irreps; χ=1-8+1=-6; (r-1)(s-1)≤8 set correct. The dim count of H_3 = 6 = 3! is right. No false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "cohomological-embedding.lean:102: \"∃ (ce : CohomologicalEmbedding), ce.genus = 4 ∧ ce.spanning_rank = 5\"",
+        "notes": "The Lean existence theorem is close to vacuous: it constructs a structure whose genus and spanning_rank are set to the target literals, so the conjuncts hold by rfl; the load-bearing completeness (rank-5 spanning of the 6x5 character matrix) is a stored number, not a proved fact."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No calibration back-fit; g=4 is the cohomological output of χ=-6, used consistently."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "cohomological-embedding.md:179: \"There are exactly 7 force operators (including free propagation), and we prove there can be no others.\"",
+        "notes": "'we prove there can be no others' overstates: the no-8th-force argument rests on the embeddability bound (proved) but the interpretive force-operator identification and the spanning/completeness (part iii) are not formally proved — the Lean stores rank-5 rather than proving it."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No off-menu numerical coefficient; knot-particle/force assignments are labels on the fixed 6 embeddable knots."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Core chain (embeddability bound -> 6 knots -> 5 irreps span) is coherent; the 17>8 overlap caveat is correctly handled (per-knot rank ≤4)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "cohomological-embedding.lean:101-118: existence theorem stores spanning_rank=5 (rfl) instead of proving the 6x5 character matrix has rank 5",
+        "notes": "The .md's central completeness claim (part iii: Jones evaluations span the 5-dim irrep space, 'rank 5 verified numerically') is NOT what the Lean proves — Lean only exhibits a structure with the number 5 written into a field; the spanning theorem is unformalized."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "jones1987 (Markov trace/link polynomials) and kassel1995 (Hecke rep theory) are correctly attributed for the irrep/Jones machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Seifert rank, fiber degree, irrep, q-dimension are defined; 'knot basis' and Hodge split are described concretely."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "cohomological-embedding.md:149: \"This matrix has rank 5 (= number of irreps, verified numerically).\"",
+        "notes": "The rank-5 claim is backed only by an inline 'verified numerically' with no witness file or reproducible script referenced; can't audit the numerical check."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Higgs/gravity identifications are interpretive; g_A≈1.277 and Vol(4_1)=2.0299 are consistent with the corpus; no broken conservation/units."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "cohomological-embedding.md:149: \"rank 5 ... verified numerically\"",
+        "notes": "No witness JSON / script hash backs the numerical rank check; reproducibility of the spanning claim cannot be verified from the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7654c4594b49",
+          "ts": "516c4b013432",
+          "lean": "e95dba303a93"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "notes": "Mathematically the embeddability/irrep counts are correct, but the headline completeness ('span', 'exactly 7 forces, proved') outruns the formalization, which only stores rank-5 as a field."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

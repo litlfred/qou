@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Affine-chart S5 action and the 3+2 generation partition belong to Ch 7's orbital-symmetry/embedding scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Crystallographic restriction (no 5-fold lattice symmetry) and Penrose-tiling aperiodicity invoked correctly; no false math claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Interpretive remark; no vacuous proof obligation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No back-fitted calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "fivefold-affine-charts-generations.md:30: \"three of the five sheets carry the three families ... while the remaining two carry the force mediators\"",
+        "notes": "The 3+2 sheet/generation assignment (T2,3/T2,5/T2,7 families vs T2,9/T3,5 mediators) is asserted as 'physics distinguishes the 3+2 partition' without derivation; an interpretive identification presented somewhat firmly, but flagged as interpretation in a remark."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No new free parameter; the partition is a labelling of existing knot sectors."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Reasoning from S5 chart action to aperiodic global structure follows the crystallographic restriction; interpretive but not a claimed deductive gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Remark, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No external citations; only internal cross-refs and Penrose analogy."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Affine chart, sheet, monodromy, observer type are defined/cross-linked within the chapter."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Quasicrystal/Penrose analogy is interpretive; no units or conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No backing compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f42a8df62678",
+          "ts": "4ec3740ff7f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Coherent interpretive remark; strongest objection is the firm 3+2 family assignment stated without derivation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

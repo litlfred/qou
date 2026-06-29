@@ -892,7 +892,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Charge-conjugation as color-sheet flavor swap, conditional on the inter-nucleon color-tube conjecture, fits the Ch 7 color-tube / CPT-decomposition scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "C as u↔ū, d↔d̄ involution, proton(uud)->antiproton, C^2=id are standard; conjecture honestly conditional. No false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Substantive conjecture with a Lean class sketch carrying real fields (c_involution, c_commutes_W, cpt_factorisation); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Conditional on upstream color-tube conjecture; CPT=C·P·T factorisation is the proposed content, not an assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Scoped: 'when all three hold', and downstream CPT-orbit-closure 'becomes a corollary ... once D6,D7,D8 are all closed' — promotion explicitly deferred."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical free parameter; C is a Z/2 structural map."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The C/P/T categorical-source table and the factorisation CPT=C·P·T are coherent given the stated commutation conditions."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Conjecture, validation not_checked; Lean is a fenced sketch with no compiled sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "wigner1937 (for C/antiunitary discrete symmetries), KLR, kashiwara cited appropriately for the symmetry/crystal context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "C action, the three commuting Z/2's (C,P,T), and the bar-involution composite are clearly distinguished in the table and conditions."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical match (the h(q0)≈0.209 isospin-anomaly contrast is mentioned as R&D, not a claimed result)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "C as flavor-conjugation and CPT factorisation are physically standard; no conservation/unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "verify_c_color_swap.py is listed as planned R&D, not a relied-upon witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "69bc1f4cbc82",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Clean conditional conjecture disentangling C from the CPT bar-involution; honestly deferred to upstream closure."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

@@ -1046,7 +1046,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is the bare iff plus the embeddable set; the closing 'only torus knots ... in the Descartes universe' is a restatement, not physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Torus-knot embeddability on Σ4 — core Ch 7 completeness content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is number-theoretic (gcd, Seifert genus bound); the .md header notes the generic-ring intent. No gratuitous ℝ in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No narrative **Proof.** body; proof is in the .lean (Nat exhaustion)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Lean torus_embeddable_complete (2≤m, m<n, coprime, (m-1)(n-1)≤8 -> (m,n)∈ list) matches the .md iff's forward direction over the stated set {(2,3),(2,5),(2,7),(2,9),(3,4),(3,5)}; set agrees."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Lean signature faithfully encodes the embeddability characterization; no weakening/axiom injection."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Proof is interval_cases/omega exhaustion, not a structure-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Goal is a genuine membership constraint over coprime pairs; not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Hypotheses (2≤m<n, coprime, genus bound) are jointly satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Coprimality (simp_all [Nat.Coprime]) and bounds (nlinarith/interval_cases) are all used to prune non-members."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Uses interval_cases/simp_all/omega over a finite range — justified exhaustive computation, not goal-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Verified (m-1)(n-1)≤8: (2,3..9 odd),(3,4),(3,5) qualify; (2,11) excluded (10>8); Seifert genus (m-1)(n-1)/2 correct for torus knots."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Substantive finite-classification result, Lean-proved by genuine case analysis."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No back-fitting; the set follows from the genus bound."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The 'only torus knots ... in the Descartes universe' restricts to torus knots, matching the stated quantifier."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No free parameter; g=4 inherited from χ=-6."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Genus bound -> finite set is a direct exhaustion."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Lean proves only the forward (embeddable -> in set) direction; the .md states an iff, but the reverse (each listed pair has genus≤4) is the trivial complement and is exercised by three_lepton_generations / fin_cases checks — no material divergence on the substantive direction."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No external citation in .md; manuscript Ref only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Seifert genus, coprime, embeddability constraints all explicit; the unknot T_{1,0} included separately."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical/q0 match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Pure knot-theory classification; no physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No compute witness (Lean-proved instead)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9bdb78d42397",
+          "ts": "9f7bde9823ec",
+          "lean": "00a0c223877d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Sound finite-classification proposition with faithful Lean exhaustion."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

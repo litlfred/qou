@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:16.048Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Definition of knot operator energy in sec:knot-operator-energy; on-topic."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:16.487Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Core E(λ,q)=|u_λ(q)| is algebraic; the .md and Lean explicitly handle the wall (ℝ archimedean |·|_∞ vs ℚ_p vs 𝔽_p), with shadowPrice : R kept generic and the absolute value placed on the archimedean side. Good wall hygiene."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "Checked mathematical consistency of the claim '**Definition.**' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Claim that 1/[k]_q! is the minimum w_λ/d_λ (attained by (k) and (1^k)) checks out: 1-dim reps give d_q=d_λ=1 ⇒ w/d = 1/[k]_q!; at q=1 the inequality d_λ² ≥ d_λ holds for the rest."
       }
     ],
     "da-vacuous": [
@@ -88,6 +136,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:knot-operator-energy'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Contentful definition; Lean structure is a genuine carrier (partition/q/shadowPrice/energy), not a : True stub."
       }
     ],
     "da-circular": [
@@ -107,6 +171,22 @@
         "notes": "Traced dependencies ['def:stable-atom'] for 'def:knot-operator-energy' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Defines a quantity from the upstream LP dual; no self-reference."
       }
     ],
     "da-overclaim": [
@@ -125,6 +205,22 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:knot-operator-energy' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Definition makes no predictive claim to overstate."
       }
     ],
     "da-hidden-dof": [
@@ -144,6 +240,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "u_λ(q) and 1/[k]_q! are LP-dual variables from the canonical chain; no off-menu coefficient."
       }
     ],
     "da-non-sequitur": [
@@ -163,6 +275,22 @@
         "notes": "Logical transitions in the derivation of '**Definition.**' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Definitional, no inferential chain."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -181,6 +309,24 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "knot-operator-energy.lean:26-34: \"structure KnotOperatorEnergy … shadowPrice : R; energy : Option R := none\"",
+        "notes": "The Lean structure records partition/q/shadowPrice/energy as free fields but does not encode the defining constraint energy = |shadowPrice| nor the u_λ = w_λ/d_λ − 1/[k]_q! formula; acceptable as a definition carrier but under-specifies the .md content."
       }
     ],
     "da-citation-misuse": [
@@ -200,6 +346,22 @@
         "notes": "All references and uses ['def:stable-atom'] cited in 'def:knot-operator-energy' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No cites[]; the inline prop:mass-coefficient-shadow-price reference is internal and apt."
       }
     ],
     "da-definitional-ambiguity": [
@@ -219,6 +381,22 @@
         "notes": "All terms and algebraic structures in 'def:knot-operator-energy' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "k ranges 2..k_max(K,q) with k_max defined via confinement level; symbols w_λ, d_λ, [k]_q! defined inline."
       }
     ],
     "da-empirical-fragility": [
@@ -238,6 +416,22 @@
         "notes": "The algebraic statements in 'def:knot-operator-energy' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +451,22 @@
         "notes": "Physical dimensions and units in 'def:knot-operator-energy' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No physical-units claim in the definition."
       }
     ],
     "da-reproducibility": [
@@ -276,6 +486,22 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No backing compute/witness."
       }
     ],
     "da-referee-verdict": [
@@ -296,6 +522,22 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Block-level rollup: sound definition with a minor Lean under-specification."
       }
     ],
     "voice-status-leak": [
@@ -1160,5 +1402,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:58.357Z"
 }

@@ -1048,7 +1048,447 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is the bare automorphism + order-5 + cyclic-group claim; no physical interpretation injected."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Z5 automorphism of the hyperelliptic quintic is in Ch 7's Bring algebraic substructure section."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No narrative **Proof.** body in this .md; the proof lives in the proof-block sibling and the .lean (the .md is the proposition statement)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "x5-z5-automorphism.lean:52-58: \"theorem z5_automorphism (p) (hp : HyperellipticQuintic p) : HyperellipticQuintic (zeta5 * p.1, p.2)\"",
+        "notes": "Lean proves equation-preservation (φ_5 maps points of X_5 to X_5) plus zeta5^5=1; the .md additionally claims φ_5 is an automorphism of EXACT order 5 generating ⟨φ_5⟩≅Z5 — bijectivity and ζ_5≠1 (order exactly 5) are not in the Lean, so the signatures express overlapping-but-not-identical claims."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The Lean signature (preserves y^2=x^5-1) is a faithful, un-weakened encoding of the proposition's core well-defined-map content; no axiom injected, no surreptitious restatement."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Proof is unfold/simp/rw + exact hp — a genuine computation, not a projection of a structure field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Goal HyperellipticQuintic (ζ_5·x, y) is a substantive equation, not True/x=x; the proof genuinely transports hp through (ζ_5 x)^5 = x^5."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Hypothesis hp : HyperellipticQuintic p is satisfiable (X_5 is non-empty); no False/contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "hp is used via `exact hp` after reducing the goal with zeta5_pow_five; the single hypothesis is exercised."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Proof uses unfold/simp only/rw/exact and a push_cast;ring in zeta5_pow_five — no decide/trivial masking an incomplete goal."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "x5-z5-automorphism.lean:13: \"**Ground ring**: ℂ.\"",
+        "notes": "The map uses ζ_5 = exp(2πi/5), an archimedean transcendental construct, so ℂ ground ring is justified (root of unity); but the .md header claims content 'stays generic to any commutative ring with the same q-data' while the Lean fixes ℂ — a mild generic-vs-archimedean tension. Acceptable since ζ_5 needs a root of unity, but the boilerplate generic-ring header is slightly inaccurate here."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "φ_5(x,y)=(ζ_5 x, y) preserves y^2=x^5-1 since (ζ_5 x)^5=ζ_5^5 x^5=x^5; order 5 since ζ_5 primitive. Correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Lean z5_automorphism genuinely proves equation-preservation via zeta5_pow_five; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "x5-z5-automorphism.md:16: \"is an automorphism of $\\mathcal{X}_5$ of order $5$. It generates a cyclic group $\\cong \\mathbb{Z}_5$\"",
+        "notes": ".md claims full automorphism of exact order 5 generating Z5; the Lean only proves the map preserves the defining equation (closure) and ζ_5^5=1 (order divides 5) — it does not prove bijectivity nor exact order 5 (that ζ_5≠1). The substantive part is proved; the order-exactly-5 / automorphism-group claim is narratively stronger than the Lean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Equation preservation -> automorphism is standard; the order/cyclic-group conclusion follows from ζ_5 primitivity (classical)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "x5-z5-automorphism.lean:52-58: \"theorem z5_automorphism (p) (hp : HyperellipticQuintic p) : HyperellipticQuintic (zeta5 * p.1, p.2)\"",
+        "notes": "Lean proves only equation-preservation (the map sends points of X_5 to points of X_5); the .md additionally claims order exactly 5 and generation of Z5 ⊂ Aut, which the Lean (zeta5_pow_five gives only order | 5) does not fully establish. Minor: the omitted facts (ζ_5≠1, bijectivity) are elementary."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "bolza1887 cited for the hyperelliptic-automorphism context; appropriate for the classical construction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "X_5: y^2=x^5-1, ζ_5=e^{2πi/5}, φ_5 all explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Pure algebraic geometry; no physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No compute witness (Lean-backed)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1bb32622c401",
+          "ts": "e5fbac628a82",
+          "lean": "2a4a7ed1fa3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Correct proposition; the Lean proves the core equation-preservation, leaving only elementary order/bijectivity facts to the narrative."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

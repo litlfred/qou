@@ -1046,7 +1046,451 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is the bare local-constancy claim; the trailing 'these are exactly the categorical phase boundaries' is a naming identification, not substantive physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Sits in sec:knot-operator-energy of the q-Hyperbolic Geometry chapter; confinement level off the phase-boundary variety is squarely in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is a generic-ring topological claim (open U on Q∖ℬ, locally constant ℓ); no archimedean (Real.*, ordering) leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No narrative **Proof.** block in the .md (statement-only proposition); nothing to wall-test."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "confinement-local-constancy.lean:26: \"theorem ConfinementLocalConstancy (R) [CommRing R] : Nonempty (KnotOperatorEnergy R)\"",
+        "notes": "Lean proves only that the KnotOperatorEnergy carrier is inhabited; the .md claims local constancy of ℓ(K,q) off ℬ. The Lean statement is unrelated to the narrative claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "critical",
+        "evidence": "confinement-local-constancy.lean:27-28: \"exact ⟨{ partition := [1], q := 0, shadowPrice := 0 }⟩\"",
+        "notes": "The Lean signature (Nonempty …) is a strictly weaker placeholder than the .md proposition; the proposition's content (local constancy / phase boundary) is not stated in Lean at all."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Proof exhibits a literal element of the structure, not a projection of a field whose type is the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "critical",
+        "evidence": "confinement-local-constancy.lean:28: \"⟨{ partition := [1], q := 0, shadowPrice := 0 }⟩\"",
+        "notes": "Goal Nonempty(KnotOperatorEnergy R) is discharged by a hardcoded trivial element ignoring the intended proposition; vacuous relative to the stated local-constancy claim (validation: not_checked, lean docstring concedes 'closing this requires the confinement-level definition over the base-ring topology')."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Only hypothesis is [CommRing R]; no false/contradictory premise or uninhabited type."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The single [CommRing R] hypothesis is used to construct the witness element."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Proof uses 'exact ⟨…⟩', not decide/trivial/native_decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Narrative claim is mathematically sound: a level determined by sign patterns of shadow prices is locally constant off a measure-zero (Zariski-closed) boundary variety ℬ (prop:phase-boundary-variety)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "confinement-local-constancy.lean:26-28: \"Nonempty (KnotOperatorEnergy R) := … exact ⟨{ … }⟩\"",
+        "notes": "The Lean formalization is a vacuous inhabitation stub, not a formalization of the proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No back-fitting or smuggled calibration; level is defined upstream and the proposition asserts its locus structure."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Narrative claim is appropriately scoped (local constancy off ℬ); the formalization gap is a Lean-side issue captured under da-lean-narrative-divergence, not a narrative overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No free parameter; shadow prices u_λ(q) derive from the canonical LP dual."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Single coherent claim; no multi-step inference to gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "confinement-local-constancy.lean:26: \"Nonempty (KnotOperatorEnergy R)\"",
+        "notes": "Lean proves a vacuously-weaker, unrelated statement (carrier nonempty) vs the .md local-constancy proposition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Only a [manuscript] self-ref in the Lean; no external citation to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "ℓ(K,q), Q∖ℬ, and the phase-boundary variety ℬ are all defined upstream (def:confinement-level resolves to particle-interactions; prop:phase-boundary-variety present)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical match; structural claim only."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No physics-units/conservation claim in the statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No backing compute/witness for this proposition."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1a8d956b0b7b",
+          "ts": "067a2911f7e6",
+          "lean": "4f67afda84d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "confinement-local-constancy.lean:26-28: \"Nonempty (KnotOperatorEnergy R) := … ⟨{ partition := [1], q := 0, shadowPrice := 0 }⟩\"",
+        "notes": "Block-level rollup: narrative pass, Lean stub fails equivalence/vacuity."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:58.357Z"
 }

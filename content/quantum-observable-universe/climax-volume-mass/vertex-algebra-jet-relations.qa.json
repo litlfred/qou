@@ -1048,7 +1048,458 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "vertex-algebra-jet-relations.md:403: \"transient harmonics are **new particle states** created by the jet prolongation\"",
+        "notes": "Proposition body interleaves physical interpretation (bosonic/fermionic statistics, 'new particles', 'jet curvature') with the structural relations; interpretation would be cleaner in a linked remark, but it is a relations catalog so this is minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Sits in sec:braiding-relations; the jet-bundle lift of the QU/QUO + cohomological relations is on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Header line declares the combinatorial content generic to any commutative ring with the same q-data; statement uses generic Hecke/Markov relations, archimedean specialisation explicitly deferred to the Lean ℝ realisation. No leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No narrative **Proof.** block (the proposition asserts the relations catalog); nothing to wall-test."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "vertex-algebra-jet-relations.lean:98: \"theorem euler_level_stable (n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num\"",
+        "notes": "The block's lean.ref is euler_level_stable, which proves only the numeric identity 2−2·4=−6 — neither the 34-relation proposition nor even the claimed level-stability (χ(A_n)=χ(A_0), tr_M of the identity). The Lean captures only JC-3's number, not the statement."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "critical",
+        "evidence": "vertex-algebra-jet-relations.lean:98: \"euler_level_stable (n : ℕ) : (2 : ℤ) - 2 * 4 = -6\"",
+        "notes": "The referenced theorem's conclusion is a constant arithmetic tautology, strictly weaker than (and disconnected from) the proposition it is the lean.ref for."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "euler_level_stable is not a projection of a structure field; descent_idempotent uses the genuine descent_left_inv field but derives idempotence rather than projecting the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "critical",
+        "evidence": "vertex-algebra-jet-relations.lean:98: \"(n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num\"",
+        "notes": "The lean.ref target is a closed numeric tautology discharged by norm_num, ignoring its ℕ argument; it asserts no proposition-level content (the χ value is hardcoded, not derived from any trace/level structure)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No false/contradictory premise in the referenced declarations."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "vertex-algebra-jet-relations.lean:98: \"euler_level_stable (n : ℕ) : … = -6\"",
+        "notes": "The brane-level parameter n — the entire point of a 'level-stable' theorem — is bound but never used; the body proves a constant independent of n, so the level-stability content is not captured."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "euler_level_stable uses norm_num (legitimate for the numeric goal), not decide/trivial masking a structural goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Stated relations are standard/plausible: J-1a Hecke σ²=(q−q⁻¹)σ+1 (repo §7a convention), J-2b antipode, χ=2−2·4=−6 (genus-4 Bring story); no counterexample found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "vertex-algebra-jet-relations.lean:98: \"(2 : ℤ) - 2 * 4 = -6 := by norm_num\"",
+        "notes": "The block's named lean.ref is a vacuous numeric tautology; the substantive level-stability/Markov-trace content of JC-3 is absent from Lean (markov_level_compatible is an axiom restating a definitional equality)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No back-fitting; relations are structural lifts of the base-level QU/QUO presentation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "vertex-algebra-jet-relations.md:470: \"The total presentation on $J^n(A)$ comprises **34 relations**\"",
+        "notes": "The proposition asserts a 34-relation presentation as holding at every level, but the Lean formalizes only a handful (hecke_level_independent, descent_idempotent) with two as axioms and the headline euler_level_stable as a tautology; the formalized support is much narrower than the catalog claims."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "q is level-independent by Euler stability; no free parameter introduced across levels."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Catalog of relations with inheritance arguments; each is a standard lift, no unsupported 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "vertex-algebra-jet-relations.lean:98: \"euler_level_stable (n : ℕ) : (2 : ℤ) - 2 * 4 = -6\"",
+        "notes": "Lean proves a numeric tautology (and two axioms) far weaker than the 34-relation jet-prolongation proposition the lean.ref names."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "kassel1995 (Hecke/Markov), jones1987 (link polynomials), yekutieli2010 (obstruction) are correctly attributed to the relations they back."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Level operators ℓ_n, 𝔡_{n+1}, τ̂_n, tr_M^{(n)}, σ_i^{(n)} are introduced explicitly at the top of the block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "χ=−6 is structural (genus-4), not a numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Bosonic/fermionic descent decomposition is an internal categorical statement; no units/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "vertex-algebra-jet-relations.lean:118-122: \"-- theorem yekutieli_coeff_nonzero (q : R_q) (hq : q > 1) :  …  q⁻¹ * (1 - q⁻¹) ≠ 0 := by …\"",
+        "notes": "A dangling proof body follows a commented-out theorem header (the binder for q is commented out but the `:= by` body referencing q remains), which would not compile; validation is not_checked, so the Lean's reproducibility/build status is suspect."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c1e08027cc9b",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "notes": "Block-level rollup: narrative pass, Lean formalization substantively diverges/vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:58.357Z"
 }

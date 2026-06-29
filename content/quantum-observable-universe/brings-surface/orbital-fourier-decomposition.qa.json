@@ -892,7 +892,266 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Quantum numbers from normal-bundle Fourier decomposition of the trefoil belongs to Ch 7's orbital-symmetry-embedding scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Standard facts (dim V_ℓ=2ℓ+1, classical ℓ(ℓ+1) limit, 2n^2 shell count, spherical harmonics) are stated correctly; the construction is conjectural (block kind conjecture) but no false math assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Rich conjectural construction; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Reproduces known atomic structure (2n^2, E_n=-E_ion/n^2) from the trefoil bundle; uses standard hydrogen results as targets but does not smuggle a calibration to back-fit them."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "orbital-fourier-decomposition.md:79: \"The twist $k$ is the norm-squared of $\\sigma$ in the $L^2$ sense: $k = \\sum \\ell(a_\\ell^2+...)$\"",
+        "notes": "Equating the integer framing twist k=2(n-1) with a continuous L^2 mode-sum is asserted without proof; presented in a conjecture block, but the identification of the twist with the weighted Fourier norm is a strong unproved step."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "q-Laplacian eigenvalue [ℓ]_q[ℓ+1]_q is q0-determined; no off-menu free coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "orbital-fourier-decomposition.md:150: \"The Fourier mode ℓ on $S^1$ ... generates a function on the sphere $S^2$ ... a homogeneous harmonic polynomial of degree ℓ\"",
+        "notes": "The jump from a 1-D Fourier mode on the trefoil S^1 to a degree-ℓ spherical harmonic on S^2 (and hence the SO(3) irrep V_ℓ with the m label) is asserted, not derived; there is no canonical map taking the ℓ-th circle harmonic to the ℓ-th 2-sphere harmonic. This is the load-bearing gap of the conjecture, flagged as conjectural but the 'is by definition a spherical harmonic' phrasing overstates the connection."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "lean ref present but validation not_checked / no substantive .lean sibling in this dir; conjecture kind, no formalization to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No external cites in .ts; internal cross-refs (Reidemeister-mass-invariance, categorical-reeb, fiber-adjoint-involution) used."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "orbital-fourier-decomposition.md:57-63: \"$k = \\mathrm{tw}(\\sigma) = \\frac{1}{2\\pi}\\oint \\kappa(\\sigma,\\hat n_1)d\\Theta$ ... shell number is $n=k/2+1$\"",
+        "notes": "The framing twist tw(σ) and its relation to both the self-linking k=2(n-1) and the L^2 mode-sum are given two non-obviously-equal definitions (an integral and a quadratic mode-sum) without reconciling them; mild ambiguity in the central quantity k."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The q-Laplacian shift table (2.012, 6.139, 12.55) is illustrative, consistent with [2]_q≈2.011 at q0; no precision claim hangs on it, so no fit-noise fragility."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Reproduces (not contradicts) hydrogen quantum numbers and 2n^2 filling; an attempted derivation of known physics, not a measurement-contradicting claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No backing witness/compute referenced; conjecture, not a numerical result."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3d4fdb491de7",
+          "ts": "24ba8bd555c7",
+          "lean": "9965990e6e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "notes": "An ambitious conjecture deriving atomic quantum numbers from the trefoil normal bundle; the S^1-mode -> S^2 spherical-harmonic step is the key undischarged gap."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

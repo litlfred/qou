@@ -894,7 +894,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Klein icosahedral/(2,3,5)/quintic structure on Bring's surface — central to Ch 7's S5/quintic theme."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Checked classical facts: (2,3,5) rotation group = A5, |A5|=60, orbits {12,20,30}, Klein syzygy T^2+H^3=1728 f^5, dihedral (βα)^2=1 from βαβ=α^{-1} — all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Lean-discharged group/orbifold facts are substantive (klein_syzygy by ring, cone orders, parities); the residual is honestly an open class with no instance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No calibrated target back-fitted; the icosahedral group is generated, not imposed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Scope carefully limited: refutation is labelled scope-(a), bridge explicitly NOT producing the Hecke-dual W_λ; residual sliver (η↔w) flagged as the lone open object."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No off-menu coefficient; group elements are corpus-canonical (ζ_5 pentad, colour trefoil)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Each step (dihedral order-2, A5 generation, orbifold χ=1/30, syzygy) is justified or Lean-backed; no unsupported 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Lean validation 'leanok'; narrative carefully distinguishes the sorry-free facts (klein_syzygy, cone_orders, parities) from the open class fields (proj_orbit_constant, no instance) — consistent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "bring1786 (Bring-Jerrard normal form), klein1888 (icosahedral solution), bolza1887 used appropriately for classical results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "P(V), ζ_5 pentad, icosahedral angle, S^2(2,3,5) all specified; no 'unique X' without uniqueness."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Pure group/orbifold geometry; no q0-pinned numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No physical-measurement claim; geometric/categorical content only."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Witness keystone_klein_icosahedral_construction.py is parameter-free integer-polynomial arithmetic; klein_syzygy independently Lean-proved by ring — cross-checked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "095a65ecc90e",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Exemplary conjecture block: classical facts established + Lean-backed, scope honestly bounded, sole open object isolated."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

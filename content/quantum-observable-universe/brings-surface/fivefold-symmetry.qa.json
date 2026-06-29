@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:20.347Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "S5 = Aut(Σ4), the 5-fold structural theme — core subject of Ch 7 (Bring's Surface); placement correct."
       }
     ],
     "da-false-claim": [
@@ -46,6 +61,21 @@
         "notes": "No false mathematical or physical claims detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Aut(Bring genus-4 curve) = S5 and χ=-6 are standard (Edge 1978); no false claim."
       }
     ],
     "da-vacuous": [
@@ -63,6 +93,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block is non-vacuous as it provides concrete math content.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Interpretive remark organizing three downstream consequences; no proof obligation to be vacuous."
       }
     ],
     "da-circular": [
@@ -81,6 +126,21 @@
         "notes": "No circularity or back-fitted arguments detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No derivation of a calibrated target here; structural framing only."
       }
     ],
     "da-overclaim": [
@@ -98,6 +158,23 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The narrative bounds match the algebraic results without overclaiming.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "fivefold-symmetry.md:3: \"it is the deepest structural feature of the QOU\"",
+        "notes": "Rhetorical superlative ('deepest structural feature') is a framing claim beyond what is argued; minor voice/overclaim, not a math error."
       }
     ],
     "da-hidden-dof": [
@@ -116,6 +193,21 @@
         "notes": "No hidden degrees of freedom or undisclosed free parameters are introduced.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No free parameter introduced; identifies forces with topological structures."
       }
     ],
     "da-non-sequitur": [
@@ -134,6 +226,21 @@
         "notes": "The steps follow logically from the premises.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "3-fold/5-fold/2-fold force assignment is asserted as interpretation, consistent with the corpus split; no claimed deductive step gaps."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -151,6 +258,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No divergence; no Lean sibling required.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Remark block, no .lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -169,6 +291,21 @@
         "notes": "All references are cited appropriately.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No external citations invoked in the .md; uses only internal cross-refs."
       }
     ],
     "da-definitional-ambiguity": [
@@ -187,6 +324,21 @@
         "notes": "Terms and conventions are clearly stated.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Terms (S5, χ, genus, sheets) defined elsewhere and cross-linked; no ambiguous 'the unique X'."
       }
     ],
     "da-empirical-fragility": [
@@ -205,6 +357,21 @@
         "notes": "No fragile numerical matches are claimed.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical match / q0-pinned value claimed."
       }
     ],
     "da-physical-implausibility": [
@@ -223,6 +390,21 @@
         "notes": "The physical claims are consistent with established physics.",
         "evidence": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Force/symmetry mapping is interpretive, not a falsifiable units/conservation claim."
       }
     ],
     "da-reproducibility": [
@@ -240,6 +422,21 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The backing compute and witnesses are verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No backing witness/compute referenced."
       }
     ],
     "da-referee-verdict": [
@@ -259,6 +456,21 @@
         "verdict": "clean",
         "referee_argument": "none — expository prose contains no surviving objections.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "447872ac8ab2",
+          "ts": "60989d490dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Sound interpretive remark; strongest objection is the 'deepest structural feature' superlative, which is rhetorical not load-bearing."
       }
     ],
     "voice-status-leak": [
@@ -1068,5 +1280,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

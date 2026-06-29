@@ -818,7 +818,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Remark in sec:crossing-energy interpreting def:crossing-energy via branch-phase localisation; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Golden-ratio identity sin(2π/5)/sin(4π/5)=φ and magnitudes 2|sin(2π/5)|≈1.902, 2|sin(4π/5)|≈1.176 verified; 3He-corrected ratio 3.4767 vs tritium 3.4764 (0.014%) matches the witness (3.47687/3.47635)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Substantive interpretive remark with falsifiability witness; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The 0.76 MeV Coulomb subtraction is an independent well-known input (witness flags it 'well-known', satula1997 convention), so the mirror-nuclei collapse is not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "branch-phase-mass-tower-witness.md:42-47: \"The structural form … is now categorically derived … Predictions then agree with experimental atomic masses to ≤ 0.30% across Z=1..20\"",
+        "notes": "The ≤0.30% across-Z claim and 'categorically derived' framing are strong; they rest on per_irrep_pole_atom plus a witness whose in-prose link is to a now-deprecated file (see da-reproducibility). The 3-4× overshoot is honestly flagged, so this is a warn not a fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "The missing scalar prefactor (factor 3-4) is explicitly disclosed, not hidden; no undisclosed 4th calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Each step (branch points → phases → two magnitudes → isospin-corrected ratio match) is connected and witness-backed."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Remark with no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "satula1997 cited for the Wigner-energy / Coulomb-correction convention; apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Branch points, phase tube, crossing weight, tower term all defined via the linked blocks; m_cat formula explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "branch-phase-mass-tower-witness.md:28-32: \"after isospin (Coulomb) correction the two distinct strong-force ratios match the two branch-phase magnitudes above\"",
+        "notes": "The mirror-nuclei (T vs 3He) collapse is robust (Coulomb is an independent input), but the further association of the two strong-force ratios with the two golden-ratio branch-phase magnitudes is suggestive correlation given the acknowledged free 3-4× overall prefactor; flag as minor empirical-fragility, not a fail."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Isospin symmetry of strong-force binding and ~0.76 MeV Coulomb of 3He are standard nuclear physics; units consistent (MeV)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "branch-phase-mass-tower-witness.md:49: \"(`rho-k-pair-gen-v2-wedderburn.witness.json`)(../../../computations/rho-k-pair-gen-v2-wedderburn.witness.json)\"",
+        "notes": "Live prose link backing the ≤0.30% single-generator claim points to a witness now relocated to computations/_deprecated/ (broken relative link); moreover that witness name is the 'pair-gen' extension the same paragraph says was rejected — likely the wrong/stale witness. The two .ts-listed witnesses (branch-phase-fit, isospin-mass-tower-collapse) are present and reproducible (commitSha/scriptHash carried)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4c1c892ac9df",
+          "ts": "4f2bb1d4b023"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:58.357Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "notes": "Block-level rollup: sound core, stale witness link is the strongest objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:58.357Z"
 }

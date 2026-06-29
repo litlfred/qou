@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is the bare completeness claim; the 'In particular ... produces every knot type' clause is a restatement, not physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Generation/embeddability completeness on Σ4 is in Ch 7's orbital/embedding scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Statement is purely combinatorial/topological (Seifert genus, Skein moves); no gratuitous archimedean specialisation in the narrative claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No narrative **Proof.** body in this .md; proof obligation is in the .lean."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "generation-completeness.lean:37: \"def isReachable (K : KnotType) : Prop := ∃ r : ℕ, r ≤ K.unknottingNumber\"",
+        "notes": ".md claims reachability from the generator set G by Skein moves; Lean's isReachable is the trivially-true '∃ r ≤ unknottingNumber' (take r=0), so the Lean encodes nothing about G or Skein-reachability — the two are not the same claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "generation-completeness.lean:53: \"theorem generation_completeness (K : KnotType) (h_embed : isEmbeddable K) : isReachable K\"",
+        "notes": "The Lean conclusion isReachable is a weakened proxy (trivially-true existential) for the .md's substantive 'reachable from G by Skein moves'; the statement as formalized is materially weaker than the narrative."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Proof is exact ⟨unknottingNumber, le_refl _⟩, not a projection of a structure field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "critical",
+        "evidence": "generation-completeness.lean:61: \"exact ⟨K.unknottingNumber, le_refl _⟩\"",
+        "notes": "isReachable K reduces to '∃ r:ℕ, r ≤ unknottingNumber', a tautology discharged for every K (even r=0); the goal is content-free relative to the narrative reachability claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No False/contradictory hypothesis; isEmbeddable is satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "generation-completeness.lean:53-61: \"(h_embed : isEmbeddable K) ... exact ⟨K.unknottingNumber, le_refl _⟩\"",
+        "notes": "The embeddability hypothesis h_embed is never used; the conclusion holds for any KnotType regardless of genus bound, confirming the formalized claim is weaker than intended (the genus<=4 spectral filter is not exercised)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No decide/trivial masking; the proof is an explicit anonymous-constructor term (the issue is statement weakness, not a masked tactic)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Narrative claim (every g≤4 knot reachable from G by Skein moves) is plausible/true topologically; the defect is that Lean does not establish it, not that it is false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "generation-completeness.lean:37,61: \"isReachable ... := ∃ r, r ≤ unknottingNumber ... exact ⟨unknottingNumber, le_refl _⟩\"",
+        "notes": "True-but-content-free: the Lean theorem proves a trivial existential that ignores the genus hypothesis and says nothing about generation from G."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No back-fitted target or smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "generation-completeness.md:5: \"every knot embeddable in the Bring's surface is reachable from G by Skein operations alone\"",
+        "notes": "Narrative presents a completeness theorem as established, but the Lean backing only proves a trivial existential — the proved object is much weaker than the stated theorem."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Narrative reasoning (closure converse to embeddability-closure) is coherent; gap is in the formalization, captured under proof-* criteria."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "evidence": "generation-completeness.lean:37: \"isReachable (K) := ∃ r : ℕ, r ≤ K.unknottingNumber\"",
+        "notes": "Lean proves a vacuously-true existential, strictly weaker than the .md's reachability-from-G-by-Skein-moves claim; classic narrative/Lean divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "kauffman1991 cited as a general Skein/unknotting reference; appropriate, not over-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Seifert genus, generator set G, Skein crossing change are defined/cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Topological statement; no physical units/conservation claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "No compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "70e750682e02",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "major",
+        "notes": "A referee would reject the formalization: the Lean theorem proves a trivial existential ignoring the genus hypothesis, not the stated generation-completeness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }

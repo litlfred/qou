@@ -892,7 +892,265 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Color-tube weighted inter-nucleon Hecke channel on Bring's quintic fits Ch 7's color-tube / S5-SO3 fiber scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "so3_adjoint_eq_chebyshev [3]_q=[2]_q^2-1 is correct; proton uud / neutron udd color content correct; conjecture honestly conditional on conj:s5-so3-fiber-action."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Substantive conjecture with explicit weight-tensor structure and a Lean class sketch; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Refinement is conditional on an upstream class; does not assume its own conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Carefully scoped: 'narrows ... does not close it'; the empirical evidence (R^2=0.83, Scheme 4 ≈0.14%) is cited as 'evidence', not proof; promotion to proposition explicitly deferred until the class lands."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "inter-nucleon-channel-color-tube.md:94: \"the empirical match between the (now-purged) $\\lambda_{\\mathrm{scale}}$ literal $2.4599527869$ and ... $1/(1-h_q q_0^{10}) \\approx 2.450$\"",
+        "notes": "The W_{c1c2} weight tensor is, until the s5-so3 class is formalized, an undetermined 9-parameter object; the block is honest that the closed form is open (Open question 1), but cites the purged λ_scale numerology as 'independent evidence', which risks re-importing a hidden DOF — flagged minor since the block explicitly frames W as conjectural and normalised."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "R^2=0.83 count-correlation -> 'missing per-arc structure' is presented as suggestive evidence, not a deductive step; the ε-grading Z2 constraint is a valid rep-theoretic narrowing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Conjecture, validation not_checked; Lean axiomatisation is a sketch in a fenced block, no compiled sibling to diverge from."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "kashaev1997/faddeev1996/ohtsuki2002/KLR/kashiwara cited for the Hecke/color-tube/crystal machinery; appropriate to the conjectural content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "W_{c1c2}∈Q_{≥0} normalised to 1, ε∈{+1,-1,0} chirality sign, color sheets all defined; production map cross-linked to isotope_record_schema.py lines."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "inter-nucleon-channel-color-tube.md:103: \"Scheme 4 ... reproduces $\\Delta m_{n-p}$ to ${\\sim}0.14\\%$ ... far better than the uniform-flavor projection's ${\\sim}305\\,\\mathrm{ppm}$\"",
+        "notes": "The 0.14% Scheme-4 figure is cited from probe scripts as supporting evidence for a not-yet-derived weighting; since the weight tensor is still free (Open question 1), a single good per-sheet number risks being a post-hoc fit until the canonical W is pinned. Block is honest about this, hence minor."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "Color/flavor/chirality structure is standard QCD-flavored bookkeeping; no broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "severity": "minor",
+        "evidence": "inter-nucleon-channel-color-tube.md:84: \"low-isotope-sign-flip-diagnostic.witness.json ... R^2 = 0.83\"",
+        "notes": "Cited witnesses/probe scripts (low-isotope-sign-flip-diagnostic.witness.json, probe_pn_flavor_asymmetry.py) are referenced but their freshness/hash is not asserted in-block; the R^2 and 0.14% figures could not be re-verified from the block alone."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e4020dde8f3a",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:07:57.364Z",
+        "reviewed_sha": "ba5d0603c4790bb2f2dae292f7413d66dfeb12b2",
+        "notes": "A well-scoped keystone conjecture: honest about the free weight tensor, the conditional class, and the empirical-vs-derived gap."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:07:57.364Z"
 }
