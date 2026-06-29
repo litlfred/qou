@@ -140,6 +140,6 @@ theorem meson_ratio_subsingleton
   obtain ⟨hF', _⟩ := h'
   apply Subtype.ext
   funext q
-  rw [hF.factors q, hF'.factors q]
+  exact (hF.factors q).trans (hF'.factors q).symm
 
 end QOU.BraidKnot
