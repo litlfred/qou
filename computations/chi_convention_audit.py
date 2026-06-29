@@ -82,6 +82,30 @@ AVERAGED = "averaged-crossings"
 # `convention` field outside this set is flagged `unknown-convention`.
 KNOWN_CONVENTIONS = {SIGN_ONLY, AVERAGED}
 
+# ---- Canonical reconciliation (per docs/canonical-derivation-cheat-sheet.md
+# §Phase 5q + docs/audits/2026-06-09-binding-trace-convention-split.md) ----
+# The canonical per-λ character convention is sign-only-crossings (= the
+# convention-split audit's "convention A": matrix-M / chi_q_via_gp, deuteron
+# χ^(6) = 11.02 = q₀²³). It is the production character convention — the
+# marshalling `marshal_to_chi_lambda_braid` maps the averaged p-n form
+# (c=1, d=−h/2) → (sign=+1) ("# averaged → σ convention"), so production
+# chi_lambda_braid and the derived_chi_catalogue use sign-only — and it is
+# consistent with the canonical Jones–Markov trace C
+# (markov/markov_trace_canonical, prop:categorical-mass-markov).
+CANONICAL_CONVENTION = SIGN_ONLY
+# averaged-crossings = the convention-split audit's "convention B"
+# (markov_trace_3A Plancherel, deuteron χ^(6) = 1.56), DEPRECATED for binding
+# (markov_trace_3A docstring: "Do not use for new binding calculations").
+# Legitimate only as an opt-in audit-trail probe (pn_convention=
+# "strict_averaged"); NOT canonical. Witnesses in this convention are flagged
+# `off-canonical` (informational — not a --strict failure, they are valid
+# probes — but a downstream binding consume should use the sign-only sibling).
+DEPRECATED_FOR_BINDING = {
+    AVERAGED: "convention B (markov_trace_3A Plancherel) — deprecated for "
+              "binding; canonical per-λ character is sign-only (A), per the "
+              "2026-06-09 convention-split audit",
+}
+
 # Producer identity → convention. Matched as a substring against the
 # witness's `producer` / `scriptFile` field (the reliable signal). This is
 # the single source of truth for expected convention; extend it (not the
@@ -276,6 +300,15 @@ def main() -> int:
     not_applicable = by_status.get("not-applicable", [])
     parse_error = by_status.get("parse-error", [])
 
+    # Canonical reconciliation: among labeled witnesses, which sit in the
+    # deprecated-for-binding (averaged / convention B) convention. Legitimate
+    # audit-trail probes, but a binding consume should use the sign-only (A)
+    # sibling. Informational — does NOT gate --strict.
+    labeled = [r for r in records
+               if r["status"] in ("ok", "not-applicable") and r.get("declared")]
+    off_canonical = [r for r in labeled if r["declared"] in DEPRECATED_FOR_BINDING]
+    canonical = [r for r in labeled if r["declared"] == CANONICAL_CONVENTION]
+
     print()
     print("=== SUMMARY ===")
     print(f"  total chi value-witnesses : {len(records)}")
@@ -286,6 +319,10 @@ def main() -> int:
     print(f"  missing-ambiguous (manual): {len(missing_ambiguous)}")
     print(f"  not-applicable (diff braid): {len(not_applicable)}")
     print(f"  parse-error               : {len(parse_error)}")
+    print(f"  --- canonical reconciliation ---")
+    print(f"  canonical (sign-only / A) : {len(canonical)}")
+    print(f"  off-canonical (avg / B)   : {len(off_canonical)}  "
+          f"[deprecated for binding; valid only as audit-trail probes]")
     if args.fix:
         print(f"  stamped this run          : {len(fixed)}")
         for p in fixed:
@@ -314,6 +351,17 @@ def main() -> int:
         "missing_ambiguous": len(missing_ambiguous),
         "not_applicable": len(not_applicable),
         "parse_error": len(parse_error),
+    })
+    builder.add_data("canonical_reconciliation", {
+        "canonical_convention": CANONICAL_CONVENTION,
+        "canonical_basis": "convention A (matrix-M / chi_q_via_gp); production "
+                           "character convention (marshalling maps averaged→sign); "
+                           "consistent with Jones–Markov trace C "
+                           "(prop:categorical-mass-markov). Ref: "
+                           "docs/audits/2026-06-09-binding-trace-convention-split.md",
+        "canonical_count": len(canonical),
+        "off_canonical_averaged": [r["path"] for r in off_canonical],
+        "off_canonical_note": DEPRECATED_FOR_BINDING.get(AVERAGED),
     })
     if args.fix:
         builder.add_data("stamped_this_run", fixed)
