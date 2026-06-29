@@ -40,7 +40,10 @@
  *     [--quiet]
  *
  * Categories (criterion ids):
- *   proof-no-trivial-true            — conclusion is `True` / a tautology
+ *   proof-no-trivial-true            — conclusion is `True` / a tautology.
+ *       Tautology patterns: `: True`, `def`-disguised-`True`, reflexive
+ *       equality `X = X` (any body — incl. `1 = 1 := sorry`), `∃ …, True`,
+ *       and a top-level `… ∨ True`. All assert nothing regardless of proof.
  *   proof-no-self-assuming-projection— body returns a conclusion-typed field verbatim
  *   proof-no-false-premise           — hypothesis is impossible (vacuously true)
  *   proof-no-decide-masking          — closed by `native_decide` (adds Lean.ofReduceBool)
@@ -488,14 +491,38 @@ function detectTrivialTrue(
   if (/^True\b/.test(concl) || concl === "True") pattern = "conclusion-True";
   else if (/^True(\s*[∧×]\s*True)+$/.test(concl)) pattern = "conclusion-True-conj";
   else {
-    // reflexive tautology: `: X = X := rfl` — provable kinds only.
+    // Tautological conclusions — provable kinds only. The STATEMENT asserts
+    // nothing, so the body is irrelevant (rfl, sorry, simp, decide all
+    // "prove" it).
     if (isProvable) {
-      const eq = concl.match(/^(.+?)=(.+)$/);
-      if (eq && /^\s*(rfl|by\s+rfl|Eq\.refl)\b/.test(body)) {
+      // Use the type-ascription conclusion (FIRST top-level `:`), robust to
+      // an existential's binder colon (`∃ v : Nat, True`) that the
+      // last-colon `conclusionOf` would mis-slice.
+      const conclTA = conclusionTypeAscription(d.sig) || concl;
+      // (a) reflexive equality `: X = X` — vacuous REGARDLESS of body.
+      // Widened 2026-06-29: the prior check required an rfl-like body, so
+      // `1 = 1 := sorry` (the lr-tensor dodge) and `a = a := by simp`
+      // slipped through. Match is syntactic (lhs === rhs after stripping
+      // whitespace), so `a + b = b + a` is NOT a false positive.
+      const eq = conclTA.match(/^([^=]+?)=([^=].*)$/);
+      if (eq) {
         const lhs = eq[1].replace(/\s+/g, "");
         const rhs = eq[2].replace(/\s+/g, "");
         if (lhs && lhs === rhs)
           return mk(d, "proof-no-trivial-true", "reflexive-tautology", false);
+      }
+      // (b) existential-over-True `: ∃ …, True` (e.g. `∃ v, True := sorry`,
+      // the vol-through-tau dodge) and (c) a top-level `… ∨ True` / `True ∨ …`
+      // disjunction (e.g. `hA.holds ∨ True`, the crystal-r-matrix dodge) —
+      // both are tautologies asserting nothing. Paren-stripped so a `∨ True`
+      // nested inside a real conjunct is not a false positive.
+      if (/^∃.*\bTrue\s*$/.test(conclTA)) {
+        return mk(d, "proof-no-trivial-true", "exists-true-tautology", false);
+      }
+      let bare = conclTA, prev = "";
+      while (prev !== bare) { prev = bare; bare = bare.replace(/\([^()]*\)/g, ""); }
+      if (/∨\s*True\b/.test(bare) || /\bTrue\s*∨/.test(bare)) {
+        return mk(d, "proof-no-trivial-true", "or-true-tautology", false);
       }
     }
     return undefined;
