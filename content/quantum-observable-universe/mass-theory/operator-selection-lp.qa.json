@@ -1009,7 +1009,415 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The two Proposition statements (primal LP, strong duality) are bare optimization claims; the 'LP over motivic shadows' commentary is in a clearly separated paragraph."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "General knot-operator selection LP; on-topic for the mass/binding (shadow-price) machinery."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "LP is over R^d but the data t_i,G_ij are formal Habiro elements; the prose explicitly defers archimedean realization to ρ_∞ after selection — wall respected."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Strong-duality proof not given in the reviewed body (standard LP-duality citation territory)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling .lean; lean.ref is a library decl not reviewable here."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Primal/dual LP statements are standard and unchanged in shape."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling Lean to inspect."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "LP optimality / strong duality are non-trivial claims."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Feasibility ensured by the boundedness constant M; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Net constraint, Frobenius positivity, and boundedness all enter the primal/dual pair."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling Lean proof."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Primal-dual pairing and strong-duality equality n_target·y_0* = Σ t_i x_i* are correct LP duality."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Genuine LP with dual certificate; substantive (and aligns with the AGENTS.md LP-dual first-class infra)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "n_target is an input; the optimizer is selected, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Generalizes the n=3 confinement LP; the claim that B_3 is the unique optimizer is stated for the special case, not over-generalized."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "M is a boundedness constant, not a tunable physical DOF; n_target is the declared input."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Primal -> dual transcription and the large-M slack-elimination are correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling .lean to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No cites[]; references internal props."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "x*, dual (y_0*,y*), Gram matrix, net constraint all defined; M flagged as 'sufficiently large'."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Structural LP statement; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Shadow prices as binding-energy demand prices is internally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Standard LP; the canonical solver (lp_dual_solver) is the repo entry point."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d5eaab277836",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Clean general LP/duality formulation consistent with repo LP-dual infra; no objections."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

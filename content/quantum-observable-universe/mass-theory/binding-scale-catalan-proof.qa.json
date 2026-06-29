@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Binding scale α=m_e·8G; core mass-theory binding content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Vol(Borromean) = 2·(4G with G=Cl_2(π/4)) = 8G is the standard Thurston result; the block correctly notes G here is the Clausen value (Catalan)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Identifies a concrete physical scale and its error budget; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "α is built from m_e (input) × geometric 8G; not back-fitted to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Final paragraph carefully scopes the novelty to the identification of 8G as the binding scale, with Thurston's volume credited as classical."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "8G has zero uncertainty; m_e is the single declared input — no hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Octahedral decomposition -> 8G -> α scale is a coherent chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No cites[] in this proof block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "binding-scale-catalan-proof.md:4: \"G = Cl_2(π/4)\"",
+        "notes": "Uses G for the Clausen/Catalan constant, which collides with the notation register where G is the gauge group; reader could conflate, though context disambiguates."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "α's error is dominated by m_e (~3e-8 rel), explicitly stated; geometric factor exact."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "α as a multiplicative binding scale connecting lepton mass and link volume is internally consistent dimensionally (MeV × dimensionless)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "8G is a closed-form constant; m_e from CODATA — reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7fb93af54caf",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Sound; only nit is the G-for-Catalan notation collision with the gauge group symbol."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

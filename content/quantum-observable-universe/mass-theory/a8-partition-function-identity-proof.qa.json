@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Partition-function coefficient-match proof; squarely in mass-theory (Hecke partition combinatorics)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "p(1..5)=1,2,3,5,7 are the correct partition numbers; the X^k coefficient table matches exactly."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Concrete degree-4 polynomial identity verified coefficient-by-coefficient; not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No calibration smuggled; pure Z[X] identity by ring expansion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Claims only the finite coefficient match; no scope inflation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No free parameters in a fixed polynomial identity."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Each row's claim follows from the explicit expansion; ring closes it."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Proof block with no sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No citations in the proof block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "p(n), X-powers, and the index map n=5-k are unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No numerical/empirical match; exact integer identity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No physical claim; pure combinatorial identity."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Self-contained; the ring check is trivially reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Sound elementary coefficient-match proof; no objections."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

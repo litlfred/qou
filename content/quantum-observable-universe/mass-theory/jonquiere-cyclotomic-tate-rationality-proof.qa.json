@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Polylog/Tate-rationality at roots of unity feeds the dilog/mass sector; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Jonquière inversion + Bernoulli-arg = 1/K computation verified; n=2,K=2 gives Re Li_2(-1)=-π²/12 as checked in the block. Correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Establishes Tate-rationality (rational × π^n) for Re/Im of Li_n(ζ_K); substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Derived from the standard Jonquière formula; no assumption of the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Claims Tate-rationality, which the closed forms in terms of B_n(1/K) and π^n exactly support."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No free parameter; K and n are the indices."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Each step (log branch, Bernoulli arg, conjugation split by parity) follows correctly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling .lean for this proof block."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Lewin 1991 §7 (Jonquière inversion) correctly cited."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Principal branch, ζ_K, B_n all unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "50-dps verification (20 (n,K) combos, max residual 4e-51) confirms an exact identity, not a fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Pure analytic-number-theory result; no physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Witness jonquiere-cyclotomic-general.witness.json named; 50-dps residuals reported."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Rigorous, correctly verified proof; no objections."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

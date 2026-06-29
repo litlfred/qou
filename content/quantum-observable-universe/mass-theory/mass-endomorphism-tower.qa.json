@@ -1048,7 +1048,456 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "mass-endomorphism-tower.md:1: \"TOP-OF-FILE SUPERSEDED-ρ_q BANNER (promoted). ... is STRUCTURALLY WRONG\"",
+        "notes": "The proposition is buried under ~199 lines of status banners, SUPERSEDED notes, Kashaev-identity audit, resolution notes, and trace-vs-evaluation notes before the actual Proposition (line 200). These author-tracking/interpretive blocks belong in authorNotes or a remark, not interleaved in the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Proton-electron mass ratio from the tower; core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The R-side tower form is in Z[q^{1/2},q^{-1/2}] (generic); the archimedean Φ_q/Li_2^q evaluation is explicitly marked as the archimedean specialisation — wall respected."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No clean narrative Proof body; proof content is dispersed and partly in the Lean stub."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "mass-endomorphism-tower.lean:82: \"q > 1 → Pre.massPoly frobeniusNorm q v n V > 0 := sorry\"",
+        "notes": "The Lean theorem proton_electron_ratio proves only positivity of massPoly (and via sorry), whereas the .md Proposition is the explicit Li_2^q mass formula plus the m_p/m_e≈1870 ratio. The Lean is strictly weaker and unproved."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "mass-endomorphism-tower.lean:81: \"theorem proton_electron_ratio ... > 0\"",
+        "notes": "The Lean signature (a positivity claim) does not encode the .md proposition's mass formula; the formalised statement is a much weaker proxy than the narrative claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Not a projection of a self-conclusion class field; it is a (sorry'd) positivity lemma."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "massPoly>0 is a non-trivial (if weak) goal, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Hypothesis q>1 is genuine, not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Proof is `sorry`, so hypothesis usage cannot be assessed."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Uses sorry (honestly), not decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The block self-audits the Φ_q vs Li_2^q error and the -737 MeV mirror-nucleus pathology; the corrected Li_2^q proposition is the stated form. The 1870 ratio (1.8% vs CODATA) is consistent with the Φ_q display caveat."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Substantive mass-tower formula; not content-free (despite the weak Lean)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Inputs declared as q_0 and m_e (scale); 'no parameters fitted' is consistent with the canonical chain (the gluon count is LP-derived, not fitted)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "mass-endomorphism-tower.md:317: \"No parameters are fitted. The inputs are the substrate parameter q_0 and the electron mass m_e\"",
+        "notes": "The 'no parameters fitted, 1.8% ratio' claim is presented in the Application section while the same block documents that the displayed Φ_q form is SUPERSEDED/diagnostic-only and blows up; the headline 1870 result is computed in a form the block itself flags as structurally wrong, so the accuracy claim is over-stated relative to the corrected Li_2^q form (not yet recomputed per authorNotes)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The gluon crossing count is derived from the integer LP dual (84 feasible, unique optimum), not a hidden DOF; disclosed in the 'Gluon derivation' section."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The z^2 pair-weight derivation (adjacent via braid relation, non-adjacent via far-commutativity) is a correct Markov-property argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "mass-endomorphism-tower.lean:82: \"Pre.massPoly frobeniusNorm q v n V > 0 := sorry\"",
+        "notes": "Lean proves a strictly weaker, sorry'd positivity statement vs the .md mass-formula + 1870-ratio proposition — a clear narrative/Lean divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Wenzl 1988 Thm 5 (Markov multiplicativity) and the Heine identity are correctly invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "mass-endomorphism-tower.md:200: \"Proposition. The mass ... = |∏ V_i| - Σ Li_2^q(...) ...\"",
+        "notes": "The boxed Proposition uses -Li_2^q while the explanatory term-bullets and Application still display Φ_q; the authorNotes admits the displays are inconsistent pending an mp recompute, so 'the' tower formula has two incompatible displayed readings."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "mass-endomorphism-tower.md:313: \"m_p/m_e ≈ 1870 (CODATA: 1836.15, error 1.8%)\"",
+        "notes": "The 1870 value is computed with the Φ_q form the block flags as diagnostic-only/superseded (blows up at |V|->1, drives the -737 MeV mirror pathology); the corrected Li_2^q ratio is not recomputed (authorNotes 'awaits mp recompute'). The headline accuracy is thus against a known-pathological form."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The block itself surfaces the -737 MeV mirror-nucleus pathology of the Φ_q form as a diagnostic, so it does not assert an implausible value as a result."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "mass-endomorphism-tower.ts:status: \"experimental\"",
+        "notes": "computation.status is 'experimental'; the production pipeline uses tower_mode=li2q while the block's displayed numbers (1870) come from the Φ_q display, so the prose value and the canonical compute are out of sync pending recompute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "notes": "Strongest objection: the Lean (proton_electron_ratio: massPoly>0 := sorry) is far weaker than the .md mass-formula+1870 claim, and the headline 1.8% ratio is computed in the Φ_q form the block itself flags as superseded/diagnostic — the corrected Li_2^q ratio is unrecomputed. The block is otherwise admirably self-auditing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

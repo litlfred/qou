@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Curvature-rank stratification of the mass tower; core mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "HH^k=0 for k≥1 at generic q (Hecke algebra is semisimple, hence separable) leaving HH^0=Z is correct; centre splits by GB-depth as stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Derives the m^(k) functionals from the depth-binned centre; substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Uses spectral-collapse and curvature-rank props; no assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "unified-curvature-rank-mass-formula-proof.md:46: \"empirically it accounts for ~3% of the binding energy of ^4He ([the formal derivation witness](#))\"",
+        "notes": "The ~3% chirality-contribution claim cites a witness link that is an empty anchor '(#)', so the numerical claim is not traceable to a named witness from this block."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The m^(k) come from the canonical centre decomposition, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Spectral-sequence collapse -> centre survives -> depth split -> block integrals is a coherent chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling .lean for this proof block."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No cites[]; references internal props."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "HH^k, Z_k strata, m^(k), chirality predicate c_λ=0 all cross-linked to defined blocks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "unified-curvature-rank-mass-formula-proof.md:46: \"accounts for ~3% of the binding energy of ^4He ([the formal derivation witness](#))\"",
+        "notes": "The 3% figure has a broken/empty witness anchor, so it cannot be checked for staleness or value; treat as unverified corroboration."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Curvature-rank strata mapping to mass functionals is internally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "unified-curvature-rank-mass-formula-proof.md:46: \"([the formal derivation witness](#))\"",
+        "notes": "The cited witness for the 3% chirality figure resolves to an empty '#' anchor — not reproducible from this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "97ca443eb8ee",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Core spectral-sequence argument is sound; only weakness is the ~3% ^4He chirality figure backed by an empty witness anchor."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

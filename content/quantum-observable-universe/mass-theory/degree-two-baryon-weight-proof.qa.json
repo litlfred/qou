@@ -762,7 +762,254 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "β_2 coefficient in the Wedderburn mass formula; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "[3]_q=q²+1+q^{-2}≈3.044 at q_0, β_2=-2[3]_q≈-6.087 checks; |β_2|·α≈6.09·3.74≈22.8 MeV arithmetic correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Computes a specific weight coefficient; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "degree-two-baryon-weight-proof.md:15: \"each pn crossing uses c=2 (doubled to keep coefficients integral), and the β_2 weight compensates this doubling\"",
+        "notes": "The factor-2 origin (det=-1 sign + pn-doubling 'compensation') reads as post-hoc bookkeeping; the -2 is asserted from convention rather than derived, though the [3]_q part is sound."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "degree-two-baryon-weight-proof.md:23: \"consistent with the strong-force binding energy scale\"",
+        "notes": "22.8 MeV being 'consistent with the strong-force binding scale' is a loose order-of-magnitude claim presented as confirmation; labelled a proof sketch so scope is limited."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "degree-two-baryon-weight-proof.md:8: \"The factor -2 arises from two sources\"",
+        "notes": "The -2 prefactor is justified by two conventions (sign + doubling) rather than a single canonical-chain derivation; borderline off-menu but small and labelled a sketch."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "binom(3,2)=3 q-deforming to [3]_q and σ_2 counting pairwise color products is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No sibling .lean for this proof block."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No cites[]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "[3]_q, σ_2, Φ_2 are defined/standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "degree-two-baryon-weight-proof.md:22: \"|β_2|·α ≈ 6.09 × 3.74 ≈ 22.8 MeV, consistent with the strong-force binding energy scale\"",
+        "notes": "The match to 'the strong-force scale' is a broad order-of-magnitude coincidence (the strong scale spans ~1-100s MeV), so this is weak corroboration rather than a precise prediction."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Three color channels / pairwise products is consistent with the baryon color-tube model."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "[3]_q at q_0 and β_2 are directly recomputable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "notes": "The [3]_q value is sound, but the -2 prefactor is justified by conventions (sign + pn-doubling) rather than derived, and the 22.8 MeV 'consistent with strong-force scale' is a loose corroboration — acceptable as a labelled proof sketch."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

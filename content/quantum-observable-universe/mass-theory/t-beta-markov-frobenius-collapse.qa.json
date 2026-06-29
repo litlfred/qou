@@ -1048,7 +1048,450 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Proposition statement is the bare min-Frobenius-norm result T_β=S·1_H; categorical reading is in a separate section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Min-norm collapse of T_β under the Markov-Frobenius inner product; on-topic for the Q_β/mass machinery."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Stated over a field R with τ_M:H→R; the inner product and completing-the-square are algebraic, no archimedean construct in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Lean substrate proof uses `ring`/`rw` over CommRing/Field — algebraic, wall-correct."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "t-beta-markov-frobenius-collapse.lean:64: \"theorem t_beta_collapse {R} [Field R] (S X : R) (h_constraint : X = S) : X * X = S * S\"",
+        "notes": "Lean proves only the substrate-model reduction (X=S ⇒ X²=S²) — the trivial scalar shadow — whereas the .md claims the genuine minimum-Frobenius-norm result over all T_β∈H_n(R,q) with τ_M(T_β)=S. The .md is honest that the full H_n lift is deferred, so this is a disclosed divergence (warn, not fail)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "t-beta-markov-frobenius-collapse.lean:64: \"X * X = S * S\"",
+        "notes": "The Lean signature is the substrate proxy, not the full min-norm-over-H_n claim; integrity is preserved only at the substrate level, with the general lift openly queued."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "completing_the_square and t_beta_collapse are genuine ring computations (`ring`/`rw`), not projections of a self-conclusion field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "t-beta-markov-frobenius-collapse.lean:72: \"theorem min_norm_value (S : R) : (S : R) * S = S * S := rfl\"",
+        "notes": "min_norm_value : S*S = S*S := rfl is a syntactic identity (trivially true); it carries no content beyond a definitional unfold, though it is honestly a 'corollary' substitution, not the headline theorem."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "h_constraint : X = S is a genuine constraint, not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "t_beta_collapse uses h_constraint (rw); completing_the_square has no idle hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Uses ring/rw/rfl, not decide masking an incomplete goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Completing-the-square ⇒ min-norm element is S·1_H with ‖·‖²=S² is correct given τ_M PSD on squares + non-degeneracy (cited Wenzl 1988)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "t-beta-markov-frobenius-collapse.lean:73: \"min_norm_value ... := rfl\"",
+        "notes": "The Lean min_norm_value is a vacuous rfl identity; the substantive content (PSD + non-degeneracy ⇒ uniqueness) is deferred to the unproved general lift. The narrative claim is non-vacuous, but the formalised pieces are the trivial substrate shadow."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No back-fitting; min-norm is derived by completing the square."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The .md explicitly states the full H_n proof is queued and the substrate model captures the essential identity — not over-claimed as fully formalised."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No free parameter; S is the given target trace."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The corollary (c_k L2/Markov-invariance from constraint not objective) follows correctly: observables are extracted from the constraint level set."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "t-beta-markov-frobenius-collapse.lean:64: \"X * X = S * S\"",
+        "notes": "Lean (substrate scalar reduction) proves something weaker than the .md min-norm-over-H_n proposition; divergence is real but disclosed in the .md 'Lean formalisation' section."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "jones1987 (Markov-trace existence/uniqueness) and wenzl1988 (non-degeneracy) correctly support the τ_M properties used."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Frobenius inner product ⟨X,Y⟩_τ:=τ_M(XY), the constraint, and 'canonical primal-feasible operator' are defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The corollary correctly traces the c_3 cross-anchor swing to S(q) upstream of the SDP norm choice — consistent with the canonical c_k framing."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Algebraic min-norm result; no direct physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "computation.status verified; sympy probe witness named."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1f1e1a19f0af",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "notes": "Narrative result is correct and the proof strategy (completing the square) is right, but the Lean only formalises the trivial substrate shadow (X=S⇒X²=S², plus a rfl identity); the substantive PSD+non-degeneracy uniqueness is deferred. Disclosed, so a warn."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

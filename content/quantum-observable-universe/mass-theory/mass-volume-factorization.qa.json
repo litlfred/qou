@@ -898,7 +898,263 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Mass = density × hyperbolic volume factorization conjecture; core mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Conjecture kind; the 'volume conjecture at real q' framing is correctly labelled conjectural, not asserted true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "States a substantive factorization with JSJ refinement; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The block is unusually candid that the (link,ρ) pairing is per-isotope fitted (lines 108-120), so it does not pass off a fit as a derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Explicitly downgrades the ≤6.2% result to 'per-isotope fit, not a zero-parameter prediction' and lists the inconsistent link assignments (D as 6_2 vs Hopf)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The free parameters (atom-to-link map, ρ∈{m_e,2m_e}) are DISCLOSED under '### Non-zero free parameters', not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Thurston additivity -> Seifert pieces contribute 0, hyperbolic pieces carry binding; coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "lean.ref names a library decl (MassVolumeFactorization) with no sibling .lean to compare; conjecture-kind."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "thurston1978 (volume) and murakami-murakami2001 (volume conjecture) correctly cited for the analogy."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "mass-volume-factorization.md:108: \"D uses 6_2 (V=4.400) whereas the binding-link census assigns D the Hopf link (V=0)\"",
+        "notes": "The (atom -> link) map is internally inconsistent across witnesses (D as 6_2 vs Hopf), which the block flags itself; the key term 'the atomic link' lacks a unique canonical reading until the map is derived."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "mass-volume-factorization.md:116: \"finds no fixed link primitive reproduces the light-isotope bindings with ρ∈{m_e,2m_e} (matches_within_10pct: [])\"",
+        "notes": "The block honestly records that the rho-f-volume-binding-gap witness finds NO fixed primitive matches; the ≤6.2% headline is per-isotope fit-fragile. Flagged as warn because the fragility is disclosed, not concealed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "ρ∈{m_e,2m_e} pair-creation threshold reading is internally consistent; no measurement contradiction asserted as fact."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Named witnesses (binding-link-volumes, rho-f-volume-binding-gap, d-density-derivation); the disclosed null result is itself reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d54d8efd94c2",
+          "ts": "96ca0e77039d",
+          "lean": "dbadd6f49006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Exemplary honesty for a conjecture: free parameters and the no-fixed-primitive null result are disclosed. Strongest objection is that the supporting ≤6.2% table is per-isotope fitted, which the block itself states."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

@@ -875,7 +875,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "q-Pochhammer partial product Φ_n feeds the mass/dilog pipeline; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "q-pochhammer-partial-product.lean:30: \"def denomPoly (q x : ℝ) : ℕ → ℝ\"",
+        "notes": "The denominator polynomial (x;q)_n ∈ Z[q,x] is a generic-ring object; the Lean specialises q,x to ℝ. No archimedean construct is actually used in denomPoly/denomPoly_root_iff, so a generic CommRing would be wall-correct. Minor (chapter is archimedean)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "(x;q)_n has roots x=q^{-k}, k=0..n-1; convergence of Φ_q only for |q|<1; q_0>1 partial-product framing all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Concrete finite rational function with explicit pole structure; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Definition; the indexing-reconciliation with the stratification prop is shown factor-for-factor, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The Φ_n→Li_2 limit is correctly deferred to a conjecture (not asserted as proved here)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Depth n is the only parameter and it is identified with GB-depth k_star(T_w)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Recurrence Φ_{n+1}=(1-xq^n)^{-1}Φ_n and the z=qx, k->k-1 reconciliation are correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Lean denomPoly/partialProduct/denomPoly_root_iff faithfully encode the .md recurrence and root claim (sorry-free)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "faddeev1994 and kashaev1997 correctly cited for the quantum dilogarithm."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "(x;q)_n, Φ_n, the analytic limit, and the two indexing conventions are all explicitly defined and reconciled."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Roots {q_0^{-k}} as Newton-Raphson seeds is a structural construction, not a fitted numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Identifying denominator zeros with cusp addresses is a defined correspondence, not a physics violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Seed witness named; the algebraic object is deterministic."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "74ef69fcc0c5",
+          "ts": "5b18de006024",
+          "lean": "92e3f4f450bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Clean, correctly-bounded definition; only nit is the ℝ base ring where generic CommRing would suffice."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

@@ -875,7 +875,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "z-Habiro ring underpins the brane-tower mass expansion; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "z-habiro-ring.lean:33: \"noncomputable def zPochhammer (q : ℝ) : ℕ → Polynomial ℝ\"",
+        "notes": "The .md definition is over Z[q^±1][z] (generic ring) but the Lean models q and coefficients over ℝ; the algebraic inverse-limit construction needs no ordering/archimedean structure, so a generic CommRing would be the wall-correct base. Minor, since the block is in the (archimedean) mass-theory chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Inverse limit of Z[q^±1][z] at the descending P_n chain is well-defined; the caveat correctly notes Φ_q itself is not in the completion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Defines a non-trivial inverse-limit ring with cyclotomic projections; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Definition names a construction; the utility conjecture is explicitly deferred, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Explicitly flagged 'proposed structure, not established'; utility tied to a separate conjecture."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Truncation depth n is an explicit parameter labelling quotients, not a hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Descending-chain -> inverse-limit well-definedness argument is correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Lean ZHabiroElement (compatible families + cyclotomic projection) faithfully models the .md inverse-limit construction."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "habiro2004cyclotomic correctly cited for cyclotomic completions of polynomial rings."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "P_n, the ideal chain I_n, and the completion are all explicitly defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Pure algebraic definition; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No physical claim in the definition itself."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No witness to drift; construction is self-contained."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "684eafcaf181",
+          "ts": "6bc5178d4237",
+          "lean": "4646e1301a6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Honest 'proposed structure' definition; only nit is the ℝ base ring in the Lean where generic CommRing would suffice."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

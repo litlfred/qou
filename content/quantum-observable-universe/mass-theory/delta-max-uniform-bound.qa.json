@@ -1050,7 +1050,462 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "delta-max-uniform-bound.md:1: \"*Remark.* This proposition is tightly coupled to the Φ_q-tower binding pipeline. The active framework instead uses JSJ ...\"",
+        "notes": "The proposition opens with an author-status Remark (legacy-Φ_q coupling, 'retained as the analogous tail bound') that belongs in authorNotes, ahead of the actual Proposition statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Jet-tower tail bound for binding-energy truncation; on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Operator-norm / sup over ‖ψ‖=1 is genuinely archimedean (Jones-Wenzl Hilbert module at real q>0); appropriate for the archimedean SDP regime as stated."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Cauchy-Schwarz / operator-norm / IVT-free estimates are legitimately archimedean for an archimedean (real q>0) bound — no wall violation."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "delta-max-uniform-bound.lean:14: \"theorem delta_max_uniform_bound : sorry -- Ref: kassel1995 := sorry\"",
+        "notes": "The Lean does NOT state the proposition at all: the THEOREM TYPE is literally `sorry` (and the body is `sorry`). The .md states a specific |Δ^(n)|≤2L‖ρ‖²·m^(0) bound; the Lean encodes no proposition whatsoever — total narrative/Lean non-equivalence."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "critical",
+        "evidence": "delta-max-uniform-bound.lean:14: \"theorem delta_max_uniform_bound : sorry := sorry\"",
+        "notes": "The Lean signature is `: sorry` — there is no formalised statement to have integrity; the proposition is unformalised behind a sorry-typed theorem."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No projection anti-pattern; the Lean is an honest (if vacuous-typed) sorry stub."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "delta-max-uniform-bound.lean:14: \": sorry := sorry\"",
+        "notes": "A `theorem ... : sorry := sorry` has a metavariable goal type; it is not the stated proposition. Not a `: True` tautology, but it is content-free as a formalisation of the bound."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No false premise; the Lean simply states nothing (sorry type)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The Lean stub has no hypotheses (sorry-typed); nothing to assess."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Uses sorry (declared), not decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "delta-max-uniform-bound.md:118: \"d_q ≤ L(β)·‖ρ(β)‖_op (Kassel–Turaev, Braid Groups, Prop. 4.4.3 ...)\"",
+        "notes": "Step 4 bounds the module dimension d_q by braid length × operator norm; the .lean itself NOTES 'the proof strategy based on representation dimension bound by braid length is known to be incomplete/mathematically flawed.' The headline bound therefore rests on a step the authors flag as flawed."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "delta-max-uniform-bound.lean:14: \"delta_max_uniform_bound : sorry := sorry\"",
+        "notes": "The formalisation is vacuous: the theorem type is `sorry`, so it asserts nothing. The narrative proof is non-vacuous but its key Step-4 step is flagged flawed in the Lean comment."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No back-fitting; the bound is an attempted operator-norm estimate."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "delta-max-uniform-bound.md:11: \"closing the open hypothesis in the archimedean (SDP rank-1) regime\"",
+        "notes": "Claims to 'close the open hypothesis' / supply an explicit Δ_max, but the companion .lean states the proof strategy is 'known to be incomplete/mathematically flawed' and the theorem is unproved (sorry-typed). 'Closes' overclaims a flawed, unformalised argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Bound is built from L(β), ‖ρ‖_op, m^(0); no hidden free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "delta-max-uniform-bound.md:118: \"d_q ≤ L(β)·‖ρ(β)‖_op (Kassel–Turaev ... Prop. 4.4.3 specialized to generic q>0)\"",
+        "notes": "Step 4's claim that the Jones-Wenzl module dimension is bounded by braid length × operator norm does not follow (module dimension is a representation-theoretic invariant independent of word length); the .lean comment corroborates that this step is mathematically flawed. The 'therefore' to the final bound is a non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "evidence": "delta-max-uniform-bound.lean:11: \"NOTE: The proof strategy ... is known to be incomplete/mathematically flawed.\"",
+        "notes": "The .md presents a completed Proof (□) of a specific bound; the .lean both fails to state it (sorry type) and explicitly records the strategy as flawed — a major narrative/Lean divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "delta-max-uniform-bound.md:118: \"(Kassel–Turaev, Braid Groups, Prop. 4.4.3 specialized to generic q>0)\"",
+        "notes": "Kassel-Turaev Prop. 4.4.3 is cited for d_q ≤ L(β)·‖ρ‖_op; this dimension-by-word-length bound is the step the .lean flags as flawed, so the citation appears mis-applied to support an incorrect inequality."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "‖·‖_op, L(β), Δ^(n), m^(0) are all defined; the regime (archimedean rank-1 SDP) is stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The deuteron sub-ppm numerics (Δ_max(D)≈1.109, tail ~1e-6) are illustrative scale estimates, not a fitted match to data."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Sub-ppm truncation-error claim for light atoms is internally consistent (no measurement contradiction)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "delta-max-uniform-bound.ts:status: \"verified\"",
+        "notes": "computation.status='verified' (gram-matrix-dual.witness.json) while the analytic bound's key step is flagged flawed in the Lean; the 'verified' witness covers the numeric scale, not the contested d_q ≤ L·‖ρ‖ inequality."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f3e2e83e6c06",
+          "ts": "ddcf7d5aaffd",
+          "lean": "63d52427f180"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "major",
+        "notes": "Strongest objection: the proposition claims to 'close the open hypothesis' with a completed proof, but Step 4 (d_q ≤ L(β)·‖ρ‖_op via Kassel-Turaev) does not follow and the companion .lean explicitly records the strategy as 'incomplete/mathematically flawed' with a `theorem : sorry := sorry` stub. The bound is over-claimed and unformalised."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }

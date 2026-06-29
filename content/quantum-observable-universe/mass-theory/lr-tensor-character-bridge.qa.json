@@ -1048,7 +1048,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Corollary statement (lines 1-33) is the bare LR factorisation identity; physical applicability lives in clearly-separated later sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "LR character bridge for atomic-braid mass evaluation; on-topic for mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Statement is over H_n(R,q) generic ring; no archimedean construct in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "No narrative Proof body in this corollary block; proof is the §3b-cond class derivation in Lean."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "lr-tensor-character-bridge.lean:118: \"tensorChar : Partition → TensorBraid → ℝ\"",
+        "notes": "Lean §3b-cond class carries the genuine bridge identity over ℝ-valued characters and the theorem derives it — broadly equivalent — but the character ring is ℝ whereas the .md identity is over generic R; minor base-ring narrowing."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Lean theorem signature states the LR sum identity conditional on the class; matches the .md claim shape."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Class field `bridge` carries hypotheses (carrier data + LR weights); theorem composes them — genuine §3b-cond, not a self-conclusion projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Conclusion is the non-trivial LR character sum, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "trivialModel proves the class is consistent (inhabited), so no false-premise vacuity."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The theorem uses the class field `bridge` directly via h.bridge."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Proof is `h.bridge ν β`; trivialModel uses simp — no decide masking a substantive goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "LR comultiplication bridge for parabolic/trivial-interface braids is standard (Sym self-duality); statement correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Substantive convolution identity; the Lean class is content-bearing (genuine bridge field), not an empty marker."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Derivation from coproduct of Sym; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Scope-of-applicability section honestly restricts the bridge to tensor/parabolic braids, excluding the interface knot."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "LR coefficients are fixed structure constants; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Iterating the two-factor branching to k factors is the stated coproduct iteration; no logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "severity": "minor",
+        "evidence": "lr-tensor-character-bridge.ts:22: \"records a placeholder conclusion (`1 = 1`) rather than the full ... bridge identity\"",
+        "notes": "The authorNotes status is STALE: it claims the Lean is a `1=1` placeholder, but the actual .lean (lines 115-158) is the §3b-cond class deriving the genuine bridge. Lean is correct; the note contradicts it and should be refreshed."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "macdonald1995 §I.5 (self-dual PSH), geck-pfeiffer2000 §9.1.5, ram1991 Thm 5.1 correctly support parabolic induction/restriction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Iterated LR coefficient, parabolic chain, and trivial interface are all defined in-line."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "The 10^-14 cross-check is a machine-precision algebraic agreement, not an empirical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Cost-complexity claims (3^A vs Hoefsmit) are algorithmic, not physical assertions."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Cross-check vs Hoefsmit on H_6 and H_9 substrata described; no stale-hash claim made in prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "36773c649a16",
+          "ts": "2eb44d95f68e",
+          "lean": "e25faf19dec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:49:40.932Z",
+        "reviewed_sha": "3367fcb787352a660a1b286f506bc283d30480c0",
+        "notes": "Sound corollary; only objection is the stale authorNotes claiming a 1=1 Lean placeholder while the Lean is the genuine §3b-cond class."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:49:40.932Z"
 }
