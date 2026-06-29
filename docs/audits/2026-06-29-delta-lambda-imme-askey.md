@@ -103,6 +103,20 @@ lean-direct exit 0):
 | `imme_triplet_2nd_diff` | `imme 1 + imme(−1) − 2·imme 0 = 2·c` (triplet isolates `c`) |
 | `imme_third_diff_zero` | `Δ³ imme = 0` (Askey–Racah / Wigner rank-≤2 truncation) |
 
+## Witness provenance / main-side caveat
+
+The `a, b, c` values were computed against `binding_canonical.py` as of the
+#3089 merge. As of this PR's rebase, `binding_canonical` (deuteron and all
+nuclei) **raises on current `main`** —
+`chi_monotone_transfer.word_to_mpfr: unrecognised crossing (d=−0.10446)` — a
+**pre-existing main regression** from the flavor-split δ landings (the p-n
+color-weight was refined but this consumer was not updated to recognise the new
+value). This branch touches neither `binding_canonical` nor
+`chi_monotone_transfer`; the committed witness reflects the last-working δ. The
+IMME *structure* (Lean algebra, parity bookkeeping, the same-T collapse of `c`)
+is robust to small δ shifts; only the exact numerals would move once main's
+binding path is repaired.
+
 ## Status / not done
 
 - **Not wired** (near-match tier); no fit (Δ_λ gate). The IMME degree-2 *form*
