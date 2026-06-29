@@ -1,0 +1,90 @@
+import QOU.Mathlib.SYTBetaLagrange
+import QOU.Mathlib.SYTCornerListConnection
+
+/-!
+# QOU.Mathlib.SYTHookGNWWiring — wiring the abstract β-Lagrange identity to `gnwHookIdentity`
+
+`SYTBetaLagrange.betaLagrange` proves, for distinct `β : Fin k → ℚ`,
+
+    ∑ᵢ βᵢ · ∏_{j≠i}(βᵢ − 1 − βⱼ)/(βᵢ − βⱼ) = (∑ⱼ βⱼ) − C(k,2).
+
+`SYTHookGNW.gnwHookIdentity` needs the **list-level** statement
+`∑_{corners c} prodHooks(l)/prodHooks(l∖c) = sz l`.  This file builds the bridge via the β-coordinates
+`βᵢ = l[i] + (k−1−i)` (`k = l.length`):
+
+* `betaVec` — the β-vector of a shape; `betaVec_strictAnti` / `betaVec_injective` (distinct nodes);
+* `sum_betaVec` — `∑ᵢ βᵢ = sz l + C(k,2)`, so `betaLagrange`'s RHS `∑β − C(k,2)` **is** `sz l`.
+
+The remaining per-corner hook-ratio identity (relating `prodHooks`/`removeCorner` to the β-product via
+the Vandermonde `betaProdGap`) is the deeper step, handled separately.
+
+Pure `ℕ`/`ℚ` combinatorics; nothing archimedean; no fit.
+-/
+
+namespace QOU.Mathlib.SYTBetaLagrange
+
+open QOU.BraidKnot.IdentityI (sz)
+open Finset
+
+/-- The β-vector of a shape `l`: `βᵢ = l[i] + (k − 1 − i)` over `ℚ`, where `k = l.length`. -/
+noncomputable def betaVec (l : List ℕ) : Fin l.length → ℚ :=
+  fun i => (l.getD i 0 : ℚ) + ((l.length - 1 - (i : ℕ) : ℕ) : ℚ)
+
+/-- For a weakly-decreasing shape, `βᵢ` is an integer (a cast `ℕ`): `l[i] + (k−1−i)`. -/
+theorem betaVec_eq_natCast (l : List ℕ) (i : Fin l.length) :
+    betaVec l i = ((l.getD i 0 + (l.length - 1 - (i : ℕ))) : ℕ) := by
+  unfold betaVec; push_cast; ring
+
+/-- **The β-vector is strictly antitone**: `i < i'` gives `βᵢ > β_{i'}` — the row length is weakly
+decreasing while the staircase shift `k−1−i` strictly decreases. -/
+theorem betaVec_strictAnti (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    StrictAnti (betaVec l) := by
+  intro a b hab
+  unfold betaVec
+  have ha : (a : ℕ) < l.length := a.2
+  have hb : (b : ℕ) < l.length := b.2
+  -- l[b] ≤ l[a] (antitone), and (k−1−b) < (k−1−a)
+  have hlen : l.getD (b : ℕ) 0 ≤ l.getD (a : ℕ) 0 :=
+    QOU.BraidKnot.IdentityI.getD_antitone l hl (le_of_lt hab)
+  have hshift : l.length - 1 - (b : ℕ) < l.length - 1 - (a : ℕ) := by omega
+  have h1 : ((l.getD (b:ℕ) 0 : ℚ)) ≤ (l.getD (a:ℕ) 0 : ℚ) := by exact_mod_cast hlen
+  have h2 : ((l.length - 1 - (b:ℕ) : ℕ) : ℚ) < ((l.length - 1 - (a:ℕ) : ℕ) : ℚ) := by
+    exact_mod_cast hshift
+  linarith
+
+/-- **The β-vector has distinct entries** (strictly antitone ⟹ injective). -/
+theorem betaVec_injective (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    Function.Injective (betaVec l) :=
+  (betaVec_strictAnti l hl).injective
+
+/-- `∑_{i : Fin k} (l[i] : ℚ) = sz l` — the β-vector's length part sums to the cell count. -/
+theorem sum_getD (l : List ℕ) : ∑ i : Fin l.length, (l.getD (i : ℕ) 0 : ℚ) = (sz l : ℚ) := by
+  rw [← Nat.cast_sum]
+  congr 1
+  rw [show sz l = l.sum from rfl, ← List.sum_ofFn]
+  congr 1
+  apply List.ext_getElem
+  · simp
+  · intro n h1 h2
+    simp only [List.getElem_ofFn]
+    rw [QOU.Mathlib.SYTEnum.getD_eq_getElem' l n (by simpa using h1)]
+
+/-- `∑_{i : Fin k} (k − 1 − i) = C(k,2)` — the staircase shifts sum to the triangular number. -/
+theorem sum_shift_triangular (k : ℕ) :
+    ∑ i : Fin k, ((k - 1 - (i : ℕ) : ℕ) : ℚ) = (k.choose 2 : ℚ) := by
+  rw [← Nat.cast_sum]
+  congr 1
+  have hnat : ∑ i : Fin k, (k - 1 - (i : ℕ)) = ∑ i ∈ Finset.range k, i := by
+    rw [Fin.sum_univ_eq_sum_range (fun i => k - 1 - i) k]
+    exact Finset.sum_range_reflect (fun i => i) k
+  rw [hnat, Nat.choose_two_right, Finset.sum_range_id]
+
+/-- **`betaLagrange`'s RHS is `sz l`.** `∑ⱼ βⱼ − C(k,2) = sz l`, so the β-Lagrange identity evaluates
+to the cell count. -/
+theorem sum_betaVec_sub (l : List ℕ) :
+    (∑ i : Fin l.length, betaVec l i) - (l.length.choose 2 : ℚ) = (sz l : ℚ) := by
+  unfold betaVec
+  rw [Finset.sum_add_distrib, sum_getD, sum_shift_triangular]
+  ring
+
+end QOU.Mathlib.SYTBetaLagrange
