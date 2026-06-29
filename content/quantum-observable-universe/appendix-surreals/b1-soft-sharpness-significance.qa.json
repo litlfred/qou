@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Block sits in sec:surreal-b1-theorem-rows; its subject (soft vs strong sharpness of the B1 keystone discharge) is squarely the section's scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Checked: soft sharpness = non-vanishing in P_n/P_{n-1} follows from Borel rank + polylog non-vanishing (Borel/Lewin), strong = exhaustion is Beilinson-conjectural; the dichotomy is correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Remark carries substantive content (status-change table, soft-vs-strong distinction); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No back-fitting; it cleanly separates the unconditional (Borel+Lewin) part from the Goncharov-conditional part."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Explicitly disclaims strong sharpness as Beilinson-conjectural ('the strong version is what would be needed to claim the framework is complete'); claims are appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical free parameters; this is a K-theory/period-depth discussion with no calibration content."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Each 'theorem after' entry in the status table is tied to a named result (Bloch-Wigner non-vanishing, Borel+Lewin); transitions follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Remark with no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "cites bloch2000, suslin1991 (both present in references.ts); used for the depth-2/Bloch-Suslin and K-theory facts they actually establish."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Soft/strong sharpness each given a precise formula in the table (lines 8-9); 'Bring-natural F' is a defined term used consistently."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical match / fit; pure structural K-theory content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No physics claim in this block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No backing compute/witness invoked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "af8b6a471813",
+          "ts": "4b410910c442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Sound interpretive remark; correctly separates unconditional soft sharpness from conjectural strong sharpness. Strongest objection: 'depth-match is structural' (line 27) is asserted rather than argued, but it is hedged and non-load-bearing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:53:25.927Z"
 }

@@ -780,7 +780,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Prose intro to the surreal appendix, in sec:surreal-motivation; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Math claims checked: No is the unique proper-class real-closed field absorbing all set-sized ordered fields (standard, Conway/Ehrlich); d_H(q)=(2q-1)^2/q^3 transfers as a rational formula. Correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Prose block; no provable claim to be vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Motivational prose; no derivation that could assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Strongly hedged: 'speculative lift', 'Nothing in this appendix alters the main paper' (line 9), explicit Non-goals section. No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical content / calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "The 'lossiness' audit (Lebesgue/Hilbert/spectral never load-bearing) is asserted but each item is given a one-line justification; reasonable for an intro."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Prose, no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "conway1976, gonshor1986, ehrlich2012 cited for the surreal-field facts they establish; robinson1966 for standard-part. All present and apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Terms introduced informally as motivation, with forward links to precise blocks; appropriate for an intro."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Non-goals explicitly disclaim physical interpretation of non-archimedean values (line 87-88); no physics overreach."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No witness/compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e9e4425c9e82",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Exemplary scoping prose: states speculative status, non-goals, and a candid lossiness audit. Strongest (minor) objection: the 'most are never load-bearing' audit (line 60) is an assertion a referee might want substantiated, but it is forward-linked to rem:analytic-obstructions."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:53:25.927Z"
 }

@@ -855,7 +855,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "In sec:relaxing-strict-equalities; the eps-relaxed observability axiom is exactly that section's subject."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Conjecture (not asserted true); the easy-direction claim (St kills eps-norm element so strict observability is recovered) is correct, and the hard direction is explicitly left open."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "minor",
+        "evidence": "infinitesimal-observability.md:57: \"if not, the relaxation is a tautology.\"",
+        "notes": "The block itself flags the central risk: the relaxation may be empty/tautological (one direction trivial via St, the other unconstructed). This is honest self-disclosure, not a hidden defect, so warn not fail; the conjecture is content-bearing only if the hard direction is non-empty."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No conclusion-assuming; the open direction is clearly separated from the provable one."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Appropriately scoped: authorNotes marks it 'Open', the .md gives both a falsification path and the tautology risk; no overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical free parameter; eps is the generic infinitesimal, not a fitted constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Steps connect: St(xi)=0 for |xi|<=eps -> standard-part hom-space is 0 -> strict observability. The open step is labelled open, not asserted."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Conjecture with lean validation 'stub'; no provable-kind divergence to assess (the easy direction relies on standardPart_of_infinitesimal, declared as proved infrastructure)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Only cites robinson1966 (standard-part / nonstandard analysis), used correctly for the St map."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "minor",
+        "evidence": "infinitesimal-observability.md:17: \"$\\dim_{\\mathbf{No}} \\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) \\leq \\varepsilon$\"",
+        "notes": "The headline inequality writes a dimension (a cardinal/integer) <= eps (an infinitesimal), which is type-incoherent as literally written; the text immediately reinterprets it as a No-norm bound on hom-space elements (line 21-22). The dual reading is acknowledged but the lead formula remains ambiguous. Minor, in a conjecture."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "The physical reading (approximate isospin/chiral symmetry as near-symmetries) is offered conditionally ('if one is allowed') and the analogy is apt; no unit/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No witness/compute backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7babe2ebb396",
+          "ts": "792fea0a7201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Honest open conjecture with provable easy-direction and explicit tautology risk + falsification path. Strongest objection: the headline 'dim <= eps' (line 17) conflates dimension with norm; the body fixes the reading but the statement could be tightened."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:53:25.927Z"
 }

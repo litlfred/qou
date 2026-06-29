@@ -855,7 +855,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "In sec:standard-part-classical-limits; the classical-limit-as-standard-part conjecture is the section's subject."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Conjecture, not asserted; the single-morphism rationale (st of f_{1+eps} recovers f_1 for rational structure constants, via Taylor expansion) is correct, and the functorial case is left open."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Content-bearing: the RHS 'always exists' generalisation and the obstruction-as-finite-surreal refinement are genuine claims, not tautologies."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No conclusion-assuming; the proof-strategy openly separates the provable single-morphism case from the open naturality case."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Marked 'Open' (tier:P, lean not_checked); 'always exists' is qualified to 'as long as structure constants are rational in eps' (line 60). Appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical calibration; eps is the generic infinitesimal."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "The falsification argument (a discontinuous-but-classically-limit-existing function is impossible for rational structure constants) is a correct sufficient condition; steps connect."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Conjecture, lean validation 'not_checked'; no provable-kind claim to diverge. Cited infrastructure (standardPart_add/_mul) noted as 'proved up to IsFinite_decomposition axiom'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "robinson1966 (model-theoretic standard-part) and berarducci-mantova2018 (No derivation extending d/dx) cited accurately for what they prove; both in references.ts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "cl_top, ev_{1+eps}, St all defined or forward-linked; 'rational in eps' made precise as rational structure constants. (One stray line 65 'The right-hand side' typo, but no semantic ambiguity.)"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No physics claim (categorical classical-limit functor)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No witness/compute backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "37de470cb40e",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Well-posed open conjecture with a credible provable base case (rational-structure-constant morphisms) and an honest naturality gap. Strongest objection: the naturality/functorial promotion (step 4) is asserted 'structural' but needs CategoryTheory machinery not yet present; correctly flagged open."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:53:25.927Z"
 }

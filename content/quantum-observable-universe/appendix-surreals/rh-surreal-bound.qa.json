@@ -816,7 +816,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Sits in sec:millennium-bsd-rh-ym (millennium-problem surreal bounds); the RH surreal bound is on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "As a remark it states a conditional surreal inequality (delta^2 eps^-1 > eps^3) which is correct in R(eps); it does not assert RH is proved unconditionally."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Carries a concrete ord_omega computation; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "major",
+        "evidence": "rh-surreal-bound.md:23: \"By collapse of the quantum gap and the Hasse--Weil alignment at every prime fibre, the energy required to relocate a zero ... is E(delta) ~ delta^2 . Omega_q\"",
+        "notes": "The energy law E(delta)~delta^2.eps^-1 and Delta_q~eps^3 are framework inputs (thm:quantum-gap-collapse + 'Hasse-Weil alignment at every prime fibre'), and the squeeze then 'forces' delta=0 i.e. RH. The whole inequality is driven by an assumed energy-cost scaling that already encodes the RH-stability claim; the surreal step adds rigor only to the squeeze, not to the physics scaling. Flagged as warn (not fail) because the block is an interpretive remark, not a claimed proof, and openly conditions on the named theorems."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "major",
+        "evidence": "rh-surreal-bound.md:50: \"No configuration of the QOU substrate can sustain a standard-real drift $\\delta > 0$.\"",
+        "notes": "This conclusion is stated absolutely, but it depends entirely on the unproven E(delta)/Delta_q scaling laws and on thm:macroscopic-stability-equivalence; the surreal squeeze only converts a stated asymptotic into a field inequality. The 'realises ... the equivalence macroscopic stability <=> RH' (line 54) overstates what the algebraic step buys. Warn given the explicit remark framing and speculative-appendix scope."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No off-menu numerical coefficient; the exponents (eps^3, eps^-1) come from the cited surreal-rate-calculus block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Given the two stated scaling laws, the squeeze step (E/Delta ~ delta^2 eps^-4, ord_omega cost > budget) follows correctly; the gap is in the inputs, captured under da-circular."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Only cites conway1976 (surreal-field background), used appropriately; classical partial-RH names (Cramer/de Branges/Montgomery) are mentioned descriptively, not as formal citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "'rogue-zero drift' delta and the asymp relations are defined inline; Omega_q/Delta_q reference the rate-calculus block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical match against data."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Units within the framework are consistent (energy ratio dimensionless); the 'energy to relocate a zero' is a framework abstraction, not a measurable quantity, so no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No witness/compute backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "af6496111d02",
+          "ts": "33b51231e6dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "major",
+        "notes": "Internally consistent surreal restatement of a framework-internal stability heuristic. Strongest objection (da-circular/da-overclaim): the RH conclusion rides on assumed energy-cost scaling laws (E~delta^2 eps^-1, Delta_q~eps^3) plus 'Hasse-Weil alignment at every prime fibre' (line 23), which is precisely the unproven content; the surreal squeeze adds rigor only to the final inequality. Honest as a remark, would mislead if read as a proof of RH."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:53:25.927Z"
 }

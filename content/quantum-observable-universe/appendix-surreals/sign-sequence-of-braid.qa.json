@@ -875,7 +875,286 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Sits in sec:surreal-construction-grading; the sign-sequence functor B_n -> No via Hecke eigenspaces is exactly that section's topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Definition is algebraic/combinatorial (Hecke eigenchannels, Gonshor sign-to-surreal); no gratuitous archimedean (Real.sqrt/ordering) machinery in the stated construction."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "minor",
+        "evidence": "sign-sequence-of-braid.md:65: \"is a **multiplicative monoid map** in the following sense\"",
+        "notes": "The 'functoriality'/'monoid map' claim is asserted but the concatenation-of-sign-sequences operation is not literally Gonshor multiplication on No (Gonshor concatenation != field product); the .md hedges with 'in the following sense' and the Lean sibling proves only birthday bounds, so this reads as motivation, not a proved identity. Downgraded to warn."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Definition introduces genuine new structure (surr(beta,t)); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No assumption of conclusion; construction is forward from Hoefsmit eigenvectors to a sign sequence."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "minor",
+        "evidence": "sign-sequence-of-braid.md:105: \"a candidate **stronger braid invariant** valued in $\\mathbf{No}/\\sim$\"",
+        "notes": "'Stronger invariant' is hedged as 'candidate' and 'generally give distinct surreals', not proved to be a well-defined isotopy invariant (it depends on the braid word's crossings, not just the knot type). The hedge keeps it honest; minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No undisclosed numerical parameter / calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "Birthday <= crossing-number bound (line 88) follows from sign-sequence length = crossing count; the steps connect."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "minor",
+        "evidence": "sign-sequence-of-braid.lean:25: \"def signSequenceOfBraid := -- ... trivial\"",
+        "notes": "The block's own sibling .lean is a `:= trivial` docstub; the substantive formalisation (gonshor, birthday bounds) lives in the library file SignSequence.lean per the header comments. Per AGENTS.md sibling-first resolution the stub shadows the real decl, so the resolved ref carries no content. Definition block sibling is permitted, but the narrative's functoriality/birthday claims are not reflected in the resolved sibling. Minor (definition kind, content exists in library)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "gonshor1986 (sign-sequence presentation) and conway1976 used correctly for the surreal-number facts they contain; both in references.ts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "minor",
+        "evidence": "sign-sequence-of-braid.md:80: \"$\\widetilde{\\mathrm{surr}} : B_n \\longrightarrow \\mathbf{No}/\\sim$\"",
+        "notes": "The quotient '~' (a 'well-defined ordinal action on No' from YJM permutation, line 75-76) is never defined precisely; the tableau-independent functor rests on an under-specified equivalence. Minor definitional looseness in a speculative appendix definition."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "notes": "No witness/compute backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a6ade68d900e",
+          "ts": "a592f4f65219",
+          "lean": "aab513211fa3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:53:25.927Z",
+        "reviewed_sha": "d6a471107e88b75c220b9c9114bf4f0bb5f4389c",
+        "severity": "minor",
+        "notes": "Sound, well-motivated construction; appropriately hedged. Strongest objection: the 'multiplicative monoid map' functoriality (line 65) and the tableau-quotient '~' (line 80) are stated informally and not nailed down, so 'canonical functor' overstates a construction that is really a per-tableau combinatorial assignment. Acceptable for a speculative-appendix definition."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:53:25.927Z"
 }
