@@ -1,4 +1,5 @@
 import QOU.BraidKnot.SpechtStandardBasis
+import QOU.BraidKnot.SpechtDominanceCore
 import Mathlib.Data.Finset.Sort
 import Mathlib.Order.Monotone.Basic
 
@@ -14,14 +15,19 @@ is the genuine deep core.
 
 This module REDUCES the bundle further: it proves **both** order-independent
 fields **sorry-free** (`diag_unit` *and* `lead_inj` — the latter via the
-leading-tabloid-determines-SYT argument, fully formalised here) and isolates the
-remaining content as **a single** precisely stated, cited `sorry`
-(`standardPolytabloid_dominance_order`, the dominance/`supp_le` core). It then
-reassembles `standardPolytabloid_triangular'` — a verbatim restatement of the
-brick-4 bundle — sorry-free modulo that one core.
+leading-tabloid-determines-SYT argument, fully formalised here). The remaining
+field (`supp_le`) is supplied by `standardPolytabloid_dominance_order`, itself
+discharged **sorry-free** here by consuming the deeper relation-level core
+`SpechtDominanceCore.standardPolytabloid_dominance_order'` (which peels off the
+`LinearOrder` construction + `Finsupp`/`support` plumbing via a
+Szpilrajn-for-Fintypes lever, leaving only Sagan's dominance lemma as
+`SpechtDominanceCore.dominance_relation_exists`). It then reassembles
+`standardPolytabloid_triangular'` — a verbatim restatement of the brick-4 bundle —
+sorry-free modulo that one relation-level core.
 
-It imports `SpechtStandardBasis` read-only (mirroring how `SpechtIrreducible`
-reproduces brick 2 reduced to fewer cores); it does **not** modify it.
+It imports `SpechtStandardBasis` and `SpechtDominanceCore` read-only (mirroring how
+`SpechtIrreducible` reproduces brick 2 reduced to fewer cores); it does **not**
+modify them.
 
 ## sorry-free ↔ stubbed map
 
@@ -35,13 +41,15 @@ reproduces brick 2 reduced to fewer cores); it does **not** modify it.
 | `mem_rowSet_iff`, `rowSet_eq_of_rowPattern_eq`, `entry_eq_orderEmbOfFin` | **sorry-free** |
 | `leadTab_injective_core` (leading tabloid ⇒ SYT determined) | **sorry-free** (fully proved) |
 | `leadTab_injective` (the `lead_inj` field) | **sorry-free** |
-| `standardPolytabloid_dominance_order` (order + `supp_le`) | **STUB** `sorry` — `-- Ref: [sagan2001]` Thm 2.5.2 |
+| `standardPolytabloid_dominance_order` (order + `supp_le`) | **sorry-free** (consumes `SpechtDominanceCore.standardPolytabloid_dominance_order'`) |
 | `standardPolytabloid_triangular'` (the reassembled bundle) | **sorry-free MODULO the single core** |
 
 `#print axioms` confirms `sorryAx` enters `standardPolytabloid_triangular'`
-*only* through the lone dominance core `standardPolytabloid_dominance_order`;
-everything else (including all of `leadTab_injective`) is
-`[propext, Classical.choice, Quot.sound]`.
+*only* through the lone relation-level core
+`SpechtDominanceCore.dominance_relation_exists` (Sagan's dominance lemma +
+antisymmetry); everything else — both order-independent fields here, and the whole
+`SpechtDominanceCore` reduction (Layer 1, the Szpilrajn-for-Fintypes lever, the
+row-pattern bridge) — is `[propext, Classical.choice, Quot.sound]`.
 
 ## References
 - [sagan2001] Sagan, *The Symmetric Group*, §2.5 (standard basis, Thm 2.5.2;
@@ -373,20 +381,18 @@ theorem leadTab_injective : Function.Injective (leadTab (μ := μ)) := by
 /-! ## 4. The genuine dominance core (one cited `sorry`) -/
 
 omit [CharZero k] in
-/-- **STUB — the dominance core (Sagan Thm 2.5.2).** There is a linear extension
-of the dominance order on `Tabloid μ` under which `leadTab T = {T}` is an upper
-bound of `supp (e_T)` for every standard `T`. This is the genuine combinatorial
-heart of the standard-basis independence proof: a column permutation `π ∈ C_t`
-sends `{t}` to a tabloid `{π • t}` that is *weakly dominated* by `{t}`, so the
-maximum of `supp(e_T)` is `{T}` itself. -/
+/-- **The dominance core, discharged by reduction.** Proved **sorry-free modulo**
+the deeper relation-level core `SpechtDominanceCore.dominance_relation_exists`: the
+`SpechtDominanceCore` reduction peels off the `LinearOrder` construction (a
+Szpilrajn-for-Fintypes lever) and the `Finsupp`/`support` plumbing, leaving only
+Sagan's dominance lemma (`DominanceData`: a partial order on tabloids under which
+column permutations weakly decrease, plus antisymmetry). This consumes its verbatim
+restatement `standardPolytabloid_dominance_order'`. -/
 theorem standardPolytabloid_dominance_order :
     ∃ _ : LinearOrder (Specht.Tabloid μ),
       ∀ T : StandardYoungTableau μ, ∀ a ∈ (standardPolytabloid (k := k) T).support,
-        a ≤ leadTab T := by
-  -- Ref: [sagan2001] Thm 2.5.2 (dominance order on tabloids; column permutations
-  -- weakly decrease dominance, so {T} = leadTab T is the maximum of supp(e_T)).
-  -- See also [james1984representation] §8.
-  sorry
+        a ≤ leadTab T :=
+  SpechtDominanceCore.standardPolytabloid_dominance_order' (k := k) (μ := μ)
 
 /-! ## 5. The reassembled `Triangular` bundle (sorry-free modulo the single core) -/
 
