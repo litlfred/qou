@@ -855,7 +855,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Birthday refinement of the Jones polynomial; in 'Surreal construction as a grading'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Jones=Markov trace in H_n(q); Khovanov strictly stronger; Conway-Kinoshita 11n34/11n42 Jones-indistinguishable but Khovanov-distinguishable — all correct knot-theory facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Concrete conjecture with stated recovery/locality/strict-refinement criteria and a computational test."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Conjecture, not derived from itself; falsification path given."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Kind conjecture; 'The conjecture is open'; 'whether non-trivial is the question'. Honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No fitted parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Refinement plausibility (YJM-depth finer than shape) + falsification (trajectory factors through endpoint) are logically coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Conjecture; no proof claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No cites[]; references named Lean infra (gonshor) + classical Khovanov fact."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Birthday refinement, YJM depth, sign sequence, gonshor map all defined/linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Pure knot theory."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Proposes a concrete, feasible computational test (11n34 vs 11n42 via Hoefsmit matrices + gonshor); reproducible plan."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a1181a2c3de9",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Well-posed open conjecture with explicit proof/disproof criteria and a testable example. No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

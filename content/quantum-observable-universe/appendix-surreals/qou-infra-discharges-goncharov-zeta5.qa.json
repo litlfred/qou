@@ -855,7 +855,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Discharge plan for Goncharov depth-3 at Q(ζ_5); in 'Transcendental accounting and discharge'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Goncharov K_5^ind≅B_3(F)⊗ℚ via 22-term; Borel dim 2 at Q(ζ_5); Markov-trace at q=ζ_5 as Z[ζ_5]-combination of Li_3 via RT expansion — correctly stated as the reduction target."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Two concrete avenues (A: Jones-coincident enumeration; B: explicit 22-term Hecke element) with stated conditions."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Discharge is posed as a question ('do these relations span the kernel?'), not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Kind conjecture; 'a substantive but partial result: it would close one specific cyclotomic case, not the general statement'. Honest about scope."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No fitted parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Avenue B logic (NF-reduction to identity mod depth≤2 ⇒ tr_M(β)=0 mod depth≤2 ⇒ G_22(ζ_5)=0 in P_3/P_2) is internally consistent; the hard step (1) is explicitly flagged as hardest."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Conjecture; QouInfraDischargesGoncharovZeta5.lean is a conjecture carrier."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No cites[]; references Goncharov/Faddeev-Kashaev/Reshetikhin-Turaev results by name in the plan."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "B_3(F), 22-term relation, Hecke NF, Jones-coincident pair, G_22(ζ_5) all defined/linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No numerical match claimed (plan stage)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Pure mathematics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Plan-stage conjecture; no witness yet."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6477ebe7a0d4",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Well-scoped discharge-plan conjecture (one cyclotomic case, not general), with two concrete avenues and the hard step flagged. No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

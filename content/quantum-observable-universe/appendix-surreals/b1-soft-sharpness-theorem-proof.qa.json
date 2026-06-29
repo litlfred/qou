@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Proof of the soft-sharpness B1 theorem; in 'The B1 theorem rows'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Borel regulator rational injectivity (Borel 1977 Thm 12.3) and D_n(z)≠0 on algebraic z≠0,1 (Lewin) are correctly stated; composition non-vanishing follows."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Three substantive steps (Borel non-vanishing, polylog non-vanishing, composition)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No assumed conclusion; non-vanishing derived from external theorems."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Proves non-vanishing (soft sharpness), not full generation; scope matches the theorem."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Steps 1-3 compose correctly to τ_arch(Li_n^q(z_K))~D_n(z_K)≠0 mod P_{n-1}."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Proof block; Lean for the parent theorem (B1SoftSharpnessTheorem) is separate."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Borel 1977 Thm 12.3 (rational injectivity) and Lewin 1991 §2 (polylog non-vanishing) correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "D_n, regulator, P_{n-1} defined/linked; F non-trivial cyclotomic specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Pure mathematics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "69e95771d670",
+          "ts": "ea6ff72ffd3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Sound non-vanishing proof citing standard regulator-injectivity and polylog non-vanishing results. No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

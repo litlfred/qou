@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Worked blow-up examples (Mobius energy, c_q at q=1, vacuum normalisation); on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "c_q|_{q=1+ε}=1/ε=ω; tr_M(1)=z=1/(√q+1/√q)→1/2+O(ε); 1/0²=ω² — correct surreal arithmetic."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Concrete worked examples; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No self-reference."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "'Significance' explicitly states the blow-up calculus is NOT needed for the main (divergence-free) mass computation; honest about secondary role."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No fitted parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Birthday-grading argument (counterterm same birthday ⇒ difference at lower birthday ⇒ st collapses to ℝ) follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Remark; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No cites[]; internal cross-links only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "ω, ε, st, Mobius energy, tr_M(1) normalisation conventions all defined/linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No numerical observable match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Renormalisation examples are formal; no falsifiable physics prediction made."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "33c40c6b6cc0",
+          "ts": "e33abaa7bd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Correct worked examples with an honest 'not load-bearing for the main computation' caveat. No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

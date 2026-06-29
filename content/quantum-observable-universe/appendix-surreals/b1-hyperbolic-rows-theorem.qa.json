@@ -892,7 +892,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "B1 hyperbolic-rows (Borromean/Whitehead/twist knots); in 'The B1 theorem rows'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Twist knot K_n genus 1 (Bring-embeddable), K_2=4_1; Bloch-Suslin step unconditional, VC step knot-specific — correct knot-theory facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Substantive per-row coverage analysis."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Kind is conjecture; title says 'conditionally reduces to VC'; rows labeled 'conditional on VC discharge'. 'eleven total rows supported by the literature' qualified by 'conditionally'. Honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No fitted parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "B1-at-depth-2 reduces to per-knot VC discharge via Bloch-Suslin chain; rate-limiting step correctly identified as VC, not Bloch-Suslin."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Conjecture; B1HyperbolicRowsTheorem.lean is a conjecture carrier."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No cites[] on this block; references the audit block + VC literature generically."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Bring-embeddable, twist knot K_n, shape parameter z_K, VC discharge all defined/linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Pure knot theory."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No witness in this block (discharge steps in the audit block)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fc2f3c692cdc",
+          "ts": "8ba453e6bd19",
+          "lean": "4e1ef2b73042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Properly-conjectural, honestly-scoped (VC-conditional) hyperbolic-rows extension. No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

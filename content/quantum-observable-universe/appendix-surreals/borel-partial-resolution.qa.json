@@ -1046,7 +1046,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Statement records Borel dimensions; 'Honest summary'/'Significance' are separated sections. Acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Borel-rank partial discharge of the keystone; in 'Transcendental accounting and discharge'."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "K-theory dimension statement (Borel regulator image); archimedean subject, correct regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Proof cites Borel 1977 dimension formula + regulator injectivity — appropriate archimedean tools for an archimedean claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/BorelPartialResolution.lean:19-22: \"theorem borel_partial (n r1 r2 : ℕ) (_ : 2 ≤ n) : borelRankPredicted n r1 r2 = (if n%2=0 then r1+r2 else r2) := rfl\"",
+        "notes": "The Lean proves only the arithmetic-core identity (definitional unfold of borelRankPredicted, by rfl), much weaker than the .md proposition about partially discharging the keystone. The docstring honestly labels it 'arithmetic core', so warn not fail."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Lean signature (Borel arithmetic core) is internally consistent and unchanged; it does not silently weaken a previously-stronger statement — it was authored as the arithmetic core."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "borel_partial is proved by rfl on a definitional unfolding, not by projecting a conclusion-typed class field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Conclusion is a genuine arithmetic equation (the Borel cases formula), not True/x=x — true but with real content (it pins the parity-cases rank)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Hypothesis 2≤n is consistent; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "minor",
+        "evidence": "lean/QOU/AppendixSurreals/BorelPartialResolution.lean:19: \"(_ : 2 ≤ n)\"",
+        "notes": "The 2≤n hypothesis is bound with an underscore and unused by the rfl proof (borelRankPredicted's defn does not branch on it). Documents the Borel n≥2 regime but is formally unused — minor."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "rfl, not decide; no masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Borel 1977 dim formula (r1+r2 for n even, r2 for n odd), the Q(ζ_6) rank-1 / Q(ζ_5) rank-2 figures, and Vol(4_1)=2Cl_2(π/3) are all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Narrative is substantive (explicit per-field ranks); only the Lean is a thin arithmetic core (flagged under proof-narrative-lean-equiv)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "'Honest summary' explicitly says Borel gives lower bounds (generators per field) but NOT the upper bound = Beilinson; 'one direction of sharpness is a theorem, the other is reduced to a known open conjecture'. Honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No fitted parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Lower-bound (Borel) vs generation (Beilinson) distinction is logically precise; depth-3 rank-2 from 4 values − 1 relation − symmetry is correct counting."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/BorelPartialResolution.lean:19-22: \"borel_partial ... = (if n%2=0 then r1+r2 else r2) := rfl\"",
+        "notes": "Lean proves the arithmetic core only (a definitional rfl identity), not the keystone-discharge proposition. Divergence is real but the docstring labels it 'arithmetic core' transparently — warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Borel 1977, Bloch 2000, Suslin 1991 correctly cited for the regulator results invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "r_1, r_2, K_{2n-1}^ind, Bring-natural field F_K=Q(z_K), Borel rank all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Ranks are exact K-theory integers, not fitted matches."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Pure mathematics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No compute witness; values are textbook K-theory."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7e6865f25af8",
+          "ts": "fd3074b16a50",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Mathematically correct, exemplary-honest narrative. Strongest objection: the Lean witness is only the arithmetic-core rfl identity (BorelPartialResolution.lean:19-22), not the keystone-discharge statement — a formalisation-completeness gap, transparently labeled, not a soundness defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

@@ -857,7 +857,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Casimir force as st of ε-vacuum gradient; surreal-appendix vacuum-energy material."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Verified: ζ(-3)=1/120 (B_4=-1/30); (π²/6)·(1/120)=π²/720; 3·π²/720=π²/240 (Casimir 1948 textbook value). Arithmetic correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Substantive conjecture with a §3b-cond conditional derivation and machine-verified prefactor/n-stability cores."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Prefactor π²/720 is derived from ζ(-3) + geometric k_perp factor, independent of the observable being matched; the disjoint-unknot identification is grounded in cited photon-representation content, not assumed to fit Casimir."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Explicitly: reproducing the textbook force is 'a consistency check, NOT a discriminating measurement'; the distinctive 1/d⁶ signal is 'not experimentally accessible'. Three sub-problems graded by tractability. Honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Prefactor fixed by ζ(-3) (q absent at leading order); ℏ_q² forced by dimensional consistency with the Hoefsmit normalisation; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "ω·ε=1 finite-product mechanism + st chain to -π²/240·ℏc/d⁴ follows; attractive sign argument consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "§3b-cond conditional: CasimirEpsilonVacuum.lean takes [VacuumEpsilon]+[PlateModeCount] as instance hyps; CasimirNStability/CasimirZetaPrefactor machine-verify the cores. Lean scope disclosed and matches the conditional claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Casimir 1948, Mohideen-Roy 1998, Lamoreaux 1997 correctly cited for the original derivation and ~1% experimental verification."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "N_⊙^in/out, ε-relaxed vacuum axiom, st, Geom_ε, ℏ_q=1-q⁻¹ all defined/linked; the n-stable functional is uniquely identified (bare disjoint-component count)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "The π²/240 match is exact (textbook), explicitly framed as a consistency check, not a fitted/cherry-picked precision claim; the discriminating 1/d⁶ term is stated as inaccessible. No fragility hidden."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Reproduces the standard Casimir force per area with correct units/sign; '∞·0=finite' is the standard surreal/regularised reading, not a conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "References the Hoefsmit-additivity probe witness + three audit docs + machine-verified Lean cores (ζ(-3)=1/120 from Mathlib Bernoulli). Reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c42bfb14f49b",
+          "ts": "e20f9573f4e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Dense but rigorous and exceptionally honest (consistency-check-not-discriminator, ζ(-3) prefactor machine-verified, distinctive signal admitted inaccessible). Strongest objection: the full categorical plate-mode-count N_⊙ construction is unbuilt — but this is explicitly stated as the open piece, not papered over."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

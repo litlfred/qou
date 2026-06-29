@@ -1011,7 +1011,434 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Statement is the boxed contact condition ⟨v_[2]([3]_q P+1)⟩≥2; interpretation is in the separate q-collatz remark blocks. Clean."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "[2]_q-contact boundary on the Reeb bundle; q-Collatz material for the appendix."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Statement is over the Skein module Z[q^{±1}] / Reeb bundle; q-integer arithmetic, no gratuitous archimedean ℝ specialisation in the claim itself."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "minor",
+        "evidence": "collatz-contact-boundary.md:74-77: \"At q=1 the average 2-adic valuation of 3n+1 ... is exactly 2 ... E[v_2]=2\"",
+        "notes": "The proof is q-integer-algebraic (correct) but the convergence threshold leans on the q=1 archimedean expectation E[v_2]=2 as the boundary case. This is the genuine q=1 specialisation (appropriate here), not a leak into a generic-ring claim — minor note only."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:97-104: \"theorem collatz_contact_boundary [ctx] : (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧ ((2:ℤ) ∣ ctx.chi_A)\"",
+        "notes": "The .md statement is the q-Collatz convergence/contact condition ⟨v_[2]⟩≥2; the Lean concludes only (q_int_2=0→kummer removable) ∧ (2∣-6) — about Kummer-obstruction removability, NOT the contact-boundary convergence claim. Lean ≠ narrative."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "critical",
+        "evidence": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:97-99: \"collatz_contact_boundary ... : (... → kummer_obstruction_removable) ∧ ((2:ℤ) ∣ ctx.chi_A)\"",
+        "notes": "The provable-kind Lean signature does not encode the .md proposition (the ⟨v_[2]⟩≥2 contact condition). It states a much weaker Kummer-parity conjunction; the file header admits 'full Lean statement is pending'. The compiled claim is not the stated proposition."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "critical",
+        "evidence": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:104: \"exact ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩\"",
+        "notes": "First conjunct is the verbatim context-class field obstruction_removable_of_even_chi applied to h1; the conclusion's first half IS a class field. Self-assuming projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:101-103: \"have h1 : (2:ℤ) ∣ ctx.chi_A := by rw [ctx.chi_A_eq]; exact ⟨-3, rfl⟩\"",
+        "notes": "The second conjunct 2∣chi_A reduces to 2∣-6, a trivially-true arithmetic fact carrying none of the proposition's contact-boundary content; combined with the self-assuming first conjunct the Lean discharges vacuously relative to the .md claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Context class (q, q_int_2=q+1, chi_A=-6, removability implication) is inhabitable; no False/0=1 premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "The Lean uses chi_A_eq and obstruction_removable_of_even_chi; no unused binder in the (weak) term. The unused-hypothesis concern is at the .md banner level (see da-non-sequitur)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Uses rw + explicit witness ⟨-3,rfl⟩, not decide; no kernel-evaluator masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Narrative math verified: [3]_q/[2]_q³ contraction; [2]_q²-[3]_q=q; v*=log[3]_q/log[2]_q<2; E[v_2]=Σk·2^{-k}=2 at q=1. All correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:97-104: \"... ∧ ((2:ℤ) ∣ ctx.chi_A) := ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩\"",
+        "notes": "The .md proposition has real content (contraction proof), but the Lean witness is content-free relative to it (self-assuming projection + 2∣-6 triviality). The formalisation is vacuous; the narrative is not."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Narrative contraction is derived from the q-integer identities, not from assuming convergence."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "minor",
+        "evidence": "collatz-contact-boundary.md:13-18: \"the q-Collatz orbit ... converges if and only if its orbit contact average ... ≥ 2\"",
+        "notes": "The boxed 'iff' is stated as a proposition, but the q=1 average-2 input is the *boundary* case and the for-all-q>1 average remains conjectural (per q-collatz-interpretation 'Remaining conjectures'). The proposition is conditional-on-5-conjectures, so not a hard overclaim, but the iff sufficiency rests on a still-conjectural average — flagged minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Only q and χ(A)=-6 (fixed invariant); threshold 2 from the algebraic v*<2 bound, no fitted constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "collatz-contact-boundary.md:1-8: \"Proposition (conditional on conj:q-aubin-lions, conj:ns-counterexample, conj:critical-exponent, prop:blowup-yekutieli, and conj:regularity-breakdown ...)\"",
+        "notes": "The conditional banner cites the Navier-Stokes conjecture cone (Aubin-Lions, NS counterexample, critical exponent, regularity breakdown), which has no bearing on a q-Collatz [2]_q-contraction contact proposition. The .ts uses[] (def:two-q-adic-valuation, conj:q-collatz, prop:root-of-unity-truncation) does NOT include those NS conjectures — the banner appears copy-pasted from the surreal-squeeze/rate-calculus cone. The conditionality is a non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:97-104: \"... := ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩\"",
+        "notes": "Lean proves a Kummer-parity conjunction (self-assuming + 2∣-6), strictly weaker/different from the .md contact-boundary convergence claim — the proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No cites[]; internal cross-links + Lean Ref [manuscript]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "v_[2], ⟨v_[2]⟩, v*, Reeb bundle, Collatz contact boundary all defined/linked; q>0 regime explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No fitted numerical observable; v*, margin q are exact."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Number theory, no physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No compute witness; algebraic."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "284d443b07fa",
+          "ts": "13cecce8fe46"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "notes": "Narrative sound; conditional banner is a mis-pasted NS cone and the Lean witness is a vacuous self-assuming projection that diverges from the .md claim. Strongest objection in referee_argument."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }

@@ -1046,7 +1046,450 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Statement is the boxed isomorphism; 'Significance' is a clearly separated section, acceptable for a proposition carrying its own discharge framing."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Depth-2 K-theory identification; in the 'Transcendental accounting and discharge' subsection."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "K-theory / archimedean-evaluation (τ_arch) statement; the subject is genuinely archimedean (regulator into ℝ/π²ℚ), correct regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Narrative proof uses Bloch-Suslin / Borel regulator injectivity — archimedean tools for an archimedean (regulator-image) claim; no leak into a generic-ring statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:36-41: \"theorem depth_2_identification [ctx : Depth2IdentificationContext] : Function.LeftInverse ... ∧ RightInverse ... := ⟨ctx.left_inverse, ctx.right_inverse⟩\"",
+        "notes": "The .md claims the boxed Bloch-Suslin identification (a real theorem via Suslin+Borel); the Lean proves only LeftInverse∧RightInverse projected from context fields that ARE those inverses — abstract bijection of two anonymous types, not the K_3^ind/G^(2) identification. Lean ≠ narrative."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:36: \"theorem depth_2_identification [ctx : Depth2IdentificationContext]\"",
+        "notes": "The compiled Lean does not encode the boxed isomorphism; it is an abstract context-bijection placeholder. Statement integrity vs the .md claim is not met (the narrative claim is stronger than what Lean states). Flagged warn — file header honestly marks it 'placeholder pending Mathlib KTheory.K3'."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "critical",
+        "evidence": "lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:39-41: \"· exact ctx.left_inverse  · exact ctx.right_inverse\"",
+        "notes": "The theorem's conclusion (LeftInverse∧RightInverse) is exactly two context-class fields, discharged by projecting them — the verbatim self-assuming-projection anti-pattern. The class field types ARE the declaration's conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Conclusion is LeftInverse∧RightInverse (not literally True/x=x); the vacuity here is self-assuming-projection, flagged under that criterion."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Context class is inhabitable (e.g. identity maps on a single type); no False/0=1 premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Both context fields are used (projected); no unused binder in the Lean term."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No decide/trivial masking in the Lean (exact projections)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Narrative math (Bloch group 5-term, Suslin iso K_3^ind⊗ℚ≅B(F)⊗ℚ, Borel injectivity, Bloch-Wigner mod π²ℚ) is standard and correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:38-41: \"⟨ctx.left_inverse, ctx.right_inverse⟩\"",
+        "notes": "The .md proposition + narrative proof are substantive, but the Lean witness is content-free (self-assuming projection of an abstract bijection). The block as a whole is not vacuous; the Lean formalisation is — flagged warn."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Narrative does not assume the identification; it derives image-equality from Suslin+Borel."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "'Scope of the result' carefully separates 'Proved' (image direction, dim=r_2) from 'Not proved' (abstract Hopf-algebra equivalence, full generation) — honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No fitted parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Steps 1-4 chain correctly (Bloch group → Suslin → archimedean image → composition)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:36-41: \"depth_2_identification ... := ⟨ctx.left_inverse, ctx.right_inverse⟩\"",
+        "notes": "Lean proves a vacuously-implied abstract bijection (projection of class fields), strictly weaker than the .md K_3^ind/G^(2) identification — the proof-statement-integrity divergence pattern."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "cites bloch2000, suslin1991 — correct for the Bloch group / Suslin isomorphism invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "G^(2), P_1, τ_arch, B(F), K_3^ind all defined/hyperlinked; F a number field, q generic."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "Pure mathematics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:59:43.812Z",
+        "reviewed_sha": "5f8babb7d67223938b7f4612f185bc22b287e716",
+        "severity": "major",
+        "notes": "Narrative is a sound, honestly-scoped depth-2 result; but the compiled Lean (depth_2_identification) is a self-assuming projection of an abstract bijection that does not encode the boxed K_3^ind identification — the formalisation does not back the claim. Strongest objection: 'lean.ref resolves to a vacuous bijection placeholder, not the stated theorem' (Depth2IdentificationBlochSuslin.lean:36-41)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:59:43.812Z"
 }
