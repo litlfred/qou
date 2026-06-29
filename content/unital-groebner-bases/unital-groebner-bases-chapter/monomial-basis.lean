@@ -3,9 +3,10 @@ import Mathlib.Data.Finset.Basic
 import Mathlib.Algebra.Ring.Basic
 
 /-!
-# Monomials, monomial bases, and leading terms
+# Monomials and monomial bases
 
-Content block for `def:monomial-basis`.
+Content block for `def:monomial-basis`. The leading-term data (LM/LC/LT)
+is split into `def:leading-term-data`.
 
 The authoritative formalization lives in
 `content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`, which defines:
