@@ -1,5 +1,6 @@
 import QOU.Mathlib.SYTBetaLagrange
 import QOU.Mathlib.SYTCornerListConnection
+import QOU.Mathlib.SYTHookFormulaBetaProd
 
 /-!
 # QOU.Mathlib.SYTHookGNWWiring — wiring the abstract β-Lagrange identity to `gnwHookIdentity`
@@ -86,5 +87,30 @@ theorem sum_betaVec_sub (l : List ℕ) :
   unfold betaVec
   rw [Finset.sum_add_distrib, sum_getD, sum_shift_triangular]
   ring
+
+/-! ## The recursive gap product as an explicit ℚ product (Vandermonde bridge keystone) -/
+
+open QOU.Mathlib.SYTBeta (betaGapProd)
+
+/-- **`betaGapProd` as an explicit ℚ product.** `(betaGapProd a t : ℚ) = ∏_{m<|t|} (a + 1 + m − t[m])`
+— each factor is cast-safe because the tail entries are `≤ a`.  This identifies the corpus' recursive
+Vandermonde factor `betaGapProd (l[i]) (l.drop (i+1))` with `∏_{j>i}(βᵢ − βⱼ)` (factor `m` is
+`l[i] + (m+1) − l[i+1+m] = βᵢ − β_{i+1+m}`), the keystone for the per-corner hook ratio. -/
+theorem betaGapProd_cast : ∀ (t : List ℕ) (a : ℕ), (∀ p ∈ t, p ≤ a) →
+    (betaGapProd a t : ℚ) = ∏ m ∈ Finset.range t.length, ((a : ℚ) + 1 + (m : ℚ) - (t.getD m 0 : ℚ))
+  | [], a, _ => by simp [betaGapProd]
+  | c :: r, a, h => by
+    have hc : c ≤ a := h c (by simp)
+    have hr : ∀ p ∈ r, p ≤ a + 1 := fun p hp => le_trans (h p (by simp [hp])) (by omega)
+    have hcast : ((a + 1 - c : ℕ) : ℚ) = (a : ℚ) + 1 - (c : ℚ) := by
+      rw [Nat.cast_sub (by omega)]; push_cast; ring
+    rw [QOU.Mathlib.SYTBeta.betaGapProd_cons, Nat.cast_mul, betaGapProd_cast r (a + 1) hr,
+        List.length_cons, Finset.prod_range_succ', hcast,
+        mul_comm (((a : ℚ) + 1) - (c : ℚ))]
+    congr 1
+    · apply Finset.prod_congr rfl
+      intro m _
+      rw [show (c :: r).getD (m + 1) 0 = r.getD m 0 from rfl]; push_cast; ring
+    · rw [show (c :: r).getD 0 0 = c from rfl]; push_cast; ring
 
 end QOU.Mathlib.SYTBetaLagrange
