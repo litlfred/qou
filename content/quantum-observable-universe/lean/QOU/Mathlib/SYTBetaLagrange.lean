@@ -165,31 +165,112 @@ theorem residPoly_natDegree_lt (β : Fin k → ℚ) (hk : 0 < k) :
       ring
   exact lt_of_le_of_lt hle (by omega)
 
-/-- **(Vieta, residual leading coefficient)** `R.coeff (k−1) = C(k,2) − ∑ⱼ βⱼ`.
-The **last** open step of the β-Lagrange identity; everything else in this file and `SYTLagrangeInterp`
-is sorry-free.
+/-! ## The `e₂` Vieta shift — proved from scratch (no `NewtonIdentities`/`Taylor`/`HasseDeriv` olean) -/
 
-**Exact remaining proof.**  With `coeff_X_mul`/`coeff_C_mul` (as in `residPoly_natDegree_lt`),
-`R.coeff (k−1) = shiftPoly.coeff (k−2) − nodePoly.coeff (k−2) + k · nodePoly.coeff (k−1)` for `k ≥ 2`
-(and `k = 1` is the direct computation `R = −C(β₀)`, `R.coeff 0 = −β₀ = C(1,2) − β₀`).  By Vieta
-(`prod_X_sub_C_coeff` at index `k−2`), `nodePoly.coeff (k−2) = e₂(β)` and
-`shiftPoly.coeff (k−2) = e₂(β+1)`.  Since `shiftPoly = nodePoly.comp (X − 1)`, the `e₂` **cancels**:
-`e₂(β+1) − e₂(β) = (k−1)·(∑β) + C(k,2)` (the `βⱼ ↦ βⱼ+1` shift of the 2nd elementary symmetric
-polynomial), and with `nodePoly.coeff (k−1) = −∑β` the result is `(k−1)∑β + C(k,2) − k∑β = C(k,2) − ∑β`.
+/-- The number of `2`-subsets of `Fin k` containing a fixed element is `k − 1` (bijection with the
+other element, `j ↦ {i, j}` over `univ.erase i`). -/
+theorem count_pairs (i : Fin k) :
+    (((univ : Finset (Fin k)).powersetCard 2).filter (fun t => i ∈ t)).card = k - 1 := by
+  have hset : ((univ : Finset (Fin k)).powersetCard 2).filter (fun t => i ∈ t)
+      = (univ.erase i).image (fun j => ({i, j} : Finset (Fin k))) := by
+    ext t
+    simp only [mem_filter, mem_powersetCard, mem_image, mem_erase]
+    constructor
+    · rintro ⟨⟨-, hcard⟩, hi⟩
+      obtain ⟨a, b, hab, rfl⟩ := card_eq_two.mp hcard
+      rcases mem_insert.mp hi with h | h
+      · exact ⟨b, ⟨(by rintro rfl; exact hab h.symm), mem_univ b⟩, by rw [h]⟩
+      · rw [mem_singleton] at h
+        exact ⟨a, ⟨(by rintro rfl; exact hab h), mem_univ a⟩, by rw [h, Finset.pair_comm]⟩
+    · rintro ⟨j, ⟨hji, -⟩, rfl⟩
+      refine ⟨⟨subset_univ _, ?_⟩, mem_insert_self i {j}⟩
+      rw [card_insert_of_not_mem (by simp [Ne.symm hji]), card_singleton]
+  have hinj : Set.InjOn (fun j => ({i, j} : Finset (Fin k))) ↑(univ.erase i) := by
+    intro a ha b hb hab
+    simp only [mem_coe, mem_erase] at ha hb
+    dsimp only at hab
+    have hb2 : b ∈ ({i, a} : Finset (Fin k)) := by
+      rw [hab]; exact mem_insert_of_mem (mem_singleton_self b)
+    rcases mem_insert.mp hb2 with h | h
+    · exact absurd h hb.1
+    · exact (mem_singleton.mp h).symm
+  rw [hset, Finset.card_image_of_injOn hinj, Finset.card_erase_of_mem (mem_univ i), card_univ,
+      Fintype.card_fin]
 
-The single missing lemma is the `e₂` shift, equivalently Newton `2·e₂ = (∑β)² − ∑β²` reducing it to the
-trivial `∑(βⱼ+1) = ∑β + k` and `∑(βⱼ+1)² = ∑β² + 2∑β + k`.  **Blocked in this build:** the pinned
-Mathlib supplies no olean for `RingTheory.MvPolynomial.NewtonIdentities`, `Algebra.Polynomial.Taylor`,
-or `Algebra.Polynomial.HasseDeriv` (verified absent), and there is no Mathlib *source* to build them; so
-the `e₂` shift must be proved from the raw `Multiset.powersetCard 2` definition of `esymm` — a
-self-contained `Multiset` step deferred to a follow-up.
+/-- `∑_{t : 2-subset} (∑_{i∈t} βᵢ + 1) = (k−1)·∑β + C(k,2)` — the double-count: each element lies in
+`k−1` of the `2`-subsets, and there are `C(k,2)` of them. -/
+theorem sum_pairs_eval (β : Fin k → ℚ) :
+    ∑ t ∈ univ.powersetCard 2, ((∑ i ∈ t, β i) + 1)
+      = ((k - 1 : ℕ) : ℚ) * (∑ i, β i) + (k.choose 2 : ℚ) := by
+  rw [Finset.sum_add_distrib]
+  congr 1
+  · have hin : ∀ t ∈ univ.powersetCard 2, (∑ i ∈ t, β i)
+        = ∑ i, (if i ∈ t then β i else 0) := by
+      intro t _
+      rw [Finset.sum_ite_mem, Finset.univ_inter]
+    rw [Finset.sum_congr rfl hin, Finset.sum_comm, Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i _
+    rw [← Finset.sum_filter, Finset.sum_const, count_pairs i, nsmul_eq_mul]
+  · rw [Finset.sum_const, Finset.card_powersetCard, card_univ, Fintype.card_fin, nsmul_eq_mul,
+        mul_one]
 
-Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001 (Vieta + the `e₂(β+1)` shift;
-§I.2). -/
+/-- On a `2`-element set, `∏(βᵢ+1) − ∏βᵢ = (∑βᵢ) + 1`. -/
+theorem pair_diff (β : Fin k → ℚ) {t : Finset (Fin k)} (ht : t.card = 2) :
+    (∏ i ∈ t, (β i + 1)) - (∏ i ∈ t, β i) = (∑ i ∈ t, β i) + 1 := by
+  obtain ⟨a, b, hab, rfl⟩ := Finset.card_eq_two.mp ht
+  rw [Finset.prod_pair hab, Finset.prod_pair hab, Finset.sum_pair hab]; ring
+
+/-- **The `e₂` shift.** `e₂(β+1) − e₂(β) = (k−1)·∑β + C(k,2)`, via the `powersetCard 2` definition of
+`esymm` (`esymm_map_val`), `pair_diff` per `2`-subset, and `sum_pairs_eval`. -/
+theorem esymm2_shift (β : Fin k → ℚ) :
+    (univ.val.map (fun i => β i + 1)).esymm 2 - (univ.val.map β).esymm 2
+      = ((k - 1 : ℕ) : ℚ) * (∑ i, β i) + (k.choose 2 : ℚ) := by
+  rw [esymm_map_val, esymm_map_val, ← Finset.sum_sub_distrib,
+      Finset.sum_congr rfl (fun t ht => pair_diff β (Finset.mem_powersetCard.mp ht).2),
+      sum_pairs_eval]
+
+/-- **Vieta at index `k−2`.** `[Xᵏ⁻²] ∏ⱼ(X − fⱼ) = e₂(f)`. -/
+theorem prodLin_coeff_2 (f : Fin k → ℚ) (hk : 2 ≤ k) :
+    (∏ j, (X - C (f j))).coeff (k - 2) = (univ.val.map f).esymm 2 := by
+  rw [prodLin_eq f, Multiset.prod_X_sub_C_coeff _ (by rw [nodes_card f]; omega), nodes_card f,
+      show k - (k - 2) = 2 from by omega]
+  norm_num
+
+/-- **(Vieta, residual leading coefficient — proved.)** `R.coeff (k−1) = C(k,2) − ∑ⱼ βⱼ`.  This was the
+last open step of the β-Lagrange identity; the whole cone is now sorry-free.
+
+For `k ≥ 2`, `R.coeff (k−1) = shiftPoly.coeff (k−2) − nodePoly.coeff (k−2) + k·nodePoly.coeff (k−1)`
+(`coeff_X_mul`/`coeff_C_mul`); by Vieta the two `coeff (k−2)` are `e₂(β+1)`/`e₂(β)`, whose difference is
+`esymm2_shift`; with `nodePoly.coeff (k−1) = −∑β` the result is `(k−1)∑β + C(k,2) − k∑β = C(k,2) − ∑β`.
+`k = 1` is the direct `R.coeff 0 = −β₀ = C(1,2) − β₀`. -/
 theorem residPoly_coeff (β : Fin k → ℚ) (hk : 0 < k) :
     (residPoly β).coeff (k - 1) = (k.choose 2 : ℚ) - ∑ j, β j := by
-  -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
-  sorry
+  rcases Nat.lt_or_ge k 2 with hk1 | hk2
+  · have hk1' : k = 1 := by omega
+    subst hk1'
+    have hnode : (nodePoly β).coeff 0 = - ∑ j, β j := nodePoly_coeff_top β hk
+    unfold residPoly bigPoly
+    simp only [Nat.sub_self, coeff_sub, Polynomial.mul_coeff_zero, coeff_X_zero, zero_mul,
+      Polynomial.coeff_C_zero]
+    rw [hnode]
+    norm_num
+  · have hsc2 : (shiftPoly β).coeff (k - 2) = (univ.val.map (fun i => β i + 1)).esymm 2 :=
+      prodLin_coeff_2 (fun i => β i + 1) hk2
+    have hnc2 : (nodePoly β).coeff (k - 2) = (univ.val.map β).esymm 2 := prodLin_coeff_2 β hk2
+    have hnc1 : (nodePoly β).coeff (k - 1) = - ∑ j, β j := nodePoly_coeff_top β hk
+    have hk1eq : k - 1 = (k - 2) + 1 := by omega
+    unfold residPoly bigPoly
+    rw [coeff_sub, hk1eq, coeff_X_mul,
+        show (X - C (k:ℚ)) * nodePoly β = X * nodePoly β - C (k:ℚ) * nodePoly β from by ring,
+        coeff_sub, coeff_X_mul, coeff_C_mul, ← hk1eq, hsc2, hnc2, hnc1]
+    have hs := esymm2_shift β
+    rw [Nat.cast_sub (by omega : (1:ℕ) ≤ k)] at hs
+    push_cast at hs
+    rw [show (univ.val.map (fun i => β i + 1)).esymm 2
+          = (univ.val.map β).esymm 2 + (((k:ℚ) - 1) * (∑ i, β i) + (k.choose 2 : ℚ)) from by
+        rw [← hs]; ring]
+    ring
 
 /-- Removing the `j = i` factor from `∏ⱼ(βᵢ − 1 − βⱼ)` flips a sign (that factor is `βᵢ−1−βᵢ = −1`). -/
 theorem prod_erase_eq_neg (β : Fin k → ℚ) (i : Fin k) :
