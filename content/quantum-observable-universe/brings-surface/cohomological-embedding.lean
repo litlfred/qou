@@ -1,6 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Tactic.FinCases
 
 
 /-!
@@ -29,7 +31,7 @@ namespace QOU.Archimedean
 
 /-- The Seifert rank of the torus knot T_{r,s}: (r-1)(s-1)/2.
     For coprime r, s this is the genus of the Seifert surface. -/
-noncomputable def seifertRank (r s : ℕ) : ℕ :=
+def seifertRank (r s : ℕ) : ℕ :=
   (r - 1) * (s - 1) / 2
 
 /-- A torus knot T_{r,s} is embeddable on Σ_g iff its Seifert rank ≤ g. -/
@@ -109,10 +111,11 @@ theorem cohomological_embedding :
     genus := 4
     genus_eq := rfl
     knots := ![
-      ⟨2, 3, by decide⟩, ⟨2, 5, by decide⟩, ⟨2, 7, by decide⟩,
-      ⟨2, 9, by decide⟩, ⟨3, 4, by decide⟩, ⟨3, 5, by decide⟩]
+      ⟨2, 3, by decide, seifertRank 2 3, 1⟩, ⟨2, 5, by decide, seifertRank 2 5, 1⟩,
+      ⟨2, 7, by decide, seifertRank 2 7, 1⟩, ⟨2, 9, by decide, seifertRank 2 9, 2⟩,
+      ⟨3, 4, by decide, seifertRank 3 4, 2⟩, ⟨3, 5, by decide, seifertRank 3 5, 1⟩]
     all_embeddable := by
-      intro i; fin_cases i <;> simp [embeddable, seifertRank, Nat.Coprime] <;> omega
+      intro i; fin_cases i <;> exact ⟨by decide, by decide⟩
     spanning_rank := 5
     spanning_rank_eq := rfl
   }, rfl, rfl⟩
@@ -121,9 +124,9 @@ theorem cohomological_embedding :
     rank 5, which exceeds g = 4. -/
 theorem t211_not_embeddable : ¬ embeddable 2 11 4 := by
   intro ⟨_, h⟩
-  simp [seifertRank] at h
+  exact absurd h (by decide)
 
 /-- The Euler characteristic of Σ₄ is −6. -/
-theorem euler_char_genus_4 : (2 : ℤ) - 2 * 4 = -6 := by norm_num
+theorem euler_char_genus_4 : (2 : ℤ) - 2 * 4 = -6 := by decide
 
 end QOU.Archimedean
