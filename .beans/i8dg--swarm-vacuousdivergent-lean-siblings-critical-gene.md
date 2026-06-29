@@ -127,3 +127,7 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 60, quantum-observable-universes)
 - pawlowski-leitner-inner-product.lean:58 (:= ip.normSq_pos i self-assuming; orthogonality claim unformalised; critical)
 - u1-equivariant-reduction.lean:49 (PhaseFiber := if ... Unit else Unit; both Unit -> theorem Unit=Unit vacuous; interior-S^1 absent)
+
+## More instances (batch 65, stochastic-mechanics)
+- phi-q-aj-machinery-identification.lean:90 (aj_saddle_compatibility : True := trivial; "fully verified" theorems only rfl/decide on String labels; critical)
+- two-filtration-bridge-small-cases.lean:31 (depth_formula axiomatized as class field; rw; size<=4 hyp unused _)

@@ -1048,7 +1048,462 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "The Statement section (lines 5-24) gives the AJ/Volume-Conjecture setup and the identification; significance/conditional framing are in separate sections. Acceptable for a conditional proposition."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "phi-q-aj-machinery-identification.lean:33: \"[content/quantum-observable-universe/braids-and-knots/phi-q-aj-machinery-identification.md]\"",
+        "notes": "AJ-conjecture / quantum-A-polynomial content; the Lean namespace is QOU.BraidKnot and the Lean cross-ref points to a braids-and-knots path, while the block lives under Stochastic-Mechanics. Subject is braid/knot algebra, mildly out of the stochastic-dynamics scope — minor placement/labelling concern."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Statement explicitly stresses the identification is 'algebraic over Z[q^{±1}] on both sides' (line 3); the archimedean saddle choice is named as the distinguishing data, not imported into the statement. Correct wall side for a generic-ring chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "phi-q-aj-machinery-identification.lean:115: \"inst.archimedean_regime = \\\"root_of_unity\\\" := by ... rfl\"",
+        "notes": "The 'proof' is a string-equality rfl on a class default field; it crosses no wall but also performs no algebraic work — there is no substantive proof body to test for archimedean leakage. Flagged minor as the formal proof is content-free (see narrative-equiv)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "phi-q-aj-machinery-identification.lean:90: \"aj_saddle_compatibility : True := trivial\"",
+        "notes": "The .md theorem claims 'Φ_q equals the AJ saddle at q=e^{2πi/N}'. The Lean theorem phi_q_eq_aj_saddle_root_of_unity instead proves inst.archimedean_regime = \"root_of_unity\" — a tautology on a default String field. The genuine mathematical content (aj_saddle_compatibility) is typed ': True := trivial'. The Lean does NOT express the .md's saddle-equality claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "critical",
+        "evidence": "phi-q-aj-machinery-identification.lean:113: \"theorem phi_q_eq_aj_saddle_root_of_unity ... : inst.archimedean_regime = \\\"root_of_unity\\\"\"",
+        "notes": "Per §3b-cond non-degeneracy: the class fields must axiomatize HYPOTHESES and the theorem must DERIVE the conclusion. Here the substantive field aj_saddle_compatibility is ': True' and the theorem's conclusion is a regime-label string equality, NOT the saddle identification the .md asserts. The provable-kind statement is a weakened/relabelled version of the claimed result."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "phi-q-aj-machinery-identification.lean:87: \"archimedean_regime : String := \\\"root_of_unity\\\"\"",
+        "notes": "The theorem reads back the class's own default field value (rfl), which is structurally a projection of provided data rather than a derivation. Not the canonical conclusion=field anti-pattern (the conclusion is a string, not the AJ identity), but adjacent — the proof asserts what the class trivially supplies."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "critical",
+        "evidence": "phi-q-aj-machinery-identification.lean:90: \"aj_saddle_compatibility : True := trivial\"",
+        "notes": "The field carrying the actual mathematical content of the identification is literally ': True := trivial' in BOTH PhiQRegulator and Li2QRegulator. The §3b-tax 'true-class-field' anti-pattern: the conjecture's content is encoded as True, so any instance discharges it vacuously and the conditional theorems prove nothing about the AJ saddles."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No False premise; classes are inhabitable (degree fields + nonzero disjunction)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "phi-q-aj-machinery-identification.lean:114: \"(K : KnotComplement) [QuantumAPolynomial K] [inst : PhiQRegulator K]\"",
+        "notes": "phi_q_eq_aj_saddle_root_of_unity never uses the [QuantumAPolynomial K] instance (the proof is rfl on PhiQRegulator's field). The AJ-existence hypothesis — supposedly the conditional backbone — is inert in the conditional theorem."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "phi-q-aj-machinery-identification.lean:138: \"rw [phi_q_eq...] ; decide\"",
+        "notes": "phi_q_li2_q_unified_via_aj closes \"root_of_unity\" ≠ \"real_positive\" by decide — a string-inequality decision masking the absence of any substantive AJ-saddle distinction; the corollary's content reduces to two distinct string literals being unequal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "The narrative literature setup (AJ conjecture, Volume Conjecture, L̂M̂=qM̂L̂ Weyl relation) is stated correctly; the IDENTIFICATION is explicitly labelled conditional, not asserted true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "phi-q-aj-machinery-identification.lean:99: \"aj_saddle_compatibility : True := trivial\"",
+        "notes": "The formal core of the claimed identification is encoded as ': True' and the conditional theorems are rfl/decide on string labels. As a formalized proposition it is content-free: the Lean establishes nothing about Φ_q/Li_2^q being AJ saddles. The .md even admits 'a tautology AT THE FORMAL LEVEL' (line ~105 of .lean docstring / md significance)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No back-fit to a numerical target; the identification is asserted as a conjecture-conditional structural claim, not derived circularly."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "phi-q-aj-machinery-identification.md:44: \"Both theorems are fully verified by Lean modulo the three class instances.\"",
+        "notes": "'Fully verified by Lean' overstates: the Lean theorems verify string-label equalities, not the saddle identifications. The substantive content is the ': True' class field. A reader takes 'fully verified modulo instances' to mean the conditional identification is machine-checked, which it is not."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No numerical free parameter; conditional on named conjectures, no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "The narrative argument (AJ algebraic object viewed through two archimedean saddles) is internally coherent as a conjecture; gaps are formalization-level (above), not narrative logic."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "phi-q-aj-machinery-identification.lean:90: \"aj_saddle_compatibility : True := trivial\"",
+        "notes": "The Lean proves regime-label string equalities (rfl) and inequality (decide), with the genuine identification content typed ': True'. This is weaker/different from the .md's claim that Φ_q/Li_2^q ARE the AJ saddles — a clear Lean-vs-narrative divergence (mirrors proof-statement-integrity)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "cites garoufalidis2004 (AJ), faddeev1995 (Φ_q), kashaev1997 + murakami-murakami2001 (Volume Conjecture), champanerkar2003 (Borromean A-polynomial/Bloch) — all present in references.ts and topically correct for the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Â_K, J_N, Φ_q, Li_2^q, the two archimedean regimes are all defined; 'saddle-point regime' is the one slightly informal term but is scoped to the conjectural identification."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No numerical match / q0 pin in this structural-identification proposition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No physical-units claim; knot-invariant/quantum-topology content."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No backing compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e9d39a46dc55",
+          "ts": "9958d1ab7ec1",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "notes": "Block-level rollup; strongest defect is the True-typed class field + relabelled tautological conclusion."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:46:28.222Z"
 }

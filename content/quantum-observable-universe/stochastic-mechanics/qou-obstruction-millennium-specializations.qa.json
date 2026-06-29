@@ -816,7 +816,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "qou-obstruction-millennium-specializations.md:3: \"The three millennium problems as specializations.\"",
+        "notes": "Block is RH/NS/BSD obstruction-cohomology content; chapter is 'Stochastic Mechanics' (Nelson/Markov). It is co-located with its parent theorem qou-obstruction-reduction in this Phase-6 consolidation hub, so placement is defensible, but the millennium-problem subject is only loosely 'stochastic' — minor placement concern."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Claims are images of a 1-dim HH^2 under three evaluation maps; consistent with the parent theorem's HH^2≅k. No false math statement asserted as proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Remark carries interprets:thm:qou-obstruction-reduction and substantive interpretive content; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No back-fit: derives proportionality from one-dimensionality of HH^2, not from the millennium answers."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "qou-obstruction-millennium-specializations.md:21: \"these three evaluations are proportional: there is a single real number ... that controls whether all three millennium problems persist\"",
+        "notes": "Strong framing that one scalar 'controls' RH/NS/BSD persistence; the Corollary then hedges ('either preserves or violates'). The control claim is interpretive (remark), not a proved cross-problem implication — borderline overclaim but remark-scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No new free parameter; χ(A)=-6 is inherited from the parent theorem, not introduced here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Proportionality follows from dim HH^2 = 1; the three evaluation maps share a one-dim source. Logically coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Remark block has no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No cites[] and no -- Ref: in this remark; nothing to misattribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "P, χ(A), HH^2 are defined upstream; evaluation maps named explicitly. No undefined key term."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Purely structural/categorical remark; no numerical match or q0-pinned value."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No physical-units or conservation claim; abstract cohomology statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No backing witness/compute attached to this remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bc68e9fa2915",
+          "ts": "f5c5f76416ca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "notes": "Block-level rollup."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:46:28.222Z"
 }

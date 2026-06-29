@@ -816,7 +816,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "c_5 bar-symmetry / Q_beta precision-ladder content sits in the 'Markov axioms and braid-link enumeration' section, with the parent prop c5-involution-leibniz-decomposition in the same section. On-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Verified the q-arithmetic: c_5 = -b^2 - 1/2 with b^2 = 1 - 1/[2]_q^2 gives -3/2 + 1/[2]_q^2, and at q=1 ([2]_q=2) = -5/4. Both match the named Lean lemmas. No false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "interprets:prop:c5-involution-leibniz-decomposition; substantive sector decomposition + falsifiable prediction. Not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Discussion section (lines 76-92) explicitly labels this a 'structural identification, not a first-principles derivation' and that the order-by-order proof is unexecuted — no smuggled circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Self-flags 2.4% empirical residual and 'open R&D' gate (lines 81,92); the c_k tiered framing (near-match, not Taylor-exact) is respected. No fitted-as-derived overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "The 1/2 and -b^2 summands are q-fixed/canonical-chain quantities, not free coefficients; no undisclosed 4th calibration introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Sector split (pure-sigma vs bar-invariant fixed-point) and the combinatorial k=5,8,11 prediction are presented as conjecture/prediction, consistent with the two-sector premise. No claimed deductive leap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Remark block; Lean content lives in the parent prop's sibling, not here."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No cites[] in .ts; the inline pentagon_reduction_li2q.py + audit-doc links resolve (computations file present; audit at 2026-05-19-pentagon-reduction-li2q.md). Link in .md drops the date prefix but the target exists."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "'averaging-resonance', sectors, and bar-class are defined in-block or via def:bar-involution. b^2, [2]_q have explicit identities."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "c5-involution-leibniz-decomposition-interpretation.md:81: \"modulo $2.4\\%$ empirical residual\"",
+        "notes": "The categorical c_5 match carries a 2.4% residual and the falsifiable k=8,11 prediction is unverified (probe queued, not run). Honestly disclosed, so a warn not a fail; reproducibility of the 2.4% number is not pinned to a committed witness in-block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No physical-units/conservation claim; Q_beta precision-ladder structure only."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "c5-involution-leibniz-decomposition-interpretation.md:73: \"the probe is queued in qbeta_decay_sdp_extended_ck.py\"",
+        "notes": "The extended-c_k SDP probe (k>=8) is described as 'queued', not executed; the 2.4% residual has no in-block witness JSON. Producer scripts exist on disk but no witness pins the prose numbers. Disclosed as open R&D -> warn."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8290cdf813a4",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Block-level rollup."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:46:28.222Z"
 }

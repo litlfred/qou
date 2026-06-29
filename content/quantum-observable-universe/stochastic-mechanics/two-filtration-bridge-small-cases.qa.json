@@ -1046,7 +1046,456 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "The proposition statement (lines 1-20) is the bare bridge-map claim with the depth formula; verification narrative and interpretation are in the body sections, acceptable for a proposition that bundles its own verification table."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Two-filtration bridge / Vol-CS period content is Markov-trace / Hecke-cell adjacent, consistent with the Stochastic-Mechanics consolidation chapter's Markov scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Statement is about depth assignment d_II(λ) ∈ {2,3} by partition bar-class; combinatorial/algebraic. Vol/CS are π^2-graded period classes, not archimedean inequalities on the statement. Correct wall side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "The verification uses knot-theory Vol/CS values and amphichirality (CS=0 mod π^2) — these are period/topology facts, not archimedean linarith/IVT machinery applied to an algebraic identity. No wall violation in the proof narrative."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean:38: \"theorem bridge_small_cases [ctx] : ∀ lam, size lam ≤ 4 → ((conj lam = lam → depth lam = 2) ∧ ...)\"",
+        "notes": "The .md claims verification 'by combining the explicit Markov-trace calculation on each Wedderburn cell with known Vol/CS values' (knot-by-knot, 4_1/3_1). The real Lean (Lake-tree) proves only a trivial rewrite of ctx.depth_formula (depth = if conj=lam then 2 else 3) over an abstract class; it does NOT compute Vol/CS or Markov traces. The Lean is strictly weaker than and structurally different from the narrative verification."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge-small-cases.lean:16: \"theorem bridge_small_cases : True := by ... trivial\"",
+        "notes": "The content-block sibling .lean is a ': True := trivial' docstub (honest, points to the Lake-tree decl). The .ts ref correctly targets the real decl. The real decl's statement is well-typed and matches the formula, but encodes the conclusion in a class field (see self-assuming-projection)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean:31: \"depth_formula : ∀ lam, depth lam = if conj lam = lam then 2 else 3\"",
+        "notes": "The class TwoFiltrationBridgeSmallCasesContext carries the conclusion (depth = if conj=lam then 2/3) as a field, and bridge_small_cases proves the goal by rw [ctx.depth_formula] + if_pos/if_neg. The theorem is a projection of its own conclusion-as-hypothesis; the n≤4 size bound is unused. Vacuous relative to the narrative."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge-small-cases.lean:16: \": True := by ... trivial\"",
+        "notes": "The content-block sibling concludes ': True'; honest docstub per AGENTS.md (real decl elsewhere), so not an audit-dodge, but the surfaced sibling is trivially-true. The real Lake-tree decl is non-True (the if-formula), so flag is minor."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No False/contradictory premise; the context class is inhabitable (depth/conj/size are free data)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean:42: \"intro lam _\"",
+        "notes": "The size lam ≤ 4 hypothesis (the entire 'small cases' restriction that is the proposition's point) is introduced as '_' and never used — the proof holds for all partitions of any size. The hypothesis carrying the 'n ≤ 4' content is inert; the depth_formula does all the work unconditionally."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No decide; proof uses rw + if_pos/if_neg. The trivial in the docstub closes a genuine ': True', not a masked substantive goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Narrative knot facts are correct: 4_1 amphichiral so CS=0; Vol(4_1)=2Cl_2(π/3); trefoil torus (Vol=0) with CS(3_1)=-π^2/6. Depth assignments follow. No false math claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge-small-cases.md:68: \"structural verification (yes) (no specific hyperbolic 3-strand example to test directly\"",
+        "notes": "The (2,1) self-conjugate case is 'verified structurally' with no concrete instance; combined with the Lean's projection-of-conclusion form, the formal verification content is thin. Narrative cases (4_1,3_1) are substantive, so warn not fail."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Depth values are read off independent knot-invariant facts (Vol/CS), not back-fitted to the bridge formula. No circularity in the narrative."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "two-filtration-bridge-small-cases.md:89: \"The two-filtration bridge map is verified at $n \\leq 4$\"",
+        "notes": "The 'verified' framing overstates what is formally established: the (2,1) case is only structural, and the Lean proves a class-projection rather than the Markov/Vol-CS computation. The .md does say 'partially discharges' (line 94), which mitigates; hence warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No free numerical parameter; depths are 2/3 by bar-class."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "self-conj->amphichiral->CS=0->depth2 and chiral->CS≠0->depth3 chains are valid given the period-grading premise."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "evidence": "lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean:31: \"depth_formula : ∀ lam, depth lam = if conj lam = lam then 2 else 3\"",
+        "notes": "Same defect as proof-narrative-lean-equiv: Lean proves a vacuously-implied rewrite of an axiomatized conclusion (and ignores the n≤4 hypothesis), whereas the .md asserts a knot-theoretic Vol/CS verification. Lean is strictly weaker/different."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "cites:[thurston1978] supports the hyperbolic-volume/period framing (Vol(4_1)=2Cl_2(π/3)); thurston1978 present in references.ts and apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "d_II, P_n/P_{n-1}, self-conjugate/chiral, dominant cell are defined or referenced (conj:two-filtration-bridge, rem:chirality-period-pairing). Unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Discrete depth assignment from exact knot invariants; no q0-pinned numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No physical-units claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No backing witness JSON; verification is by cited classical knot invariants."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "675d851e89de",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "major",
+        "notes": "Block-level rollup; strongest defect is the Lean/narrative divergence + unused n≤4 hypothesis."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:46:28.222Z"
 }

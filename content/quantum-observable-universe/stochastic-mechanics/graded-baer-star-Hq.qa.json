@@ -855,7 +855,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Graded Baer-* on H_q across the depth filtration is Markov-trace / Hecke-cell adjacent (depth-2 reduces to prop:hecke-baer-star-generic via Schur-Weyl), consistent with the chapter's Markov scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Conjecture block; claims are explicitly conjectural with a depth-by-depth reduction (depth0 field; depth1 Baker; depth2 Hecke Baer-*; depth>=3 open). No false assertion stated as proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Lean class GradedBaerStarHq carries a content-bearing field proj_selfadjoint : ∀ p, IsProjection p → star p = p over a real InvolutiveStar — not an empty marker or ': True' field. Conjecture asserts genuine content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No back-fit; the depth-2 case is reduced to an independent result (prop:hecke-baer-star-generic), not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "authorNotes + body label depth>=3 'open' and the discharge target as a candidate program; the 'three free consequences if discharged' (line 28) are explicitly conditional. No conditional-as-proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No numerical free parameter; structural conjecture about projection systems."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Reduction-to-known-structure ladder is coherent; each depth's analogue is named (field / Baker / Hecke / open). No claimed deduction that fails."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Lean class encodes the conjecture's Baer-* content (proj_selfadjoint) with the open instance carrying sorry per §3b; matches the .md's conjectural framing and depth-graded projections. validation:'stub' is honest. No divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "cites bloch2000 + kontsevich1995 for period/motivic-period infrastructure, consistent with the Goncharov-period / motivic framing; both in references.ts. Baker 1966 cited only in prose (not in cites[]), no misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Baer-*-ring, projections, depth filtration G^{(n)}, bar involution *:q->q^{-1}, P_n/P_{n-1} are defined/referenced; IsProjection abstracted in Lean per conjectural status. Acceptable."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No numerical content; purely structural conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No physical-units claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No backing compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bd41655c4f46",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Block-level rollup."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:46:28.222Z"
 }

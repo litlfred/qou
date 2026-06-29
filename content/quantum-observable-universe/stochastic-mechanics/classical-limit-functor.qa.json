@@ -873,7 +873,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "classical-limit-functor.lean:32: \"Ref: [manuscript] Chapter 8, Section 5\"",
+        "notes": "Definition of the q->1 classical-limit functor; Lean namespace QOU.AlgebraicSubstrate and its own docstring cite 'Chapter 8' while the block lives in the Stochastic-Mechanics chapter. The q->1 limit underpins the obstruction blocks co-located here, so placement is defensible, but the cross-chapter labelling is inconsistent."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Statement is generic categorical/algebraic: monoidal functor C_q->C_1, ℏ_q=1-q^{-1}->0, Jackson q-derivative, braiding->swap. No archimedean construct (Real.*, ordering 0<q, sqrt) on the q-side of the wall; q->1 limit is a formal-deformation statement. Correct wall side."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Standard facts: braided->symmetric as R(q)->id, q-derivative->ordinary derivative, exact-but-not-full. All correct for a deformation-collapse functor."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Definition names a genuine construction with three concrete actions plus exactness/non-fullness; Lean structure has a content-bearing braiding_trivializes field and not_full : ¬Functor.Full. Not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Definition, not a derivation; nothing assumed to reach a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Claims (exact, not full) are scoped; is_exact is stated as an abstract Prop field in Lean, not over-asserted as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No parameter beyond q; the functor is defined by the q->1 collapse."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Three actions are coherent consequences of q->1; no claimed deduction that fails."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Lean structure ClassicalLimitFunctor mirrors the .md: monoidal functor field, braiding_trivializes (=braiding->swap action 3), not_full (=quantum info lost). is_exact is an abstract Prop, matching the .md's 'is exact ... but not full'. No divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No cites[] and only [manuscript] -- Ref: in Lean; nothing to misattribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "ℏ_q, Jackson d_q, braiding σ_{X,Y}, swap τ all defined inline; refterms monoidal/braided/symmetric resolve. Unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No physical-units claim; categorical definition."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ac4bd933fd09",
+          "ts": "6fbfbd3b9f26",
+          "lean": "aac9897c9e06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Block-level rollup."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:46:28.222Z"
 }

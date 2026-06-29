@@ -762,7 +762,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "qou-obstruction-reduction-proof.md:1: \"Proof of (a). Three ingredients combine\"",
+        "notes": "Hochschild-cohomology obstruction proof; chapter is Stochastic Mechanics. Co-located with its theorem qou-obstruction-reduction in this consolidation chapter, so placement is acceptable, but the subject is algebraic-substrate/lifting cohomology rather than stochastic dynamics."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Steps cite standard results (Ad^G=0 for semisimple G; Van den Bergh/Poincare duality for Frobenius algebras; Drinfeld uniqueness of the quantized enveloping deformation). dim SU(2)=3, HH^2≅(HH^1)^vee one-dimensional — coherent. No false sub-claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Substantive three-step proof; not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No back-fit; the chain observability->Frobenius duality->Drinfeld rigidity is forward. χ(A)=-6 enters as a computed Euler characteristic, not assumed to make a target match."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Each step is qualified by its cited mechanism; the one-dimensionality is argued via Drinfeld rigidity, not asserted beyond support."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No free parameter introduced; q is the unique deformation direction (Drinfeld), which is the content, not a hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "severity": "minor",
+        "evidence": "qou-obstruction-reduction-proof.md:37: \"HH^2 ≅ (HH^{d-2})^∨ = (HH^1)^∨. The outer derivation space is one-dimensional because the Lusztig integral form ... is a one-parameter family\"",
+        "notes": "Step 3 leans on HH^1 (outer derivations) being one-dimensional via Drinfeld rigidity of the deformation. The identification of HH^1 with the deformation parameter space is standard but stated without a citation in-line; a referee would want the HH^1=outer-derivations <-> deformation-directions link made explicit. Minor gap, not a break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Proof block has no own Lean sibling; the theorem block carries the formalization ref."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "\\cite{yekutieli2010} invoked for Hochschild/Van den Bergh duality on Frobenius algebras; yekutieli2010 present in references.ts and topically apt (Yekutieli's Hochschild cohomology work). No misattribution found."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "HH^n, Ad, d=dim G, χ(A), κ_0 all defined upstream and referenced via hyperlinks (def:classical-limit-obstruction, thm:qu-to-qou, prop:ns-kummer-specialisation — all resolve)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Pure algebraic-cohomology proof; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No physical-units claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "No backing compute witness; proof is by literature-cited cohomology argument."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "92de690705f8",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:46:28.222Z",
+        "reviewed_sha": "a9ef10a41722cda328a5fb15f889a42c465240bf",
+        "notes": "Block-level rollup."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:46:28.222Z"
 }
