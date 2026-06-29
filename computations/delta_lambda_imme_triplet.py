@@ -51,6 +51,8 @@ from qou_substrate.constants import q_at  # noqa: E402
 TRIPLETS = {
     6: [("6He", 2, 4, 29.2712), ("6Li", 3, 3, 31.9946), ("6Be", 4, 2, 26.9241)],
     8: [("8Li", 3, 5, 41.2770), ("8Be", 4, 4, 56.4995), ("8B", 5, 3, 37.7375)],
+    10: [("10Be", 4, 6, 64.9771), ("10B", 5, 5, 64.7511), ("10C", 6, 4, 60.3210)],
+    12: [("12B", 5, 7, 79.5746), ("12C", 6, 6, 92.1618), ("12N", 7, 5, 74.0410)],
 }
 
 # SAME-T correction: the T₃=0 GROUND state is T=0; its T=1 isobaric-analog state
@@ -58,7 +60,8 @@ TRIPLETS = {
 # E_x. Subtracting E_x from the T₃=0 binding makes all three members T=1 — the
 # clean Wigner IMME. E_x are MEASURED excitation energies (inputs, not fits).
 #   A=6: ⁶Li 0⁺ T=1 IAS at 3.5630 MeV.   A=8: ⁸Be 2⁺ T=1 IAS at 16.626 MeV.
-IAS_EX_MEV = {6: 3.5630, 8: 16.626}
+#   A=10: ¹⁰B 0⁺ T=1 IAS at 1.7402 MeV.   A=12: ¹²C 1⁺ T=1 IAS at 15.110 MeV.
+IAS_EX_MEV = {6: 3.5630, 8: 16.626, 10: 1.7402, 12: 15.110}
 
 
 def main() -> int:
