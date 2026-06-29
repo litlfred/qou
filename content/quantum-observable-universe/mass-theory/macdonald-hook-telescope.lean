@@ -55,7 +55,7 @@ representation) lives in a follow-up file. -/
     semantics for downstream lemmas without depending on the full
     partition combinatorics machinery (which lives in
     `y-lambda-closed-form-wenzl-bridge.lean`). -/
-constant wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ
+opaque wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ
 
 /-- The right-hand side of the telescope: a single geometric ratio. -/
 noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
@@ -111,7 +111,7 @@ single geometric factor, giving the canonical hook-content form. -/
 
 /-- Per-partition Wenzl Schur element value, abstracted (full
     definition in `y-lambda-closed-form-wenzl-bridge.lean`). -/
-constant wenzlSchurElementValue (Q X : ℝ) (lamHookContent : ℝ → ℝ → ℝ) : ℝ
+opaque wenzlSchurElementValue (Q X : ℝ) (lamHookContent : ℝ → ℝ → ℝ) : ℝ
 
 /-- The clean closed form for `y_λ`: numerator is the Schur
     principal-specialisation product, denominator is the telescope. -/
