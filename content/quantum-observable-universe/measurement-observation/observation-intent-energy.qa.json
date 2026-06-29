@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Block is listed in Ch20 'Bundle Structure and Observation' section manifest; interprets def:observation; placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "ħ_q = 1 − q⁻¹ and δq>0 shifting q upward are consistent with def:observation/def:crossing-energy; no false math claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Remark carries genuine interpretive content (quantum vs classical energy distinction); not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No derivation back-fitting; remark interprets an existing definition, no calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Claims framed as interpretation ('physically, intent increases...'); no derived-as-proved overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No new free parameters introduced; δq and ħ_q already defined in the substrate chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "'every observation costs at least one crossing's worth of ħ_q' follows from def:observation (one crossing per observation); no logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Remark block; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "References def:observation and def:crossing-energy only (internal cross-refs); no external citation to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "'intent', 'classical energy', 'quantum energy' used interpretively; ħ_q and δq grounded in cited defs."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No numerical match or witness-backed value asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Energy-cost-of-observation framing is internally consistent; no unit error or conservation violation (entropy decrease paid by quantum energy increase)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No backing witness/compute to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "29fbc402de4b",
+          "ts": "60b264bc4582"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Sound interpretive remark properly linked to def:observation; no substantive objection. Strongest minor: sock-drawer prose is colloquial but acceptable in a remark."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:58:10.408Z"
 }

@@ -53,3 +53,6 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 37, mass-theory)
 - wigner-2-coefficient.lean:126 (def := projects 2 ctx claim fields; declared def to dodge sec1a audit; critical)
 - alpha-shift-torus-knot.lean:5 (defines alphaShift:=k*(p-1), proves := rfl tautology; max-pole-order claim unformalised; shadows lib decl)
+
+## More instances (batch 43, measurement-observation)
+- sorting_color_energy.lean:52-53 (:= ctx.claim_eigenvalues self-assuming projection; only item 1/4 formalised; stale braids-and-knots/ docstring path; critical)

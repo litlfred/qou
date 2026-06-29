@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Listed in Ch20 bundle-observation section; interprets def:observation; placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No false claim; flow/observation decomposition of the braid word is an interpretive framing."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Carries content (two-source braid word; reachable-section enlargement); not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No back-fitting; interprets def:observation and def:bundle-initial-conditions."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "'reachable sections larger than determined set' is consistent with the open-map remark it builds on; not overstated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Flow (Reeb-determined) vs observation (open-map, undetermined) split follows from the prior open-map remark; internally coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Remark block; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "References def:observation, def:bundle-initial-conditions, and Chapter 8 info-theory; internal, appropriately invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "minor",
+        "evidence": "observation-braid-not-predetermined.md:20: \"The computable sections $E$\"",
+        "notes": "Uses bare symbol $E$ for computable sections; AGENTS.md notation register marks '$E$ alone = not used' (collision-prone). Minor register/notation ambiguity, not a semantic one."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No numerical match asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Position-without-momentum / horizontal-transport framing internally consistent; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No backing witness/compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "78ac40a45fc6",
+          "ts": "9f8e42d66573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Sound interpretive remark; only minor objection is the bare-$E$ notation (line 20) flagged by the notation register."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:58:10.408Z"
 }

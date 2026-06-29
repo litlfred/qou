@@ -762,7 +762,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Proof of prop:sorting-color-energy, co-located in the same Ch20 section; placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Verified: idempotents e₊=(T+q⁻¹)/(q+q⁻¹), e₋=(q−T)/(q+q⁻¹) satisfy e₊+e₋=1; eigenvalue gap q−(−q⁻¹)=q+q⁻¹; inv(π) is the correct minimal-transposition count."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Proof has genuine algebraic content (root computation, idempotents, inversion-count argument); not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Eigenvalues derived from the Hecke quadratic, not assumed; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Energy '6.033 action units' stated with ≈-derived q₀ value; framed as cost stored in gauge DOF, not an experimental prediction."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No free parameter; q+q⁻¹ at q₀ is fully determined by the substrate pin."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Steps (1)-(4) chain correctly: roots → idempotents/eigenspaces → eigenvalue gap → inv(π) total; each step follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "major",
+        "evidence": "sorting_color_energy.lean:51: \"def sorting_color_energy ... := ctx.claim_eigenvalues\" formalizes only item (1)",
+        "notes": "The narrative proof covers items (1)-(4); the Lean only addresses the eigenvalue claim (item 1) and does so by projecting a class field (see prop block's self-assuming-projection finding). The proof's sorting/energy/inversion content has no Lean counterpart."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Cites 'standard result from combinatorics' for inv(π)=min adjacent transpositions, which is correct (well-known); no mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "T, e±, Sym²/Λ², inv(π) all standard and unambiguous in context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "q+q⁻¹≈2.011 at q₀ is exact-by-formula given the pin, not a tuned numerical near-match; no cross-anchor swing claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Energy stored in gauge DOF as observer record; consistent framing, no conservation/unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "3×2.011=6.033 reproduces trivially by hand; no external witness drift involved."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cdff6abdaad5",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "major",
+        "notes": "Narrative proof is mathematically sound across all four items, but its Lean backing (sorting_color_energy.lean) formalizes only item (1) and does so vacuously via ctx.claim_eigenvalues; strongest objection: Lean does not discharge the proof, it assumes the conclusion."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:58:10.408Z"
 }

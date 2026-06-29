@@ -1009,7 +1009,428 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "minor",
+        "evidence": "sorting-color-energy.md:24: \"This projection is the Ad component of the observation: it acts on the colour fibre by rotating the gauge degrees of freedom...\"",
+        "notes": "Items (2) carries physical-interpretation prose ('rotating the gauge degrees of freedom from disordered to ordered') inside the proposition statement; per voice-statement-no-interpretation this interpretive layer belongs in a linked remark. The bare claim is the projection; the gauge-DOF gloss is interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Proposition is in the Ch20 bundle-observation section manifest; sorting/colour-fibre energy is observation content; placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Statement is algebraic (Hecke eigenvalues q, −q⁻¹; inv(π)); the single numeric evaluation ΔE≈2.011 'at q=q₀' is the archimedean specialisation flagged with ≈, no ordering/Real machinery in the generic claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Lean def is over generic [Field R]; eigenvalue identity uses only q⁻¹/negation, no linarith/IVT/Real.* — correct base-ring side."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "major",
+        "evidence": "sorting_color_energy.lean:51-53: \"def sorting_color_energy ... : ctx.sym_eigenvalue = ctx.q ∧ ctx.wedge_eigenvalue = -(ctx.q⁻¹) := ctx.claim_eigenvalues\"",
+        "notes": "The .md proposition asserts four items (eigenspace decomp, sorting=projection, energy gap q+q⁻¹, total inv(π)·(q+q⁻¹)); the Lean signature encodes ONLY item (1)'s eigenvalue equality and nothing about Sym²/Λ² decomposition, projection, or energy. Lean proves strictly less than the narrative claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "critical",
+        "evidence": "sorting_color_energy.lean:46: \"claim_eigenvalues : sym_eigenvalue = q ∧ wedge_eigenvalue = -(q⁻¹)\"",
+        "notes": "The Lean 'discharges' the eigenvalue claim by reading it back out of a class field whose type IS the conclusion — the statement is satisfied only by assuming itself as a hypothesis. This is a weakened/axiom-injected formalization, not a derivation of the proposition's content."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "critical",
+        "evidence": "sorting_color_energy.lean:52-53: \"... := ctx.claim_eigenvalues\"",
+        "notes": "Textbook self-assuming projection: SortingColorEnergyContext.claim_eigenvalues has exactly the def's conclusion type, and the body is the bare field projection ctx.claim_eigenvalues. Per §3b-cond/proof-no-self-assuming-projection the class must carry sub-hypotheses the proof composes, not the conclusion itself."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Conclusion is a non-trivial field equality (sym_eigenvalue=q ∧ wedge_eigenvalue=−q⁻¹), not True/x=x; the vacuity is via self-assuming projection (flagged separately), not a tautological goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No False/0=1 hypothesis or uninhabited type; the context class is inhabitable, so no False.elim trivialization."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "The single class instance [ctx : SortingColorEnergyContext R] is used (its claim_eigenvalues field is projected); no stray unused binder. (The deeper issue is that the used hypothesis IS the conclusion — see self-assuming-projection.)"
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No decide/trivial/native_decide; the body is a direct field projection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Verified the four items: roots of T²=(q−q⁻¹)T+1 are q,−q⁻¹ (sum q−q⁻¹ ✓, product −1 ✓); gap q+q⁻¹ ✓; inv(π) minimal transpositions and C(n,2) worst case ✓. Math is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "major",
+        "evidence": "sorting_color_energy.lean:52-53: \"def sorting_color_energy ... := ctx.claim_eigenvalues\"",
+        "notes": "The narrative proposition is contentful, but its Lean formalization is vacuous (self-assuming projection of a class field equal to the conclusion). The claim is true mathematically; the Lean artifact provides no verification."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Narrative derives eigenvalues from the Hecke quadratic, not assumed; the only circularity is at the Lean layer (caught by self-assuming-projection), not in the math derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Items framed as exact algebraic results; the 2.011 value carries 'At q=q₀' and is a specialisation, not an absolute prediction."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "q+q⁻¹ at q₀ is determined by the substrate pin; no off-menu coefficient or 4th calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Items (1)→(4) chain coherently; eigenvalue gap → per-crossing energy → inv(π)·gap total each follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "major",
+        "evidence": "sorting_color_energy.lean:51: \"def sorting_color_energy {R} [Field R] [ctx : SortingColorEnergyContext R] : ctx.sym_eigenvalue = ctx.q ∧ ...\"",
+        "notes": "Lean encodes only item (1) and proves it vacuously (ctx.claim_eigenvalues); items (2)-(4) (projection, energy gap, total inv(π)) absent. Lean proves something strictly weaker and vacuously-implied vs the .md proposition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "References rem:r-matrix-braiding (internal); Hecke relation and inv(π) are standard, correctly invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "σᵢ, V⊗V, Sym²/Λ², inv(π), 'colour fibre' all defined/standard; no ambiguous 'the unique X'."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "ΔE=q+q⁻¹≈2.011 is exact-by-formula at the pin, not a tuned near-match; no cross-anchor swing or stale-q₀ dependence."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Energy deposited in colour fibre per crossing; consistent with the framework's crossing-energy notion, no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "2.011 reproduces from q₀≈1.1097 (1.1097+0.9011) by hand; no external witness to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c0404eca0594",
+          "ts": "615760fbe885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "major",
+        "notes": "Narrative proposition is mathematically correct (eigenvalues, projection, inv(π) energy), but the Lean backing is a self-assuming projection (sorting_color_energy.lean:52-53 := ctx.claim_eigenvalues) that (a) formalizes only item (1) and (b) discharges it by assuming it as a class field. Strongest objection: the formalization verifies nothing — refactor the class to carry the Hecke quadratic as hypothesis and DERIVE the eigenvalues, or downgrade the Lean to an honest sorry+Ref."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:58:10.408Z"
 }

@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:51.276Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Listed in Ch20 bundle-observation section; interprets def:observation; placement correct."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Observation as an open map on the braid: intent, crossings, and input': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No false mathematical claim; 'Toffoli requires three crossings' cross-refs prop:toffoli-transfer-matrix."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Observation as an open map on the braid: intent, crossings, and input' presents substantial mathematical content: An observation ([observation](#def:observation)) is reflected in the braid as an...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Carries interpretive content (observation = crossing injection = computational input); not tautological."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Observation as an open map on the braid: intent, crossings, and input'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No back-fitted derivation; interprets def:observation."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Observation as an open map on the braid: intent, crossings, and input' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Claims framed interpretively; the open-map ⇒ undetermined-outcome statement is hedged ('not necessarily determined')."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +196,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Observation as an open map on the braid: intent, crossings, and input'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No free parameter introduced."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +230,23 @@
         "notes": "The argument flow in 'Observation as an open map on the braid: intent, crossings, and input' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "minor",
+        "evidence": "observation-braid.md:5: \"the outcome of an observation is not necessarily determined by the initial conditions\"",
+        "notes": "The inference 'observation is an open map ⇒ outcome not determined by S₀' is a heuristic leap: open maps are still (deterministic) functions; openness does not by itself entail indeterminacy. Acceptable in an interpretive remark but the logical bridge is thin."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +265,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Remark block; no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +299,21 @@
         "notes": "No citations are present in 'Observation as an open map on the braid: intent, crossings, and input', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "References def:observation and rem:toffoli-q-and / prop:toffoli-transfer-matrix; internal, appropriately invoked."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +333,21 @@
         "notes": "Key terms and symbols in 'Observation as an open map on the braid: intent, crossings, and input' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "'open map', 'crossing injection', 'input' used consistently with prior definitions; no incompatible readings."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +367,21 @@
         "notes": "The algebraic and logical relations in 'Observation as an open map on the braid: intent, crossings, and input' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No numerical match asserted."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +401,21 @@
         "notes": "The physical concepts described in 'Observation as an open map on the braid: intent, crossings, and input' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "Crossing-per-observation and Toffoli=3-crossings framing internally consistent; no measurement contradiction."
       }
     ],
     "da-reproducibility": [
@@ -253,6 +435,21 @@
         "notes": "The derivation steps and formal definitions in 'Observation as an open map on the braid: intent, crossings, and input' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/observation-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "notes": "No backing witness/compute."
       }
     ],
     "da-referee-verdict": [
@@ -273,6 +470,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Observation as an open map on the braid: intent, crossings, and input' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "e0719092f034",
+          "ts": "ec7ef50144b6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:58:10.408Z",
+        "reviewed_sha": "87f26b647821db3b015a89d2090afee2eb26aab5",
+        "severity": "minor",
+        "notes": "Sound interpretive remark; strongest objection is the thin open-map ⇒ indeterminacy inference (observation-braid.md:5), which is heuristic rather than proved but acceptable in a remark."
       }
     ],
     "voice-status-leak": [
@@ -1082,5 +1295,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:58:10.408Z"
 }
