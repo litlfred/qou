@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NoncommRing
 import Mathlib.Tactic.LinearCombination
 
 
@@ -69,7 +70,7 @@ theorem color_recovers_resolvent {R : Type*} [CommRing R]
 theorem shifted_sum {R : Type*} [CommRing R] (c : ColorTubeCoordinates R) :
     c.σ + c.r + c.g + c.b = (c.w₁ + c.w₂ + c.w₃ + c.w₄) - 4 * c.z := by
   rw [c.σ_eq, c.r_eq, c.g_eq, c.b_eq]
-  ring
+  noncomm_ring
 
 /-! ## Color-tube invariants and the Bring constraint variety
 

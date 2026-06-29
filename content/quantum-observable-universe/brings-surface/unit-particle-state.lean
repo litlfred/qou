@@ -20,6 +20,8 @@ set_option autoImplicit false
 
 namespace QOU.AlgebraicSubstrate
 
+open CategoryTheory
+
 universe u v
 
 /-- **UnitParticleState**: the fundamental generator Li_q(z) of the
