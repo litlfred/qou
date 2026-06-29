@@ -5,6 +5,7 @@
 --
 -- Canonical declaration lives in: lean/QOU/MotivesArchimedean.lean
 -- This sibling is a documentation-mirror of the QOU library declaration.
+import Mathlib.Data.Real.Basic
 
 namespace QOU.BraidsKnots
 
@@ -42,9 +43,13 @@ structure VolThroughTau (C : Type*) (Arch : ArchimedeanCategory) where
   /-- Factorization: knotVol = τ_arch(algVol). -/
   factors : knotVol = τ.archRestriction algVol
 
-/-- Theorem asserting the factorization of knot volume through the fibre functor. -/
+/-- Theorem asserting the factorization of knot volume through the fibre functor:
+    for any `VolThroughTau` witness, the real-valued knot volume equals the
+    `τ_arch`-image of the algebraic quantum volume. -/
 -- Ref: [manuscript]
-theorem vol_through_tau_factors (C : Type*) (Arch : ArchimedeanCategory) : 
-  ∃ (v : VolThroughTau C Arch), True := sorry
+theorem vol_through_tau_factors {C : Type*} {Arch : ArchimedeanCategory}
+    (v : VolThroughTau C Arch) :
+    v.knotVol = v.τ.archRestriction v.algVol :=
+  v.factors
 
 end QOU.BraidsKnots

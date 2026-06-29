@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.Ring.Defs
 import Mathlib.Data.Finset.Basic
 
 
@@ -60,6 +61,7 @@ theorem TowerPairEqualityFixedLevel
     pairContribTotal D = D.zSq * ∑ p ∈ D.PnFinset, D.pairContrib p :=
   rfl
 
+open scoped Classical in
 /-- Sanity: the pair-contribution formula is symmetric under
     relabelling of the index set's elements. The underlying
     `Finset.sum` is invariant under bijection. -/

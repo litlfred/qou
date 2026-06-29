@@ -12,8 +12,22 @@
   Ref: [hoefsmit1974], [wenzl1988]
        [manuscript] §5.12, prop:universal-braid-branching
 -/
+import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 namespace QOU.BraidKnot
+
+/-- Number of standard Young tableaux of skew shape `lambda / mu`, with
+    partitions presented as weakly-decreasing `List ℕ` row lengths.
+
+    The correct constructive definition (recursion on outer-corner removal in
+    Young's lattice, with base case `f^{μ/μ} = 1`) is formalised in the QOU
+    library at `QOU.Archimedean.SkewSYT.skewSYTCount` over the `Partition`
+    type. Here it is taken as an external datum so this documentation-mirror
+    sibling compiles standalone without depending on the library build. -/
+-- Ref: [hoefsmit1974] Hoefsmit, Representations of Hecke algebras of finite
+--   groups with BN-pairs of classical type, PhD thesis, UBC 1974, §2.3.
+axiom skewSYTCount : List ℕ → List ℕ → ℕ
 
 /-- Pieri rule for skew SYT counts: adding one cell decomposes.
     f^{λ⁺/μ} = Σ_{λ: λ⁺ covers λ in Young's lattice} f^{λ/μ} -/
