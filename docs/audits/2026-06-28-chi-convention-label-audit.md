@@ -65,6 +65,32 @@ Hoefsmit/native families declared nothing.
 42 scanned · 22 ok · 0 mismatch · 0 unknown · 0 missing-inferable · 20 missing-ambiguous
 ```
 
+## Off-canonical consumer finding (which paths use the averaged caches)
+
+Tracing the 26 off-canonical (averaged / B) caches' consumers:
+
+- **The canonical BINDING path is clean.** `binding_canonical.py` uses
+  `markov_trace_canonical.tr_M_element` (the Jones–Markov trace **C**), built
+  symbolically from `atom_braid_word_3A`. It never loads an averaged cache. So
+  there is **no binding bug** from the off-canonical caches.
+- **The averaged caches feed the mass / vol-density path.**
+  `canonical_tr_m_via_chi_cache.py::canonical_tr_m` loads
+  `chi-{atom}-h{n}-at-q0-50dps` (averaged numerical) — and falls back to the
+  symbolic `chi-{atom}-h{n}` (also averaged) — so it computes the **averaged
+  (B)** tr_M despite its "canonical" name. Its 6 consumers are mass-table /
+  vol-density / per-knot probes, including `_li_2_q_util.py`
+  (`vol_density_per_block`, the per-knot density ρ(K) in
+  `m(K) = m_e·Vol(K)·ρ(K)/ℏ_q²`).
+
+**Scoped conclusion:** the mass/vol-density path runs on convention **B**
+while the canonical binding runs on **C**. This is a genuine convention
+inconsistency in a "canonical"-named helper, but **not** asserted here as a
+numerical bug — the mass formula is separately calibrated and routes absolute
+mass through the `canonical_mass.py` facade (per the AGENTS.md guardrail), so
+whether switching `canonical_tr_m_via_chi_cache` to the sign-only (A) cache
+changes any production number needs a compute-integration-watcher pass.
+Tracked as follow-up (bean), not fixed on this branch.
+
 ## Follow-up — the 20 `missing-ambiguous`
 
 These carry no producer field the registry recognises and were **not**
