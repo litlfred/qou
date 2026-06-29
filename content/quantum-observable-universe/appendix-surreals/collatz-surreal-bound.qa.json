@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Collatz surreal bound remark in sec:millennium-pnp-collatz; fits the Collatz-family subsection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The order inequality V(δ)≍δ^2·ε^-1 > Δ_q≍ε^3 in ℝ(ε) is correct; the remark explicitly does NOT claim to prove classical Collatz."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Has interpretive content (rogue-drift cost vs mass-gap budget in the ω-adic order); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No back-fitting; relies on the cited surreal-squeeze and contact-boundary, not on assuming Collatz."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Explicit 'Non-trivialisation of Collatz' paragraph: 'does *not* prove Collatz in classical arithmetic' and recovery only 'under the hypothesis that the resolution admits a well-defined standard part'. Appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "δ standard real, ε Reeb infinitesimal; no fitted parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "V(δ)>Δ_q ⇒ no standard-real rogue drift persists is a valid order argument within the stated (conditional) framework."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites conway1976 (surreals), lagarias2010 (Collatz survey) — both appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "rogue orbit, rogue drift δ, Ω_q, Δ_q all defined/cross-linked; the contact-volume accounting is explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Number theory via contact geometry; no physics measurement at stake."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b7c082a5fe03",
+          "ts": "284bc39fc4cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "verdict=clean. The remark inherits the trivial-but-true squeeze inequality and applies it to Collatz while explicitly disclaiming any proof of the classical conjecture; honestly scoped, no surviving objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

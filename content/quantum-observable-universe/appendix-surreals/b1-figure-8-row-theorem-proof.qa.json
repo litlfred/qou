@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Proof of the figure-8 B1 row in sec:surreal-b1-theorem-rows; fits the B1-theorem-rows subsection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Vol(4_1)=2 Cl_2(π/3)≈2.0299 ✓; Murakami-Murakami 2001 proved VC for 4_1 ✓; Bloch-Suslin depth-2 / K_3^ind regulator steps are standard. Correct combination of published results."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Substantive five-step proof combining Bloch-Suslin, Borel rank-1, Hoefsmit/Markov pairing, and Murakami-Murakami; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The numeric 2 Cl_2(π/3) is cross-checked by an independent 50-dps witness and by Murakami-Murakami's geometric Vol — not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Step 1 is labeled 'theorem-level (no conditional)' for the depth-2 identification it cites; the proof claims discharge only at this single row, scope-appropriate."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No fitted constant; ζ_6, e_{(2,2)}, the Markov trace are all canonical."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Steps chain coherently: inclusion (Step1) + Borel rank-1 line (Step2) + numeric pairing (Step3) + VC asymptotic (Step4) ⇒ row discharged (Step5)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Proof block, no Lean sibling of its own; it discharges prop:b1-figure-8-row-theorem."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Murakami-Murakami 2001 (VC for 4_1) and Bloch-Suslin/Borel are invoked for exactly the results they prove; correct attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "G^(2), τ_arch, e_{(2,2)}, D(ζ_6)=Cl_2(π/3) all cross-linked or standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The 2.029… value matches both the Hoefsmit/Markov pairing (50-dps witness) and the geometric Vol(4_1); robust, not a fit-noise coincidence."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Number-theory / knot-theory proof; no physics measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Step 3 cites a 50-dps witness (conj:bring-figure-eight-depth-2-witness); the value 2.0299 is reproducible from Cl_2(π/3). No drift evident from the prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bbf8c3405d5b",
+          "ts": "3a3902c36e23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "verdict=clean. A genuine, correctly-attributed combination of published theorems discharging one B1 row; strongest objection (depth-2 identification is conditional) is addressed by citing it as theorem-level (Bloch-Suslin)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

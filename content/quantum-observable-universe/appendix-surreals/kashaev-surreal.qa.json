@@ -855,7 +855,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Kashaev-as-surreal-standard-part conjecture in sec:surreal-speculative; fits the speculative-reformulations subsection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Kashaev statement Vol = 2π lim log|J_K(ζ_n,n)|/n (Kashaev 1997) is stated correctly; the surreal reformulation is flagged 'does not solve' the conjecture. No false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Content: separates the algebraic side (rational-in-ω evaluation) from the geometric side (Vol identity) and asserts equivalence of the limit and standard-part formulations."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No back-fitting; the reformulation is a transfer-principle equivalence, not an assumption of Kashaev."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Explicit 'does not solve the volume conjecture ... may just relocate the difficulty'; appropriately humble."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No fitted parameter; ω, ζ_ω are named surreals."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Equivalence proof strategy (forward via transfer, backward via st-definition) is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "lean.ref validation:stub; conjecture."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites kashaev1997, murakami-murakami2001, berarducci-mantova2018 — all correctly attributed (Kashaev conjecture, 4_1 proof, transseries exp/log on No)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "kashaev-surreal.md: \"J_K(q, n) is rational in q and *polynomial in n* for fixed K, so J_K(ζ_ω, ω) is well-defined\"",
+        "notes": "Calling the coloured Jones 'polynomial in n' is a simplification (it is q-holonomic / state-sum in the color n, not literally a polynomial in n); the well-definedness of J_K(ζ_ω,ω) leans on the Berarducci-Mantova transseries interpretation, which is cited but the 'polynomial in n' phrasing could mislead. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match claimed (the 4_1/3_1 verification is proposed, not asserted)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Knot-theory reformulation; no physics measurement at stake."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No pinned witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "572cd712a6a3",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "verdict=clean. A careful, honestly-scoped reformulation that explicitly declines to claim a proof of the volume conjecture; only a minor 'polynomial in n' imprecision around the named-surreal evaluation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

@@ -1046,7 +1046,458 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement is the bare inequality δ^2·ε^-1 > ε^3 with the conditional banner; no embedded physical interpretation in the statement (interpretation is in the separate rem:surreal-squeeze-interpretation)."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Surreal-squeeze lemma in sec:surreal-rate-calculus; fits the squeeze-inequality subsection."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement lives in the ordered field R(ε)⊂No with a positive infinitesimal ε; this is intrinsically an archimedean/ordered-field claim, so the ordered-field register is correct (not an algebraic statement leaking to R)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Narrative proof (multiply by ε>0, reduce to ε^4<δ^2 via infinitesimal smallness) is an ordered-field argument for an ordered-field statement — wall-appropriate."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "surreal-squeeze.lean: \"theorem surreal_squeeze_conditional [QAubinLions]...[RegularityBreakdown] (ε : ℝ) (h_pos : 0 < ε) (h_inf : ε < 1) : 0 < ε ∧ ε < 1 := ⟨h_pos, h_inf⟩\"",
+        "notes": "The .md states δ^2·ε^-1 > ε^3 for a positive infinitesimal ε and standard real δ; the Lean proves 0<ε ∧ ε<1 (a re-statement of two of its own hypotheses). δ does not appear, the inequality is not formalized, and ε is a plain real not an infinitesimal. The Lean proves a different, trivial claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "critical",
+        "evidence": "surreal-squeeze.lean: \"... : 0 < ε ∧ ε < 1 := ⟨h_pos, h_inf⟩\"",
+        "notes": "The Lean signature's conclusion (0<ε ∧ ε<1) is strictly weaker than and unrelated to the .md statement δ^2·ε^-1 > ε^3; the formalization replaces the substantive inequality with a tautological projection of its hypotheses — a statement-integrity failure."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "critical",
+        "evidence": "surreal-squeeze.lean: \"(h_pos : 0 < ε) (h_inf : ε < 1) : 0 < ε ∧ ε < 1 := ⟨h_pos, h_inf⟩\"",
+        "notes": "The proof is the verbatim pair of its own hypotheses ⟨h_pos, h_inf⟩ — the conclusion IS the conjunction of two binders. A textbook self-assuming projection: proves nothing beyond what is assumed."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "critical",
+        "evidence": "surreal-squeeze.lean: \": 0 < ε ∧ ε < 1 := ⟨h_pos, h_inf⟩\"",
+        "notes": "The goal is discharged by re-packaging the hypotheses; a proof that ignores all five conditional-class instances and the intended inequality to close a hypothesis-restating conjunction. Effectively a trivial goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No False/0=1 premise; hypotheses 0<ε<1 are inhabitable. (The defect is vacuity, not a false premise.)"
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "surreal-squeeze.lean: \"[QAubinLions] [NSCounterexample] [CriticalExponent] [BlowupYekutieli] [RegularityBreakdown]\"",
+        "notes": "All five §3b-cond conditional-class instances are entirely unused (the proof is ⟨h_pos,h_inf⟩); their fields are vacuous (e.g. CriticalExponent.alpha_three_eq_four : (3*4:ℕ)=12). The conditional-on-q-NS-cone framing is not reflected in the proof at all."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No decide/native_decide; the masking here is via hypothesis-projection, flagged under proof-no-self-assuming-projection / proof-no-trivial-true."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The narrative inequality δ^2·ε^-1 > ε^3 is TRUE for a positive infinitesimal ε and standard real δ>0 (reduces to ε^4<δ^2, valid since any integer multiple of ε^4 is below any standard real). The narrative statement/proof are correct; the defect is in the Lean, not the math."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "surreal-squeeze.lean: \": 0 < ε ∧ ε < 1 := ⟨h_pos, h_inf⟩\"",
+        "notes": "The Lean formalization is content-free (self-assuming projection of its hypotheses); the conditional-class fields are vacuous arithmetic truths. The lemma's claimed Lean backing proves nothing of the stated inequality."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Narrative argument is not circular; the Lean's hypothesis-projection circularity is captured under proof-no-self-assuming-projection."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "surreal-squeeze.md:1: \"Lemma (conditional on conj:q-aubin-lions, conj:ns-counterexample, conj:critical-exponent, prop:blowup-yekutieli, and conj:regularity-breakdown ...)\"",
+        "notes": "The lemma is dressed as conditional on the five Navier-Stokes-cone conjectures, but its actual content (and narrative proof) is the elementary fact ε^4<δ^2 for an infinitesimal ε — depending on NONE of those conjectures. Presenting a trivial ordered-field inequality as a q-NS-conditional lemma overstates both its difficulty and its dependencies."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No fitted parameter; δ standard real, ε the Reeb infinitesimal."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "surreal-squeeze.md:1: \"conditional on [the q-NS cone]\"",
+        "notes": "The conditional dependency on the q-NS conjecture cone does not follow from the proof, which uses only that ε is a positive infinitesimal — the five conditionals are non-sequitur dependencies (same copy-paste pattern seen in collatz-no-cycles)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "surreal-squeeze.lean: \": 0 < ε ∧ ε < 1 := ⟨h_pos, h_inf⟩\"",
+        "notes": "Lean proves 0<ε ∧ ε<1 (hypothesis projection over plain real ε); the .md proves δ^2·ε^-1 > ε^3 over an infinitesimal in No. The Lean is strictly weaker/different — a clear proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No cites[] on the lemma block; the -- Ref: in the Lean is to the manuscript."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "ε∈Der(A) (Reeb infinitesimal), δ standard real, R(ε)⊂No all defined/cross-linked; the statement is unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Ordered-field inequality; no physics measurement at stake."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9da63a558860",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "critical",
+        "notes": "verdict=open-objection. The narrative statement/proof are correct (a true ordered-field triviality), but the Lean formalization is vacuous: surreal_squeeze_conditional proves 0<ε ∧ ε<1 by re-packaging its own hypotheses, never formalizes δ^2·ε^-1>ε^3, leaves all five conditional-class instances unused, and over a plain real ε rather than an infinitesimal. Additionally the conditional-on-q-NS-cone banner is a non-sequitur. This lemma is load-bearing for the millennium-problem surreal bounds, so its vacuous Lean and overstated dependencies matter."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

@@ -816,7 +816,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Squeeze-mechanism interpretation in sec:surreal-rate-calculus; fits the rate-calculus subsection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Restates the cost-exceeds-dissipation order inequality (transfinite cost vs infinitesimal budget); correct in the ordered field."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Interpretive content (replaces informal O(ε^-1)>O(ε^3) limit talk with an exact ordered-field inequality)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No self-justification; interprets prop:surreal-rate-calculus."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "surreal-rate-calculus-interpretation.md:1: \"the mechanism underlying every millennium-problem squeeze in Chapter 8 and Chapter 7\"",
+        "notes": "Same heavy framing as surreal-squeeze-interpretation — presents a trivial ordered-field inequality as 'the mechanism' behind all the millennium-problem bounds; also references 'Chapter 8' while the content sits in this appendix (possible stale chapter reference). Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "'No cancellation in an ordered field' follows from the strict inequality."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Remark, no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No cites[]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cost, dissipation, ε referenced to prop:surreal-rate-calculus item (4)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Order-arithmetic; no physical measurement at stake."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b068285d0800",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "notes": "verdict=survivable-objection. Sound interpretation; objection is the rhetorical inflation of a trivial ordered-field inequality into 'the mechanism' behind the millennium bounds, plus a possibly-stale Chapter 8 reference."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

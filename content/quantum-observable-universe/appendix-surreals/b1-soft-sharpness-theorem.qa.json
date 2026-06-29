@@ -1046,7 +1046,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement is the bare claim (depth-n polylog non-vanishing mod P_{n-1}); the 'soft sharpness half of the keystone' framing is a short clause, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "B1 soft-sharpness proposition in sec:surreal-b1-theorem-rows; fits the B1-theorem-rows subsection."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement is about τ_arch images in the period filtration (archimedean realization) — archimedean register is appropriate to the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No `**Proof.**` body in this block (proof is the cross-referenced props); nothing to wall-test here."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean:36: \"theorem b1_soft_sharpness [ctx] : ctx.depth_Mikusinski ≤ ctx.depth_Goncharov\"",
+        "notes": "The .md states τ_arch(Li_n^q(z_K)) ≢ 0 mod P_{n-1} (polylog non-vanishing in a period quotient); the library Lean proves a ℕ inequality depth_Mikusinski ≤ depth_Goncharov. Different claims. Moreover the sibling docstub b1-soft-sharpness-theorem.lean:38 declares `theorem b1_soft_sharpness : True := trivial`, which shadows the library decl per §0a (sibling resolved first)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No evidence of statement weakening across commits; the .md statement is the substantive polylog claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "critical",
+        "evidence": "lean/QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean:30: \"depth_bound_of_nonvanishing : borel_regulator ≠ 0 → depth_Mikusinski ≤ depth_Goncharov\"",
+        "notes": "The class field codomain IS the theorem's conclusion; the proof is `ctx.depth_bound_of_nonvanishing ctx.lewin_nonvanishing` — a verbatim projection of the conclusion-carrying field (§3b-cond degenerate / self-assuming). The class axiomatizes the conclusion, not genuine sub-hypotheses."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "critical",
+        "evidence": "b1-soft-sharpness-theorem.lean:38: \"theorem b1_soft_sharpness : True := trivial\"",
+        "notes": "The sibling .lean (which the resolver checks first) concludes `True := trivial`; a vacuous goal. The real claim lives only in the shadowed library file."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No False/0=1 premise; the class hypotheses are inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "lean/QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean:36: \"[ctx : B1SoftSharpnessContext]\"",
+        "notes": "borel_regulator / lewin_nonvanishing are used only to feed the conclusion-carrying field; depth_Mikusinski/depth_Goncharov fields are projected, not reasoned with — consistent with the self-assuming-projection finding above."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No decide/native_decide; the (trivial) tactic is `trivial`/field projection, flagged under the trivial-true and self-assuming criteria instead."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The narrative soft-sharpness claim (depth-n image non-trivial mod P_{n-1}, via Borel + Lewin) is plausible and standard; no counterexample found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "b1-soft-sharpness-theorem.lean:38: \"theorem b1_soft_sharpness : True := trivial\"",
+        "notes": "The Lean the ref resolves to proves nothing; the library replacement is a self-assuming projection of its own conclusion. As formalized, content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Narrative argument (Borel regulator + polylog non-vanishing) is not circular; the circularity is confined to the Lean encoding (assuming the conclusion as a field), captured under proof-no-self-assuming-projection."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "b1-soft-sharpness-theorem.md:1: \"Theorem (soft sharpness of the keystone B1 ...)\" titled 'is theorem-level'",
+        "notes": "Block kind is proposition and the narrative calls it 'theorem-level ... requires no part of Goncharov's or Beilinson's conjectures'; the supporting Lean is vacuous/self-assuming, so 'theorem-level' overstates the formalized status, though the underlying Borel+Lewin argument is genuinely unconditional."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical/calibration parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Narrative reduction to depth-2 identification + Borel is a coherent argument sketch."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean:36: \"ctx.depth_Mikusinski ≤ ctx.depth_Goncharov\"",
+        "notes": "Lean proves a ℕ depth inequality (and the sibling proves True), neither of which is the .md's polylog non-vanishing statement — a clear proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites bloch2000, suslin1991 — appropriate for the Bloch-Suslin depth-2 regulator the argument leans on."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "z_K, F, P_n, τ_arch, G^(n) cross-linked; statement well-scoped."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Pure number theory; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e0b17016e8f4",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "notes": "verdict=open-objection. Narrative argument is plausibly theorem-level, but the formalization does not back the stated claim: sibling Lean is `: True := trivial` (shadowing the library decl), and the library decl is a self-assuming projection of a ℕ depth inequality unrelated to the .md polylog statement. Rebuttal attempted (the library file does contain a real conditional theorem) but it (a) is shadowed by the sibling per §0a and (b) proves a different claim than the .md."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

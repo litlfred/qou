@@ -896,7 +896,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "OS-reflection-positivity conjecture in sec:millennium-bsd-rh-ym; fits the Yang-Mills subsection (supplies the Wightman input deferred by yang-mills-surreal-bound)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "OS axioms OS0-OS4 (Osterwalder-Schrader 1973/75) are stated correctly; the conjecture asserts reflection positivity from the Reeb Z_2, all flagged conjectural / 'proof sketch (informal)'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Substantive: reduces the OS2 input to a single C*-Frobenius positivity axiom (BKLR/Müger), packaged as a §3b-cond class; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The reduction is explicitly conditional ('granting the substrate axiom'); it does not assume OS2 to prove OS2."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "os-reflection-positivity-from-reeb.md: \"OS0, OS1, OS3 are categorically built-in\"",
+        "notes": "Claims OS0 (temperedness), OS1 (Euclidean covariance), OS3 (locality) are 'built-in' to the categorical infrastructure with only sketch-level justification; a referee would want each demonstrated, not asserted. Mitigated by the pervasive 'conjectural status' / 'informal proof sketch' labeling."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No fitted parameter; the open input is a single named positivity axiom, openly stated."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The proof-sketch steps (categorical reflection = Reeb Z_2; antipode-twisted pairing = state-positive form; τ_arch stability) are labeled 'sketch' and chain plausibly; the genuine gap (the positivity axiom) is isolated, not glossed."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "lean.ref validation:not_checked; conjecture packaged as a §3b-cond class, no committed proof to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites osterwalder1973/1975 (the OS reconstruction theorem), glimm1981, faddeev1994 — all appropriate; Müger/BKLR named for the C*-Frobenius positivity framework."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "θ, the Reeb Z_2 ⊂ U(1)_ξ, the Frobenius pairing, the positive cone factorization all defined or cross-linked; the candidate C*-norm ambiguity is explicitly acknowledged."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "OS reflection positivity ⇒ Wightman reconstruction is the standard route; nothing physically contradicted, and the claim is conjectural."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "835426525e29",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "verdict=clean. Disciplined conjecture: isolates a single named positivity axiom as the open input, labels its proof sketch 'informal', and points to a bridge conjecture (Wenzl positivity). Strongest objection (OS0/OS1/OS3 asserted built-in) is a minor sketch-level gap given the explicit conjectural framing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

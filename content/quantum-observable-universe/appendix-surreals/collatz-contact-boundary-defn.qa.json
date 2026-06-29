@@ -873,7 +873,280 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Collatz contact boundary definition in sec:millennium-pnp-collatz; fits the Collatz-family subsection."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement defines an inherently archimedean object (orbit contact average, threshold v*(q)=log[3]_q/log[2]_q); the log-ratio genuinely requires Real.log, so archimedean notation is correct, not a leak."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Definition (orbit average + codim-1 boundary at v*(q)); the convergence/divergence above/below split is a stated characterization for a definition, not a proved theorem to falsify."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Genuine construction; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No conclusion-assuming; the threshold v*(q)=log[3]_q/log[2]_q is the standard Collatz drift critical ratio, independently motivated."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "A definition; convergence/divergence wording is interpretive but does not claim to prove Collatz."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No free parameter; v*(q) is determined by [3]_q,[2]_q."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Definitional; no inferential chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "collatz-contact-boundary-defn.lean:15: \"def CollatzContactBoundary := trivial\"",
+        "notes": "Sibling .lean is a `:= trivial` shadow-stub whose comment points to the real library decl; library has CollatzContactBoundaryContext + collatz_contact_boundary, but lean.ref names QOU.AlgebraicSubstrate.CollatzContactBoundary (the trivial stub), so the ref resolves to the content-free stub rather than the real formalization. Definition-kind, so low severity, but the ref should target the real decl."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No cites[] on this definition block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Orbit contact average, N_odd, contact threshold all defined; q-odd predicate cross-linked to conj:q-collatz."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Pure number theory / skein-module construction; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0df4c8f94ca3",
+          "ts": "c483dfed0b31",
+          "lean": "0f6b87cfb2c6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "notes": "verdict=survivable-objection. Sound definition; the only objection is the shadow `:= trivial` sibling that the lean.ref resolves to instead of the real library decl — a wiring hygiene issue, not a math defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

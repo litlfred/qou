@@ -1046,7 +1046,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement is the claim (every torus-knot row is theorem-level); the depth/degeneracy discussion is in clearly-labeled sub-sections, not embedded as interpretation in the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "B1 torus-knot-rows proposition in sec:surreal-b1-theorem-rows; fits the B1-theorem-rows subsection."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement concerns period-filtration classes (Vol, CS in P_2/P_1, P_2) under τ_arch — archimedean register appropriate to the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No `**Proof.**` body in this block; the Statement section cites Garoufalidis-Lê + CS-rationality as the support."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "b1-torus-knot-rows-theorem.lean:18: \"theorem b1_torus_knot_rows : True := by trivial\"",
+        "notes": "Sibling .lean concludes `True := trivial` (shadows the library decl per §0a); the library replacement b1_torus_knot_rows [ctx] : ∀ r s, Coprime r s → 2≤r → 2≤s → ctx.b1_holds r s projects a class field. Neither matches the .md claim (torus rows theorem-level via Vol=0 / CS-rational degeneracy)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The .md statement is the substantive torus-row claim; no covert weakening of the narrative statement."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean:36: \"... → ctx.b1_holds r s\"",
+        "notes": "The library decl concludes ctx.b1_holds r s, a class field carrying the row claim, derived by projection (modulo a coprimality guard) — §3b-cond degenerate self-assuming pattern. (The sibling stub is separately the trivial-true case.)"
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "critical",
+        "evidence": "b1-torus-knot-rows-theorem.lean:18: \"theorem b1_torus_knot_rows : True := by trivial\"",
+        "notes": "The sibling .lean (resolved first) concludes `True := trivial`; vacuous goal. The real claim lives only in the shadowed library file."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No False/0=1 premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Sibling has no hypotheses; library decl uses the coprimality/≥2 guards to feed b1_holds. No clearly-dead hypothesis to flag beyond the self-assuming pattern."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No decide/native_decide; the trivial tactic is `trivial` (flagged under proof-no-trivial-true)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Torus knots are Seifert-fibred (non-hyperbolic) ⇒ Vol=0 ✓; CS(T(p,q))=-(p^2-1)(q^2-1)/(24pq)·π^2 is the standard Kirk-Klassen formula ✓; Garoufalidis-Lê 2005 proved VC asymptotics for torus knots ✓. Narrative math correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "b1-torus-knot-rows-theorem.lean:18: \"theorem b1_torus_knot_rows : True := by trivial\"",
+        "notes": "As formalized at the resolved sibling, the proposition proves nothing; the library replacement projects its conclusion from a class field. The narrative is non-vacuous, but the Lean backing is."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Narrative is not circular (CS-rationality and Garoufalidis-Lê are independent inputs). The Lean's field-projection circularity is captured under proof-no-self-assuming-projection."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "b1-torus-knot-rows-theorem.md: \"This discharges 8 specific rows of B1\" / 'theorem-level'",
+        "notes": "The 'theorem-level' / '8 rows discharged' claim is well-supported narratively (published VC for torus knots + figure-8), but the Lean backing is vacuous/self-assuming, so the formalized status does not match the 'theorem-level' label. Narrative is sound; minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical calibration parameter; CS values are determined by (p,q)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Vol=0 (depth-2 trivial) + CS∈π^2·Q⊂P_2 (depth-3 degenerate) + Garoufalidis-Lê ⇒ theorem-level-and-degenerate is a coherent argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean:36: \"... ctx.b1_holds r s\"",
+        "notes": "Lean (sibling True, library class-field projection) proves something different from / weaker than the .md torus-row claim — a proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites bloch2000, suslin1991 (depth-2 regulator); Garoufalidis-Lê and Kirk-Klassen/Freed-Gompf named inline for the CS/VC results they actually prove."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "T(p,q), Seifert-fibred, CS, P_2/P_1, Tate twist all standard/cross-linked; T(2,5)≅T(5,2) symmetry correctly noted."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "CS values are exact rationals times π^2 (closed-form), not fitted numerics; the table is deterministic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Knot theory; no physics measurement at stake."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "CS table is closed-form; no external witness to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b5e44acde2d7",
+          "ts": "f76cd31349d9",
+          "lean": "08a188b6afce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "notes": "verdict=open-objection. The narrative survey is correct and well-cited (torus knots non-hyperbolic ⇒ Vol=0; CS rational; Garoufalidis-Lê VC), but the Lean does not back the 'theorem-level' claim: sibling is `: True := trivial` shadowing the library, and the library decl projects its conclusion from a class field. Rebuttal attempted (a real library file exists) but it is shadowed per §0a and is self-assuming."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

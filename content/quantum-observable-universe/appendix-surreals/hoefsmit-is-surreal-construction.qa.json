@@ -1009,7 +1009,422 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement is the bare embedding claim Φ: tableaux ↪ dyadic surreals with the three numbered properties; the 'central observation of the appendix' editorializing is confined to the separate Significance section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Hoefsmit-as-Conway-construction proposition in sec:surreal-construction-grading; fits the construction-as-grading section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement is combinatorial/algebraic (standard tableaux, sign sequences, dyadic surreals, birthday bound); no archimedean construct — generic register appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No `**Proof.**` body in this block (proof is the sibling hoefsmit-is-surreal-construction-proof, not in this batch)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "lean/QOU/AppendixSurreals/HoefsmitBridge.lean:194: \"theorem hoefsmit_is_surreal_construction : ∀ {n} (h : n ≤ 2), Function.Injective (@hoefsmitDyadic n h)\"",
+        "notes": "The .md states a canonical injective embedding Φ over all λ⊢n, ℓ(λ)≤2 for general n; the Lean proves injectivity only for n ≤ 2 (interval_cases). The Lean docstring honestly acknowledges the general-n gap (per §3b, not asserted as axiom). Real scope divergence (general n vs n≤2), but the Lean is honest about it and genuinely proves the n≤2 case."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The .md statement (injective embedding) is not weakened; the Lean proves a genuine (if scoped-down to n≤2) sub-case, with the scope honestly stated."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The Lean injectivity proofs are genuine (norm_num discharging false numeric equations (1:ℚ)=-1 from heq, structural case analysis), not projections of a conclusion-carrying field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The Lean goal is Function.Injective hoefsmitDyadic, proved by real case work — not True/x=x. Substantive."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No False/0=1 premise; the tableau hypotheses (size_eq, rows_ord) are inhabitable and used."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The n≤2 hypothesis drives interval_cases; the tableau structure fields are used in the injectivity case analysis. No dead hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Uses norm_num/omega/interval_cases on genuine finite goals — justified, not masking an open structural claim."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Statement explicitly downgrades to an injective embedding (NOT a bijection), citing the cardinality mismatch (3 two-rowed tableaux vs 8 surreals at n=3). This pre-empts the obvious false-claim (the counts don't match), so the embedding claim is correct and honestly scoped."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Genuine structural identification (Hoefsmit YJM split ↔ Conway L|R recursion); the Lean proves real injectivity for n≤2. Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No back-fitting; the embedding is constructed, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "hoefsmit-is-surreal-construction.md: \"Hoefsmit factorisation = Conway construction\" / \"a literal instance of Conway's surreal-number construction\"",
+        "notes": "The Statement establishes only an injective embedding of two-rowed tableaux into birthday-≤n surreals (and the Lean only n≤2), but Corollary 3 and the Significance assert an equality 'Hoefsmit factorisation = Conway construction' / 'literal instance'. The '=' / 'literal' framing is stronger than the proven embedding (which is not surjective, by the block's own cardinality note). Minor, in the interpretive prose not the statement."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical/calibration parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "YJM-edge ↔ sign-extension correspondence and the birthday≤n-1 bound follow from the eigenvalue split q:-q^-1; coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "lean/QOU/AppendixSurreals/HoefsmitBridge.lean:195: \"∀ {n} (h : n ≤ 2), Function.Injective (@hoefsmitDyadic n h)\"",
+        "notes": "Lean proves a scoped-down case (n≤2) of the general .md embedding claim; honest divergence (docstring states the general-n gap is not asserted). Minor because the Lean genuinely proves its case and does not overclaim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites gonshor1986, conway1976 (surreal construction); the Lean adds -- Ref: hoefsmit1974 — all appropriate for the Hoefsmit/Conway bridge."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Tab(λ), No^dy_{=n}, sign sequence, birthday, YJM tree all defined/cross-linked; the cardinality note removes the bijection ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Combinatorics/algebra; no physics measurement at stake."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness; the n≤2 claim is Lean-verified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ab02792e0c14",
+          "ts": "74763f39d05b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "notes": "verdict=survivable-objection. Honestly-scoped proposition: the embedding (not bijection) is correctly downgraded via the cardinality note, and the Lean genuinely proves injectivity for n≤2 while openly flagging the general-n gap. Objections: the Lean proves only n≤2 of a general-n claim, and the Significance's 'Hoefsmit = Conway' / 'literal instance' overstates the embedding. Both are scope/framing, not falsity."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

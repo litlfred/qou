@@ -816,7 +816,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Transcendental-accounting ledger in sec:surreal-transcendental-discharge; fits the transcendental-accounting subsection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Depth-2 ceiling for hyperbolic 3-mfd volumes via Bloch-Wigner ✓; ζ(2,1)=ζ(3) (Euler) ✓; 5-term dilog relation ✓; Goncharov 22-term relation referenced correctly. Individual facts are accurate (the Fact-2 reasoning issue is logged under da-non-sequitur)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Substantive ledger plus two structural observations (Jones-faithfulness⇒Vol-injectivity; S_5-equivariant 4-dim depth-3 period space); authorNotes honestly flags both as open structural claims, not theorems."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No back-fitting; the depth assignments cite the keystone conjecture, the relations are classical."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "authorNotes: 'Neither is a new theorem; both are open structural claims awaiting a sharp formulation.' Appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No fitted parameter; depths and periods are intrinsic."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "transcendental-accounting.md: \"J_K(q)=J_{K'}(q) ⟹ Vol(K)=Vol(K'). Reason: Vol is computed from J_K^{(N)} via a limit that depends only on the polynomial.\"",
+        "notes": "The justification conflates the ordinary Jones polynomial J_K(q)=J_K^{(2)} (the stated hypothesis) with the full coloured-Jones tower J_K^{(N)} (what Vol actually depends on, via the volume conjecture). Equality of ordinary Jones polynomials does NOT imply equality of the coloured tower, so the stated implication does not follow from the given reason — a genuine logical gap. (The block does flag the implication's vacuity as 'open', but the *reason* offered is invalid as written.)"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites kontsevich1995, zagier1986, bloch2000, suslin1991, thurston1978, neumann-zagier1985, kashaev1997 — all appropriate to the periods/regulators/volume ledger."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Goncharov depth, P_n filtration, archimedean accident, S_5-Galois orbit all defined/cross-linked; the depth-2-ceiling and accident notions are precise."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match (the orbit-sum witness is referenced for the Galois-invariant trace, not a tuned number)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Pure number theory / periods; no physics measurement at stake."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "References bring-trilog-zeta5-depth-3.witness.json for the Galois-invariant trace as a blob URL; the prose claims the orbit-sum identity is proved there, no value contradicted in-block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0b6cc201a615",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "notes": "verdict=survivable-objection. A careful, accurate periods ledger with two honestly-open structural observations; the one real flaw is Fact 2's justification, which conflates the ordinary Jones polynomial with the coloured-Jones tower that the volume actually depends on. The implication's openness is flagged, but the stated reason is invalid and should be corrected."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

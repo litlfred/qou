@@ -875,7 +875,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Categorical Mordell-Weil / q-Sha / q-L-function definition in sec:millennium-bsd-rh-ym; fits the BSD subsection."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Categorical/étale-cohomological register (Hom_C(1,E_q), Frobenius eigenvalues, |α_E|=q^{1/2} by Hasse-Weil); algebraic, no archimedean leak."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Tannaka-Krein gives E_q(1)≅τ(E_q)^G=H^1^G ✓; Hasse-Weil bound |α_E|=q^{1/2} ✓ for genus-1; definitions are consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Genuine categorical definitions (Mordell-Weil, Tate-Shafarevich as local-global kernel, L-function Euler product)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Definition; no conclusion assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Names q-analog structures; makes no claim that classical BSD holds."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No fitted parameter; the eight Frobenius eigenvalues come from H^1 of Bring's curve (genus 4 ⇒ 8-dim), canonical."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Tannaka-Krein reconstruction step is correctly invoked to identify C≃Rep(G)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "lean.ref validation:not_checked; definition, ref names a stub — no proof to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites tate1974 — appropriate for the Tate-Shafarevich / local-global construction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "categorical-mordell-weil.md: \"$H^1_{\\otimes}$ denotes the first cohomology of the monoidal category (classifying torsors under $\\mathcal{E}_q$ in $\\mathbf{C}$)\"",
+        "notes": "A single definition block bundles three constructions (Mordell-Weil, q-Sha, q-L-function); the monoidal-category cohomology H^1_⊗ classifying E_q-torsors is invoked without a precise definition in-block (relies on the reader's standard interpretation). Minor — a definition block ideally introduces one well-pinned object."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Pure arithmetic-geometry definition; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ce1707210af8",
+          "ts": "5c09d933dceb",
+          "lean": "f454181038b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "verdict=clean. Coherent categorical q-analog definitions consistent with Tannaka-Krein + Hasse-Weil; only a minor breadth/precision caveat on the bundled H^1_⊗ construction."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }

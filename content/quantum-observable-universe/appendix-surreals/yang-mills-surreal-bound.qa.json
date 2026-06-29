@@ -816,7 +816,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Yang-Mills surreal bound remark in sec:millennium-bsd-rh-ym; fits the Yang-Mills subsection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "The order facts (Δ_q≍ε^3>0, ord_ω(Δ_q)=-3) are correct in ℝ(ε); no false statement, though the framing inflates them (see da-overclaim/da-circular)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "minor",
+        "evidence": "yang-mills-surreal-bound.md: \"Δ_q ≍ ε^3 > 0 (in ℝ(ε) ⊂ No)\"",
+        "notes": "The 'mass gap is positive' content reduces to the triviality ε^3>0 in an ordered field; as a standalone statement it is near-vacuous. Mitigated because the remark interprets thm:quantum-gap-collapse (where Δ_q≍ε^3 is established) rather than asserting it here."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "yang-mills-surreal-bound.md: \"the structural invariant Δ_q ≍ ε^3 is the categorical mass gap ... Δ_q > 0\"",
+        "notes": "Positivity of the 'mass gap' is essentially true by construction: Δ_q is taken to be of order ε^3 and then declared >0. The hard Yang-Mills content (that the renormalized SU(N) QFT on R^4 actually has this gap) is NOT established by the order inequality; the remark proves the easy half by definition. The remark does concede the regularity programme is unresolved, so this is a framing issue, not a false proof."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "evidence": "yang-mills-surreal-bound.md: \"The Yang-Mills mass-gap theorem is literally true in the QOU framework as a surreal-order inequality\"",
+        "notes": "'literally true ... the QOU provides it by categorical construction' overstates: an ordered-field inequality ε^3>0 is not the Yang-Mills millennium theorem (which requires a Wightman/OS-axiom QFT with a gap on R^4). The remark itself flags 'not resolved by this remark alone ... the regularity programme', so the overclaim is partially self-corrected, but the headline sentence remains an approximate/conditional-as-proved overstatement."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No fitted parameter; ε is the Reeb infinitesimal, the ε^3 order comes from thm:quantum-gap-collapse."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Confinement / clustering / squeeze sidebars are internally consistent; the gap between order-inequality and full QFT theorem is acknowledged rather than papered over."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "cites conway1976 — appropriate for the named-infinitesimal/order machinery; no mis-attributed result."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Δ_q, ord_ω, Reep ε, Rep(SU_q(N)) cross-linked; the surreal-vs-classical sides are distinguished."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No numerical match (the c>0 standard-part constant is left abstract)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "Does not contradict any measurement; explicitly defers the QFT-regularity (Wightman) content as outstanding, so no physically-false claim is asserted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "notes": "No backing witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "562ef6d54b6b",
+          "ts": "e47275651c80"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:57:10.631Z",
+        "reviewed_sha": "8577d523358dda0bdb4455d74db319678dbae8c4",
+        "severity": "major",
+        "notes": "verdict=survivable-objection. The order facts are true and the remark explicitly defers the Wightman-axiom (hard) content; but the headline framing ('the Yang-Mills mass-gap theorem is literally true in the QOU framework') sells a near-trivial ordered-field inequality as the millennium theorem. Survivable because the deferral is stated; a referee will still object to the headline."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:57:10.631Z"
 }
