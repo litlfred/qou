@@ -6,8 +6,8 @@ export default conjecture({
     "The $q$-deformed Birch and Swinnerton-Dyer conjecture",
   lean: { ref: "qou:QOU.AppendixSurreals.QBirchSwinnertonDyer", validation: "stub" },
   uses: [
+    "def:categorical-mordell-weil",
     "thm:tannaka-krein-isomorphism",
-    "thm:macroscopic-stability-equivalence",
     "prop:ns-kummer-specialisation",
   ],
   tags: [
