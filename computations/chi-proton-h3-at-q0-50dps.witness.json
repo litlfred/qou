@@ -1,6 +1,7 @@
 {
   "computation": "chi-proton-h3-at-q0-50dps",
   "description": "Numerical χ^λ_q(β_atomic(1, 0)) = proton per partition λ ⊢ 3, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-proton-h3.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
+  "convention": "averaged-crossings",
   "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
   "dps": 50,
   "n_strands": 3,
@@ -8,7 +9,7 @@
   "Z": 1,
   "N": 0,
   "n_partitions": 3,
-  "compute_time_sec": 0.04,
+  "compute_time_sec": 0.02,
   "tr_M_at_q0": "1.065306238075878215688040411687927620546686279347",
   "by_partition": [
     {
@@ -44,7 +45,5 @@
       "contribution": "-0.016813597127524950668264347232633144558238209100077",
       "compute_time_sec": 0.0
     }
-  ],
-  "convention": "averaged-crossings",
-  "convention_inferred_by": "chi_convention_audit.py --fix (computation-id:/^chi-(?!.*-free-).*-at-q0-50dps$/)"
+  ]
 }
