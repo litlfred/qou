@@ -25,7 +25,11 @@ Remaining frontier (harder, step up in difficulty):
   variable number of rows (no ballot-style closed form; the general hook side
   `prodHooks·betaProdGap = betaFactProd` is already sorry-free in
   `SYTHookFormulaBetaProd`, so the remaining piece is the dimension-side
-  Lagrange identity).
+  Lagrange identity). **KEYSTONE FOUND (2026-06-29, verified m≤4):** the
+  manifestly-integer form is the Frobenius/Aitken determinant
+  `dimHLF λ = Σ_{σ∈S_m} sgn(σ)·multinomial(n; (λ_i−i+σ(i)))` — generalises the
+  2-row ballot number exactly; the remaining work is the `Matrix.det_vandermonde`
+  formalization (multi-day, LSP). Full path: the scope doc §"Update (2026-06-29)".
 - **(B) `numSYTenum_branching`** — the SYT corner-deletion bijection on the
   brute-force enumerator (the multi-day core).
 
