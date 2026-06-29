@@ -111,3 +111,37 @@ partial progress.
 4. Attack (B): the deletion bijection on standard fillings. This is the multi-day core.
 5. On (B) landing, `dimAitkenIdentity` and `numSYTenum_eq_dimHLF` go fully sorry-free; retire the
    `_of_aitken` conditional wrappers.
+
+## Update (2026-06-29) — the manifestly-integer dimension form for general `m` (the (A) keystone)
+
+The 2-row case of (A) closed (#3051) because `dimHLF[a,b]` has the **manifestly-integer** ballot form
+`C(a+b,b) − C(a+b,b−1)` (#3044), turning the branching into Pascal's rule with no floor-division. The
+analysis below was the blocker for `m ≥ 3`: a *single* binomial closed form does not exist. The
+resolution (derived + computationally verified this session, `m ≤ 4`, all parts `≤ 6`) is the
+**Frobenius/Aitken determinant in signed-multinomial form**:
+
+> **`dimHLF λ  =  Σ_{σ ∈ S_m}  sgn(σ) · multinomial(n ; (λ_i − i + σ(i))_{i})`**,
+>
+> where each `multinomial(n; k_1,…,k_m) = n!/(k_1!⋯k_m!)` is a manifest `ℕ` (the indices sum to `n`
+> since `Σ(λ_i − i + σ(i)) = Σλ_i = n`), and terms with any negative index drop out.
+
+This is `n!·det(1/(λ_i − i + j)!)` (Aitken) with the determinant expanded over `S_m`; it specialises
+**exactly** to the 2-row ballot number (`σ = id` gives `C(n,b)`, the transposition gives `−C(n,b−1)`),
+and to `60 − 20 − 30 + 6 = 16` for `λ = (3,2,1)` (verified vs `#SYT`). It is the manifestly-integer
+form general integrality needs — there is no entry-wise binomial determinant; integrality is *global*
+(the signed sum), exactly as the 2-row difference already showed.
+
+**Revised step 2 (general (A)) path, now unblocked conceptually:**
+- 2a. Define `frobeniusDim l : ℤ := ∑_{σ : Equiv.Perm (Fin m)} sgn σ · multinomial …` (Mathlib
+  `Equiv.Perm`, `Nat.multinomial`); `decide`-verify `dimHLF l = frobeniusDim l` for small `n`
+  (regression backstop, sorry-free).
+- 2b. Prove `dimHLF l = frobeniusDim l` in general — the hook side `prodHooks·betaProdGap =
+  betaFactProd` (already sorry-free) plus `Matrix.det_vandermonde`: `frobeniusDim` is
+  `n!·det((β_i)_{falling, m−j})/∏β_i!` and the falling-factorial determinant is the Vandermonde
+  `∏_{i<j}(β_i−β_j) = betaProdGap`. **This is the multi-day `Matrix.det` core** (Laplace/Vandermonde).
+- 2c. Branching of `frobeniusDim` via Pascal on each multinomial term (generalises the 2-row Pascal
+  proof) ⇒ general (A) `dimHLF_branching`.
+
+The formula is the durable result of this session's general-(A) grind; 2b–2c remain a dedicated
+LSP-session effort (the `lake`-destructive sandbox makes `m×m` determinant proofs impractical via
+recompile-iteration).
