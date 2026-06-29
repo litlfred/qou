@@ -162,7 +162,24 @@ def flavor_split_leading(q: mpf, q_inv: mpf | None = None) -> mpf:
 
 
 def flavor_split_subleading(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Δm / M_N with (1+ℏ_q³) 3-loop substrate-Planck correction."""
+    """Δm / M_N with the (1+ℏ_q³) "3-loop substrate-Planck" correction.
+
+    ⚠ POSITED — NOT DERIVED (audit 2026-06-29). The `(1+ℏ_q³)` multiplier
+    has no derivation (no content block, Lean, or witness derives it — only
+    this docstring label). It is also INSUFFICIENT: the correction CODATA
+    demands is C_true = (Δm/M_N)_CODATA / leading = 1.0012784, whereas
+    (1+ℏ_q³) = 1.0009727 — it supplies only 76% of the gap
+    ((C_true−1)/ℏ_q³ = 1.314). So it is a partial shape-fix, not the closure,
+    and must NOT be cited as backed by `prop:flavor-split-substrate` (which
+    proves ONLY the leading `flavor_split_leading`).
+
+    The genuine subleading correction should be DERIVED from the 3-strand /
+    3-quark (spectator) categorical structure (open Archimedean-mass-functor
+    R&D), not as an ℏ_q-power fit. See
+    docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md.
+
+    Until that derivation lands, treat this as `posited`, not `canonical`.
+    """
     qi = mpf(1) / q if q_inv is None else q_inv
     leading = flavor_split_leading(q, qi)
     hbar = (q - 1) / q
