@@ -1,7 +1,9 @@
 import Mathlib.LinearAlgebra.Basis.Basic
 import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
+import Mathlib.LinearAlgebra.Finsupp.VectorSpace
 import Mathlib.Data.Fintype.EquivFin
 import Mathlib.Data.Fintype.OfMap
+import Mathlib.Data.Finset.Max
 import QOU.BraidKnot.StandardYoungTableau
 import QOU.BraidKnot.Specht
 
@@ -149,21 +151,130 @@ noncomputable def standardPolytabloidS (T : StandardYoungTableau μ) :
     Specht.SpechtSubmodule (k := k) μ :=
   ⟨standardPolytabloid (k := k) T, standardPolytabloid_mem (k := k) T⟩
 
-/-! ## 3. The two genuine content obligations (honest stubs) -/
+/-! ## 3. The two genuine content obligations
 
-/-- **STUB — content obligation 1/2.** The standard polytabloids are linearly
-independent in `M^μ` (equivalently, in `S^μ`). Classical: independence follows
-from the *dominance / last-letter* ordering on tableaux — the leading tabloid of
-each standard `e_T` is distinct, so no nontrivial combination vanishes.
+The linear-independence half (§3a) is **reduced**, sorry-free, to a single
+combinatorial core (`standardPolytabloid_triangular`) via a locally-proved
+triangular-independence lever; the spanning half (§3b) remains one honest stub. -/
 
-Phrased on the corestricted family `standardPolytabloidS` (valued in `S^μ`), as
-required by `Basis.mk`. -/
+/-! ### 3a. Linear independence — reduced to Sagan's dominance lemma
+
+The classical independence argument is *unitriangularity in the dominance order*:
+`e_T = ±{T} + (dominated terms)`, so the standard polytabloids form a triangular
+family over the tabloid basis and are therefore independent. The "triangular ⇒
+independent" lever is **absent from the pinned Mathlib** (its only such machinery is
+Gram–Schmidt-specific, requiring an inner-product space), so we supply it locally,
+sorry-free, and reduce the obligation to exactly Sagan's dominance lemma. -/
+
+/-- The triangular hypothesis bundle (upper-bound form), over any `CommRing`:
+`lead` injective, the diagonal coefficient `(v i)(lead i)` a unit, and `lead i` an
+upper bound of `supp (v i)`. -/
+structure Triangular {ι : Type*} {α : Type*} {R : Type*} [LinearOrder α] [CommRing R]
+    (v : ι → (α →₀ R)) (lead : ι → α) : Prop where
+  /-- distinct vectors have distinct leading indices -/
+  lead_inj : Function.Injective lead
+  /-- the diagonal coefficient is a unit -/
+  diag_unit : ∀ i, IsUnit ((v i) (lead i))
+  /-- `lead i` is an upper bound of `supp (v i)` -/
+  supp_le : ∀ i, ∀ a ∈ (v i).support, a ≤ lead i
+
+/-- **Triangular-independence lever** — the lemma the pinned Mathlib lacks, supplied
+sorry-free. A triangular `Finsupp` family (injective leading map, unit diagonal,
+support bounded above by the leading index) is linearly independent. Maximal-leading-
+index argument; works over any `CommRing`. A natural Mathlib-upstream candidate. -/
+theorem Triangular.linearIndependent {ι : Type*} {α : Type*} {R : Type*}
+    [LinearOrder α] [CommRing R] {v : ι → (α →₀ R)} {lead : ι → α}
+    (h : Triangular v lead) : LinearIndependent R v := by
+  classical
+  rw [linearIndependent_iff']
+  intro s g hsum
+  by_contra hne
+  push_neg at hne
+  obtain ⟨i, hiS, hgi⟩ := hne
+  set T : Finset ι := s.filter (fun i => g i ≠ 0) with hT
+  have hiT : i ∈ T := by rw [hT]; simp [hiS, hgi]
+  obtain ⟨i₀, hi₀T, hi₀max⟩ := T.exists_max_image lead ⟨i, hiT⟩
+  have hg0 : g i₀ ≠ 0 := by rw [hT] at hi₀T; exact (Finset.mem_filter.mp hi₀T).2
+  have hi₀S : i₀ ∈ s := by rw [hT] at hi₀T; exact (Finset.mem_filter.mp hi₀T).1
+  have hpt : (∑ j ∈ s, g j • v j) (lead i₀) = 0 := by rw [hsum]; rfl
+  rw [Finsupp.finset_sum_apply] at hpt
+  have hterm : ∀ j, (g j • v j) (lead i₀) = g j * (v j) (lead i₀) := by
+    intro j; rw [Finsupp.smul_apply, smul_eq_mul]
+  simp_rw [hterm] at hpt
+  have hzero : ∀ j ∈ s, j ≠ i₀ → g j * (v j) (lead i₀) = 0 := by
+    intro j hjS hji₀
+    by_cases hgj : g j = 0
+    · rw [hgj, zero_mul]
+    · have hjT : j ∈ T := by rw [hT]; simp [hjS, hgj]
+      have hlt : lead j < lead i₀ :=
+        lt_of_le_of_ne (hi₀max j hjT) (fun heq => hji₀ (h.lead_inj heq))
+      have : (v j) (lead i₀) = 0 :=
+        Finsupp.notMem_support_iff.mp
+          (fun hmem => absurd (h.supp_le j (lead i₀) hmem) (not_le.mpr hlt))
+      rw [this, mul_zero]
+  rw [Finset.sum_eq_single i₀ (fun j hjS hji₀ => hzero j hjS hji₀)
+      (fun hi₀notS => absurd hi₀S hi₀notS)] at hpt
+  refine hg0 ?_
+  rcases (h.diag_unit i₀).exists_right_inv with ⟨c, hc⟩
+  have hcalc := congrArg (· * c) hpt
+  simp only [zero_mul] at hcalc
+  rwa [mul_assoc, hc, mul_one] at hcalc
+
+/-- The concrete **leading-tabloid map** `lead T = {sytToTableau T}` (the row-class of
+`T`'s own filling) — the leading tabloid of `e_T`. Sorry-free. -/
+noncomputable def leadTab (T : StandardYoungTableau μ) : Specht.Tabloid μ :=
+  Specht.Tabloid.mk (sytToTableau T)
+
+omit [CharZero k] in
+/-- `(S^μ).subtype ∘ standardPolytabloidS = standardPolytabloid` (definitional). -/
+theorem subtype_comp_standardPolytabloidS :
+    (Specht.SpechtSubmodule (k := k) μ).subtype ∘ standardPolytabloidS (k := k) (μ := μ)
+      = standardPolytabloid (k := k) (μ := μ) := by
+  funext T; rfl
+
+omit [CharZero k] in
+/-- **Corestriction reflects independence**: independence of `standardPolytabloidS`
+(in `S^μ`) ⟺ independence of `standardPolytabloid` (in `M^μ`), since the `S^μ`
+inclusion has trivial kernel. Sorry-free. -/
+theorem linearIndependent_corestrict_iff :
+    LinearIndependent k (standardPolytabloidS (k := k) (μ := μ))
+      ↔ LinearIndependent k (standardPolytabloid (k := k) (μ := μ)) := by
+  have hker : LinearMap.ker (Specht.SpechtSubmodule (k := k) μ).subtype = ⊥ :=
+    Submodule.ker_subtype _
+  have key := LinearMap.linearIndependent_iff
+      (Specht.SpechtSubmodule (k := k) μ).subtype hker
+      (v := standardPolytabloidS (k := k) (μ := μ))
+  rw [subtype_comp_standardPolytabloidS] at key
+  exact key.symm
+
+omit [CharZero k] in
+/-- **STUB — the irreducible combinatorial core (Sagan's dominance lemma).** There is
+a linear extension of dominance on `Tabloid μ` under which the standard polytabloids
+form a `Triangular` family with the concrete leading map `leadTab`. This bundles
+exactly the dominance content — `leadTab` injective on SYT, the coefficient of `{T}`
+in `e_T` a unit (`±1`), and every tabloid in `supp(e_T)` `≤ {T}` — three facts that
+are entangled (the diagonal-unit fact *is* the dominance argument) and form the single
+honest core. From it, independence follows sorry-free. -/
+theorem standardPolytabloid_triangular :
+    ∃ _ : LinearOrder (Specht.Tabloid μ),
+      Triangular (standardPolytabloid (k := k) (μ := μ)) (leadTab (μ := μ)) := by
+  -- Ref: [sagan2001] Thm 2.5.2 (dominance order on tabloids; e_T = ±{T} + lower
+  -- terms; {T} maximal in supp(e_T) with unit coefficient; T ↦ {T} injective on
+  -- SYT). See also [james1984representation] §8. The irreducible core of brick 4.
+  sorry
+
+omit [CharZero k] in
+/-- **Content obligation 1/2 — linear independence**, now derived **sorry-free modulo
+the single core** `standardPolytabloid_triangular` (the triangular lever + the
+corestriction reduction discharge everything else). Phrased on the corestricted family
+`standardPolytabloidS` (valued in `S^μ`), as required by `Basis.mk`. -/
 theorem standardPolytabloid_linearIndependent :
     LinearIndependent k (standardPolytabloidS (k := k) (μ := μ)) := by
-  -- Ref: [sagan2001] Thm 2.5.2 (the standard polytabloids are linearly
-  -- independent; dominance-order / last-letter argument). See also
-  -- [james1984representation] §8. Genuine content obligation; brick-4 target.
-  sorry
+  refine linearIndependent_corestrict_iff.mpr ?_
+  obtain ⟨_inst, htri⟩ := standardPolytabloid_triangular (k := k) (μ := μ)
+  exact htri.linearIndependent
+
+/-! ### 3b. Spanning (single honest stub) -/
 
 /-- **STUB — content obligation 2/2.** The standard polytabloids *span* the
 Specht module `S^μ`. Classical: every polytabloid `e_t` (arbitrary tableau `t`)
