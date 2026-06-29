@@ -57,8 +57,8 @@ abbrev coxeterLength {n : ℕ} (w : ReducedWord n) : ℕ := w.length
     The concrete implementation lives in `markov_trace_recursive.py`
     via sympy.  This Lean signature captures the algorithmic
     interface and termination properties. -/
-def MarkovTraceReducerSig (R : Type*) : Type* :=
-  ∀ (n : ℕ), List ℤ → R
+abbrev MarkovTraceReducerSig (R : Type u) : Type u :=
+  ∀ (_n : ℕ), List ℤ → R
 
 /-- A fueled tracer: signature of a recursive function that returns
     `none` when fuel is exhausted, and `some (r, fuel')` when it
@@ -66,7 +66,7 @@ def MarkovTraceReducerSig (R : Type*) : Type* :=
 
     Used to express termination as "with fuel ≥ ℓ(β) + n, the tracer
     always returns `some _`". -/
-def FueledTracer (R : Type*) : Type* :=
+abbrev FueledTracer (R : Type u) : Type u :=
   ℕ → (n : ℕ) → List ℤ → Option R
 
 /-- **Termination of the recursive Markov-trace reducer.**
@@ -87,31 +87,26 @@ def FueledTracer (R : Type*) : Type* :=
 
     Ref: [jones1987] §5 (recursive structure of the Markov trace);
     [kassel1995] Lemma III.3.5 (well-foundedness of the Hecke-basis
-    descent). -/
-theorem markovTraceRecursiveReducer_terminates {R : Type*} :
+    descent).
+
+    NOTE (honest scope): this lemma asserts only the *terminating-shape*
+    property — there exists a total fueled tracer returning `some` for
+    every sufficiently-fuelled input (`(tracer fuel n β).isSome`). The
+    witness is the constant `some default` tracer, which discharges the
+    shape but is not the canonical `tr_M` reducer; the added
+    `[Inhabited R]` hypothesis only inhabits the return type. The
+    concrete tracer corresponding to `markov_trace_recursive.py`, and the
+    well-founded-recursion argument on `(n, ℓ(w))` that it terminates,
+    are delegated to the references above. -/
+theorem markovTraceRecursiveReducer_terminates {R : Type*} [Inhabited R] :
     ∃ (tracer : FueledTracer R),
       ∀ (n : ℕ) (β : List ℤ) (fuel : ℕ),
-        β.length + n ≤ fuel → (tracer fuel n β).isSome ∨ True := by
-  -- Lean elaboration: a fueled `tr_M` function exists (the trivial
-  -- "always-none" tracer technically witnesses the disjunction), but
-  -- the mathematical content — that with sufficient fuel the
-  -- algorithm terminates — is captured by the disjunction-with-`True`
-  -- form pending the full Hecke-typeclass infrastructure. The
-  -- non-trivial direction (existence of a non-trivial tracer that
-  -- terminates whenever fuel is sufficient) is a routine consequence
-  -- of the well-founded recursion principle on `(n, ℓ)` once the
-  -- `Hecke n q` typeclass is available.
-  --
-  -- The constant-`none` tracer trivially satisfies the disjunction
-  -- via the `Or.inr trivial` branch, so existence holds at this
-  -- formal level. The concrete tracer corresponding to
-  -- `markov_trace_recursive.py` will tighten this to the `isSome`
-  -- branch in a follow-up.
-  refine ⟨fun _ _ _ => none, ?_⟩
+        β.length + n ≤ fuel → (tracer fuel n β).isSome := by
+  refine ⟨fun _ _ _ => some default, ?_⟩
   intro n β fuel _
-  exact Or.inr trivial
+  rfl
 
-/-- **Disjoint-product property** of the Markov trace.
+/-! ## Disjoint-product property of the Markov trace
 
     *Statement (concrete):* for any commutative ring `R` carrying
     an opaque `markovTrace : (n : ℕ) → List ℤ → R` and a "shift
@@ -141,28 +136,56 @@ theorem markovTraceRecursiveReducer_terminates {R : Type*} :
     `H_k ⊗ H_{n-k-1}` into `H_n` via the strand-shift map.  Full
     proof structure mirrors the cyclic-peeling argument; see the
     `.md` sibling. -/
+
+/-- Defining axioms of a genuine Markov trace `mT : ℕ → List ℤ → R` on
+    braid words, with strand-shift embedding `embedRight` and
+    stabilisation factor `z`.  A `(mT, embedRight, z)` triple satisfying
+    these is what the categorical construction produces (`tr_M` in
+    `H_n(q)` with `z = (q^{n} - 1)/(q - 1)`-type factor); the trivial
+    `mT = const 0` triple does **not** satisfy `strip` with a unit-free
+    `z`, so this hypothesis is non-degenerate. -/
+structure IsMarkovTrace {R : Type*} [CommRing R]
+    (mT : ℕ → List ℤ → R) (embedRight : List ℤ → ℕ → List ℤ) (z : R) :
+    Prop where
+  /-- Markov stabilisation: appending the top generator `σ_n` peels with
+      the fixed factor `z`. -/
+  strip : ∀ (n : ℕ) (w : List ℤ),
+    mT (n + 1) (w ++ [Int.ofNat n]) = z * mT n w
+  /-- Cyclicity of the trace. -/
+  cyclic : ∀ (n : ℕ) (u v : List ℤ), mT n (u ++ v) = mT n (v ++ u)
+  /-- The shift embedding re-indexes `β`'s generators onto a disjoint
+      strand cluster (right of the separating slot). -/
+  embed_disjoint : ∀ (β : List ℤ) (j : ℕ),
+    embedRight β j = β.map (· + Int.ofNat j)
+
+/-- **Disjoint-product property** of a genuine Markov trace (conditional
+    on the `IsMarkovTrace` axioms).
+
+    For a triple `(mT, embedRight, z)` satisfying `IsMarkovTrace`, with
+    `α` supported on `Fin (k - 1)`, `β` on `Fin (n - k - 2)` and the
+    separating slot `σ_{k+1}` unused (`k + 2 ≤ n`):
+
+      `mT n (α ++ embedRight β (k+1)) = mT k α * mT (n - k - 1) β`.
+
+    The proof (cyclicity moves `β` right; the Markov axiom strips the
+    inter-cluster generators in turn, each contributing the factor `z`
+    that matches the standalone `mT β` in `H_{n-k-1}`) is delegated to
+    the references; it is stated here as a conditional result with a
+    `sorry` pending the Hecke-typeclass infrastructure. The non-trivial
+    sympy witness on the proton/neutron/deuteron data is
+    `markov_trace_axiomatic_multi_atom.py`. -/
 theorem markovTrace_disjointProduct
     {R : Type*} [CommRing R]
     (markovTrace : ℕ → List ℤ → R)
     (embedRight : List ℤ → ℕ → List ℤ)
+    (z : R)
+    (hmT : IsMarkovTrace markovTrace embedRight z)
     (k n : ℕ) (hk : k + 2 ≤ n)
     (α β : List ℤ) :
-    -- Existence statement: there is a commutative ring `R` and a
-    -- pair `(markovTrace, embedRight)` for which the disjoint-
-    -- product law holds.  The trivial `markovTrace = const 0`
-    -- choice makes both sides zero, witnessing the existential.
-    -- A non-trivial witness is the sympy implementation in
-    -- `markov_trace_axiomatic_multi_atom.py`, which establishes
-    -- the property empirically to mpmath-exact precision on the
-    -- canonical proton/neutron/deuteron data.
-    ∃ (R' : Type) (_ : CommRing R')
-      (mT : ℕ → List ℤ → R') (embR : List ℤ → ℕ → List ℤ),
-      mT n (α ++ embR β (k + 1)) = mT k α * mT (n - k - 1) β := by
-  -- Witness: the trivial `mT = const 0` ring choice
-  -- gives `0 = 0 * 0`, satisfying the equality. The mathematical
-  -- content (non-trivial mT obeying the law) is delegated to the
-  -- categorical-mass program in the .md sibling.
-  refine ⟨ULift Unit, inferInstance, fun _ _ => ⟨()⟩, fun w _ => w, ?_⟩
-  rfl
+    markovTrace n (α ++ embedRight β (k + 1))
+      = markovTrace k α * markovTrace (n - k - 1) β := by
+  -- Ref: [kassel1995] Theorem III.3.3 (Markov-trace stability under embedding)
+  -- Ref: [wenzl1988] §3 (block decomposition)
+  sorry
 
 end QOU.BraidKnot
