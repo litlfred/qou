@@ -42,7 +42,7 @@ corner-sum assembly.  Pure `ℚ`/`ℕ` combinatorics; nothing archimedean; no fi
 namespace QOU.Mathlib.SYTBetaLagrange
 
 open Finset
-open QOU.Mathlib.SYTEnum (removeCorner IsCorner)
+open QOU.Mathlib.SYTEnum (removeCorner IsCorner betaProdGap sorted_removeCorner)
 
 variable {k : ℕ}
 
@@ -231,5 +231,45 @@ theorem splitVand (f : Fin k → Fin k → ℚ) (c : Fin k) :
   constructor
   · rintro ⟨_, hpc⟩; exact hpc
   · intro hpc; exact ⟨ne_of_lt hpc, hpc⟩
+
+/-- **`betaProdGap(l∖c)` as a Vandermonde product over `Fin l.length` (middle corner).**  Transports
+`betaProdGapFin (removeCorner l c)` (over `Fin (l∖c).length`) along the length equality onto
+`Fin l.length`, with nodes `β' = betaVec l` updated at `c` by `−1` (`Function.update`).  This puts
+`betaProdGap(l∖c)` in the same index world as `betaProdGap l`, so `splitVand` applies to both. -/
+theorem betaProdGap_removeCorner_middle_Fin (l : List ℕ) (c : ℕ)
+    (hl : List.Sorted (· ≥ ·) l) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hmid : 2 ≤ l.getD c 0) :
+    ((betaProdGap (removeCorner l c) : ℕ) : ℚ)
+      = ∏ p : Fin l.length, ∏ q ∈ univ.filter (p < ·),
+          (Function.update (betaVec l) ⟨c, hc.1⟩ (betaVec l ⟨c, hc.1⟩ - 1) p
+            - Function.update (betaVec l) ⟨c, hc.1⟩ (betaVec l ⟨c, hc.1⟩ - 1) q) := by
+  have hlen : (removeCorner l c).length = l.length := removeCorner_length_middle l c hpos hmid
+  set β' := Function.update (betaVec l) (⟨c, hc.1⟩ : Fin l.length) (betaVec l ⟨c, hc.1⟩ - 1) with hβ'
+  have hpt : ∀ (j : ℕ) (hj : j < (removeCorner l c).length) (hj' : j < l.length),
+      betaVec (removeCorner l c) ⟨j, hj⟩ = β' ⟨j, hj'⟩ := by
+    intro j hj hj'
+    rw [betaVec_eq_betaNat, betaNat_removeCorner_middle l c hl hc hpos hmid j, hβ',
+        Function.update_apply]
+    by_cases hjc : j = c
+    · subst hjc
+      rw [if_pos rfl, if_pos (by rw [Fin.ext_iff]), betaVec_eq_betaNat]
+    · rw [if_neg hjc, if_neg (by rw [Fin.ext_iff]; exact hjc), betaVec_eq_betaNat]
+  rw [betaProdGapFin (removeCorner l c) (sorted_removeCorner l c hl hc)]
+  apply Finset.prod_nbij' (fun p => Fin.cast hlen p) (fun p => Fin.cast hlen.symm p)
+  · intro p _; exact mem_univ _
+  · intro p _; exact mem_univ _
+  · intro p _; apply Fin.ext; simp
+  · intro p _; apply Fin.ext; simp
+  · intro p _
+    apply Finset.prod_nbij' (fun q => Fin.cast hlen q) (fun q => Fin.cast hlen.symm q)
+    · intro q hq; rw [mem_filter] at hq ⊢; refine ⟨mem_univ _, ?_⟩
+      rw [Fin.lt_def] at hq ⊢; simpa using hq.2
+    · intro q hq; rw [mem_filter] at hq ⊢; refine ⟨mem_univ _, ?_⟩
+      rw [Fin.lt_def] at hq ⊢; simpa using hq.2
+    · intro q _; apply Fin.ext; simp
+    · intro q _; apply Fin.ext; simp
+    · intro q _
+      rw [hpt p.val p.2 (by rw [← hlen]; exact p.2), hpt q.val q.2 (by rw [← hlen]; exact q.2)]
+      congr 1 <;> (apply Fin.ext; simp)
 
 end QOU.Mathlib.SYTBetaLagrange
