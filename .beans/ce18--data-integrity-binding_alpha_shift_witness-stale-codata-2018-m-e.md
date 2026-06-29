@@ -1,12 +1,14 @@
 ---
 # ce18
 title: 'Data-integrity: binding_alpha_shift_witness.py uses stale CODATA-2018 m_e (0.5109989461)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T05:50:00Z
-updated_at: 2026-06-28T14:07:56Z
+updated_at: 2026-06-29T20:30:00Z
 ---
+
+> **CLOSED 2026-06-29 (owner-directed)** — verified resolved on `main`: producer imports CODATA-2022 (`binding_alpha_shift_witness.py:50`) AND the witness is baked with `0.51099895069` (`binding-alpha-shift-witness.witness.json:8`). Remaining `0.5109989461` literals are `_deprecated/` only. Audit: `docs/audits/2026-06-29-bean-hygiene-data-integrity-verified-resolved.md`.
 
 ## Finding (surfaced 2026-06-28, Δ_λ ℓ¹-ceiling session, while triaging the data-integrity queue)
 

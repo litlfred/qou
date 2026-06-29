@@ -1,12 +1,14 @@
 ---
 # ct80
 title: 'Data-integrity: experimental_constants.py M_E_MEV truncated vs codata_constants sibling (me3r follow-up)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-24T17:51:20Z
-updated_at: 2026-06-28T14:07:57Z
+updated_at: 2026-06-29T20:30:00Z
 ---
+
+> **CLOSED 2026-06-29 (owner-directed)** — verified resolved on `main`: `experimental_constants.py:47` now `from codata_2022_source import M_E_MEV` (full `0.51099895069`). Audit: `docs/audits/2026-06-29-bean-hygiene-data-integrity-verified-resolved.md`.
 
 **Finding (me3r follow-up).** `computations/substrate/experimental_constants.py:41`
 has `M_E_MEV = 0.51099895000` (truncated), while its sibling
