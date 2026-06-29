@@ -46,3 +46,23 @@ all 77 y_lambda identical). So the engine is canonical + consistent; the He4 χ 
 one witness to the other pin in isolation (silent-q₀-flip hazard). No regen committed; tree clean.
 Audit: `docs/audits/2026-06-29-b0vf-chi-drift-is-q0-pin-not-engine.md`.
 
+## SCALAR already solved via markov-peel (2026-06-29) — re-scope: per-partition is the only open need
+
+Cross-checked the partial against the **independent markov-peel** method (Hecke NF + trace, no
+per-partition seminormal matrices). markov-peel He-4 `tr_M = 0.055358426266783106…` is **complete**,
+at the **same muon pin** (`…955573347`) as the 27/77 partial, in **96.8 s** — already on main
+(`markov/markov-peel-atomic-tr-m.witness.json`). The 27/77 χ-sum `0.055414100…` is the same observable
+at the same pin but incomplete: gap = **5.567e-5 (0.1006 %)** = the net of the 50 missing (≥3-row)
+partitions. So:
+- **Scalar tr_M(He-4):** DONE — use markov-peel `0.055358426…`. The χ-sum producer (full Hoefsmit
+  dim≈5600 mpmath matrices/partition at 50 dps; one partition `[6,3,2,1]` took 12.2 h) is NOT needed
+  for the scalar; completing it is multi-week, infeasible in-sandbox.
+- **Per-partition χ_λ(He-4)** is the ONLY thing the χ-sum adds (Δ_λ decomposition). A complete 77/77
+  table exists in the `-matrix-m` sibling but at the retired-proton pin → cross-pin merge is the
+  owner-gated q₀ migration (tnjb/z5vu), not in scope.
+- The dominance probe's "tail ≤ 5.3e-52" is **circular** (reported_tr_M = cached_sum); the real tail is
+  5.6e-5, established by markov-peel.
+
+Partial witness flagged known-incomplete (benign note field; no numeric/q₀ change). No regen; tree clean.
+Audit: `docs/audits/2026-06-29-b0vf-markov-peel-crosscheck-he4-scalar.md`.
+
