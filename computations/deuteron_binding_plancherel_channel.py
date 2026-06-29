@@ -54,16 +54,20 @@ def main() -> int:
     print("=" * 78)
     print(f"\nq_0 = {q_str(60)} (display)\n")
 
-    M_N_MEV = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
+    m_n_derived_3input = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
     # Deuteron CODATA from the codata_constants registry (no inline literal).
     from codata_constants import M_D_MEV_VALIDATION
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     M_D_MEV = M_D_MEV_VALIDATION
-    B_d = M_P_MEV + M_N_MEV - M_D_MEV
+    B_d = M_P_MEV + m_n_derived_3input - M_D_MEV
     print(f"[CODATA]")
     print(f"  B(d) = {mp.nstr(B_d, 12)} MeV (= 2.22... )")
     print(f"  B(d) / M_d = {mp.nstr(B_d / M_D_MEV, 18)}")
     print(f"  B(d) / m_e = {mp.nstr(B_d / M_E_MEV, 18)}")
-    print(f"  (m_p+m_n)/2 = {mp.nstr((M_P_MEV+M_N_MEV)/2, 12)}")
+    print(f"  (m_p+m_n)/2 = {mp.nstr((M_P_MEV+m_n_derived_3input)/2, 12)}")
 
     # Substrate
     h = q - 1 / q

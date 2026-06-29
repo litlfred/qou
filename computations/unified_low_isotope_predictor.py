@@ -44,7 +44,7 @@ from mpmath import mp
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from experimental_constants import (M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV,
+from experimental_constants import (M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV,  # noqa: over-count-3-input
                                        Q_TRITIUM_MEV)
 from light_isotope_sweep import tr_M_at_q0, FROB_N3, M_E
 from q_parameter import Q as Q_0

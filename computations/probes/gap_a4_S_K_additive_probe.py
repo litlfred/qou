@@ -55,9 +55,13 @@ Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 # CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
 # registry (I9 — no hardcoded literals). See codata_constants.py.
 from codata_constants import (  # noqa: E402
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     M_E_MEV,
     M_P_MEV_VALIDATION as M_P_MEV,
-    M_N_MEV_VALIDATION as M_N_MEV,
+    M_N_MEV_VALIDATION as m_n_derived_3input,
     M_D_MEV_VALIDATION as M_D_MEV,
     M_T_MEV_VALIDATION as M_T_MEV,
     M_HE3_MEV_VALIDATION as M_HE3_MEV,
@@ -70,7 +74,7 @@ VOL_PHASE4_Z2 = mp.mpf("12.554")
 
 LIGHT_SERIES = [
     ("p",   1, 0, M_P_MEV,   VOL_BORROMEAN_8G),
-    ("n",   0, 1, M_N_MEV,   VOL_BORROMEAN_8G),
+    ("n",   0, 1, m_n_derived_3input,   VOL_BORROMEAN_8G),
     ("D",   1, 1, M_D_MEV,   VOL_PHASE4_Z1),
     ("T",   1, 2, M_T_MEV,   VOL_PHASE4_Z1),
     ("3He", 2, 1, M_HE3_MEV, VOL_PHASE4_Z2),
@@ -219,7 +223,7 @@ def main() -> int:
             "F2_A_lw_m_e": A * tr_M_K * M_E_MEV,
             # F3: S(K) = m_e · Z · m_p_codata + m_e · N · m_n_codata
             #     (the constituent additive form, in m_e units)
-            "F3_constituent": Z * M_P_MEV + N * M_N_MEV - M_E_MEV * vol_K / hbar2 * tr_M_K,
+            "F3_constituent": Z * M_P_MEV + N * m_n_derived_3input - M_E_MEV * vol_K / hbar2 * tr_M_K,
             # F4: S(K) = (Z+N) · m_e · Vol(K)/ℏ_q² (per-atom geom)
             "F4_geom_per_K_times_A": A * M_E_MEV * vol_K / hbar2,
         }

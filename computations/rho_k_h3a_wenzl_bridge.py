@@ -78,6 +78,10 @@ from witness_base import WitnessBuilder  # noqa: E402
 # Reuse the proven numeric Hoefsmit + character pipeline from sibling
 # rho_k_h3a_refinement.py (do NOT modify that script per task constraint).
 from rho_k_h3a_refinement import (  # noqa: E402
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     chi_numeric,
     deuteron_canonical_crossings,
     load_y_lambda_n6,
@@ -134,7 +138,7 @@ def main() -> int:
     # ── Step 1: |tr_M(β_D)| and Δρ from Option A pipeline ──────
     tr_M = load_deuteron_tr_M()
     abs_tr_M = abs(tr_M)
-    rho_K_LO = (M_P_MEV + M_N_MEV) / (M_E_MEV * abs_tr_M)
+    rho_K_LO = (M_P_MEV + m_n_derived_3input) / (M_E_MEV * abs_tr_M)
     rho_K_codata = M_D_MEV / (M_E_MEV * abs_tr_M)
     delta_rho = rho_K_codata - rho_K_LO
     print(f"  |tr_M(β_D)|       = {mp.nstr(abs_tr_M, 25)}")
@@ -427,7 +431,7 @@ def main() -> int:
             "M_codata_MeV": str(M_D_MEV),
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(M_N_MEV),
+            "m_n_MeV": str(m_n_derived_3input),
         },
         "data": {
             "abs_tr_M_at_q0": str(abs_tr_M),

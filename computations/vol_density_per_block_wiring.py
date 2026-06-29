@@ -65,6 +65,10 @@ from _li_2_q_util import (  # noqa: E402
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
 
 VOL_B3 = 8 * mp.catalan  # Vol(Borromean rings complement) = 8·G (Adams 1985)
 
@@ -97,7 +101,7 @@ def main() -> int:
     q0 = mp.mpf(Q_50_DIGIT_STR)
     me = mp.mpf(repr(M_E_MEV))
     mpc = mp.mpf(repr(M_P_MEV))
-    mnc = mp.mpf(repr(M_N_MEV))
+    mnc = mp.mpf(repr(m_n_derived_3input))
 
     gl = geom_leading(VOL_B3, q0)            # Vol(𝓑₃)/ℏ_q²
     lw = linking_weight_family_a(q0)         # global H₄ scalar ≈ 2.53

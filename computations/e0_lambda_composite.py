@@ -68,11 +68,15 @@ H = Q0 - QINV  # h = q - q⁻¹
 
 # experimental anchors (CODATA 2022, via experimental_constants.py)
 from experimental_constants import (  # noqa: E402
-    M_E_MEV, M_P_MEV, M_N_MEV,
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
+    M_E_MEV, M_P_MEV, m_n_derived_3input,
 )
 M_E = mpf(str(M_E_MEV))
 M_P = mpf(str(M_P_MEV))
-M_N = mpf(str(M_N_MEV))
+M_N = mpf(str(m_n_derived_3input))
 
 
 # ── per-λ H_3 substrate data: read DIRECTLY from the GAP-A-4 verifier
