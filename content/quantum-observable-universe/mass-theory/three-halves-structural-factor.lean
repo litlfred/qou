@@ -99,13 +99,18 @@ theorem two_plus_h_sq_times_bracket2_eq_bracket4
     is `[3]_q · [2]_q / [4]_q`. Equivalent closed form:
     `(3 + h²) / (2 + h²)`. -/
 theorem three_halves_factor_eq_q_brackets
-    {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (h2 : 2 + (heckeH q)^2 ≠ 0) (hb4 : bracket4 q ≠ 0) :
     (3 + (heckeH q)^2) / (2 + (heckeH q)^2)
       = bracket3 q * bracket2 q / bracket4 q := by
   -- The identity follows from:
   --   3 + h² = [3]_q   (three_plus_h_sq_eq_bracket3)
   --   (2 + h²) · [2]_q = [4]_q   (two_plus_h_sq_times_bracket2_eq_bracket4)
   -- Combined: (3 + h²)/(2 + h²) = [3]_q · [2]_q / [4]_q.
+  -- Over a general field the cross-multiplication needs both denominators
+  -- nonzero (the equality is false where [4]_q or 2 + h² vanishes, e.g.
+  -- char 2); hence the explicit `h2`, `hb4` hypotheses.
+  rw [div_eq_div_iff h2 hb4]
   unfold heckeH bracket2 bracket3 bracket4
   field_simp
   ring
@@ -138,11 +143,16 @@ theorem bracket6_eq_bracket2_bracket3_times_one_plus_h_sq
 /-- **THEOREM (tau structural-factor reduction).** The conjectured tau
     closure factor reduces to `[5]_q / ([2]_q · (1 + h²))`. -/
 theorem bracket5_bracket3_div_bracket6
-    {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (hb6 : bracket6 q ≠ 0)
+    (hd : bracket2 q * (1 + (heckeH q)^2) ≠ 0) :
     bracket5 q * bracket3 q / bracket6 q
       = bracket5 q / (bracket2 q * (1 + (heckeH q)^2)) := by
   -- Substitute the structural identity [6]_q = [2]_q · [3]_q · (1 + h²)
   -- and cancel [3]_q from numerator and denominator.
+  -- Over a general field the cross-multiplication needs both denominators
+  -- nonzero (false where [6]_q or [2]_q·(1+h²) vanishes); hence `hb6`, `hd`.
+  rw [div_eq_div_iff hb6 hd]
   unfold heckeH bracket2 bracket3 bracket5 bracket6
   field_simp
   ring
