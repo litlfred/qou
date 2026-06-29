@@ -123,8 +123,10 @@ theorem cohomological_embedding :
 /-- No additional torus knot embeds at genus 4: T_{2,11} has Seifert
     rank 5, which exceeds g = 4. -/
 theorem t211_not_embeddable : ¬ embeddable 2 11 4 := by
-  intro ⟨_, h⟩
-  exact absurd h (by decide)
+  -- Seifert rank of T_{2,11} is (2-1)(11-1)/2 = 5 > 4 = genus, so the
+  -- embeddability conjunct `seifertRank 2 11 ≤ 4` is concretely false.
+  unfold embeddable seifertRank
+  decide
 
 /-- The Euler characteristic of Σ₄ is −6. -/
 theorem euler_char_genus_4 : (2 : ℤ) - 2 * 4 = -6 := by decide
