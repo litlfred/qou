@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-06-28T17:58:46.020083+00:00",
-  "commitSha": "f801469eee19e22b6f265bdad2c266646ab654c8",
+  "computedAt": "2026-06-29T15:33:43.734876+00:00",
+  "commitSha": "2520af203b3c4086c1f4bad3afd440f0515a98c1",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 36,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
@@ -19,6 +19,7 @@
   "environment": {
     "python": "3.13.12",
     "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -26,7 +27,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 973,
+    "files_scanned": 985,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +41,7 @@
       "P15": 130,
       "P16": 284,
       "P21": 24,
-      "P30": 151,
+      "P30": 153,
       "P31": 23
     },
     "top_files": [
@@ -729,6 +730,13 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
+        "pattern": "P30",
+        "file": "borromean_binding_recompute.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
         "pattern": "P16",
         "file": "borromean_h3_2_1_irrep_derivation.py",
         "line": 222,
@@ -762,13 +770,6 @@
         "line": 303,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P30",
-        "file": "branching-qvalue-chain.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",
@@ -997,6 +998,13 @@
       {
         "pattern": "P30",
         "file": "delta_lambda_binding_full_evaluation.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "delta_lambda_borromean_ascaling.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -1899,6 +1907,13 @@
       },
       {
         "pattern": "P30",
+        "file": "he4_9_3_interface_operator_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "higgs_categorical_mass_formula_attempt.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -2001,13 +2016,6 @@
         "line": 190,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P30",
-        "file": "interface_quadratic_identity.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",
@@ -3040,6 +3048,13 @@
       },
       {
         "pattern": "P30",
+        "file": "option_e_a4_full_reconciliation.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "option_e_canonical_reeb_v5.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -3055,6 +3070,13 @@
       {
         "pattern": "P30",
         "file": "option_e_deuteron_param_free_residual.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_kl_betti_contributive_deuteron.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -3587,21 +3609,21 @@
       {
         "pattern": "P15",
         "file": "rho_k_h3a_co_casimir.py",
-        "line": 126,
+        "line": 130,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "rho_k_h3a_co_casimir.py",
-        "line": 135,
+        "line": 139,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "rho_k_h3a_co_casimir.py",
-        "line": 150,
+        "line": 154,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -4255,13 +4277,6 @@
         "line": 103,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P30",
-        "file": "y_lambda_equivalence_proof.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P15",

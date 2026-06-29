@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-29T14:24:25.105879+00:00",
-  "commitSha": "00efb10c90b096b3d37b083bd5130b2cd4733684",
+  "computedAt": "2026-06-29T15:33:47.177829+00:00",
+  "commitSha": "2520af203b3c4086c1f4bad3afd440f0515a98c1",
   "assertions": [
     {
       "name": "all_atoms_within_1ppQ",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 51,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
-  "scriptHash": "4d9c90af86d1",
-  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
+  "scriptHash": "38b852a0ddbe",
+  "scriptCommitSha": "055ebe3cee75e557a408719a1c88afb68ac1c423",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,8 +32,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
