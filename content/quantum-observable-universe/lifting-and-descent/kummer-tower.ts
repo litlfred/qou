@@ -10,10 +10,8 @@ export default remark({
     "obstruction",
     "euler-characteristic",
     "complementary-subgroup",
-    "motivic-galois",
   ],
   uses: [
     "thm:qu-to-qou",
-    "def:adelic-substrate",
   ],
 });
