@@ -816,7 +816,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "Block is a QOU<->LQG/ADM/Ashtekar quantum-gravity dictionary; squarely in scope for the gravity-spacetime chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "Checked the cited LQG facts: Barbero-Immirzi gamma~0.274 (SU(2)) / ~0.2375 (U(1)), area operator 8*pi*gamma*l_p^2*sqrt(j(j+1)), ADM lapse/shift, Ashtekar A=Gamma+gamma*K, Kodama exp(i*CS) — all standard and correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "Substantive structural dictionary with 20+ non-trivial correspondences plus a Limitations section; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "severity": "minor",
+        "evidence": "lqg-adm-ashtekar-comparison.md:24: \"Substrate parameter $q_0 \\approx 1.11$, **derived** ... not a free fit\"",
+        "notes": "Asymmetric framing — q0 is presented as 'derived/not a fit' against LQG's 'fitted' gamma, but q0 is itself pinned against CODATA m_mu/m_e; the corpus epistemic-status-of-calibrations.md calls q0 'the un-derived gap'. Flagged the stronger form under da-overclaim; warn here rather than fail since the block's own Limitations disclaims a first-principles LQG derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "severity": "major",
+        "evidence": "lqg-adm-ashtekar-comparison.md:66: \"the substrate $q_0$, derived from the categorical Reeb flow and locked by the algebraic structure of Bring's surface ($\\chi = -6$). The quantisation scale is fixed by the substrate, not back-solved\"",
+        "notes": "Contradicts the corpus's own authoritative status: observations/epistemic-status-of-calibrations.md states 'q_0 ≈ 1.10998 itself is the un-derived gap. Currently pinned by inverting m_mu/m_e = Vol(4_1)/hbar_q^2 against CODATA' and 'the substrate-q_0 derivation was declined as out-of-scope'. q0 is CAL-2 (a calibration), so presenting it as 'derived, not a free fit / not back-solved' overclaims its epistemic status while criticizing LQG's gamma as fitted. The Limitations section walks back the LQG-derivation claim but not the q0-derived claim (lines 59-68)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "No undisclosed parameter or 4th calibration introduced; the dictionary maps existing canonical-chain objects. (The q0 status issue is an overclaim of how an existing CAL is described, not a hidden DOF — flagged under da-overclaim.)"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "All cross-referenced labels (conj:os-reflection-positivity-from-reeb, prop:reeb-u1-chart-swap, conj:phi-q-wkb-greens-function, prop:sw-period-residue-sum, etc.) resolve; the three structural-advantage arguments cite their supporting blocks, no missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "Remark block with no .lean sibling; nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "ashtekar1986 (New variables), rovelli1995 (BH entropy from LQG), rovelli2004 (Quantum Gravity), thiemann2007 (Modern Canonical QGR) all resolve in references.ts and are attributed to the correct results; Thiemann's rigorous Hamiltonian-constraint operator named in-prose is covered by thiemann2007."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "Key categorical terms (categorical Dirac operator, instanton, Reeb flow, Wedderburn blocks, adelic product) all hyperlink to defined blocks; no 'the unique X' without backing."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "This is a structural dictionary, not a numerical prediction; the only number (q0 ≈ 1.11) is the standard substrate pin, no fit-noise match or cross-anchor swing presented as a result."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "Units and structures (area spectrum, holonomy-flux algebra, spin foam amplitudes) are consistent with the LQG literature; no broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "notes": "Remark carries no backing witness/compute script; nothing to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f94f92bfe491",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:11:29.349Z",
+        "reviewed_sha": "19def7c79919d6f19f20e5a902fd3cc8fe8a25e5",
+        "severity": "major",
+        "evidence": "lqg-adm-ashtekar-comparison.md:24: \"$q_0 \\approx 1.11$, **derived** ... not a free fit\"",
+        "notes": "verdict=minor-revision. The dictionary is a sound, well-cited structural comparison and the Limitations section is appropriately honest about conjectural dependence. referee_argument: the one substantive defect is the asymmetric q0 framing — calling q0 'derived from the substrate / not a free fit / not back-solved' while critiquing LQG's gamma as fitted directly contradicts the corpus's own epistemic-status-of-calibrations.md, which calls q0 'the un-derived gap' pinned against CODATA m_mu/m_e. Soften to 'q0 is a single calibration input vs LQG's two free parameters (gamma and the foliation)' to keep the comparison honest."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:11:29.349Z"
 }
