@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Mass-endomorphism chapter; block's primary subject (categorical mass / Markov trace / binding / Q_beta) is squarely in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Checked the stated math; no counterexample or failing special case found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Block carries genuine content, not a content-free tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Derivation does not assume its own conclusion; calibration not smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Conclusion is scoped to what the argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "No undisclosed free parameter / 4th calibration; constants trace to the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Each step follows from the prior; no missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Lean proves the same (not weaker/vacuous) claim as the .md."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Cited references support the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Key terms defined or referenced; regime/base ring clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Numerical claims are not fit-noise / cherry-picked; witnesses present."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "No physics claim a domain expert would reject; units/conservation consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Backing witnesses exist on disk; values consistent with prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:19:05.193Z",
+        "reviewed_sha": "698dec93bdeb6b771894daec9a87caf1b6adbbae",
+        "notes": "Block is sound; no blocking objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:19:05.193Z"
 }
