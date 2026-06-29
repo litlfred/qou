@@ -133,3 +133,28 @@ machinery so the single reduction lives downstream of both; until then, A1/A2
 discharge brick 4's copy, and brick 2's in-place copy should be discharged by an
 independent (duplicated) standard-basis argument or removed in favour of a
 forward-reference in its docstring.
+
+## References
+
+Citation keys resolve against `content/schema/references.ts` (the corpus
+bibliography source of truth):
+
+- **[sagan2001]** Sagan, Bruce E. (2001). *The Symmetric Group: Representations,
+  Combinatorial Algorithms, and Symmetric Functions*. Springer, New York. —
+  standard tableaux, tabloids, polytabloids; the standard basis (Thm 2.5.2), the
+  Garnir relations (§2.6), and the classification of irreducibles (§2.4).
+- **[james1984representation]** James, Gordon; Kerber, Adalbert (1984). *The
+  Representation Theory of the Symmetric Group*. Encyclopedia of Mathematics and
+  its Applications, vol. 16. Cambridge University Press. — Specht modules, the
+  James submodule theorem, irreducibility and pairwise non-isomorphism in
+  characteristic 0. (`references.ts` carries an unresolved edition/year caveat:
+  the original is Addison–Wesley 1981, with a later CUP reprint; see
+  [`docs/audits/2026-06-23-bibliography-doi-verification-doth.md`](../audits/2026-06-23-bibliography-doi-verification-doth.md) §C.)
+- **[vershik-kerov1977]** Vershik, Anatoly M.; Kerov, Sergei V. (1977).
+  *Asymptotic theory of characters of the symmetric group*. — the foundational
+  Vershik–Kerov paper; the specific Jucys–Murphy-element = cell-content eigenvalue
+  theorem cited in group C (C1/C2) is the Okounkov–Vershik "new approach to the
+  representation theory of the symmetric groups" refinement of this line.
+- **[fulton1997]** Fulton, William (1997). *Young Tableaux*. London Mathematical
+  Society Student Texts 35. Cambridge University Press. — Young diagrams, tableaux,
+  and the combinatorics of standard fillings.
