@@ -780,7 +780,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Block sits in §sec:tm-interactions of the Transfer Matrices appendix; its subject (enumeration of the seven Sigma_4 interaction operators) is squarely the section's stated scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Checked the 1+4+2=7 arithmetic and the catalogue table (tm-interaction-completeness-table-data.md): 7 rows = identity + beta-/beta+ + photon abs/emit + pair create/annihilate; the local single-crossing enumeration is internally consistent with tm-interactions.md."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Prose block with no Lean/proof term; no ': True := trivial' or self-assuming projection possible."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "The count is derived from the crossing-type alphabet and Hecke-quadratic local moves, not back-fitted to a target observable; no calibration is smuggled in."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "severity": "minor",
+        "evidence": "tm-interaction-completeness.md:39: \"The catalogue table above is exhaustive: any Sigma_4-admissible single-crossing change reduces to one of these seven\"",
+        "notes": "The local single-crossing enumeration is supported, but the global closure-under-composition claim (the actual 'interaction completeness') is acknowledged in authorNotes as 'left to the formalisation pass' — the title/intro phrase 'interaction completeness' slightly overstates what is rigorously established here. The authorNotes status note keeps this honest, hence warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No free parameter or off-menu coefficient introduced; the operators (Delta_beta, T_pp, inverses) all trace to tm-interactions.md and tm-general-form.md."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Each of the three counting constraints (crossing alphabet, Reidemeister-I local completeness, identity for closure) feeds the 1+4+2 tally coherently; the n-fold-process reduction to composites of the seven is stated, not asserted as a logical leap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No sibling .lean file (prose block); nothing to compare against the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Internal cross-references only (tm-interactions, tm-knot-pairs, chap:brings-surface, rem:force-knot-identification); each points at a real sibling block carrying the invoked content. No external cites[] to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "severity": "minor",
+        "evidence": "tm-interaction-completeness.md:34: \"Pair creation/annihilation reuse +/-Delta_beta ... giving two further distinct operators\"",
+        "notes": "The block counts seven 'interactions/operators' but only four DISTINCT matrices exist (Delta_beta, -Delta_beta, T_pp, T_pp^{-1}); rows 2&7 and 3&6 of the catalogue share an operator. The block distinguishes them by crossing-pair context, so 'seven operators' conflates seven PROCESSES with four distinct matrices. The distinction is flagged inline, so this is an ambiguity in the word 'operator', not an error."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No numerical prediction or q0-anchored value in this block; nothing to assess for fit-noise or anchor swing."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Physics framing (beta+/- as u<->d flips, single photon cannot pair-produce in vacuum, double-beta as quadratic composite) is standard and consistent with the referenced tm-interactions.md; no units error or conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No backing compute witness or numerical literal in this prose block; nothing with a scriptHash/scriptCommitSha to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e66a841514e7",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "severity": "minor",
+        "evidence": "tm-interaction-completeness.md:39: \"The catalogue table above is exhaustive\"",
+        "notes": "Verdict: sound enumeration appendix block; minor referee objections only. Strongest objection: the title/word 'completeness' promises a global closure-under-composition result that authorNotes explicitly defers to a future formalisation pass, while only the single-crossing local enumeration is rigorously delivered here; and 'seven operators' is really seven processes over four distinct matrices. Both are transparently disclosed in-block, so accept with minor caveats."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:50:28.481Z"
 }

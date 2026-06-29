@@ -780,7 +780,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Block is the §sec:tm-notation conventions block of the Transfer Matrices appendix; notation tables, knot dictionary, and the transfer-matrix mechanism are exactly this section's scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Verified the binomial count: total T-factors = sum_{i=0}^{A-2}(A-1-i) = sum_{k=1}^{A-1} k = C(A,2), matching 'exactly C(A,2) transfer matrix multiplications'. The M_i product, Markov-traced volume, and nuclear Skein product formulas are well-formed and consistent with tm-general-form.md."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Prose notation block with no Lean/proof term; vacuity criterion structurally inapplicable."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Pure definitional/notational content (symbol tables + the mechanism formula); no derivation assuming its own conclusion and no calibration smuggling."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "The 'self-contained / no prior reading required' claim is supported by the four local symbol tables and locally-defined mechanism; it is a scope claim about the appendix, not a strengthened mathematical result."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No free parameter; z(q) and the T_{K_j,K_i} factors are defined upstream (tm-general-form.md) and in the local tables, not introduced as undisclosed constants."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Mechanism section is a sequence of definitions (M_i, V-hat_i, P_N) and a counting statement, each following from the prior; no inferential 'therefore' gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No sibling .lean file (prose block); nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No cites[] and no external references in the block; only forward pointers to local data tables, which exist."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "severity": "minor",
+        "evidence": "tm-notation.md:41: \"V-hat_i(q) = z(q) . (M_i)_{11} + (M_i)_{21}\"",
+        "notes": "The 'Markov-traced volume' formula introduces z(q) without defining it locally despite the block's '**self-contained** ... all notation defined locally. No prior reading is required' promise (line 1-3); z presumably lives in the symbol Table 1, but the prose body does not state its meaning, so a reader relying on the body alone hits an undefined symbol. Minor: likely resolved by the referenced table."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No numerical prediction or q0-anchored value; nothing to assess for fit-noise or anchor staleness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "The A=Z+N nucleon-to-braid-word mapping (A-1 generators) and right-to-left crossing composition are standard braid conventions; no physical-law violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "No backing compute witness or numerical literal; no scriptHash/scriptCommitSha to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:50:28.481Z",
+        "reviewed_sha": "684b7d7dfa6500dcdc6aa409ed9c0672565d632e",
+        "notes": "Verdict: clean self-contained notation block. Strongest (minor) objection: the body uses z(q) in the V-hat_i formula without restating its definition inline despite the 'all notation defined locally' promise, a presentation nit resolvable via the referenced symbol table. No substantive defect; accept."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:50:28.481Z"
 }
