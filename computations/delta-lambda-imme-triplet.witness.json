@@ -1,0 +1,123 @@
+{
+  "engine": "python+canonical-binding",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-29T16:19:55.708711+00:00",
+  "commitSha": "20ffe92dc3378a2804d7bcc0178ad55fce43444a",
+  "assertions": [
+    {
+      "name": "quadratic_c_nonzero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "|c| > 0.1 q₀-units in every triplet — a real bar-even quadratic beyond leading+linear (mirror pairs cannot see it)"
+    },
+    {
+      "name": "mirror_diff_equals_2b",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "f(+1)−f(−1)=2b exactly (consistency with PR #3089 mirror method)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18810,
+  "computation": "delta-lambda-imme-triplet",
+  "scriptFile": "delta_lambda_imme_triplet.py",
+  "scriptHash": "2fa1ae995a62",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Isobaric-triplet (IMME) decomposition of the canonical residual log_q0 Δ_λ = a + b·T₃ + c·T₃². Mirror PAIRS (PR #3089) measure only the bar-odd b; the bar-even QUADRATIC c is invisible to them (it cancels in the mirror difference, Lean mirror_baseline_cancels) and needs a TRIPLET. A=6 (⁶He/⁶Li/⁶Be): a=36.12, b=−1.73 (consistent with the mirror b's −1.34@A3,−1.77@A7), c=−1.24 NONZERO. Askey: body-order b-ladder is continuous q-Hermite (3-term recurrence); IMME is the degree-2 T₃ truncation (Wigner rank-≤2 isotensor = Askey–Racah cutoff). CAVEAT: T₃=0 ground states are T=0 (not the T=1 analog), so c mixes the IMME quadratic with T=0/T=1 structure; robust claim = residual has a nonzero bar-even quadratic. Not wired; near-match; no fit.",
+  "data": {
+    "q0": 1.1099785955573347,
+    "triplets": [
+      {
+        "A": 6,
+        "members": {
+          "-1": {
+            "atom": "6He",
+            "Z": 2,
+            "N": 4,
+            "B_pred": 0.6419299094059542,
+            "log_q0": 36.609674727533246
+          },
+          "0": {
+            "atom": "6Li",
+            "Z": 3,
+            "N": 3,
+            "B_pred": 0.7381293495624422,
+            "log_q0": 36.12398792705983
+          },
+          "1": {
+            "atom": "6Be",
+            "Z": 4,
+            "N": 2,
+            "B_pred": 0.8465866377052679,
+            "log_q0": 33.156414271215475
+          }
+        },
+        "imme_a": 36.124,
+        "imme_b_linear": -1.727,
+        "imme_c_quadratic": -1.241,
+        "mirror_diff_2b": -3.453,
+        "triplet_2nd_diff_2c": -2.482
+      },
+      {
+        "A": 8,
+        "members": {
+          "-1": {
+            "atom": "8Li",
+            "Z": 3,
+            "N": 5,
+            "B_pred": 0.6339704000542918,
+            "log_q0": 40.02328125413158
+          },
+          "0": {
+            "atom": "8Be",
+            "Z": 4,
+            "N": 4,
+            "B_pred": 0.7311612971231611,
+            "log_q0": 41.664965369442044
+          },
+          "1": {
+            "atom": "8B",
+            "Z": 5,
+            "N": 3,
+            "B_pred": 0.8429456298724523,
+            "log_q0": 36.433586830844455
+          }
+        },
+        "imme_a": 41.665,
+        "imme_b_linear": -1.795,
+        "imme_c_quadratic": -3.437,
+        "mirror_diff_2b": -3.59,
+        "triplet_2nd_diff_2c": -6.873
+      }
+    ],
+    "imme_form": "log_q0 Δ_λ(T₃) = a(A) + b(A)·T₃ + c(A)·T₃²,  T₃=(Z−N)/2",
+    "parity": {
+      "a_isoscalar": "bar-EVEN (T₃-even) — leading ~10A−5 (A≤4)",
+      "b_linear": "bar-ODD (T₃-odd) — the writhe Z-correction; mirror diff=2b·T₃",
+      "c_quadratic": "bar-EVEN (T₃-even) — cancels in mirror pairs; triplet 2nd diff=2c"
+    },
+    "b_by_A_linear_coeff": {
+      "6": -1.727,
+      "8": -1.795
+    },
+    "askey": {
+      "body_order_n": "b-ladder a(n+2)=2cosh(10η)a(n+1)−a(n): continuous q-Hermite / Al-Salam–Chihara three-term recurrence (Askey q-scheme)",
+      "isospin_T3": "IMME degree-2 in T₃ = Wigner rank-≤2 isotensor truncation (Askey–Racah cutoff; no d·T₃³)"
+    },
+    "caveat_same_T": "T₃=0 ground states (⁶Li,⁸Be) are T=0, not the T=1 isobaric analog; c mixes IMME-c with T=0/T=1 structure"
+  }
+}
