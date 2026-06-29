@@ -74,6 +74,55 @@ theorem bigPoly_eval (β : Fin k → ℚ) (i : Fin k) :
   rw [eval_sub, eval_X, eval_C]
   ring
 
+/-! ## Vieta coefficients of a product of monic linears -/
+
+/-- `esymm s 1 = s.sum` (the singletons are the cardinality-`1` subsets). -/
+theorem esymm_one (s : Multiset ℚ) : s.esymm 1 = s.sum := by
+  unfold Multiset.esymm
+  rw [Multiset.powersetCard_one, Multiset.map_map]
+  simp [Function.comp]
+
+/-- `∏ⱼ (X − fⱼ)` as a product over the node multiset, for Vieta. -/
+theorem prodLin_eq (f : Fin k → ℚ) :
+    (∏ j, (X - C (f j))) = ((Finset.univ.val.map f).map (fun a => X - C a)).prod := by
+  have h : (∏ j, (X - C (f j))) = (Finset.univ.val.map (fun j => X - C (f j))).prod := rfl
+  rw [h, Multiset.map_map]
+  exact congrArg Multiset.prod (Multiset.map_congr rfl (fun x _ => rfl))
+
+/-- The node multiset has cardinality `k`. -/
+theorem nodes_card (f : Fin k → ℚ) : Multiset.card (Finset.univ.val.map f) = k := by
+  rw [Multiset.card_map]; exact Finset.card_fin k
+
+/-- `∏ⱼ (X − fⱼ)` is monic. -/
+theorem prodLin_monic (f : Fin k → ℚ) : (∏ j, (X - C (f j))).Monic :=
+  monic_prod_of_monic _ _ (fun j _ => monic_X_sub_C (f j))
+
+/-- `∏ⱼ (X − fⱼ)` has degree `k`. -/
+theorem prodLin_natDegree (f : Fin k → ℚ) : (∏ j, (X - C (f j))).natDegree = k := by
+  rw [natDegree_prod _ _ (fun j _ => X_sub_C_ne_zero (f j))]
+  simp [natDegree_X_sub_C, Finset.card_univ]
+
+/-- The `Xᵏ` coefficient is `1` (monic of degree `k`). -/
+theorem prodLin_coeff_k (f : Fin k → ℚ) : (∏ j, (X - C (f j))).coeff k = 1 := by
+  have h := (prodLin_monic f).coeff_natDegree
+  rwa [prodLin_natDegree f] at h
+
+/-- Coefficients strictly above `k` vanish. -/
+theorem prodLin_coeff_gt (f : Fin k → ℚ) {n : ℕ} (hn : k < n) :
+    (∏ j, (X - C (f j))).coeff n = 0 :=
+  coeff_eq_zero_of_natDegree_lt (by rw [prodLin_natDegree f]; exact hn)
+
+/-- **Vieta top coefficient.** `[Xᵏ⁻¹] ∏ⱼ(X − fⱼ) = −∑ⱼ fⱼ`. -/
+theorem prodLin_coeff_top (f : Fin k → ℚ) (hk : 0 < k) :
+    (∏ j, (X - C (f j))).coeff (k - 1) = - ∑ j, f j := by
+  have hs : ((Finset.univ.val.map f).esymm 1) = ∑ j, f j := esymm_one _
+  rw [prodLin_eq f, Multiset.prod_X_sub_C_coeff _ (by rw [nodes_card f]; omega), nodes_card f,
+      show k - (k - 1) = 1 from by omega, pow_one, hs, neg_one_mul]
+
+/-- `∑ⱼ (βⱼ + 1) = (∑ⱼ βⱼ) + k`. -/
+theorem sum_shift (β : Fin k → ℚ) : (∑ j, (β j + 1)) = (∑ j, β j) + k := by
+  rw [Finset.sum_add_distrib]; simp [Finset.card_univ]
+
 /-- **(Vieta, residual degree)** The residual has degree `< k`: the `Xᵏ⁺¹` and `Xᵏ` coefficients of
 `G` and `(X − C k)·Q` cancel. -/
 theorem residPoly_natDegree_lt (β : Fin k → ℚ) (hk : 0 < k) :
