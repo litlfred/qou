@@ -1009,7 +1009,419 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is the bare uniqueness claim ({T_2,9, T_3,5}); no interpretive prose injected."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Force-carrier sector uniqueness; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is topological/number-theoretic (genus, homology); generic, no spurious archimedean specialization."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proof is integer genus combinatorics; no archimedean machinery misapplied."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "force-carrier-bring-uniqueness.ts:6: \"lean: { ref: \\\"qou:QOU.Archimedean.force_carrier_bring_uniqueness\\\" }\"",
+        "notes": "The .ts declares a lean.ref but no force-carrier-bring-uniqueness.lean sibling exists in this directory; resolution may fall to the library tree, but the formalization could not be confirmed here, so narrative-Lean equivalence is unverified."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No evidence of weakening; statement is a clean classification claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No accessible Lean proof term to inspect for projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Narrative goal (unique genus-4 torus-knot pair) is substantive, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Genus-4 saturation premise is satisfiable and true (Sigma_4 has genus 4)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No accessible Lean proof to inspect for hypothesis usage."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No accessible Lean proof to inspect."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Verified the genus-4 torus knots are exactly {T_2,9, T_3,5} via (p-1)(q-1)=8; statement correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Genuine classification claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No circularity; uses Sigma_4 genus and genus-4 classification."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Claim limited to torus knots saturating H_1 by genus match; appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Genus 4 fixed by Bring's surface; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Saturation criterion => genus match => unique pair is a valid inference given the classification."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "force-carrier-bring-uniqueness.ts:6: \"qou:QOU.Archimedean.force_carrier_bring_uniqueness\"",
+        "notes": "lean.ref present, no sibling .lean on disk; whether the library decl matches the narrative claim is unverified here."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "References in-paper Bring's surface and genus-4 uniqueness; no external misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Saturating generator of symplectic homology H_1(Sigma_4)=Z^8 and Seifert genus are standard and consistent."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Topological; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "A two-element force-carrier basis is a framework prediction; no measurement contradiction in-block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bb5db43af9a8",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Correct genus classification; only caveat is the declared lean.ref has no confirmable sibling file in-directory."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

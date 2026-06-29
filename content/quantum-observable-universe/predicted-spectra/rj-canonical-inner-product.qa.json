@@ -1009,7 +1009,421 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement (i)-(iii) is the bare claim (descent, uniqueness, Rosso-Jones evaluation); interpretation is in rem:rj-inner-product-interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Canonical inner product on R(H_r(q)); in scope as spectral foundation."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement over Q(q^1/2)/generic q; representation-theoretic, no spurious R specialization."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proof uses semisimplicity / Schur orthogonality (algebraic), no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "rj-canonical-inner-product.ts:16: \"lean: { ref: \\\"qou:QOU.Archimedean.rj_canonical_inner_product\\\" }\"",
+        "notes": "lean.ref declared but no rj-canonical-inner-product.lean sibling in this directory; formalization not confirmable here, so narrative-Lean equivalence is unverified."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No weakening evident; statement is well-formed."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No accessible Lean proof term."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Goals (diagonal form, uniqueness, RJ formula) are substantive."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Generic-q semisimplicity premise is true and non-vacuous."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No accessible Lean proof to inspect."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No accessible Lean proof to inspect."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Schur-orthogonality diagonalization with quantum-dimension weights and the Rosso-Jones torus-knot decomposition are standard and correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive rep-theory proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Uniqueness scoped 'up to overall scalar' and 'for generic q'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Markov parameter z pinned by tr_M(1)=1."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Each part follows from semisimplicity / Schur orthogonality / Rosso-Jones."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "rj-canonical-inner-product.ts:16: \"qou:QOU.Archimedean.rj_canonical_inner_product\"",
+        "notes": "Declared lean.ref with no confirmable sibling file; cannot verify the Lean matches the (i)-(iii) claim here."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "rosso-jones1993 correctly underpins (iii)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "rj-canonical-inner-product.md:27: \"h'(\\Box) = a'(\\Box) + l'(\\Box) + 1 is the content hook (co-arm + co-leg + 1)\"",
+        "notes": "The quantum-dimension is given as prod [h]_q/[h']_q with an unusual 'content hook' h'; this hook-content packaging should be checked against the standard hook-content formula and the seminormal convention used elsewhere in the corpus to avoid a reciprocal/convention slip."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Pure rep theory; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9d6f0b7eb2c5",
+          "ts": "063b34f2848c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Correct canonical-inner-product proposition. Caveats: confirm the hook-content d_lambda convention, and the declared lean.ref has no in-directory sibling."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

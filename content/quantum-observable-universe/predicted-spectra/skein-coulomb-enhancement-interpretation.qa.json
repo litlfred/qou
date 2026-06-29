@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Coulomb enhancement of beta-decay rates; a predicted-spectra interpretation block, in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No false mathematical claim; it is an interpretive remark about evaluating the skein polynomial on the full outgoing link."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Interpretive content with concrete magnitude claims (factors 1.4-5, 10-17% residual)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No back-fitting; the enhancement is framed as the same skein polynomial on a larger link."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Honest scope: explicitly says QOU does NOT predict absolute |M_q|^2 for individual nuclei, only q-modulation within a transition class."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "sigma_GT and shell-structure corrections are acknowledged as external inputs, not hidden calibrations of the q-prediction."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The five enumerated QOU predictions follow from the skein/Hecke structure described."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Remark block; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "NNDC/ENSDF log ft and CODATA references are appropriate for the empirical comparison."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "F_q, |M_q|^2, sigma_GT referenced consistently with upstream defs."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "skein-coulomb-enhancement-interpretation.md:54: \"$\\partial \\ln \\Gamma / \\partial \\ln q \\approx 48$, a parameter-free prediction\"",
+        "notes": "The q-sensitivity ~48 and A^5/3 scaling are presented as parameter-free predictions but the block also admits |M_q|^2 varies by six orders of magnitude and is not predicted; the 'parameter-free' predictions hold only within a fixed transition class, a strong conditioning that limits falsifiability. Minor caveat, already partly disclosed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Coulomb (Fermi-function) enhancement of beta decay is real physics; framing it via skein crossing weights is interpretive, not contradicting a measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Interpretive remark; quantitative claims point to the hadron-half-life verification table, not re-derived here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "75c2c4538d02",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Honest interpretive remark that openly bounds its own predictive scope (q-modulation, not absolute matrix elements). No substantive objection beyond the conditional 'within a transition class' framing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

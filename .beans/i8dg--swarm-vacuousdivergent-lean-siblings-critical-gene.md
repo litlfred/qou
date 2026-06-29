@@ -103,3 +103,8 @@ updated_at: 2026-06-29T20:07:58Z
 
 ## More instances (batch 59, q-geometric-langlands)
 - cyclotomic-l-value-decomposition.lean:32 (beta_3_from_jonquiere : True := trivial shadow stub; real proof in QOU/BraidKnot/CyclotomicLValueDecomposition.lean; critical sec0a; beta(3)=pi^3/32 correct)
+
+## More instances (batch 56, predicted-spectra)
+- quantum-dilogarithm-volume.lean:63-66 (bindingEnergy:=Phi_q/hbar_q^2; theorem =def by unfold;rfl; hyps unused; critical)
+- alpha-em-shift-multiplicative-chain.lean:69 (proves [9,10]=[9,10]; never mentions alpha_EM^-1/q/product)
+- categorical-neutron-exists.lean:39,44 (Nonempty zero-witness on constraint-free record; proof.md admits weak proxy)

@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is the bare stability claim E_cross<0 => hadron; no extraneous interpretation in the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Hadron stability of torus-knot composites; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "E_cross<0 is an archimedean inequality; Lean correctly states it over R (with note that R_q carries no order)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "nlinarith on a real inequality is the correct archimedean tactic; no algebraic statement proved by misplaced analysis."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "torus-hopf-stability.lean:56: \"(h_bound : crossing_sum < vol_binding * q⁻¹ ^ 2) : -vol_binding * q⁻¹ ^ 2 + crossing_sum < 0\"",
+        "notes": "Narrative claims 'EVERY baryon from torus knots + Hopf link satisfies E_cross<0'. Lean proves only the trivial rearrangement 'if crossing_sum < vol_binding*q^-2 then -vol_binding*q^-2+crossing_sum<0'; the substantive content (that the bound actually holds for every baryon, i.e. Borromean volume dominates the trefoil crossing sum) is taken as hypothesis h_bound, not proved. Lean is materially weaker than the universally-quantified .md claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No weakening of a prior committed signature; the hypothesis is present and labeled."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Not a projection; genuine (if trivial) inequality manipulation."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Goal is a real inequality, not a tautology (it does depend on h_bound)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "h_bound is satisfiable (not contradictory)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "h_bound is used by nlinarith; the only hypothesis is consumed."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "nlinarith, no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The conditional inequality is true; the universal physical claim is not formally established but is not shown false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "torus-hopf-stability.lean:60: \"nlinarith [h_bound]\"",
+        "notes": "The formal lemma reduces to a < b => -b + a < 0, a one-line triviality once the binding-dominance bound is assumed; the algebraically interesting content (the bound) is hypothesized away. True-but-thin relative to the proposition's universal claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No back-fitting of q; the inequality is structural."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "torus-hopf-stability.md:8: \"Every baryon ... satisfies the stability condition $\\mathfrak{E}_{\\mathrm{cross}}(\\mathfrak{H}) < 0$\"",
+        "notes": "The 'every baryon' universal is asserted in the narrative but the Lean only proves a conditional rearrangement; the crucial domination estimate (Borromean vol ~7.33 vs 3 trefoils ~3*0.31) is stated in a docstring comment, not proved. Universally-quantified claim presented as established."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "vol_binding, crossing_sum are model quantities, not undisclosed free calibrations."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Within the proof, the inequality step is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "torus-hopf-stability.lean:56: \"(h_bound : crossing_sum < vol_binding * q⁻¹ ^ 2)\"",
+        "notes": "Same as proof-narrative-lean-equiv: Lean proves a hypothesized inequality, narrative proves a universal physical stability theorem; the domination hypothesis is not discharged in Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "[jones1987] for Markov trace / link polynomials is apt; chi(A)=-6 from Bring's surface referenced."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "E_cross, hadron, Hopf link, generators all defined upstream (def:hadron, prop:torus-knot-generators)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Stability inequality; no precision numerical match in-block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Bound hadrons having negative binding/crossing energy is physically sensible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness in-block (the ~7.33 volume is a docstring comment)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "96b5a865d8f7",
+          "ts": "232bfb2aa2d1",
+          "lean": "ab323f3c2c2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "notes": "Statement is reasonable but the Lean only certifies the trivial step a<b => -b+a<0, hypothesizing the real content (binding dominates crossing sum for every baryon). Strongest objection: the universal 'every baryon is stable' claim is not formalized; the dominance estimate must be proved, not assumed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

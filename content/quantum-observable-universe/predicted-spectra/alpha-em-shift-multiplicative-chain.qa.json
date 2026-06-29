@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is the boxed identity over R; no interpretive prose in the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "alpha_EM^-1 multiplicative chain; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement explicitly works over R=Z[q^+-1/2,(q-q^-1)^-1] (generic ring); no archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proof is q-integer substitution (algebraic); the CODATA comparison is correctly relegated to a separate numerical-verification subsection."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "alpha-em-shift-multiplicative-chain.lean:69: \"chainIndices = bareIndices\" with chainIndices=[alphaShift 2 9, alphaShift 3 5], bareIndices=[9,10]",
+        "notes": "The .md proposition is the q-integer identity alpha_EM^-1 = q*[alpha_shift(T_2,9)]_q*[alpha_shift(T_3,5)]_q (= q*[9]_q*[10]_q). The Lean theorem alpha_em_shift_chain proves only the index-list equality [9,10]=[9,10]; it never mentions alpha_EM^-1, q, the q-integers, or the product. Lean is materially weaker than and structurally different from the stated proposition."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "alpha-em-shift-multiplicative-chain.lean:67: \"theorem alpha_em_shift_chain [HasAlphaShiftTorus 2 9] [HasAlphaShiftTorus 3 5] : chainIndices = bareIndices\"",
+        "notes": "The Lean signature encodes a list-equality surrogate rather than the proposition's algebraic identity; this weakens the formalized statement relative to the narrative claim (the integrity concern is the surrogate, not a regression vs a prior commit)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proof is rw with two HasAlphaShiftTorus instances, not a projection of the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.lean:69: \"unfold chainIndices bareIndices; rw [alpha_shift_torus_knot 2 9, alpha_shift_torus_knot 3 5]\"",
+        "notes": "The proved goal reduces to [9,10]=[9,10], a near-trivial list identity once alphaShift is evaluated; it does not carry the substantive q-integer product the proposition states."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "HasAlphaShiftTorus instances are the witnessed alpha_shift values; not false premises."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Both [HasAlphaShiftTorus 2 9] and [3 5] instances are used via alpha_shift_torus_knot in the rw."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proof is unfold + rw, no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The algebraic identity (given em-coupling-projection and alpha_shift=k(p-1)) is correct: 9=9*1, 10=5*2."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The proposition is a genuine composition identity (not vacuous); the weakness is in the Lean surrogate, captured under proof-narrative-lean-equiv."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "alpha_shift values read from upstream witness, not back-fitted to alpha_EM."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Identity scoped to the symbolic level; the CODATA gap is disclosed in the proof block."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Indices fixed by force-carrier-bring-uniqueness; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Composition of the two named identities is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "alpha-em-shift-multiplicative-chain.lean:69: \"chainIndices = bareIndices\"",
+        "notes": "Lean proves a list-index equality, the .md a q-integer product identity for alpha_EM^-1; the Lean is a strictly weaker surrogate that does not entail the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "em-coupling-projection and alpha-shift-torus-knot cited correctly as the two composed identities."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "alpha_shift, [n]_q, R all defined upstream; statement explicit about the ground ring."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The refactoring is symbolically exact (delta=0); inherited ~0.16% CODATA gap is disclosed, not a hidden swing."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "alpha_EM^-1 ~136.8 vs 137.04 is a disclosed approximation; plausible at the stated order."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Witness JSONs referenced with status 'verified'; not re-run here, no drift flagged in-block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6734a2dcb5c6",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "notes": "The mathematical identity is correct and honestly numerically scoped, but the Lean formalization (chainIndices=bareIndices, i.e. [9,10]=[9,10]) does NOT formalize the headline q-integer product identity for alpha_EM^-1; the lean.ref backs a list surrogate, not the proposition. Strongest objection: narrative-Lean divergence — the claimed formalization is a different, weaker statement."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

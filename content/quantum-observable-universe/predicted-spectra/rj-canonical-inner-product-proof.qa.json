@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Rosso-Jones inner product on R(H_r(q)); foundational to the predicted-spectra spectral machinery, in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Schur orthogonality on a semisimple (generic-q) Hecke algebra giving a diagonal Markov-trace pairing with quantum-dimension weights is standard and correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive rep-theory content (diagonalization + uniqueness + Rosso-Jones formula)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Uniqueness derived from Schur orthogonality, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Uniqueness is correctly qualified 'up to overall scalar' and 'for generic q'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Markov parameter z fixed by tr_M(1)=1; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "(i)-(iii) each follow from semisimplicity / Schur orthogonality / the Rosso-Jones formula."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "rj-canonical-inner-product has no .lean sibling on disk (lean.ref present but file absent); nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "rosso-jones1993 is the correct source for the torus-knot decomposition formula."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "rj-canonical-inner-product.md:24: \"d_\\lambda(q) = \\prod ... \\frac{[h(\\Box)]_q}{[h'(\\Box)]_q}\"",
+        "notes": "The quantum dimension is given as a ratio of hook-length to a 'content hook' h'=a'+l'+1; this is a non-standard packaging of the hook-content formula and the convention [n]_q=(q^{n/2}-q^{-n/2})/(q^{1/2}-q^{-1/2}) should be checked against the seminormal normalization used elsewhere. Minor: meaning is recoverable but the h' definition is unusual."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Pure representation theory; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No direct physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e94b2dd6acf6",
+          "ts": "d32a22c75f7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Correct standard rep-theory proof (Schur orthogonality + Rosso-Jones). Minor: confirm the hook-content quantum-dimension convention; otherwise no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

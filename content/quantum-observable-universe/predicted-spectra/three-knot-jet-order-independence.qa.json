@@ -855,7 +855,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Jet-order algebraic-independence reduction for hyperbolic volumes of the three QOU knots; in scope as a conjectural reduction."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Reid (1991) — 4_1 the unique arithmetic hyperbolic knot — is correctly cited; jet-Jacobian determinant 1/16!=0 and the rank-monotonicity argument are internally consistent as stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive (if conjectural) reduction; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No circularity; explicitly reduces the deep conjecture to a named open bridge lemma."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Exemplary honesty: 'not a proof of the deep conjecture', 'closes nothing unconditionally', the bridge lemma and two physical inputs (I2),(I3) flagged open; kind is conjecture, lean validation 'stub'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No hidden parameter; the open inputs are named explicitly."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "three-knot-jet-order-independence.md:62: \"The column-extension linkage that discharges the principle's hypotheses for the *concrete* order-$N$ Jacobian remains a structural input\"",
+        "notes": "The rank-monotonicity argument (base 3x3 minor sits inside the order-N Jacobian as a column-submatrix) requires the column-extension linkage, which the block itself admits is 'a structural input' not discharged; so 'rank exactly 3 at every N' is conditional, as the block acknowledges. Flagged minor because the gap is openly stated, not hidden."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Lean validation is 'stub'; the block names jetOrder3_certificate / jetJacobianBase_rank / jacobianRank_eq_three_of_base / transport_uniform_bound / transport_shadow_vanishes as the formalized endpoints and is explicit that the concrete column-extension and (I2),(I3) remain conjectural. No misrepresentation of what Lean proves."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Reid 1991 (arithmetic 4_1), Grothendieck periods / Borel regulator on K_3 invoked correctly as the out-of-reach machinery being replaced."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Jet-order/Habiro cyclotomic expansion, GB elimination ideal, surreal error field all defined or cross-referenced; (I1)-(I3) precisely stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The base-order determinant 1/16 is exact symbolic data, not a fitted numerical near-match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Volume conjecture asymptotics Vol(K)=lim (2pi/n) log|J_K(e^{2pi i/n})| stated correctly; no physical-units error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Base-order certificate said to be framework-computed and Lean sorry-free; no stale-witness drift claimed. Not independently re-run here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "785e0875b995",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Model of an honestly-scoped conjecture: reduces an external transcendence dead-end to an internal bridge lemma + two named physical inputs, with the formalized vs open boundary clearly drawn. No over-claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

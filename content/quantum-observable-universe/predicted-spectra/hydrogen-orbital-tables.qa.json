@@ -816,7 +816,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Hydrogen orbital / spectral series in knot language; predicted-spectra interpretation, in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Lyman-alpha 10.2 eV/121.6 nm, Balmer-alpha 1.89 eV/656.3 nm, Paschen 1875 nm, 2n^2 capacity, E_n=-13.6/n^2 — all match standard atomic physics."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Concrete tables mapping quantum numbers to knot data."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No back-fitting; standard hydrogen data is reproduced, not re-derived from itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "hydrogen-orbital-tables.md:54: \"This is the Rydberg formula, derived from the R-I crossing energy on the Hopf link Seifert surface.\"",
+        "notes": "Claims to 'derive' the 1/n^2 Rydberg law from an n-fold covering Seifert surface of area ~ n^2; the area ~ n^2 => energy ~ 1/n^2 step is asserted, not shown, and the writhe/quantum-number correspondence is presented as an identification rather than a derivation. Interpretive remark, so warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "E_ion=13.6 eV is the measured Rydberg, used as the single scale; no hidden extra parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "hydrogen-orbital-tables.md:62: \"| $n=1 \\to 2$ | $+2$ | ... | $n=1 \\to 3$ | $+4$ |\"",
+        "notes": "The 'R-I moves' column (+2, +4, +2, +2) is mapped to transitions but the rule connecting R-I move count to delta-E is not stated; the column does not track delta-E monotonically (n=1->3 is +4 with 12.1 eV; n=2->3 is +2 with 1.89 eV), so the R-I-move <-> energy correspondence is not justified. Minor; interpretive table."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Remark block; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No external citations; standard spectroscopic values quoted."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "n, l, m, s mapped to writhe/Fourier-mode/Reeb-projection/crossing-orientation; consistent within the interpretation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Values are exact textbook hydrogen data, not a sensitive numerical match to a fitted formula."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The data are correct; the knot interpretation is heuristic but does not contradict measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness; standard reference values."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bf4aea42e4ec",
+          "ts": "ac33f45352ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "notes": "Correct hydrogen data wrapped in a knot interpretation. Strongest objection: the 1/n^2 'derivation' and the R-I-move column are identifications/assertions, not derivations, so the block reproduces known physics rather than predicting it; acceptable for a remark if framed as interpretation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

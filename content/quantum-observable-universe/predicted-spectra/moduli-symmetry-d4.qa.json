@@ -1046,7 +1046,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement gives the D4 presentation + golden octet; interpretive Mobius/unit-circle material is in the proof block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Moduli-line symmetry of the substrate parameter q is in scope for the archimedean predicted-spectra chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is over C^x with sigma:q->iq and tau:q->q^-1; complex/archimedean and Lean uses C accordingly."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proof uses Complex.I algebra; appropriate to a complex-rotation statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Lean proves sigma^4=id, tau^2=id (nonzero), (sigma tau)^2=id — exactly the three dihedral relations stated in the .md."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Signature matches .ts lean.ref; no weakening detected."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Conjunction proved from three substantive lemmas, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Goals are real group relations, not tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "q!=0 hypotheses are genuine and satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The q!=0 hypotheses are used for inv_inv / mul_inv_cancel in tau and (sigma tau)^2 lemmas."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proofs by calc/ring/rw, no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Verified: tau sigma tau(q)=-iq=sigma^-1(q); P_C(z)=(z^4-3z^2+1)(z^4+3z^2+1)=z^8-7z^4+1, all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive group-action content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No circularity; D4 relations checked directly."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Faithful-action claim supported (sigma order 4, tau order 2, distinct generators) as argued in the Lean docstring."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "phi (golden ratio) and i are canonical, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Octet construction and coset partition follow from the action."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Lean and .md agree on the dihedral relations."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No external citation; references in-paper golden-quartet-galois and bar-t-duality."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "All symbols (sigma, tau, phi, G_8) defined in the statement."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Algebraic; no numerical match to data."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Abstract moduli symmetry; no direct physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness; symbolic identities verified by hand."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "35d5e05a3c48",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Clean, correct dihedral-action proposition with verified arithmetic and matching Lean; no substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

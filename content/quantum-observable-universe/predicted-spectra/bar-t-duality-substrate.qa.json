@@ -1046,7 +1046,446 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is iota_* E_q = E_{q^-1} plus three concrete sub-claims; the 'distinct from target-space T-duality' note is a brief scoping clarification, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substrate-level bar T-duality on the Descartes elliptic family; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The §7c banner flags archimedean specialisation; the involution/order content is real, Lean over R is appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Lean uses inv_inv, inv_lt_inv (archimedean order); fine for the discriminant/order content. No algebraic statement mis-proved."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "bar-t-duality-substrate.lean:16: \"This file abstracts the bar T-duality at the level of (q, x, y)-tuples\"",
+        "notes": "The .md proposition asserts iota_* E_q = E_{q^-1} (curve isomorphism) plus j-invariant relation and confinement-band invariance. The Lean proves only the abstract parameter involution (bar involutive, fixes 1, order-reversing) and a generic 'bar-paired zero locus'; it does NOT formalize the elliptic-curve isomorphism or the j-invariant claim. The docstring is honest about this, but the Lean is weaker than the .md proposition."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No weakening vs a prior commit; the Lean honestly states the abstract content it proves (divergence captured under proof-narrative-lean-equiv)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "bar_t_duality_substrate is a conjunction of four genuinely-proved lemmas, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Goals (involutivity, fixed-point=1, order-reversal, zero-locus pairing) are substantive, not tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "0<q / q!=0 hypotheses are satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Hypotheses used: e.g. bar_fixed_point_pos uses hq (0<q) via nlinarith with sq_nonneg; zero-locus uses ha, hf."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proofs via inv_inv/nlinarith/simp; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Discriminant pairing (zero at 1/phi^2 <-> zero at phi^2), bar involution, and band invariance are correctly stated; the abstract Lean lemmas are correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive involution + zero-locus content; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Bar T-duality grounded in the Hecke bar involution; no circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.md:9: \"$\\iota_*\\,\\mathcal{E}_q = \\mathcal{E}_{q^{-1}}$\"",
+        "notes": "The curve-level isomorphism iota_* E_q = E_{q^-1} and the j-invariant relation are stated as proved but only the abstract parameter-involution + discriminant-zero pairing is formalized; the elliptic-curve identity itself rests on the proof.md's symbol manipulation, not on a verified curve isomorphism. Minor: the proof.md argument is plausible, just not fully formalized."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No free parameter; phi^2 golden nodes are canonical."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substitution q->q^-1 in Weierstrass coefficients => discriminant/j pairing is valid reasoning in the proof.md."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "bar-t-duality-substrate.lean:80: \"theorem bar_paired_zero_locus {f : ℝ → ℝ} ... (f ∘ bar) (a⁻¹) = 0\"",
+        "notes": "Lean formalizes a generic discriminant-zero pairing and the parameter involution, not the named elliptic-curve isomorphism iota_* E_q = E_{q^-1} or the j-invariant claim. Narrative proposition is about elliptic curves; Lean is about an abstract involution on R. Divergence is real (though honestly documented)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "References descartes-elliptic-curve, golden-skew-dual-node, bar-self-dual-confinement-band; Hecke bar involution sigma_i->sigma_i^-1 correctly invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "iota, iota_*, E_q, confinement band B=(1/phi^2,phi^2) all defined or cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Structural duality; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "T-duality on the moduli parameter is a coherent structural statement; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness; Lean-backed (abstract part)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cf4b1921b5d6",
+          "ts": "9b1588d9f537",
+          "lean": "1b95b238f120"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "notes": "The substrate involution + discriminant-pairing content is correct and sorry-free, but the Lean abstracts away the named elliptic-curve isomorphism iota_* E_q = E_{q^-1} and the j-invariant relation that the proposition headlines; strongest objection: the curve-level claims are argued only in the proof.md, not formalized, so the lean.ref backs a weaker abstract statement than the proposition asserts."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

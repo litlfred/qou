@@ -1048,7 +1048,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is a structured (i)-(v) proposition about magic numbers; interpretive material stays tied to the claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Nuclear shell magic numbers from torus knots; in scope for predicted spectra."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Mixed: GS-NF combinatorics (generic) plus eigenvalue-ratio q^2n_s (archimedean); Lean correctly uses R for the ordering/exponent parts."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Lean shell-eigenvalue monotonicity uses pow_lt_pow_right with q>1 (archimedean, appropriate); NF preservation via forward-declared GS axiom over R, acceptable."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "torus-knot-shell-binding.lean:31: \"axiom IsNormalForm ... axiom division_terminates_unique\"",
+        "notes": "Lean proves magic_from_shells (cumulative sums = {2,8,20,28,50,82,126}), eigenvalue monotonicity, and inter_shell_preserves_normal_form, but the last relies on forward-declared axioms (IsNormalForm, division_terminates_unique) rather than the GS theorem itself; the shell-closure detection (palindromic histogram, parts (i),(iii)) is not formalized. Lean covers a proper subset of the .md proposition."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No weakening of a committed signature; the axioms are explicitly forward-declarations of the UGB main theorem, cited."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Not a projection of a conclusion-typed field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "magic_from_shells (decide) and eigenvalue_ratio_monotone are non-trivial substantive goals."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "q>1, n_s>=1 hypotheses are satisfiable, not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.lean:127: \"theorem inter_shell_preserves_normal_form (n : ℕ) (q : ℝ) (hq : q > 1) (n_s : ℕ) (hn : n_s ≥ 1) ...\"",
+        "notes": "inter_shell_preserves_normal_form takes n_s, hn (n_s>=1) but the body just applies division_terminates_unique (n+1) q hq nf_A; n_s and hn appear unused, suggesting the inter-shell specificity is not exercised by the proof."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "decide is used for the finite cumulative-sum identity magic_from_shells, a legitimate decidable arithmetic fact."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Cumulative sums of [2,6,12,8,22,32,44] = [2,8,20,28,50,82,126] = experimental magic numbers; verified (Lean decide confirms)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Magic-number reconstruction is substantive content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.lean:160: \"def shell_sizes : List ℕ := [2, 6, 12, 8, 22, 32, 44]\"",
+        "notes": "The shell_sizes list is what makes the cumulative sums equal the magic numbers; the .md derives sizes from 'r x s products' of six torus knots but the mapping from knots to the specific list (esp. the non-monotone 8 after 12) is asserted via Table 2/3 not shown in-block, so the magic-number match risks being a chosen partition rather than a forced one. Downgraded to warn pending the table-data derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Claims are hedged with the inductive GS argument; energy-gap factor stated as ~ approximate."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.md:35: \"assign shell sizes via their $r \\times s$ products\"",
+        "notes": "The shell-size assignment (which knot -> which size, and the degree-1 vs degree-2 split) carries discretionary structure that could absorb fitting freedom; the rule is described qualitatively (Table 2/3) rather than uniquely pinned in-block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "GS-preservation and disjoint-strand arguments are coherent; eigenvalue-ratio growth follows from q>1."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "torus-knot-shell-binding.lean:120: \"theorem inter_shell_preserves_normal_form ... := division_terminates_unique (n + 1) q hq nf_A\"",
+        "notes": "Lean discharges NF-preservation by an axiom, and omits the shell-closure (palindromic) detection that is central to parts (i),(iii). The headline 'magic numbers from torus knots' is only partially formalized (the cumulative-sum identity); the knot->size derivation is not."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "[jones1987], [bergman1978], UGB main theorem cited appropriately for Markov trace and GS normal form."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.md:39: \"The **shell capacity** is the number of nucleon pairs ... shell of size $r \\times s$ nucleon crossings\"",
+        "notes": "Two distinct notions ('shell size = r x s crossings' vs 'shell occupancy = nucleon pairs') are used to reach the magic numbers; the conversion between crossings and occupancy is not made precise in-block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.md:70: \"\\frac{1.409}{0.095} = 14.8\"",
+        "notes": "The first-shell gap 1.409/0.095=14.8 cites sequential-nucleus-builder witness values; the ratio is sensitive to the small denominator 0.095, and the magic-number match itself depends on the chosen shell_sizes partition (see da-circular)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Reproducing {2,8,20,28,50,82,126} and an exponential shell gap is consistent with nuclear phenomenology if the partition is justified."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Cites sequential-nucleus-builder.witness.json for the gap; magic_from_shells is Lean-decidable. Not independently re-run here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4c58430cf348",
+          "ts": "ef574a24e98f",
+          "lean": "704b903a80f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "notes": "The cumulative-sum identity is exact and Lean-verified, but the load-bearing step — that the six torus knots FORCE the specific shell_sizes partition [2,6,12,8,22,32,44] — is deferred to table data not shown in-block, so a referee would press whether the magic numbers are derived or fitted via the partition choice; the Lean only certifies the arithmetic, not the knot->size map."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

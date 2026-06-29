@@ -873,7 +873,284 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Definition of T_2,n crossing coefficients; in scope for the shell-binding machinery."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Recurrence is over R_q=Z[q,q^-1] (generic); Lean correctly uses LaurentPolynomial Z, no spurious R."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "chebyshev-torus-coefficients.md:11: \"d_n = -\\frac{c_n \\cdot qs_q}{1 + c_n}\"",
+        "notes": "The block gives TWO formulas for d_n: the boxed closed form d_n = -c_n*qs_q/(1+c_n), and the recurrence d_{n+1}=c_n. These are not obviously equivalent (and the .lean only encodes the recurrence d_{n+1}=c_n). The boxed d_n closed form is unverified and likely inconsistent with d_{n+1}=c_n; recommend reconciling or removing."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Concrete recurrence definition with base case; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Definitional; no circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Claims c_n=U_{n-1}((q-q^-1)/2); the second-kind Chebyshev identification is standard for the recurrence c_{n+1}=c_n(q-q^-1)+...; reasonable."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No free parameter; q is the substrate indeterminate."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Recurrence and base case are self-consistent (modulo the boxed d_n form noted under da-false-claim)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "chebyshev-torus-coefficients.lean:42: \"| (n + 2) => let (c, d) := ... (c * (qParam - qInvParam) + c + d, c)\"",
+        "notes": "Lean encodes only the recurrence (d_{n+1}=c_n); the .md's boxed closed form for d_n (-c_n*qs_q/(1+c_n)) is not formalized and may diverge from the recurrence. The Lean matches the recurrence in the .md but not the boxed d_n."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No external citation; references in-paper manuscript section."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "chebyshev-torus-coefficients.md:8: \"c_n = U_{n-1}(\\tfrac{q - q^{-1}}{2}), \\qquad d_n = -\\frac{c_n \\cdot qs_q}{1 + c_n}\"",
+        "notes": "Two parametrizations of (c_n,d_n) are presented (closed form vs recurrence) without stating which is canonical or proving their equivalence; the qs_q in the d_n closed form (s_q=q^1/2-q^-1/2) introduces half-integer powers absent from the Z[q,q^-1] recurrence, so the intended ground object is ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Definition; numerical table is at q~1.110 but values are computed, not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No physical claim in a definition block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Table 1 values point to table-data; not re-run here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "68948ff922a9",
+          "ts": "e1196084c1ed",
+          "lean": "20209d130aa2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "notes": "Recurrence-based definition is sound and Lean-encoded, but the co-presented boxed closed form for d_n (-c_n*qs_q/(1+c_n)) is unreconciled with d_{n+1}=c_n and introduces half-integer powers; a referee would ask which definition is canonical."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

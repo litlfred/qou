@@ -1048,7 +1048,450 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is the bare existence claim; the strategy/interpretation prose lives in the proof block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Existence of the categorical neutron is a core predicted-spectra object; in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement concerns an element of H_3(q); generic. Lean uses R fields for skein masses, acceptable for an existence statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Lean witness is a trivial Nonempty construction, no archimedean machinery misapplied to an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "categorical-neutron-exists.lean:39: \"theorem CategoricalNeutron.exists : Nonempty CategoricalNeutron := ⟨{ skein_ud := 0, skein_dd := 0 }⟩\"",
+        "notes": "Narrative claims 'LP-stable element of H_3(q) ... with two Hopf-link gluons'; Lean only proves Nonempty of a record carrying two free reals with no LP / stability / positivity / Hecke fields. The block's own proof.md admits this is a 'weak proxy proof'. The Lean is strictly weaker than the .md claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No weakening of a prior committed signature detected; the Nonempty statement matches the .ts lean.ref. Concern is divergence, captured under proof-narrative-lean-equiv."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Witness builds a fresh record; not a projection of a field whose type is the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "categorical-neutron-exists.lean:24: \"structure CategoricalNeutron where skein_ud : R ...\"",
+        "notes": "The structure has no constraint fields, so Nonempty CategoricalNeutron is near-trivially inhabited (any two reals). The goal is not literally True but is content-free relative to the intended LP-stable claim; borderline trivializing existence."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No false/contradictory hypothesis; statement is hypothesis-free."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Theorem has no hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No decide/trivial used to mask a goal; constructive anonymous-constructor witness."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Existence claim itself (a neutron object exists) is not false; the issue is formalization strength not falsity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "categorical-neutron-exists.lean:44: \"⟨{ skein_ud := 0, skein_dd := 0 }⟩\"",
+        "notes": "Formal proof is a zero-witness for a constraint-free structure; the substantive (LP-stable, two-Hopf-gluon) content is not captured. True-but-weak relative to the narrative."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No back-fitting in the construction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "categorical-neutron-exists.md:3: \"exists as a well-defined, LP-stable element of $H_3(q)$\"",
+        "notes": "Narrative asserts LP-stability as established; only an unconstrained Nonempty is formalized. Conditional/aspirational content presented as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Two skein masses are model data, not undisclosed calibrations."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Narrative construction steps (assemble braids -> GS NF -> LP dual) are coherent at the sketch level."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "categorical-neutron-exists.lean:39: \"Nonempty CategoricalNeutron\"",
+        "notes": "Same divergence as proof-narrative-lean-equiv: Lean proves a vacuously-inhabited existence; .md claims an LP-stable H_3(q) element with Hopf-link gluons."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "[jones1987] is appropriate for Hecke representations of braid groups."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Neutron defined via def:categorical-neutron and prop:categorical-neutron-unique; references resolve."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Existence statement; no numerical claim in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "A neutron-analogue bound state existing is physically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No witness JSON attached to this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "188904fc47f7",
+          "ts": "6f42b5090f09",
+          "lean": "924b6e0fa753"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "notes": "Existence is plausible but the Lean formalization is a vacuous zero-witness for a constraint-free struct; strongest objection: narrative overclaims 'LP-stable element of H_3(q)' while the proof establishes only Nonempty of an unconstrained record (self-flagged as a 'weak proxy')."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

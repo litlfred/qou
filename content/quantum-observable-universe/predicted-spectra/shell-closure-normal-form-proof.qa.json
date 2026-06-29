@@ -762,7 +762,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "GS normal-form optimality / valley-of-stability boundary; in scope for predicted spectra."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Hecke relation sigma^2=(q-q^-1)sigma+1 used correctly; far-commutativity / adjacency case split is standard GS reasoning."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive induction with case analysis and a boundary condition N>=Z-1."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Induction on A; no assumption of the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Honestly states optimality FAILS for N<Z-1 (proton-heavy), matching the nuclear valley of stability; scope is bounded."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No undisclosed parameter; d!=0 condition is structural (nn/pn crossings)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The three absorption cases (far-comm I9, adjacency I8, Hecke i=A-1) cover all cross-terms and follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form-proof.md:18: \"Formally proved in Lean (OptimalNF.lean).\"",
+        "notes": "The proof claims a formal Lean proof in OptimalNF.lean, but the parent prop:shell-closure-normal-form has no .lean sibling in this directory; the cited file could not be confirmed here, so the 'formally proved' assertion is unverified (could be a divergence or a cross-package file)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Relies on in-paper I8/I9 GS relations and the Hecke relation; no misattributed external citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "I8, I9, far-commutativity, nn/pn/pp crossings defined upstream; usage consistent."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Computational check 'all A<=8 (14256 terms -> 8 for 8Be)' is a discrete verification, not a sensitive numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The boundary N>=Z-1 matching the valley of stability is a sensible qualitative correspondence."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form-proof.md:17: \"Verified computationally for all $A \\leq 8$ (14,256 terms $\\to$ 8 for ${}^8\\mathrm{Be}$).\"",
+        "notes": "The A<=8 computational verification is asserted without an in-block witness JSON reference; reproducibility cannot be confirmed from this block alone."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "18d8ad502615",
+          "ts": "15bf6812532b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Solid GS-reduction induction with honest scope (optimality fails proton-heavy). Minor: the 'Formally proved in Lean (OptimalNF.lean)' and 'verified for all A<=8' claims lack in-block confirmable artifacts."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

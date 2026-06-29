@@ -816,7 +816,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proton formation via three pair-productions + Borromean confinement; in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Baryon-number bookkeeping (qqbar+q has B=1/3 not 1; 3 productions conserve B) is correct; pion lifetime ~26 ns matches PDG (charged pion 26.0 ns)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive construction with NF coefficients and an energy-scale derivation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "E_0 fixed by ONE observable (Q_beta=CAL-2); proton/neutron nets are computed from typed crossings, not back-fitted to E_0. Consistent with the 3-calibration discipline."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Proton/neutron nets (0.9991, 0.8108) are presented with the typed-crossing adjustment explicit; not claimed exact."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "meson-to-proton-via-borromean.md:79: \"$\\mathfrak{u}$-$\\mathfrak{d}$ ($\\sigma - \\tfrac{1}{2}H_A\\cdot\\mathbf{1}$) | mixed\"",
+        "notes": "The typed-crossing eigenvalues — esp. the u-d 'mixed' value with a -1/2 H_A shift — are stated as a table without derivation; the 1/2 coefficient and 'mixed' entry look like a tunable choice. The down-quark -H_A shift is the documented rule, but the u-d half-shift's origin is not given in-block, leaving residual fitting freedom."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Linearity of NF + Q_beta calibration => E_0 is a valid chain; the well-definedness bullets are sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Remark block; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Cross-refs (def:categorical-proton, conj:borromean-quark, prop:four-term-pair-nucleon) consistent; CODATA 2022 Q_beta precision cited correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "meson-to-proton-via-borromean.md:79: \"$\\mathfrak{u}$-$\\mathfrak{d}$ ... mixed\"",
+        "notes": "The u-d crossing eigenvalue is labeled 'mixed' without a numeric value or precise definition; ambiguous what is substituted in the NF for u-d crossings."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "meson-to-proton-via-borromean.md:127: \"\\frac{0.782}{0.1883} \\approx 4.155 \\text{MeV}\"",
+        "notes": "E_0 depends on |Delta net|=0.1883, itself the small difference of two typed-crossing nets (0.9991 vs 0.8108); a small change in the typed-crossing convention would move E_0 noticeably. Q_beta=0.782 MeV is consistent with the cheat-sheet 0.784. Minor sensitivity, partly inherent to a difference-based scale."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Baryon-number conservation, meson instability, n-p mass ordering all physically correct; proton net ~0.999 vs CODATA is consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Cites meson-nucleon-nf / beta-decay-energy-scale / confinement-operator-selection witnesses; not re-run here, no drift flagged in-block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e599842d4f0e",
+          "ts": "578ce09485ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "notes": "Coherent construction with correct conservation bookkeeping and a single-observable (Q_beta) calibration. Strongest objection: the typed-crossing eigenvalue table (esp. the u-d '-1/2 H_A, mixed' entry) is asserted without in-block derivation, so a referee would probe whether the proton/neutron net split — and hence E_0 — carries hidden tuning."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

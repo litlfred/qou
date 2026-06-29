@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:47.789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Statement is the binding-energy = Phi_q/hbar_q^2 identity; derivation/interpretation follows separately."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:48.156Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Nuclear binding energy from the quantum-dilogarithm volume; in scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:48.557Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Uses log|.| and hbar_q (archimedean); Lean correctly over R with the GroundRing note. Appropriate side."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:48.961Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Real-analysis (Real.log) machinery is appropriate to the archimedean volume claim; no algebraic statement mis-proved by analysis."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:56:49.357Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "critical",
+        "evidence": "quantum-dilogarithm-volume.lean:63: \"bindingEnergy q markovFactors = quantumDilogarithmVolume markovFactors / (hbar_q q) ^ 2 := by unfold bindingEnergy; rfl\"",
+        "notes": "bindingEnergy is DEFINED as quantumDilogarithmVolume/(hbar_q)^2, so the theorem is X=X closed by unfold;rfl. The substantive physics claim (that the physical nuclear binding energy EQUALS this volume) is built into the definition, not proved. The .md asserts an identity between a physical observable and the volume; the Lean proves a definitional tautology."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:56:50.832Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "quantum-dilogarithm-volume.lean:58: \"theorem quantum_dilogarithm_volume (q : ℝ) (hq : 1 < q) ... bindingEnergy ... = quantumDilogarithmVolume .../ (hbar_q q)^2\"",
+        "notes": "The formalized statement is the definitional unfolding of bindingEnergy, not the asserted physical identity; the Lean signature does not capture the proposition's content (E_bind as a physical quantity)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:56:51.183Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Not a structure-field projection; it is a definitional rewrite (covered under trivial-true / narrative-equiv)."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:56:51.541Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "critical",
+        "evidence": "quantum-dilogarithm-volume.lean:65: \"unfold bindingEnergy rfl\"",
+        "notes": "The main theorem's goal is bindingEnergy = (its own definition), i.e. a reflexive identity discharged by rfl after unfolding. This is a tautology that any proof closes vacuously; it carries none of the proposition's substantive content."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:56:51.859Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "hq:1<q is satisfiable; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,24 @@
         "reviewed_at": "2026-06-22T02:56:52.260Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "quantum-dilogarithm-volume.lean:58: \"(q : ℝ) (hq : 1 < q) (markovFactors ...) (parentFactors daughterFactors : List ℝ) (h_parent_len : parentFactors.length = markovFactors.length)\"",
+        "notes": "In quantum_dilogarithm_volume, hq:1<q, parentFactors, daughterFactors, and h_parent_len are all unused (proof is unfold;rfl). The hypotheses are decorative — they suggest a stronger statement than the reflexive identity actually proved."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +471,22 @@
         "reviewed_at": "2026-06-22T02:56:52.659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Uses rfl/simp, not decide; but note rfl here masks a tautology (captured under proof-no-trivial-true)."
       }
     ],
     "da-false-claim": [
@@ -323,6 +507,22 @@
         "notes": "No false claims identified in 'Nuclear energy from the quantum dilogarithm of the Markov trace': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The narrative identity is a definitional/modeling claim, not a falsifiable theorem; hbar_q=(q-1)/q matches the cheat-sheet ℏ_q=1-q^-1. Not mathematically false."
       }
     ],
     "da-vacuous": [
@@ -343,6 +543,24 @@
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "quantum-dilogarithm-volume.lean:43: \"def bindingEnergy ... := quantumDilogarithmVolume markovFactors / (hbar_q q) ^ 2\" then theorem proves bindingEnergy = that",
+        "notes": "The flagship Lean theorem is content-free: it restates the definition of bindingEnergy. The substantive identification of E_bind with the volume is asserted by definition, never derived; this is a definitional tautology dressed as a proposition."
       }
     ],
     "da-circular": [
@@ -363,6 +581,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Nuclear energy from the quantum dilogarithm of the Markov trace'.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Not circular in the back-fitting sense; the issue is tautology, not assuming a numerical target."
       }
     ],
     "da-overclaim": [
@@ -382,6 +616,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Nuclear energy from the quantum dilogarithm of the Markov trace' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "major",
+        "evidence": "quantum-dilogarithm-volume.md:5: \"The nuclear binding energy is the quantum dilogarithm volume of the Markov trace, normalised by $\\hbar_q^2$\"",
+        "notes": "Stating 'the nuclear binding energy IS Phi_q/hbar_q^2' as a Proposition, while the Lean only restates the definition, presents a modeling identification as a proved theorem. The downstream half-life formula and N_v ('open computation') further indicate the identity is partly conjectural/definitional, not established."
       }
     ],
     "da-hidden-dof": [
@@ -402,6 +654,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nuclear energy from the quantum dilogarithm of the Markov trace'.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "quantum-dilogarithm-volume.md:95: \"$N_v$ ... topological invariant of the weak scale — open computation\"",
+        "notes": "The half-life formula carries N_v (weak-scale crossing count) and mu_0 as inputs; N_v is admitted 'open computation', so it is an undetermined quantity in the predicted half-life. Disclosed, hence minor, but it is a free input to the spectrum prediction."
       }
     ],
     "da-non-sequitur": [
@@ -422,6 +692,22 @@
         "notes": "The argument flow in 'Nuclear energy from the quantum dilogarithm of the Markov trace' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The Q-value as a difference of volumes and the affected-generators truncation follow from linearity of the log-sum."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -441,6 +727,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Nuclear energy from the quantum dilogarithm of the Markov trace'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "critical",
+        "evidence": "quantum-dilogarithm-volume.lean:63: \"bindingEnergy ... = quantumDilogarithmVolume .../(hbar_q q)^2 := by unfold bindingEnergy; rfl\"",
+        "notes": "The .md states a substantive physics identity; the Lean proves the definitional unfolding of bindingEnergy (X=X). The Lean is vacuously-implied and does not back the narrative proposition."
       }
     ],
     "da-citation-misuse": [
@@ -461,6 +765,22 @@
         "notes": "No citations are present in 'Nuclear energy from the quantum dilogarithm of the Markov trace', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "[turaev2010] is appropriate for quantum invariants / quantum dilogarithm context."
       }
     ],
     "da-definitional-ambiguity": [
@@ -481,6 +801,24 @@
         "notes": "Key terms and symbols in 'Nuclear energy from the quantum dilogarithm of the Markov trace' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "quantum-dilogarithm-volume.md:20: \"\\Phi_q(\\mathcal{N}(Z, N)) := \\sum_{i=0}^{A-2} \\log |z \\cdot a_i + b_i|\"",
+        "notes": "Phi_q is defined two ways (sum of log|z a_i+b_i| vs log prod|V_hat_i|); the relation V_hat_i = z a_i + b_i is implicit, and z (Markov parameter) vs the crossing data is not re-stated in-block, leaving the volume's precise definition slightly underspecified."
       }
     ],
     "da-empirical-fragility": [
@@ -501,6 +839,22 @@
         "notes": "The empirical claims in 'Nuclear energy from the quantum dilogarithm of the Markov trace' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "n_p mass splitting m_n-m_p ~1.293 MeV quoted matches CODATA; no fragile cherry-picked precision in this block."
       }
     ],
     "da-physical-implausibility": [
@@ -521,6 +875,22 @@
         "notes": "The physical concepts described in 'Nuclear energy from the quantum dilogarithm of the Markov trace' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "quantum-dilogarithm-volume.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Intensive (log) binding energy O(A) and q->1 => no binding are physically reasonable; m_n-m_p ~1.293 MeV correct."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +910,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No in-block witness JSON; Lean theorem is definitional."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +947,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Nuclear energy from the quantum dilogarithm of the Markov trace' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "2aabe05ef41a",
+          "ts": "0e8e72e7b720",
+          "lean": "93bc2507bbb1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "critical",
+        "notes": "Strongest objection: the flagship Lean is a vacuous X=X (unfold;rfl) with unused hypotheses; the physics content is in the definition, not proved."
       }
     ],
     "voice-status-leak": [
@@ -1600,5 +2003,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }

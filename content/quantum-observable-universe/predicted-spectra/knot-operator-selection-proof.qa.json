@@ -762,7 +762,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Spectral selection of mediating knot operators; in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Wedderburn decomposition of End(V^{tensor r}) over semisimple H_r(q) and Markov-trace projection with weights d_lambda are standard and correctly invoked."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Substantive spectral-decomposition + Frobenius-pairing argument."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Selection derived from extremizing |tr(Phi)| on the self-dual subspace, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "The pair-production selection of T_2,3 (trefoil/e-) is presented as the lowest-crossing channel opener; scoped, not over-stated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "q_0=1.109978595554181 (50 dps) is the canonical proton-pinned substrate value, not a new parameter; consistent with the cheat-sheet pin."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "evidence": "knot-operator-selection-proof.md:29: \"the extremum of $|\\mathrm{tr}(\\Phi)|$ is attained at the irrep with largest quantum dimension times character evaluation\"",
+        "notes": "Step (iv) asserts the on-shell extremum is at 'largest quantum dimension times character evaluation' and then that this is T_2,3 for pair production, but the link from 'largest d_lambda*chi' to the specific lowest-crossing trefoil is stated rather than shown; the selection of T_2,3 over other low-crossing operators needs the channel-opening lemma it gestures at."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "knot-operator-selection has no .lean sibling on disk; nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Relies on in-paper rj-canonical-inner-product, qou-canonical-action, rj-inner-product-interpretation; consistent usage."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Frobenius pairing, NF basis supply/demand, self-dual curvature subspace, on-shell condition defined/cross-referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "q_0 quoted to 50 dps but used qualitatively (channel selection), not as a fragile numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "Selecting the electron (trefoil) as the lowest pair-production operator is physically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "notes": "No in-block witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ba6ca56a79ca",
+          "ts": "b0c0848dcadc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:34:24.462Z",
+        "reviewed_sha": "f65be618ec6f66061820ee5e0511070d9dfd9ed2",
+        "severity": "minor",
+        "notes": "Sound Wedderburn/Frobenius spectral argument. Strongest objection: step (iv)'s jump from 'extremum at largest d_lambda*chi' to 'this is T_2,3 for pair production' relies on an unstated channel-opening selection lemma."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:34:24.462Z"
 }
