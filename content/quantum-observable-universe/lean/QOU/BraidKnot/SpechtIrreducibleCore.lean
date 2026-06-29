@@ -1,6 +1,7 @@
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.SpechtClassification
 import QOU.BraidKnot.SpechtTriangularCore
+import QOU.BraidKnot.YoungStaircaseBound
 
 /-!
 # QOU.BraidKnot.SpechtIrreducibleCore — reduction of the two B1 irreducibility cores
@@ -19,18 +20,20 @@ sorry-free, proves James's sign lemma `κ_t u = ⟨u, e_t⟩·e_t` **sorry-free 
 from a single elementary combinatorial existence lemma** (`sdr_core`), and derives
 the full dichotomy from it.
 
-## The remaining core is now elementary
+## The James dichotomy is now fully sorry-free
 
-The James sign lemma `james_kernel_core` is no longer an opaque
-representation-theory `sorry`. It is reduced — sorry-free — to one
-self-contained finite-combinatorics fact, stated at the level of the
-`colPattern`/`rowPattern` functions (`Fin n → ℕ`):
+`james_kernel_core` (the sign lemma) and `specht_submodule_dichotomy'` (James's
+submodule theorem) are **completely sorry-free** (`#print axioms`:
+`[propext, Classical.choice, Quot.sound]`). The SDR/Hall existence that used to be
+the residual is discharged by `QOU.BraidKnot.YoungStaircaseBound`
+(`exists_colStab_smul`), itself proved sorry-free from the conjugate-marginal
+staircase bound — **with no Hall's-marriage theorem**, by a clean extremality
+count. So `sdr_pattern_core` / `sdr_core` are now theorems, not stubs.
 
-> `sdr_pattern_core` — if no column-permutation of `t` is row-equivalent to `s`,
-> then two labels share a column of `t` and a row of `s`. A
-> system-of-distinct-representatives / Hall-type existence statement, with **no**
-> tabloids, swaps, or representation theory. (`sdr_core`, the tabloid/transposition
-> form the sign lemma consumes, is derived from it sorry-free.)
+The **only** remaining `sorry` reachable from `specht_isSimple'` is the imported
+char-0 Gram core `SpechtIrreducible.specht_form_nondegenerate` (the hook-length
+Gram determinant). Its diagonal is discharged sorry-free here
+(`polytabloid_self_pairing`).
 
 From `sdr_core` the sign lemma follows sorry-free: the per-tabloid identity
 `combId` splits into the column-orbit case (a sign-preserving reindex against
@@ -45,11 +48,11 @@ From `sdr_core` the sign lemma follows sorry-free: the per-tabloid identity
 | `colAntisym`, `colAntisym_mem`, `tableau_exists_smul` | **sorry-free** |
 | `bilinM_apply_of`, `bilinM_single_left`, `mk_smul_eq_iff`, `polytabloid_coeff`, `poly_kcast` | **sorry-free** |
 | `swap_smul_arrow_eq_iff`, `swap_mem_colStab_iff`, `swap_smul_mk_eq_iff` (swap↔pattern) | **sorry-free** |
-| `sdr_pattern_core` (the pure pigeonhole / SDR — the elementary residual core) | **STUB** `sorry` — `-- Ref: [james1984representation]` §4 / `[sagan2001]` §2.4.3 |
-| `sdr_core` (tabloid/transposition form) | **sorry-free MODULO `sdr_pattern_core`** |
-| `combId`, `colAntisym_zero`, `colAntisym_add` | **sorry-free MODULO `sdr_pattern_core`** |
-| `james_kernel_core` (James §4 sign lemma) | **sorry-free MODULO `sdr_pattern_core`** |
-| `specht_submodule_dichotomy'` (verbatim dichotomy target) | **sorry-free MODULO `sdr_pattern_core`** |
+| `sdr_pattern_core` (the pigeonhole / SDR existence) | **sorry-free** (via `YoungStaircaseBound.exists_colStab_smul`) |
+| `sdr_core` (tabloid/transposition form) | **sorry-free** |
+| `combId`, `colAntisym_zero`, `colAntisym_add` | **sorry-free** |
+| `james_kernel_core` (James §4 sign lemma) | **sorry-free** |
+| `specht_submodule_dichotomy'` (the James submodule theorem) | **sorry-free** |
 | `polytabloid_self_pairing` (`⟨e_t,e_t⟩ = |C_t|`), `polytabloid_not_mem_spechtPerp` | **sorry-free** |
 | `specht_isSimple'` (the reduction) | **sorry-free MODULO `sdr_core` + `specht_form_nondegenerate`** |
 
@@ -214,8 +217,16 @@ theorem sdr_pattern_core (t s : Tableau μ)
     (hd : ∀ σ : colStab t, (σ : Perm (Fin (nOf μ))) • (Tabloid.mk t) ≠ Tabloid.mk s) :
     ∃ a b : Fin (nOf μ), a ≠ b ∧
       colPattern t a = colPattern t b ∧ rowPattern s a = rowPattern s b := by
-  -- Ref: [james1984representation] §4 (the sign lemma's SDR step) / [sagan2001] §2.4.3.
-  sorry
+  by_contra hcon
+  push_neg at hcon
+  have Hinj : Function.Injective
+      (fun m : Fin (nOf μ) => (rowPattern s m, colPattern t m)) := by
+    intro a b h
+    by_contra hab
+    obtain ⟨h1, h2⟩ := Prod.ext_iff.1 h
+    exact hcon a b hab h2 h1
+  obtain ⟨σ, hσcol, hσsmul⟩ := YoungStaircaseBound.exists_colStab_smul s t Hinj
+  exact hd ⟨σ, hσcol⟩ hσsmul
 
 omit [CharZero k] in
 /-- **SDR existence at tabloid level**, derived sorry-free from `sdr_pattern_core`:
