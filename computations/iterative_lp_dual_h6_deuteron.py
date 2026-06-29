@@ -160,6 +160,10 @@ def main() -> int:
     # Build deuteron braid word
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_core import h as h_num
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     h_val = float(h_num)
     q_val = float(Q0_FLOAT)
     word = atom_braid_word_3A(1, 1)
@@ -215,8 +219,8 @@ def main() -> int:
     print("─" * 100)
     print("  Comparisons")
     print("─" * 100)
-    M_D_codata = M_P_MEV + M_N_MEV - float(AME_B_DEUTERON_MEV_VALIDATION)   # AME atomic mass
-    Z_M_p_plus_N_M_n = 1 * M_P_MEV + 1 * M_N_MEV
+    M_D_codata = M_P_MEV + m_n_derived_3input - float(AME_B_DEUTERON_MEV_VALIDATION)   # AME atomic mass
+    Z_M_p_plus_N_M_n = 1 * M_P_MEV + 1 * m_n_derived_3input
     print(f"\n  CODATA atomic D mass:        {M_D_codata:.4f} MeV")
     print(f"  Z·m_p + N·m_n (free):       {Z_M_p_plus_N_M_n:.4f} MeV")
     print(f"  AME B(D):                   2.2246 MeV")

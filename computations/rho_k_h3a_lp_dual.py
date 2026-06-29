@@ -166,6 +166,10 @@ def lp_select_delta_lambda(
     The active_set is the single-element list [λ*] where Δ_λ* ≠ 0.
     """
     from scipy.optimize import linprog
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
 
     d = len(y_chi)
     t_np = np.array([float(c) for c in cost], dtype=float)
@@ -278,7 +282,7 @@ def main() -> int:
     print(f"\n  q_0 = {mp.nstr(Q_MP, 25)}")
     print(f"  m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA)")
     print(f"  m_p = {mp.nstr(M_P_MEV, 8)} MeV (CODATA)")
-    print(f"  m_n = {mp.nstr(M_N_MEV, 8)} MeV (CODATA)")
+    print(f"  m_n = {mp.nstr(m_n_derived_3input, 8)} MeV (CODATA)")
     print(f"  M(D) = {mp.nstr(M_D_MEV, 12)} MeV (CODATA)")
 
     # ── Step 1: |tr_M(β_D)| ───────────────────────────────────
@@ -287,7 +291,7 @@ def main() -> int:
     print(f"\n  |tr_M(β_D)| (50 dps) = {mp.nstr(abs_tr_M, 30)}")
 
     # ── Step 2: ρ_K^LO and the residual to be explained ────────
-    rho_K_LO = (M_P_MEV + M_N_MEV) / (M_E_MEV * abs_tr_M)
+    rho_K_LO = (M_P_MEV + m_n_derived_3input) / (M_E_MEV * abs_tr_M)
     rho_K_codata = M_D_MEV / (M_E_MEV * abs_tr_M)
     delta_rho = rho_K_codata - rho_K_LO
     print(f"\n  ρ_K^LO         = {mp.nstr(rho_K_LO, 25)}")
@@ -486,7 +490,7 @@ def main() -> int:
             "M_codata_MeV": str(M_D_MEV),
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(M_N_MEV),
+            "m_n_MeV": str(m_n_derived_3input),
             "primary_cost_choice": args.cost,
             "cost_choices_supported": ["plancherel", "frobenius"],
         },

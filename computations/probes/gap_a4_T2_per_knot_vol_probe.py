@@ -58,9 +58,13 @@ Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 # CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
 # registry (I9 — no hardcoded literals). See codata_constants.py.
 from codata_constants import (  # noqa: E402
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     M_E_MEV,
     M_P_MEV_VALIDATION as M_P_MEV,
-    M_N_MEV_VALIDATION as M_N_MEV,
+    M_N_MEV_VALIDATION as m_n_derived_3input,
     M_D_MEV_VALIDATION as M_D_MEV,
     M_T_MEV_VALIDATION as M_T_MEV,
     M_HE3_MEV_VALIDATION as M_HE3_MEV,
@@ -97,7 +101,7 @@ LIGHT_SERIES = [
         "B_model_b_small_knot": VOL_BORROMEAN_8G,  # Borromean
         "C_uniform_borromean": VOL_BORROMEAN_8G,
     }),
-    ("n", 0, 1, M_N_MEV, {
+    ("n", 0, 1, m_n_derived_3input, {
         "A_phase4_jsj": VOL_BORROMEAN_8G,
         "B_model_b_small_knot": VOL_BORROMEAN_8G,
         "C_uniform_borromean": VOL_BORROMEAN_8G,

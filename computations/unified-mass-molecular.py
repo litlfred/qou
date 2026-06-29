@@ -50,6 +50,10 @@ w_a = q2 / denom_w
 
 # Molecular energy scale
 from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
 TWO_Q = q0 + qi
 
 
@@ -239,7 +243,7 @@ mass_errors = []
 for Z, N, sym, m_obs in isotopes:
     o = atom_ordering(Z, N)
     phi = compute_phi1(o, gluon=True)
-    m_const = Z*M_P_MEV + N*M_N_MEV + Z*M_E_MEV
+    m_const = Z*M_P_MEV + N*m_n_derived_3input + Z*M_E_MEV
     m_pred = m_const + M_E_MEV * phi
     err = (m_pred - m_obs) / m_obs * 100
     mass_errors.append(abs(err))
@@ -365,7 +369,7 @@ w.add_data("molecular_mae_pct", float(mae_mol))
 
 for Z, N, sym, obs in isotopes:
     phi = atom_phi[sym]
-    mc = Z*M_P_MEV + N*M_N_MEV + Z*M_E_MEV
+    mc = Z*M_P_MEV + N*m_n_derived_3input + Z*M_E_MEV
     mp = mc + M_E_MEV * phi
     w.add_data("mass_"+sym, {
         "Z": Z, "N": N, "Phi1": float(phi),

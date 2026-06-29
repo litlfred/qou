@@ -2180,6 +2180,10 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
         k_cap = K_PARTITION_MAX
     try:
         from sdp_cross_channel import sdp_with_atom_observables
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     except ImportError:
         return 0.0, []
 
@@ -2304,7 +2308,7 @@ def atom_mass(Z, N):
 
     Returns (M_MeV, phi1).
     """
-    M_const = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
+    M_const = Z * M_P_MEV + N * m_n_derived_3input + Z * M_E_MEV
     phi = compute_phi1_full(Z, N)
     return M_const + KAPPA * phi, phi
 
