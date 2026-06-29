@@ -816,7 +816,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confined-demand beta-decay channel interpretation fits the confinement-selection section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Interpretive remark describing the NF demand profile; no false theorem asserted."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive demand-profile interpretation interprets prop:confinement-operator-selection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No circular derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "confinement-operator-selection-interpretation.md:6-9: specific NF coefficients (-0.100, 0.036, 0.998, 0.099, 0.009, -0.043) presented without an inline witness link",
+        "notes": "The proton/neutron residual-demand coefficients are quoted to 3 dp and interpreted physically (gamma deficit = mass source, e^- demand = beta channel) with no witness path cited in-block; the physical reading is plausible but the numbers' provenance is not pinned."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The NF coefficients are LP/SDP-derived from q_0 and quark types, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Demand-profile -> beta-decay channel reading is consistent; confinement-universality (independence of photon polarization) is a reasonable structural claim."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Remark with no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Interprets prop:confinement-operator-selection correctly; no external citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "NF channels (gamma, sigma_0, sigma_1, L+, L-, e^-) and quark assignments specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "confinement-operator-selection-interpretation.md:18-21: neutron gamma=-0.202, L_+=-0.010, e^-=-0.044 quoted without witness",
+        "notes": "Neutron demand coefficients quoted to 3 dp drive the qualitative 'larger deficit -> drives n->p decay' conclusion; the conclusion is robust to small drift but the specific values are not pinned to a committed witness in-block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Nucleon 'demands an electron' (e^- channel) as a categorical beta-decay reading is internally consistent; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "confinement-operator-selection-interpretation.md:6-21: NF demand coefficients with no `computation`/witness in confinement-operator-selection-interpretation.ts",
+        "notes": "The .ts manifest carries no computation/witness block, so the quoted NF demand numbers are not traceable to a committed witness for drift-checking."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "67353621cd37",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Reasonable interpretive remark; main objection is that the load-bearing NF demand coefficients are not pinned to a committed witness in the block/manifest."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

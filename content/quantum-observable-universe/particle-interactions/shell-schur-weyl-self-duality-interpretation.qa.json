@@ -816,7 +816,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Shell-closure / magic-number interpretation via charge-conjugate-invariant braids fits the nuclear-structure scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Interpretive remark over prop:shell-schur-weyl-self-duality; uses the standard magic numbers {2,8,20,28,50,82,126} and makes claims about parity/isospin without asserting a false theorem."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive physical interpretation linking shell closures to charge-conjugation invariance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No circular derivation; interprets an upstream proposition."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality-interpretation.md:5: \"Parity conservation in the nuclear strong interaction (shell closures respect charge conjugation)\"",
+        "notes": "Equating shell closures with parity conservation / absence of shell-level CP violation is a strong physical reading attributed to Schur-Weyl self-duality; presented as interpretation but a referee would want the C-invariance->parity link made precise rather than asserted."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Parity-violation-at-level-3 vs exact-self-duality-at-level-4 distinction is coherent and cross-referenced to skein-crossing-asymmetry."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Remark with no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Internal ref to skein-crossing-asymmetry used correctly; no external citation to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Magic numbers, charge-conjugate-invariant braids, levels 3/4 all specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Cites the standard magic-number set; no fitted numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality-interpretation.md:5: \"Parity conservation in the nuclear strong interaction\"",
+        "notes": "Parity is conserved by the strong interaction as standard physics, but framing it as a derived consequence of shell-closure self-duality is a non-standard attribution; plausible as interpretation but a domain expert would want the mechanism, especially given the sibling shell-closure-stability uses a DIFFERENT (categorical {2,10,28,60}) closure sequence than the {2,8,20,28,...} cited here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No witness/compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "29d35e4937b6",
+          "ts": "023584a27bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Reasonable interpretive remark; strongest objection is the strong parity/CP reading and the magic-number-set tension with the sibling shell-closure-stability categorical sequence."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

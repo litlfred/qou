@@ -78,6 +78,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Brunnian property of B_3 (Borromean baryon topology) is core to the chapter's confinement/binding narrative."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -243,6 +259,24 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.lean:21: \"class BrunnianPropertyOfBorromean where holds : Prop\"",
+        "notes": "The sibling stub carries a bare `holds : Prop` field (content-free marker); the substantive statement lives in QOU.KnotTheory.Brunnian with a cited sorry, so the stub is an honest sibling-resolution placeholder for a conjecture, not a disguised theorem — flagged minor for the empty `holds : Prop`."
       }
     ],
     "da-overclaim": [
@@ -319,6 +353,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Kept as a conjecture; sorry honestly attributed to missing Mathlib link-equivalence primitives, not a proved claim."
       }
     ],
     "da-false-claim": [
@@ -394,6 +444,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Standard true fact: removing any component of the Borromean rings yields the 2-component unlink; the strand-deletion caveat (yields 3_1 at braid-word level) is correct and honestly noted."
       }
     ],
     "da-referee-verdict": [
@@ -462,6 +528,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Correct, standard topological conjecture; only blemish is the empty `holds : Prop` in the resolution stub (substantive statement is elsewhere with a cited sorry)."
       }
     ],
     "da-circular": [
@@ -529,6 +611,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No derivation assumes its conclusion; it is a topological conjecture awaiting Reidemeister-move formalization."
       }
     ],
     "da-hidden-dof": [
@@ -597,6 +695,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -664,6 +778,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Reasoning about strand deletion vs topological equivalence is logically careful; no gap asserted as proved."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -733,6 +863,22 @@
         "severity": "minor",
         "evidence": "Naive strand-deletion does not yield the unlink at the BraidWord level (e.g. removing strand 0 ... yields ... the negative trefoil)",
         "notes": "The narrative asserts topological equivalence to U_2, but the BraidWord deletion natively gives a trefoil knot. The Lean gap is explicitly acknowledged but the narrative implies the deletion natively yields the unlink without highlighting the need for R-moves."
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The .md describes the substantive decls living in QOU.KnotTheory.Brunnian with a cited sorry; the local class is just a resolution stub, consistent with the conjecture kind."
       }
     ],
     "da-citation-misuse": [
@@ -800,6 +946,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "kawauchi1996 correctly cited for the defining Brunnian-link property."
       }
     ],
     "da-definitional-ambiguity": [
@@ -867,6 +1029,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "B_3, component deletion, U_2 unlink all defined; presentation as closed braid (sigma_0 sigma_1^-1)^3 explicit."
       }
     ],
     "da-empirical-fragility": [
@@ -934,6 +1112,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No numerical match; purely topological conjecture."
       }
     ],
     "da-physical-implausibility": [
@@ -1001,6 +1195,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Topological statement; physical gloss (removing a component dissolves binding) is an analogy, not a measurement claim."
       }
     ],
     "da-reproducibility": [
@@ -1068,6 +1278,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "e171a643848c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No backing witness/compute; conjecture."
       }
     ],
     "voice-status-leak": [
@@ -1953,5 +2179,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

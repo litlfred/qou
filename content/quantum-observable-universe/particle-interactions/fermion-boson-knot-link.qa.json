@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:21.246Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement is the bare knot/link <-> fermion/boson correspondence; no extraneous interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:21.582Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Fermion/boson as knot/link of T(2,n) fits the particle-classification scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:21.961Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Combinatorial component-count statement; Lean over N (gcd) with no gratuitous ℝ."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:22.268Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Proof via Nat.gcd divisibility (omega), purely algebraic; no archimedean misuse."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:22.632Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean fermion_iff_odd/boson_iff_even encode components=gcd(2,n)=1 iff n odd / =2 iff n even, matching the .md knot(1)/link(2) <-> odd/even claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +283,22 @@
         "reviewed_at": "2026-06-22T02:57:24.120Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean signatures state the genuine iff with hypothesis n>=2; not weakened."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +319,22 @@
         "reviewed_at": "2026-06-22T02:57:24.462Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Proofs are gcd computations (omega/Nat.gcd lemmas), not field projections."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +355,22 @@
         "reviewed_at": "2026-06-22T02:57:24.814Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Goals are non-trivial gcd iff statements, not True."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +391,22 @@
         "reviewed_at": "2026-06-22T02:57:24.965Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Hypothesis n>=2 is satisfiable; no contradiction."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +427,24 @@
         "reviewed_at": "2026-06-22T02:57:25.169Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "fermion-boson-knot-link.lean:18,44: hypothesis (hn : n ≥ 2) not referenced in either proof body (proofs use only gcd/parity)",
+        "notes": "The n>=2 hypothesis appears unused in fermion_iff_odd and boson_iff_even (the gcd-parity argument holds for all n); harmless but indicates a slightly stronger-than-needed signature (n=0,1 edge cases aside)."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +465,22 @@
         "reviewed_at": "2026-06-22T02:57:25.333Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "decide used only inside Nat.le_of_dvd (by decide) for the literal 0<2; not masking a substantive goal."
       }
     ],
     "da-false-claim": [
@@ -323,6 +501,22 @@
         "notes": "The claim in 'Fermions are knots, bosons are links' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "T(2,n) has gcd(2,n) components: 1 (knot) for odd n, 2 (link) for even n — standard, correct."
       }
     ],
     "da-vacuous": [
@@ -342,6 +536,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Fermions are knots, bosons are links' presents substantial mathematical content: The fermion--boson decomposition (fermion--boson decomposition) coincides with the knot--link decomposition of the $T...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Genuine combinatorial correspondence with a real gcd proof."
       }
     ],
     "da-circular": [
@@ -362,6 +572,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Fermions are knots, bosons are links'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No circularity; component count is intrinsic to T(2,n)."
       }
     ],
     "da-overclaim": [
@@ -381,6 +607,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Fermions are knots, bosons are links' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Claim limited to the T(2,n) family on Bring's surface; not overgeneralized."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +643,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Fermions are knots, bosons are links'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +679,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "alpha_V != 0 <-> knot <-> odd n equivalences are stated as a coincidence of two decompositions, consistent with the cited fermion-boson definition."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +714,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean matches the narrative; genus field is auxiliary and not claimed in the .md."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +750,22 @@
         "notes": "No citations are present in 'Fermions are knots, bosons are links', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No external citation; Mathlib Nat.GCD used correctly."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +786,22 @@
         "notes": "Key terms and symbols in 'Fermions are knots, bosons are links' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "T(2,n), alpha_V, knot/link, odd/even all defined or cross-referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +822,22 @@
         "notes": "The algebraic and logical relations in 'Fermions are knots, bosons are links' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Combinatorial statement; no numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +858,22 @@
         "notes": "The physical concepts described in 'Fermions are knots, bosons are links' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Fermion=1 component / boson=2 components is the framework's spin-statistics encoding; internally consistent."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +894,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1 — content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument"
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No witness; symbolic/combinatorial."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +931,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean for 'Fermions are knots, bosons are links' fails compilation with error: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "23f17bbda549",
+          "ts": "f437221f9042",
+          "lean": "10741c5474de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Correct, cleanly-formalized component-parity correspondence; only nit is the unused n>=2 hypothesis."
       }
     ],
     "voice-status-leak": [
@@ -1598,5 +1984,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

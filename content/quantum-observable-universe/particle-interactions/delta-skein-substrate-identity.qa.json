@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:20.404Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Proton-neutron Skein difference / Q_beta identity fits the chapter's beta-decay and binding scope."
       }
     ],
     "da-false-claim": [
@@ -51,6 +67,22 @@
         "notes": "No false claims identified in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Remark, conditional on the common-scale conjecture; the (Q_beta+m_e)/m_e = (m_n-m_p)/m_e reduction is algebraically consistent."
       }
     ],
     "da-vacuous": [
@@ -70,6 +102,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' presents substantial mathematical content: difference, conditional on common-scale conjecture).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive derived identity with numerical table; not content-free."
       }
     ],
     "da-circular": [
@@ -90,6 +138,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Honestly states the 1015 ppm agreement is NOT evidence for the common-scale conjecture but consistent with existing Q_beta precision under it; avoids the circular reading."
       }
     ],
     "da-overclaim": [
@@ -109,6 +173,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Explicitly separates 'ruled in' (orientation-difference) from 'remains open' (absolute lambda_scale); falsification criteria given."
       }
     ],
     "da-hidden-dof": [
@@ -129,6 +209,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:16: \"\\lambda_{\\mathrm{scale}}(\\mathfrak{n}) - \\lambda_{\\mathrm{scale}}(\\mathfrak{p})\"",
+        "notes": "lambda_scale is an undetermined Q(q_0) number (~2.46) required for absolute m_p/m_n; the remark is candid that it is open, so it is a disclosed-but-underived DOF rather than a hidden one."
       }
     ],
     "da-non-sequitur": [
@@ -149,6 +247,22 @@
         "notes": "The argument flow in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Reduction (bracket vanishes under common-scale) is logically explicit and conditional."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -168,6 +282,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Remark with no .lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -188,6 +318,22 @@
         "notes": "Citations to codata2022 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "codata2022 cited for empirical m_p,m_n; internal Q_beta cross-refs correct."
       }
     ],
     "da-definitional-ambiguity": [
@@ -208,6 +354,24 @@
         "notes": "Key terms and symbols in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:14-16: uses lambda_scale and the purged Geom-style Vol(B_3)/hbar_q^2 form",
+        "notes": "The remark uses lambda_scale, which AGENTS.md records as absorbed (2026-05-23); here it is treated as a per-orientation scale factor, an arguably stale framing vs the current 'no separate lambda_scale' guardrail — flag as a definitional/currency ambiguity worth aligning."
       }
     ],
     "da-empirical-fragility": [
@@ -228,6 +392,24 @@
         "notes": "The algebraic and logical relations in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:54: \"$q_0 = 1.109978595554181\\ldots$\" (muon-q0) vs proton-pin convention",
+        "notes": "Numbers (760 ppm Q_beta residual, 1015 ppm DeltaS) are computed at the muon-anchored q_0; per AGENTS.md the precision/prediction layer should report against the convention in force — the remark itself flags the residual is set by Q_beta's q_0-pin error, so this is disclosed fragility, not hidden cherry-picking."
       }
     ],
     "da-physical-implausibility": [
@@ -248,6 +430,22 @@
         "notes": "The physical concepts described in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "(m_n-m_p)/m_e ~ 2.53 is the correct physical ratio; units consistent."
       }
     ],
     "da-reproducibility": [
@@ -268,6 +466,24 @@
         "notes": "The derivation steps and formal definitions in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:38,57: witness links point to feature branches (claude/neutron-mass-50dps-chain, claude/audit-plancherel-usage-a6DgI)",
+        "notes": "Backing witnesses (m-baryon-volume-form.witness.json) are linked via transient feature-branch blob URLs rather than main; reproducibility depends on those branches persisting — recommend re-pointing to main once merged."
       }
     ],
     "da-referee-verdict": [
@@ -289,6 +505,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Candid, well-scoped conditional remark; the strongest objections (stale lambda_scale framing, muon-q0 numbers, feature-branch witness URLs) are minor currency/reproducibility items, not substantive errors."
       }
     ],
     "voice-status-leak": [
@@ -1137,5 +1369,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

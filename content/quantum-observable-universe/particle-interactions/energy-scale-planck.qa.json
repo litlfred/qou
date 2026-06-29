@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:57:21.253Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "E_0 single-Hecke-tick energy scale interprets beta-decay-energy-scale; fits the chapter."
       }
     ],
     "da-false-claim": [
@@ -47,6 +62,21 @@
         "notes": "No false claims identified in 'Energy scale $E_0$ and the Planck time': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "E_0 = m_e c_q^2 hbar_q = m_e/(q(q-1)) is algebraically consistent with c_q=1/(q-1), hbar_q=(q-1)/q."
       }
     ],
     "da-vacuous": [
@@ -65,6 +95,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Energy scale $E_0$ and the Planck time' presents substantial mathematical content: The energy scale $E_0$ is derived from CAL-1 ($m_e$) and CAL-2 ($q_0$) alone — no β-decay calibration consumed. It ha...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive derived scale with error propagation; interprets a proposition."
       }
     ],
     "da-circular": [
@@ -84,6 +129,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Energy scale $E_0$ and the Planck time'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Explicitly distinguishes the derived E_0 (from CAL-1,CAL-2) from the historical CAL-3-calibrated E_0 which is 'no longer used'; avoids consuming CAL-3 as input."
       }
     ],
     "da-overclaim": [
@@ -102,6 +162,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Energy scale $E_0$ and the Planck time' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "0.74% derived-vs-cross-check gap honestly attributed to N=0 brane-tower truncation, bounded ~1%; no exactness overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -121,6 +196,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Energy scale $E_0$ and the Planck time'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "E_0 fixed by q_0 + m_e; no off-menu coefficient introduced."
       }
     ],
     "da-non-sequitur": [
@@ -140,6 +230,21 @@
         "notes": "The argument flow in 'Energy scale $E_0$ and the Planck time' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Planck-tick interpretation and error-propagation steps follow; amplification factor d ln E_0/d ln q_0 = (1-2q_0)/(q_0-1) is correct from E_0=m_e/(q(q-1))."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -158,6 +263,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Remark with no .lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -177,6 +297,21 @@
         "notes": "No citations are present in 'Energy scale $E_0$ and the Planck time', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Internal refs (information-speed-of-light, three-calibration, per-braid-mass-tower) used correctly."
       }
     ],
     "da-definitional-ambiguity": [
@@ -196,6 +331,21 @@
         "notes": "Key terms and symbols in 'Energy scale $E_0$ and the Planck time' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "c_q, hbar_q, t_P, E_0 all defined; q-Planck units table explicit."
       }
     ],
     "da-empirical-fragility": [
@@ -215,6 +365,23 @@
         "notes": "The algebraic and logical relations in 'Energy scale $E_0$ and the Planck time' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "energy-scale-planck.md:108: H^k table lists \"$m_\\mu/m_e$ | $H^1$ | $q_0$\" and \"$\\mathfrak{Q}_\\beta(n)$ | $H^2$\"",
+        "notes": "The H^0/H^1/H^2 'three distinct degrees' framing of the calibrations is the older labeling; AGENTS.md's 2026-06-26 ruling reframes the canonical triple as decay-width observables sharing the single H^1(Bring)=2W (3 DOF), so this table is a currency drift, not a numerical error."
       }
     ],
     "da-physical-implausibility": [
@@ -234,6 +401,21 @@
         "notes": "The physical concepts described in 'Energy scale $E_0$ and the Planck time' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "E_0~4.186 MeV at q_0~1.110 is a self-consistent scale; ~5.7e-8 MeV error is negligible as claimed."
       }
     ],
     "da-reproducibility": [
@@ -253,6 +435,21 @@
         "notes": "The derivation steps and formal definitions in 'Energy scale $E_0$ and the Planck time' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "E_0 from closed form m_e/(q(q-1)) is directly recomputable; no stale-witness dependence."
       }
     ],
     "da-referee-verdict": [
@@ -273,6 +470,21 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Energy scale $E_0$ and the Planck time' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "698bcc75d607",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Coherent derived-scale remark with honest truncation accounting; only blemish is the legacy H^0/H^1/H^2 calibration labeling vs the current single-H^1 ruling."
       }
     ],
     "voice-status-leak": [
@@ -1082,5 +1294,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

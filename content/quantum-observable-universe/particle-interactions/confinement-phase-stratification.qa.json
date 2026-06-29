@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:21.949Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement is the openness/stratification/local-constancy claims; physical 'phase transition' labels are part of the math statement, acceptable."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:22.267Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confinement phases / deconfinement boundaries fit the chapter's confinement scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:22.592Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Real-axis stratification (open sets, continuity) is genuinely archimedean; using ℝ and topology here is correct, not a gratuitous specialization."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:23.003Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Topological/continuity claims proved on ℝ; appropriate machinery for an archimedean statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:23.415Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "ConfinementPhaseStratification.lean:164-167 headline theorem proves only IsOpen(confinementLocus P); md claims 5 items incl. stratification, terminality, boundary-crossing dichotomy",
+        "notes": "The .md proposition asserts five items (openness, real-algebraic stratification, local constancy, scope, boundary-crossing trichotomy); the Lean headline proves only openness (the other two claims are class fields projected, and stratification/boundary items are not formalized) — narrative is substantially broader than the Lean."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -359,6 +441,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean signatures state the genuine open/μ-constant/σ_F-continuous claims; not weakened, though they are class-hypothesis-conditional."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -415,6 +513,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "critical",
+        "evidence": "ConfinementPhaseStratification.lean:98-106 class fields locus_open/mu_constant/sigmaF_continuous, then 127-130 phase_locus_open := h.locus_open and 164-167 headline := phase_locus_open",
+        "notes": "The HasPhaseStratification class carries the three conclusions verbatim as fields, and phase_locus_open/phase_mu_constant.../phase_sigmaF... + the headline theorem are direct projections (h.locus_open etc.) — the §3b-cond item-5 self-assuming-projection anti-pattern; yet the block is presented as an unconditional proposition (no conj in .ts uses[]) and the conclusions are the class fields, not derived sub-hypotheses."
       }
     ],
     "proof-no-trivial-true": [
@@ -453,6 +569,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Goals (IsOpen, ContinuousOn, equality of μ) are non-trivial; not True."
       }
     ],
     "proof-no-false-premise": [
@@ -509,6 +641,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No false premise; HasRealAxisData/HasPhaseStratification are satisfiable interfaces."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -565,6 +713,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Each per-instance theorem uses exactly the matching class field."
       }
     ],
     "proof-no-decide-masking": [
@@ -603,6 +767,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No decide/trivial masking; the issue is projection, not reflection."
       }
     ],
     "da-false-claim": [
@@ -623,6 +803,22 @@
         "notes": "The mathematical claims in 'Confinement phases are open strata of the generic $q$-locus' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean:37:79: error: unexpected identifier; expected 'lemma'.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The math claims (Slater-strict feasibility is open; value-function continuity) are standard SDP sensitivity results, true; the defect is formalization strength, not falsity."
       }
     ],
     "da-vacuous": [
@@ -643,6 +839,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "ConfinementPhaseStratification.lean:127-130,164-167: theorems are := h.locus_open projections of a class whose fields ARE the conclusions",
+        "notes": "The Lean 'theorems' are non-derivations: they project the conclusion straight out of an assumed class field, so modulo the class they prove nothing new — content-light unless the class instance is independently constructed (which is not done here)."
       }
     ],
     "da-circular": [
@@ -663,6 +877,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement phases are open strata of the generic $q$-locus'.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Not circular per se (assumes a stratification class, derives one of its fields); the issue is vacuity/projection, captured under da-vacuous, not back-fitting."
       }
     ],
     "da-overclaim": [
@@ -682,6 +912,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Confinement phases are open strata of the generic $q$-locus' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "confinement-phase-stratification.md:1 'Proposition.' (unconditional) vs Lean proving only openness from an assumed stratification class",
+        "notes": "Presented as an unconditional 5-part proposition while the Lean only re-exports an assumed openness field; the formalization does not support the breadth of the stated proposition (stratification/local-constancy/terminality)."
       }
     ],
     "da-hidden-dof": [
@@ -702,6 +950,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement phases are open strata of the generic $q$-locus'.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free numerical parameter."
       }
     ],
     "da-non-sequitur": [
@@ -722,6 +986,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Narrative items follow from SDP sensitivity theory; the gap is that they are assumed (class fields) rather than derived."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -741,6 +1021,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "confinement-phase-stratification.md:1-57 (5-part proposition) vs ConfinementPhaseStratification.lean:164 headline IsOpen-only",
+        "notes": "Lean proves materially less than the .md (openness only, via projection); stratification/terminality/boundary-trichotomy are unformalized and the proved fields are projected from an assumed class."
       }
     ],
     "da-citation-misuse": [
@@ -761,6 +1059,22 @@
         "notes": "No citations are present in 'Confinement phases are open strata of the generic $q$-locus', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "boyd-vandenberghe-2004 §5.6 correctly cited for perturbation/sensitivity (feasibility-set topology + value-function continuity)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -781,6 +1095,22 @@
         "notes": "Key terms and symbols in 'Confinement phases are open strata of the generic $q$-locus' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Omega(P), confinement predicate (Slater-strict), strata, sigma_F all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -801,6 +1131,22 @@
         "notes": "The algebraic and logical relations in 'Confinement phases are open strata of the generic $q$-locus' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Structural topology statement; no numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -821,6 +1167,22 @@
         "notes": "The physical concepts described in 'Confinement phases are open strata of the generic $q$-locus' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Phase-boundary/deconfinement language consistent with the framework; no measurement contradiction."
       }
     ],
     "da-reproducibility": [
@@ -841,6 +1203,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "confinement-phase-stratification.lean:1 — content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean:37:79: error: unexpected identifier; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No witness/compute."
       }
     ],
     "da-referee-verdict": [
@@ -862,6 +1240,23 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "59180599debc",
+          "ts": "08d5240ba178",
+          "lean": "ca7f2b1d000f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "notes": "Strongest objection: the Lean assumes the conclusions as a class and re-exports them; the unconditional proposition is not supported by a derivation."
       }
     ],
     "voice-status-leak": [
@@ -1903,5 +2298,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

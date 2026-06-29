@@ -28,6 +28,23 @@
         "reviewed_at": "2026-06-22T02:57:20.927Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "parity-regime-selection.md:3: \"This is not a fitting parameter — it follows from the fermionic sign of the spectator factor.\"",
+        "notes": "The theorem block opens with an interpretive 'not a fitting parameter' sentence before the Statement; minor one-voice leak that belongs in a remark, though the actual Statement is clean."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +64,21 @@
         "reviewed_at": "2026-06-22T02:57:21.283Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Parity-driven Q-value regime selection is core Ch 11 beta-decay material."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +98,21 @@
         "reviewed_at": "2026-06-22T02:57:21.733Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Physical Q-value/MeV statement at q>1 (archimedean); appropriate for this observation chapter, Lean ParityRegimeSelectionContext uses R with q_gt_one."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +132,21 @@
         "reviewed_at": "2026-06-22T02:57:22.042Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Sign argument is algebraic (parity of (-1)^Z(-1)^(N-1)); no misuse of archimedean machinery on an algebraic claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +166,21 @@
         "reviewed_at": "2026-06-22T02:57:22.606Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean ParityRegimeSelection Prop encodes the same four sub-claims (sign identity + odd/even/A=1 regimes) as the .md; statement-level equivalence holds (proof itself lives in the .md, Lean names it as an open Prop)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean signature carries the genuine sign identity + three regime equalities over a data context; not weakened to a tautology."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +485,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "ParityRegimeSelection is a def : Prop over input-only context fields; explicitly NOT projected from a claim field (no theorem := ctx.claim)."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +536,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The named Prop is a non-trivial conjunction of sign + regime identities, not True."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +604,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Context hypothesis 1<q is satisfiable; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +672,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean states a Prop with no proof body (named, not discharged), so hypothesis-usage is not yet assessable."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +723,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No decide/trivial; the Lean is a stated Prop, the proof is narrative."
       }
     ],
     "da-false-claim": [
@@ -590,6 +757,21 @@
         "notes": "No false claims identified in 'Parity regime selection for Q-values': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Sign identity sign(a^Z b^{N-1}) = (-1)^{A-1} is correct given a,b<0; verified."
       }
     ],
     "da-vacuous": [
@@ -608,6 +790,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Parity regime selection for Q-values' presents substantial mathematical content: The parity of the mass number $A$ determines which computational regime applies to the Q-value.  This is not a fittin...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Non-trivial regime classification with content."
       }
     ],
     "da-circular": [
@@ -627,6 +824,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Parity regime selection for Q-values'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Regime parity derived from spectator sign, not from the Q-values it predicts."
       }
     ],
     "da-overclaim": [
@@ -645,6 +857,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Parity regime selection for Q-values' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Even-A regime explicitly requires the Frobenius positivity filter; no overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +891,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Parity regime selection for Q-values'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "parity-regime-selection.md:31: \"$Q = (\\Sigma_{\\mathrm{FP}} + 1) \\times m_e$\"",
+        "notes": "The even-A '+1 positron correction' and FP-config selection are extra structural ingredients; cross-referenced to sibling props (positron-correction, frobenius-positivity-filter), so disclosed rather than hidden, hence warn not fail."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +927,21 @@
         "notes": "The argument flow in 'Parity regime selection for Q-values' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Sign -> parity case -> regime formula chain is sound."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +960,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/parity-regime-selection.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean Prop matches the narrative statement; proof is in the proof sibling (narrative), Lean leaves it as an open named Prop honestly."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +994,21 @@
         "notes": "No citations are present in 'Parity regime selection for Q-values', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Internal refs to frobenius-positivity-filter / positron-correction used correctly."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1028,21 @@
         "notes": "Key terms and symbols in 'Parity regime selection for Q-values' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "S, Delta, Sigma_FP, A all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1062,21 @@
         "notes": "The algebraic and logical relations in 'Parity regime selection for Q-values' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Errors (-0.10% to +3.68%) are large and honestly tabulated in the proof sibling; no cherry-picked precision."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1096,21 @@
         "notes": "The physical concepts described in 'Parity regime selection for Q-values' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Q-values in MeV at correct beta-decay scale and sign."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1130,21 @@
         "notes": "The derivation steps and formal definitions in 'Parity regime selection for Q-values' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No stale-witness claim in this statement block; numbers reproduce in the proof sibling."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1165,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/parity-regime-selection.lean is missing entirely, preventing formal verification of the claims in 'Parity regime selection for Q-values'."
+      },
+      {
+        "field_hash": {
+          "md": "bc6783839296",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Sound parity-regime theorem; minor blemishes are the interpretive opening sentence and the disclosed even-A '+1'/FP bookkeeping."
       }
     ],
     "voice-status-leak": [
@@ -1818,5 +2182,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

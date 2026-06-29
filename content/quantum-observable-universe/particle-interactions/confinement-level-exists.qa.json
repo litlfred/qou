@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:22.020Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement is the bare existence/finiteness claim; no interpretive prose."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:22.372Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confinement-level existence fits the chapter's confinement-filtration scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:22.786Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Existence/finiteness of a filtration level; Lean over generic CommRing R, appropriate (no gratuitous R)."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:23.181Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Proof is a single anonymous-constructor witness; no archimedean machinery misused."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:23.575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "ConfinementLevel.lean:41-43: \"theorem ConfinementLevel.exists ... : Nonempty (ConfinementLevel R) := ⟨{ braidIndex:=0, nStrands:=1, q:=0, level:=0 }⟩\"",
+        "notes": "The .md claims 'for any closed braid K with NF T_w, the confinement level ℓ(K,q) exists and is finite'; the Lean only proves Nonempty of a property-free data structure (any 4-tuple inhabits it), capturing neither 'for all K' nor the J^ℓ-minimum existence — strictly weaker/vacuous vs the narrative."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,24 @@
         "reviewed_at": "2026-06-22T02:57:24.846Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "ConfinementLevel.lean:41: theorem signature is Nonempty (ConfinementLevel R), a data-only structure",
+        "notes": "Signature is honest about being a Nonempty claim but does not encode the per-braid filtration-minimum content the .md statement asserts; the gap is a too-weak formalization rather than a smuggled axiom."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:57:25.051Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Witness is a literal constructor, not a projection of a class field equal to the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +359,24 @@
         "reviewed_at": "2026-06-22T02:57:25.265Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "ConfinementLevel.lean:25-33 structure ConfinementLevel has only data fields (braidIndex,nStrands,q,level) and no Prop constraint",
+        "notes": "Nonempty (ConfinementLevel R) is trivially true because the structure has no well-formedness/property field — the goal is discharged vacuously for any inhabitant, so the substantive 'level exists and is finite' content is not actually proved."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +397,22 @@
         "reviewed_at": "2026-06-22T02:57:25.462Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No false premise; CommRing R is satisfiable."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +433,22 @@
         "reviewed_at": "2026-06-22T02:57:25.562Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Only hypothesis is [CommRing R], used to type q:=0; no spurious hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +469,22 @@
         "reviewed_at": "2026-06-22T02:57:25.667Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No decide/trivial; a direct constructor (though the goal itself is too weak)."
       }
     ],
     "da-false-claim": [
@@ -323,6 +505,22 @@
         "notes": "The mathematical claims in 'Existence of the confinement level' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean:20:14: error: Function expected at.",
         "severity": "minor",
         "evidence": "confinement-level-exists.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The narrative existence/finiteness claim itself is true (upward-closed nonempty subset of N has a minimum); the defect is that the Lean does not capture it (see da-vacuous)."
       }
     ],
     "da-vacuous": [
@@ -343,6 +541,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "confinement-level-exists.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "ConfinementLevel.lean:42-43: Nonempty (ConfinementLevel R) := ⟨{...,level:=0}⟩",
+        "notes": "The Lean theorem is content-free: it proves Nonempty of a structure with no constraints, which holds for any tuple and says nothing about the J^ℓ filtration minimum the .md asserts."
       }
     ],
     "da-circular": [
@@ -363,6 +579,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the confinement level'.",
         "severity": "minor",
         "evidence": "confinement-level-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No circular reasoning."
       }
     ],
     "da-overclaim": [
@@ -382,6 +614,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Existence of the confinement level' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.md:2: \"the confinement level ℓ(K, q) exists and is finite\" backed by a Nonempty-of-data Lean",
+        "notes": "The narrative presents a substantive existence theorem while the formalization is a trivial Nonempty witness; the proposition is more than the Lean delivers."
       }
     ],
     "da-hidden-dof": [
@@ -402,6 +652,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the confinement level'.",
         "severity": "minor",
         "evidence": "confinement-level-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -422,6 +688,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean.",
         "severity": "minor",
         "evidence": "confinement-level-exists.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Narrative argument (finite, upward-closed, nonempty -> min exists) is valid."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -441,6 +723,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "confinement-level-exists.md:2 (per-braid level exists+finite) vs ConfinementLevel.lean:41 Nonempty(data-only structure)",
+        "notes": "Lean proves a strictly weaker, essentially vacuous statement (inhabitation of a property-free structure) than the .md's per-braid filtration-minimum existence claim."
       }
     ],
     "da-citation-misuse": [
@@ -461,6 +761,22 @@
         "notes": "No citations are present in 'Existence of the confinement level', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "confinement-level-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No external citation invoked beyond [manuscript] ref."
       }
     ],
     "da-definitional-ambiguity": [
@@ -481,6 +797,22 @@
         "notes": "Key terms and symbols in 'Existence of the confinement level' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "confinement-level-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confinement level defined via the cited def:confinement-level; generic locus specified."
       }
     ],
     "da-empirical-fragility": [
@@ -501,6 +833,22 @@
         "notes": "The algebraic and logical relations in 'Existence of the confinement level' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "confinement-level-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Existence statement, no numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -521,6 +869,22 @@
         "notes": "The physical concepts described in 'Existence of the confinement level' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "confinement-level-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No physical-quantity claim."
       }
     ],
     "da-reproducibility": [
@@ -541,6 +905,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "confinement-level-exists.lean:1 — content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean:20:14: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No witness/compute."
       }
     ],
     "da-referee-verdict": [
@@ -562,6 +942,23 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "30c261e641aa",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "notes": "Strongest objection: the Lean is a trivial Nonempty witness, not a proof of the stated per-braid existence theorem."
       }
     ],
     "voice-status-leak": [
@@ -1599,5 +1996,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

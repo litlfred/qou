@@ -67,6 +67,22 @@
         "severity": "minor",
         "evidence": "q-beta-spectral-bridge.md:131 '## Reading' and :141-142 'Form A and Form B are not competing predictions but a single observable expressed in two bases'",
         "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline — the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement is the Form-A/Form-B definitions + bridge identity + remainder bound; no extraneous interpretation in the statement."
       }
     ],
     "fit-section-chapter": [
@@ -102,6 +118,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Q_beta spectral bridge (two bases for the same beta-decay observable) fits the chapter's beta-decay scope."
       }
     ],
     "wall-side-statement": [
@@ -138,6 +170,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Explicitly archimedean block (Q_β, MeV, q_0, Real.log) carrying the §3b-cond conditional banner at md:1; matches its archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Q_beta in MeV at q=q_0 with h, z, E_0 is archimedean; appropriate for this observation chapter. Conditional on conj:borromean-quark."
       }
     ],
     "wall-side-proof": [
@@ -174,6 +222,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Taylor expansion + ratio algebra over the archimedean statement — proof method matches the archimedean side."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The Taylor-expansion bridge algebra (ratio = 1 + (z-1)h/2 + O(h^2)) is the unconditional algebraic content per authorNotes; no archimedean misuse on an algebraic claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -212,6 +276,22 @@
         "severity": "major",
         "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (∀ h z, (h(2-h)/2)·z = (1-h/2)(zh)) ∧ ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
         "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h²) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence → warn."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "lean.ref qou:QOU.Interactions.q_beta_spectral_bridge is not_checked and the .lean body is not surfaced as a sibling; statement-level equivalence not assessable here."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -527,6 +607,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Signature is the three-way conjunction of algebraic identities; no statement weakening, no sorryAx in the q_beta_spectral_bridge proof term (proof = three ring/field_simp lemmas)."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement carries the genuine bridge identity + exponential remainder; conditional-on-conjecture banner present, not a weakened restatement."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -599,6 +695,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof composes three independently-proved derived lemmas, not a read-back of a structure/class field whose type is the conclusion."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No Lean body in scope to assess projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -635,6 +747,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Conclusion is a conjunction of genuine algebraic equalities (not True, not x=x)."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Bridge identity and remainder bound are non-trivial; not True."
       }
     ],
     "proof-no-false-premise": [
@@ -707,6 +835,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No False/contradictory premise; the inner non-degeneracy hypotheses (h≠0, z≠0, 1-zh/2≠0) are satisfiable at the substrate."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Premises (q=q_0, A=1 free neutron, conj:borromean-quark) are satisfiable/standard."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -779,6 +923,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Top decl has no hypotheses; the inner ∀-bound non-degeneracy hypotheses are consumed by leading_order_ratio_identity / bridge_first_order_remainder via field_simp."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No Lean proof body in scope to check hypothesis usage."
       }
     ],
     "proof-no-decide-masking": [
@@ -833,6 +993,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial masking; goals closed by ring/field_simp."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No Lean body in scope."
       }
     ],
     "da-false-claim": [
@@ -853,6 +1029,22 @@
         "notes": "The claim in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Form A / Form B as bases of the same spectral decomposition with ratio 1+(z-1)h/2+O(h^2) is an algebraic Taylor identity; no false claim asserted."
       }
     ],
     "da-vacuous": [
@@ -873,6 +1065,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive basis-change bridge with an explicit first-order correction term."
       }
     ],
     "da-circular": [
@@ -893,6 +1101,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Forms A and B are independently defined (NF counit vs transfer-matrix log-ratio); the bridge derives their agreement, not assumed."
       }
     ],
     "da-overclaim": [
@@ -912,6 +1136,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "authorNotes correctly separate the unconditional Taylor algebra from the conjectural exponential-remainder input (conj:archimedean-remainder-exponential-decay)."
       }
     ],
     "da-hidden-dof": [
@@ -932,6 +1172,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "z, h, E_0 are q_0-determined; no free parameter introduced in the bridge."
       }
     ],
     "da-non-sequitur": [
@@ -952,6 +1208,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Bridge identity follows from the ratio expansion; remainder bound cited to the archimedean-remainder conjecture."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -971,6 +1243,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean ref not_checked; no body to compare."
       }
     ],
     "da-citation-misuse": [
@@ -991,6 +1279,22 @@
         "notes": "Citations to wenzl1988, jones1985 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "wenzl1988 / jones1985 cited for the Markov-Jones/transfer-matrix machinery; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1011,6 +1315,22 @@
         "notes": "Key terms and symbols in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "z, h, E_0, Form A, Form B, brane-tower depth N all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -1031,6 +1351,24 @@
         "notes": "The algebraic and logical relations in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "q-beta-spectral-bridge.ts authorNotes: \"Form A ... (+0.168% residual vs CODATA at N=0)\"",
+        "notes": "The +0.168% N=0 residual is a known small near-match for Q_beta; per AGENTS.md the Q_beta closure precision is sensitive to the q_0 pin (muon vs proton) and the c_k truncation framing, so the residual figure should be read against the current pin — disclosed as N=0 truncation, so not hidden cherry-picking, but worth a currency check."
       }
     ],
     "da-physical-implausibility": [
@@ -1051,6 +1389,22 @@
         "notes": "The physical concepts described in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Q_beta ~ 0.78 MeV scale and the basis-equivalence are physically consistent; no units/conservation error."
       }
     ],
     "da-reproducibility": [
@@ -1071,6 +1425,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 — content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "computation block names gram-matrix-dual.py + witness on main; the Taylor algebra is directly recomputable."
       }
     ],
     "da-referee-verdict": [
@@ -1092,6 +1462,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean for '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' fails compilation with error: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Sound basis-change bridge with honest conditional/unconditional separation; main caveat is the q_0-pin sensitivity of the quoted +0.168% Q_beta residual."
       }
     ],
     "voice-status-leak": [
@@ -2133,5 +2519,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

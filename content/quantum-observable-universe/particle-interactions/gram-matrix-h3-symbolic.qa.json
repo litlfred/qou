@@ -1007,7 +1007,425 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement is the bare Gram-entry table + three structural properties; interpretation is in separate 'Role in the framework' sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "H_3(q) Hoefsmit Gram matrix underpins confinement LP/SDP of this chapter; placement justified in .ts detangler note."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement uses u=sqrt(q)>0 (archimedean) which is appropriate; Lean is over R for the seminormal Gram — consistent with this physical chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean det positivity uses linarith/positivity over R, which is appropriate since the determinant non-vanishing claim is on the real substrate domain u>1."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "gram-matrix-h3-symbolic.md:23: \"$\\det G(q) \\neq 0$ for $q > 0,\\ q \\neq 1$\" vs GramMatrixH3Symbolic.lean:484 gramMatrix_det_ne_zero requires `1 < u` (q>1)",
+        "notes": "The .md states det != 0 for all q>0, q!=1, but the Lean (and its own correctness note) only proves it for u>1 (q>1) because a SECOND positive root exists at q~=0.4656; statement and Lean diverge on the hypothesis."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean signature states the genuine 36-entry Gram + symmetry/top-one (proved) and det!=0 (proved for u>1); no weakening to pass."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "gramMatrix_isSymm and det_ne_zero are derived (case analysis / positivity-of-factorization), not projected from a class field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Goals are IsSymm, =1, and det!=0 — substantive, not tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Hypothesis 1<u is consistent and inhabited (substrate u_0~1.054); no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The 1<u hypothesis is genuinely used in every detFactor positivity lemma."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Determinant proved by det_fin_six + ring + positivity, no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "gram-matrix-h3-symbolic.md:23: \"$\\det G(q) \\neq 0$ for $q > 0,\\ q \\neq 1$\"",
+        "notes": "As stated this is false: the Lean file records a second real root at u~=0.6823 i.e. q~=0.4656 (root of q^3+2q^2+q-1), where det=0 and q>0, q!=1; the narrative property (3) over-states the domain (should be q>1)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Symmetry and det theorems carry real content; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Entries are sympy-computed Hoefsmit closed forms, cross-checked against an independent witness; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "gram-matrix-h3-symbolic.md:23: \"$\\det G(q) \\neq 0$ for $q > 0,\\ q \\neq 1$\"",
+        "notes": "Statement (3) over-claims the non-vanishing domain (covers a region where det actually vanishes); same defect as da-false-claim but rated minor here as an overclaim-scope framing."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free parameters; entries are universal rational functions of u."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Symmetry/top-one follow from the explicit entries; no logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "gram-matrix-h3-symbolic.md:23 (q>0,q!=1) vs lean gramMatrix_det_ne_zero hypothesis 1<u",
+        "notes": "Lean proves a strictly weaker (correctly restricted) det!=0 domain (u>1) than the .md asserts (q>0,q!=1); divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "halverson_ram_1998 correctly cited for the Hoefsmit seminormal Gram on H_3(q)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "u=sqrt(q)>0, NF basis explicitly listed; no ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "1e-16 agreement vs witness is a symbolic-vs-numeric cross-check at full precision, not a fitted near-match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Pure algebraic Gram-matrix proposition; no direct physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "det(G(u_0))~=-0.189 and one negative eigenvalue are consistent with the recorded witnesses; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "116cfe9d3c3f",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "major",
+        "evidence": "gram-matrix-h3-symbolic.md:23: \"$\\det G(q) \\neq 0$ for $q > 0,\\ q \\neq 1$\"",
+        "notes": "Verdict: solid symbolic Gram proposition with a verified Lean, but the narrative det!=0 domain claim (q>0,q!=1) is false (det vanishes at q~=0.4656); fix the statement to q>1 to match the Lean and the file's own correctness finding."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

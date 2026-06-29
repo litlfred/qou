@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:20.656Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Electroweak Weinberg-angle-as-Hecke-eigenvalue-ratio conjecture fits the chapter's particle-sector categorical program."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -75,6 +91,22 @@
         "notes": "The claim in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Conjecture; the simple-multiplicity reading is explicitly shown to FAIL (q_0^-4~0.659 vs target 1.823), so no false claim is asserted as true."
       }
     ],
     "da-vacuous": [
@@ -94,6 +126,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are non-vacuous as they make concrete conjectures about 'generic (not a root of unity in $R$, $q \\neq 1$). Under the Hoefsmit cell-content identification of the EW triplet in...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive structural proposal with an explicit numerical falsification of the naive version."
       }
     ],
     "da-circular": [
@@ -114,6 +162,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No back-fitting; CODATA sin^2 theta_W used only as a target/sanity check, and the simple formula fails it."
       }
     ],
     "da-overclaim": [
@@ -133,6 +197,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Marked 'Open' in authorNotes with a 4-step promotion path; the mismatch is stated plainly, no overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -153,6 +233,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "weinberg-angle-categorical.md:93-101: corrected derivation 'must use non-uniform multiplicities (4,2,1,3,3,1,2,4) + linking operation + possibly weight by Higgs vev'",
+        "notes": "The proposed correction introduces several additional ingredients (non-uniform multiplicities, categorical-linking operation, Higgs-vev weighting) that increase the degrees of freedom available to fit theta_W; honest as future work but a referee would flag fit-flexibility risk."
       }
     ],
     "da-non-sequitur": [
@@ -173,6 +271,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The (W3,B)->(Z,gamma) rotation and trace-ratio definitions are coherent; the failure of the simple version is correctly diagnosed."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -192,6 +306,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean and narrative statements for 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are structurally aligned.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Conjecture; lean.ref is a not_checked placeholder, no proof to diverge."
       }
     ],
     "da-citation-misuse": [
@@ -212,6 +342,22 @@
         "notes": "No citations are present in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Internal refs to hoefsmit-ew-cell-content / categorical-linking-operation / gauge-coupling-uniqueness used correctly; no external mis-attribution."
       }
     ],
     "da-definitional-ambiguity": [
@@ -232,6 +378,22 @@
         "notes": "Key terms and symbols in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "e_W^+, e_B^+ Hoefsmit idempotents, sigma slot assignments, pre/post-EWSB basis all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -252,6 +414,22 @@
         "notes": "The algebraic and logical relations in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The numerical check is used to REFUTE the simple reading, not to claim a fragile match; no cherry-picked agreement."
       }
     ],
     "da-physical-implausibility": [
@@ -272,6 +450,22 @@
         "notes": "The physical concepts described in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "theta_W as g'/g ratio realized via Hecke eigenvalue products is structurally consistent with the SM; no measurement contradiction asserted."
       }
     ],
     "da-reproducibility": [
@@ -292,6 +486,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1 — content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "q_0^-4~0.659 spot-check reproduces; no committed witness claimed for this open conjecture."
       }
     ],
     "da-referee-verdict": [
@@ -313,6 +523,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean for conjecture 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' fails to compile: content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
+      },
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Honestly-open conjecture that refutes its own naive form; main caveat is the fit-flexibility of the proposed correction (multiplicities + linking + vev weighting)."
       }
     ],
     "voice-status-leak": [
@@ -1196,5 +1422,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

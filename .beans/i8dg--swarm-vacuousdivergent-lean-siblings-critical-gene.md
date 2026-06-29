@@ -87,3 +87,7 @@ updated_at: 2026-06-29T20:07:58Z
 
 ## More instances (batch 53, particle-interactions)
 - stable-atom-decidable.lean:24-25 (Nonempty with feasible:=false hardcoded; .md claims True/False decision algorithm; narrative true via Diamond Lemma+Lenstra, fix the encoding)
+
+## More instances (batch 52, particle-interactions)
+- confinement-phase-stratification.lean:98-167 (HasPhaseStratification carries 3 conclusions as fields; theorems project them; unconditional 5-part prop; critical)
+- confinement-level-exists.lean:42 (Nonempty of constraint-free struct; weaker than per-braid filtration-min)

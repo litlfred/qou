@@ -28,6 +28,23 @@
         "reviewed_at": "2026-06-22T02:57:19.226Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "lp-dual-stability.md:28-35: \"Key finding: individual quarks are LP-stable, but the B_3 sub-unit is not. This is the precise algebraic statement of confinement...\"",
+        "notes": "The proposition block carries substantial interpretive 'Key finding'/confinement-mechanism prose after the 4-part statement; this physical interpretation would be cleaner in a linked remark, though it does not alter the math statement."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +64,21 @@
         "reviewed_at": "2026-06-22T02:57:19.577Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "LP dual stability of confined hadrons fits the confinement LP/SDP section."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +98,21 @@
         "reviewed_at": "2026-06-22T02:57:19.959Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Numerical LP stability at q_0 (Gram eigenvalues, condition number) is archimedean; Lean LpDualStabilityContext uses ℝ appropriately."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +132,21 @@
         "reviewed_at": "2026-06-22T02:57:20.444Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean theorem ends in sorry (no proof body); no narrative Proof block to wall-check."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +166,21 @@
         "reviewed_at": "2026-06-22T02:57:20.806Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean lp_dual_stability states the same 4-part conjunction (G x* >= 0, |y*| <= kappa ||t||, sub-braid sigma_0 channel < 0, strong duality tr_M=y_0* n_target) as the .md."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Signature carries the genuine four claims over input-only context; not weakened to pass."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +485,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": ".lean docstring explicitly notes the prior self-assuming version was removed; the class now carries only LP data (G,t,kappa,y*,x*), not the conclusions."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +536,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The 4-part conjunction is non-trivial (inequalities + strict negativity + equality), not True."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +604,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Context fields are satisfiable LP data; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +672,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Theorem body is sorry (disposition B), so hypothesis usage is not yet assessable."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +723,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No decide/trivial; the gap is an honest sorry with a stated missing-infra rationale."
       }
     ],
     "da-false-claim": [
@@ -590,6 +757,21 @@
         "notes": "No false claims identified in 'LP dual stability: confined hadrons have bounded shadow prices': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Claims (quarks LP-stable, B_3 sub-braid sigma_0 channel ~ -0.106 unstable, Gram eigenvalues incl. -0.956, kappa~7.0) are presented as q_0 witness values, internally consistent; one negative Gram eigenvalue matches the sibling Gram det negativity."
       }
     ],
     "da-vacuous": [
@@ -608,6 +790,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'LP dual stability: confined hadrons have bounded shadow prices' presents substantial mathematical content: An element $x \\in H_3(q)$ with NF decomposition $x = \\sum_{i=1}^{6} x_i b_i$ is classified by two LP criteria.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive 4-part claim with concrete spectral data; not vacuous."
       }
     ],
     "da-circular": [
@@ -627,6 +824,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'LP dual stability: confined hadrons have bounded shadow prices'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confinement conclusion derived from the sub-braid instability + Borromean completeness, not assumed."
       }
     ],
     "da-overclaim": [
@@ -645,6 +857,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'LP dual stability: confined hadrons have bounded shadow prices' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Strong-duality and boundedness claims are scoped to confined hadrons; the tr_M=0 massless minimum is correctly noted as excluded by braid realizability bounds."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +891,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'LP dual stability: confined hadrons have bounded shadow prices'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "kappa(G), eigenvalues, shadow prices are Gram-derived at q_0, not free; consistent with LP/SDP dual infra."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +925,21 @@
         "notes": "The argument flow in 'LP dual stability: confined hadrons have bounded shadow prices' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Negative eigenvalue -> tr_M=0 global min -> braid-realizability bound excludes it is a coherent argument."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +958,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean states the same 4 claims; the sorry is an honest 'stated not proved' marker, not a weaker/divergent statement."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +992,21 @@
         "notes": "No citations are present in 'LP dual stability: confined hadrons have bounded shadow prices', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "bertsimas1997 cited in .lean for LP strong duality + dual sensitivity, appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1026,21 @@
         "notes": "Key terms and symbols in 'LP dual stability: confined hadrons have bounded shadow prices' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "LP-stable/LP-confined cross-referenced; G, t, y*, kappa, channels all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1060,21 @@
         "notes": "The algebraic and logical relations in 'LP dual stability: confined hadrons have bounded shadow prices' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Eigenvalues and kappa~7.0 cited from confinement-lp/operator-selection witnesses; the sigma_0~-0.106 instability is well away from zero, not a fragile near-match."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1094,21 @@
         "notes": "The physical concepts described in 'LP dual stability: confined hadrons have bounded shadow prices' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confinement-as-sub-braid-instability is the framework's standard reading; no measurement contradiction."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1128,21 @@
         "notes": "The derivation steps and formal definitions in 'LP dual stability: confined hadrons have bounded shadow prices' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Witnesses confinement-lp.witness.json + confinement-operator-selection.witness.json named; values consistent with the cited spectra."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1163,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing entirely, preventing formal verification of the claims in 'LP dual stability: confined hadrons have bounded shadow prices'."
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "219b68ececd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Solid LP-dual-stability proposition with honest Lean disposition (sorry, no self-assuming projection); the interpretive 'Key finding' prose would be better in a linked remark."
       }
     ],
     "voice-status-leak": [
@@ -1818,5 +2180,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

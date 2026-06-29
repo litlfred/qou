@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:18.785Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "CPT-saturation density rule for Wedderburn blocks fits the particle-interactions/binding scope."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -115,6 +131,22 @@
         "notes": "The claim in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Conjecture, explicitly conditional on two upstream conjectures; the n=3 orbit example (sigma swaps (3)<->(1,1,1), fixes (2,1)) is correct."
       }
     ],
     "da-vacuous": [
@@ -134,6 +166,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are non-vacuous as they make concrete conjectures about 'transpose involution $\\lambda \\mapsto \\lambda^{T}$ — the Dynkin involution on the $A_{n-1}$ crystal that, after foldi...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean cpt_boolean_eq_orbit_closure is rfl by definition but the density lemmas (if_pos/if_neg) carry content; conditional class field is contentful (a fold-closure Prop, not True)."
       }
     ],
     "da-circular": [
@@ -154,6 +202,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "rho_F dichotomy derived from orbit closure under sigma, not assumed; replaces a posited Boolean flag."
       }
     ],
     "da-overclaim": [
@@ -173,6 +237,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Banner marks it conditional on conjectures; partitionTranspose_involutive honestly flagged as an axiom pending Mathlib."
       }
     ],
     "da-hidden-dof": [
@@ -193,6 +273,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "rho_F in {m_e, 2m_e}; the factor 2 comes from orbit count, not a free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -213,6 +309,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Type-B fold = transpose argument is standard crystal combinatorics; cited to Kashiwara/Lecouvey."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -232,6 +344,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean uses a class-conjecture pattern, matching the conjectural nature of 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lean defines partitionTranspose/isCPTSaturated and the conditional class matching the .md; density lemmas align with the boxed dichotomy."
       }
     ],
     "da-citation-misuse": [
@@ -252,6 +380,22 @@
         "notes": "Citations to kashiwara1991, lecouvey2007, brundankleshchev2009, khovanovlauda2009, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "kashiwara1991/lecouvey2007/brundankleshchev2009/khovanovlauda2009/kassel1995 correctly invoked for crystal/KLR bar-involution facts."
       }
     ],
     "da-definitional-ambiguity": [
@@ -272,6 +416,22 @@
         "notes": "Key terms and symbols in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "sigma, CPTSat, Lambda(K) all defined; partition carrier modelled as List N with documented caveat."
       }
     ],
     "da-empirical-fragility": [
@@ -292,6 +452,22 @@
         "notes": "The algebraic and logical relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Only empirical shadow cited is det_pair_law.py (det product = +-1); presented as evidence, not a fitted number."
       }
     ],
     "da-physical-implausibility": [
@@ -312,6 +488,22 @@
         "notes": "The physical concepts described in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "CPT-as-fold-orbit-closure is a structural proposal, internally consistent; no measurement contradiction asserted."
       }
     ],
     "da-reproducibility": [
@@ -332,6 +524,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 — content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "det_pair_law.py referenced as the available witness; no stale-hash claim made in prose."
       }
     ],
     "da-referee-verdict": [
@@ -353,6 +561,22 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean."
+      },
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Well-scoped conditional conjecture; strongest objection is reliance on partitionTranspose_involutive as an axiom, which is honestly flagged."
       }
     ],
     "voice-status-leak": [
@@ -1238,5 +1462,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

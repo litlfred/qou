@@ -724,6 +724,22 @@
         "notes": "The claim in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "GS basis (Hecke square-elimination + Yang-Baxter + far commutativity) and uniqueness via the Diamond Lemma are correct; max reduced word length A-1 is standard."
       }
     ],
     "da-vacuous": [
@@ -744,6 +760,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive normal-form construction with computational results."
       }
     ],
     "da-circular": [
@@ -764,6 +796,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "q is the braiding eigenvalue (categorical invariant), explicitly 'not a free parameter'; no smuggled calibration."
       }
     ],
     "da-overclaim": [
@@ -783,6 +831,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "nuclear-groebner-reduction.md:164-170: \"number of reduced terms grows polynomially in A (not exponentially)\" then bounds 14C by 2^13=8192 terms",
+        "notes": "The 'polynomial in A' scaling claim sits awkwardly beside the stated worst-case bound of 2^13 terms for A=14 (sum over k of binom(13,k)=2^13 is exponential); the polynomial claim is about typical reduced support but the exponential worst-case bound in the same paragraph undercuts the unqualified wording."
       }
     ],
     "da-hidden-dof": [
@@ -803,6 +869,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Mixed-crossing resolution 1/2(sigma+sigma^-1) and epsilon(i,j) rule are fixed by nucleon type, not tunable."
       }
     ],
     "da-non-sequitur": [
@@ -823,6 +905,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Reduction -> normal form -> Markov-trace-of-difference -> half-life chain is signposted as Fermi-golden-rule heuristic, not a strict deduction."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -842,6 +940,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "lean.ref points to a placeholder (QOU.Archimedean.nuclear_groebner_reduction, not_checked); proposition is primarily symbolic/computational, not flagged divergent here without the lean body in scope."
       }
     ],
     "da-citation-misuse": [
@@ -862,6 +976,22 @@
         "notes": "No citations are present in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "UGB admissible-system/division-algorithm/Groebner-basis cross-paper refs used correctly."
       }
     ],
     "da-definitional-ambiguity": [
@@ -882,6 +1012,22 @@
         "notes": "Key terms and symbols in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "R=Z[q,q^-1], B (positive monomials), length-lex order all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -902,6 +1048,24 @@
         "notes": "The algebraic and logical relations in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "nuclear-groebner-reduction.md:120-123: tritium NF coefficients -0.145, -0.015, 1.539, 0.162 quoted to 3 dp with no witness path in the block",
+        "notes": "The exact reduced-NF coefficients and DeltaWeight column are quoted to 3 decimals attributed to nuclear-braid-reduction.py but no witness JSON is cited inline; values are plausible but the precision/source pairing is not pinned in-block."
       }
     ],
     "da-physical-implausibility": [
@@ -922,6 +1086,22 @@
         "notes": "The physical concepts described in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "DeltaWeight negative for beta decay (daughter lower weight) is consistent with energy release; half-life ordering 3H short vs 14C long is qualitatively physical."
       }
     ],
     "da-reproducibility": [
@@ -942,6 +1122,24 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1 — content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "nuclear-groebner-reduction.md:98: \"exact computation via `nuclear-braid-reduction.py`\"",
+        "notes": "Computational table attributed to nuclear-braid-reduction.py but the .ts has no `computation`/witness block, so the reduced-count table is not pinned to a committed witness for drift-checking."
       }
     ],
     "da-referee-verdict": [
@@ -963,6 +1161,23 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean for 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' fails compilation with error: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "notes": "Tighten the polynomial-vs-exponential wording and attach a witness for the reduced-count/coefficient table."
       }
     ],
     "voice-status-leak": [
@@ -2004,5 +2219,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

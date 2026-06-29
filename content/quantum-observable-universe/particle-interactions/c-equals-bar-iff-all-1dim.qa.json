@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:20.301Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement is the bare iff plus the H_2/H_3 instantiation; no extraneous physical interpretation in the statement block."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:20.796Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "C=bar iff all-1-dim (lepton/meson CPT) fits the particle-sector structure scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:21.098Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement about irreducible characters of H_n(q) is algebraic; Lean ref two_only_unit_squares is the combinatorial core, no gratuitous ℝ."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:21.491Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Proof (in the proof sibling) is representation-theoretic/algebraic (AW, hook lengths, q-arithmetic); no archimedean misuse."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:57:21.824Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "c-equals-bar-iff-all-1dim.ts:5 lean.ref qou:QOU.ParticleInteractions.two_only_unit_squares vs md iff statement about characters of H_n(q)",
+        "notes": "The Lean ref name (two_only_unit_squares) suggests it formalizes only the n=2 case (2 = 1^2+1^2 is the unique unit-square decomposition) — the combinatorial heart — rather than the full iff over all n; without the Lean body in scope this may be a partial formalization of the .md iff. Flag minor pending the actual decl."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,22 @@
         "reviewed_at": "2026-06-22T02:57:23.296Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The .md iff statement is the genuine claim; no weakening visible at the statement level."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:57:23.719Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Proof (sibling) is a constructive AW/character argument, not a class-field projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,22 @@
         "reviewed_at": "2026-06-22T02:57:24.040Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The iff is a non-trivial representation-theoretic equivalence."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +393,22 @@
         "reviewed_at": "2026-06-22T02:57:24.387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No false premise; H_n(q) generic is satisfiable."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +429,22 @@
         "reviewed_at": "2026-06-22T02:57:24.673Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Both directions of the iff are used in the proof sibling; no spurious hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +465,22 @@
         "reviewed_at": "2026-06-22T02:57:24.912Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Narrative proof; no decide/trivial masking."
       }
     ],
     "da-false-claim": [
@@ -323,6 +501,22 @@
         "notes": "The claim in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "iff is correct: C=bar on all irreducible characters iff every irrep is 1-dim (the 2-dim (2,1) at H_3 is the obstruction); H_2 vs H_3 instantiation correct."
       }
     ],
     "da-vacuous": [
@@ -342,6 +536,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Charge conjugation equals bar involution iff all irreps are one-dimensional' presents substantial mathematical content: $C\\colon \\sigma_i \\mapsto \\sigma_i^{-1}$ and the bar involution $\\mathrm{bar}\\colon q \\mapsto q^{-1}$ agree on all ir...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Non-trivial equivalence with content."
       }
     ],
     "da-circular": [
@@ -362,6 +572,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Charge conjugation equals bar involution iff all irreps are one-dimensional'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No circular reasoning."
       }
     ],
     "da-overclaim": [
@@ -381,6 +607,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Charge conjugation equals bar involution iff all irreps are one-dimensional' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Scoped to characters of H_n(q); the lepton/meson reading lives in the proof sibling's coda, not the statement."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +643,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Charge conjugation equals bar involution iff all irreps are one-dimensional'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free parameters."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +679,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "H_2/H_3 instantiation follows directly from the iff."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +714,24 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "c-equals-bar-iff-all-1dim.ts:5: lean.ref ...two_only_unit_squares",
+        "notes": "Same concern as proof-narrative-lean-equiv: the Lean decl name indicates the n=2 unit-square core rather than the full all-n iff; the formalization may cover only a sub-claim of the .md proposition."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +752,22 @@
         "notes": "Citations to jones1987, wenzl1988c are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "jones1987 / wenzl1988c cited for Hecke representation theory; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +788,22 @@
         "notes": "Key terms and symbols in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "C, bar, 'one-dimensional', irreducible characters all defined/standard."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +824,22 @@
         "notes": "The algebraic and logical relations in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Algebraic equivalence; no numerical match in the statement block."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +860,22 @@
         "notes": "The physical concepts described in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Lepton-at-H_2 / meson-at-H_3 assignment is the framework's standard mapping; no measurement contradiction."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +896,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1 — content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No witness/compute."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +933,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean for 'Charge conjugation equals bar involution iff all irreps are one-dimensional' fails compilation with error: content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Correct representation-theoretic iff; only caveat is the Lean ref name suggesting a partial (n=2 core) formalization vs the all-n statement — worth confirming the decl covers the full claim."
       }
     ],
     "voice-status-leak": [
@@ -1600,5 +1988,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }

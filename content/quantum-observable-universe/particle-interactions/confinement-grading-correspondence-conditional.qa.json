@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:57:20.260Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Statement is the conditional filtration=KLR-grading iff; the conditional banner is part of the §3b-cond theorem statement, acceptable."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:57:20.745Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confinement-filtration = KLR-grading correspondence fits the confinement/computation scope."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:57:21.047Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Algebraic (KLR grading, filtration) statement over H_n(R,q); no gratuitous ℝ."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:57:21.494Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Conditional-on-class derivation is algebraic/categorical; no archimedean misuse (Lean body not in scope but statement is algebraic)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:57:21.824Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Per authorNotes, the Lean carries [CrystalGraphRealization n] as an explicit instance and proves the filtration=grading iff with no sorry in the body; matches the conditional .md statement (§3b-cond)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -359,6 +439,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Conditional theorem signature carries the class hypothesis + the genuine iff; not weakened."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -379,6 +475,24 @@
         "reviewed_at": "2026-06-22T02:57:23.899Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence-conditional.ts authorNotes: class field crystal_klr_iso carries the Brundan-Kleshchev intertwining; theorem [CrystalGraphRealization n] derives the filtration=grading iff",
+        "notes": "Per §3b-cond this is the sanctioned conditional-class pattern (class axiomatizes the upstream hypothesis, theorem derives the conclusion); need to confirm the class field carries the BK intertwining as a HYPOTHESIS and not the iff conclusion itself — the authorNotes describe it correctly as the intertwining input, so pass-leaning, flagged minor pending Lean-body confirmation (not in scope)."
       }
     ],
     "proof-no-trivial-true": [
@@ -399,6 +513,22 @@
         "reviewed_at": "2026-06-22T02:57:24.240Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The iff (T_w in J^l \\ J^{l+1} <-> top graded piece in degree l) is non-trivial."
       }
     ],
     "proof-no-false-premise": [
@@ -455,6 +585,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Class hypothesis is a satisfiable interface (the upstream conjecture); not a contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -511,6 +657,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The [CrystalGraphRealization n] instance supplies the crystal+BK iso genuinely used to relate the two filtrations."
       }
     ],
     "proof-no-decide-masking": [
@@ -549,6 +711,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No decide/trivial; conditional categorical derivation."
       }
     ],
     "da-false-claim": [
@@ -569,6 +747,22 @@
         "notes": "The claim in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Conditional theorem; Brundan-Kleshchev cyclotomic-Hecke/KLR isomorphism is real (cited), and the remaining QOU-specific identification is honestly the conjectural input."
       }
     ],
     "da-vacuous": [
@@ -589,6 +783,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Substantive conditional result; the empirical table (k_max<=7, LP active set = KLR support) is genuine supporting evidence."
       }
     ],
     "da-circular": [
@@ -609,6 +819,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Empirical witness explicitly labeled 'evidence for the upstream conjecture, not a proof of this conditional theorem' — avoids circular self-justification."
       }
     ],
     "da-overclaim": [
@@ -628,6 +854,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Carefully scoped: separates the proved BK isomorphism from the conjectural QOU shadow-price/grading identification; conditional-on-class banner present."
       }
     ],
     "da-hidden-dof": [
@@ -648,6 +890,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "No free numerical parameter; the conjectural input is named and class-axiomatized."
       }
     ],
     "da-non-sequitur": [
@@ -668,6 +926,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Filtration=grading iff follows from the assumed crystal+BK-iso class; the computational corollary (engine cutoff) is a valid consequence."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -687,6 +961,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "authorNotes document the §3b-cond pattern (explicit [Instance] hypothesis, no sorry in body); consistent with the conditional .md claim."
       }
     ],
     "da-citation-misuse": [
@@ -707,6 +997,22 @@
         "notes": "Citations to khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "khovanovlauda2009 / brundankleshchev2009 correctly cited for the KLR/cyclotomic-Hecke isomorphism."
       }
     ],
     "da-definitional-ambiguity": [
@@ -727,6 +1033,22 @@
         "notes": "Key terms and symbols in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Confinement filtration J^bullet, KLR grading, module lift M_K, class C all defined."
       }
     ],
     "da-empirical-fragility": [
@@ -747,6 +1069,22 @@
         "notes": "The algebraic and logical relations in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "The k_max<=7 'LP active set = KLR support' table is a discrete structural match (yes/no), not a fitted numeric near-match; witnesses cited on main."
       }
     ],
     "da-physical-implausibility": [
@@ -767,6 +1105,22 @@
         "notes": "The physical concepts described in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Algebraic correspondence; no direct physical-quantity claim."
       }
     ],
     "da-reproducibility": [
@@ -787,6 +1141,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:1 — content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Three named witnesses on main (lp-confinement-nf-forcing, confined-knot-binding, confinement-operator-selection); reproducible structural check."
       }
     ],
     "da-referee-verdict": [
@@ -808,6 +1178,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean for 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' fails compilation with error: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:23:14.516Z",
+        "reviewed_sha": "72e3e749820b59ae5b1d78a50ac2f423b60a9c8f",
+        "notes": "Well-constructed §3b-cond conditional theorem with honest separation of proved (BK) vs conjectural (QOU grading) inputs and genuine empirical support; no substantive objection."
       }
     ],
     "voice-status-leak": [
@@ -1849,5 +2235,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:23:14.516Z"
 }
