@@ -780,7 +780,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "Block is a procedural description of the atomic-mass computation; it sits squarely in appendix-atomic-mass-calculations (the AMC appendix), whose scope is exactly the per-element three-invariant computation method. Placement correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "Procedure steps (Phi_1 minimisation over C(A,Z) orderings, greedy electron insertion, 2x2 transfer-matrix chaining, M(Z,N) evaluation) are internally consistent with thm:wedderburn-mass-formula; no mathematically false assertion. The leading-3-invariant truncation is explicitly flagged as approximate in the parent theorem, not asserted exact here."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "prose block carrying a real computation recipe (5 concrete steps + parameter list); not a provable kind, no : True proof or self-assuming projection to be vacuous about."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "md:4-6 states 'No AME2020 binding energies are used as input' and md:55 'Fitted parameters: none'; the procedure consumes only q_0 and m_e (the canonical calibration inputs) and derives M(Z,N). No measured atomic mass is read back as input, so the derivation is not back-fitted to its target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "The 'Fitted parameters: none' claim (md:55) is supported: alpha = m_e*8G (Catalan, derived), [3]_q, H_A all derive from q_0,m_e per the parent theorem. The 3-invariant truncation is the parent theorem's acknowledged leading-order approximation; this prose does not over-state it as exact."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "No off-menu coefficient introduced. The coefficients in the Step-5 functional (-2[3]_q, H_A^2, alpha) all trace to the parent theorem's coefficient list (prop:degree-two-baryon-weight, prop:binding-scale-catalan), with canonical-chain origin; no undisclosed free parameter or 4th calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "Steps 1->5 follow sequentially: ground-state ordering -> electron insertion -> per-generator transfer matrices -> Phi sums -> mass evaluation. Each step feeds the next; no logical gap or 'therefore' with a missing lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "prose block with no .lean sibling; nothing to compare against an .md claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "Cross-refs resolve: #thm:wedderburn-mass-formula -> mass-theory/wedderburn-mass-formula.ts (theorem), #def:atomic-braid and #rem:groebner-reduction-methods exist. No bibliographic cite[] is mis-attributed (block has no cites[]). The bad ref is a refterm slug, scored under da-definitional-ambiguity, not a citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "severity": "minor",
+        "evidence": "amc-wedderburn-method.md:16: \"steepest-:refterm[descent]{#descent} local search\"",
+        "notes": "The slug #descent is declared in lifting-and-descent/descent-involution.md for the CATEGORICAL descent homomorphism d_{n+1}; here it is used in the OPTIMIZATION sense (steepest/gradient descent). Two incompatible readings under one slug -- the refterm link mis-resolves the term."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "Block states the computation procedure only; it reports no numerical match, precision figure, or q0-pin-dependent value to be fragile. The actual predicted masses live in the table data block, not here."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "notes": "M(Z,N) = Z*m_p + N*m_n + Z*m_e + binding term is dimensionally consistent (MeV throughout) and structurally standard for an atomic mass (rest masses + binding correction). No broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "severity": "major",
+        "evidence": "amc-wedderburn-method.md:59-60: \"The Python implementation is in `computations/atom_mass_combined.py`.\"",
+        "notes": "Cited live implementation path is dead: atom_mass_combined.py exists ONLY under computations/_deprecated/atom_mass_combined.py. The active scripts are atom_mass_derived.py / atom_mass_full_hecke_qdeformed.py / atom_mass_partition.py. The reproducibility pointer (md:57-64) points at a deprecated script, so the procedure is not reproducible from the cited path."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "02d2dae07e65",
+          "ts": "85fcdb026f31"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:43:12.577Z",
+        "reviewed_sha": "67ac7c1417900938e5cb854525175082ce4d8255",
+        "severity": "major",
+        "evidence": "amc-wedderburn-method.md:59-60: \"computations/atom_mass_combined.py\" (file is under _deprecated/)",
+        "notes": "Block-level rollup. The method description is mathematically sound, correctly parameter-free, and well-placed; the substance survives referee scrutiny. Strongest objection: the Reproducibility section points to a deprecated/non-existent script path (atom_mass_combined.py is only in computations/_deprecated/), so a referee following the citation cannot reproduce the numbers -- fix by repointing to the live atom_mass_*.py producer. Secondary: a mis-resolving #descent refterm. Neither is a math defect. Verdict: accept with minor revisions."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:43:12.577Z"
 }
