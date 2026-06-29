@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "MI/Seiberg-Witten abelianisation on the exceptional divisor is within the bundle/smoothness and color-fibration scope of Ch7."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Cartan reduction to A^0 = X dz = lambda_SW, quantum-flatness F_A=B, and reduction of nonabelian MI to abelian on the weight-0 sector are consistent with the cited lemmas."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Three-step proof with substantive content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Each step cites an independent lemma (Cartan reduction, jet prolongation); no assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Abelianisation claim is scoped to the restriction to S_c and the weight-0 projection; appropriately bounded."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free numeric parameter; jet level n is an explicit index."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Step 1->2->3 (Cartan reduction, simplicity-constraint abelianisation, jet induction) each follows from the prior plus the cited lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Proof block with no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "References mi-sw-abelianisation-cartan and jet-prolongation siblings appropriately."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "lambda_SW, S_c, quantum flatness F_A=B, weight-0 sector, J^n E all introduced or referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No numerical experiment match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Seiberg-Witten differential / period interpretation is standard gauge theory; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness file."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b30d83fa585f",
+          "ts": "f6756f44f986"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Coherent abelianisation proof leaning on cited lemmas; no substantive objection at the remark level."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

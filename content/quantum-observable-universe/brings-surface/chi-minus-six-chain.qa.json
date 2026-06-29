@@ -762,7 +762,253 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "chi=-6 derivation chain (Descartes condition) is the central Ch7 result; on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Riemann-Roch chi(V)=d+r(1-g)=2-2g and chi=-6 -> g=4 are correct; SU(2) det(V) trivial -> deg 0 is right."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Multi-step derivation with real content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "chi-minus-six-chain.md:15: \"The Frobenius--Hopf structure forces the algebra to have exactly 6 branch points ... This fixes |chi(A)| = 6.\"",
+        "notes": "Step 5 fixes |chi|=6 from '6 branch points (from S_3 subset S_5 orbits on the 6 Weierstrass points)', but the 6 Weierstrass points and the genus-4/S_5 surface already presuppose the Bring curve whose chi=-6 is the claimed output; the chain's magnitude |chi|=6 leans on a structure (6 branch points) co-determined with the target. Minor: the example is framed as a 'derivation chain' for accessibility, not a load-bearing proof, and the genus-filtration-derivation-chain block gives the independent Hecke-completeness route."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "chi-minus-six-chain.md:1: \"The value chi(A) = -6 is not assumed but derived. Here is the complete chain\"",
+        "notes": "Claims a 'complete' non-assumed derivation, but Step 5 (six branch points fixing |chi|=6) and Step 6 (sign negative because 'obstructions dominate') are asserted rather than derived from the prior steps; the magnitude 6 is the weakest link. Minor given the block is an illustrative example interpreting def:archimedean-condition."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No undisclosed numeric parameter; the '6' is tied (perhaps circularly) to Weierstrass points, not a free fit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "chi-minus-six-chain.md:17: \"chi(V) = -6 means h^0(V) - h^1(V) = -6, so h^1(V) >= 6 (obstructions dominate)\"",
+        "notes": "Step 6 derives the negative sign from 'obstructions dominate', but chi=-6 was used in Step 7 to get g=4 via chi=2-2g; the sign of chi is an input (from |chi|=6 plus h^1>h^0), so Steps 5-6-7 are mutually reinforcing rather than strictly sequential. Reads as a non-sequitur at Step 6 ('more obstructions than sections' is asserted). Minor: illustrative example."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Example block with no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "References def:archimedean-condition, euler-char-stability, kummer-tower, motivic-substrate appropriately for an interpretive chain."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Triple (C,A,tau), G=SU(2), rank-2 V, Riemann-Roch all defined/standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No experiment-matched number."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Motivic-Galois reading (Step 8) is speculative but flagged as such; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness file."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a8a31030e1b8",
+          "ts": "161b6118bbf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "chi-minus-six-chain.md:15: \"forces the algebra to have exactly 6 branch points ... This fixes |chi(A)| = 6\"",
+        "notes": "Pedagogically valuable chain, but a referee would object that the magnitude |chi|=6 (Step 5) and sign (Step 6) are co-determined with the Bring-curve target via the 6 Weierstrass points, so the chain is not as 'non-assumed' as stated; the genus-filtration-derivation-chain block supplies the cleaner independent Hecke-completeness route."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Proof of the Descartes elliptic curve (Weierstrass reduction of the color cubic) is in the color-fibration/elliptic section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Weierstrass shift X = x-(z+1)/3 and the p(z),r(z) coefficients are the standard depressed-cubic reduction; the z=s-s^{-1} substitution and (s^2+s-1) factor are consistent with the parent proposition."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Genuine algebraic reduction."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Coefficients derived by substitution, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "'verified by direct expansion' is a checkable claim for the (s^2+s-1) factor; not overstated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free parameter; z and s are determined by q."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Each reduction step (shift, substitution, clearing denominators, factoring) follows standard elliptic-curve normalization."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Proof block with no Lean sibling; the parent prop's Lean axiomatizes the substitution (descartes_elliptic_curve_axiom)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "References prop:color-elliptic for the starting cubic; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "z, s=sqrt(q), p(z), r(z) all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Symbolic reduction, no experiment match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Pure algebra; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The parent Lean notes the substitution was 'verified symbolically via sympy'; the reduction is reproducible by direct expansion as stated."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Standard, correct Weierstrass-reduction proof; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

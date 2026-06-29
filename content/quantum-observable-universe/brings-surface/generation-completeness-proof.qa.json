@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Proof of generation completeness (reachability + spectral filter) is in Ch7 generation/completeness scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Finite unknotting number, crossing-change involution, and the genus<=4 spectral filter via embeddability-closure are correctly used."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Two-step argument with real content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Spectral filter cited from thm:embeddability-closure, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "generation-completeness-proof.md:22-27: \"for any knot K with g(K)<=4 ... K appears with nonzero coefficient in the Skein expansion\"",
+        "notes": "Step 1 only establishes K is reachable from the unknot by u(K) crossing changes; the proof asserts but does not establish that K appears with *nonzero coefficient* in the Skein expansion (Skein crossing changes can produce cancellations). The completeness conclusion (every g<=4 knot is realized) is slightly stronger than the reachability+filter argument shows. Minor since it is a narrative proof and the claim is plausible."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free parameter; 7 generators are the stated seeds."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "generation-completeness-proof.md:22-26: \"The composition of Steps 1 and 2 gives ... K appears with nonzero coefficient\"",
+        "notes": "The jump from 'reachable by crossing changes' (Step 1) and 'filter keeps g<=4' (Step 2) to 'K appears with nonzero coefficient in the Skein expansion' is the missing-lemma step: nonzero-coefficient survival under the Skein resolution is not shown. Minor."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Proof block with no Lean sibling (the parent theorem's Lean lives elsewhere)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "References embeddability-closure and the knot-formula table; no misattributed external cite."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Unknotting number, mass functional M, V_phys=colim defined/standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Knot-count table (>=70, >=400, ...) is qualitative; no experiment match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Resonances-as-knots interpretation is heuristic; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness; knot-table counts are standard."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "76f5d54a0285",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "generation-completeness-proof.md:24-26: \"K appears with nonzero coefficient in the Skein expansion\"",
+        "notes": "Sound structure (reachability + spectral filter), but the completeness conclusion relies on an unproved nonzero-coefficient-survival step under the Skein resolution; a referee would request that lemma."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Enumeration of torus knots embeddable in Sigma_4 (g<=4) is Ch7 generation/embeddability scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "g(T_{m,n})=(m-1)(n-1)/2, bound <=8 enumeration is correct: m=2 -> n in {3,5,7,9}; m=3 -> n in {4,5}; m>=4 no new. Six nontrivial torus knots; verified."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Genuine finite case analysis with a definite conclusion."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Enumeration from the genus bound, no assumed conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Completeness claim is exactly what the enumeration establishes."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Case split m=2,3,4,>=5 exhausts coprime pairs; each step follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Proof block with no Lean sibling (the embeddability Lean lives in embeddability-closure/genus-filtration-ideal)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No external cites; Seifert-genus formula is standard."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Coprime, 1<m<n constraints explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Combinatorial proof, no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness; hand-verifiable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3ea23b16ed5c",
+          "ts": "d5091c867ab6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Correct, complete finite enumeration; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

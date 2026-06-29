@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Statement parts (genus from Hecke completeness, Chebyshev=Seifert genus, ideal I_4=(u^5), Yekutieli obstruction) are mathematical; physical reading deferred to the interpretation remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Genus-filtration ideal / Chebyshev obstruction is central Ch7 content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Stated over R_q=Z[q,q^{-1}] (Laurent polynomials), the correct generic-ring substrate side; q is the indeterminate, not a real number."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Lean proof uses omega/rfl over ℕ/ℤ for the embeddability and degree arithmetic; the two genuinely-algebraic content claims (Chebyshev degree, leading coeff) are axiomatized, no archimedean machinery misapplied."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "genus-filtration-ideal.lean:122: \"axiom chebyshev_degree_eq_genus ... seifertGenus_T2p p = (p - 1) / 2\"",
+        "notes": "The Lean's key content claims (deg_u a_p = (p-1)/2; leading Chebyshev coeff = 1) are stated as axioms whose bodies are weaker than the narrative: chebyshev_degree_eq_genus concludes only seifertGenus_T2p p = (p-1)/2 (a definitional unfolding of seifertGenus_T2p), NOT that the polynomial heckeCoeff has that degree; leading_chebyshev_coeff_is_one's body is a recurrence rearrangement, not 'coefficient = 1'. So the axiom *signatures* do not capture the narrative's degree/leading-coeff content. Minor: the manuscript honestly labels these 'deferred/opaque axiom', and the omega-proved parts (genus scan, cutoff) match the .md."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Provable theorems (total_irreps, genus3_insufficient, genus4_complete, genus4_cutoff, all_large_primes_obstructed) carry their real signatures; statement not weakened to pass."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The omega-proved theorems compute from torusEmbeddable defs; not projections of a conclusion field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "genus-filtration-ideal.lean:122-129: \"axiom chebyshev_degree_eq_genus ... seifertGenus_T2p p = (p - 1) / 2\"",
+        "notes": "chebyshev_degree_eq_genus's stated conclusion seifertGenus_T2p p = (p-1)/2 is definitionally true (seifertGenus_T2p p := (p-1)/2 by definition), so the axiom asserts a tautology under the wrapper of the intended (untrue-by-the-stub) degree claim; it conveys no content despite the docstring promising the degree identity. Not a proof-discharge issue (it is an axiom, not a theorem proved by trivial), hence minor/warn rather than critical."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No contradictory hypotheses; Odd p and 2<=p constraints are satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "seifert_genus_le_iff/genus4_cutoff use the Odd p and bound hypotheses via omega; no dangling hypotheses in the proved theorems."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "omega/rfl on genuine arithmetic; no decide/trivial masking a vacuous goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "H_2/H_3 irrep counts, Chebyshev recurrence a_{n+1}=s a_n+a_{n-1}, deg=(p-1)/2, I_4=(u^5), obstruction for p>=11 are all mathematically correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Substantive proposition with real algebraic content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "g=4 derived from rank-5 completeness, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "genus-filtration-ideal.md:29: \"the evaluation matrix M_{ij}=chi_{lambda_j}(sigma_i) must have rank 5\"",
+        "notes": "The completeness step asserts rank 5 is first achieved at g=4 but the rank computation itself is not exhibited in the block or proved in Lean (the Lean axiomatizes/omega-proves only the embeddability counts). The 'genus determined by the algebra' headline thus rests on an unshown rank claim. Minor: framed as a scan result and the count steps are genuinely proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free numeric parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Chebyshev overflow at a_11 (deg 5 = g+1) follows from deg=(p-1)/2; ideal containment u^k in (u^5) for k>=5 is correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "genus-filtration-ideal.lean:159: \"axiom leading_chebyshev_coeff_is_one ... heckeCoeff s p - s^(p-1) = heckeCoeff s (p-2) + s*heckeCoeff s (p-1) - s^(p-1)\"",
+        "notes": "Same as proof-narrative-lean-equiv: the two axioms purporting to capture 'degree=(p-1)/2' and 'leading coeff=1' have bodies that do not state those facts (one is a definitional tautology, the other a recurrence identity). The Lean is honest about deferral but the axiom statements diverge from the narrative's actual content. Minor."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "yekutieli2010 cited for the obstruction-class framing; consistent with its use elsewhere in the chapter."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "R_q, u=s^2, a_p, I_g, kappa all defined; ground ring stated explicitly in the Lean docstring."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No experiment-matched number."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Algebraic statement; no measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No external witness; Chebyshev table is hand-verifiable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "dd687f929bb0",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "genus-filtration-ideal.lean:122,159: two axioms whose bodies do not state the degree / leading-coeff facts they are named for",
+        "notes": "Mathematically sound proposition with correct narrative; the Lean honestly defers the two hard claims to axioms but those axioms' *signatures* assert tautologies/recurrence-identities rather than the degree=(p-1)/2 and leading-coeff=1 content they document. A referee would ask that the axiom statements be sharpened to the actual claims. The omega-proved genus-scan parts are solid."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

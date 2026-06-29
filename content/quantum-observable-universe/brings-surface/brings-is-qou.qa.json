@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Statement enumerates the five QOU conditions as mathematical facts (quantum universe, observability, Yekutieli, Euler char, descent); no stray physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "'Bring's surface is a QOU' is the titular result of the sec:brings-surface-qou section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Block declares itself an archimedean specialisation but states content over a generic ring R with 30 in R^x; the Lean models the conditions over ℕ/ℤ. Substrate side correct, no gratuitous ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Lean proof uses rfl/norm_num/omega over ℕ/ℤ; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "brings-is-qou.lean:29-63: \"structure BringsIsQOU where genus:ℕ; genus_eq:genus=4; ... observability: adjReprDim ≠ 1; yekutieli_lifting: numPatches>0\"",
+        "notes": "The Lean encodes the five QOU conditions as a record of numeric proxies: observability becomes adjReprDim≠1, Yekutieli lifting becomes numPatches>0, descent becomes branch_points=6 ∧ ramification=14. These are weak surrogates for the .md's actual claims (Hom(1,Ad(A))=0 by quantum Schur lemma; brane-tower lifting with κ_n≠0; degree-4 covering with S_5-determined ramification). The theorems proved (euler_char=-6, riemann_hurwitz arithmetic) are real but the structure's fields do not capture the categorical content of conditions (1)-(3) and (5); narrative and Lean are only loosely equivalent."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "brings-is-qou.lean:42: \"observability : adjReprDim ≠ 1\" / :47 \"yekutieli_lifting : numPatches > 0\"",
+        "notes": "The conditions are restated as easily-satisfiable numeric inequalities (≠1, >0) rather than the genuine vanishing/non-vanishing claims; the standardBringsIsQOU instance discharges them by omega/rfl. Not a falsification or tautology-conclusion, but the formal 'is a QOU' content is weaker than the proposition asserts. Minor."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "brings_euler_char_neg_six derives euler_char=-6 from euler_char_eq + genus_eq via rw+norm_num; not a verbatim projection of a conclusion field (euler_char itself is an input field but the −6 value is computed from the genus, not assumed equal to −6 as the field)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "brings_euler_char_neg_six (=-6) and riemann_hurwitz_brings (2*4-2+2*4=14) are genuine arithmetic goals, not tautologies."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The structure fields are jointly satisfiable (standardBringsIsQOU is constructed); no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "brings_euler_char_neg_six uses euler_char_eq and genus_eq; no spurious hypotheses in the proved theorems."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Uses rfl/norm_num/omega on real arithmetic; no decide/trivial masking. (The weakness is the surrogate field encodings, flagged under proof-narrative-lean-equiv.)"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Woronowicz 3D calculus (dim g=3), Ad(A)≅V_2 with Hom(1,Ad(A))=0, χ=2-2g=-6, degree-4 covering with 6 branch points / R_tot=14 (Riemann-Hurwitz: 2g-2 = 4(2*0-2)+R => 6 = -8+R => R=14) are all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Substantive verification that Bring's surface satisfies the QOU axioms."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Conditions verified from the surface's structure; not assuming the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "brings-is-qou.md:15-19: \"the obstruction classes κ_n ≠ 0 persist at every level by motivic perpetual obstruction\"",
+        "notes": "Condition (3) Yekutieli lifting invokes conj:motivic-perpetual-obstruction (a conjecture) to assert κ_n≠0 at every level; the proposition thus depends on a conjectural input but is presented as an established 'is a QOU' result. Per §3b-cond a provable-kind block downstream of a conjecture should flag the conditional dependence (uses[] lists def:brings-surface and thm:qu-to-qou but not the conjecture). Minor at the da lens; primarily a propagation-discipline note."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free numeric parameter; the constants (3, 6, 14, 4) are structural."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Each condition follows from the cited structure (Woronowicz calculus, quantum Schur, QU-to-QOU, Riemann-Hurwitz)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "brings-is-qou.lean:42,47,53-59: conditions encoded as adjReprDim≠1, numPatches>0, branch_points=6, total_ramification=14",
+        "notes": "The Lean structure substitutes numeric surrogates (≠1, >0, =6, =14) for the .md's categorical conditions (Hom(1,Ad(A))=0, brane-tower lifting, S_5-determined ramification profile); it proves the Euler-char and Riemann-Hurwitz arithmetic but not the representation-theoretic / lifting content. Narrative claims more than the Lean verifies."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "References def:brings-surface, thm:qu-to-qou, prop:yekutieli-lifting, conj:motivic-perpetual-obstruction; cites used consistently (yekutieli2015 in the instance docstring)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "C=Rep(SU_q(2)), A=O_q(SU(2)), Haar state, Woronowicz calculus, ground ring R with 30 in R^x all specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No experiment-matched number."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Categorical/topological verification; no measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness file; the arithmetic (χ, Riemann-Hurwitz) is hand-verifiable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "14e159f3c1ab",
+          "ts": "8ad4db778ae9",
+          "lean": "bc03f1d5f47b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "brings-is-qou.lean:29-63: five conditions encoded as numeric surrogates; condition (3) depends on conj:motivic-perpetual-obstruction",
+        "notes": "The proposition is mathematically reasonable but (i) its Lean reduces the categorical QOU axioms to weak numeric proxies it can discharge by omega/rfl, capturing only the Euler-char/Riemann-Hurwitz arithmetic, and (ii) condition (3) leans on a conjecture without flagging the conditional dependence in uses[]. Strongest objection: the formal 'Bring's surface is a QOU' is verified only at the level of count proxies, not the representation-theoretic content."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

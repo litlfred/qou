@@ -1048,7 +1048,447 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Statement is the Z_5-equivariant weight identification x ↦ w_1; no physical interpretation embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Z_5-weight matching of x on X_5 with w_1 on Bring is in sec:bring-algebraic-substructure."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Representation-theoretic statement over ℂ (roots of unity, isotypical components); ℂ is the correct ground ring for the eigenvalue ζ_5 content, declared in the Lean docstring."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Lean proof of ζ_5^4=ζ_5^{-1} via exp_nat_mul/field_simp/linear_combination over ℂ; appropriate, no misapplied real-analysis."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "x5-bring-weight-identification.lean:55: \"theorem bring_weight_match : zeta5 ^ (4 : ℕ) = zeta5⁻¹\"",
+        "notes": "The .md states a canonical Z_5-equivariant identification of coordinate-ring isotypical components (x^k ↦ w_1^k, weight-(-1) match, extending to graded rings). The Lean proves only the scalar eigenvalue fact ζ_5^4 = ζ_5^{-1} — a necessary lemma but far short of constructing/verifying the equivariant ring identification. Lean is materially weaker than the narrative proposition."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "bring_weight_match carries an honest signature (ζ_5^4=ζ_5^{-1}); it is a genuine lemma, not a weakened restatement injected to pass — the scope gap is the proof-narrative-equiv concern."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "bring_weight_match is proved from zeta5_pow_five and field arithmetic; not a projection of a conclusion field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "ζ_5^4=ζ_5^{-1} is a substantive identity (uses ζ_5^5=1 and ζ_5≠0), not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No contradictory hypotheses; ζ_5 = exp(2πi/5) is a genuine nonzero value."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The proof uses ζ_5^5=1 (h5) and ζ_5≠0 (hz_ne); both consumed."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Uses field_simp/linear_combination/exp lemmas; no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "σ(w_k)=ζ_5^{-k} w_k DFT action, x eigenvalue ζ_5^{-1}, and ζ_5^4=ζ_5^{-1} are all correct; the weight match is mathematically sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Substantive equivariant identification statement."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Eigenvalues computed from the respective group actions; not assumed equal a priori."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "x5-bring-weight-identification.md:24-26: \"extends to a Z_5-equivariant map of graded rings ... by sending x^k ↦ w_1^k\"",
+        "notes": "The narrative claims the weight-(-1) match extends to a full Z_5-equivariant identification of graded rings (x^k ↦ w_1^k, x^5/w_1^5 invariant); only the single weight-(-1) eigenvalue coincidence is shown (and only ζ_5^4=ζ_5^{-1} in Lean). The graded-ring extension is asserted, not demonstrated. Minor: the eigenvalue match makes it plausible."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Equal eigenvalue ⇒ canonical identification of the corresponding isotypical components is standard rep theory."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "x5-bring-weight-identification.lean:55: theorem proves only ζ_5^4=ζ_5^{-1}",
+        "notes": "Lean verifies the scalar eigenvalue identity, not the .md's coordinate-ring isotypical / graded-ring identification; the formalization is a supporting lemma rather than the stated proposition (mirrors the proof-narrative-equiv warn)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "References prop:lagrange-resolvent-transform and prop:x5-z5-automorphism for the eigenvalues; bolza1887/edge1978 cited in Lean for the surface/automorphism background — appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "w_1, x, σ, ζ_5, isotypical components, weight-(-1) all defined or referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No numerical experiment match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Pure representation theory; no measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness file; eigenvalue facts hand-verifiable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a95ce6126c44",
+          "ts": "421b76d5dbf6",
+          "lean": "26fe229647de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "x5-bring-weight-identification.lean:55: \"zeta5 ^ 4 = zeta5⁻¹\" vs .md graded-ring identification claim",
+        "notes": "Correct mathematics; strongest objection is that the Lean sibling proves only the supporting eigenvalue identity ζ_5^4=ζ_5^{-1}, while the narrative's graded-ring equivariant identification is asserted rather than constructed/formalized."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

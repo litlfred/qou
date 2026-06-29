@@ -1046,7 +1046,459 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "defect-legendrian-knot.md:15-17: \"consistent with its interpretation as a fundamental scalar particle\"",
+        "notes": "The proposition statement folds in physical interpretation ('carries no angular momentum', 'fundamental scalar particle') rather than confining it to a linked remark; minor voice leak."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Legendrian-knot / contact-geometry defect is within the chapter's torsion-leaf/contact structure scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Contact-geometry statement (Theta vanishing on support, dim_R L_q=3) is genuinely archimedean/geometric; ℝ side appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Lean 'proof' is a categorical hypothesis restatement with no archimedean machinery to misplace; wall-side-proof does not bite (and the real geometric proof is absent)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "defect-legendrian-knot.lean:45-52: \"theorem defect_legendrian_knot (... h_contact : θ ≫ supp = zero ≫ supp) : θ ≫ supp = zero ≫ supp := h_contact\"",
+        "notes": "The .md claims a substantive Legendrian-submanifold result (Theta|_supp=0 => maximal tangency => the defect is a knot in L_q). The Lean states and 'proves' only the verbatim hypothesis θ≫supp = zero≫supp (an abstract category equation), capturing none of the contact/Legendrian/knot content; narrative and Lean express different claims."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "critical",
+        "evidence": "defect-legendrian-knot.lean:50-52: \"(h_contact : θ ≫ supp = zero ≫ supp) : θ ≫ supp = zero ≫ supp := h_contact\"",
+        "notes": "The Lean signature is a degenerate identity P -> P that bears no relation to the .md's Legendrian-knot proposition; the statement has been replaced by a trivially-true hypothesis echo, defeating the integrity guard."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "critical",
+        "evidence": "defect-legendrian-knot.lean:52: \":= h_contact\"",
+        "notes": "Textbook self-assuming projection: the proof term is exactly the hypothesis whose type equals the conclusion (θ≫supp = zero≫supp); it assumes precisely what it claims to prove."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "critical",
+        "evidence": "defect-legendrian-knot.lean:50-52: \"θ ≫ supp = zero ≫ supp := h_contact\"",
+        "notes": "The goal is discharged vacuously by re-citing the hypothesis (conclusion identical to a hypothesis); any P->P is trivially provable and carries none of the intended Legendrian content."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "h_contact is satisfiable (it is an equation that can hold), not a contradictory premise; the defect is vacuity, not False.elim."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The lone hypothesis h_contact is 'used' (returned) — though only because the conclusion is identical to it; the substantive A, theta, supp inputs carry no constraint."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No decide/trivial tactic; the masking here is the self-assuming projection (flagged under the other proof-* criteria), not decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The narrative Legendrian-knot claim (Theta=0 on support => maximal tangency to the contact distribution; Legendrian curves in a 3-manifold are knots) is mathematically reasonable; the issue is the Lean does not prove it, not that the claim is false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "defect-legendrian-knot.lean:50-52: \"θ ≫ supp = zero ≫ supp := h_contact\"",
+        "notes": "The Lean sibling is content-free: it proves P from P. The block's formalization status is therefore vacuous relative to the stated proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "defect-legendrian-knot.lean:50: \"(h_contact : θ ≫ supp = zero ≫ supp)\"",
+        "notes": "The Lean assumes its conclusion as a named hypothesis (h_contact) and returns it — self-referential. Recorded as minor at the da-circular lens since the primary defect is captured under the critical proof-* criteria."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "defect-legendrian-knot.ts:6: \"lean: { ref: ... validation: \\\"not_checked\\\" }\"",
+        "notes": "A reader seeing a Lean sibling for prop:defect-legendrian-knot would assume formal backing, but the Lean proves a vacuous identity; the implicit 'formalized' standing overstates what is verified. Minor (validation:not_checked is honestly recorded)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No free numeric parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Narrative steps (Theta=0 on support => Legendrian => knot type) are individually standard contact-geometry facts."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "defect-legendrian-knot.lean:45-52: theorem concludes the hypothesis θ≫supp = zero≫supp verbatim",
+        "notes": "The Lean proves a strictly weaker / different statement (an abstract P->P category equation) than the .md's Legendrian-knot proposition; clear narrative/Lean divergence (mirrors the proof-statement-integrity fail)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Only a manuscript self-reference; no external citation misused."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Contact form Theta, support of Li_q, q-torsion leaf L_q, Legendrian condition all defined or referenced via def:categorical-reeb-derivation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Scalar-particle / no-transverse-angular-momentum reading is a consistent interpretation; no measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness file."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f0ddde597f39",
+          "ts": "a146ee698832",
+          "lean": "92785f3ee006"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "critical",
+        "evidence": "defect-legendrian-knot.lean:50-52: \"θ ≫ supp = zero ≫ supp := h_contact\"",
+        "notes": "Strongest objection: the proposition is presented with a Lean sibling, but that Lean is a vacuous self-assuming projection (proves its own hypothesis P->P) and captures none of the Legendrian-knot content; the contact/knot proposition remains unformalized. Honest disposition would be sorry + -- Ref: or a content-bearing contact-geometry statement."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

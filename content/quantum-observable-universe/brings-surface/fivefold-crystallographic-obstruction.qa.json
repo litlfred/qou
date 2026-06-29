@@ -816,7 +816,253 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Five-fold symmetry / weak-force interpretation ties Bring's S_5 to crystallographic restriction; within the orbital-symmetry scope of Ch7."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Crystallographic restriction theorem (lattice rotation orders in {1,2,3,4,6} for n=2) is correctly stated; Shechtman quasicrystal context accurate."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "States a real theorem plus a physical interpretation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Crystallographic restriction is an independent classical result, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "fivefold-crystallographic-obstruction.md:28-30: \"The weak force is weak precisely because 5-fold symmetry cannot propagate through a lattice\"",
+        "notes": "The block leaps from a 2D/3D point-lattice crystallographic obstruction to 'the weak force is weak because 5-fold symmetry cannot propagate through a lattice' and 'massive carriers' — an analogy presented with 'precisely because' causal force. There is no lattice in the QOU substrate that this theorem constrains; the identification of T_{3,5} with the weak mediator and the parity-violation count over binom(5,2)=10 crossings are asserted, not derived. Flag as overclaim (interpretive analogy stated as mechanism)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No numeric free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "fivefold-crystallographic-obstruction.md:24-28: \"The 5-fold symmetry of the Bring surface is the unique symmetry that breaks periodicity. It is carried by T_{3,5}, the weak force mediator\"",
+        "notes": "The inference 'crystallographic restriction forbids 5-fold lattice symmetry' => 'therefore the weak force (carried by T_{3,5}) is weak/parity-violating' is a non-sequitur: the crystallographic theorem is about Euclidean point lattices and does not bear on a categorical/Hecke substrate; the bridging lemma connecting lattice-periodicity to force strength is missing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Remark; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "shechtman1984 is correctly cited for quasicrystal 5-fold diffraction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Crystallographic restriction, quasicrystal, Penrose tiling all standard and defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No numerical match to data."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "fivefold-crystallographic-obstruction.md:26-28: \"the only force that violates parity (q != q^{-1} accumulated over 10 = binom(5,2) crossings) and the only force with massive carriers\"",
+        "notes": "Attributing weak-force weakness and parity violation to a Euclidean crystallographic obstruction is physically unmotivated; the weak interaction's smallness is governed by the W/Z mass scale, not lattice periodicity. The mapping is an evocative analogy a domain expert would not accept as a mechanism. Minor because the block is an interpretive remark, not a quantitative prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ecfb4e0230c9",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "major",
+        "evidence": "fivefold-crystallographic-obstruction.md:28-30: \"The weak force is weak precisely because 5-fold symmetry cannot propagate through a lattice\"",
+        "notes": "Correct mathematics (crystallographic restriction) wrapped in an over-asserted physical analogy: the 'precisely because' causal claim linking lattice non-periodicity to weak-force strength has no bridging lemma and no lattice in the substrate it applies to. Strongest objection: the central physical conclusion is an unsupported non-sequitur from a classical lattice theorem."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }

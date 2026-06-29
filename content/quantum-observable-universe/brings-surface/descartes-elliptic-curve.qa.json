@@ -1046,7 +1046,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Statement gives the curve E_q and Weierstrass coefficients; no physical-interpretation prose (regime/physics deferred to the interpretation remarks)."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Descartes elliptic curve is the centerpiece of the color-fibration/elliptic section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Block explicitly labels itself an archimedean specialisation over ℝ (s=sqrt(q), real powers q^{1/2}); appropriate ℝ side, and the .md notes the combinatorial content stays generic. No gratuitous archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The Lean proof routes through descartes_elliptic_curve_axiom and Real.rpow arithmetic (one_rpow, ring) which is genuinely archimedean (sqrt, real exponents); correct side for an analytic realisation."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Lean theorem descartes_elliptic_curve states p_z=weierstrass_p q and r_z=weierstrass_r q for 0<q, matching the .md's Weierstrass-coefficient claim; classical_limit_p (p(1)=2/3) mirrors the q=1 reduction."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "severity": "minor",
+        "evidence": "descartes-elliptic-curve.lean:72: \"axiom descartes_elliptic_curve_axiom\" and :105 \"axiom golden_ratio_degeneration_axiom\"",
+        "notes": "The headline theorem descartes_elliptic_curve is discharged entirely by an axiom (descartes_elliptic_curve_axiom) of identical content, and golden_ratio_degeneration likewise. The statement is not weakened, but the 'proof' is axiom-citation; the manuscript labels these 'External axiom (verified symbolically via sympy)'. Honest but the formal content reduces to an assumed identity. Minor — flagged for transparency, not a falsification."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "descartes_elliptic_curve := axiom is an external-axiom citation, not a projection of a structure field equal to the conclusion; classical_limit_p is a genuine computation."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Goals (coefficient equalities, p(1)=2/3) are substantive, not tautologies; classical_limit_p is closed by simp+ring on a real computation."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Hypothesis 0<q is satisfiable; no contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "descartes_elliptic_curve uses hq:0<q (passed to the axiom); classical_limit_p has no spurious hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Uses simp/ring/one_rpow on real-arithmetic goals; no decide/trivial masking. (The deferral is via explicit named axioms, flagged under proof-statement-integrity.)"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Weierstrass coefficients p(q), r(q) and the s-form of E_q are consistent with the proof block's reduction; classical p(1)=2/3 checks out."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Substantive curve specification."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Curve derived from the color cubic via standard reduction; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Statement is a coefficient identity; no stronger claim than the symbolic reduction supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Only q; no extra parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "The s-form to q-form coefficient rewrite follows by the stated substitution."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Lean weierstrass_p/r and the theorem match the .md coefficients; the axiom captures exactly the .md's substitution identity."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "References rem:color-tube-cubic / prop:color-elliptic for the starting cubic; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "s=sqrt(q), z=s-s^{-1}, Weierstrass form all defined; ground ring ℝ stated in the Lean docstring."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Coefficients are exact algebraic expressions in q, not experiment-fitted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Algebraic-geometry statement; no measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Coefficients are reproducible by the symbolic reduction (sympy, per the Lean docstring); internally consistent with the proof block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f2041bfd632f",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:06:40.463Z",
+        "reviewed_sha": "48ff6548ef49497d14d0a38c6e47fbe92ed8edcd",
+        "notes": "Correct curve specification; strongest objection is that the Lean defers the substitution identity to an external sympy-verified axiom rather than proving it in Mathlib (transparently labeled)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:06:40.463Z"
 }
