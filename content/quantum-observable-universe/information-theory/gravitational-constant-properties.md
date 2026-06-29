@@ -5,8 +5,10 @@ relations.  The key ingredient is the **in-progress braid content**
 of a Planck cell — the sections of the jet tower that are partially
 evaluated but not yet resolved to observable knots.  This remark
 records the variational origin, the in-progress-braid counting, the
-quadratic suppression that produces $S_{\mathrm{cell}}$, the numerical
-values at $q_0$, and the Hausdorff-dimension prediction.
+quadratic suppression that produces $S_{\mathrm{cell}}$, and the
+numerical values at $q_0$. The associated Julia-set
+Hausdorff-dimension prediction is recorded separately
+([Hausdorff-dimension prediction](#rem:julia-hausdorff-dimension-prediction)).
 
 **The variational origin of $G$.**
 The field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
@@ -144,7 +146,6 @@ identically for all $q > 1$.
 | Quantity              | Formula        | Value              |
 | --------------------- | -------------- | ------------------ |
 | $\eta_q$              | $(2q-1)/q^3$   | $0.892$ $q$-bits   |
-| $d_H(q)$              | $(2q-1)^2/q^3$ | $1.088$            |
 | $\chi_q$              | $1/(2q-1)$     | $0.820$            |
 | $S_{\mathrm{cell}}$   | $(q-1)^2/q^3$  | $0.00881$ $q$-bits |
 | $G_{\mathrm{Planck}}$ | $1$            | $1.000$ (exact)    |
@@ -167,33 +168,6 @@ as area (not volume): the information content of a region is
 determined by its boundary surface, and surfaces have area $\sim r^2$.  In the QOU, this is not postulated but **derived** from the
 codimension-$2$ structure of the exceptional divisors in the
 brane tower.
-
-**Hausdorff dimension prediction.**
-The corrected formula predicts
-
-$$
-  d_H(q) =  \frac{(2q-1)^2}{q^3}.
-$$
-
-| $q$         | $d_H$ predicted | $d_H$ box-counting | Known exact           | Note                                                                  |
-| ----------- | --------------- | ------------------ | --------------------- | --------------------------------------------------------------------- |
-| $1$         | $1.000$         | —                  | $1.000$ (unit circle) | Exact match                                                           |
-| $q_0$       | $1.088$         | $1.012$            | —                     | Box-counting underestimates thin quasicircles                         |
-| $1.5$       | $1.185$         | —                  | —                     | Basilica root $c = -3/4$ (period-$2$ parabolic; known $d_H \sim 1.2$) |
-| $\varphi^2$ | $1.000$         | —                  | —                     | Golden crossover: $d_H$ returns to $1$                                |
-
-The formula $d_H = 1$ at $q = 1$ (unit circle) and
-$q = (3+\sqrt{5})/2 = \varphi^2$ (golden threshold) are exact.
-For $1 < q < \varphi^2$, the Julia set is strictly more fractal
-than a circle ($d_H > 1$), consistent with McMullen's theorem
-\[mcmullen1998].
-
-**Testable prediction.**
-The value $d_H(q_0) = 1.088$ is testable against high-precision
-computation of $d_H(J_c)$ at $c(0.1097) = 0.338 + 0.073i$ using
-transfer-operator methods (Ruelle 1982).  Box-counting gives
-$d_H \approx 1.01$ but systematically underestimates thin Jordan
-curves.  The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2) \approx 1.043$ is consistent with the QOU prediction.
 
 **Relation to the three fundamental constants.**
 

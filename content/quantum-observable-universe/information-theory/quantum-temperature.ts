@@ -14,5 +14,5 @@ export default definition({
   lean: { ref: "qou:QOU.Information.quantumTemperature",
     validation: "not_checked",
   },
-  uses: ["rem:kashaev-volume-density"],
+  uses: ["rem:kashaev-volume-density", "def:quantum-entropy", "def:planck-time"],
 });

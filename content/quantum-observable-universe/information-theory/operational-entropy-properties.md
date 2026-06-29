@@ -60,14 +60,9 @@ as the topological entropy of a degree-$2$ map) and the
 $q$-deformed dynamics (which replaces $\ln 2$ with $\eta_q$).  The
 QOU claim is that $d_{H,q}$, not $d_H$, governs the physics.
 
-**Self-consistency.**
-This formula is not assumed — it is **forced** by the gravitational
-self-consistency condition $G_{\mathrm{Planck}} = 1$
-([gravitational constant](#def:gravitational-constant)).  With the
-quadratic-suppression series for the in-progress braid entropy,
-$S_{\mathrm{cell}} = \eta_q \cdot \hbar_q^2 / (1 - \hbar_q^2)$,
-the condition $G_{\mathrm{Planck}} = 1$ reduces algebraically to
-$\eta_q = (2q-1)/q^3$.  No numerical fitting is involved.
+That the formula is *forced* (not fitted) by gravitational
+self-consistency is recorded separately
+([operational entropy is forced by self-consistency](#rem:operational-entropy-self-consistency)).
 
 **Physical interpretation.**
 Each iteration of $f_q$ is one application of the $q$-connection

@@ -75,49 +75,6 @@ changes with $q$ is the angular velocity $\hbar_q$ — at the Big Bang
 the fiber is traversed at maximum speed ($\hbar_q = 1$), while near
 heat death the rotation slows to zero.
 
-**Finite-field dynamics.**
-Over $k = \mathbb{F}_\pp$ with $q \in \mathbb{F}_\pp^\times$, the
-iteration $f_q \colon \mathbb{F}_\pp \to \mathbb{F}_\pp$ is a map
-on a finite set.  Every orbit is eventually periodic, and the orbit
-structure encodes the "Planck dynamics" of the finite-field QOU:
-
-- **Orbit length** $|O_x|$ = number of Planck steps before the
-  state $x$ recurs.  This is the analogue of the Poincaré
-  recurrence time.
-- **Fixed points** of $f_q$: the states $z$ satisfying
-  $z^2 + c(q) = z$, i.e., $z^2 - z + c = 0$.  These exist in
-  $\mathbb{F}_\pp$ iff $1 - 4c$ is a quadratic residue mod $\pp$.
-- **Period-$n$ orbits**: the roots of
-  $f_q^{\circ n}(z) = z$ that are not fixed by any
-  $f_q^{\circ d}$ with $d \mid n$.  The number of such orbits
-  is related to the Weil zeta function of the curve
-  $w^2 = z^2 + c$ over $\mathbb{F}_\pp$.
-
-The Julia set $J(f_q)$ over $\mathbb{C}$ is the "complexification"
-of this finite orbit structure: the boundary between escaping and
-bounded orbits is the continuous analogue of the partition of
-$\mathbb{F}_\pp$ into short-period and long-period orbits.
-
-**$p$-Adic Planck step.**
-Over $\mathbb{Q}_\pp$, the substrate parameter $q$ has a $\pp$-adic
-valuation.  The Planck time $t_P = q/(q-1)$ has
-$v_\pp(t_P) = v_\pp(q) - v_\pp(q-1)$.  When $q \equiv 1 \pmod{\pp^n}$ (near the classical limit in the $\pp$-adic
-topology), $v_\pp(q-1) \geq n$ and $t_P$ has large $\pp$-adic
-valuation — the Planck time is "$\pp$-adically large",
-corresponding to slow dynamics.  When $v_\pp(q-1) = 0$ (the
-Big Bang regime in $\pp$-adic terms), $t_P$ has minimal valuation
-and the dynamics is fastest.
-
-The Witt vector lift
-([Witt vector lift](#rem:witt-lift-qou)) promotes the
-$\mathbb{F}_\pp$ orbit structure to a $\mathbb{Z}_\pp$-lattice:
-the finite orbits of $f_q$ over $\mathbb{F}_\pp$ lift to
-Teichmüller representatives in $\mathbb{Z}_\pp$, and the
-$\pp$-adic Planck step acts on these lifts via the Frobenius
-endomorphism.  The passage $\mathbb{F}_\pp \to \mathbb{Q}_\pp \to \mathbb{C}$ is the arithmetic analogue of the cosmological
-progression from discrete (Big Bang) to continuous (classical
-limit).
-
 **Discrete time at the Big Bang.**
 The Big Bang initial state
 ([bundle initial conditions](#def:bundle-initial-conditions)) is a
@@ -139,33 +96,6 @@ greatest uncertainty.
 Over $\mathbb{F}_\pp$, this first step is literally $f_q$ applied
 once: $z_1 = z_0^2 + c(q)$.  The "first moment after the Big Bang"
 is a single polynomial evaluation.
-
-**The golden threshold as a time marker.**
-The golden ratio degeneration
-([golden ratio degeneration](#rem:golden-ratio-degeneration)) occurs
-at $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$, which has
-Planck time
-
-$$
-  t_P(q_{\mathrm{gold}})
-  =  \frac{q_{\mathrm{gold}}}{q_{\mathrm{gold}} - 1}
-  =  \frac{1/\varphi^2}{1/\varphi^2 - 1}
-  =  \frac{1}{1 - \varphi^2}
-  =  -\frac{1}{\varphi}.
-$$
-
-The **negative sign** is physical: at $q < 1$, $\hbar_q < 0$ and
-the Reeb flow **reverses direction**.  The magnitude $1/\varphi$ is
-the golden-ratio fraction of the Big Bang Planck time — the
-degeneration occurs at a time scale that is itself golden-ratio
-related to the fundamental step.
-
-Over $\mathbb{F}_\pp$: the golden ratio
-$\varphi = (1 + \sqrt{5})/2$ exists in $\mathbb{F}_\pp$ iff $5$ is
-a quadratic residue mod $\pp$, i.e., $\pp \equiv \pm 1 \pmod{5}$.
-The golden degeneration is therefore **visible only to those
-primes** — a selection rule on which finite-field realisations can
-detect the chiral instability.
 
 **Counting Planck steps.**
 The number of Planck steps between two values of $q$ measures the

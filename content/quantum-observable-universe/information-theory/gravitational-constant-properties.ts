@@ -18,10 +18,10 @@ export default remark({
     "rem:gr-substrate-geometry",
     "rem:jet-planck-steps",
     "prop:descent-eigenspaces",
+    "rem:julia-hausdorff-dimension-prediction",
   ],
   cites: [
     "jacobson1995",
     "bekenstein1981",
-    "mcmullen1998",
   ],
 });

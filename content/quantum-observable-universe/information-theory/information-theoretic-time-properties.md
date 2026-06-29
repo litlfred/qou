@@ -1,8 +1,11 @@
 The [information-theoretic time $\mathcal{T}(q)$](#def:information-theoretic-time)
-rescales to the continuous Reeb time coordinate, passes through three
+rescales to the continuous Reeb time coordinate and passes through three
 regimes (discrete, statistical, continuous) as a statistical-mechanical
-coarse-graining, has the Julia-set iteration $f_q$ as its microscopic
-theory, and inherits the arrow of time from the braiding order $\prec_c$.
+coarse-graining. Its microscopic Julia-set dynamics
+([Julia-set iteration as the microscopic theory](#rem:information-theoretic-time-julia-microscopic))
+and its arrow of time
+([arrow of time from the braiding order](#rem:information-theoretic-time-arrow))
+are treated separately.
 
 **Reeb time coordinate.**
 The continuous time coordinate $t$ of the $q$-Reeb flow
@@ -70,32 +73,3 @@ $t_P \approx 10$: the Riemann approximation has
 $O(1/10) \approx 10\%$ relative error.  This is the scale at
 which discreteness is marginally detectable — consistent with
 quantum-gravitational corrections being $O(\hbar_q)$ effects.
-
-**Julia set dynamics as the microscopic theory.**
-The iteration $f_q(z) = z^2 + c(q)$ on the exceptional divisor
-is the **microscopic dynamics** underlying time.  Each iterate
-$f_q^{\circ n}(z_0)$ is one "microstate" of the temporal
-evolution.  The continuous Reeb flow $\phi_t^q$ is the
-**macroscopic** (thermodynamic) limit: it emerges from averaging
-over $t_P(q)$ microscopic iterates per unit.
-
-The Julia set $J(f_q)$ is the boundary between escaping and
-bounded orbits — it partitions initial conditions into those
-whose temporal evolution diverges and those that remain confined.
-The Hausdorff dimension $d_H(q)$ of this boundary measures the
-**complexity of the time evolution** at parameter $q$: higher
-$d_H$ means the microscopic dynamics explores more of phase space
-per operation, and the macroscopic time carries more information
-per unit.
-
-**Consistency with the arrow of time.**
-The braiding-induced ordering $\prec_c$ on the Hecke basis
-([ordering–jet compatibility](#prop:ordering-jet-compatibility))
-propagates through the jet tower and defines forward/backward
-time at every brane level.  The information-theoretic time
-$\mathcal{T}$ is the counting measure on this well-ordering:
-$\mathcal{T}(a) < \mathcal{T}(b)$ if and only if $a \prec_c b$.
-The rescaling $t = \hbar_q \mathcal{T}$ preserves the order, so
-the Reeb time coordinate inherits the same arrow of time.  The
-arrow does not need to be re-derived in the continuous limit —
-it is inherited from the discrete algebraic structure.

@@ -5,67 +5,12 @@ Let $\beta$ be a braid on $n$ strands with $c$ crossings,
 $L = \hat{\beta}$ its closure, and
 $\mathcal{R}(L)$ the Skein resolution tree
 ([Skein Turing machine](#rem:skein-turing-machine)).  Fix a
-polynomial bound $p(c) = c^d$.
-
-**Definition (polynomial observable subcategory).**
-The *polynomial observable subcategory* of the resolution
-tree is the full sub-poset
-
-$$
-  \mathcal{R}^{\circ}(L, q)
-  = 
-  \bigl\{
-    x \in \mathcal{R}(L)
-     : 
-    \Gamma_{\mathrm{poly}}\!(x, A_0) \neq 0
-  \bigr\},
-$$
-
-where $\Gamma_{\mathrm{poly}}(x, A_0)$ consists of those
-degree-$0$ sections at $x$ that are computable — via the
-Markov trace restricted to $\mathcal{R}_{p(c)}$ — in at most
-$p(c)$ Planck steps.  This is the computational analog of the
-observable subcategory
-$\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
-([observable subcategory](#def:observable-subcategory)): the
-nodes of the resolution tree from which the degree-$0$ answer
-$P_L(q)$ is polynomial-time accessible.
-
-**Definition (computational boundary).**
-The *computational boundary* is the frontier
-
-$$
-  \mathcal{H}_c(L, q)
-  = 
-  \overline{\mathcal{R}^{\circ}}
-  \setminus
-  \mathcal{R}^{\circ},
-$$
-
-equivalently the vanishing locus of the computational
-horizon ideal:
-
-$$
-  \mathcal{H}_c(L, q)
-  = 
-  V\!\bigl(\mathfrak{h}_c\bigr),
-  \qquad
-  \mathfrak{h}_c
-  = 
-  \bigl\{
-    s \in \Gamma\bigl(\mathcal{R}, A_0^{\mathrm{comp}}\bigr)
-     : 
-    s\big|_{\mathcal{H}_c} = 0
-  \bigr\}.
-$$
-
-This is the locus in the resolution tree where every
-polynomial-time degree-$0$ section vanishes — the exact
-analog of the jet horizon
-$\mathcal{H} = V(\mathfrak{h})$
-([jet horizon](#def:jet-horizon)), with the brane tower
-replaced by the resolution tower and the Frobenius algebra
-replaced by the Iwahori--Hecke algebra.
+polynomial bound $p(c) = c^d$.  Write
+$\mathcal{R}^{\circ}(L, q)$ for the polynomial observable
+subcategory
+([polynomial observable subcategory](#def:polynomial-observable-subcategory))
+and $\mathcal{H}_c(L, q)$ for the computational boundary
+([computational boundary](#def:computational-boundary)).
 
 **Conjecture ($\mathrm{P}$ vs $\mathrm{NP}$ as emptiness
 of the boundary).**

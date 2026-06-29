@@ -7,8 +7,9 @@ export default remark({
     "Regime behaviour, the electron consistency check, and pair creation",
   uses: [
     "thm:mass-energy-equivalence",
-    "rem:pair-creation-energy",
     "cor:mass-identity-C",
+    "rem:mass-energy-electron-check",
+    "rem:mass-energy-pair-creation",
   ],
   cites: ["yekutieli2015"],
 });

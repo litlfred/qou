@@ -91,7 +91,7 @@ $$
  Planck steps (one Toffoli per triple, three Planck steps
  each). The substrate bandwidth
  $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$
- ([bandwidth](#def:information-speed-of-light)) bounds the
+ ([bandwidth](#def:information-bandwidth)) bounds the
  number of generations per unit time:*
 
 $$

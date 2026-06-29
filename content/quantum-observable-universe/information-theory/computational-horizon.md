@@ -23,7 +23,7 @@ $\mathcal{H}_c \subset \mathcal{R}(L)$ such that:
 
 3. **Bandwidth saturation.**  The information bandwidth
    $\mathfrak{B}(q)$ per Planck time
-   ([information bandwidth](#def:information-speed-of-light))
+   ([information bandwidth](#def:information-bandwidth))
    bounds the rate at which resolution paths can be sampled.
    If $3^c$ paths must be explored to extract the degree-$0$
    answer, and $\mathfrak{B}(q) \cdot t$ bounds the total
