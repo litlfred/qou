@@ -18,11 +18,8 @@ The 5-step categorical construction of an atom from γγ pair production.
 -- The formal definition is in QOU.Interactions.DerivedAtom
 -- (derivedAtomNF, NucleonType, crossingType, etc.)
 
-namespace QOU.Interactions
-
-/-- Derived atom $\\mathcal{A}(Z, N)$ from pair production -/
-def DerivedAtom   :=
-  -- Ref: [manuscript] def:derived-atom
-  trivial
-
-end QOU.Interactions
+-- The derived atom `QOU.Interactions.DerivedAtom` (and its supporting
+-- declarations `NucleonType`, `crossingType`, `derivedAtomNF`, …) is the
+-- real formalisation in the imported library module above; this content
+-- sibling intentionally carries no redeclaration so the `lean.ref`
+-- resolves to that genuine library structure (no shadowing stub).

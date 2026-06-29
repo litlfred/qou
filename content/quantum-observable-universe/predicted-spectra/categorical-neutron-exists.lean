@@ -1,4 +1,4 @@
-import QOU.Basic
+import Mathlib.Data.Real.Basic
 
 
 /-!
@@ -16,6 +16,20 @@ LaTeX: `\label{prop:categorical-neutron-exists}`
 -/
 
 namespace QOU
+
+/-- Defining data of the categorical neutron (mirror of
+    [`def:categorical-neutron`], shared with `categorical-neutron-unique.lean`):
+    the colour-linked triple `[u, d, d]_c ⋈ L_H` is determined by its pair-Skein
+    masses `(S_ud, S_dd)`, with derived mass `2·S_ud + S_dd` and zero chirality. -/
+structure CategoricalNeutron where
+  /-- Pair Skein mass `S_ud`. -/
+  skein_ud : ℝ
+  /-- Pair Skein mass `S_dd`. -/
+  skein_dd : ℝ
+  /-- Mass `= 2·S_ud + S_dd`. -/
+  mass : ℝ := 2 * skein_ud + skein_dd
+  /-- Zero crossing chirality (electric charge `0`). -/
+  chirality : ℤ := 0
 
 /-- **Existence of the categorical neutron.**
 

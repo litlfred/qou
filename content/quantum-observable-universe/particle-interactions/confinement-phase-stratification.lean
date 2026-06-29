@@ -35,17 +35,17 @@ structure ConfinedParticleTy where
   deriving Repr
 
 /-- Confinement predicate: Slater-strict feasibility of the confinement SDP. -/
-constant confined : ConfinedParticleTy → ℝ → Prop
+opaque confined : ConfinedParticleTy → ℝ → Prop
 
 /-- The confinement locus `Ω(P) ⊆ ℝ` of a particle. -/
 def confinementLocus (P : ConfinedParticleTy) : Set ℝ :=
   { q : ℝ | confined P q }
 
 /-- Binding multiplicity. -/
-constant mu : ConfinedParticleTy → ℝ → ℕ
+opaque mu : ConfinedParticleTy → ℝ → ℕ
 
 /-- Frobenius stability index. -/
-constant sigmaF : ConfinedParticleTy → ℝ → ℝ
+opaque sigmaF : ConfinedParticleTy → ℝ → ℝ
 
 /-- **Phase stratification, claim (1) — openness.**
     `Ω(P)` is open in ℝ. -/

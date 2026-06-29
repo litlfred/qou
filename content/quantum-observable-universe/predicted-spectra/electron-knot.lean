@@ -23,9 +23,9 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
+noncomputable section
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -68,5 +68,7 @@ theorem electron_crossing_number : Electron.mk.crossing_number = 3 := rfl
 /-- Torus knots are non-hyperbolic: Vol(T_{2,3}) = 0. -/
 -- Ref: [manuscript] Ch. 5, §electron-knot
 theorem electron_nonhyperbolic : Electron.mk.volume = (0 : R_q) := rfl
+
+end
 
 end QOU.Archimedean

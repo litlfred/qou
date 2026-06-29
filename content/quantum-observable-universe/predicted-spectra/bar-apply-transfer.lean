@@ -36,9 +36,7 @@ theorem lower_bound_transfer
   · intro h q hq hqa
     have hqi : 0 < q⁻¹ := inv_pos.mpr hq
     have h1 : a < q⁻¹ := by
-      have : q < a⁻¹ := hqa
-      have := (inv_lt_inv₀ ha hq).mpr this
-      simpa using this
+      rw [lt_inv_comm₀ ha hq]; exact hqa
     have hPi : P q⁻¹ := h q⁻¹ h1
     exact (hP q hq).mpr hPi
   · intro h q hqa
@@ -61,8 +59,7 @@ theorem bar_apply_lower
   intro q hq hqa
   have hqi : 0 < q⁻¹ := inv_pos.mpr hq
   have h1 : a < q⁻¹ := by
-    have := (inv_lt_inv₀ ha hq).mpr hqa
-    simpa using this
+    rw [lt_inv_comm₀ ha hq]; exact hqa
   have hPi : P q⁻¹ := h q⁻¹ h1
   exact (hP q hq).mpr hPi
 

@@ -50,3 +50,31 @@ sandbox-DX only. QuaternionFromHecke's own λ-reds are the only real bug here
 **Net remaining bnyo:** fold `Trigonometric.Complex` (+ optionally `Log.Summable`,
 `RiemannZeta`) into the next full cache refresh. Still recommend NOT a piecemeal
 852 MB reseed. Sandbox-DX only.
+
+## Update (2026-06-29) — `Data.Complex.Exponential` is the high-value leaf (swarm session)
+
+The orphan-drain swarm session confirmed the single highest-value cache leaf:
+
+- **`Mathlib.Data.Complex.Exponential` (1 missing olean; all 1206 deps already
+  in the restored `lake-cache/qou-v4-24-0` cone).** Building it (seconds, no CDN)
+  flipped **86 of 92** non-active-chapter content-sibling orphans from
+  neutral-skip (un-cached `Complex.exp`/`Real.pi`/trig) to **0 missing oleans /
+  cache-verifiable**. `Complex.Circle` + `Trigonometric.Basic` oleans are already
+  fully present (0 missing) — only `Exponential` was the gap.
+- **Egress reality (2026-06-29):** github.com clone egress is OPEN (bypass the
+  qou-scoped relay with `GIT_CONFIG_GLOBAL=/dev/null` + `--cacert /root/.ccr/ca-bundle.crt`),
+  but the olean CDN `lakecache.blob.core.windows.net` AND `mathlib4.lean-cache.cloud`
+  are egress-BLOCKED (403); the R2 origin returns 400 (reachable, needs auth). So
+  `lake exe cache get` cannot pull prebuilt oleans — but a per-leaf source build
+  works because the deps are cached.
+- **Proven 1-command build** (needs a mathlib source clone at the pinned rev
+  `f897ebcf` in `../mathlib4` + `elan override set lean-v4.24.0` there):
+  ```
+  LP=$(bash -c 'source scripts/lib/lean-env.sh; lean_leanpath')
+  CONE=.lake/packages/mathlib/.lake/build/lib/lean
+  env LEAN_PATH="$LP" lean --root=../mathlib4 \
+    -o "$CONE/Mathlib/Data/Complex/Exponential.olean" \
+    ../mathlib4/Mathlib/Data/Complex/Exponential.lean
+  ```
+- **Recommendation unchanged:** prioritise `Exponential` (above `Trigonometric.Complex`)
+  for the next full cache refresh; still NOT a piecemeal 852 MB reseed.

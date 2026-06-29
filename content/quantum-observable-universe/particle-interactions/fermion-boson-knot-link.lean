@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.GCD.Basic
+
 -- Ref: [manuscript] Ch. 6, §3
 -- Fermions are knots (1 component, odd n in T(2,n)).
 -- Bosons are links (2 components, even n in T(2,n)).
@@ -31,8 +33,8 @@ theorem fermion_iff_odd (n : ℕ) (hn : n ≥ 2) :
     have hg2 : Nat.gcd 2 n ∣ n := Nat.gcd_dvd_right 2 n
     -- gcd divides 2, so gcd ∈ {1, 2}; but gcd ∣ n and 2 ∤ n, so gcd = 1
     have : Nat.gcd 2 n = 1 ∨ Nat.gcd 2 n = 2 := by
-      rcases hg with ⟨k, hk⟩
-      have hpos : 0 < Nat.gcd 2 n := Nat.pos_of_ne_zero (by intro h0; simp [h0] at hk)
+      have hle : Nat.gcd 2 n ≤ 2 := Nat.le_of_dvd (by decide) hg
+      have hpos : 0 < Nat.gcd 2 n := Nat.gcd_pos_of_pos_left n (by decide)
       omega
     rcases this with h1 | h1
     · exact h1

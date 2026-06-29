@@ -105,7 +105,8 @@ theorem beta_decay_locality (p : ℕ) (vols_par vols_dau : List ℝ)
     have h_bound₂ : p + 1 + i < vols_dau.length := by
       simp [List.length_drop] at h₂; omega
     have h₃ := h_tail (p + 1 + i) (by omega) h_bound₁
-    rwa [getElem!_pos h_bound₁, getElem!_pos h_bound₂] at h₃
+    rwa [getElem!_pos vols_par (p + 1 + i) h_bound₁,
+         getElem!_pos vols_dau (p + 1 + i) h_bound₂] at h₃
 
 /-- Top-level alias matching the manifest declaration. -/
 noncomputable def generator_volume_decomposition (q : ℝ)

@@ -7,7 +7,7 @@
   Ref: [manuscript] Ch 11 §8, def:universal-ilp-algorithm
 -/
 
-import Mathlib.Algebra.Order.Ring.Defs
+import Mathlib.Data.Real.Basic
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
 namespace QOU.Interactions
@@ -35,7 +35,7 @@ def frobenius_positive (q : ℝ) (x : Fin 6 → ℝ) : Prop :=
 /-- The universal ILP: min cr(K) s.t. K ∈ knots \ {1}, G · NF(x · K) ≥ 0. -/
 -- Ref: [manuscript] Ch 11 §8
 def universal_ilp (q : ℝ) (state : Fin 6 → ℝ) : KnotOperator q → Prop :=
-  fun K => K.is_knot ∧ K.is_nontrivial ∧
+  fun K => K.is_knot ∧ K.crossing_number > 0 ∧
     frobenius_positive q (fun i => state i + K.coeffs i)
 
 /-- The LP selects the minimum-crossing feasible knot operator. -/

@@ -66,7 +66,7 @@ theorem tau_ne_zero (q : ℂ) (hq : q ≠ 0) : tau q ≠ 0 := by
 theorem I_inv : I⁻¹ = -I := by
   have h : I * (-I) = 1 := by
     have h2 : I * I = -1 := Complex.I_mul_I
-    linear_combination -h2
+    rw [mul_neg, h2, neg_neg]
   exact (eq_inv_of_mul_eq_one_right h).symm
 
 /-- The composition (σ ∘ τ) is its own inverse: (στ)²(q) = q for nonzero q.

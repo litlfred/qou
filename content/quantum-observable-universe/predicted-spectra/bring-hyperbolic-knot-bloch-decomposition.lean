@@ -97,7 +97,6 @@ def r2Cyclotomic (n : ℕ) : ℕ := Nat.totient n / 2
 theorem compositum_rank_decomposition_narrow :
     r2Cyclotomic 15 = r2Cyclotomic 3 + r2Cyclotomic 5 + 1 := by
   rw [r2_zeta15_eq_four, r2_zeta3_eq_one, r2_zeta5_eq_two]
-  rfl
 
 /-- The compositum rank, full version (figure-8 + Borromean + Bring):
     `r_2(Q(ζ_60)) = r_2(Q(ζ_15)) + r_2(Q(ζ_4)) + 3`. The `+3`
@@ -107,7 +106,6 @@ theorem compositum_rank_decomposition_narrow :
 theorem compositum_rank_decomposition_full :
     r2Cyclotomic 60 = r2Cyclotomic 15 + r2Cyclotomic 4 + 3 := by
   rw [r2_zeta60_eq_eight, r2_zeta15_eq_four, r2_zeta4_eq_one]
-  rfl
 
 /-- **Bloch-group decomposition class.**
     A concrete instance asserts the existence of a finite multi-set
@@ -118,18 +116,22 @@ theorem compositum_rank_decomposition_full :
     `Σ n_i · D[Z_{K_i}] = 2/(3π)` in the compositum
     `Q(ζ_15)`-Bloch group.
 
-    The class field is stated abstractly as the existence of a real
-    number `bw_sum : ℝ` equal to `bringZeroModeValue = 2/(3π)`; a
-    concrete instance must produce both the knot multi-set
-    (witnessing where `bw_sum` comes from) and the equality. The
-    abstract field formulation insulates this file from the
-    Mathlib-pending Bloch group infrastructure. -/
+    The class field is stated as the existence of a unit-circle
+    angle witness `θ` with `BlochWigner_unit_circle θ =
+    bringZeroModeValue = 2/(3π)` (the strengthened shape required by
+    the downstream `BringZeroModeBlochClass`); a concrete instance
+    must produce both the knot multi-set (witnessing where the sum
+    comes from) and the equality. The abstract field formulation
+    insulates this file from the Mathlib-pending Bloch group
+    infrastructure. -/
 -- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
 class BringHyperbolicDecomposition : Prop where
-  /-- The finite-multi-set Bloch-Wigner sum exists and equals
-      `2/(3π)`. -/
+  /-- The finite-multi-set Bloch-Wigner sum realises `2/(3π)` via a
+      concrete unit-circle angle witness `θ`, in the strengthened
+      form required by the downstream `BringZeroModeBlochClass`
+      (the trivial `∃ z, z = bringZeroModeValue` loophole is closed). -/
   -- Ref: [borel1974], [thurston1978], [suslin1991]
-  bw_sum_realised : ∃ z : ℝ, z = bringZeroModeValue
+  bw_sum_realised : ∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue
 
 /-- **Conditional theorem.** If a `BringHyperbolicDecomposition` is
     given, then the `BringZeroModeBlochClass` hypothesis required
