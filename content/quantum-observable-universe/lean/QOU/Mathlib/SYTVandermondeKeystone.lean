@@ -92,30 +92,111 @@ theorem detAmat_lt (β : Fin (k + 1) → ℚ) (d : ℕ) (hd : d < k) : (Amat β 
   intro r
   simp [Amat, hne, vandermonde_apply]
 
-/-! ## The crux: the Vandermonde cofactor product-split -/
+/-! ## The crux: the Vandermonde cofactor product-split
+
+`cofᵢ · vWeightᵢ = det V`, proved by splitting `det_vandermonde`'s pair product at the pivot
+row `i` via `Fin.prod_univ_succAbove`.  The four helper lemmas below carry the reindexing; the
+crux assembles them. -/
+
+/-- The `succAbove` image of `Ioi a` is `Ioi (i.succAbove a)` with the pivot `i` removed: the
+nodes above `βᵢ`-image among `q ≠ i`. -/
+theorem succAbove_image_Ioi (i : Fin (k + 1)) (a : Fin k) :
+    (Ioi a).image i.succAbove = (Ioi (i.succAbove a)).erase i := by
+  ext q
+  simp only [Finset.mem_image, Finset.mem_Ioi, Finset.mem_erase]
+  constructor
+  · rintro ⟨b, hb, rfl⟩
+    exact ⟨Fin.succAbove_ne i b, (Fin.succAbove_lt_succAbove_iff).mpr hb⟩
+  · rintro ⟨hqi, hq⟩
+    obtain ⟨b, rfl⟩ := Fin.exists_succAbove_eq hqi
+    exact ⟨b, (Fin.succAbove_lt_succAbove_iff).mp hq, rfl⟩
+
+/-- The inner `Ioi (i.succAbove a)` Vandermonde-difference product splits into the sub-Vandermonde
+factor (over `Ioi a`) and the single pivot factor `(β i − β (i.succAbove a))` present iff
+`i.succAbove a < i`. -/
+theorem inner_split (β : Fin (k + 1) → ℚ) (i : Fin (k + 1)) (a : Fin k) :
+    ∏ q ∈ Ioi (i.succAbove a), (β q - β (i.succAbove a))
+      = (∏ b ∈ Ioi a, (β (i.succAbove b) - β (i.succAbove a)))
+        * (if i.succAbove a < i then (β i - β (i.succAbove a)) else 1) := by
+  have hreindex : ∏ b ∈ Ioi a, (β (i.succAbove b) - β (i.succAbove a))
+      = ∏ q ∈ (Ioi (i.succAbove a)).erase i, (β q - β (i.succAbove a)) := by
+    rw [← succAbove_image_Ioi i a,
+      Finset.prod_image (fun x _ y _ h => Fin.succAbove_right_injective h)]
+  rw [hreindex]
+  by_cases h : i.succAbove a < i
+  · rw [if_pos h]
+    have hi : i ∈ Ioi (i.succAbove a) := Finset.mem_Ioi.mpr h
+    rw [← Finset.mul_prod_erase _ _ hi, mul_comm]
+  · rw [if_neg h, mul_one]
+    have hi : i ∉ Ioi (i.succAbove a) := by rw [Finset.mem_Ioi]; exact h
+    rw [Finset.erase_eq_of_notMem hi]
+
+/-- The pivot-row contribution: `(∏_{q>i}(β q − β i)) · (∏_{a : σa<i}(β i − β σa)) = (−1)^(k−i) ·
+vWeightᵢ`.  The above-pivot product flips sign on each of its `k − i` factors, and the two
+half-products reassemble `vWeightᵢ = ∏_{j≠i}(β i − β j)`. -/
+theorem pivot_contribution (β : Fin (k + 1) → ℚ) (i : Fin (k + 1)) :
+    (∏ q ∈ Ioi i, (β q - β i))
+      * (∏ a : Fin k, if i.succAbove a < i then (β i - β (i.succAbove a)) else 1)
+      = (-1 : ℚ) ^ (k - (i : ℕ)) * vWeight β i := by
+  have hB : ∏ q ∈ Ioi i, (β q - β i) = (-1 : ℚ) ^ (k - (i : ℕ)) * ∏ q ∈ Ioi i, (β i - β q) := by
+    have hneg : ∀ q, β q - β i = (-1 : ℚ) * (β i - β q) := by intro q; ring
+    simp_rw [hneg]
+    rw [Finset.prod_mul_distrib, Finset.prod_const, Fin.card_Ioi]
+    simp only [Nat.add_sub_cancel]
+  have himg2 : (univ.filter (fun a => i.succAbove a < i)).image i.succAbove = Iio i := by
+    ext q; simp only [mem_image, mem_filter, mem_univ, true_and, mem_Iio]
+    constructor
+    · rintro ⟨a, ha, rfl⟩; exact ha
+    · intro hq; obtain ⟨a, rfl⟩ := Fin.exists_succAbove_eq (ne_of_lt hq)
+      exact ⟨a, hq, rfl⟩
+  have hC : (∏ a : Fin k, if i.succAbove a < i then (β i - β (i.succAbove a)) else 1)
+      = ∏ q ∈ Iio i, (β i - β q) := by
+    rw [← Finset.prod_filter, ← himg2,
+      Finset.prod_image (fun x _ y _ h => Fin.succAbove_right_injective h)]
+  have hW : vWeight β i = (∏ q ∈ Iio i, (β i - β q)) * (∏ q ∈ Ioi i, (β i - β q)) := by
+    unfold vWeight
+    have hunion : (univ.erase i) = Iio i ∪ Ioi i := by
+      ext q
+      simp only [mem_erase, mem_univ, and_true, mem_union, mem_Iio, mem_Ioi]; omega
+    have hdis : Disjoint (Iio i) (Ioi i) := by
+      rw [Finset.disjoint_left]; intro q h1 h2
+      rw [mem_Iio] at h1; rw [mem_Ioi] at h2; omega
+    rw [hunion, Finset.prod_union hdis]
+  rw [hB, hC, hW]; ring
+
+/-- **The cofactor product-split, product form.**  `det V = (−1)^(k−i) · det(V₋ᵢ) · vWeightᵢ`,
+where `V₋ᵢ = vandermonde (β ∘ i.succAbove)` is the Vandermonde with node `βᵢ` deleted.  Split
+`det_vandermonde`'s pair product at the pivot row `i`. -/
+theorem det_vandermonde_pivot_split (β : Fin (k + 1) → ℚ) (i : Fin (k + 1)) :
+    (vandermonde β).det
+      = (-1 : ℚ) ^ (k - (i : ℕ)) * (vandermonde (β ∘ i.succAbove)).det * vWeight β i := by
+  have hQd : (vandermonde (β ∘ i.succAbove)).det
+      = ∏ a : Fin k, ∏ b ∈ Ioi a, (β (i.succAbove b) - β (i.succAbove a)) := by
+    rw [det_vandermonde]; rfl
+  rw [det_vandermonde β, Fin.prod_univ_succAbove _ i]
+  simp_rw [inner_split β i]
+  rw [Finset.prod_mul_distrib, ← hQd]
+  linear_combination (vandermonde (β ∘ i.succAbove)).det * pivot_contribution β i
 
 /-- **The Vandermonde cofactor product-split (crux).**  `cofᵢ · vWeightᵢ = det V`.
 
-The cofactor along the last column equals `(−1)^(i+k) · det(V.submatrix iᵒ lastᵒ)`, and that
-submatrix is the Vandermonde on `β ∘ i.succAbove` (the nodes with `βᵢ` deleted).  Writing
-`det V = ∏_{p<q}(β q − β p)` (`det_vandermonde`) and splitting the pair set at the pivot row `i`
-via `Fin.prod_univ_succAbove`:
+The cofactor along the last column is `(−1)^(i+k) · det(V.submatrix iᵒ lastᵒ)`, and that submatrix
+is `vandermonde (β ∘ i.succAbove)` (nodes with `βᵢ` deleted).  Combine with
+`det_vandermonde_pivot_split`; the signs match because `(−1)^(i+k) = (−1)^(k−i)` (`i ≤ k`).
 
-* pairs `(p,q)` with `p,q ≠ i` reassemble the sub-Vandermonde determinant `det(sub)`;
-* pairs `(i,q)` with `q > i` give `∏_{q>i}(β q − β i) = (−1)^(k−i) ∏_{j>i}(β i − β j)`;
-* pairs `(p,i)` with `p < i` give `∏_{p<i}(β i − β p)`.
-
-The last two products are exactly `vWeightᵢ = ∏_{j≠i}(β i − β j)` up to the sign `(−1)^(k−i)`, so
-`det V = (−1)^(k−i) · det(sub) · vWeightᵢ`.  Since `(−1)^(i+k) = (−1)^(k−i)` (parities agree, `i ≤ k`),
-`cofᵢ · vWeightᵢ = (−1)^(i+k) · det(sub) · vWeightᵢ = det V`.
-
-This is the single remaining gap of the determinant route; it replaces the sibling's
-hand-rolled `SYTLagrangeInterp.interp_leadingCoeff` (PR #2986). -/
+This is the heart of the determinant route; it replaces the sibling's hand-rolled
+`SYTLagrangeInterp.interp_leadingCoeff` (PR #2986). -/
 theorem cof_mul_vWeight (β : Fin (k + 1) → ℚ) (i : Fin (k + 1)) :
     cof β i * vWeight β i = (vandermonde β).det := by
-  -- Ref: [manuscript] divided-difference leading-coefficient keystone, scope doc
-  -- docs/workplans/2026-06-28-syt-hlf-branching-bijection-scope.md §"Update (2026-06-29)".
-  sorry
+  have hsub : (vandermonde β).submatrix i.succAbove (Fin.last k).succAbove
+      = vandermonde (β ∘ i.succAbove) := by
+    ext a b; simp only [Matrix.submatrix_apply, vandermonde_apply, Function.comp_apply,
+      Fin.succAbove_last, Fin.coe_castSucc]
+  have hile : (i : ℕ) ≤ k := Nat.lt_succ_iff.mp i.isLt
+  have hsign : (-1 : ℚ) ^ ((i : ℕ) + k) = (-1 : ℚ) ^ (k - (i : ℕ)) := by
+    have hik : (i : ℕ) + k = (k - (i : ℕ)) + 2 * (i : ℕ) := by omega
+    rw [hik, pow_add, pow_mul]; norm_num
+  rw [cof, hsub, det_vandermonde_pivot_split β i, hsign]
 
 /-! ## The power-sum keystone and its polynomial lift (sorry-free given the crux) -/
 
