@@ -17,6 +17,7 @@ Pure `ℕ`/`ℚ` combinatorics; nothing archimedean; no fit.
 namespace QOU.Mathlib.SYTBetaLagrange
 
 open Finset
+open QOU.BraidKnot.IdentityI (prodHooks)
 
 /-- `betaNatVal (l.set c v)` agrees with `l` off index `c`. -/
 theorem betaNatVal_set_ne (l : List ℕ) (c v : ℕ) {i : ℕ} (hi : i ≠ c) :
@@ -224,6 +225,48 @@ theorem betaProdGap_ratio (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : �
   have hne := betaNat_ne l hl hj.1 hj.2
   field_simp
 
+/-- `betaFactProd` is a positive natural number (product of factorials). -/
+theorem betaFactProd_pos (l : List ℕ) : 0 < QOU.Mathlib.SYTEnum.betaFactProd l := by
+  unfold QOU.Mathlib.SYTEnum.betaFactProd
+  apply QOU.Mathlib.SYTEnum.list_prod_pos
+  intro x hx
+  rw [List.mem_map] at hx
+  obtain ⟨i, _, rfl⟩ := hx
+  exact Nat.factorial_pos _
+
+/-- **(R2) The per-corner hook ratio (non-row-drop), sorry-free.** Combining the factorial side
+`betaFactProd_ratio` (= β_c) with the gap side `betaProdGap_ratio` through identity (i)
+`prodHooks·betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`):
+`prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`. -/
+theorem prodHooks_ratio (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    (prodHooks l : ℚ) / (prodHooks (l.set c (l.getD c 0 - 1)) : ℚ)
+      = betaNat l c * ∏ j ∈ (Finset.range l.length).erase c,
+          (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+  have hc : c < l.length := hcorner.1
+  have hpos : 1 ≤ l.getD c 0 := by have := hcorner.2; omega
+  have hl' : List.Sorted (· ≥ ·) (l.set c (l.getD c 0 - 1)) :=
+    QOU.Mathlib.SYTEnum.sorted_set_corner l c hl hcorner
+  have hbg : (QOU.Mathlib.SYTEnum.betaProdGap l : ℚ) ≠ 0 :=
+    Nat.cast_ne_zero.mpr (QOU.Mathlib.SYTEnum.betaProdGap_pos l hl).ne'
+  have hbf' : (QOU.Mathlib.SYTEnum.betaFactProd (l.set c (l.getD c 0 - 1)) : ℚ) ≠ 0 :=
+    Nat.cast_ne_zero.mpr (betaFactProd_pos _).ne'
+  have hil : (prodHooks l : ℚ) * (QOU.Mathlib.SYTEnum.betaProdGap l : ℚ)
+      = (QOU.Mathlib.SYTEnum.betaFactProd l : ℚ) := by
+    exact_mod_cast QOU.Mathlib.SYTEnum.prodHooks_mul_betaProdGap l hl
+  have hil' : (prodHooks (l.set c (l.getD c 0 - 1)) : ℚ)
+      * (QOU.Mathlib.SYTEnum.betaProdGap (l.set c (l.getD c 0 - 1)) : ℚ)
+      = (QOU.Mathlib.SYTEnum.betaFactProd (l.set c (l.getD c 0 - 1)) : ℚ) := by
+    exact_mod_cast QOU.Mathlib.SYTEnum.prodHooks_mul_betaProdGap _ hl'
+  have hph' : (prodHooks (l.set c (l.getD c 0 - 1)) : ℚ) ≠ 0 := by
+    intro h; rw [h, zero_mul] at hil'; exact hbf' hil'.symm
+  rw [betaFactProd_ratio l c hc hpos] at hil
+  rw [betaProdGap_ratio l hl c hcorner] at hil'
+  rw [div_eq_iff hph']
+  apply mul_right_cancel₀ hbg
+  rw [hil, ← hil', ← betaNat_eq l c]
+  ring
+
 /-!
 ## Remaining design — the gap ratio, row-drop, and assembly (next pieces)
 
@@ -239,9 +282,10 @@ Pull out `i=c` (`mul_prod_erase`), restrict the rest to `range c` (`prod_subset`
 terms `=1`), and use the sign flip `(βᵢ−β_c+1)/(βᵢ−β_c) = (β_c−1−βᵢ)/(β_c−βᵢ)` (`ring`).
 Split `erase c = range c ∪ Ioo c k`.
 
-**(R2) Factorial × gap ⇒ per-corner ratio** — combine `betaFactProd_ratio` (= β_c) with
-(R1) through identity (i) `prodHooks·betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`,
-`betaProdGap_pos`): `prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.
+**(R2) Factorial × gap ⇒ per-corner ratio** — DONE (`prodHooks_ratio`). Combines
+`betaFactProd_ratio` (= β_c) with (R1) through identity (i)
+`prodHooks·betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`, `betaProdGap_pos`):
+`prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.
 
 **(R3) Row-drop corner** (`l[c]=1`, last row, `k→k−1`) — separate but the same product
 formula holds (β shifts uniformly; the βNat algebra still gives the same per-corner value).
