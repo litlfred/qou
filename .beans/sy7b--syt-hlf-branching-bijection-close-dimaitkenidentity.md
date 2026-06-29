@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-28T17:05:00Z
-updated_at: 2026-06-29T00:00:00Z
+updated_at: 2026-06-29T14:32:00Z
 ---
 
 ## Progress (2026-06-29)
@@ -33,24 +33,36 @@ Remaining frontier (harder, step up in difficulty):
 - **(B) `numSYTenum_branching`** — the SYT corner-deletion bijection on the
   brute-force enumerator (the multi-day core).
 
-## CONVERGENCE / coordination (2026-06-29) — DO NOT DUPLICATE
+## CONVERGENCE / coordination (2026-06-29) — KEYSTONE DONE (det route)
 
 Sibling **PR #2986** (`claude/gnw-corner-recursion-hlf-kk4cnm`) has **discharged
 (B) sorry-free** (the GNW corner-deletion bijection on Mathlib `YoungDiagram`/
 `StandardYoungTableau`, built on my #2984 composition) and reduced the HLF to the
-**same single gap (A)** — `gnwHookIdentity`/`dimHLF_branching`. They are **actively
-closing (A)** via a clean ℚ-polynomial **Lagrange-interpolation** route
-(`SYTBetaLagrange` node-poly → `G = R + H·Q` → `SYTLagrangeInterp.interp_leadingCoeff`
-keystone; 2 sorries left). This is the **same** β-Lagrange identity my
-`det_vandermonde`/`frobeniusDim` route targets — so the `det_vandermonde` grind is
-**HELD to avoid duplication** (coordination posted on #2986).
+**same single gap (A)** — `gnwHookIdentity`/`dimHLF_branching`, which it attacked via
+a hand-rolled ℚ-polynomial **Lagrange-interpolation** keystone
+`SYTLagrangeInterp.interp_leadingCoeff`.
 
-Division of labour: **they own (A) via Lagrange**; my merged assets stand as
-cross-checks/regression backstops — #3051 (A 2-row, sorry-free), #3067/#3071
-(`frobeniusDim` manifestly-integer form + divisor-free keystone, decide-verified
-n≤5). When their (A) lands ⇒ (A)+(B) ⇒ fully sorry-free `numSYTenum_eq_dimHLF` and
-`dimAitkenIdentity` discharged. Offered to help close their `SYTBetaLagrange`/
-`SYTLagrangeInterp` sorries if wanted.
+**Owner ruling (2026-06-29): drop the interpolation keystone; use the determinant
+route.** Owner dislikes interpolation over ℝ/ℚ (conditioning baggage) and prefers
+exact determinant algebra. **PR #3079** (`claude/syt-hlf-vandermonde-keystone`) now
+provides the drop-in replacement, **SORRY-FREE + AXIOM-FREE**, lean-direct verified
+(`QOU/Mathlib/SYTVandermondeKeystone.lean`):
+
+- `cof_mul_vWeight` — the Vandermonde cofactor product-split `cofᵢ·vWeightᵢ = det V`,
+  proved by splitting `det_vandermonde`'s pair product at the pivot row via
+  `Fin.prod_univ_succAbove` (helpers: `succAbove_image_Ioi`, `inner_split`,
+  `pivot_contribution`, `det_vandermonde_pivot_split`).
+- `powSum` — `∑ᵢ (βᵢ)ᵈ/vWeightᵢ = [d=k]` for `d ≤ k`.
+- `interp_leadingCoeff` — `∑ᵢ f.eval(βᵢ)/vWeightᵢ = f.coeff k` for `f.natDegree ≤ k`
+  (over `Fin (k+1)`).  **Same statement** as the sibling's keystone under `k ↦ k−1`
+  (`Fin k`, `<k`, `coeff (k−1)`); `vWeight` defs are identical.  No interpolation, no ℝ.
+
+Bridge for #2986: import `QOU.Mathlib.SYTVandermondeKeystone` and adapt
+`interp_leadingCoeff` with `k := k−1` (their `0 < k` supplies `k−1+1 = k`).  Coordination
+posted on #2986.  Other merged assets stand as cross-checks/regression backstops —
+#3051 (A 2-row), #3067/#3071 (`frobeniusDim` manifestly-integer form, decide-verified
+n≤5).  When (A) closes on this keystone ⇒ (A)+(B) ⇒ fully sorry-free
+`numSYTenum_eq_dimHLF` and `dimAitkenIdentity` discharged.
 
 
 Close the single remaining sorry in the SYT hook-length cone,
