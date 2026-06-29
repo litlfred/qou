@@ -33,6 +33,25 @@ Remaining frontier (harder, step up in difficulty):
 - **(B) `numSYTenum_branching`** — the SYT corner-deletion bijection on the
   brute-force enumerator (the multi-day core).
 
+## CONVERGENCE / coordination (2026-06-29) — DO NOT DUPLICATE
+
+Sibling **PR #2986** (`claude/gnw-corner-recursion-hlf-kk4cnm`) has **discharged
+(B) sorry-free** (the GNW corner-deletion bijection on Mathlib `YoungDiagram`/
+`StandardYoungTableau`, built on my #2984 composition) and reduced the HLF to the
+**same single gap (A)** — `gnwHookIdentity`/`dimHLF_branching`. They are **actively
+closing (A)** via a clean ℚ-polynomial **Lagrange-interpolation** route
+(`SYTBetaLagrange` node-poly → `G = R + H·Q` → `SYTLagrangeInterp.interp_leadingCoeff`
+keystone; 2 sorries left). This is the **same** β-Lagrange identity my
+`det_vandermonde`/`frobeniusDim` route targets — so the `det_vandermonde` grind is
+**HELD to avoid duplication** (coordination posted on #2986).
+
+Division of labour: **they own (A) via Lagrange**; my merged assets stand as
+cross-checks/regression backstops — #3051 (A 2-row, sorry-free), #3067/#3071
+(`frobeniusDim` manifestly-integer form + divisor-free keystone, decide-verified
+n≤5). When their (A) lands ⇒ (A)+(B) ⇒ fully sorry-free `numSYTenum_eq_dimHLF` and
+`dimAitkenIdentity` discharged. Offered to help close their `SYTBetaLagrange`/
+`SYTLagrangeInterp` sorries if wanted.
+
 
 Close the single remaining sorry in the SYT hook-length cone,
 `SYTHookFormulaGeneral.dimAitkenIdentity` (general-n Frame–Robinson–Thrall).
