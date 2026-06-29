@@ -54,23 +54,22 @@ Brick 2's `Specht.SpechtSubmodule μ` is a `Submodule k (Mtab μ)`, and cruciall
 * `spechtRep` / `spechtRepOn` — `S^μ` and the regrouped `S^ν` as `Representation`s
   (sorry-free *proof terms*, but transitively `sorryAx`-dependent because they
   reference `specht_smul_mem`; see below).
+* `partitionEquivYoungIndex` — the bijection `Nat.Partition n ≃ PartitionIndex n`
+  (sorry-free; built from `YoungDiagram.ofRowLens` / `rowLens` round-trips via the
+  helper `card_eq_rowLens_sum`, since Mathlib has no packaged bridge at this pin).
 * the `Fintype (PartitionIndex n)` instance + `card_partitionIndex` /
-  `card_irreducibles_eq_card_partitions` (sorry-free proof terms; transitively
-  rest on the stubbed partition↔diagram equiv).
+  `card_irreducibles_eq_card_partitions` — sorry-free (they rest on
+  `partitionEquivYoungIndex`, now closed); the latter is the punchline count
+  `#{irreducibles} = #{partitions of n}` modulo the classification stubs below.
 
 ## What is stated with `sorry` + `-- Ref:` (the genuine theorems)
 
-* `partitionEquivYoungIndex` — `Nat.Partition n ≃ PartitionIndex n` (Mathlib has
-  no `YoungDiagram ↔ Partition` bridge at this pin; verified against the cached
-  oleans).  `-- Ref: [sagan2001]`.
 * `specht_smul_mem` — `S^μ` is `S_n`-stable (needed to *form* `spechtRep`).
   `-- Ref: [sagan2001]` §2.3.
 * `specht_pairwise_noniso` — `μ ≠ ν → ¬ (S^μ ≅ S^ν)`.  `-- Ref:
   [james1984representation]`.
 * `specht_exhausts_irreducibles` — every simple `k[S_n]`-module is `≅` some
   `S^μ`.  `-- Ref: [sagan2001]` §2.4.
-* `card_irreducibles_eq_card_partitions` — the punchline count.  `-- Ref:
-  [sagan2001]` §2.4.
 
 All textbook-famous theorems (Sagan §2.4, James 1984); their Lean proofs are out
 of scope for one brick and are honestly stubbed per AGENTS.md §1.  This module is
@@ -124,18 +123,72 @@ def diagram {n : ℕ} (i : PartitionIndex n) : YoungDiagram := i.val
 
 end PartitionIndex
 
+/-! ### Helper lemmas for the partition ↔ Young-diagram bijection -/
+
+open YoungDiagram in
+/-- The number of cells produced by `cellsOfRowLens w` equals the sum of `w`. -/
+theorem card_cellsOfRowLens (w : List ℕ) :
+    (YoungDiagram.cellsOfRowLens w).card = w.sum := by
+  induction w with
+  | nil => simp [YoungDiagram.cellsOfRowLens]
+  | cons a ws ih =>
+    rw [YoungDiagram.cellsOfRowLens, List.sum_cons, Finset.card_union_of_disjoint]
+    · rw [Finset.card_product, Finset.card_singleton, Finset.card_range, Finset.card_map, ih,
+        Nat.one_mul]
+    · rw [Finset.disjoint_left]
+      rintro ⟨i, j⟩ h1 h2
+      simp only [Finset.mem_product, Finset.mem_singleton, Finset.mem_range] at h1
+      simp only [Finset.mem_map, Function.Embedding.coe_prodMap, Function.Embedding.coeFn_mk] at h2
+      obtain ⟨⟨i', j'⟩, -, hi'⟩ := h2
+      simp only [Prod.map_apply, Prod.mk.injEq] at hi'
+      omega
+
+/-- `μ.card` equals the sum of its row lengths. -/
+theorem card_eq_rowLens_sum (μ : YoungDiagram) : μ.card = μ.rowLens.sum := by
+  conv_lhs => rw [← YoungDiagram.ofRowLens_to_rowLens_eq_self (μ := μ)]
+  exact card_cellsOfRowLens μ.rowLens
+
+/-- The parts of a partition, after sorting, remain positive. -/
+theorem sorted_parts_pos (n : ℕ) (p : Nat.Partition n) :
+    ∀ x ∈ p.parts.sort (· ≥ ·), 0 < x := fun x hx =>
+  p.parts_pos (by rwa [Multiset.mem_sort] at hx)
+
+/-- `YoungDiagram.ofRowLens` depends only on the underlying list, not the sortedness proof. -/
+theorem ofRowLens_congr {w₁ w₂ : List ℕ} {h₁ : w₁.Sorted (· ≥ ·)} {h₂ : w₂.Sorted (· ≥ ·)}
+    (hw : w₁ = w₂) : YoungDiagram.ofRowLens w₁ h₁ = YoungDiagram.ofRowLens w₂ h₂ := by
+  subst hw; rfl
+
 /-- **Partitions of `n` index Young diagrams of size `n`.**  The classical
 bijection `λ ⊢ n ↔ {Young diagram with n cells}` sending a partition to the
-diagram whose row lengths are its parts.  Mathlib's pinned revision (`f897ebcf`)
-ships `Nat.Partition` and `YoungDiagram` separately with **no** bridge between
-them (verified against the cached oleans), so this equiv is stated here and its
-construction is deferred. -/
+diagram whose row lengths are its (sorted) parts, with inverse reading off
+`rowLens`.  Built directly from `YoungDiagram.ofRowLens` / `rowLens` and their
+round-trip lemmas — Mathlib has no packaged `YoungDiagram ↔ Nat.Partition`
+bridge at this pin. **Sorry-free.** -/
 noncomputable def partitionEquivYoungIndex (n : ℕ) :
-    Nat.Partition n ≃ PartitionIndex n := by
-  -- Ref: [sagan2001] (a partition λ ⊢ n is the same data as a Young diagram with
-  -- n cells, via row lengths); Mathlib lacks the `YoungDiagram ↔ Nat.Partition`
-  -- bridge at this pin, so the equiv is supplied as a brick-3 glue target.
-  sorry
+    Nat.Partition n ≃ PartitionIndex n where
+  toFun p :=
+    -- Ref: [sagan2001] (a partition λ ⊢ n is the same data as a Young diagram with
+    -- n cells, via its row lengths)
+    ⟨YoungDiagram.ofRowLens (p.parts.sort (· ≥ ·)) (Multiset.sort_sorted _ _), by
+      show (YoungDiagram.ofRowLens _ _).card = n
+      rw [card_eq_rowLens_sum, YoungDiagram.rowLens_ofRowLens_eq_self (sorted_parts_pos n p),
+        ← Multiset.sum_coe, Multiset.sort_eq, p.parts_sum]⟩
+  invFun μ :=
+    { parts := (μ.val.rowLens : Multiset ℕ)
+      parts_pos := fun {i} hi =>
+        YoungDiagram.pos_of_mem_rowLens μ.val i (by rwa [Multiset.mem_coe] at hi)
+      parts_sum := by rw [Multiset.sum_coe, ← card_eq_rowLens_sum]; exact μ.property }
+  left_inv p := by
+    apply Nat.Partition.ext
+    dsimp only
+    rw [YoungDiagram.rowLens_ofRowLens_eq_self (sorted_parts_pos n p), Multiset.sort_eq]
+  right_inv μ := by
+    apply Subtype.ext
+    dsimp only
+    have hsort : ((μ.val.rowLens : Multiset ℕ).sort (· ≥ ·)) = μ.val.rowLens := by
+      rw [Multiset.coe_sort, List.mergeSort_eq_self]; exact μ.val.rowLens_sorted
+    rw [ofRowLens_congr (h₂ := μ.val.rowLens_sorted) hsort]
+    exact YoungDiagram.ofRowLens_to_rowLens_eq_self
 
 /-- There are finitely many Young diagrams of size `n`, **derived** from the
 partition equiv together with `Fintype (Nat.Partition n)` (Mathlib,
