@@ -276,17 +276,45 @@ theorem standardPolytabloid_linearIndependent :
 
 /-! ### 3b. Spanning (single honest stub) -/
 
-/-- **STUB — content obligation 2/2.** The standard polytabloids *span* the
-Specht module `S^μ`. Classical: every polytabloid `e_t` (arbitrary tableau `t`)
-is, by the **Garnir relations**, a `ℤ`-combination of standard ones, so the
-standard family generates the same span as all polytabloids — which is `S^μ` by
-definition (`SpechtSubmodule = span (range polytabloid)`). -/
+omit [CharZero k] in
+/-- **STUB — the irreducible spanning core (Garnir / straightening law).** Every
+polytabloid `e_t` (arbitrary tableau `t`) lies in the span of the *standard*
+polytabloids. This is Sagan's §2.6 straightening algorithm; from it, spanning
+follows sorry-free. -/
+theorem standardPolytabloid_straightening :
+    ∀ t : Specht.Tableau μ,
+      Specht.polytabloid (k := k) t ∈
+        Submodule.span k (Set.range (standardPolytabloid (k := k) (μ := μ))) := by
+  -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm: every
+  -- polytabloid is a ℤ-combination of standard polytabloids). See also
+  -- [james1984representation] §8. The irreducible spanning core of brick 4.
+  sorry
+
+omit [CharZero k] in
+/-- **M^μ-level span identity.** The standard polytabloids span exactly `S^μ`
+inside `M^μ`. (≤): each standard polytabloid is a polytabloid (`standardPolytabloid_mem`);
+(≥): the straightening core. Sorry-free modulo `standardPolytabloid_straightening`. -/
+theorem standardPolytabloid_span_eq_specht :
+    Submodule.span k (Set.range (standardPolytabloid (k := k) (μ := μ)))
+      = Specht.SpechtSubmodule (k := k) μ := by
+  apply le_antisymm
+  · rw [Submodule.span_le]
+    rintro _ ⟨T, rfl⟩
+    exact standardPolytabloid_mem (k := k) T
+  · rw [Specht.SpechtSubmodule, Submodule.span_le, Set.range_subset_iff]
+    exact standardPolytabloid_straightening (k := k) (μ := μ)
+
+omit [CharZero k] in
+/-- **Content obligation 2/2 — spanning**, now derived **sorry-free modulo the single
+core** `standardPolytabloid_straightening` (the M^μ span identity + the corestriction
+to `⊤` in `S^μ` are discharged here). Keeps the original name/signature for `Basis.mk`. -/
 theorem standardPolytabloid_span :
     Submodule.span k (Set.range (standardPolytabloidS (k := k) (μ := μ))) = ⊤ := by
-  -- Ref: [sagan2001] §2.6 (Garnir relations) + Thm 2.5.2 (standard basis spans
-  -- S^μ). See also [james1984representation] §8. Genuine content obligation;
-  -- brick-4 target.
-  sorry
+  apply Submodule.map_injective_of_injective
+    (Submodule.injective_subtype (Specht.SpechtSubmodule (k := k) μ))
+  rw [Submodule.map_subtype_top, Submodule.map_span, ← Set.range_comp,
+      subtype_comp_standardPolytabloidS]
+  exact standardPolytabloid_span_eq_specht (k := k) (μ := μ)
 
 /-! ## 4. The basis + the reduction (sorry-free MODULO §3) -/
 
@@ -305,13 +333,15 @@ noncomputable def standardBasis :
   Module.Basis.mk standardPolytabloid_linearIndependent
     (by rw [standardPolytabloid_span])
 
+omit [CharZero k] in
 /-- **Standard-basis theorem (reduction).**
 `dim_k S^μ = #SYT(μ)`.
 
 Proved sorry-free *from* `standardBasis` via `Module.finrank_eq_nat_card_basis`
 (which gives `finrank = Nat.card ι` directly, with no `Fintype` on the index),
 and `numSYT μ = Nat.card (StandardYoungTableau μ)` definitionally. Hence the only
-unproved inputs are the two classical facts of §3. -/
+unproved inputs are the two classical facts of §3 (`standardPolytabloid_triangular`,
+`standardPolytabloid_straightening`). -/
 theorem specht_finrank_eq_numSYT (μ : YoungDiagram) :
     Module.finrank k (Specht.SpechtSubmodule (k := k) μ) = QOU.BraidKnot.numSYT μ := by
   rw [Module.finrank_eq_nat_card_basis (standardBasis (k := k) (μ := μ))]
