@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Exact eps^6 arithmetic for the c_3 identification (Q_beta ladder) fits the categorical-derivation material."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Verified: at q=1, q^4+q^2+1=3, (q^2+1)^2=4, b^2=3/4, b=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4 ~ -1.29904. All steps correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Substantive exact-arithmetic lemma, sorry-free Lean; discharges the leading-order part of a class hypothesis."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Pure arithmetic identity; no back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Carefully scoped: 'the categorical content ... remains class-axiomatic'; only the arithmetic discharge is claimed, not the full c_3=-2 identification."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "-2 is J_Hopf(q=1) per the c_k framing, not a free parameter; b is the Hoefsmit coupling."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Four arithmetic steps each follow; no logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Lean stub (Real.sqrt_sq + field_simp + ring) proves exactly the -3sqrt3/4 identity stated in the .md; the remark is honest that the remaining categorical content stays axiomatic."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "jones1985 cited for Hopf-link Jones value context; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "b, hbar_q, F_3, the class ThreeFoldMarkovHopfExtraction all specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Claim is an exact algebraic equality (sympy algebraic, no rounding), not a numerical near-match; not fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Backing probe_q_beta_cat_per_factor_decomposition.py is named and the algebraic equality is independently verifiable by hand (done here)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "362a68b9b8ed",
+          "ts": "139c1f3ce51a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "clean — an exact, hand-verifiable arithmetic lemma honestly scoped against the still-axiomatic categorical content."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

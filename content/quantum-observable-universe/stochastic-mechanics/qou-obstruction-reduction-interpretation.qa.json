@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Kummer-tower density interpretation of the obstruction fits the classical-limit obstruction scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "For chi=-6 (|chi|=6), divisors {1,2,3,6}; obstruction vanishes only there; density of non-vanishing levels -> 1. The arithmetic is correct (finitely many divisors, density 1 of non-divisors)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Substantive density computation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Inherits the parent theorem's conditional status; the density claim itself is elementary and correct."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "chi=-6 is fixed (Descartes universe)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "obstruction nonzero unless n|6, hence at all primes >3, hence density 1 — follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No cites[]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "obs(n), Kummer tower, chi(A) defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical match against experiment."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "'classical limit cannot avoid the obstruction' is an interpretive consequence of the density-1 result, not a measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No witness; references Table 3 data block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "838cb254d226",
+          "ts": "a24585861e57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "clean — elementary, correct density interpretation; only caveat is its dependence on the parent theorem whose Lean is degenerate, but the interpretation's own arithmetic is sound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

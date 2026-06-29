@@ -762,7 +762,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "c_5 precision-ladder decomposition (Q_beta) fits the categorical-derivation / bar-involution material in this chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Verified the q-integer algebra: b^2 = 1 - 1/[2]_q^2 (since (q^2+1)^2=q^2[2]_q^2 and q^4+q^2+1=q^2([2]_q^2-1)); c_5=-b^2-1/2=-3/2+1/[2]_q^2; at q=1 -> -5/4; [2]_q^2=8 at silver ratio -> -11/8; [2]_q^2=h^2+4. All identities correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The Lean theorems (Hoefsmit identity, skein rewrite, bounds) are substantive sorry-free algebra, not tautologies."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The c_5=-b^2-1/2 form is taken as the proposition's definition and the algebra is consequence; the empirical 2.4% match is separately and honestly labelled 'conjectured' in the Lean docstring."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "c5-involution-leibniz-decomposition-proof.md:1: \"## Proof sketch ... Leibniz propagation\"",
+        "notes": "Steps 1-4 narrate a 'Leibniz propagation' deriving the h^2/2 and -1/2 origin, but the refined-framing authorNote on the parent prop concedes the rung-5 selection is NOT yet derived ('thm:averaging-resonance-rule (planned)'); the proof-sketch reads as a derivation of why k=5 while the structural selection is acknowledged elsewhere as open."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The c_k are truncation-ladder coefficients (per AGENTS.md c_k framing); the -1/2 is derived from P_avg=(1+bar)/2, not an off-menu fitted constant; tiered framing respected."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "c5-involution-leibniz-decomposition-proof.md:1: \"at all other rungs in [3,7] ... averaging contributions are subdominant. \\u25a1\"",
+        "notes": "The claim that rung 5 is the unique averaging-dominant rung is asserted in the Step-4 table without a derivation in this block (it is the planned averaging-resonance-rule); the QED closes on an unproved selection claim. Math identities are fine; the selection step is the gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The enumerated Lean theorems (hoefsmit_b_squared..., c5_decomposition_via_quantum_two, silver-ratio, skein, bounds) each have a matching narrative proof and the Lean is sorry-free; the algebraic content matches."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Refs wenzl1988/hoefsmit1974/jones1985 are appropriate for Hecke Markov trace / seminormal coupling b / Jones values."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "b, h, [2]_q, silver ratio, Pell-Lucas closure all defined; sigma_avg given explicitly."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "c5-involution-leibniz-decomposition.lean (docstring): \"CONJECTURED to match empirical c_5 extraction at q_0 to 2.4% residual\"",
+        "notes": "The decomposition's physical relevance rests on a 2.4% residual match against extracted c_5 at q_0; per AGENTS.md c_k are q0-dependent near-matches with cross-anchor swings, so a 2.4% agreement is well inside the near-match band, not an exact identity. The algebra is exact, but the 'fingerprint' identification is empirically soft."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No direct physical-measurement claim beyond the c_k ladder framing."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Backing compute qbeta_silver_ratio_pell_lucas_ck.py + witness referenced on the parent prop; the algebraic identities are checkable symbolically and verified by hand here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "954a7007eaa2",
+          "ts": "7f8d6296d663"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "notes": "survivable-objection — every closed-form algebraic identity (b^2, c_5, silver ratio, skein) is exact and Lean-proved, but the load-bearing claim that the -1/2 is an averaged-crossing 'fingerprint' selecting rung 5 rests on a planned/not-yet-derived resonance rule and a 2.4% empirical residual."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

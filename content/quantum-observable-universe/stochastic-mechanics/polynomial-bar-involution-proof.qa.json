@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Lean<->paper bridge proofs for the polynomial bar-involution fit the bar-involution infrastructure material."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Every proof step checks: barPoly_X = -X, barPoly_X_pow = (-1)^n X^n, even/odd cases, natCast fixed, involutive via comp_assoc. All correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Substantive sorry-free comp-lemma proofs plus arbitrary-truncation induction; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No circularity; each lemma cites prior lemmas linearly."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "'Polynomial-level work complete' is accurate for what is proved; RatFunc/PowerSeries extensions listed as future, not claimed done."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical parameter (generic coefficients)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Each proof follows from the named Mathlib comp lemma or prior result; inductions are well-formed."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Narrative proofs mirror the Lean lemma names 1:1; the c5_taylor_6_eval_one=-333/256 (vs -13/10) gap is correctly explained as Taylor truncation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No cites[] on the proof block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "All bar-poly operations and the comp lemmas are explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The single numerical eval is exact rational arithmetic; the 0.06% Taylor gap is disclosed, not a fragile precision claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No witness; Lean is sorry-free backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "clean — a thorough, correct, sorry-free Lean<->paper bridge; the truncation-error disclosure is exemplary."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

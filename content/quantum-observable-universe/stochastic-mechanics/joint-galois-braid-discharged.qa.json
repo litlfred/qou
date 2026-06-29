@@ -1046,7 +1046,454 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Statement section is the bare commutation equation; motivation is italicised lead-in only."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "General discharge of the joint-action conjecture fits the bi-filtration chapter scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Statement is purely algebraic (Galois x braid commutation on Hecke cells); no archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Proof (in -proof sibling) is algebraic: centrality of e_lambda + grouplike-as-scalar; no linarith/IVT/Real.* machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidDischarged.lean:30: \"galois_central : forall g x f, galois g (f x) = f (galois g x)\"",
+        "notes": "Lean hypothesis is Galois commutes with every endofunction; the .md proof argues braid triviality via centrality + Galois sends e_lambda to e_lambda'. The Lean abstracts away the actual structural content into one over-strong field."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Lean signature is the commutation statement; no axiom injection or silent weakening of the headline beyond the over-strong hypothesis noted elsewhere."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "critical",
+        "evidence": "JointGaloisBraidDischarged.lean:39: \"exact ctx.galois_central g x (ctx.braid b)\"",
+        "notes": "joint_action_discharged projects galois_central (commutation with all f) to f=braid b; the conclusion is an instance of the assumed field. Catalogued verdict 'degenerate(field)' in docs/audits/2026-06-18-self-assuming-projection-triage.json."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Goal is a non-trivial cell equality, not : True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidDischarged.lean:30: \"galois_central : forall ... f ...\"",
+        "notes": "Braid structure enters only as an anonymous f; the math's genuine hypotheses (idempotent centrality, bar transposition) are not encoded as Lean fields."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No decide/trivial masking; single exact term."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Narrative claim (disjoint-factor commutation on every cell) is plausible and not falsified; the disjoint-structure argument is sound at sketch level."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidDischarged.lean:30: \"galois_central : forall g x f, galois g (f x) = f (galois g x)\"",
+        "notes": "Lean realisation is content-free (commutes-with-all-f trivialises it); narrative has content but the formal discharge is degenerate."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No back-fit; structural argument."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "joint-galois-braid-discharged.md:5: \"discharged in general by the disjoint-action argument\"",
+        "notes": "Title/lead assert general discharge of a former conjecture as a proposition, but the only formal backing is a degenerate field-projection; the general (all-cells, incl. chiral-pair) case is exactly what the figure-8-interpretation remark concedes is non-trivial, so 'discharged in general' overruns the verified content."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "joint-galois-braid-discharged-proof.md:24: \"g_mot(alpha) = e_{lambda_K'} . g(g_mot(z_K))\"",
+        "notes": "Galois sends e_lambda to the transpose e_{lambda'} (so the cell is NOT fixed in general), yet the proof concludes commutation by 'centrality of e_{lambda'}' — this works only if braid acts trivially on the transposed cell too; the general-cell (chiral-pair) case the interpretation calls non-trivial is not actually closed by the sketch."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidDischarged.lean:30: \"galois_central : forall g x f, ...\"",
+        "notes": "Lean proves trivial universal-commutation (degenerate field-projection), not the cell-transpose / centrality structure of the .md; formally weaker/vacuous vs narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "cites[] empty."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Cell, Galois, braid, idempotent all cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "15283e0db382",
+          "ts": "1fffbe7991f7",
+          "lean": "743b4a7e55fc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "notes": "open-objection — claims general discharge of a former conjecture, but (i) the Lean is a degenerate self-assuming projection and (ii) the narrative sketch glosses the chiral-pair (cell-transpose) case that the sibling interpretation itself flags as the structurally non-trivial one."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

@@ -855,7 +855,264 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Track-C factorisation of the Markov-closure->Hopf content into atomic axioms fits the categorical-derivation Lean-infrastructure material."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Closure of sigma_1^2 in B_2 is the Hopf link (Alexander-Markov) and J_Hopf(q=1) = -2 (Jones) are both correct standard results."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "markov-closure-map-axiomatic.md: \"Defines class MarkovClosureMap2Strand with explicit fields: ... is_hopf_at_two: closure 2 = Unit\"",
+        "notes": "The Lean encoding is admittedly axiomatic: Atom 1 (closure 2 = Hopf link) is a class field 'type axiom', not a proof from braid/link infrastructure. The block is honest about this (authorNote: 'substantive content is in 2 class fields'), so it is a disclosed axiomatic reduction rather than a hidden vacuity, but the 'closure 2 = Unit' encoding is a thin stand-in for the real topological statement."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No back-fit; c_3 = -2 traces to the Hopf Jones value, not to the target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Carefully framed as Step B (reducing the open surface), with Atom 1 explicitly still open (type axiom) and Step A targeting it; no claim of full discharge."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "-2 is the Hopf Jones value, on the c_k menu; no off-menu parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Under the two atomic axioms, c_3 = -2 follows; the factorisation is logically clean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "markov-closure-map-axiomatic.md: \"is_hopf_at_two: closure 2 = Unit (the Hopf link)\"",
+        "notes": "Atom 1's Lean realisation 'closure 2 = Unit' does not actually encode 'the Markov closure of sigma_1^2 is the Hopf link' — Unit is a placeholder type; the narrative result is stronger than what the type field asserts. Disclosed, but a divergence between the prose Atom 1 and its Lean stand-in."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "jones1985 for the Hopf Jones value; Alexander-Markov attributed for the closure theorem. Appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The two atomic axioms, the closure map, the Jones value all clearly stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "J_Hopf(q=1) = -2 is an exact topological value, not a numerical near-match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical witness; Atom 2 closed by unfold+norm_num per the sibling lean."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ef5833e324c5",
+          "ts": "3fe7977d6077",
+          "lean": "260397356443"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "notes": "survivable-objection — an honest, well-scoped axiomatic reduction; the only soft spot is that Atom 1's Lean encoding ('closure 2 = Unit') is a placeholder type that under-encodes the real Hopf-closure statement, which the block itself discloses."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

@@ -1050,7 +1050,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "c5-involution-leibniz-decomposition.md: \"The $-1/2$ summand is **NOT** an ad-hoc empirical offset: it is the fingerprint of ...\"",
+        "notes": "Proposition statement embeds interpretive/defensive prose ('NOT an ad-hoc offset', 'fingerprint', Pell-Lucas resolution) rather than the bare claim c_5=-b^2-1/2; the interpretation belongs in a linked remark. Minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "c_5 decomposition fits the categorical-derivation/bar-involution scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Statement c_5=-b^2-1/2 is a rational-function identity in q over a field; b^2=(q^4+q^2+1)/(q^2+1)^2 needs only a field (the Lean uses R but that is the documented archimedean specialisation, header note present)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Proof is algebraic (field_simp; ring) plus norm_num evaluations; the silver-ratio Real.sqrt step is a legitimate concrete archimedean evaluation, flagged by the §7c header note."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The .md identity c_5=-b^2-1/2 and the Lean c5Decomposition := -hoefsmitBSq q - 1/2 (with c5_decomposition_via_quantum_two) express the same claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Lean defs/theorems match the stated decomposition; no axiom injection, no silent weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "c5Decomposition is a genuine algebraic definition; the theorems derive identities (b^2 = 1-1/[2]_q^2 etc.) via field_simp;ring, not field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Goals are non-trivial rational-function equalities, not : True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Hypothesis q != 0 is the correct non-degeneracy condition, not a false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "q != 0 is used (denominators q^2+1, [2]_q); no dangling hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Proofs use field_simp/ring/norm_num appropriately; no decide masking a structural goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "c_5=-b^2-1/2 and -b^2=-7/8 at silver ratio (b^2=7/8) are correct; the decomposition identity is exact."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Non-trivial exact decomposition; Lean sorry-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No back-fit in the algebra; the empirical motivation is separated and labelled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "c5-involution-leibniz-decomposition.md: \"The $-1/2$ summand is **NOT** an ad-hoc empirical offset: it is the fingerprint of the bar-invariant averaged-crossing operator\"",
+        "notes": "States as fact that -1/2 is the averaged-crossing involution fingerprint; the block's own refined-framing authorNote concedes the rung-5 selection (why c_5 and not another rung) is from a planned, not-yet-derived averaging-resonance-rule. The interpretive identification is stronger than what is derived."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "-1/2 = h/2 fingerprint at h=q-q^-1 derived from P_avg, not an off-menu fitted DOF; c_k is a truncation order per AGENTS.md."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "c5-involution-leibniz-decomposition.md: \"resolves the Pell-Lucas outlier status of $c_5$\"",
+        "notes": "The decomposition algebraically yields -11/8 at silver ratio (correct), but the leap from 'has a 1/2 component' to 'this explains the Pell-Lucas outlier as the averaging fingerprint' presumes the rung-5 selection that is acknowledged-open; the explanatory step is not fully closed."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Lean matches the stated identity; the interpretive 'fingerprint' claim is prose, not a Lean assertion, so no divergence at the formalised level."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "wenzl1988/hoefsmit1974/jones1985 appropriate for Hecke trace / coupling b / Jones values."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "b^2, sigma_avg, P_avg, silver ratio, Pell-Lucas all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "c5-involution-leibniz-decomposition.lean (docstring): \"CONJECTURED to match empirical c_5 extraction at q_0 to 2.4% residual\"",
+        "notes": "The decomposition's claim to physical relevance hinges on a 2.4% residual to extracted c_5 at q_0; given the c_k cross-anchor swing documented in AGENTS.md, 2.4% is within near-match noise — the exact algebra does not by itself certify the fingerprint reading."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No direct physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Witness qbeta-silver-ratio-pell-lucas-ck.witness.json + script named; algebraic identities hand-checked here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5ef46454c0f3",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "notes": "survivable-objection — the closed form c_5=-b^2-1/2 is exact and Lean-proved, but the headline interpretation (the -1/2 is THE averaged-crossing fingerprint resolving the Pell-Lucas outlier at rung 5) leans on a planned resonance rule and a 2.4% empirical residual."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

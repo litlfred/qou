@@ -1009,7 +1009,432 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Theorem statement (a)(b)(c) is the bare dim/Euler/Kummer claim; the 'Contrast' defers to a table."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "QOU obstruction reduction to dimension 1 fits the classical-limit obstruction scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Statement is cohomological/algebraic (HH^2 dim, Euler characteristic, Kummer divisibility); no archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No narrative Proof block ships with this theorem (proof deferred); nothing to wall-test."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "qou_obstruction_reduction.lean:24: \"obs_dim_eq : obs_dim = 1\"",
+        "notes": "The .md asserts dim Obs = 1 as a substantive conclusion; the Lean takes obs_dim_eq : obs_dim = 1 (and phi_1_image_eq, kappa_vanishes_iff) as CLASS FIELDS and the theorem projects them out. The Lean does not derive the .md conclusion; it assumes it."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "critical",
+        "evidence": "qou_obstruction_reduction.lean:14: \"The full Lean statement and proof are pending; this stub ... body is sorry\"",
+        "notes": "Lean conclusion is built from self-assumed context fields rather than the manuscript's d=dim G hypothesis; the docstring itself calls it a pending stub. The Lean 'theorem' does not carry the integrity of the .md headline (no derivation of dim=1 or the Euler/trace identification)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "critical",
+        "evidence": "qou_obstruction_reduction.lean:67: \"exact \\u27e8ctx.obs_dim_eq, h_phi, h_kappa\\u27e9\"",
+        "notes": "Textbook self-assuming projection: the conclusion (obs_dim=1, phi_1_image=chi_A, Kummer iff) is the conjunction of class fields the theorem merely re-exports. Catalogued verdict 'degenerate(tuple-split)' in docs/audits/2026-06-18-self-assuming-projection-triage.json."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Goal is a substantive conjunction, not : True; though discharged by projection, the stated goal is non-tautological."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No False/0=1 premise; the context class is inhabitable (consistent fields)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "qou-obstruction-reduction.md:3: \"with gauge group G = Aut^otimes(tau) of dimension d = dim G\"",
+        "notes": "The narrative hypothesis d = dim G plays no role in the Lean (which has no gauge-dimension field); the dimension-1 reduction is asserted as a field, not derived from d. Hypothesis is decorative on the formal side."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No decide/native_decide; rw + exact projection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The narrative math claim (in a QOU the obstruction collapses to dim 1, class = chi(A), vanishes iff n | chi) is not shown false; it is just not formally proved. Plausible given Frobenius duality reduction. No counterexample."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "qou_obstruction_reduction.lean:24: \"obs_dim_eq : obs_dim = 1 ... phi_1_image_eq ... kappa_vanishes_iff\"",
+        "notes": "The Lean theorem is content-free: every conclusion is a class field assumed, then projected. It proves nothing about WHY the QOU obstruction is one-dimensional."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "qou_obstruction_reduction.lean:35: \"obstruction_class_eq : obstruction_class = chi_A\"",
+        "notes": "Formally the proof assumes its conclusion (the dim=1 and the Euler/trace identification are inputs). On the Lean side this is circular-by-projection; the narrative itself is a forward claim with proof deferred, so the circularity is in the formalisation, not the math statement."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "qou-obstruction-reduction.ts: \"lean: { ref: qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction, validation: not_checked }\"",
+        "notes": "Presented as a Theorem with a lean.ref, but the Lean is an acknowledged pending stub (degenerate tuple-split); the formal 'theorem' status outruns the verified content. (validation is honestly not_checked.)"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "chi(A)=-6 for the Descartes universe is a fixed topological invariant, not a free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The narrative (a)->(b)->(c) chain (Frobenius duality gives 1-dim, trace identifies the class, Kummer vanishing = divisibility) is coherent; gaps are formalisation gaps, not logical leaps in the prose."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "qou_obstruction_reduction.lean:54: \"theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] : ctx.obs_dim = 1 \\u2227 ...\"",
+        "notes": "Lean proves the conjunction only by assuming each conjunct as a context field; it is vacuously implied by the .md claim rather than establishing it. Clear narrative-Lean divergence (the formal content is strictly weaker)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "yekutieli2010 appropriate for the Hochschild/characteristic-class comparison underpinning the obstruction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Obs, HH^2, chi(A), Kummer level all defined or cross-linked; k is the base field."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical match against experiment."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No witness/compute backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "40c9ce47aa39",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "notes": "open-objection — the narrative theorem (1-dim QOU obstruction, Euler/Kummer identification) is plausible and not falsified, but its Lean 'proof' is a self-assuming tuple-projection (audit verdict degenerate(tuple-split)); the result is asserted, not proved."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

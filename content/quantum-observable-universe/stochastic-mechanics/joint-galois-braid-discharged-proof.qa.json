@@ -762,7 +762,256 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "General-case proof of the joint-action discharge fits the bi-filtration scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "joint-galois-braid-discharged-proof.md:24: \"g_mot(alpha) = e_{lambda_K'} . g(g_mot(z_K))\"",
+        "notes": "Step 2 has Galois send e_{lambda_K} -> e_{lambda_K'} (transpose), so for non-self-conjugate cells the cell is NOT fixed; yet Step 3 concludes commutation via 'centrality of e_{lambda_K'}'. The argument silently assumes the braid acts trivially on the transposed cell too, which is exactly the chiral-pair difficulty the sibling interpretation flags as open. The general claim is not actually established by this sketch."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidDischarged.lean:30: \"galois_central : forall g x f, ...\"",
+        "notes": "The formal backing reduces to a commutes-with-all-f field (degenerate); the narrative is richer but, as flagged, glosses the hard case."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No back-fitting of a target value."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "joint-galois-braid-discharged-proof.md:1: \"### Proof\" (of 'commutes on every bi-filtration cell')",
+        "notes": "Titled as a proof of commutation on EVERY cell, but only the self-conjugate / cell-fixed mechanism is genuinely handled; the transpose (chiral-pair) case is asserted, not proved. Scope of the proof is narrower than the proposition it discharges."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "joint-galois-braid-discharged-proof.md:24: \"= e_{lambda_K'} . g(g_mot(z_K)) (centrality of e_{lambda_K'}).\"",
+        "notes": "In the second composite beta.g_mot(alpha), conjugation by beta around e_{lambda_K'}.g(...) is dropped using 'centrality', but centrality only fixes the idempotent under conjugation if the standard-rep braid action on the transposed cell is the relevant one; for a chiral pair where bar swaps the two cells the equality of the two composites does not follow from centrality alone. The 'therefore' skips the cross-cell braid action."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidDischarged.lean:30: \"galois_central : forall g x f, galois g (f x) = f (galois g x)\"",
+        "notes": "Lean discharges via a universal-commutation field (degenerate field-projection, audit verdict degenerate(field)), strictly weaker than the cell-transpose argument the narrative attempts."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No cites[]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Cell factorisation, central idempotent, grouplike, shape parameter all defined; the gap is logical, not definitional."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "notes": "open-objection — the general-case proof handles the cell-fixed mechanism but asserts rather than proves the chiral-pair (cell-transpose) case that the sibling interpretation itself calls the structurally non-trivial one; the Lean backing is a degenerate projection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }

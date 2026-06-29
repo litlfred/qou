@@ -131,3 +131,8 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 65, stochastic-mechanics)
 - phi-q-aj-machinery-identification.lean:90 (aj_saddle_compatibility : True := trivial; "fully verified" theorems only rfl/decide on String labels; critical)
 - two-filtration-bridge-small-cases.lean:31 (depth_formula axiomatized as class field; rw; size<=4 hyp unused _)
+
+## More instances (batch 64, stochastic-mechanics) — also in docs/audits/2026-06-18-self-assuming-projection-triage.json
+- qou-obstruction-reduction.lean:67 (exports obs_dim_eq etc class fields assuming dim Obs=1; tuple-projection)
+- joint-galois-braid-discharged.lean (galois_central commutes with EVERY endofunction trivializes; chiral transpose case asserted not proved)
+- joint-galois-braid-figure-8-verified.lean (figure_8_joint_action field-projection)

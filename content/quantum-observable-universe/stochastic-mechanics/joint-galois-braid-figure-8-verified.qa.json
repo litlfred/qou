@@ -1046,7 +1046,456 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "joint-galois-braid-figure-8-verified.md:8: \"This proposition verifies the prediction on the figure-8 row ... by direct computation.\"",
+        "notes": "Statement is mostly the bare claim, but the 'Setup' and italicised framing mix in conjecture-prediction motivation; minor, the interpretation has a linked rem:...-interpretation sibling."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Figure-8 bi-filtration cell verification fits the graded-Mikusinski scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Statement is categorical/algebraic (Hecke cell, bar involution); no archimedean leak; zeta_6 is an algebraic root of unity, not an archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "joint-galois-braid-figure-8-verified-proof.md:35: \"tau_arch(Li_2^{q^-1}(zeta_6^-1)) = Li_2(bar zeta_6) = bar{Li_2(zeta_6)}\"",
+        "notes": "The narrative proof (in -proof sibling) invokes archimedean realisation tau_arch and Bloch-Wigner D(z) for one step, but the commutativity conclusion is established at the algebraic level (Steps 1-2,4); the archimedean step is a side-companion, so the wall is respected for the core claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidFigure8.lean:28: \"galois_4_1_central : forall g x f, galois_4_1 g (f x) = f (galois_4_1 g x)\"",
+        "notes": "Lean encodes a far stronger hypothesis (Galois commutes with EVERY endofunction f), then applies it to f=braid; the .md proof gives the specific structural reason (central idempotent + braid not acting on the polylog argument). Lean proves a trivialised universal-commutation, not the specific claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Lean signature matches a (weak) commutation statement; no axiom injection, no silent weakening of the .md headline beyond the over-strong hypothesis flagged elsewhere."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "critical",
+        "evidence": "JointGaloisBraidFigure8.lean:42: \"exact ctx.galois_4_1_central g x (ctx.braid_4_1 b)\"",
+        "notes": "figure_8_joint_action is a field-projection of galois_4_1_central, which already asserts commutation with all f. Catalogued as verdict 'degenerate(field)' in docs/audits/2026-06-18-self-assuming-projection-triage.json; the proof assumes essentially its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Goal is an equality of cell elements, not : True; not a syntactic tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No False / 0=1 / uninhabited-type premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidFigure8.lean:28: \"galois_4_1_central : forall ... f, ...\"",
+        "notes": "The braid action structure is used only as an arbitrary f; the genuine hypotheses of the math claim (centrality of a central idempotent, braid not acting on zeta_6) are not encoded — the single over-strong field does all the work."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No decide/native_decide; proof is a single exact term."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "The narrative claim (commutation on the self-conjugate figure-8 cell) is true; (2,2)'=(2,2), bar fixes the cell, braid fixes central idempotents."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidFigure8.lean:28: \"galois_4_1_central : forall g x f, galois_4_1 g (f x) = f (galois_4_1 g x)\"",
+        "notes": "The Lean formalisation is content-free: a hypothesis 'commutes with all f' makes the conclusion immediate. The narrative argument has content, but the Lean realisation is degenerate (audit verdict degenerate(field))."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No back-fit; commutation argument is structural."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "minor",
+        "evidence": "joint-galois-braid-figure-8-verified.ts:21: \"tags: [... theorem-level]\"",
+        "notes": "Tagged 'theorem-level' and 'verification' while validation is not_checked and the Lean is a degenerate projection; the figure-8 case is genuinely easy (self-conjugate), but the formal 'verified' status is weaker than advertised."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Narrative steps follow; disjoint-action reasoning is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "evidence": "JointGaloisBraidFigure8.lean:28: \"galois_4_1_central : forall g x f, ...\"",
+        "notes": "Lean proves a trivial universal-commutation (degenerate field-projection) rather than the specific central-idempotent / polylog-argument structure of the .md; the Lean is weaker/vacuously-implied vs the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "cites[] empty."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "Cell, bar, zeta_6 all specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c10f516cbc64",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:50:33.922Z",
+        "reviewed_sha": "a6d416fbd527c61ae8b934d2d64a88a57d110181",
+        "severity": "major",
+        "notes": "open-objection — the narrative figure-8 commutation is correct and easy, but the Lean 'verification' is a degenerate self-assuming field-projection (audit verdict degenerate(field)), so the formal claim 'verified directly' overstates what Lean establishes."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:50:33.922Z"
 }
