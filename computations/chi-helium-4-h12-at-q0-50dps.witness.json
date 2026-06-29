@@ -10,6 +10,7 @@
   "n_partitions": 27,
   "n_partitions_total": 77,
   "partial": true,
+  "known_incomplete_note": "27/77 partitions; NOT converged. The complete normalized tr_M(He-4) at this same muon q0 pin is 0.055358426266783106... via the independent markov-peel method (markov/markov-peel-atomic-tr-m.witness.json, 96.8s). This partial tr_M_at_q0 (0.055414100...) is high by 5.567e-5 (0.1006%) = the net of the 50 missing >=3-row partitions. Do NOT use this scalar as converged; use markov-peel. Completing the per-partition decomposition is a multi-week Hoefsmit grind. See docs/audits/2026-06-29-b0vf-markov-peel-crosscheck-he4-scalar.md.",
   "compute_time_sec_so_far": 68501.18,
   "tr_M_at_q0": "0.055414100884379576159189004879270186075636282584857",
   "by_partition": [
