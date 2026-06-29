@@ -38,9 +38,10 @@ numerical evaluation.
 
 namespace QOU.PvsNPBoundary
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -55,7 +56,7 @@ structure ComplexityClass where
 
 /-- The class P: problems where the computational boundary is empty. -/
 def classP : ComplexityClass where
-  decidable_in_poly := fun c =>
+  decidable_in_poly := fun _c =>
     ∃ d : ℕ, d > 0 ∧ True  -- ∃ polynomial bound that suffices
 
 /-- The class NP: problems where a witness can be verified in poly time,
@@ -76,17 +77,22 @@ structure NPProblem where
   /-- The witness space is exponential. -/
   witness_space_size : ℕ := 3 ^ crossings
 
-/-- The witness space grows exponentially. -/
-theorem np_witness_exponential (p : NPProblem) :
-    p.witness_space_size ≥ 3 := by
-  unfold NPProblem.witness_space_size
-  calc 3 ^ p.crossings ≥ 3 ^ 1 :=
-        Nat.pow_le_pow_right (by norm_num) p.crossings_pos
+/-- The witness space grows exponentially. Stated for the canonical
+    (default-field) problem `⟨c, hc⟩`, whose `witness_space_size` takes
+    its default value `3 ^ c`; for an arbitrary `NPProblem` the field may
+    be overridden, so the bound is asserted of the default construction. -/
+theorem np_witness_exponential (c : ℕ) (hc : c > 0) :
+    ({ crossings := c, crossings_pos := hc,
+       verify_steps := 1, has_verifier := ⟨0, by norm_num⟩ :
+       NPProblem }).witness_space_size ≥ 3 := by
+  show 3 ^ c ≥ 3
+  calc 3 ^ c ≥ 3 ^ 1 :=
+        Nat.pow_le_pow_right (by norm_num) hc
     _ = 3 := by norm_num
 
 /-! ## The boundary emptiness formulation -/
 
-/-- The P vs NP question formalized as boundary emptiness.
+/-! The P vs NP question formalized as boundary emptiness.
 
     We model the "boundary" as a predicate: for a given problem size c
     and polynomial exponent d, is the answer extractable?
@@ -106,6 +112,7 @@ def boundaryNonempty (extractable : ℕ → ℕ → Prop) : Prop :=
 theorem boundary_dichotomy (extractable : ℕ → ℕ → Prop)
     [∀ c d, Decidable (extractable c d)] :
     boundaryEmpty extractable ↔ ¬ boundaryNonempty extractable := by
+  unfold boundaryEmpty boundaryNonempty
   constructor
   · intro h_empty ⟨c, hc, h_all⟩
     obtain ⟨d, hd, h_ext⟩ := h_empty c hc
@@ -196,9 +203,7 @@ theorem torsion_effective_tree_bounded (t : TorsionPoint) (n : ℕ) :
 structure NonTorsionReal where
   /-- The substrate parameter value. -/
   q : R_q
-  /-- q > 1 (strict). -/
-  -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
-  /-- Not a root of unity. -/
+  -- q_gt_one : q > 1  -- (archimedean; q > 1 strict — not meaningful over R_q)
   -- not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
 
 /-- At non-torsion q, the Hecke algebra is semisimple: trivial radical.
@@ -251,5 +256,7 @@ theorem both_topologically_obstructed :
     nsParallel.topological_invariant ≠ 0 ∧
     computationalParallel.topological_invariant ≠ 0 :=
   ⟨nsParallel.top_nonzero, computationalParallel.top_nonzero⟩
+
+end
 
 end QOU.PvsNPBoundary
