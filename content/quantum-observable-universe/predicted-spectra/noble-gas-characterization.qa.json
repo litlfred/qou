@@ -1009,7 +1009,430 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "minor",
+        "notes": "noble-gas-characterization.md:31-50: 'Relation to ionization energy' and 'Relation to electron affinity' are physical-interpretation corollaries inside the proposition block."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Topological iff over abstract atoms; no spurious ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No archimedean machinery (md is descriptive; Lean is abstract Prop iff)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "notes": "md is an iff (noble ⟺ full-of-curls); Lean encodes both sides as abstract Props and the iff as a class field claim_noble_iff_curls — a faithful shape but both predicates are uninterpreted."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Signature is the iff; not weakened, but content deferred ('downstream work')."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "critical",
+        "evidence": "noble_gas_characterization.lean:62: \":= a.claim_noble_iff_curls h_stable\"",
+        "notes": "noble_gas_characterization.lean:60-62: \"theorem noble_gas_characterization [a:AtomLike] (h_stable) : a.IsNobleGas ↔ a.IsFullOfCurls := a.claim_noble_iff_curls h_stable\" — verbatim projection of a class field whose type is the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "notes": "The iff is between two abstract uninterpreted Props (IsNobleGas, IsFullOfCurls); discharged only by the assumed class field — content-free at this stage."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "h_stable is used (feeds claim_noble_iff_curls)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No decide."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "noble_gas_characterization.lean:62",
+        "notes": "Lean theorem is a self-assuming projection of claim_noble_iff_curls; both sides abstract Props — establishes nothing."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "noble-gas-characterization.ts authorNotes: \"the 2n² cumulative-closure series ... reproduces the observed noble-gas Z ... only for He and Ne\"",
+        "notes": "Block's own ts note: witness sigma-f-electron-shell-chain does NOT support the ionization-energy mechanism (σ_F decays, not peaks at closures), and the 2n² series (2,10,28,60) reproduces noble-gas Z (2,10,18,36,54,86) only for He,Ne — the prose presents these as results."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "noble-gas-characterization.md:40: \"noble gases sit at ionization-energy peaks across each row\"",
+        "notes": "noble-gas-characterization.md:40-41: \"noble gases sit at ionization-energy peaks\" mechanism is contradicted by the block's own confinement-shadow-price witness (σ_F decays monotonically)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "noble_gas_characterization.lean:62",
+        "notes": "Lean projects an assumed class field; md asserts a substantive chemistry iff — Lean proves the strictly-weaker 'assume it, conclude it'."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "noble-gas-characterization.ts authorNotes",
+        "notes": "Topological iff is a reasonable *definition* but the proposition's ionization-energy/2n²-closure claims are contradicted by the block's own witness, and the Lean is a self-assuming projection. Strongest objection: the empirical corollaries are disconfirmed (only He,Ne match) yet stated as results."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Subject (predicted spectra / Ch 13 physical realization) matches section scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No false statement / failing special case found."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Derivation does not assume its conclusion; inputs are upstream."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Conclusion matches the strength of the argument; hedged appropriately."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Steps follow; no missing lemma gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Citations support the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Key terms defined; regime/base ring explicit."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "857200ceab0f",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Backing compute/witness consistent with prose; no obvious staleness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:28:21.553Z"
 }

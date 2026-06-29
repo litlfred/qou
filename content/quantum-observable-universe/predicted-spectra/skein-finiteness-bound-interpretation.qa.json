@@ -816,7 +816,246 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Embeddability (m-1)(n-1)≤8 for genus 4 gives exactly {T_{2,3},T_{2,5},T_{2,7},T_{2,9},T_{3,4},T_{3,5}} — checks: T_{2,9}=8,T_{3,4}=6,T_{3,5}=8 ✓, T_{2,11}=10 excluded ✓."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "notes": "skein-finiteness-bound-interpretation.md:49: \"the particle content is **determined by the genus**\" — the genus bound yields the torus-knot *list*, but mapping these to 'quarks, leptons, force carriers' is an identification, not a derivation of particle content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "L(q)={(p,n):P>0} and the three bounding curves defined; magic numbers {2,8,20,...} quoted as the matched target."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Clean finiteness-from-genus interpretation; strongest objection: 'particle content determined by genus' overstates a knot-to-particle identification. verdict=accept."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Subject (predicted spectra / Ch 13 physical realization) matches section scope."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Content-bearing; not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Derivation does not assume its conclusion; inputs are upstream."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Steps follow; no missing lemma gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Lean matches the md claim (or n/a)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Citations support the invoked results."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No fit-noise match / cherry-picked precision / stale q0."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No units error / broken conservation / measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b0483d6f07e1",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Backing compute/witness consistent with prose; no obvious staleness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:28:21.553Z"
 }

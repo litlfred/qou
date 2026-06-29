@@ -1009,7 +1009,421 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Statement is the bare faithfulness implication; 'Corollaries' and 'Relation to Mostow' are clearly separated."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "H²(S,B) cohomology + CS period over ℝ; archimedean realisation appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No archimedean-vs-algebraic mismatch; the content is analytic by nature."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "HyperbolicVolumeTranscendence.lean:389: \"structure CSEvaluationFaithful where ... faithful : ...\"",
+        "notes": "md is a 'Proposition' (κ_n≠0⟹Φ_n≠0) but the Lean ref CSEvaluationFaithful is a *structure* with `faithful` as an axiomatised field, not a proved theorem — the implication is assumed, not derived."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No statement-weakening; honestly an axiomatised structure carrier."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "HyperbolicVolumeTranscendence.lean:404-406",
+        "notes": "Downstream theorem infinitely_many_nonzero := fun n => csf.faithful n (...) projects the `faithful` field; that field IS the faithfulness claim."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "faithful field is a real ∀n implication, not True."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No decide."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "notes": "cs-evaluation-faithfulness.md:7: \"The Chern--Simons evaluation map is *faithful*\" stated as Proposition, but Lean only axiomatises it; corollary 3 ('Path to algebraic independence') is itself conditional."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Structure fields carry genuine content (obstruction/level-contribution); not empty/True."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "notes": "Lean structure-field axiomatises the faithfulness the md asserts as a Proposition; a verified theorem is not present."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Reasonable refinement of Mostow rigidity; strongest objection: a 'Proposition' whose Lean only axiomatises the key implication as a structure field. verdict=demote-toward-conjecture-or-prove."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Subject (predicted spectra / Ch 13 physical realization) matches section scope."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No contradictory/uninhabited premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Hypotheses are used."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No false statement / failing special case found."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Derivation does not assume its conclusion; inputs are upstream."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Steps follow; no missing lemma gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Citations support the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Key terms defined; regime/base ring explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No fit-noise match / cherry-picked precision / stale q0."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No units error / broken conservation / measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6411a10619a9",
+          "ts": "778b4d9916b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Backing compute/witness consistent with prose; no obvious staleness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:28:21.553Z"
 }

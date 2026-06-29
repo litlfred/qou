@@ -762,7 +762,246 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Root-of s²+s-1 ⇒ inverse satisfies u²-u-1; squaring algebra checks out (golden φ²/1/φ² nodes)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "notes": "golden-skew-dual-node-proof.md:18: \"asymmetry — roughly 0.728:1.508 ≈ 1:2.07\"; 2.07 ratio has no closed form, q0-specific, borderline numerology."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "'Falsifiability' framed as conjecture-prediction, not proved; appropriately hedged."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Sound golden-ratio algebra; strongest objection: the 2.07 asymmetry and 'nuclear physics more robust against compression' (line 54-56) are suggestive narrative, not derived. verdict=accept-with-minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Subject (predicted spectra / Ch 13 physical realization) matches section scope."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Content-bearing; not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Derivation does not assume its conclusion; inputs are upstream."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No undisclosed free parameter / 4th calibration; coefficients trace to chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Steps follow; no missing lemma gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Lean matches the md claim (or n/a)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Citations support the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Key terms defined; regime/base ring explicit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No units error / broken conservation / measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "74768e101dbb",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Backing compute/witness consistent with prose; no obvious staleness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:28:21.553Z"
 }

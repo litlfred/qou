@@ -853,7 +853,262 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "em-coupling-chern-simons.md:46-51: κ admitted as `sorry`/never closed, CODATA-fit κ≈1.8878 vs Witten 1.722 differs ~10% — explicitly flagged 'This identification is not proved'. Honestly scoped as conjecture."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "evidence": "em-coupling-chern-simons.md:48: \"To match CODATA exactly requires $\\kappa \\approx 1.8878$\"",
+        "notes": "em-coupling-chern-simons.md:43: κ≈1.722 (and the CODATA-matching κ≈1.8878) is effectively a fitted parameter — the 399 ppb 1/α 'agreement' rides on an unproved, fit-adjustable κ."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "severity": "major",
+        "notes": "em-coupling-chern-simons.md:43-44: \"1/α = 137.035944 vs CODATA 137.035999 — residual 399 ppb\" with κ tuned; the match is not predictive given the open κ."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Not asserted as derived — the block states κ is unclosed and the CODATA match is conjectural, so it does not back-fit-and-claim."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "CS(T_{m,n})=π²(m²-1)(n²-1)/(12mn) is the standard torus-knot Chern-Simons invariant; linking ℓ=|m_1n_2-m_2n_1|=17 for (2,9),(3,5) checks (|2·5-3·9|=17)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Witten-1988 attribution for the κ value context appropriate; references open-problems block."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Lean ref is a ChernSimonsCorrectionConjecture with admitted sorry; md matches (conjecture, κ unproved)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Honest α_EM CS-correction *conjecture* with disclosed sorry and ~10% κ gap; strongest objection: κ is fit-adjustable so the 399 ppb match is non-predictive (disclosed). verdict=accept-as-conjecture."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Subject (predicted spectra / Ch 13 physical realization) matches section scope."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Content-bearing; not a tautology or self-assuming projection."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Steps follow; no missing lemma gap."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Key terms defined; regime/base ring explicit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "No units error / broken conservation / measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0756fd218687",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:28:21.553Z",
+        "reviewed_sha": "a53987ba7c911a38a95bdb3a66181bd588c0ab29",
+        "notes": "Backing compute/witness consistent with prose; no obvious staleness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:28:21.553Z"
 }

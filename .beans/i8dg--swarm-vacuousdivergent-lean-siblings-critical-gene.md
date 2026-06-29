@@ -96,3 +96,7 @@ updated_at: 2026-06-29T20:07:58Z
 - shell-schur-weyl-self-duality.lean:42,63 (conjugatePartition:=id -> shell_self_duality x=x rfl)
 - hadron-operations-closure.lean:47 (exists h=op_n h tautology; 4 narrative closure claims unformalised; q-skein form diverges sec7a)
 - hyperelliptic-z5-classification.lean:40 (proves only 6<=n Diophantine; geometric g=2,X~X_5 unformalised; lean.ref decl absent)
+
+## More instances (batch 55, predicted-spectra)
+- noble-gas-characterization.lean:62 (:= a.claim_noble_iff_curls projects conclusion; critical)
+- gauge-coupling-uniqueness.lean:24-25 (:= d.exists_lambda; GaugeCouplingUniquenessData defined nowhere; critical)
