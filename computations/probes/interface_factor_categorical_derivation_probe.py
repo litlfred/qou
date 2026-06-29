@@ -164,19 +164,28 @@ def main():
     print("  positive=z (Markov axiom); negative=z-h (skein); averaged=z-h/2 "
           "(bar-invariant pn). 0 free parameters.")
 
-    witness = {
-        "computation": "interface-factor-categorical-derivation",
-        "description": ("Task 1: the per-interface Markov factors z, z-h, z-h/2 are "
-                        "forced by trace-linearity from the single Markov move "
-                        "tr(x sigma)=z tr(x) plus the Hecke skein sigma^-1=sigma-h; "
-                        "not three independent heuristics."),
-        "scriptFile": "computations/probes/interface_factor_categorical_derivation_probe.py",
+    sys.path.insert(0, str(COMP))
+    sys.path.insert(0, str(COMP / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    description = ("Task 1: the per-interface Markov factors z, z-h, z-h/2 are "
+                   "forced by trace-linearity from the single Markov move "
+                   "tr(x sigma)=z tr(x) plus the Hecke skein sigma^-1=sigma-h; "
+                   "not three independent heuristics.")
+    data_payload = {
         "data": {"symbolic": sk, "markov_move": mv, "verdict": verdict},
     }
-    out = COMP / "interface-factor-categorical-derivation.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
+    wb = WitnessBuilder.wrap_legacy(
+        "interface-factor-categorical-derivation", data_payload,
+        script_path=__file__, engine="python", output_dir=COMP)
+    wb.set_description(description)
+    wb.add_assertion("verdict == DERIVED",
+                     computed=int(verdict == "DERIVED"), expected=1)
+    # Preserve the legacy full-path scriptFile verbatim (build() would
+    # otherwise replace it with the bare basename).
+    out = wb.save(extra={
+        "scriptFile":
+        "computations/probes/interface_factor_categorical_derivation_probe.py"})
+    print(f"\nwitness -> {out}")
     return 0
 
 
