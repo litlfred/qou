@@ -294,3 +294,29 @@ named but never computed):
   rapidity is the rep-theoretic `tr B`, whose geometric face is the `W_λ` index, not an elliptic period.
 Probes `lever1_color_eq_lambda_sw_rapidity.py` + `lever1_color_eq_intrinsic_tau_rapidity.py`; audit
 [`docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md).
+
+---
+
+## Binding-side test routed in (2026-06-29, #3128)
+
+The Δ_λ binding residual's **isovector** coefficient (`b ≈ −1.747` constant,
+`κ = b/4`, #3114) is the **chiral residue** of the categorical mass
+(`QOU.WedderburnMass.chirality_residue_mass_term`'s `mass_chiral`), homed on the
+Bring surface via the Reeb involution `ξ↦−ξ` (`archimedean-chirality`) and the
+A₅ Galois `√5↦−√5` twist. **The framing-exponent route for `κ` is refuted**
+(audit `2026-06-29-kappa-framing-route-refuted.md`): the canonical `tr_M`
+captures the writhe exactly (`σ⁻¹ = σ−h`), so there is no normalization DOF.
+
+**Routing.** `κ` is the chiral weight of the `W_λ` Plancherel measure
+`μ(λ)=d_q²/D²`, so its value is the content of **the same single open keystone
+conjecture `BWVacuumRowIsHecke`** (#3106). Lean (`BindingIsovectorChiralResidue.lean`,
+sorry-free): the §3b-cond class `WLambdaChiralBinding` carries the identification;
+`binding_isovector_mirror_from_chiral` derives `b = 4κ` from it. Paper:
+`prop:isovector-chiral-residue` (conditional).
+
+**Gift to the keystone program — a binding-side falsification test.** When
+`BWVacuumRowIsHecke` is derived and its chiral weight supplied to the binding
+`mass_chiral` residue, the isovector residual must vanish: **`residual b → 0`**
+(the achiral part already works for light nuclei). A candidate chiral derivation
+that leaves `b ≈ −1.7` is wrong. **No fit; CAL-1/2/3 only; the test is `b→0`,
+never `b=−√3` (that reproduces the error). Not wired.**
