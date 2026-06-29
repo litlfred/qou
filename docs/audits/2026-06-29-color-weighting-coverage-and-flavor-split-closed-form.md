@@ -60,6 +60,46 @@ does the closed form `leading/(1−ℏ_q³)` close the Δm_pn gap?
    the correction is geometric is exactly the clean-looking-formula move the
    three-calibration discipline flags. **NOT wired to production δ.**
 
+## Part C — `(1 + ℏ_q³)` is an UNPROVEN production factor (flag)
+
+The L1 fix (#3084) made this visible: peel and chi-cache now agree at ~1e-50
+on a color-weighting δ that *includes* the `(1 + ℏ_q³)` subleading factor. So
+the factor is now baked, to 50 dps, into every production color-weighting
+consumer (`closed_form_tau_M`, `markov_peel`, `chi_cd_mpfr`, the binding
+probes — all via `flavor_split_subleading`). **Yet it has no derivation.**
+
+Corpus-grep status (per AGENTS.md "Before declaring open/unproved"):
+
+| where a derivation would live | found? |
+|---|---|
+| compute docstring | only a **label** — `_li_2_q_util.py:165`: *"(1+ℏ_q³) 3-loop substrate-Planck correction"* |
+| content block (`flavor-split-substrate.md`) | **no** — documents only the *leading* `(q−1)²(1−q⁻⁴)/3` |
+| Lean | **no** proof of the subleading factor |
+| witness | **no** witness derives `(1+ℏ_q³)`; they only *consume* `flavor_split_subleading` |
+
+**Assessment.** The leading term `(q−1)²(1−q⁻⁴)/3` is derived (physical
+accounting in the content block). The `(1 + ℏ_q³)` multiplier is **posited**,
+not derived — its sole justification is the docstring phrase "3-loop
+substrate-Planck." It improves the Δm_pn match ~4× (0.128% → 0.0305%), which
+is suggestive but is also exactly the signature of an underived `h^k`
+shape-fix that the production-vs-exploratory discipline exists to catch
+(cf. AGENTS.md §production-vs-exploratory: "where does this h^k come from").
+
+**This is a (a)-scope flag, not a refutation:** the factor may well be
+correct; the point is it is *unproven and unlabelled* while living in
+production at 50-dps precision. Required disposition (one of):
+
+1. **Derive it** — a content block / Lean lemma showing the substrate-Planck
+   correction is `(1 + ℏ_q³)` (and whether the series continues — see Part B's
+   geometric `1/(1−ℏ_q³)` hypothesis, which is the natural next question
+   *only if* the factor is shown to be geometric).
+2. **Label it** — mark `flavor_split_subleading` as `posited` / `fitted` (not
+   `canonical`) per the production-vs-exploratory tiering, so downstream
+   consumers and the canonical-watcher see it is an unproven correction.
+
+Until one of these is done, `(1 + ℏ_q³)` should not be cited as a derived
+result.
+
 ## Recommendations (follow-ups, not done here)
 
 - **Doc-currency gap (owner-review):** the content block
