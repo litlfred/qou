@@ -816,7 +816,260 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Ch.10 §3; the parameter-free derivation chain interpreting the C6 barrier comparison is on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Δ_{T(2,6)}=q^2+1+q^{-2}, gcd component counts, and the qualitative chain are individually correct; the issue is the 'no free parameters' framing (see overclaim/hidden-dof)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Substantive derivation-chain claim, not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison-interpretation.md:38: \"The threading link resolves this exactly: ...halving the predicted barrier. This is not a correction or a fit\"",
+        "notes": "The factor-of-1/2 'resolution' of a prior 400-800 kJ/mol overshoot is presented as derived, but the prior estimate itself depended on the same hand-chosen molecular quantum; the 1/2 is real topologically yet the claim that it lands the answer 'exactly' on experiment relies on the tuned quantum."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison-interpretation.md:1: \"makes a quantitative prediction — with **no free parameters**\"",
+        "notes": "'No free parameters' is overclaimed: the molecular quantum |q+q^{-1}|_mol enters the final number and, per the block's own chain (α^2 m_e/m_p × 8 MeV ≈ 0.23 eV), does not equal the 1-2 eV used in the sibling to hit 200-400 kJ/mol — a ~5-9× undisclosed discrepancy."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison-interpretation.md:30: \"|q + q^{-1}|_{\\mathrm{mol}} = (\\alpha^2 m_e / m_p) \\cdot |q + q^{-1}|_{\\mathrm{nuc}}\"",
+        "notes": "This stated scale-separation gives ≈0.23 eV (verified: 5.3e-5 × 5.4e-4 × 8e6 eV), but the prediction uses 1-2 eV; the gap is an undisclosed multiplicative factor (~5-9×) functioning as a hidden DOF behind the 'parameter-free' label."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison-interpretation.md:35: \"The factor of $1/2$. ... resolves this exactly\"",
+        "notes": "Step from 'Δ_{T(2,6)}/6≈1/2' to 'resolves the 2× overshoot exactly, matching experiment' skips that the absolute scale still depends on the molecular quantum; the 1/2 fixes the ratio, not the absolute landing on 200-400 kJ/mol."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Remark; no sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "References internal blocks (def:substrate-parameter, prop:topological-mass-formula) only; no external citation to misattribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "chain-ring-comparison-interpretation.md:23: \"|q + q^{-1}|_{\\mathrm{nuc}} \\sim 8\\mathrm{MeV}\"",
+        "notes": "The nuclear quantum ~8 MeV is asserted as 'determined by the Skein binding Lagrangian volume term' but the 8 MeV value's provenance is not pinned in-chain (it coincides with the empirical ~8 MeV/nucleon binding), leaving the chain's anchor ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison-interpretation.md:38: \"resolves this exactly: $\\Delta_{T(2,6)}(q) / 6 \\approx 1/2$, halving the predicted barrier\"",
+        "notes": "The experimental agreement is fragile: it requires the molecular quantum ~1-2 eV which is ~5-9× off the block's own scale-separation value (~0.23 eV); the '2× overshoot then exactly halved' narrative is sensitive to which quantum is used, i.e. fit-window not parameter-free."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No unit/conservation violation; the implausibility is in the 'parameter-free' epistemics, not the physics units."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "chain-ring-comparison-interpretation.md:36: \"predicted $\\sim 400\\text{--}800 \\mathrm{kJ/mol}$ — a factor of 2 overshoot\"",
+        "notes": "No witness backs the derivation chain; the cited 400-800 kJ/mol 'earlier estimate' and the 0.23-vs-1-2 eV molecular quantum cannot be reproduced from a committed compute, only re-derived by hand (and the hand value disagrees with the chain)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4911403bd27a",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "notes": "Critical objection: the headline 'no free parameters' claim is contradicted by the block's own scale-separation chain, which yields ≈0.23 eV vs the 1-2 eV used to match experiment — a ~5-9× undisclosed factor."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:08:35.914Z"
 }

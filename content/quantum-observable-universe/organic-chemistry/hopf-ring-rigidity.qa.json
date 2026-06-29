@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Ch.10 §2 (molecular chains/rings); crossing-energy + rigidity of the Hopf ring is squarely on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Even-N Alexander Δ_{T(2,2m)}=(q^m-q^{-m})/(q-q^{-1}) and 2(N-1) crossings are standard torus-link facts; verified m=3→q^2+1+q^{-2}, q=1→3."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Remark carries genuine topological content (efficiency table, non-local rigidity); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Interpretive remark; no derivation that assumes its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "hopf-ring-rigidity.md:23: \"the threading is **topologically more efficient** than pairwise bonding\"",
+        "notes": "Identifies Alexander weight with binding/crossing 'energy' and 'efficiency' without justifying that the Alexander polynomial is the physical energy functional; reads as heuristic identification, not derived."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No numerical constant introduced here; weights are fixed topological invariants."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Steps (Alexander weight ~N/2, fewer crossings, global rigidity) follow from the threading-link definition."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Remark block; no sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No cites[] / -- Ref: in this remark."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Terms (threading link, Alexander weight) defined in linked def:threading-link; crossing energy is 'proportional to' Δ, qualifier present."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No numerical experimental match asserted in this block; 'roughly N/2' is the q=1 limit of an exact formula."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Non-local ring rigidity claim is a topological statement, not a falsifiable physical-unit claim here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Alexander values are reproducible standard knot theory; no witness invoked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "985bd24febf6",
+          "ts": "99ef90b24656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Sound interpretive remark. Strongest objection: the identification of Alexander weight with crossing 'energy'/'efficiency' is asserted heuristically, not derived — minor."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:08:35.914Z"
 }

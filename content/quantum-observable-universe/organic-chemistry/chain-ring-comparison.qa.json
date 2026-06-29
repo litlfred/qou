@@ -1046,7 +1046,452 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Statement is the bare ΔE formula + numerical evaluation; interpretation lives in the sibling interpretation remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Ch.10 §3 carbon-chains/benzene; the C6 ring-closure barrier prediction is the section's core subject."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Archimedean (eV, kJ/mol) chapter; energy statement appropriately archimedean. Sibling Lean stays in ℕ combinatorics (below the wall), no gratuitous ℝ."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Lean proof (benzene_weights) is pure ℕ arithmetic via omega; no archimedean machinery proving an algebraic goal."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison.lean:33: \"benzene_weights : (6 - 1 = 5) ∧ (6 / 2 = 3) ∧ (5 - 3 = 2)\"",
+        "notes": ".md proposition asserts a quantitative energy prediction ΔE≈193-386 kJ/mol matching experiment; the lean.ref decl proves only the trivial integer weights 5,3,diff=2 — a necessary sub-fact, not the stated proposition."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No axiom injection / statement-weakening relative to prior commit visible; Lean states honest arithmetic (not vacuous)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "benzene_weights is omega over concrete naturals; not a projection of a self-asserting structure field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Goal is a concrete conjunction of arithmetic equalities (5,3,2), not `True` or x=x; non-vacuous though weaker than the .md claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No hypotheses; no False/contradiction premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "benzene_weights has no hypotheses; vacuously satisfied."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "omega/decide here close genuinely decidable concrete arithmetic goals (5-3=2, weight monotonicity); justified, not masking a structural gap."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Arithmetic correct: weight diff 5-(q^2+1+q^{-2})≈5-3=2; 2×(1-2eV)=2-4eV=193-386 kJ/mol with 1eV=96.485 kJ/mol all check out."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": ".md makes a non-trivial numerical prediction (not vacuous)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison.md:12: \"$|q + q^{-1}|_{\\mathrm{mol}} \\sim 1\\text{--}2$ eV\"",
+        "notes": "The molecular energy quantum (1-2 eV) is taken by hand to land ΔE in the 200-400 kJ/mol experimental window; with weight diff fixed at 2, this single input is effectively tuned to the target — the 'prediction' is not independent of it."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "This block itself uses ~ throughout and gives a range; the 'no free parameters' overclaim lives in the sibling interpretation block, flagged there."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison.md:12: \"|q + q^{-1}|_{\\mathrm{mol}} \\sim 1\\text{--}2 eV\"",
+        "notes": "The sibling derivation chain implies |q+q^{-1}|_mol = (α^2 m_e/m_p)·8MeV ≈ 0.23 eV; the value 1-2 eV used here is ~4-9× larger, so it functions as an undisclosed free input rather than a derived quantum."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Given the inputs, the arithmetic to 193-386 kJ/mol follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison.lean:33: \"benzene_weights : (6-1=5) ∧ (6/2=3) ∧ (5-3=2)\"",
+        "notes": "Lean proves only integer Alexander weights; the .md's energy/experimental-match claim is far stronger and unformalized — Lean is vacuously weaker than the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Lean cites [manuscript] Ch.10 only; no external citation misattribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "chain-ring-comparison.md:9: \"|q + q^{-1}|_{\\mathrm{mol}}\"",
+        "notes": "The 'molecular' subscript on the q-quantum is not given a precise definition in this block; its value/derivation is deferred to the interpretation remark and there is undisclosed (see hidden-dof finding)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "chain-ring-comparison.md:23: \"193\\text{--}386 \\mathrm{kJ/mol}\"",
+        "notes": "The match to 200-400 kJ/mol is driven by the chosen 1-2 eV quantum (itself ~5-9× off the chain's own scale-separation estimate of 0.23 eV); the agreement is fit-window, not a parameter-free derivation."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Units consistent (eV→kJ/mol conversion correct); magnitude is plausible for a ring-closure activation barrier."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Arithmetic reproducible by hand; no compute witness is invoked by the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5c6a79dc1194",
+          "ts": "2f4acb505909",
+          "lean": "c4ca91293d0e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "notes": "Major: experimental match hinges on a 1-2 eV molecular quantum that is ~5-9× larger than the block's own scale-separation derivation (≈0.23 eV), and the Lean ref proves only 5-3=2, not the energy prediction."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:08:35.914Z"
 }

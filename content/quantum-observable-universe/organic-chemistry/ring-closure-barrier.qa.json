@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:24.846Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "decide on alexander_weight_diff_six closes a concrete ℕ equality; legitimate use."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -51,6 +67,24 @@
         "reviewed_at": "2026-06-22T02:56:19.707Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "ring-closure-barrier.md:1: \"is a **topological phase transition**\"",
+        "notes": "Proposition body mixes the bare crossing-energy statement with interpretive framing ('topological phase transition', 'barrier: topological reorganisation'); much of this could move to the linked super-stability remark, though some is needed to state the transition-state inequality."
       }
     ],
     "fit-section-chapter": [
@@ -71,6 +105,22 @@
         "reviewed_at": "2026-06-22T02:56:20.048Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Ch.10 §2; ring-closure energy barrier is the section's headline proposition."
       }
     ],
     "wall-side-statement": [
@@ -91,6 +141,22 @@
         "reviewed_at": "2026-06-22T02:56:20.396Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Archimedean chapter; energy statement archimedean. Lean stays in ℕ (alexanderWeightDifference), no gratuitous ℝ."
       }
     ],
     "wall-side-proof": [
@@ -111,6 +177,22 @@
         "reviewed_at": "2026-06-22T02:56:20.847Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Lean theorems use omega/decide over ℕ; no archimedean machinery on an algebraic goal."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -131,6 +213,24 @@
         "reviewed_at": "2026-06-22T02:56:21.237Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "ring-closure-barrier.lean:25: \"def alexanderWeightDifference (N : ℕ) := (N - 1) - N / 2\"",
+        "notes": ".md asserts E_cross(C_N)∝N-1, E_cross(R_N)∝Δ_{T(2,N)}, ring<chain, and a transition-state MAX inequality E(transition)>max(...); Lean captures only weight diff + ring<chain (N/2<N-1). The transition-state maximum inequality is asserted, never formalized."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -223,6 +323,22 @@
         "reviewed_at": "2026-06-22T02:56:22.798Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Lean states honest ℕ inequalities; no axiom injection or weakening to a tautology."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -243,6 +359,22 @@
         "reviewed_at": "2026-06-22T02:56:23.158Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "ring_opening_exceeds_closure / weight_diff_monotone are omega proofs, not projections of a self-asserting field."
       }
     ],
     "proof-no-trivial-true": [
@@ -263,6 +395,22 @@
         "reviewed_at": "2026-06-22T02:56:23.524Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Goals are real inequalities (N/2<N-1, monotonicity), not True/x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -283,6 +431,22 @@
         "reviewed_at": "2026-06-22T02:56:23.977Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Even/≥4 hypotheses are satisfiable; no False premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -303,6 +467,22 @@
         "reviewed_at": "2026-06-22T02:56:24.425Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Even and ≥4 hypotheses are used (obtain ⟨k,hk⟩ from Even, omega needs the bound); all hypotheses load-bearing."
       }
     ],
     "da-false-claim": [
@@ -323,6 +503,22 @@
         "notes": "The claim in 'Ring-closure energy barrier from braid rearrangement' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Δ_{T(2,N)}=(q^{N/2}-q^{-N/2})/(q-q^{-1}) for even N, N=6→q^2+1+q^{-2}≈3, ring<chain all correct."
       }
     ],
     "da-vacuous": [
@@ -342,6 +538,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Ring-closure energy barrier from braid rearrangement' presents substantial mathematical content: Closing a molecular Hopf chain into a ring is a **topological phase transition**...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Non-trivial proposition with quantitative content."
       }
     ],
     "da-circular": [
@@ -362,6 +574,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Ring-closure energy barrier from braid rearrangement'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No back-fitting; weights are topological invariants."
       }
     ],
     "da-overclaim": [
@@ -381,6 +609,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Ring-closure energy barrier from braid rearrangement' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "ring-closure-barrier.md:67: \"E_cross(transition) > max(E_cross(C_N), E_cross(R_N))\"",
+        "notes": "The transition-state strict-maximum inequality is asserted as part of the proposition but neither derived nor formalized; it is a physically-motivated postulate presented with proposition force."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +647,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Ring-closure energy barrier from braid rearrangement'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "E_activation appears symbolically; no hidden numerical constant in this block."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +683,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "ring<chain and ΔE_open formula follow from the weights; transition-state claim is flagged under overclaim, not a logic gap per se."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +718,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "evidence": "ring-closure-barrier.lean:48: \"ring_opening_exceeds_closure ... : N / 2 < N - 1\"",
+        "notes": "Lean formalizes the ring<chain weight inequality (a genuine part of the .md) but NOT the transition-state maximum inequality the proposition also states; Lean is a proper subset of the narrative claim."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +756,22 @@
         "notes": "No citations are present in 'Ring-closure energy barrier from braid rearrangement', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Only [manuscript] self-refs in Lean; no external misattribution."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +792,22 @@
         "notes": "Key terms and symbols in 'Ring-closure energy barrier from braid rearrangement' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "C_N, R_N, T(2,N) reference linked defs; even-N restriction stated explicitly."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +828,22 @@
         "notes": "The algebraic and logical relations in 'Ring-closure energy barrier from braid rearrangement' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No experimental number in this block (the numerical match lives in chain-ring-comparison)."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +864,22 @@
         "notes": "The physical concepts described in 'Ring-closure energy barrier from braid rearrangement' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Transition-state-at-energy-maximum is the standard kinetics picture; no unit/conservation issue."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +900,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 — content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Lean compiles to ℕ facts; no witness invoked."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +937,23 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "major",
+        "notes": "Major: the proposition's distinctive content (transition-state strict maximum) is asserted but unproved/unformalized; the Lean covers only the ring<chain weight inequality."
       }
     ],
     "voice-status-leak": [
@@ -1598,5 +1991,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:08:35.914Z"
 }

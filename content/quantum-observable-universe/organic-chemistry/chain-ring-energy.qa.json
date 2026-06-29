@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Ch.10 §3; C6 chain vs benzene energy accounting via Alexander weights is on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Table weights correct: chain 5×1=5, pairwise ring 6, threaded ring q^2+1+q^{-2}=3 at q=1; consistent with torus-link Alexander."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Substantive energy-accounting + discontinuous-transition argument."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No back-fitting in this block; it sets up the qualitative barrier picture."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "chain-ring-energy.md:62: \"Opening the ring is harder than closing it.\"",
+        "notes": "States closure barrier 'primarily geometric' and opening 'primarily topological' as established; these are plausible heuristic assignments, not derived — minor over-assertion in an interpretive remark."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No numerical constant; weights are topological."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Dissolve/reconfigure/thread sequence and ΔE_open formula follow from the weight picture."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Remark; no sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Structures and weights reference linked defs; 'activation barrier' is qualitatively defined as the geometric reconfiguration cost."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No numerical experimental match in this block; q=1 limits of exact formulas."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Discontinuous topological transition + activation barrier is a standard kinetic picture; no unit/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No witness; Alexander values reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e437810bb652",
+          "ts": "1280c23f54ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Sound qualitative energy-accounting remark; minor over-assertion of the geometric/topological split."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:08:35.914Z"
 }

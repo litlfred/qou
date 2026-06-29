@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:19.662Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Ch.10 §2; the molecular Hopf ring is defined here, on-topic."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:20.017Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Definition is topological (composite of atoms ⊕ threading link, braid word); Lean over ℕ, no archimedean leak."
       }
     ],
     "da-false-claim": [
@@ -71,6 +103,22 @@
         "notes": "The claim in 'Molecular Hopf ring (closed)' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Braid word (σ_1...σ_{N-1})^2 with 2(N-1) same-sign crossings is correct for T(2,N)."
       }
     ],
     "da-vacuous": [
@@ -90,6 +138,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Molecular Hopf ring (closed)' presents substantial mathematical content: A **molecular Hopf ring** is not a chain with its ends joined — it is a fundamen...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Genuine structural definition."
       }
     ],
     "da-circular": [
@@ -110,6 +174,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Molecular Hopf ring (closed)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Definitional."
       }
     ],
     "da-overclaim": [
@@ -129,6 +209,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Molecular Hopf ring (closed)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Plain definition; no claim beyond naming the composite object."
       }
     ],
     "da-hidden-dof": [
@@ -149,6 +245,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Molecular Hopf ring (closed)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -169,6 +281,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No inference chain; definition only."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -188,6 +316,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "MolecularHopfRing Lean (structure wrapping ThreadingLink, length, alexanderWeight, weight_lt_chain) matches the .md definition; weight_lt_chain is an extra true lemma, not a divergence from the def."
       }
     ],
     "da-citation-misuse": [
@@ -208,6 +352,22 @@
         "notes": "No citations are present in 'Molecular Hopf ring (closed)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Only [manuscript] self-ref."
       }
     ],
     "da-definitional-ambiguity": [
@@ -228,6 +388,24 @@
         "notes": "Key terms and symbols in 'Molecular Hopf ring (closed)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "molecular-hopf-ring.md:17: \"[\\mathcal{A}_1, \\ldots, \\mathcal{A}_N] \\oplus \\mathcal{T}_N\"",
+        "notes": "The composition operator ⊕ joining the atom list with the threading link is not defined in this block (only narrated); a reader cannot tell precisely what algebraic object the ⊕ is — minor."
       }
     ],
     "da-empirical-fragility": [
@@ -248,6 +426,22 @@
         "notes": "The algebraic and logical relations in 'Molecular Hopf ring (closed)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No numerical claim."
       }
     ],
     "da-physical-implausibility": [
@@ -268,6 +462,22 @@
         "notes": "The physical concepts described in 'Molecular Hopf ring (closed)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Topological definition; no physical-unit claim."
       }
     ],
     "da-reproducibility": [
@@ -288,6 +498,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1 — content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No witness; nothing to reproduce."
       }
     ],
     "da-referee-verdict": [
@@ -309,6 +535,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "d49078aa8bbb",
+          "ts": "1836f2f48e2e",
+          "lean": "55d078321fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Sound definition; only ⊕ left informal."
       }
     ],
     "voice-status-leak": [
@@ -1173,5 +1415,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:08:35.914Z"
 }

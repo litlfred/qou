@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:19.607Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Ch.10 §2; the threading link T(2,N) is defined here, on-topic."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:20.003Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Definition is combinatorial/topological (braid word, gcd component count, Alexander polynomial); Lean over ℕ, no gratuitous ℝ — appropriate."
       }
     ],
     "da-false-claim": [
@@ -71,6 +103,22 @@
         "notes": "The claim in 'Threading link $T(2,N)$' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Components gcd(2,N), 2(N-1) crossings, Δ_{T(2,2m)} formula, and the T(2,2)/T(2,4)/T(2,6)/T(2,8) table all correct."
       }
     ],
     "da-vacuous": [
@@ -90,6 +138,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Threading link $T(2,N)$' presents substantial mathematical content: A **threading link** is a single torus link that passes through all atoms in a m...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Genuine definition with topological data."
       }
     ],
     "da-circular": [
@@ -110,6 +174,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Threading link $T(2,N)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Definitional; no derivation."
       }
     ],
     "da-overclaim": [
@@ -129,6 +209,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Threading link $T(2,N)$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "threading-link.md:38: \"These two components are the topological realisation of the two delocalised π electrons.\"",
+        "notes": "Identifying the 2 link components of even-N T(2,N) with 'two delocalised π electrons' is an interpretive identification asserted in a definition; benzene's aromatic system has 6 π electrons (3 pairs), so 'two π electrons' is a loose/over-strong physical claim."
       }
     ],
     "da-hidden-dof": [
@@ -149,6 +247,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Threading link $T(2,N)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -169,6 +283,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/organic-chemistry/threading-link.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Component table and Alexander values follow from the definition."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -188,6 +318,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/threading-link.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "ThreadingLink Lean encodes atoms, numComponents=gcd(2,N), two_components_of_even/one_component_of_odd, numCrossings=2(N-1), alexanderWeightAtOne=N/2 — faithfully matches the .md definition."
       }
     ],
     "da-citation-misuse": [
@@ -208,6 +354,22 @@
         "notes": "No citations are present in 'Threading link $T(2,N)$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "[kauffman1991] Knots and Physics is an appropriate reference for torus-link Alexander polynomials; not misattributed."
       }
     ],
     "da-definitional-ambiguity": [
@@ -228,6 +390,22 @@
         "notes": "Key terms and symbols in 'Threading link $T(2,N)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "T(2,N), braid word, gcd component count, Δ_{T(2,2m)} all precisely specified; odd-N Alexander deferred but flagged."
       }
     ],
     "da-empirical-fragility": [
@@ -248,6 +426,22 @@
         "notes": "The algebraic and logical relations in 'Threading link $T(2,N)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "No numerical experimental claim."
       }
     ],
     "da-physical-implausibility": [
@@ -268,6 +462,24 @@
         "notes": "The physical concepts described in 'Threading link $T(2,N)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "severity": "minor",
+        "evidence": "threading-link.md:38: \"the two delocalised $\\pi$ electrons\"",
+        "notes": "Benzene has 6 π electrons; mapping the 2 link components to 'the two delocalised π electrons' is physically loose (at best 2 of 3 bonding π MOs / electron pairs), a domain expert would push back."
       }
     ],
     "da-reproducibility": [
@@ -288,6 +500,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/threading-link.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.lean:1 — content/quantum-observable-universe/organic-chemistry/threading-link.lean:37:9: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Standard torus-link data, reproducible."
       }
     ],
     "da-referee-verdict": [
@@ -309,6 +537,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/threading-link.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/threading-link.lean:37:9: error: Function expected at, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "51593ec8b79b",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:08:35.914Z",
+        "reviewed_sha": "4386d57bb95e4488a99ca059e599120bc8c15bf7",
+        "notes": "Mathematically sound definition; one loose physical identification (2 components = 2 π electrons)."
       }
     ],
     "voice-status-leak": [
@@ -1175,5 +1419,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:08:35.914Z"
 }
