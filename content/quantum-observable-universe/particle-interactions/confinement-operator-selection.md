@@ -1,3 +1,12 @@
+**Proposition.**
+*Among three-strand braid closures, the Borromean braid
+$\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is selected as the
+confinement operator by the topological principle of crossing-minimal
+Brunnian nontriviality: its closure is the crossing-minimal nontrivial
+Brunnian three-link (every two-component sublink is the unlink). The
+Frobenius Gram / Markov-trace data is a consistency check on this
+topologically selected operator, not its selector.*
+
 The Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is not
 asserted as the confinement operator — it is **selected** by a
 **topological** principle. Confinement means *no proper subset of the

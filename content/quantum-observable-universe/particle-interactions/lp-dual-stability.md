@@ -1,14 +1,7 @@
 An element $x \in H_3(q)$ with NF decomposition
-$x = \sum_{i=1}^{6} x_i b_i$ is classified by two LP criteria.
-
-**Definition (LP-stable).**
-$x$ is *LP-stable* if $Gx \geq 0$ (component-wise), where $G$ is
-the Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$.
-
-**Definition (LP-confined).**
-$x$ is *LP-confined* if $x$ is LP-stable and no proper sub-braid
-(obtained by removing one or more generators from the braid word)
-is LP-stable.
+$x = \sum_{i=1}^{6} x_i b_i$ is classified by the
+[LP-stable](#def:lp-stable) and [LP-confined](#def:lp-confined)
+criteria.
 
 **Proposition (LP dual stability of confined hadrons).**
 *Let $x^*$ be a confined hadron (proton or neutron, built via

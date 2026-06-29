@@ -63,24 +63,6 @@ $C_{pn}$ (bare crossing) in the open shell.  The
 $\mathcal{B}_3$ Borromean operator is **never selected** at the
 nuclear level — it is purely a quark-level confinement operator.
 
-## Physical interpretation
-
-- **Regime I** (torus knot): the first nucleons see each other as
-  individual particles.  The collective effect is described by the
-  cinquefoil $T_{2,5}$, the second-generation torus knot — this
-  is the residual strong force between nucleons.
-
-- **Regime II** (Hopf link): at magic numbers, the filled shell
-  acts as a collective Hopf link.  The new nucleon crosses the
-  entire shell, not individual nucleons.  This is the shell closure
-  mechanism: the Hopf link binds the new nucleon to the collective
-  shell.
-
-- **Regime III** (bare crossing): beyond the magic shell, the
-  nucleus is large enough that the new nucleon interacts via
-  simple pairwise crossings.  The collective effects are
-  already encoded in the existing NF.
-
 ## $\mathcal{B}_3$ is quark-level only
 
 The Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$
