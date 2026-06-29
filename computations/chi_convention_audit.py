@@ -102,8 +102,11 @@ CANONICAL_CONVENTION = SIGN_ONLY
 # probes — but a downstream binding consume should use the sign-only sibling).
 DEPRECATED_FOR_BINDING = {
     AVERAGED: "convention B (markov_trace_3A Plancherel) — deprecated for "
-              "binding; canonical per-λ character is sign-only (A), per the "
-              "2026-06-09 convention-split audit",
+              "BINDING (canonical per-λ binding character is sign-only A, per "
+              "the 2026-06-09 convention-split audit). NOTE: B is the CANONICAL "
+              "trace for the mass/vol-density path (it carries the p/n "
+              "asymmetry: proton 1.065 ≠ neutron 0.923) — see the 2026-06-29 "
+              "mass-path verdict. 'off-canonical' here means binding-canonical.",
 }
 
 # Producer identity → convention. Matched as a substring against the
@@ -322,7 +325,8 @@ def main() -> int:
     print(f"  --- canonical reconciliation ---")
     print(f"  canonical (sign-only / A) : {len(canonical)}")
     print(f"  off-canonical (avg / B)   : {len(off_canonical)}  "
-          f"[deprecated for binding; valid only as audit-trail probes]")
+          f"[deprecated for BINDING; canonical for the mass/vol-density path "
+          f"(p/n asymmetry) — see 2026-06-29 mass-path verdict]")
     if args.fix:
         print(f"  stamped this run          : {len(fixed)}")
         for p in fixed:
