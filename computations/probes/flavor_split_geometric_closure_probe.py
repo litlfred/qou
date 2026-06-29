@@ -73,6 +73,18 @@ def main() -> int:
     print("  The closed form is a HYPOTHESIS — (1+ℏ³) is documented as a")
     print("  '3-loop substrate-Planck' term, not a geometric series. NOT wired.")
 
+    # --- Diagnostic: is (1+ℏ³) even the RIGHT correction? ---
+    # The exact correction factor CODATA demands is C_true = CODATA/leading.
+    C_true = CODATA_DMN_OVER_MN / lead
+    ratio = (C_true - 1) / hbar**3        # =1 iff (1+ℏ³) is exact
+    print()
+    print("  --- is (1+ℏ³) the right target? ---")
+    print(f"  C_true = CODATA/leading = {mp.nstr(C_true, 12)}  (C_true−1 = {mp.nstr(C_true-1,8)})")
+    print(f"  (1+ℏ³) supplies ℏ³ = {mp.nstr(hbar**3,8)}  →  (C_true−1)/ℏ³ = {mp.nstr(ratio,8)}")
+    print(f"  ⇒ (1+ℏ³) supplies only {mp.nstr(hbar**3/(C_true-1)*100,4)}% of the needed correction.")
+    print("  ⇒ (1+ℏ³) is NOT the closure — it is a partial, posited factor, not")
+    print("     merely unproven. No clean single ℏ_q-power reproduces C_true−1.")
+
     w = WitnessBuilder("flavor-split-geometric-closure-probe", engine="mpmath")
     w.set_description(
         "Scope-(a) measurement: the flavor-split subleading (1+ℏ_q³) vs the "
@@ -92,6 +104,9 @@ def main() -> int:
     w.add_data("err_closed_vs_codata", str(err_closed))
     w.add_data("codata_dmn_over_mn", str(CODATA_DMN_OVER_MN))
     w.add_data("geometric_closes_gap", bool(closes))
+    w.add_data("C_true_codata_over_leading", str(C_true))
+    w.add_data("ratio_Ctrue_minus_1_over_hbar3", str(ratio))
+    w.add_data("fraction_of_correction_supplied_by_1plus_hbar3", str(hbar**3/(C_true-1)))
     w.add_assertion(
         name="geometric_closed_form_differs_only_at_hbar6",
         computed=1 if rel_trunc_vs_closed < mpf("1e-5") else 0,

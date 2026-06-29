@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-29T14:53:09.543971+00:00",
-  "commitSha": "472e8b34f36379a2a0a3510be349e7bbba5986df",
+  "computedAt": "2026-06-29T15:09:29.400120+00:00",
+  "commitSha": "67a00dfddc6be02bcc7972a8c552d04b43b13e25",
   "assertions": [
     {
       "name": "geometric_closed_form_differs_only_at_hbar6",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "flavor-split-geometric-closure-probe",
   "scriptFile": "flavor_split_geometric_closure_probe.py",
-  "scriptHash": "86c962af1e18",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fd61295b97ed",
+  "scriptCommitSha": "a4b525f912bc4b79ae12621b18af096f71c37cae",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,6 +44,9 @@
     "err_trunc_vs_codata": "0.00030529083322614441558122159307414736967750970861496",
     "err_closed_vs_codata": "0.00030434496813725170985479854157002521335685599045272",
     "codata_dmn_over_mn": "0.0013774699387394029668339406551297433261342328109031",
-    "geometric_closes_gap": false
+    "geometric_closes_gap": false,
+    "C_true_codata_over_leading": "1.001278385099213844590282213013884525362579275699",
+    "ratio_Ctrue_minus_1_over_hbar3": "1.3142591339675104554307857080537549505473377122033",
+    "fraction_of_correction_supplied_by_1plus_hbar3": "0.76088495347274550926415498518238231572354207297714"
   }
 }
