@@ -96,7 +96,6 @@ theorem chi_V111_eq_V3_div_q4 (q : ℝ) (hq : q ≠ 0) :
     chi_V111_diff_closed q = chi_V3_diff_closed q / q^4 := by
   unfold chi_V111_diff_closed chi_V3_diff_closed
   field_simp
-  ring
 
 /-! ## Sample-point cross-checks against the probe
 

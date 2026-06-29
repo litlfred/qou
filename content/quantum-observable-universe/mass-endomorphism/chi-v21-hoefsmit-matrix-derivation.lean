@@ -127,7 +127,6 @@ theorem chi_V21_laurent_decomposition (q : ℝ) (hq : q ≠ 0) :
       = -q^3/4 + q/4 - q⁻¹/4 + q⁻¹^3/4 := by
   unfold chi_V21_difference_polynomial
   field_simp
-  ring
 
 /-! ## Cross-checks against the probe -/
 

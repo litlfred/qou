@@ -94,7 +94,6 @@ theorem chi_V111_eq_chi_V3_div_q4 (q : ℝ) (hq : q ≠ 0) :
     chi_V111_difference_factored q = chi_V3_closed_form_local q / q^4 := by
   unfold chi_V111_difference_factored chi_V3_closed_form_local
   field_simp
-  ring
 
 /-- Numerical cross-check at `q = 2`:
     closed form = -(5)²·3/(4·32) = -75/128. -/
