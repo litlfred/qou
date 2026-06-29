@@ -816,7 +816,258 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Borromean braid B_3 gluon-content remark, atomized out of rem:hecke-operations into the same 'Hecke algebra operations' appendix section; on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "The NF B_3=+0.998 gamma -0.010 sigma0 +0.009 sigma1 +0.046 L+ -0.044 L- and the arithmetic (+0.046-0.044=+0.002) are internally consistent; no false mathematical assertion. B_3=(sigma0 sigma1^-1)^3 matches Table 2 (net +1.000)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Carries a concrete decomposition and a numeric interpretation; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "No observable is back-fitted here; net(B_3)~1 and the coefficients are read off the H_3(q) computation, not tuned to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "evidence": "borromean-gluon-content.md:10: \"reflects the color neutrality of the baryon: the net gluon content is close to zero, consistent with a color singlet.\"",
+        "notes": "Reading a 0.002 residual of two NF coefficients as 'color neutrality / color singlet' is an interpretive leap from algebra to QCD; the near-identical sibling gluon-model-comparison.qa.json flags the same wording as a da-physical-implausibility warn, so warn-minor not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "No free parameter introduced; the NF coefficients are determined by B_3=(sigma0 sigma1^-1)^3 evaluated at q0."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "evidence": "borromean-gluon-content.md:13: \"The gamma term ~ +0.998 shows that B_3 is perturbatively close to the identity ... a small correction to free quarks\"",
+        "notes": "From 'gamma coefficient ~ 0.998' to 'Borromean confinement is a small correction to free quarks' is a loose inference: a large identity component in the NF is not the same as a weak-coupling/perturbative statement about confinement; gap between the algebraic observation and the physical conclusion."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "remark block with no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "No bibliography cites; uses[] (rem:particle-nf-table, rem:hecke-operations) and interprets (rem:knot-particle-dictionary) resolve in-corpus. Nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "evidence": "borromean-gluon-content.md:8: \"The L+ and L- terms are the gluon content of B_3.\"",
+        "notes": "'gluon content' is defined here only ostensively as the L+/L- NF coefficients; the term has no standalone definition block and the mapping to physical gluons is asserted, not constructed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "evidence": "borromean-gluon-content.md:5: \"+0.046 - 0.044 = +0.002\"",
+        "notes": "The 'color neutrality' reading rests on a 0.002 difference of two ~0.045 coefficients quoted to 3 decimals; with no error budget or precision stated for the NF coefficients, the near-cancellation interpretation is sensitive to the truncation/rounding of those numbers."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "evidence": "borromean-gluon-content.md:11: \"consistent with a color singlet.\"",
+        "notes": "Equating a small residual of Hecke NF coefficients with the QCD notion of a color singlet has no established bridge to SU(3)_color representation theory; mirrors the sibling block's logged da-physical-implausibility warn."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "major",
+        "evidence": "borromean-gluon-content.ts:1-9: no `computation`/`witness` field; numbers 0.998/0.046/0.044 stated only in prose.",
+        "notes": "Block states precise NF coefficients (0.998 gamma, 0.046 L+, 0.044 L-, net~1.000) but its .ts has no computation/witness pin, unlike sibling hecke-operations.ts; the values are not traceable to a committed, hash-pinned witness, so reproducibility is unverified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4ee2d24a20da",
+          "ts": "c1b262225af3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "notes": "Arithmetically sound NF observation wrapped in physically-overreaching QCD language (gluon content / color neutrality / color singlet / perturbative correction). Strongest objection: the precise NF coefficients are stated with no witness pin (borromean-gluon-content.ts has no computation field), so the central numbers 0.998/0.046/0.044 are not reproducibly backed; secondary: the algebra->QCD interpretive leaps (color singlet, small correction to free quarks) exceed what the coefficients support."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:45:02.889Z"
 }

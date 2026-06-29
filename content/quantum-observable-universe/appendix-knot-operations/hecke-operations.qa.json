@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:26.327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Block is the H_3(q) operation dictionary, placed in the 'Hecke algebra operations' section of the Knot Operation Actions Dictionary appendix (appendix-knot-operations.ts) — squarely on-scope."
       }
     ],
     "da-false-claim": [
@@ -45,6 +60,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Iwahori-Hecke algebra relations presented are correct.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Rel 1 sigma^2=(q-q^-1)sigma+1, Rel 2 braid sigma0 sigma1 sigma0=sigma1 sigma0 sigma1, Rel 3 sigma^-1=sigma-(q-q^-1)1 are all standard Hecke/braid identities (Rel 3 follows from Rel 1); generator labels sigma0/sigma1 consistent with the H_3(q) two-generator convention and the data tables."
       }
     ],
     "da-vacuous": [
@@ -62,6 +92,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block lists concrete relations and the Borromean braid NF.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Remark carries genuine content (three named relations + two operation tables); not a tautology or self-assuming projection."
       }
     ],
     "da-circular": [
@@ -79,6 +124,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No circularity is present in the algebraic relations.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Pure algebraic operation dictionary; no derivation targets a back-fitted observable, no calibration smuggled in."
       }
     ],
     "da-overclaim": [
@@ -96,6 +156,23 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The claim that the near-cancellation of L+ and L- coefficients reflects the physical color neutrality of the baryon is a speculative physical overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "evidence": "hecke-operations.md:7: \"Squaring a crossing yields the identity (photon) plus a HA-weighted crossing.\"",
+        "notes": "Parenthetical particle labels ('photon', 'down quark' in the data table) attach physical identity to algebra basis elements without re-deriving the dictionary here; mild interpretive reach but consistent with the cited rem:knot-particle-dictionary it interprets, so warn not fail."
       }
     ],
     "da-hidden-dof": [
@@ -113,6 +190,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No hidden parameters are introduced in the algebraic presentation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "HA constant equals h=0.20906 in the witness (basis-knot-tables.witness.json, line 94), a function of q0 not a free parameter; no off-menu coefficient."
       }
     ],
     "da-non-sequitur": [
@@ -130,6 +222,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic steps are sound.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Each relation and its one-line physical gloss follow directly; no 'therefore' bridging a missing lemma."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -147,6 +254,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No divergence is found.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "remark block with no .lean sibling; nothing to compare against a Lean signature."
       }
     ],
     "da-citation-misuse": [
@@ -164,6 +286,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The citation is correct.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": ".ts cites no bibliography entries; uses[]/interprets resolve to in-corpus blocks (rem:particle-nf-table, rem:knot-particle-dictionary). No external reference to mis-attribute."
       }
     ],
     "da-definitional-ambiguity": [
@@ -181,6 +318,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The terms B3 (Borromean braid), γ, L+, and L- are introduced and assigned coefficients without being defined in this block.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "HA, sigma_i, normal-form basis are defined in the upstream dictionary this remark interprets; the 'six-element normal form basis' is the standard H_3(q) dimension."
       }
     ],
     "da-empirical-fragility": [
@@ -198,6 +350,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebra is exact in q.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Net values (1.209, 0.791, ...) and HA=0.209 are exact algebraic evaluations at the substrate q0, not a near-match inside fit noise; no cross-anchor swing claimed."
       }
     ],
     "da-physical-implausibility": [
@@ -215,6 +382,23 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Assigning physical meaning to individual coefficients in a Hecke algebra normal form as 'gluon content' and 'color neutrality' lacks any connection to physical quantum chromodynamics.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "severity": "minor",
+        "evidence": "hecke-operations-table1-data.md:10: \"Negative crossing (down quark)\"",
+        "notes": "Identifying individual NF basis elements with named particles (photon, down quark, positron) is a framework-internal dictionary, not standard particle physics; flagged minor consistent with the sibling gluon-model-comparison.qa.json da-physical-implausibility warn."
       }
     ],
     "da-reproducibility": [
@@ -232,6 +416,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The normal form calculations are verified by the basis_knot_tables script.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "computation pins computations/basis_knot_tables.py + basis-knot-tables.witness.json (status verified, computedAt 2026-06-22, commitSha cae0becd...); witness h=0.20906 matches the HA constant in the data tables."
       }
     ],
     "da-referee-verdict": [
@@ -250,6 +449,21 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The elements $B_3$, $\\gamma$, $L_+$, and $L_-$ are not mathematically defined, and the physical interpretation of normal-form Hecke algebra coefficients as 'gluon content' is speculative and lacks QFT justification."
+      },
+      {
+        "field_hash": {
+          "md": "bbb986ff1754",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:45:02.889Z",
+        "reviewed_sha": "62c1d64a74f1c78aa66af42392ec06e18c76c06b",
+        "notes": "Sound H_3(q) operation dictionary backed by a verified witness. Strongest objection: the embedded particle labels (photon/down quark/positron) and the table values lean on the upstream knot-particle dictionary rather than being self-contained, but that is by design for an interpretive remark."
       }
     ],
     "voice-status-leak": [
@@ -1061,5 +1275,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:45:02.889Z"
 }
