@@ -53,6 +53,13 @@ TRIPLETS = {
     8: [("8Li", 3, 5, 41.2770), ("8Be", 4, 4, 56.4995), ("8B", 5, 3, 37.7375)],
 }
 
+# SAME-T correction: the T₃=0 GROUND state is T=0; its T=1 isobaric-analog state
+# (IAS, J-matched to the T₃=±1 members) sits E_x higher, i.e. is LESS bound by
+# E_x. Subtracting E_x from the T₃=0 binding makes all three members T=1 — the
+# clean Wigner IMME. E_x are MEASURED excitation energies (inputs, not fits).
+#   A=6: ⁶Li 0⁺ T=1 IAS at 3.5630 MeV.   A=8: ⁸Be 2⁺ T=1 IAS at 16.626 MeV.
+IAS_EX_MEV = {6: 3.5630, 8: 16.626}
+
 
 def main() -> int:
     t0 = time.monotonic()
@@ -78,20 +85,34 @@ def main() -> int:
         xm, x0, xp = pts[-1]["log_q0"], pts[0]["log_q0"], pts[1]["log_q0"]
         a = x0
         b = (xp - xm) / 2.0           # linear (bar-odd) — mirror diff / 2
-        c = (xp + xm - 2.0 * x0) / 2.0  # quadratic (bar-even) — 2nd difference / 2
+        c = (xp + xm - 2.0 * x0) / 2.0  # quadratic (bar-even, T=0-contaminated)
+        # SAME-T (clean Wigner): correct the T₃=0 member to its T=1 IAS.
+        bame0 = next(m[3] for m in members if (m[1] - m[2]) // 2 == 0)
+        bp0 = pts[0]["B_pred"]
+        x0_T1 = math.log((bame0 - IAS_EX_MEV[A]) / bp0) / lnq
+        a_T1 = x0_T1
+        c_T1 = (xp + xm - 2.0 * x0_T1) / 2.0   # b unchanged (T₃=±1 untouched)
         out_rows.append({
             "A": A, "members": {str(k): v for k, v in pts.items()},
             "imme_a": round(a, 3), "imme_b_linear": round(b, 3),
             "imme_c_quadratic": round(c, 3),
             "mirror_diff_2b": round(xp - xm, 3),
-            "triplet_2nd_diff_2c": round(xp + xm - 2 * x0, 3)})
-        print(f"  A={A}: a={a:7.3f}  b(linear)={b:+7.3f}  c(QUADRATIC)={c:+7.3f}"
-              f"   | mirror diff={xp-xm:+.3f}=2b   2nd diff={xp+xm-2*x0:+.3f}=2c")
+            "triplet_2nd_diff_2c": round(xp + xm - 2 * x0, 3),
+            "ias_ex_MeV": IAS_EX_MEV[A],
+            "imme_a_sameT": round(a_T1, 3),
+            "imme_c_quadratic_sameT": round(c_T1, 3)})
+        print(f"  A={A}: a={a:7.3f}  b(linear)={b:+7.3f}  c(QUAD raw)={c:+7.3f}"
+              f"   | SAME-T (IAS −{IAS_EX_MEV[A]}MeV): a={a_T1:7.3f}  c={c_T1:+7.3f}")
 
     # b's across A (this probe + the PR #3089 mirror values) — the linear
     # charge-asymmetry coefficient grows in |·| with A (Coulomb ~ Z ~ A).
     b_by_A = {r["A"]: r["imme_b_linear"] for r in out_rows}
     c_nonzero = all(abs(r["imme_c_quadratic"]) > 0.1 for r in out_rows)
+    # SAME-T: the clean Wigner quadratic is SMALL and A-INDEPENDENT — the raw
+    # growth (−1.24→−3.44) was T=0/T=1 contamination, not the IMME c.
+    cT = [r["imme_c_quadratic_sameT"] for r in out_rows]
+    c_sameT_small = all(abs(v) < 0.3 for v in cT)
+    c_sameT_stable = (max(cT) - min(cT)) < 0.1
 
     b = WitnessBuilder("delta-lambda-imme-triplet",
                        engine="python+canonical-binding", start_time=t0)
@@ -104,9 +125,12 @@ def main() -> int:
         "the mirror b's −1.34@A3,−1.77@A7), c=−1.24 NONZERO. Askey: body-order "
         "b-ladder is continuous q-Hermite (3-term recurrence); IMME is the "
         "degree-2 T₃ truncation (Wigner rank-≤2 isotensor = Askey–Racah cutoff). "
-        "CAVEAT: T₃=0 ground states are T=0 (not the T=1 analog), so c mixes the "
-        "IMME quadratic with T=0/T=1 structure; robust claim = residual has a "
-        "nonzero bar-even quadratic. Not wired; near-match; no fit.")
+        "SAME-T RESOLUTION: correcting the T₃=0 member to its T=1 isobaric "
+        "analog state (IAS: ⁶Li 3.563, ⁸Be 16.626 MeV) COLLAPSES the quadratic "
+        "c: A=6 −1.24→−0.11, A=8 −3.44→−0.10 — small and A-independent. The raw "
+        "growth was T=0/T=1 structure (Wigner energy), NOT the IMME quadratic; "
+        "the genuine same-T c≈−0.1 is small vs the linear b, so the cleaned "
+        "residual is linear(writhe)-dominated. Not wired; near-match; no fit.")
      .add_data("q0", q0)
      .add_data("triplets", out_rows)
      .add_data("imme_form", "log_q0 Δ_λ(T₃) = a(A) + b(A)·T₃ + c(A)·T₃²,  T₃=(Z−N)/2")
@@ -120,8 +144,14 @@ def main() -> int:
                          "Al-Salam–Chihara three-term recurrence (Askey q-scheme)",
          "isospin_T3": "IMME degree-2 in T₃ = Wigner rank-≤2 isotensor truncation "
                        "(Askey–Racah cutoff; no d·T₃³)"})
-     .add_data("caveat_same_T", "T₃=0 ground states (⁶Li,⁸Be) are T=0, not the T=1 "
-                                "isobaric analog; c mixes IMME-c with T=0/T=1 structure"))
+     .add_data("same_T_resolution", {
+         "method": "T₃=0 member corrected to its T=1 IAS (measured E_x, not a fit)",
+         "ias_ex_MeV": IAS_EX_MEV,
+         "c_raw_T0_contaminated": {r["A"]: r["imme_c_quadratic"] for r in out_rows},
+         "c_sameT_clean": {r["A"]: r["imme_c_quadratic_sameT"] for r in out_rows},
+         "finding": "raw c (−1.24,−3.44, growing) was mostly T=0/T=1 Wigner-energy "
+                    "structure; the clean same-T c≈−0.1 is SMALL and A-INDEPENDENT — "
+                    "the residual is linear(writhe)-dominated once same-T"}))
     b.add_assertion("quadratic_c_nonzero",
                     computed=bool(c_nonzero), expected=True,
                     source="|c| > 0.1 q₀-units in every triplet — a real bar-even "
@@ -131,6 +161,10 @@ def main() -> int:
                                       for r in out_rows)),
                     expected=True,
                     source="f(+1)−f(−1)=2b exactly (consistency with PR #3089 mirror method)")
+    b.add_assertion("c_sameT_small_and_A_independent",
+                    computed=bool(c_sameT_small and c_sameT_stable), expected=True,
+                    source="clean same-T (IAS-corrected) quadratic |c|<0.3 and spread<0.1 "
+                           "across A=6,8 (≈−0.1) — raw growth was T=0/T=1 contamination")
     res = b.save()
     print(f"  Wrote {res.name}")
     return 0

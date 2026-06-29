@@ -41,15 +41,38 @@ bar-even terms (`a` and `c·T₃²`) — proved exactly in #3089
 binding (`binding_canonical.py`) and extracts `a, b, c` by the exact 3-point
 formulae:
 
-| triplet (A) | members (T₃ = −1, 0, +1) | a | b (linear) | **c (quadratic)** |
-|---|---|---|---|---|
-| 6 | ⁶He / ⁶Li / ⁶Be | 36.12 | −1.73 | **−1.24** |
-| 8 | ⁸Li / ⁸Be / ⁸B | 41.67 | −1.80 | **−3.44** |
+| triplet (A) | members (T₃ = −1, 0, +1) | a | b (linear) | c (raw, T=0-contam.) | **c (same-T, clean)** |
+|---|---|---|---|---|---|
+| 6 | ⁶He / ⁶Li / ⁶Be | 36.12 | −1.73 | −1.24 | **−0.11** |
+| 8 | ⁸Li / ⁸Be / ⁸B | 41.67 | −1.80 | −3.44 | **−0.10** |
 
 - **`b` (charge-asymmetry, linear)** ~saturates: −1.34 (A=3), −1.73 (A=6),
   −1.80 (A=8) — consistent across the #3089 mirror pairs and these triplets.
-- **`c` (quadratic)** is nonzero and **grows fast** (−1.24 → −3.44), the
-  signature of a Coulomb-energy-like term (the quadratic Coulomb scaling in `Z`).
+- **`c` (quadratic): the raw value is mostly T=0/T=1 contamination, not the
+  IMME quadratic.** The raw `c` (−1.24 → −3.44, apparently "Coulomb-growing")
+  used the **T=0** ground state at `T₃=0`. Correcting that member to its **T=1
+  isobaric-analog state** (the same-T fix, §"Same-T resolution" below) collapses
+  it: **c ≈ −0.10, small and A-INDEPENDENT** (−0.109 at A=6, −0.096 at A=8). The
+  apparent growth was the Wigner-energy (T=0 vs T=1) splitting, ≈3.6 MeV (A=6) /
+  16.6 MeV (A=8). So the genuine same-T quadratic is small relative to the linear
+  `b` (≈−1.8): **the cleaned residual is linear-(writhe)-dominated.**
+
+## Same-T resolution (the clean Wigner IMME)
+
+A clean IMME needs three members of the **same** isospin `T`. The `T₃=0` ground
+states (⁶Li, ⁸Be) are **T=0**; their **T=1** isobaric-analog states sit `E_x`
+higher (measured: ⁶Li 0⁺ T=1 at **3.563 MeV**; ⁸Be 2⁺ T=1 at **16.626 MeV** —
+J-matched to the `T₃=±1` ground states). Subtracting `E_x` corrects the `T₃=0`
+member to T=1 (`E_x` are experimental inputs, **not** a fit). Result:
+
+    c(same-T):  A=6 → −0.109,  A=8 → −0.096    (raw: −1.24, −3.44)
+
+i.e. the quadratic nearly vanishes and stops growing. This is the honest
+outcome: **the residual's dominant `T₃` structure is the bar-odd linear `b`
+(the writhe); the genuine bar-even quadratic is a small, roughly constant
+≈−0.1 correction** — consistent with real-nucleus IMME `c` (small vs `b`).
+`b` itself (the writhe Z-correction) is untouched by this correction (the
+`T₃=±1` members are unchanged).
 
 ## The Askey connection
 
@@ -80,20 +103,15 @@ lean-direct exit 0):
 | `imme_triplet_2nd_diff` | `imme 1 + imme(−1) − 2·imme 0 = 2·c` (triplet isolates `c`) |
 | `imme_third_diff_zero` | `Δ³ imme = 0` (Askey–Racah / Wigner rank-≤2 truncation) |
 
-## Honest caveat (same-T)
-
-A clean Wigner IMME needs three members of the **same** isospin `T`. The
-experimental ground states at `T₃ = 0` (⁶Li, ⁸Be) are **T=0**, while their
-`T₃ = ±1` partners are **T=1** (the true T=1, T₃=0 analog is an excited state).
-So the extracted `c` **mixes** the genuine IMME quadratic with the T=0/T=1
-structure difference. The **robust, framework-level** claim is parity-clean: the
-residual carries a **nonzero bar-even quadratic** component beyond leading +
-linear, which mirror pairs structurally cannot see. A clean `c` would use
-isobaric analog states (same `T`).
-
 ## Status / not done
 
-- **Not wired** (near-match tier); no fit (Δ_λ gate); the quadratic is a measured
-  structural feature, not a closure ansatz.
-- Open: a same-T extraction of `c`; whether `c(A)` is exactly the categorical
-  Coulomb period; the geometric origin of `b`'s saturation vs `c`'s growth.
+- **Not wired** (near-match tier); no fit (Δ_λ gate). The IMME degree-2 *form*
+  and the parity bookkeeping are the robust, Lean-proved content; the same-T
+  measurement shows the genuine quadratic is small (≈−0.1) and the residual is
+  linear-(writhe)-dominated.
+- **Correction recorded:** an earlier draft read the raw `c` (−1.24 → −3.44) as a
+  "Coulomb-growing quadratic." The same-T (IAS) fix supersedes that — it was
+  T=0/T=1 contamination; the clean `c ≈ −0.1` is small and A-independent.
+- Open: whether the small same-T `c ≈ −0.1` has a categorical origin; the
+  geometric meaning of `b`'s slow growth (≈−1.3 → −1.8); extending the same-T
+  triplet ladder (A=10, 12) to confirm `c` stays ≈ constant.
