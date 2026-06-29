@@ -816,7 +816,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Methane tetrahedral geometry from Φ₁ minimisation belongs to Ch 12 §CH4 blocks; correctly placed."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Claims (S₄ symmetry maximises inter-H separation; H-H interactions σ-repulsive / σ⁻¹-attractive) are stated as interpretive consequences of the braid model, not false math. CH4 is indeed tetrahedral/S₄."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Substantive: ties tetrahedral geometry to Φ₁ minimisation over strand orderings + lists the three H-H interaction channels. Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No back-fit: D₀≈4.48 eV is given as an OBSERVED value for comparison, not derived then claimed as a prediction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "minor",
+        "evidence": "ch4-tetrahedral-from-phi1.md:7: \"This is the braid-theoretic origin of the tetrahedral geometry of methane.\"",
+        "notes": "'braid-theoretic ORIGIN' claims a derivation of 3D tetrahedral angles from a 1D strand-ordering Φ₁ minimisation; the prose argues only that S₄ symmetry maximises strand separation, which gives the permutation symmetry, not the 109.47° geometry per se. Minor: remark register, and 'maximising inter-hydrogen distance' is a reasonable heuristic, but 'origin of the tetrahedral geometry' overreaches the stated argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No new free parameter; relies on Φ₁ and the existing crossing-sign conventions (σ repulsion / σ⁻¹ attraction)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "minor",
+        "evidence": "ch4-tetrahedral-from-phi1.md:16: \"Minimising Φ₁ over strand orderings accordingly distributes the 4 H atoms ... producing the S₄-symmetric (tetrahedral) arrangement.\"",
+        "notes": "The leap from 'maximise separation of repulsive crossings in a strand ordering' to 'tetrahedral (3D 109.47°) arrangement' skips the step connecting 1D braid-strand combinatorics to a 3D bond-angle geometry; the S₄ permutation symmetry is established but the metric tetrahedral angle is asserted, not shown. Minor (remark)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Remark block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No cites[] / -- Ref: in this remark; D₀ value is a standard textbook figure."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Φ₁, σ/σ⁻¹, 𝔭/e notation all defined upstream; H-H channels enumerated explicitly. No undefined key term."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "D₀≈4.48 eV/bond, atomisation ≈17.9 eV (≈4×4.48) are correct standard values quoted for comparison; no q₀-precision match is claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "CH4 D₀≈4.48 eV and total atomisation ≈17.9 eV are physically correct; S₄/tetrahedral geometry is the real geometry of methane."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Remark, no own witness; D₀ value matches molecular-experimental-refs.witness.json provenance (NIST)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c0a709008e37",
+          "ts": "06227b1b9e48"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "minor",
+        "notes": "ACCEPT with minor revision. Chemically correct and well-placed, but two phrases overreach the argument actually given."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:03:03.612Z"
 }

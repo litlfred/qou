@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:25.254Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Proposition statement enumerates the optimisation domain and the three shadow prices, then gives the (2,2)-wins reasoning. The 'wins because' bullets are part of the optimisation claim, not separable physical-motivation prose; acceptable for a conditional optimisation proposition."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:56:25.674Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "CO₂ LP-dual binding squarely in Ch 12 §CO2 molecular-construction blocks; correctly placed."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:56:26.030Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Molecular-construction is an archimedean/observable chapter (eV, geometry); the statement is about LP optimisation over bond configs. Lean sibling imports Mathlib.Data.Real.Basic and uses ℝ for Φ₁ values — appropriate for an energy-valued functional. No gratuitous ℝ in an algebraic claim."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:56:26.397Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Lean proof is purely order-theoretic (instantiate minimisation hypothesis; conjoin); no archimedean machinery (linarith/IVT/Real.*) is misapplied to an algebraic claim. Φ₁:Co2Config→ℝ is genuinely a real-valued energy."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,23 @@
         "reviewed_at": "2026-06-22T02:56:26.826Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "major",
+        "evidence": "co2_lp_dual_binding.lean:101: \"theorem co2_lp_dual_binding ... : ctx.k1+ctx.k2 ≤ 4 ∧ ctx.n_strands = 66 ∧ Phi1(sym) ≤ Phi1(asym31)\"",
+        "notes": "The .md claims (2,2) is THE Φ₁-minimiser over ALL bond orders / electron-bond assignments / 66-strand permutations (three optimisation dimensions). The Lean resolving decl only delivers: valence hyp ∧ strand-count=66 ∧ (sym ≤ asym31), the last derived by instantiating the assumed global-minimisation hypothesis at ONE competitor (asym31). The pairwise (sym vs asym31) inequality is strictly weaker than the narrative's full-domain minimisation conclusion, and the electron-bond/strand-permutation dimensions are absent from Lean. Conditional-class is legitimate (§3b-cond), but the Lean conclusion is narrower than the narrative statement — partial equivalence."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Lean docstring documents the disposition: prior self-assuming co2_lp_dual_bound/impl_ fields removed; current decl conjoins a hypothesis + definitional input + a derived inequality. Statement not weakened by axiom injection; conjecture isolated in the QIntegerMassFormula class."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -393,6 +485,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "co2_symmetric_beats_asymmetric = hc.symmetric_minimises Co2Config.asym31 — instantiates the ∀-hypothesis at a point, yielding a new inequality, not a verbatim field projection of the conclusion. The class field is the minimisation HYPOTHESIS, not the (sym≤asym31) conclusion. Non-degenerate per §3b-cond item 5."
       }
     ],
     "proof-no-trivial-true": [
@@ -429,6 +536,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Conclusion is a conjunction of a ℕ-inequality, an equality n_strands=66, and a real Φ₁ inequality — none is True/x=x; a hypothesis-ignoring proof cannot close the Φ₁ inequality (it needs symmetric_minimises)."
       }
     ],
     "proof-no-false-premise": [
@@ -482,6 +604,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Hypotheses (carbon_valence k1+k2≤4, n_strands_def, symmetric_minimises) are all satisfiable; no False/0=1/uninhabited type. The (2,2) config satisfies k1+k2=4≤4."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -535,6 +672,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Resolving decl uses all three: ctx.carbon_valence, ctx.n_strands_def, and co2_symmetric_beats_asymmetric (which uses hc.symmetric_minimises). No dangling hypothesis."
       }
     ],
     "proof-no-decide-masking": [
@@ -571,6 +723,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Proof is a term-mode ⟨…,…,…⟩ anonymous constructor; no decide/trivial masking an incomplete goal."
       }
     ],
     "da-false-claim": [
@@ -590,6 +757,21 @@
         "notes": "No false claims identified in 'LP dual selects linear $O{=}C{=}O$ geometry': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "CO₂ is indeed linear O=C=O with two double bonds (2,2); the stated optimisation outcome matches reality. Conditional-on-conjecture framing is honest."
       }
     ],
     "da-vacuous": [
@@ -608,6 +790,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'LP dual selects linear $O{=}C{=}O$ geometry' presents substantial mathematical content: linear arrangement O=C=O with two double bonds as the ground state, minimising $...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Not vacuous: derives a genuine pairwise Φ₁ inequality from the minimisation hypothesis (see proof-no-self-assuming-projection)."
       }
     ],
     "da-circular": [
@@ -627,6 +824,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'LP dual selects linear $O{=}C{=}O$ geometry'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "The (2,2)-minimisation is explicitly the conjectural INPUT (QIntegerMassFormula.symmetric_minimises), declared conditional — not assumed-then-claimed-as-derived. The conjecture is named and isolated, so no hidden circularity in the Lean."
       }
     ],
     "da-overclaim": [
@@ -645,6 +857,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'LP dual selects linear $O{=}C{=}O$ geometry' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "minor",
+        "evidence": "co2-lp-dual-binding.md:19: \"The symmetric double-bond configuration (k1,k2)=(2,2) wins over asymmetric alternatives (3,1) or (1,3) because:\"",
+        "notes": "The .md presents three physical mechanisms (4 attractive crossings, min O-O repulsion, asym wastes valence) as if they DERIVE that (2,2) wins, but the Lean assumes (2,2) is the minimiser outright (conjectural hypothesis) and derives only the pairwise inequality. The 'because' reasoning is heuristic motivation, not the proof — mild presentation overclaim, mitigated by the conditional-on-conjecture banner on line 1."
       }
     ],
     "da-hidden-dof": [
@@ -664,6 +893,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'LP dual selects linear $O{=}C{=}O$ geometry'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Shadow prices y_σ, y_π, y_sym are LP-dual variables, not free fit parameters; the conjectural input is named (q-integer-mass-formula). No off-menu coefficient."
       }
     ],
     "da-non-sequitur": [
@@ -683,6 +927,21 @@
         "notes": "The argument flow in 'LP dual selects linear $O{=}C{=}O$ geometry' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Within the conditional-class contract the inference (assume minimiser ⇒ pairwise inequality) is valid; the narrative bullets are stated as motivating reasons, not 'therefore' deductions."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -701,6 +960,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "major",
+        "evidence": "co2-lp-dual-binding.md:2: \"selects the symmetric linear arrangement O=C=O ... minimising Φ₁ over all possible [3 dimensions]\"",
+        "notes": "Same root as proof-narrative-lean-equiv: .md claims full-domain (2,2)-minimisation over bond orders + electron-bond assignments + 66! strand permutations; Lean delivers only a single pairwise (sym ≤ asym31) inequality conditional on the assumed global minimisation. The electron-bond and strand-permutation optimisation dimensions, and the 'linear geometry' selection, are not in the Lean — Lean proves strictly less than the .md asserts."
       }
     ],
     "da-citation-misuse": [
@@ -720,6 +996,21 @@
         "notes": "No citations are present in 'LP dual selects linear $O{=}C{=}O$ geometry', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Lean -- Ref: [bertsimas1997] (LP duality / symmetric optimum) is apt for the LP-dual claim; [manuscript] points to the .md. No mis-attribution."
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1030,21 @@
         "notes": "Key terms and symbols in 'LP dual selects linear $O{=}C{=}O$ geometry' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Φ₁, σ/π bonds, 66 strands, (k1,k2) all defined; conditional banner names the backing conjecture. Lean Co2Config enumerates the five valence-feasible configs explicitly."
       }
     ],
     "da-empirical-fragility": [
@@ -758,6 +1064,21 @@
         "notes": "The algebraic and logical relations in 'LP dual selects linear $O{=}C{=}O$ geometry' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Claim is a discrete combinatorial selection of (2,2), not a precision numerical match against q₀. Witness (q=1.1099785955573347, muon-q₀ canonical) is current, not stale; no cross-anchor swing asserted here."
       }
     ],
     "da-physical-implausibility": [
@@ -777,6 +1098,21 @@
         "notes": "The physical concepts described in 'LP dual selects linear $O{=}C{=}O$ geometry' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "CO₂ linear O=C=O with two double bonds is the correct real structure; symmetric (2,2) over (3,1) is chemically right. No broken units/conservation."
       }
     ],
     "da-reproducibility": [
@@ -796,6 +1132,23 @@
         "notes": "The derivation steps and formal definitions in 'LP dual selects linear $O{=}C{=}O$ geometry' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "minor",
+        "evidence": "co-bond-order-active-set.witness.json:156: \"co-lp-dual-binding.md's one-chain decreasing-marginal mechanism needs correction (WS-F/WS-B follow-up)\"",
+        "notes": "Witnesses are reproducible (scriptHash da2e215cdaad / scriptCommitSha present, allPassed:true). But the cited co-bond-order-active-set witness — shared backing for the CO/CO₂ LP-dual family via uses prop:co-lp-dual-binding — records that its own one-chain marginal mechanism is falsified and the active-set predicts CO=2 vs observed 3 (off by a dative bond). The co2 block inherits this unresolved mechanism caveat from its upstream dependency. Minor for co2 specifically (its (2,2) selection is conjectural-input, not witness-derived), but the backing-witness self-flag should be tracked."
       }
     ],
     "da-referee-verdict": [
@@ -816,6 +1169,22 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.lean is missing, preventing formal verification of the claims in 'LP dual selects linear $O{=}C{=}O$ geometry'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "5c7fb1c9407f",
+          "ts": "2b2df246d680"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "major",
+        "notes": "MINOR REVISION. Mathematically clean conditional-class proposition (no vacuity, no self-assuming projection, conjecture properly isolated), correctly placed and physically right. The substantive objection is the narrative/Lean scope gap."
       }
     ],
     "voice-status-leak": [
@@ -1816,5 +2185,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:03:03.612Z"
 }

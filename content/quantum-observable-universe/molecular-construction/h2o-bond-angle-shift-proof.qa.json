@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Proof of the H2O bond-angle quadratic-well shift; squarely in Ch 12 molecular-construction (water geometry). Correctly placed."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Verified: argmin of a(θ-θ₀)²+(2as)θ. Energy minus value at θ₀-s equals a(θ-(θ₀-s))²≥0 by completing the square; θ₀-s=θ₀-b/(2a) is the global min. Algebra correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Lean sibling bond_angle_shift proves a genuine real inequality via nlinarith on sq_nonneg; not :True, not a projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No back-fitting: the magnitude b/(2a) is declared an external compute/experimental input; only the SIGN of the shift is claimed structural. No calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Parent prop and proof explicitly scope: sign structural, magnitude is an input. Does not claim to derive 104.5° from first principles."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "a (stiffness) and b (lone-pair term) are openly named free parameters declared as inputs, not undisclosed calibrations of the q₀ chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Each step follows: perfect-square completion ⇒ nonneg ⇒ global minimiser at θ₀-s. No logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Lean bond_angle_shift (a θ₀ s θ : ℝ)(ha:0<a) states E(θ₀-s) ≤ E(θ) with b=2as — exactly the narrative minimiser claim. Match."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No external citation invoked in the proof body; Lean cites [manuscript] Ch.12 only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "a, b, s, θ₀ all defined in parent prop; b=2as substitution stated explicitly. 0<a hypothesis present. No ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No numerical fit in this proof block; the shift magnitude is explicitly an input, not a claimed match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Harmonic restoring + linear lone-pair perturbation is standard VSEPR/normal-mode physics; b>0 ⇒ θ<θ₀ matches observed 104.5°<109.5°. Plausible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Pure algebraic proof block, no backing witness to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ca0a68c99deb",
+          "ts": "5973aec7350e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "ACCEPT. Clean completing-the-square proof matched by a sorry-free Lean inequality; sign-vs-magnitude scoping is honest. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:03:03.612Z"
 }

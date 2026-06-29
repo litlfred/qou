@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Electron-shell ILP / electronegativity interpretation belongs to Ch 12 §electron-shells; correctly placed."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Remark; interpretive claims (y₀ = marginal Φ₁ cost = electronegativity; generator alternation = Hund) are framed as identifications, not false mathematical assertions."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Carries substantive interpretive content (LP-dual y₀ ↔ electronegativity; σ₀/σ₁ alternation ↔ orbital pairing); interprets prop:shell-filling-rule. Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Interpretive overlay on an ILP result; does not assume its own conclusion or back-fit a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "severity": "minor",
+        "evidence": "shell-filling-electronegativity-ilp.md:15: \"The generator alternation is the Hecke algebra manifestation of Hund's rule\"",
+        "notes": "'is the ... manifestation of Hund's rule' is a strong identification for a qualitative σ₀/σ₁-alternation analogy; an analogy presented as identity. Minor — remark register tolerates interpretive framing, but 'is the manifestation' reads stronger than the evidence (a 2-generator alternation pattern) supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No new free parameter introduced; references the existing ILP/LP-dual machinery and def:electron-shell-braid-capacity."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Identifications are stated as interpretations, not as 'therefore' derivations; no claimed logical inference is left unjustified."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Remark block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No cites[] and no -- Ref: in this remark."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "tr_M, σ₀/σ₁, G·x≥0, y₀ all defined upstream (Hecke / LP-dual blocks); 'electronegativity in the braid framework' is explicitly the framework's own definition, not the chemistry textbook scale."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "No numerical fit asserted; the e₂/e₆/e₇ alternation is a discrete combinatorial outcome of the ILP, not a precision match against q₀."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "2s/2p subshell pairing for second-row C/N/O is chemically correct; the Hund's-rule analogy is qualitatively sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "Remark has no own computation field; backing ILP lives in prop:shell-filling-rule."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "15144506dc5a",
+          "ts": "2ade815dec10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:03:03.612Z",
+        "reviewed_sha": "a51a1dcd6d99f6a830eda25e618e6d5d0b0564a3",
+        "notes": "ACCEPT (minor revision). Sound interpretive remark; only soft spot is the 'is the manifestation of Hund's rule' phrasing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:03:03.612Z"
 }
