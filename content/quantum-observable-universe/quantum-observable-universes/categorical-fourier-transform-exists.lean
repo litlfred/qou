@@ -1,5 +1,4 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import QOU.QuantumObservableUniverses.QIntegralTransforms
 
 
 /-!
@@ -23,7 +22,7 @@ LaTeX: `\label{prop:categorical-fourier-exists}`
 namespace QOU
 
 noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
+abbrev R_q := Archimedean.R_q
 
 /-- **Existence of the categorical Fourier transform.**
 
@@ -48,5 +47,7 @@ theorem CategoricalFourier.exists
   ⟨{ project := fun j f => L.transform f (s j)
      monoidal := fun j f g q_conv => L.monoidal_mul f g (s j) q_conv },
    fun _ _ => rfl⟩
+
+end
 
 end QOU

@@ -1,5 +1,6 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -26,6 +27,20 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 namespace QOU
 
 universe u v
+
+/-- **Categorical connection** on a Frobenius–Hopf object.
+    LaTeX: `\label{def:categorical-connection}` -/
+structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
+  /-- The object of 1-forms `Ω¹` in `C`. -/
+  Omega1 : C
+  /-- The connection morphism `∇ : A → A ⊗ Ω¹`. -/
+  nabla : fh.obj ⟶ (fh.obj ⊗ Omega1)
+  /-- The Leibniz rule RHS. -/
+  leibniz_rhs : (fh.obj ⊗ fh.obj) ⟶ (fh.obj ⊗ Omega1)
+  /-- **Leibniz rule**: `∇ ∘ μ = leibniz_rhs`. -/
+  leibniz : fh.mul ≫ nabla = leibniz_rhs
 
 /-- **Categorical action functional** `S_q[∇, λ, ψ]`.
 
@@ -54,7 +69,7 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
   /-- **Matter term**: `λ(ψ* · D_∇ ψ)`, the q-Dirac action. -/
   matter : (𝟙_ C) ⟶ (𝟙_ C)
 
-/-- **Variational equations of the categorical action.**
+/-! **Variational equations of the categorical action.**
 
     Given a categorical action `S_q[∇, λ, ψ]`, its critical points satisfy
     three Euler–Lagrange equations obtained by varying each field:
@@ -95,8 +110,8 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
-    (h_critical : ca.matter = fh.counit ≫ fh.unit ≫ fh.counit) :
-    ca.matter = fh.counit ≫ fh.unit ≫ fh.counit :=
+    (h_critical : ca.matter = fh.unit ≫ fh.counit) :
+    ca.matter = fh.unit ≫ fh.counit :=
   h_critical
 
 end QOU

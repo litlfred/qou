@@ -1,4 +1,5 @@
 import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.Algebra.Group.Defs
 
 /-!
 # QOU.Lichnerowicz.qDirac — categorical Lichnerowicz formula
