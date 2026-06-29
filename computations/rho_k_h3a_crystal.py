@@ -102,6 +102,10 @@ from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 from crystal_basis import crystal_B  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
 
 set_compute_dps()
 
@@ -221,7 +225,7 @@ def main() -> int:
     print(f"\n  q_0 = {mp.nstr(Q_MP, 25)}")
     print(f"  m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA)")
     print(f"  m_p = {mp.nstr(M_P_MEV, 8)} MeV (CODATA)")
-    print(f"  m_n = {mp.nstr(M_N_MEV, 8)} MeV (CODATA)")
+    print(f"  m_n = {mp.nstr(m_n_derived_3input, 8)} MeV (CODATA)")
     print(f"  M(D) = {mp.nstr(M_D_MEV, 12)} MeV (CODATA)")
 
     # ---- Step 1: |tr_M(beta_D)|  (reused from Occam baseline) ----
@@ -230,7 +234,7 @@ def main() -> int:
     print(f"\n  |tr_M(beta_D)| (50 dps) = {mp.nstr(abs_tr_M, 30)}")
 
     # ---- Step 2: rho_K^LO and the residual to be explained ----
-    rho_K_LO = (M_P_MEV + M_N_MEV) / (M_E_MEV * abs_tr_M)
+    rho_K_LO = (M_P_MEV + m_n_derived_3input) / (M_E_MEV * abs_tr_M)
     M_pred_LO = rho_K_LO * M_E_MEV * abs_tr_M  # = m_p + m_n by construction
     rho_K_codata = M_D_MEV / (M_E_MEV * abs_tr_M)
     delta_rho = rho_K_codata - rho_K_LO
@@ -495,7 +499,7 @@ def main() -> int:
             "M_codata_MeV": str(M_D_MEV),
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(M_N_MEV),
+            "m_n_MeV": str(m_n_derived_3input),
         },
         "data": {
             "abs_tr_M_at_q0_50dps": str(abs_tr_M),

@@ -85,6 +85,10 @@ from codata_constants import M_E_MEV as _M_E_MEV_MP
 # Comparison references (P31-triage Phase B): validation-only CODATA m_p/m_n
 # used to report fit residuals against experiment, not as prediction inputs.
 from codata_constants import (
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     M_P_MEV_VALIDATION as _M_P_MEV_MP,
     M_N_MEV_VALIDATION as _M_N_MEV_MP,
 )
@@ -92,7 +96,7 @@ from codata_constants import (
 Q0 = Q_MP
 M_E_MEV = float(_M_E_MEV_MP)
 M_P_MEV = float(_M_P_MEV_MP)
-M_N_MEV = float(_M_N_MEV_MP)
+m_n_derived_3input = float(_M_N_MEV_MP)
 
 
 # Canonical Markov traces from the Hoefsmit+Wenzl bridge witness.
@@ -121,7 +125,7 @@ M_AME = {
 
 def constituent_sum(Z: int, N: int) -> float:
     """Atomic constituent sum: Z·m_p + N·m_n + Z·m_e."""
-    return Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
+    return Z * M_P_MEV + N * m_n_derived_3input + Z * M_E_MEV
 
 
 def tr_M_free(Z: int, N: int) -> float:

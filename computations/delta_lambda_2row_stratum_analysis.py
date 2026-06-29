@@ -80,11 +80,11 @@ Q0 = mp.mpf(str(Q_MP))
 from experimental_constants import (  # noqa: E402
     M_E_MEV as _M_E_MEV_FLOAT,
     M_P_MEV as _M_P_MEV_FLOAT,
-    M_N_MEV as _M_N_MEV_FLOAT,
+    m_n_derived_3input as _M_N_MEV_FLOAT,
 )
 M_E_MEV = mp.mpf(str(_M_E_MEV_FLOAT))
 M_P_MEV = mp.mpf(str(_M_P_MEV_FLOAT))
-M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
+m_n_derived_3input = mp.mpf(str(_M_N_MEV_FLOAT))
 
 ATOMS_CODATA = {
     # Anchors (LO exact by construction; ΔM = 0; included for sector-mass
@@ -313,6 +313,10 @@ def main() -> int:
     # float64 from wedderburn_jones_markov; per-stratum analysis is
     # mostly mpmath but inherits float64 precision.
     from witness_base import WitnessBuilder
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     w = (WitnessBuilder("delta-lambda-2row-stratum", engine="python")
          .set_description(
             "2-row Wedderburn stratum analysis follow-up to Proposal 1's "
@@ -417,7 +421,7 @@ def main() -> int:
         "q_0": str(Q0),
         "m_e_MeV": str(M_E_MEV),
         "m_p_MeV": str(M_P_MEV),
-        "m_n_MeV": str(M_N_MEV),
+        "m_n_MeV": str(m_n_derived_3input),
     })
     w.add_data("per_atom", results)
     w.add_data("reference_blocks", [

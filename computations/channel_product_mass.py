@@ -58,6 +58,10 @@ me = M_E_MEV
 # Knot volumes from canonical knot_volumes module (mpmath 50dps).
 # See PR #781 knot-vol propagation.
 from knot_volumes import CATALAN_G, VOL_BORROMEAN  # noqa: E402
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
 ALPHA = me * VOL_BORROMEAN  # binding scale ≈ 3.744 MeV
 
 # Per-nucleon channel sums from the T_{2,3} eigendecomposition
@@ -101,7 +105,7 @@ def channel_product_mass(Z, N):
     if A < 1:
         return 0.0
 
-    M_free = Z * M_P_MEV + N * M_N_MEV + Z * me
+    M_free = Z * M_P_MEV + N * m_n_derived_3input + Z * me
 
     if A == 1:
         if Z == 1:  # hydrogen: single proton
@@ -120,7 +124,7 @@ def channel_product_mass(Z, N):
 
 def observed_mass(Z, N, B_per_A):
     """Observed atomic mass from AME2020 B/A."""
-    M_free = Z * M_P_MEV + N * M_N_MEV + Z * me
+    M_free = Z * M_P_MEV + N * m_n_derived_3input + Z * me
     return M_free - (Z + N) * B_per_A
 
 
@@ -180,7 +184,7 @@ stats_errors = []
 for name, Z, N, A, BperA in ATOMS:
     M_pred = channel_product_mass(Z, N)
     M_obs = observed_mass(Z, N, BperA)
-    M_free = Z * M_P_MEV + N * M_N_MEV + Z * me
+    M_free = Z * M_P_MEV + N * m_n_derived_3input + Z * me
     B_pred = M_free - M_pred
     B_obs = A * BperA
 

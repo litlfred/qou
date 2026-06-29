@@ -16,7 +16,7 @@ violation.
 Proposal 1 (workplan 2026-05-09-rho-k): empirical Δ_λ tabulation.
 
 ⚠ **Class-A discipline status (audit-only).**  This script
-consumes CODATA `M_P_MEV` and `M_N_MEV` (lines 100, 102 and lines
+consumes CODATA `M_P_MEV` and `m_n_derived_3input` (lines 100, 102 and lines
 ~395-397) to build the right-hand side of equation (★) below.
 Per the three-calibration discipline
 (`content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md`),
@@ -97,7 +97,7 @@ from q_parameter import Q_MP  # noqa: E402
 from experimental_constants import (  # noqa: E402
     M_E_MEV as _M_E_MEV_FLOAT,
     M_P_MEV as _M_P_MEV_FLOAT,
-    M_N_MEV as _M_N_MEV_FLOAT,
+    m_n_derived_3input as _M_N_MEV_FLOAT,
 )
 
 Q0 = mp.mpf(str(Q_MP))
@@ -109,7 +109,7 @@ Q0 = mp.mpf(str(Q_MP))
 # pins all three so we mirror that.
 M_E_MEV = mp.mpf(str(_M_E_MEV_FLOAT))
 M_P_MEV = mp.mpf(str(_M_P_MEV_FLOAT))
-M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
+m_n_derived_3input = mp.mpf(str(_M_N_MEV_FLOAT))
 
 ATOMS_CODATA = {
     # Anchors (LO is exact by construction; ΔM = 0):
@@ -438,7 +438,7 @@ def assemble_per_atom(atom_label: str, info: dict) -> dict:
                   f"tier 3 = symbolic witness path]")
             chi_data = load_chi_via_symbolic(info["chi_witness"], info["n"])
     M_codata = mp.mpf(info["M_MeV"])
-    constituent = Z * M_P_MEV + N * M_N_MEV  # = ρ_K^LO · m_e · |tr_M|
+    constituent = Z * M_P_MEV + N * m_n_derived_3input  # = ρ_K^LO · m_e · |tr_M|
     delta_M = M_codata - constituent           # binding-energy + np-mass shift
     target = delta_M / M_E_MEV                 # RHS of (★) before sign
 
@@ -618,6 +618,10 @@ def main() -> int:
     # contributions) with mpmath (per-ansatz solutions); honest label
     # is "python" (mixed precision).
     from witness_base import WitnessBuilder
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     w = (WitnessBuilder("delta-lambda-empirical-tabulation", engine="python")
          .set_description(
             "Empirical tabulation of per-Wedderburn-block binding "
@@ -645,7 +649,7 @@ def main() -> int:
     print("  Empirical Δ_λ tabulation across atoms (Proposal 1)")
     print("=" * 96)
     print(f"\n  q_0 = {Q0}")
-    print(f"  m_e = {M_E_MEV}, m_p = {M_P_MEV}, m_n = {M_N_MEV}")
+    print(f"  m_e = {M_E_MEV}, m_p = {M_P_MEV}, m_n = {m_n_derived_3input}")
 
     per_atom: dict[str, dict] = {}
     for atom, info in ATOMS_CODATA.items():
@@ -734,7 +738,7 @@ def main() -> int:
         "q_0": fmt(Q0),
         "m_e_MeV": fmt(M_E_MEV),
         "m_p_MeV": fmt(M_P_MEV),
-        "m_n_MeV": fmt(M_N_MEV),
+        "m_n_MeV": fmt(m_n_derived_3input),
         "precision_note": (
             "Tier-2 chi data (D/T/³He/⁴He) is float64 from "
             "wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal. "

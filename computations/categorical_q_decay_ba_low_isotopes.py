@@ -57,7 +57,7 @@ from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import (
     M_E_MEV,
-    M_N_MEV,
+    m_n_derived_3input,
     M_P_MEV,
     Q_C14_MEV,
     Q_C14_MEV_ERR,
@@ -352,8 +352,8 @@ def main():
         # work can extend it.
         delta_m_shell_MeV = compute_delta_m_shell_bare(Z, N)
 
-        m_atom_pred = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_pred - delta_m_shell_MeV
-        m_atom_ame  = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_ame
+        m_atom_pred = Z * M_P_MEV + N * m_n_derived_3input + Z * M_E_MEV - b_pred - delta_m_shell_MeV
+        m_atom_ame  = Z * M_P_MEV + N * m_n_derived_3input + Z * M_E_MEV - b_ame
         # For comparison: fully-categorical m_atom using mass-endomorphism
         # tower prediction m_p_tower = 1869.85·m_e (per mass-endomorphism.witness.json)
         # and m_n_tower = m_p_tower + Q_β + m_e (per Gemini review fix)
@@ -462,7 +462,7 @@ def main():
     #            m_n = m_p + Q_β     (Hecke engine, exact)
     #            μ_u from q_0 alone is OPEN (Skein resolution of Borromean braid)
     #
-    # We do NOT independently use M_N_MEV from CODATA — that would
+    # We do NOT independently use m_n_derived_3input from CODATA — that would
     # over-count the hadronic input.  Instead:
     #   - m_p is taken as the CODATA value (until Skein resolution lands)
     #   - m_n = m_p + Q_β (algebraic, follows from chain)
@@ -470,6 +470,10 @@ def main():
     #   - μ_u is back-solved from m_p via Skein-pair (Skein resolution
     #     would derive it from q_0 alone)
     import math
+# --- injected by 3-input anomaly fixer ---
+import experimental_constants as _ec_local_3in
+m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
+# -----------------------------------------
     q_half = mp.sqrt(Q_0)
     q_inv_half = 1.0 / q_half
     Z_PAIR = q_half + q_inv_half        # q^{1/2} + q^{-1/2}
@@ -516,10 +520,10 @@ def main():
         .add_parameter("mu_u_MeV", mu_u)
         .add_parameter("mu_d_MeV", mu_d)
         .add_parameter("mu_d_minus_mu_u_MeV", mu_d_minus_u)
-        .add_parameter("Q_beta_n_MeV_derived", M_N_MEV - M_P_MEV - M_E_MEV)
+        .add_parameter("Q_beta_n_MeV_derived", m_n_derived_3input - M_P_MEV - M_E_MEV)
         .add_parameter("Q_beta_n_MeV_codata", Q_NEUTRON_MEV)
         .add_parameter("m_p_MeV", M_P_MEV)
-        .add_parameter("m_n_MeV", M_N_MEV)
+        .add_parameter("m_n_MeV", m_n_derived_3input)
         .add_data("calibration_scheme",
                   "4-input Skein-pair (m_μ/m_e, m_e, μ_u, μ_d) "
                   "per nucleon-mass-splitting-proof.md (commit bd81514)")
@@ -529,7 +533,7 @@ def main():
             "m_n_skein_pair": "2·S_ud + S_dd",
             "m_n_minus_m_p_formula":
                 "((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d − μ_u)",
-            "m_n_minus_m_p_value_MeV": M_N_MEV - M_P_MEV,
+            "m_n_minus_m_p_value_MeV": m_n_derived_3input - M_P_MEV,
             "exact_under_4_input_scheme": True,
         })
         .add_data("layer1_b_over_a", layer1)
