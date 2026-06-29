@@ -58,4 +58,23 @@ theorem betaFactProd_ratio (l : List ℕ) (c : ℕ) (hc : c < l.length) (hpos : 
     rw [Finset.mem_erase] at hi
     rw [betaNatVal_set_ne l c _ hi.1]
 
+/-! ## Vandermonde side: the pairs form of `betaProdGap` (enabler for the gap ratio) -/
+
+/-- The row-`i` gap factor as a product over the actual upper indices `j ∈ (i, k)`, dropping the
+`m ↦ i+1+m` reindex (`Finset.prod_Ico_eq_prod_range`). -/
+theorem row_range_eq_Ioo (l : List ℕ) (i : ℕ) :
+    ∏ m ∈ Finset.range (l.length - 1 - i), (betaNat l i - betaNat l (i + 1 + m))
+      = ∏ j ∈ Finset.Ioo i l.length, (betaNat l i - betaNat l j) := by
+  rw [← Nat.Ico_succ_left, Finset.prod_Ico_eq_prod_range,
+      show l.length - 1 - i = l.length - (i + 1) from by omega]
+
+/-- **`betaProdGap` as a pairs product** `∏_{i<j}(βᵢ−βⱼ)` organised by lower index `i` over `j ∈ (i,k)`.
+This form isolates the index-`c` factors needed for the per-corner gap ratio. -/
+theorem betaProdGap_cast_pairs (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    ((QOU.Mathlib.SYTEnum.betaProdGap l : ℕ) : ℚ)
+      = ∏ i ∈ Finset.range l.length, ∏ j ∈ Finset.Ioo i l.length,
+          (betaNat l i - betaNat l j) := by
+  rw [betaProdGap_cast l hl]
+  exact Finset.prod_congr rfl (fun i _ => row_range_eq_Ioo l i)
+
 end QOU.Mathlib.SYTBetaLagrange
