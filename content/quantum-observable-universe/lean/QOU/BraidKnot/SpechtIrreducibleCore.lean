@@ -23,12 +23,14 @@ the full dichotomy from it.
 
 The James sign lemma `james_kernel_core` is no longer an opaque
 representation-theory `sorry`. It is reduced — sorry-free — to one
-self-contained finite-combinatorics fact:
+self-contained finite-combinatorics fact, stated at the level of the
+`colPattern`/`rowPattern` functions (`Fin n → ℕ`):
 
-> `sdr_core` — if a tabloid `d` is *not* in the column-orbit of `t`, then some
-> transposition lies in `C_t` and fixes `d` (equivalently: two labels share a row
-> of `d` and a column of `t`). A system-of-distinct-representatives / Hall-type
-> existence statement, with **no** representation theory.
+> `sdr_pattern_core` — if no column-permutation of `t` is row-equivalent to `s`,
+> then two labels share a column of `t` and a row of `s`. A
+> system-of-distinct-representatives / Hall-type existence statement, with **no**
+> tabloids, swaps, or representation theory. (`sdr_core`, the tabloid/transposition
+> form the sign lemma consumes, is derived from it sorry-free.)
 
 From `sdr_core` the sign lemma follows sorry-free: the per-tabloid identity
 `combId` splits into the column-orbit case (a sign-preserving reindex against
@@ -42,10 +44,12 @@ From `sdr_core` the sign lemma follows sorry-free: the per-tabloid identity
 |---|---|
 | `colAntisym`, `colAntisym_mem`, `tableau_exists_smul` | **sorry-free** |
 | `bilinM_apply_of`, `bilinM_single_left`, `mk_smul_eq_iff`, `polytabloid_coeff`, `poly_kcast` | **sorry-free** |
-| `sdr_core` (the SDR / Hall existence — the elementary residual core) | **STUB** `sorry` — `-- Ref: [james1984representation]` §4 / `[sagan2001]` §2.4 |
-| `combId`, `colAntisym_zero`, `colAntisym_add`, `james_kernel_core'` | **sorry-free MODULO `sdr_core`** |
-| `james_kernel_core` (James §4 sign lemma) | **sorry-free MODULO `sdr_core`** |
-| `specht_submodule_dichotomy'` (verbatim dichotomy target) | **sorry-free MODULO `sdr_core`** |
+| `swap_smul_arrow_eq_iff`, `swap_mem_colStab_iff`, `swap_smul_mk_eq_iff` (swap↔pattern) | **sorry-free** |
+| `sdr_pattern_core` (the pure pigeonhole / SDR — the elementary residual core) | **STUB** `sorry` — `-- Ref: [james1984representation]` §4 / `[sagan2001]` §2.4.3 |
+| `sdr_core` (tabloid/transposition form) | **sorry-free MODULO `sdr_pattern_core`** |
+| `combId`, `colAntisym_zero`, `colAntisym_add` | **sorry-free MODULO `sdr_pattern_core`** |
+| `james_kernel_core` (James §4 sign lemma) | **sorry-free MODULO `sdr_pattern_core`** |
+| `specht_submodule_dichotomy'` (verbatim dichotomy target) | **sorry-free MODULO `sdr_pattern_core`** |
 | `polytabloid_self_pairing` (`⟨e_t,e_t⟩ = |C_t|`), `polytabloid_not_mem_spechtPerp` | **sorry-free** |
 | `specht_isSimple'` (the reduction) | **sorry-free MODULO `sdr_core` + `specht_form_nondegenerate`** |
 
@@ -171,19 +175,57 @@ theorem poly_kcast (t : Tableau μ) :
 
 /-! ## 4. James's sign lemma — sorry-free modulo the single SDR core -/
 
+/-- A transposition fixes a label-indexed pattern iff it identifies the two labels. -/
+theorem swap_smul_arrow_eq_iff (f : Fin (nOf μ) → ℕ) (a b : Fin (nOf μ)) :
+    (Equiv.swap a b • f) = f ↔ f a = f b := by
+  constructor
+  · intro h
+    have ha := congrFun h a
+    rw [arrow_smul_apply, Equiv.symm_swap, Equiv.swap_apply_left] at ha
+    exact ha.symm
+  · intro h
+    funext l
+    rw [arrow_smul_apply, Equiv.symm_swap]
+    rcases eq_or_ne l a with rfl | hla
+    · rw [Equiv.swap_apply_left]; exact h.symm
+    · rcases eq_or_ne l b with rfl | hlb
+      · rw [Equiv.swap_apply_right]; exact h
+      · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+
+/-- `swap a b ∈ C_t ↔ a, b share a column of `t`. -/
+theorem swap_mem_colStab_iff (t : Tableau μ) (a b : Fin (nOf μ)) :
+    Equiv.swap a b ∈ colStab t ↔ colPattern t a = colPattern t b := by
+  rw [mem_colStab]; exact swap_smul_arrow_eq_iff _ a b
+
+/-- `swap a b • ⟦s⟧ = ⟦s⟧ ↔ a, b share a row of `s`. -/
+theorem swap_smul_mk_eq_iff (s : Tableau μ) (a b : Fin (nOf μ)) :
+    (Equiv.swap a b) • (Tabloid.mk s) = Tabloid.mk s ↔ rowPattern s a = rowPattern s b := by
+  rw [Tabloid.smul_mk, Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff, rowPattern_smul]
+  exact swap_smul_arrow_eq_iff _ a b
+
+/-- **STUB — the pure pigeonhole / SDR residual core.** If no column-permutation of
+`t` is row-equivalent to `s`, then two labels share a column of `t` and a row of
+`s`. A system-of-distinct-representatives / Hall-type existence statement at the
+level of the `colPattern`/`rowPattern` functions — no tabloids, no swaps, no
+representation theory. This is the single irreducible combinatorial residual of the
+entire James submodule theorem. (Mathlib has no Hall's-marriage theorem and QOU no
+column-length / staircase tableau infrastructure, so it is left cited here.) -/
+theorem sdr_pattern_core (t s : Tableau μ)
+    (hd : ∀ σ : colStab t, (σ : Perm (Fin (nOf μ))) • (Tabloid.mk t) ≠ Tabloid.mk s) :
+    ∃ a b : Fin (nOf μ), a ≠ b ∧
+      colPattern t a = colPattern t b ∧ rowPattern s a = rowPattern s b := by
+  -- Ref: [james1984representation] §4 (the sign lemma's SDR step) / [sagan2001] §2.4.3.
+  sorry
+
 omit [CharZero k] in
-/-- **STUB — the SDR / Hall existence (the elementary residual core).** If tabloid
-`d` is not in the column-orbit of `t`, then two labels in a common row of `d` share
-a column of `t` — i.e. there is a transposition in `C_t` fixing `d`. A
-system-of-distinct-representatives / Hall-type existence statement, with no
-representation theory; this is the single remaining sorry of the James sign lemma. -/
+/-- **SDR existence at tabloid level**, derived sorry-free from `sdr_pattern_core`:
+if `d` is not in the column-orbit of `t`, a transposition in `C_t` fixes `d`. -/
 theorem sdr_core (t : Tableau μ) (d : Tabloid μ)
     (hd : ∀ σ : colStab t, (σ : Perm (Fin (nOf μ))) • (Tabloid.mk t) ≠ d) :
     ∃ a b : Fin (nOf μ), a ≠ b ∧ Equiv.swap a b ∈ colStab t ∧ (Equiv.swap a b) • d = d := by
-  -- Ref: [james1984representation] §4 (the sign lemma's SDR step) / [sagan2001] §2.4.
-  -- Mathlib has no Hall's-marriage theorem and QOU no column-length tableau infra,
-  -- so this finite-combinatorics existence is the irreducible residual core.
-  sorry
+  obtain ⟨s, rfl⟩ := d.exists_rep
+  obtain ⟨a, b, hab, hcol, hrow⟩ := sdr_pattern_core t s hd
+  exact ⟨a, b, hab, (swap_mem_colStab_iff t a b).2 hcol, (swap_smul_mk_eq_iff s a b).2 hrow⟩
 
 omit [CharZero k] in
 /-- The per-tabloid identity `Σ_{π∈C_t} sgn(π)·{π·d} = (e_t d)·e_t`, reduced
