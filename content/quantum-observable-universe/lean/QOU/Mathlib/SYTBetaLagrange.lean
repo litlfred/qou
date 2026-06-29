@@ -123,13 +123,47 @@ theorem prodLin_coeff_top (f : Fin k → ℚ) (hk : 0 < k) :
 theorem sum_shift (β : Fin k → ℚ) : (∑ j, (β j + 1)) = (∑ j, β j) + k := by
   rw [Finset.sum_add_distrib]; simp [Finset.card_univ]
 
+/-! ## Coefficient wrappers for `nodePoly` (roots `βⱼ`) and `shiftPoly` (roots `βⱼ+1`) -/
+
+theorem nodePoly_coeff_top (β : Fin k → ℚ) (hk : 0 < k) :
+    (nodePoly β).coeff (k - 1) = - ∑ j, β j := prodLin_coeff_top β hk
+theorem nodePoly_coeff_k (β : Fin k → ℚ) : (nodePoly β).coeff k = 1 := prodLin_coeff_k β
+theorem nodePoly_coeff_gt (β : Fin k → ℚ) {n : ℕ} (hn : k < n) : (nodePoly β).coeff n = 0 :=
+  prodLin_coeff_gt β hn
+theorem shiftPoly_coeff_top (β : Fin k → ℚ) (hk : 0 < k) :
+    (shiftPoly β).coeff (k - 1) = - (∑ j, β j) - k := by
+  have h : (shiftPoly β).coeff (k - 1) = - ∑ j, (β j + 1) := prodLin_coeff_top (fun j => β j + 1) hk
+  rw [h, sum_shift]; ring
+theorem shiftPoly_coeff_k (β : Fin k → ℚ) : (shiftPoly β).coeff k = 1 := prodLin_coeff_k _
+theorem shiftPoly_coeff_gt (β : Fin k → ℚ) {n : ℕ} (hn : k < n) : (shiftPoly β).coeff n = 0 :=
+  prodLin_coeff_gt _ hn
+
 /-- **(Vieta, residual degree)** The residual has degree `< k`: the `Xᵏ⁺¹` and `Xᵏ` coefficients of
 `G` and `(X − C k)·Q` cancel. -/
 theorem residPoly_natDegree_lt (β : Fin k → ℚ) (hk : 0 < k) :
     (residPoly β).natDegree < k := by
-  -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001 (Vieta / elementary
-  -- symmetric coefficients of ∏(X − aⱼ); §I.2). Top two coeffs of G and (X − C k)·Q agree.
-  sorry
+  have hle : (residPoly β).natDegree ≤ k - 1 := by
+    rw [natDegree_le_iff_coeff_eq_zero]
+    intro m hm
+    have hmk : k ≤ m := by omega
+    obtain ⟨j, rfl⟩ : ∃ j, m = j + 1 := ⟨m - 1, by omega⟩
+    have hjk : k - 1 ≤ j := by omega
+    unfold residPoly bigPoly
+    rw [coeff_sub, coeff_X_mul,
+        show (X - C (k:ℚ)) * nodePoly β = X * nodePoly β - C (k:ℚ) * nodePoly β from by ring,
+        coeff_sub, coeff_X_mul, coeff_C_mul]
+    rcases Nat.lt_trichotomy j k with hlt | heq | hgt
+    · have hj : j = k - 1 := by omega
+      subst hj
+      rw [shiftPoly_coeff_top β hk, nodePoly_coeff_top β hk,
+          show (k - 1) + 1 = k from by omega, nodePoly_coeff_k β]
+      ring
+    · subst heq
+      rw [shiftPoly_coeff_k β, nodePoly_coeff_k β, nodePoly_coeff_gt β (by omega)]
+      ring
+    · rw [shiftPoly_coeff_gt β hgt, nodePoly_coeff_gt β hgt, nodePoly_coeff_gt β (by omega)]
+      ring
+  exact lt_of_le_of_lt hle (by omega)
 
 /-- **(Vieta, residual leading coefficient)** `R.coeff (k−1) = C(k,2) − ∑ⱼ βⱼ`.  Computed from the
 degree-`(k−1)` and degree-`(k−2)` coefficients of `G` and `Q` via Vieta and the `βⱼ ↦ βⱼ+1` shift of
