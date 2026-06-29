@@ -1,0 +1,69 @@
+# 2026-06-29 — W_λ keystone residual (i): owner-opened MTC-matching workplan
+
+**Bean:** `z2bn` (Lever 1 [FOCUS] — fibre kernel `R(q,x)`), parent keystone `s5bb`/`08a2`.
+**Branch:** `claude/wlambda-mtc-keystone-residual-i-2026-06-29`
+**Scope tag:** Subgoal-2, **owner-opened 2026-06-29** (explicit direction to work residual (i)).
+**Status:** intent / mapping — no construction yet, no fit, nothing wired.
+
+## Why this is open now
+
+The owner directed (2026-06-29) opening the **single genuine remaining derivation**
+of the lever-1 binding kernel. Per `.beans/z2bn` Stages 6–9 (concluded 2026-06-28)
+and [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md):
+
+- The kernel is `R(q,x) = x² − τx + 1` (depth-2, `det B = 1`; Lean sorry-free).
+  The whole lever reduces to **one number** `τ = tr B = 2.6424` at q₀.
+- **Algebraic / fibre side: CONCLUDED.** `τ = 3(3[2]²+2)/(4([2]+2))` is bar-even
+  (`tau_quantum_integer_form`, sorry-free). The binding correction tower `D(m)`
+  is fully characterized through m=11 as generic bar-symmetric residues — no finite
+  q-special-function closed form (Stages 6–9). Further algebraic probing has
+  diminishing returns; it has handed the geometric side a complete exact target.
+- **Geometric `tr B` side: REDIRECTED to residual (i).** All three natural
+  color-`E_q` elliptic candidates miss (loop monodromy integer-trace; path
+  transport `θ_spec=0.0141`, ~55× small; intrinsic Tate period `5.847`, 6.5× large
+  — [`2026-06-25-lever1-color-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md)).
+  So `θ_binding` is **not** a color-`E_q` period; its geometric origin is the
+  **`W_λ`-side Plancherel/MTC localization** = keystone **residual (i)**.
+
+## Residual (i) — the exact open statement
+
+From the s5-so3 keystone ledger (residual (i), owner-gated until 2026-06-29):
+
+> Pin the Beasley–Witten gauge datum on `S³/2I` to the Hecke `Rep U_q(sl_N)`
+> blocks so the localization `W_λ = d_q²/D²` is provably **OUR** Hecke category's
+> Plancherel measure, not "some MTC's".
+
+What is already closed on this keystone (residual (ii), 2026-06-24):
+
+- `restriction_intertwines_conjugation` (∀λ⊢5), `std_irrep_conjugation_fixed`,
+  capstone `reeb_eq_restriction_scaffold [BringFiberAction]` — all `#print axioms`
+  clean. These discharge the **algebraic** restriction-commutes-with-conjugation
+  identity; the geometric fibre map (`BringFiberAction` class) stays open.
+
+## Plan (formalize-first; smallest genuine increment first)
+
+This is genuine multi-session DG; the discipline is to find the smallest
+**formalizable structural claim** that advances residual (i), not to leap.
+Candidate decomposition (to be refined by the in-flight corpus map):
+
+1. **State the Plancherel/Verlinde target as a Lean structure.** `W_λ = d_q²/D²`
+   for the Hecke category `Rep U_q(sl_N)` at the substrate `q₀` — quantum dims
+   `d_q(λ)`, global dim `D² = Σ_λ d_q(λ)²`. Check whether the corpus already
+   carries `d_q`, `D²`, and the Markov/Plancherel measure (much of the q-dim
+   machinery exists; see `dim_q` / Wedderburn blocks).
+2. **The MTC-matching obligation.** The open content is the identification of the
+   Chern–Simons / WRT(`S³/2I`) localization weight with this categorical
+   Plancherel measure — i.e. that the gauge-theory `W_λ` *is* `d_q²/D²` for *our*
+   category. Isolate this as a single `[class]` field (§3b-cond) so downstream
+   `tr B` results become rigorous-conditional, not unproved-flat.
+3. **The bridge to `τ`.** Record (conditionally) how `W_λ = d_q²/D²` feeds
+   `tr B → τ → R(q,x)`. Only assert what the map actually derives.
+
+**Guardrails (STRICT).** No 7th fit-based ansatz (Δ_λ rule stands). No fit on
+`τ`; the algebraic side already fixed `τ` exactly — the geometric side must
+*derive* the same number, not tune to it. Scope every negative as (a) unless a
+proved invariant licenses (b). Coordinate on #2722 / #2744 before constructing.
+
+## Open log
+
+- 2026-06-29: branch + intent; corpus map of residual (i) dispatched.
