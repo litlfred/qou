@@ -84,3 +84,19 @@ Regression backstop: decide-verified n≤7 (SYTEnumerationN7.numSYTenum_eq_dimHL
 dimAitkenIdentity_le4/_5/_6) — all axiom-free kernel decide.
 
 Origin: PR #2984, branch claude/lean-proof-sorries-lyxk3h.
+
+## PR #2986 status (2026-06-29, rebased + keystone-swapped)
+
+Honoring the owner determinant ruling: SYTBetaLagrange now rests on
+SYTVandermonde.interp_leadingCoeff (Matrix.det_vandermonde, merged #3079); the
+branch's hand-rolled SYTLagrangeInterp interpolation keystone is DELETED.
+
+Sorry-free on this branch: betaLagrange (the β-Lagrange identity), obligation (B)
+numSYTenum_branching, cornerRecursion, and the full gnwHookIdentity→betaLagrange
+Vandermonde wiring (SYTHookGNWWiring: betaVec/betaNat, sum_betaVec_sub, betaGapProd
+_cast/_row_cast, betaProdGap_cast = ∏_{i<j}(βᵢ−βⱼ), betaFactProd_cast = ∏βᵢ!).
+
+Single remaining cited sorry: gnwHookIdentity, reduced to the per-corner ratio
+prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j) — the betaProdGap/
+betaFactProd ratio under removeCorner (incl. row-drop). Vandermonde+factorial infra
+for it is all proved; the ratio surgery is the remaining work.
