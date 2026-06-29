@@ -19,8 +19,6 @@ are isotopic.  $\square$*
 *Uniqueness is up to **isotopy**, not up to NF strict equality.
 Two non-isotopic atom-knots with $(Z_1, N_1) = (Z_2, N_2)$ are
 **isotopes** of each other ([isotope-knot](#def:isotope-knot)) only
-if they share the proton-quark block $w_{q^Z}$.  Different $w_{q^Z}$
-realisations (e.g. interchanging two protons via a non-trivial
-permutation) yield different isotopy classes — these are
-**distinct atom-knots** at the same $(Z, N)$, corresponding to
-different physical isomers.*
+if they share the proton-quark block $w_{q^Z}$. Different $w_{q^Z}$
+realisations yield distinct categorical isotopy classes in the abstract
+braid representation.*
