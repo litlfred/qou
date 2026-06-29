@@ -13,12 +13,15 @@
 --     `QOU.AppendixSurreals.standardPart_add`,
 --     `QOU.AppendixSurreals.standardPart_mul`.
 
+import Mathlib.Data.Real.Basic
+
 namespace QOU.AppendixSurreals
 
-/-- Standard-part functor $\mathrm{st} : \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ -/
-def StandardPart   :=
-  -- Ref: [manuscript] def:standard-part-functor
-  trivial
+-- The standard-part functor `st : No_fin → ℝ` is formalised in the
+-- library at `QOU.AppendixSurreals.standardPart` (StandardPart.lean);
+-- the content block `def:standard-part-functor` resolves its `lean.ref`
+-- there. This sibling carries only the Archimedean mass-limit corollary
+-- below (a genuine consequence, not a shadow stub for the functor).
 
 /--
 The Archimedean Functor (Standard Part) commutes with the mass limit mapping.
