@@ -85,10 +85,6 @@ from codata_constants import M_E_MEV as _M_E_MEV_MP
 # Comparison references (P31-triage Phase B): validation-only CODATA m_p/m_n
 # used to report fit residuals against experiment, not as prediction inputs.
 from codata_constants import (
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     M_P_MEV_VALIDATION as _M_P_MEV_MP,
     M_N_MEV_VALIDATION as _M_N_MEV_MP,
 )

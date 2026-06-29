@@ -110,13 +110,10 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from murnaghan_nakayama import partitions_of, hook_lengths  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
 
 q_sym = sp.Symbol("q", positive=True, real=True)
 

@@ -99,13 +99,10 @@ from rho_k_h3a_refinement import (  # noqa: E402
     _per_partition_symbolic,
 )
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from crystal_basis import crystal_B  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
 
 set_compute_dps()
 

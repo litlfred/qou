@@ -50,6 +50,7 @@ from witness_base import WitnessBuilder
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 
@@ -160,10 +161,6 @@ def main() -> int:
     # Build deuteron braid word
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_core import h as h_num
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     h_val = float(h_num)
     q_val = float(Q0_FLOAT)
     word = atom_braid_word_3A(1, 1)

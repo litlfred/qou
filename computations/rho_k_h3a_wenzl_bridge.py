@@ -73,15 +73,12 @@ if str(HERE) not in sys.path:
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Reuse the proven numeric Hoefsmit + character pipeline from sibling
 # rho_k_h3a_refinement.py (do NOT modify that script per task constraint).
 from rho_k_h3a_refinement import (  # noqa: E402
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     chi_numeric,
     deuteron_canonical_crossings,
     load_y_lambda_n6,
