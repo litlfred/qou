@@ -1,8 +1,8 @@
 {
   "engine": "python+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T14:26:13.847707+00:00",
-  "commitSha": "d1243b2a510ed6ef45bb2fea781caee3029e9d8f",
+  "computedAt": "2026-06-29T14:50:54.820397+00:00",
+  "commitSha": "a04c070792bfcfdf1fba1ae5f2ceeb825285c906",
   "assertions": [
     {
       "name": "closed_forms_sigma_inv_avg_exact",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 152,
+  "durationMs": 124,
   "computation": "delta-lambda-exponent-from-crossings",
   "scriptFile": "delta_lambda_exponent_from_crossings.py",
-  "scriptHash": "8bea2239a405",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "scriptHash": "963bca7e60ca",
+  "scriptCommitSha": "2fb24ddeca64e9445e2c0ef4962ea9374e403dff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -148,10 +148,13 @@
       "interface_writhe": "(Z-1) p-p σ minus (N-1) n-n σ⁻¹ = Z-N (mirror-pair splitter; T & ³He share σ+σ⁻¹=28 ⇒ identical leading exp 25, differ only here)"
     },
     "per_nucleon_10": "9 (intra-𝓑₃ non-averaged) + 1 (interface, amortized)",
-    "predictions_exponent": {
-      "6Li": 55,
-      "7Li": 65,
-      "8Be": 75
+    "predictions_exponent_REFUTED": {
+      "values_10A_5": {
+        "6Li": 55,
+        "7Li": 65,
+        "8Be": 75
+      },
+      "status": "REFUTED at A≥5 (scope-(a)): ⁶Li measured log_q0 Δ_λ=36.1, not 55; slope collapses ~10→0.4 at the ⁴He shell. See delta_lambda_z_coefficient_and_slope.py. Crossing-sum arithmetic stands; the global binding-law reading does not."
     },
     "site_reading": {
       "exponent": "5·(2A-1) = 5 × (A nucleons + A-1 bonds) = 5 per chain-site",

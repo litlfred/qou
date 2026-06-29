@@ -40,11 +40,19 @@ tracks this proton excess (Z−N): D=0, T=−1, ³He=+1 (the −1.40 outlier), �
 Open: the coefficient and the p/n asymmetry (proton excess is penalised, neutron
 excess is not) require the intra p≠n split (proton 6σ/3σ⁻¹ vs neutron 5σ/4σ⁻¹).
 
-## Testable prediction (derive-or-refute when the tower extends)
+## Testable prediction — RAN, and the 10A−5 law is REFUTED at A≥5 (scope-(a))
 
-The closed form **predicts** the Δ_λ q₀-exponent for the un-measured isotopes:
-⁶Li (Z=N=3) → 55, ⁸Be (Z=N=4) → 75 — i.e. `Δ_λ ≈ q₀^(10A−5)` continues. This is
-a prediction (derived), NOT a fit; it is the decisive test the data-gate awaited.
+The crossing closed form predicted the Δ_λ q₀-exponent ⁶Li → 55, ⁸Be → 75 (i.e.
+`Δ_λ ≈ q₀^(10A−5)` continues). **That decisive test has now RUN**
+(`delta_lambda_z_coefficient_and_slope.py`, ⁶Li/⁷Li/⁷Be added to
+`binding_canonical.py`) and the prediction is **FALSIFIED**: ⁶Li gives
+`log_{q₀}Δ_λ = 36.1`, not 55. The slope is ≈10/nucleon only for A≤4 and
+collapses to ≈0.4/nucleon at the ⁴He shell. This is a SCOPE-LIMITED negative
+(AGENTS.md "refuted" discipline (a)): the crossing-SUM closed forms below remain
+exact arithmetic, but their reading as a *global* binding-exponent law does NOT
+continue past A=4 — `B_pred` saturates while `B_AME` grows ~linearly, so
+`log Δ_λ` is logarithmic, not linear. The crossing counts are not excluded; only
+the global 10A−5 extrapolation is.
 
 ## The −3 offset dissolves under the chain-SITE reading
 
@@ -134,10 +142,14 @@ def main() -> int:
               f"| σ+σ⁻¹={sig+inv}=10A-2 | writhe={sig-inv}=4Z=intra({intra_w}=3Z+N)+iface({iface_w}=Z-N) "
               f"| (σ+σ⁻¹)-3={sig+inv-3}=10A-5 | Z-N={Z-N} dev={dev[name]:+.3f}  {'OK' if match else 'X'}")
 
+    # NOTE: these crossing-SUM values are exact arithmetic, but their reading as
+    # the binding q₀-exponent (10A−5) is REFUTED at A≥5 — see
+    # delta_lambda_z_coefficient_and_slope.py (⁶Li measured 36.1, not 55).
     preds = {n: (10 * (Z + N) - 5) for n, (Z, N) in
              {"6Li": (3, 3), "7Li": (3, 4), "8Be": (4, 4)}.items()}
     print(f"\n  closed forms verified (A≤4): {'DERIVED' if cf_ok else 'FAILED'}")
-    print(f"  testable predictions (exponent 10A-5): {preds}")
+    print(f"  crossing-sum 10A-5 values: {preds}  "
+          f"[REFUTED as a binding law at A≥5: ⁶Li measured 36.1 ≠ 55]")
 
     b = WitnessBuilder("delta-lambda-exponent-from-crossings", engine="python+combinatorial", start_time=t0)
     (b.set_description(
@@ -166,7 +178,12 @@ def main() -> int:
          "interface_writhe": "(Z-1) p-p σ minus (N-1) n-n σ⁻¹ = Z-N (mirror-pair splitter; "
                              "T & ³He share σ+σ⁻¹=28 ⇒ identical leading exp 25, differ only here)"})
      .add_data("per_nucleon_10", "9 (intra-𝓑₃ non-averaged) + 1 (interface, amortized)")
-     .add_data("predictions_exponent", preds)
+     .add_data("predictions_exponent_REFUTED", {
+         "values_10A_5": preds,
+         "status": "REFUTED at A≥5 (scope-(a)): ⁶Li measured log_q0 Δ_λ=36.1, "
+                   "not 55; slope collapses ~10→0.4 at the ⁴He shell. See "
+                   "delta_lambda_z_coefficient_and_slope.py. Crossing-sum "
+                   "arithmetic stands; the global binding-law reading does not."})
      .add_data("site_reading", {
          "exponent": "5·(2A-1) = 5 × (A nucleons + A-1 bonds) = 5 per chain-site",
          "per_site_q_power": "5 = Bring quintic (𝒳₅; Aut=S₅; g²=5)",
