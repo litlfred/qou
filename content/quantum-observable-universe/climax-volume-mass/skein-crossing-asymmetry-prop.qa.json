@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.lean"
   },
   "source_hashes": {
-    "md": "18c823f97e93",
+    "md": "ee801449874e",
     "ts": "4123e4bea16a",
     "lean": "a62888073425"
   },
@@ -30,25 +30,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.md:32: The companion Lean `skein_crossing_asymmetry` currently encodes a placeholder (`: True`); the intended statement ($q > 1 \\Rightarrow \\tfrac{1}{2}(q - q^{-1}) > 0$) is sketched in-file and deferred via"
       }
     ],
     "voice-emoji-content": [
@@ -68,23 +49,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-first-person-work": [
@@ -104,23 +68,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-time-stamped-notes": [
@@ -140,23 +87,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-unicode-crash": [
@@ -176,23 +106,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-editorializing": [
@@ -212,23 +125,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-scholarly-default": [
@@ -248,23 +144,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-title-scholarly": [
@@ -303,23 +182,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-author-notes-pollution": [
@@ -339,23 +201,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-status-section": [
@@ -375,23 +220,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "framework-canonical": [
@@ -411,23 +239,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "wall-side-correct": [
@@ -447,23 +258,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -807,7 +601,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -828,7 +622,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1275,37 +1069,6 @@
         "reviewed_at": "2026-06-22T02:57:15.482Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-statement-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T13:05:07.188Z",
-        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement carries inline physical naming ('per-crossing repulsive Coulomb correction') but no separated motivational/significance prose; the substantive interpretation (emergent Coulomb repulsion, nucleus/binding) is held by the companion remark rem:skein-crossing-asymmetry (interprets: prop:skein-crossing-asymmetry)."
       }
     ],
     "fit-section-chapter": [
@@ -1326,22 +1089,6 @@
         "reviewed_at": "2026-06-22T02:57:15.937Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Placed in sec:crossing-energy ('Crossing energy and Coulomb charge') of q-Hyperbolic Geometry; the Skein crossing-asymmetry / per-crossing Coulomb correction is the section's subject. Siblings (rem, skein-bar-antisymmetry) do not restate the claim."
       }
     ],
     "wall-side-statement": [
@@ -1362,22 +1109,6 @@
         "reviewed_at": "2026-06-22T02:57:16.363Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement uses q>1, ½(q−q⁻¹), tanh(ln q), q^{1/2} — archimedean constructs, but the crossing-energy / Coulomb section is the genuinely archimedean-physical regime (positivity of a real Coulomb correction at the substrate q>1). The Lean correctly localises this over ℝ with the §7c rationale stated. Matches its regime."
       }
     ],
     "wall-side-proof": [
@@ -1398,22 +1129,6 @@
         "reviewed_at": "2026-06-22T02:57:16.772Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "The .md proposition has no narrative **Proof.** body; the proof lives in Lean and uses linarith/positivity on ℝ — appropriate machinery for the archimedean positivity statement 0 < ½(q−q⁻¹) under 1<q. No wall violation."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1434,38 +1149,6 @@
         "reviewed_at": "2026-06-22T02:57:17.137Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
-      },
-      {
-        "field_hash": {
-          "ts": "4123e4bea16a",
-          "md": "18c823f97e93"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "local/narrative-lean-rerate"
-        },
-        "reviewed_at": "2026-06-24T18:30:00.000Z",
-        "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
-        "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "evidence": "skein-crossing-asymmetry-prop.md:32: 'The companion Lean `skein_crossing_asymmetry` currently encodes a placeholder (`: True`); the intended statement ... is sketched in-file and deferred via `sorry`'",
-        "notes": "The mathematical statement and the actual Lean signature AGREE (q>1 ⇒ q⁻¹<q ∧ Coulomb identity ∧ 0<coulombCorrection q, all derived sorry-free in skein-crossing-asymmetry-prop.lean:75-81). But the .md 'Lean formalization' note is STALE: it claims the Lean is a `: True` placeholder deferred via sorry, whereas the .lean is a complete, sorry-free proof of a stronger conjunction. The prose description of the Lean contradicts the Lean itself — update the note to match the real theorem."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1490,46 +1173,6 @@
         "reviewed_at": "2026-06-22T02:57:17.510Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Trivial skeleton proof stub with no stated plan."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "warn",
-        "notes": ".md gives short algebraic argument but admits Lean is placeholder :True; commented-out real proof exists but not active.",
-        "reviewed_at": "2026-06-25T16:50:47.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.45
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1554,46 +1197,6 @@
         "reviewed_at": "2026-06-22T02:57:17.843Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Trivial skeleton proof stub restating the target."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "notes": "Goal (skein q vs q^-1 asymmetry: delta=1/2(q-q^-1)>0, Coulomb/strong ratio=tanh ln q) substantive.",
-        "reviewed_at": "2026-06-25T16:50:47.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1618,46 +1221,6 @@
         "reviewed_at": "2026-06-22T02:57:18.268Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "warn",
-        "notes": "Result is elementary q-algebra; Lean adds nothing (vacuous :True + projection stub).",
-        "reviewed_at": "2026-06-25T16:50:47.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.45
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1678,42 +1241,6 @@
         "reviewed_at": "2026-06-22T02:57:18.658Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Declaration contains sorryAx or unexpected axioms."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "fail",
-        "notes": "Sibling .lean: theorem skein_crossing_asymmetry : True := sorry (vacuous+sorry); QOU/Braiding file is def := ctx.claim_... projection. Neither proves .md (delta>0, ratio=tanh ln q).",
-        "reviewed_at": "2026-06-25T16:50:47.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1734,42 +1261,6 @@
         "reviewed_at": "2026-06-22T02:57:18.992Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Placeholder stub is unformalised."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "fail",
-        "notes": "QOU/Braiding skein_crossing_asymmetry := ctx.claim_skein_crossing_asymmetry returns the field equal to the conclusion (self-projection).",
-        "reviewed_at": "2026-06-25T16:50:47.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1790,37 +1281,6 @@
         "reviewed_at": "2026-06-22T02:57:19.464Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
-          "version": "v1",
-          "script_hash": "397e2491603f",
-          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
-        },
-        "reviewed_at": "2026-06-23T11:59:48.389Z",
-        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "The decl the lean.ref resolves to (QOU.Braiding.skein_crossing_asymmetry) concludes q⁻¹<q ∧ (Coulomb identity) ∧ 0<coulombCorrection q — substantive, not True/rfl. The .md note's '`: True` placeholder' claim is stale and incorrect; evaluating the resolved decl, the goal is genuine."
       }
     ],
     "proof-no-false-premise": [
@@ -1841,42 +1301,6 @@
         "reviewed_at": "2026-06-22T02:57:19.845Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub proof with unresolved premise."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "notes": "Skein-relation field hypotheses satisfiable; sibling :True has no premise. No contradiction.",
-        "reviewed_at": "2026-06-25T16:50:47.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1897,42 +1321,6 @@
         "reviewed_at": "2026-06-22T02:57:20.206Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "notes": "Sibling thm has no hypotheses; projection file uses its ctx instance. No unused explicit binders.",
-        "reviewed_at": "2026-06-25T16:50:47.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1953,269 +1341,6 @@
         "reviewed_at": "2026-06-22T02:57:20.569Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "c1ddde67f181"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.lean, content/quantum-observable-universe/lean/QOU/Braiding/skein_crossing_asymmetry.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      }
-    ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim 'Lean formalization' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Traced dependencies ['def:coulomb-charge'] for 'prop:skein-crossing-asymmetry' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Verified that the scope of 'prop:skein-crossing-asymmetry' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of 'Lean formalization' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All references and uses ['def:coulomb-charge'] cited in 'prop:skein-crossing-asymmetry' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All terms and algebraic structures in 'prop:skein-crossing-asymmetry' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The algebraic statements in 'prop:skein-crossing-asymmetry' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Physical dimensions and units in 'prop:skein-crossing-asymmetry' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All backing computations and proofs are fully reproducible.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "18c823f97e93",
-          "ts": "4123e4bea16a",
-          "lean": "a62888073425"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling has sorry stubs.",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:skein-crossing-asymmetry' incomplete.",
-        "severity": "major"
       }
     ]
   },

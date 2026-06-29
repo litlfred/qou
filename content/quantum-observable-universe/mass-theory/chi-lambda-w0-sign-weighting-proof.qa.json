@@ -7,29 +7,9 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting-proof.md"
   },
   "source_hashes": {
-    "md": "c91288b8fb80",
+    "md": "bc7fa89a08cd",
     "ts": "c14b0effd922"
   },
-  "criteria": {
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "c91288b8fb80",
-          "ts": "c14b0effd922"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-32",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T22:55:43.946Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "Concludes that sign agreement is 'the leading manifestation of the long-element character extraction' based entirely on numerical verification at exactly two values (k=5 and k=6).",
-        "notes": "This is textbook overfitting and post-hoc rationalization. Drawing deep structural principles from a coincidence at exactly two numerical points is highly fragile."
-      }
-    ]
-  },
+  "criteria": {},
   "updated_at": "2026-06-28T22:55:43.946Z"
 }

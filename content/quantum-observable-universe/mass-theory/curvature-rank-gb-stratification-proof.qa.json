@@ -7,29 +7,9 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-proof.md"
   },
   "source_hashes": {
-    "md": "9393fc5eb88a",
+    "md": "ac7843a47a42",
     "ts": "95bcd6d56f88"
   },
-  "criteria": {
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "9393fc5eb88a",
-          "ts": "95bcd6d56f88"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-32",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T22:55:43.946Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "The neutron's extra ideal at (GB depth 3, jet 1, std channel) — the 6_1 knot — is... the algebraic origin of the proton-neutron mass splitting",
-        "notes": "Extreme numerology. Equating the proton-neutron mass difference to the presence of a specific mathematical knot ideal without physical justification."
-      }
-    ]
-  },
+  "criteria": {},
   "updated_at": "2026-06-28T22:55:43.946Z"
 }
