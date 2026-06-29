@@ -197,12 +197,39 @@ theorem gap_ratio_prod (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
     rw [Finset.mem_range] at ha; rw [Finset.mem_Ioo] at hb; omega)]
   ring
 
+/-- **(R1) The per-corner gap ratio (non-row-drop), sorry-free.** For a corner `c`,
+`betaProdGap (l.set c (l[c]−1)) = betaProdGap l · ∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.  Factor each pairs
+term `β'ᵢ−β'ⱼ = (βᵢ−βⱼ)·rᵢⱼ` (`mul_div_cancel₀`, gaps nonzero) and evaluate `∏ᵢ∏ⱼ rᵢⱼ` via
+`gap_ratio_prod`. -/
+theorem betaProdGap_ratio (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    (QOU.Mathlib.SYTEnum.betaProdGap (l.set c (l.getD c 0 - 1)) : ℚ)
+      = (QOU.Mathlib.SYTEnum.betaProdGap l : ℚ)
+        * ∏ j ∈ (Finset.range l.length).erase c,
+            (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+  have hc : c < l.length := hcorner.1
+  have hpos : 1 ≤ l.getD c 0 := by have := hcorner.2; omega
+  have hl' : List.Sorted (· ≥ ·) (l.set c (l.getD c 0 - 1)) :=
+    QOU.Mathlib.SYTEnum.sorted_set_corner l c hl hcorner
+  rw [← gap_ratio_prod l hl c hc hpos,
+      betaProdGap_cast_pairs (l.set c (l.getD c 0 - 1)) hl', betaProdGap_cast_pairs l hl]
+  simp only [List.length_set]
+  rw [← Finset.prod_mul_distrib]
+  apply Finset.prod_congr rfl
+  intro i hi
+  rw [← Finset.prod_mul_distrib]
+  apply Finset.prod_congr rfl
+  intro j hj
+  rw [Finset.mem_range] at hi; rw [Finset.mem_Ioo] at hj
+  have hne := betaNat_ne l hl hj.1 hj.2
+  field_simp
+
 /-!
 ## Remaining design — the gap ratio, row-drop, and assembly (next pieces)
 
 All scaffolding above is sorry-free.  The remaining route to `gnwHookIdentity`:
 
-**(R1) Gap ratio (non-row-drop)** — `betaProdGap (l.set c (l[c]−1)) = betaProdGap l ·
+**(R1) Gap ratio (non-row-drop)** — DONE (`betaProdGap_ratio`). `betaProdGap (l.set c (l[c]−1)) = betaProdGap l ·
 ∏_{j∈(range k).erase c} (β_c−1−β_j)/(β_c−β_j)`.  Via the pairs form: factor each term
 `β'ᵢ−β'ⱼ = (βᵢ−βⱼ)·rᵢⱼ` (`mul_div_cancel₀`, gaps nonzero by `betaNat_ne`), so
 `betaProdGap(l∖c) = betaProdGap(l)·∏ᵢ∏ⱼ rᵢⱼ` (`prod_mul_distrib`).  Evaluate the inner
