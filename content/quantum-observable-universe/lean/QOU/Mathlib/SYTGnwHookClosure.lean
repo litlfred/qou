@@ -198,4 +198,38 @@ theorem betaProdGapFin (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
   · intro m hm
     rw [betaVec_eq_betaNat]
 
+/-- **Generic Vandermonde double-product split at pivot column `c`.**  The full product
+`∏_p ∏_{q>p} f p q` factors as `[c-row: ∏_{q>c} f c q] · [c-col: ∏_{p<c} f p c] · [rest: pairs
+touching neither `c`]`.  This is the structural identity behind the per-corner Vandermonde-side ratio:
+applied to `f p q = γ p − γ q` for `γ` and for the `c`-updated `γ'`, the `rest` factors cancel and the
+`c`-row/`c`-col factors give the `wall_split` numerator/denominator. -/
+theorem splitVand (f : Fin k → Fin k → ℚ) (c : Fin k) :
+    (∏ p : Fin k, ∏ q ∈ univ.filter (p < ·), f p q)
+      = (∏ q ∈ univ.filter (c < ·), f c q)
+        * (∏ p ∈ univ.filter (· < c), f p c)
+        * (∏ p ∈ univ.erase c, ∏ q ∈ (univ.filter (p < ·)).erase c, f p q) := by
+  rw [← Finset.mul_prod_erase univ (fun p => ∏ q ∈ univ.filter (p < ·), f p q) (mem_univ c)]
+  rw [mul_assoc]
+  congr 1
+  have hper : ∀ p ∈ univ.erase c, (∏ q ∈ univ.filter (p < ·), f p q)
+      = (if p < c then f p c else 1) * (∏ q ∈ (univ.filter (p < ·)).erase c, f p q) := by
+    intro p _
+    by_cases hpc : p < c
+    · rw [if_pos hpc]
+      have hcmem : c ∈ univ.filter (p < ·) := by rw [mem_filter]; exact ⟨mem_univ _, hpc⟩
+      rw [← Finset.mul_prod_erase _ _ hcmem]
+    · rw [if_neg hpc]
+      have hcnmem : c ∉ univ.filter (p < ·) := by
+        rw [mem_filter]; push_neg; intro _; exact le_of_not_lt hpc
+      rw [Finset.erase_eq_of_notMem hcnmem, one_mul]
+  rw [Finset.prod_congr rfl hper, Finset.prod_mul_distrib]
+  congr 1
+  rw [← Finset.prod_filter]
+  congr 1
+  ext p
+  simp only [mem_filter, mem_erase, mem_univ, and_true, true_and]
+  constructor
+  · rintro ⟨_, hpc⟩; exact hpc
+  · intro hpc; exact ⟨ne_of_lt hpc, hpc⟩
+
 end QOU.Mathlib.SYTBetaLagrange
