@@ -88,7 +88,40 @@ chirality-asymmetric cannot be the Hecke Plancherel measure). It does **not** cl
 `sorry` pending the q-Wedderburn–Artin layer (sibling #2743) — residual (i)'s normalization leg
 depends on it. Carried here abstractly via `globalDim_ne` (`D² ≠ 0`).
 
+## Infrastructure (2026-06-29) — keystone Lean cone builds; `lake build` is unusable here
+
+The keystone cone (`KeystoneC2QDimTranspose`, `IdentityIPlancherelConditional`,
+`WLambdaDefectClosedForm`, + deps, + this increment) **builds sorry-free** against the restored
+`lake-cache/qou-v4-24-0` oleans (mathlib 2951, QOU 208→209). Two hard env facts found:
+
+1. **`lake build` is destructive + blocked here.** The git proxy is **repo-scoped to litlfred/qou**,
+   so `lake` 403s on every dependency repo (mathlib/Qq/batteries) and, finding no `.git` in the
+   restored package dirs, **deletes the 2951 mathlib oleans** and tries to re-clone. **Never run
+   `lake build` in this sandbox** — it wipes the cache. Re-restore from `lake-cache/qou-v4-24-0` if
+   it happens.
+2. **Working verification = per-module `lean`-direct** against restored oleans, with the qou package
+   option `-D autoImplicit=false` and `--root=$PKGROOT` (else spurious `Field ?m` / instance
+   errors). Olean root suffix is `build/lib/lean` (extra `lean/`). Use the toolchain's own `lean`
+   binary; only **`lake`** triggers the elan→`release.lean-lang.org` 403.
+
+```bash
+export PATH="$HOME/.elan/bin:$PATH"; ROOT=$(pwd)
+LEANBIN=~/.elan/toolchains/lean-v4.24.0/bin/lean
+PKGROOT="$ROOT/content/quantum-observable-universe/lean"; LIBOUT="$PKGROOT/.lake/build/lib/lean"
+LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':'); LP="$LP$LIBOUT"
+compile(){ local m="$1" s="$PKGROOT/${1//.//}.lean" o="$LIBOUT/${1//.//}.olean"; mkdir -p "$(dirname "$o")"
+  env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 "$LEANBIN" -D autoImplicit=false --root="$PKGROOT" \
+    -o "$o" -i "${o%.olean}.ilean" "$s"; }
+compile QOU.BraidKnot.WLambdaMTCLocalizationObligation   # exit 0, sorry-free
+```
+
+(The `lake-cache/qou-v4-24-0` seed ships only the partial 202-olean QOU set; the keystone cone is
+now built on disk. Re-seeding to capture it is owner-gated — a force-push to a load-bearing infra
+orphan branch.)
+
 ## Open log
 
 - 2026-06-29: branch + intent; corpus map of residual (i) dispatched.
 - 2026-06-29: Increment 1 — MTC-matching obligation class + C1/C2 derived, sorry-free (lean-direct).
+- 2026-06-29: built the keystone Lean cone; recorded the `lean`-direct recipe (`lake build` is
+  destructive + proxy-blocked here). Increment 1 re-verified against the real cone (exit 0).
