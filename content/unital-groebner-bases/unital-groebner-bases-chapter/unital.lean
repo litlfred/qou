@@ -1,6 +1,7 @@
 import Mathlib.Data.List.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Group.Units.Basic
 
 /-!
 # Unital subset

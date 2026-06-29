@@ -1,5 +1,7 @@
 import Mathlib.Data.Set.Basic
 import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Set.BooleanAlgebra
+import Mathlib.Order.Disjoint
 
 
 /-!
@@ -38,7 +40,7 @@ theorem computationalBoundary_disjoint
     Disjoint (computationalBoundary rCirc cl) rCirc := by
   -- Ref: [manuscript] §9/p-vs-np-boundary
   unfold computationalBoundary
-  exact Set.disjoint_sdiff_left
+  exact disjoint_sdiff_self_left
 
 /-- The computational boundary is empty iff the closure adds no new
     nodes beyond R° (closure ⊆ R°). -/
@@ -48,6 +50,12 @@ theorem computationalBoundary_empty_iff
     computationalBoundary rCirc cl = ∅ ↔ cl ⊆ rCirc := by
   -- Ref: [manuscript] §9/p-vs-np-boundary
   unfold computationalBoundary
-  rw [Set.diff_eq_empty]
+  rw [Set.eq_empty_iff_forall_not_mem]
+  constructor
+  · intro h a ha
+    by_contra hb
+    exact h a ⟨ha, hb⟩
+  · intro h a ha
+    exact ha.2 (h ha.1)
 
 end QOU.PvsNPBoundary

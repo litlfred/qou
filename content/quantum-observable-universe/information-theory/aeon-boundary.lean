@@ -1,4 +1,6 @@
 import Mathlib.Data.Set.Basic
+import Mathlib.Data.Set.BooleanAlgebra
+import Mathlib.Order.Disjoint
 
 /-!
 # QOU.AeonBoundary — Boundary of an aeon
@@ -41,7 +43,8 @@ theorem mem_aeonBoundary (aeonObjs cl : Set BunObject) (s : BunObject) :
 /-- The boundary is disjoint from the aeon interior. -/
 -- Ref: [manuscript] §9/aeon
 theorem aeonBoundary_disjoint (aeonObjs cl : Set BunObject) :
-    Disjoint (aeonBoundary aeonObjs cl) aeonObjs :=
-  Set.disjoint_sdiff_left
+    Disjoint (aeonBoundary aeonObjs cl) aeonObjs := by
+  unfold aeonBoundary
+  exact disjoint_sdiff_self_left
 
 end QOU

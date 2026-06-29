@@ -1,4 +1,6 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -37,7 +39,7 @@ theorem informationBandwidth_eq_factored {k : Type*} [Field k]
     informationBandwidth q η = (1 / (q - 1)) * (q / (q - 1)) * η := by
   -- Ref: [manuscript] §9/information-bandwidth
   unfold informationBandwidth
+  have h2 : (q - 1) ^ 2 ≠ 0 := pow_ne_zero 2 hq1
   field_simp
-  ring
 
 end QOU.Information
