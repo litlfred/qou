@@ -11,12 +11,11 @@ $\mathcal{G}$.  Then:
    $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}T}) \times \mathrm{Knot}$ at some point $c$ of the base
    $\mathbb{P}(V)$.
 3. The localized knot $(c, K)$ descends under $\tau$ to an
-   observable morphism in $\mathbf{C}$: every generated particle
-   interacts with every other generated particle via the categorical
-   braiding.
+   observable morphism in $\mathbf{C}$: every generated knot component
+   has a well-defined image under the evaluation functor.
 
-In particular, no generated knot is "dark" — the generation scheme
-is closed under observability.
+In particular, the generation scheme
+is closed under evaluation by $\tau$.
 
 **Preservation of embeddability under each operation.**
 
@@ -49,9 +48,9 @@ Starting from generators with $g(T_{m,n}) \leq 4$, a crossing
 change produces a knot of genus at most $5$.  However, the Bring
 surface imposes a *spectral filter*: only knots with $g(K) \leq 4$
 admit localized knot structures.  A Skein descendant with $g = 5$
-has zero image in the physical state space
-$V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ — its coefficient in
-the mass functional vanishes because the fibre functor $\tau$
+has zero image in the categorical colimit
+$V_{\mathrm{eval}} = \varinjlim V^{\otimes n}$ — its coefficient under
+the evaluation map vanishes because the fibre functor $\tau$
 cannot evaluate it.
 
 The spectral filter acts at the level of the Skein resolution:
@@ -65,14 +64,5 @@ in the Skein module $\mathrm{Sk}_q(\mathbf{C})$.  Terms whose knot
 type has $g > 4$ lie in the kernel of the mass functional
 $\mathcal{M} \colon \mathrm{Sk}_q \to \mathbb{R}_{\geq 0}$, because
 $\mathcal{M}$ is defined via the fibre functor, which requires
-localizability.  The physical mass receives contributions only from
+localizability.  The functorial evaluation is non-zero only for
 the embeddable terms.
-
-**Explicit verification for the particle dictionary.**
-
-See [Table](#tbl:embeddability-closure-table-data).
-
-Every knot in the dictionary has $g(K) \leq 4$.  The Skein
-descendants ($4_1$, $5_2$) have *lower* genus than their parent
-generators — crossing changes that produce hyperbolic knots from
-torus knots typically decrease the genus.
