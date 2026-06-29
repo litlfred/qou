@@ -780,7 +780,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "An index table of the 11 substrate→observable chain steps + 4 sidecar algorithms; squarely belongs in the mass-binding-algorithms appendix as its high-level map."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Spot-checked rows: step 2 Hecke relation σ²=(q−q⁻¹)σ+1 correct; step 5 Wedderburn tr_M=Σ y_λχ^λ correct; statuses (open Δ_λ, conditional 9a) consistent with corpus. No false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Substantive index mapping each step to required propositions + Python entry point + witness; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "A descriptive table; makes no derivation, so cannot assume its own conclusion. Steps that are calibrations (9a/9b open/conditional) are honestly tagged."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "severity": "minor",
+        "evidence": "mba-chain-map.md:21: \"$\\beta$-decay ... status ... derived\"",
+        "notes": "Step 11 Q_β is tagged 'derived', but per the c_k tiered framing (c_2 proved, c_k≥3 near-match/fitted) the Q_β predictions are not uniformly 'derived'; the sidecar-list entry correctly calls c_k a truncation ladder, so this is a mild legend-granularity issue, not a false claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No undisclosed parameter introduced; step 11 references the c_k truncation ladder with the canonical N-bound, step 9b flags Δ_λ explicitly open. Calibrations are visible in the chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Table rows are independent index entries, not a deductive chain; no inferential 'therefore' to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Prose index block with no Lean sibling; nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "References named propositions/scripts/witnesses by label rather than bibliographic cites; no -- Ref: or cites[] to misattribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Status legend (proved/derived/conditional/open) is defined inline; each step names its propositions and API. Terms are anchored."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Index makes no numerical match claim; no fitted value to be fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No physical prediction stated; purely a software/proposition map."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Lists witness JSON filenames per step as a navigation aid; the block itself emits no value to reproduce. Cited witness filenames exist in computations/."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "02752eb7f261",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Sound high-level index; honestly tags Δ_λ open and 9a conditional. Strongest objection: the step-11 'derived' status under-states the c_k tiering (minor)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:46:02.004Z"
 }

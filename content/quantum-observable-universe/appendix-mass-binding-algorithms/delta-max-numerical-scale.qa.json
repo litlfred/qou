@@ -1007,7 +1007,422 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Block is a numerical-bound derivation with section headers (Numerical Scale; Corollary); no theorem-statement-vs-interpretation separation to violate — it is computation prose throughout."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Truncation-error / binding-precision bound for the jet tower; belongs in the mass-binding-algorithms appendix alongside the c_k truncation ladder."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "This is explicitly the archimedean/numerical-evaluation block (q0≈1.11, |q^{1/2}|, MeV-side error bound); archimedean machinery in the statement is correct, not a wall violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Proof is a numerical magnitude/geometric-series tail bound — archimedean by design for an archimedean-side precision claim; no algebraic statement proved by misplaced archimedean tools."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean sibling and no lean.ref (.ts has lean:{validation:'not_checked'}); nothing to compare."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean declaration to guard against weakening; numerical-bound prose block."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean proof term; no structure/class field to project."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean goal; the narrative bound is a non-trivial inequality but there is no formal proof to vacuously discharge."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean hypotheses to inspect for falsity."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean declaration / hypothesis list."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean proof; no decide/trivial to audit."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Recomputed: 2·1·(1.0536)²·0.49932 ≈ 1.1086 (md says ≈1.109); tail ħ_q^{2(N+1)}/(1−ħ_q²) at N=2 ≈ 9.6e-7; product ≈ 1.06e-6 (md says ≈1.07e-6). Arithmetic holds."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Substantive: a concrete sub-ppm truncation-error bound on the deuteron plus the general N-term corollary. Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Bounds the truncation error of the jet tower from L, ||ρ||_op, level-0 trace and the geometric tail; does not assume the binding value it bounds. No back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "severity": "minor",
+        "evidence": "delta-max-numerical-scale.md:28: \"N=3 is sufficient for sub-ppm precision on binding energies; the bound is saturated within a factor of 2 on the deuteron, tritium, and ${}^3\\mathrm{He}$\"",
+        "notes": "The factor-of-2 saturation is asserted for D/T/³He but the manifest witness (gram-matrix-dual) only carries the level-0 trace z=0.49932, not a saturation table; the claim leans on unified_lift.py output that is not pinned by the cited witness. Modest evidentiary gap, not a false claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "All quantities (L, ||ρ||_op=|q^{1/2}|, m^(0)=0.49932, ħ_q, N) trace to the canonical substrate q0 and the Hopf-link level-0 trace; no off-menu constant introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Substitution → bound → tail factor → multiply → corollary all follow arithmetically; verified the chained numbers reproduce."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No Lean sibling/ref; nothing to diverge from."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "severity": "minor",
+        "evidence": "delta-max-numerical-scale.md:28: \"cf. `computations/unified_lift.py` with `JET_TARGET_PPM`\"",
+        "notes": "unified_lift.py exists and reads JET_TARGET_PPM (verified), but the block's .ts manifest pins a DIFFERENT script/witness (gram-matrix-dual.py / .witness.json); the narrative-cited backing and the manifest-cited backing disagree."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "m^(0)(ρ_free), L, ||ρ||_op, ħ_q, N all defined by the surrounding jet-tower convention; the level-0 Hopf-link trace value 0.49932 matches the gram witness z. No incompatible reading."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "These are upper bounds (≤), not a tuned numerical match to data; the headline is a precision/convergence statement, so cross-anchor swing is not at issue."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Sub-ppm truncation precision 'in categorical units' is a convergence statement, not a physical-observable accuracy claim; units consistent, no conservation issue."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "severity": "major",
+        "evidence": "delta-max-numerical-scale.ts:11-15: witness gram-matrix-dual.witness.json scriptHash 'b14bf6bdce09' / scriptCommitSha '8a00323...'",
+        "notes": "Manifest witness is stale: current gram-matrix-dual.py hashes to c947b68105d1 (≠ recorded b14bf6bdce09) and its HEAD commit is 20ffe92... (≠ recorded 8a00323...) — both scriptHash and scriptCommitSha drift; the witness needs re-running. The prose numbers still reproduce by hand, so the value is not wrong, only the pinning is stale."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6b69233eb45e",
+          "ts": "77a9c8fee9c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "severity": "minor",
+        "notes": "Numerically sound bound (arithmetic verified) but with two backing-trail blemishes: stale gram-matrix-dual witness (scriptHash+commit drift) and a narrative/manifest script mismatch (unified_lift.py vs gram-matrix-dual.py). Strongest objection: the cited witness does not pin the factor-of-2 saturation claim and is stale."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:46:02.004Z"
 }

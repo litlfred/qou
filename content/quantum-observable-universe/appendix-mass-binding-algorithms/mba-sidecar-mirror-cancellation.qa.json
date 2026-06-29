@@ -1007,7 +1007,417 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "severity": "minor",
+        "evidence": "mba-sidecar-mirror-cancellation.md:32: \"This is why the observed mirror splits are clean numerical values ($\\zeta(+1)-\\zeta(-1)\\approx -1.34$ ...)\"",
+        "notes": "The proposition statement (lines 1-21) is the bare claim, but the trailing prose (lines 32-39) folds in physical interpretation + empirical numbers that would more cleanly sit in a follow-on remark; mild voice leak, not a defect."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Mirror-pair cancellation of the bar-even binding baseline is a Δ_λ sidecar algorithm; belongs in the mass-binding-algorithms appendix per its sidecar §."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Statement is purely algebraic/combinatorial (integer crossing counts, additive splitting); Lean mirror_baseline_cancels is over generic [AddCommGroup K]. No archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Narrative proof is combinatorial cancellation (Z,N coefficients cancel; abel/omega in Lean); no linarith/IVT/Real.* machinery on an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Lean DeltaLambdaExponentKeystone.{crossing_sum_mirror_invariant, averaged_count_mirror_invariant, writhe_mirror_difference, mirror_baseline_cancels} match the .md's three invariance claims + the additive-form cancellation f(Z,N)−f(N,Z)=ζ(Z−N)−ζ(N−Z) element-by-element."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Lean signature carries the genuine hypothesis hf (the additive separation) and derives the cancellation; not weakened or axiom-injected. The .md explicitly flags hf as the supplied ansatz."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "mirror_baseline_cancels proves f Z N − f N Z = ... by rw[hf]+Nat.add_comm+abel — a genuine derivation from the additive hypothesis, not a projection of a field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Conclusion is a non-trivial equation in K (mirror difference = ζ difference); not True/x=x. Hypothesis hf is genuinely used."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Hypotheses (1≤Z+N for the invariance lemmas; additive hf) are satisfiable; no False/0=1/uninhabited premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "hf is used via rw[hf Z N, hf N Z]; Z,N are the subjects. The invariance lemmas use h:1≤Z+N through writhe_eq_four_Z. No idle hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Lean uses omega/abel/push_cast/ring on substantive arithmetic goals; the lone `by decide` (he3_penalised_more_than_triton, a sibling lemma) discharges a concrete 1<-1 sign check, justified — not masking the main cancellation."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Verified arithmetic: protonCrossings=7Z+5N−1, neutronCrossings=3Z+5N−1 ⇒ sum=10A−2, writhe=4Z, mirror diff=4(Z−N). All .md identities hold."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Non-vacuous: an honest conditional result (cancellation given the additive ansatz), Lean-proved sorry-free; the ansatz is openly labeled supplied-not-derived."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Does not back-fit: the additive separation β(A)+ζ(Z−N) is declared the sole hypothesis (md:28-30), the magnitude is explicitly NOT fitted (md:39); only the sign is derived from the p>n intra-writhe seed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Carefully scoped: 'magnitude is open and is not fitted' (md:39), additive form 'supplied (not derived)' (md:30). The 10A−5 collapse past A=4 is acknowledged (md:35). No conditional-as-proved overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "ζ (the Z-correction magnitude) is disclosed as open/not-fitted, not smuggled as a derived constant; sign comes from the canonical intra-B3 writhe seed (3>1). No 4th calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Each step follows: bar-even A-only ⇒ mirror-invariant; writhe Z-only ⇒ distinguishes; additive form ⇒ baseline cancels in difference. Lean confirms each link."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Lean mirror_baseline_cancels over [AddCommGroup K] is at least as strong as the .md claim (generic K); the invariance sub-lemmas match. No weaker/vacuous divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "No bibliographic cites[] / -- Ref: invoked in statement; computation points to delta_lambda_z_coefficient_and_slope.py which exists and computes the quoted splits."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "σ+σ⁻¹, avg, w defined by explicit formulas; β,ζ defined by the additive split; bar-even/bar-odd anchored to crossing statistics. No undefined key term."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Quoted splits −1.34 (A=3) / −1.77 (A=7) match the witness z_correction data block exactly; the prose explicitly treats the ~33% drift as evidence the magnitude is NOT a single constant, so it does not over-rely on a fragile match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Mirror-pair / proton-excess-penalty framing (proton-rich member below mirror) is consistent with the standard IMME / Coulomb-displacement sign; no broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Witness delta-lambda-z-coefficient-and-slope.witness.json present, allPassed, q0=1.10998 (muon-canonical, correct for computations/ layer); z_correction values reproduce the prose −1.34/−1.77."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d1ee7755a7c6",
+          "ts": "a99a71588e08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T19:46:02.004Z",
+        "reviewed_sha": "3615de0d84346656fca5e2be293c909fe952c67a",
+        "notes": "Strong block: Lean-proved cancellation over generic K, honest scoping (ansatz supplied, magnitude open/not-fitted), arithmetic verified. Strongest objection: trailing interpretive+empirical prose (md:32-39) belongs in a follow-on remark (minor voice leak)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T19:46:02.004Z"
 }
