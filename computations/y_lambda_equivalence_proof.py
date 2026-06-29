@@ -143,28 +143,37 @@ def main() -> int:
         print(f"  λ = {str(shape):<14}  A = {a_val:+.16f}  B = {b_val:+.16f}  |Δ| = {abs(a_val - b_val):.2e}")
 
     # Emit witness.
-    out = HERE / "y_lambda_equivalence_proof.witness.json"
-    witness = {
-        "computation": "y-lambda-equivalence-proof",
-        "description": (
-            "Formal symbolic proof that the two derivations of the Jones-"
-            "Markov weights y_λ(q) at H_3(q) are equivalent as rational "
-            "functions in q. Path A: linear-system solve on the Markov-"
-            "axiom ladder basis. Path B: Wenzl Schur principal "
-            "specialization with parameter Q^r fixed by z_W = q·z, "
-            "Q = q². sympy's sp.simplify reduces y_A − y_B to 0 "
-            "exactly for every λ ∈ {(3), (2,1), (1,1,1)}. Equivalence "
-            "of tr_M via Wedderburn vs markov_peel recursive ascent "
-            "then follows from uniqueness of the Markov-axiom-"
-            "satisfying linear functional on H_n."
-        ),
+    sys.path.insert(0, str(HERE.parent))
+    sys.path.insert(0, str(HERE.parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    description = (
+        "Formal symbolic proof that the two derivations of the Jones-"
+        "Markov weights y_λ(q) at H_3(q) are equivalent as rational "
+        "functions in q. Path A: linear-system solve on the Markov-"
+        "axiom ladder basis. Path B: Wenzl Schur principal "
+        "specialization with parameter Q^r fixed by z_W = q·z, "
+        "Q = q². sympy's sp.simplify reduces y_A − y_B to 0 "
+        "exactly for every λ ∈ {(3), (2,1), (1,1,1)}. Equivalence "
+        "of tr_M via Wedderburn vs markov_peel recursive ascent "
+        "then follows from uniqueness of the Markov-axiom-"
+        "satisfying linear functional on H_n."
+    )
+    data_payload = {
         "n": n,
         "all_differences_zero": all_zero,
         "shapes_verified": list(str(sh) for sh in y_A),
         "diff_per_shape": {str(sh): (str(d), z) for sh, (d, z) in diffs.items()},
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
-    out.write_text(json.dumps(witness, indent=2))
+    # Witness filename keeps the underscore stem (y_lambda_equivalence_proof);
+    # the legacy `computation` field used hyphens — preserve both exactly.
+    wb = WitnessBuilder.wrap_legacy(
+        "y_lambda_equivalence_proof", data_payload,
+        script_path=__file__, engine="sympy", output_dir=HERE)
+    wb.set_description(description)
+    wb.add_assertion("all y_λ differences zero (A ≡ B)",
+                     computed=int(bool(all_zero)), expected=1)
+    out = wb.save(extra={"computation": "y-lambda-equivalence-proof"})
     print()
     print(f"witness: {out.name}")
 
