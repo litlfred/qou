@@ -180,4 +180,85 @@ theorem heckeVerlindeData_loc
       = qDim q p ^ 2 / (∑ m ∈ P, qDim q m ^ 2) :=
   (heckeVerlindeData q hq P hsorted hconj hP).verlindeMeasure_eq_plancherel p hp
 
+/-! ## Residual (i), reduced to ONE precisely-stated open piece -/
+
+/-- **The single open content of residual (i), precisely stated — the category identification.**
+
+Introduce the Beasley–Witten localization's vacuum S-matrix row `bwS0` as an **abstract gauge
+datum**: the Chern–Simons path-integral output on `S³/2I`, carried as an opaque field — **not**
+defined as `d_q/D`. The lone open conjecture is `bwS0_eq_hecke`: that the gauge-defined vacuum row
+equals the Hecke modular datum `d_q(λ)/√(Σ d_q²)`. This is the *one* thing the published, owner-gated
+localization must deliver; everything else in residual (i) — the Verlinde measure `= d_q²/D²`, C1
+(`Σ=1`), C2 (chirality), C6 (full support) — is **derived** from it (`bwLocalization`,
+`bwLocalization_loc`).
+
+No global instance is supplied: residual (i) is genuinely conditional on this identification, which is
+owner-gated (the narrow Subgoal-2 reversal, #2503/#2524) and **foreclosed on the SU(2)`_k` sub-route**
+(`Su2SchurWeylForeclosure.lean`, #2717/#2727 — `[2j+1]_q ≠ d_q(λ)` off the standard rep, so the index
+must live full-Hecke side). The class field `bwS0_eq_hecke` is a content-bearing,
+parameter-quantified identity (AGENTS.md §3b-tax — primary conjecture, not `True`); the inhabiting
+`example` below is the *fiat* realization (`bwS0 := d_q/D`), present only to show the conditional
+results are not conditional-on-`False`. The genuinely open content is the *physical* instance, where
+`bwS0` is the actual path-integral output. -/
+class BWVacuumRowIsHecke (q : ℝ) (P : Finset (List ℕ)) where
+  /-- Substrate regime `q > 1` (positivity of the Hecke q-dimensions). -/
+  hq : 1 < q
+  /-- The blocks are weakly-decreasing partitions. -/
+  hsorted : ∀ l ∈ P, l.Sorted (· ≥ ·)
+  /-- The blocks are closed under transpose. -/
+  hconj : ∀ l ∈ P, Partition.conjugate l ∈ P
+  /-- The block set is nonempty. -/
+  hP : P.Nonempty
+  /-- **The gauge datum** — the BW localization's vacuum S-matrix row on the blocks, abstract (the
+  path-integral output on `S³/2I`, NOT defined as `d_q/D`). -/
+  bwS0 : List ℕ → ℝ
+  /-- **THE single open conjecture (owner-gated):** the gauge-defined vacuum S-matrix row equals the
+  Hecke modular datum `d_q(λ)/√(Σ d_q²)`. What the published localization must deliver; foreclosed on
+  the SU(2)`_k` sub-route, so full-Hecke. -/
+  bwS0_eq_hecke : ∀ l ∈ P, bwS0 l = qDim q l / Real.sqrt (∑ m ∈ P, qDim q m ^ 2)
+
+namespace BWVacuumRowIsHecke
+
+variable {q : ℝ} {P : Finset (List ℕ)}
+
+/-- The modular tensor category built from the (conjectured) BW vacuum-row identification: the gauge
+row `bwS0` is the S-matrix vacuum row, the q-dimensions are the Hecke `d_q`. -/
+noncomputable def toVerlindeModularData (h : BWVacuumRowIsHecke q P) : VerlindeModularData ℝ where
+  Part := List ℕ
+  parts := P
+  conj := Partition.conjugate
+  conj_mem := h.hconj
+  qDim := qDim q
+  qDim_conj := fun p hp => qDim_conj q p (h.hsorted p hp)
+  D := Real.sqrt (∑ m ∈ P, qDim q m ^ 2)
+  D_sq := Real.sq_sqrt (le_of_lt (sum_qDimSq_pos h.hq h.hP))
+  D_ne := ne_of_gt (Real.sqrt_pos.mpr (sum_qDimSq_pos h.hq h.hP))
+  S0 := h.bwS0
+  S0_eq := h.bwS0_eq_hecke
+
+/-- **Residual (i) holds given the identification.** The BW localization (squared gauge vacuum row)
+is a `BeasleyWittenLocalization` whose measure is the Hecke Plancherel measure `d_q²/D²` — so C1
+(`Σ=1`), C2 (chirality), C6 (full support) all follow from the single conjecture `bwS0_eq_hecke`. -/
+noncomputable def bwLocalization (h : BWVacuumRowIsHecke q P) : BeasleyWittenLocalization ℝ :=
+  h.toVerlindeModularData.toBeasleyWitten
+
+/-- The BW localization measure equals the Hecke Plancherel measure `d_q²/D²` (the discharged
+residual-(i) obligation, conditional on the identification). -/
+theorem bwLocalization_loc (h : BWVacuumRowIsHecke q P) (l : List ℕ) (hl : l ∈ P) :
+    h.bwLocalization.loc l = qDim q l ^ 2 / (∑ m ∈ P, qDim q m ^ 2) :=
+  h.toVerlindeModularData.verlindeMeasure_eq_plancherel l hl
+
+/-- **Non-vacuity — `BWVacuumRowIsHecke` is inhabitable** (the *fiat* realization `bwS0 := d_q/D` on
+the single block `[1]`), so the conditional results above are not conditional-on-`False`. The OPEN
+content is the *physical* instance where `bwS0` is the genuine path-integral output, not this fiat. -/
+noncomputable example : BWVacuumRowIsHecke (3 / 2) {[1]} where
+  hq := by norm_num
+  hsorted := by decide
+  hconj := by decide
+  hP := ⟨[1], by decide⟩
+  bwS0 := fun l => qDim (3 / 2) l / Real.sqrt (∑ m ∈ ({[1]} : Finset (List ℕ)), qDim (3 / 2) m ^ 2)
+  bwS0_eq_hecke := fun _ _ => rfl
+
+end BWVacuumRowIsHecke
+
 end QOU.BraidKnot.Keystone
