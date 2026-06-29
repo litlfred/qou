@@ -762,7 +762,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "S-eigenvalue (bar-involution) classification of mass functionals -> proton-neutron splitting is core mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Verified symbolically: D->q^{-4}D, W_sym/W_std bar-invariant, H_A->-H_A, [3]_q invariant — all eigenvalue assignments correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive bar-symmetry computation per functional."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Direct computation, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Phi_1 honestly noted as not an S-eigenvector; only the symmetrised value is invariant."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Constants (G, 8G, m_e, alpha) declared real and S-inert; no hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Multiplicativity of det -> Phi_2 invariance, and the chi^sym<->-chi^alt swap -> Phi_3 eigenvalue -1, are correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No sibling .lean for this proof block."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No external -- Ref misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "S (Frobenius antipode), W_sym/std/alt, transfer matrix T(c,d) all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Phi_3≈0 for free A=1 nucleons is an exact eigenspace consequence, not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "minor",
+        "evidence": "frobenius-s-classification-proof.md:69: \"maps the proton braid (uud) to a braid with quark content (ddu) (modulo strand ordering equivalent to the neutron's udd content)\"",
+        "notes": "The corollary maps the proton (uud) under S to (ddu)~neutron (udd) 'modulo strand ordering' as the origin of the p-n splitting; the quark-content-to-braid identification is asserted heuristically without a precise map."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "minor",
+        "evidence": "frobenius-s-classification-proof.md:75: \"[the formal derivation](#) verifies the eigenvalue assignments\"",
+        "notes": "The eigenvalue-confirmation witness is a placeholder anchor ([the formal derivation](#)) rather than a resolvable witness path."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a03f6ad32b23",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Bar-symmetry eigenvalue classification is computationally correct (independently verified); only the p-n quark-content corollary is heuristic and the witness link is a placeholder."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

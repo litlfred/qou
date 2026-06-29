@@ -875,7 +875,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Hecke curvature 2-cocycle feeds the GB/Hochschild spectral machinery used by the mass stratification."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Definition over H_n(R,q) with the curvature analogy; no archimedean construct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "R_H, R_YB relations and the Leibniz-extended 2-cochain are correctly stated; the curvature analogy is heuristic, framed as such."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Names genuine cochain data; not a True-stub."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Definitional."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "'measures failure of commutativity ... in the same way curvature measures failure of flatness' is an explicit analogy, not an identity claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Leibniz extension is consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean ref heckeResidue (not_checked); definition names cochain data — no semantic over-claim to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "kassel1995 is the standard reference for Hecke/quantum-group relations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "minor",
+        "evidence": "hecke-curvature-2-cocycle.md:24: \"F is a 2-cochain in the Hochschild complex\"",
+        "notes": "F is called a '2-cocycle' but the construction only states it is a 2-cochain; whether dF=0 (the cocycle condition) holds is asserted by the title term but not established in the block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Algebraic definition."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d2d4dcdf56a2",
+          "ts": "7e29c8a38db4",
+          "lean": "3d98dcc510e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Coherent definition of the Hecke curvature cochain; minor terminological gap between 'cocycle' (title) and '2-cochain' (body) with no stated dF=0."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

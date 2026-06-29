@@ -1048,7 +1048,453 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement is HH^k=0 (k>=1) + collapse to centre; no interpretation in the claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Semisimple cohomology vanishing -> GB spectral collapse to the Wedderburn centre underpins the mass stratification."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement over CommRing R with q a unit, semisimple A; no archimedean construct in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean proof is algebraic (e_idem); no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "spectral-sequence-collapse.lean:88: \"∀ i : I.central_idempotents, I.e i * I.e i = I.e i := fun i => I.e_idem i\"",
+        "notes": "Narrative claims HH^k(A,A)=0 for all k>=1 and full E_1 collapse to the centre, but the Lean theorem spectral_sequence_collapses_to_centre only proves idempotency (forall i, e i * e i = e i := I.e_idem i) — far weaker than the stated collapse."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "spectral-sequence-collapse.lean:85: \"theorem spectral_sequence_collapses_to_centre ... : ∀ i, I.e i * I.e i = I.e i\"",
+        "notes": "The named Lean theorem's conclusion (idempotency) is weaker than the .md proposition's conclusion (cohomology vanishing + collapse); the collapse content lives only in the WhiteheadHH axiom class, not the proved theorem."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "spectral-sequence-collapse.lean:89: \"fun i => I.e_idem i\"",
+        "notes": "spectral_sequence_collapses_to_centre projects the SemisimpleAlgebra.e_idem field verbatim (:= fun i => I.e_idem i) rather than proving the collapse it is named for."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "The proved goal (idempotency) is not True/x=x, though it is weaker than the title suggests."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "SemisimpleAlgebra / WhiteheadHH hypotheses are genuine, not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "spectral-sequence-collapse.lean:87: \"[I : SemisimpleAlgebra R A] [WhiteheadHH R A] : ∀ i, I.e i * I.e i = I.e i\"",
+        "notes": "The [WhiteheadHH R A] instance — the actual cohomology-vanishing content — is a hypothesis of spectral_sequence_collapses_to_centre but is unused by its body (which only invokes e_idem)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No decide/trivial masking; the body is an honest (if weak) projection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "HH^k=0 for semisimple algebras in char 0 (Whitehead) is a correct classical fact; the narrative claim itself is true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Narrative content is substantive; the WEAKNESS is in the Lean, captured under proof-* above."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "spectral-sequence-collapse.lean:85: \"theorem spectral_sequence_collapses_to_centre\"",
+        "notes": "The Lean theorem name 'spectral_sequence_collapses_to_centre' overclaims relative to what its body proves (idempotency only)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Narrative chain (semisimple -> HH vanishing -> E_1 collapse -> centre) is correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "spectral-sequence-collapse.lean:88: \"∀ i, I.e i * I.e i = I.e i := fun i => I.e_idem i\"",
+        "notes": "Lean proves only e_idem, vacuously weaker than the .md collapse statement; the [WhiteheadHH] hypothesis carrying the real content is unused."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "cartan1956 / weibel1994 correctly cited inside WhiteheadHH for the Whitehead lemma."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Semisimple, central idempotents, HH^k defined; the generic-ring framing is explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Algebraic statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8eced94041e2",
+          "ts": "8adccebb3489",
+          "lean": "928505a20ef9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "spectral-sequence-collapse.lean:88: \"∀ i, I.e i * I.e i = I.e i := fun i => I.e_idem i\"",
+        "notes": "The MATHEMATICS is correct (semisimple HH-vanishing is classical), but the named Lean theorem is a thin projection of e_idem with the cohomology-vanishing content parked in an unused WhiteheadHH axiom class — the Lean does not prove the collapse it is named for."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

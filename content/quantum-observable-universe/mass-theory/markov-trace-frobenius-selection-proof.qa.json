@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Uniqueness of the Markov trace underpins the canonical T_w selection; mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Markov-trace uniqueness (Jones/Wenzl) is a correct classical result; non-degeneracy + Markov-peel + cyclic => unique."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive uniqueness argument."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Relies on Wenzl's uniqueness corollary, not its own conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Claims exactly the uniqueness the cited results give."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Non-degeneracy => uniqueness via Wenzl Lemma 2.4 is the standard step."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Sibling .lean exists for the prop but this is the proof block; not flagged absent its own statement."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "jones1987 Thm 6.1 and wenzl1988 Lemma 2.4 are the correct loci for Markov-trace non-degeneracy/uniqueness."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "tau_M, Markov-peel, cyclic axioms, non-degeneracy all standard and referenced."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Algebraic uniqueness statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Citation-backed; no witness drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "22a406f1cd30",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Correct, concise uniqueness proof sketch grounded in Jones/Wenzl; standard and well-attributed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

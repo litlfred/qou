@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Mass-tower coefficient stratification (Bethe-Weizsacker term <-> k-stratum) is core mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Centre-factoring + Wedderburn-enumeration completeness are correct consequences of semisimplicity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive structural claim tying BW terms to Plancherel-weighted strata."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Replaces fitting with structural derivation via cited collapse/boundedness props; not self-assuming."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Claim that each BW term is a Plancherel-weighted projection is supported by the cited props; convergence guaranteed by boundedness."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Coefficients are tilde-w_lambda projections, on-menu."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Chain (collapse -> centre -> enumeration -> unified formula -> boundedness) is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No sibling .lean for this proof block."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Internal prop references only; no external citation misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Stratum weights, signed_content, w_lambda vs tilde-w_lambda explicitly distinguished."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numerical match asserted; witness lists structural data (dims, weights), not a fitted value."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "BW-term-to-stratum identification is dimensionally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "minor",
+        "evidence": "mass-tower-coefficient-stratification-proof.md:21: \"serialised to [computations/wedderburn-strata-witness.json](#)\"",
+        "notes": "Witness/derivation links are placeholder anchors ([the formal derivation](#), [...wedderburn-strata-witness.json](#)) — the referenced witness is not a resolvable path."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ace58edb53a0",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Structurally sound stratification proof resting on cited collapse/boundedness results; only a dangling witness-link hygiene issue."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

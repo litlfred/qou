@@ -1048,7 +1048,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement defines tilde-w_lambda and the three named scalings in a table; the canonicity discussion is separate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Canonical Wedderburn-block weight + BW/LP/Wenzl scalings is core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "tilde-w_lambda = dim_q(lambda)^2/[n]_q! in Q(q); symmetric q-integers; fully algebraic, no archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Symbolic verification (sympy, Q(q) rationals) for (2,2),(3,2,1); no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean wedderburnWeightCanonical names the weight; the md derivations are Q(q)-rational identities consistent with the algebraic claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement carefully scopes: BW/LP are scalings for ALL lambda (definitional); Wenzl-bridge y_lambda=tilde-w_lambda ONLY on self-conjugate lambda — not over-generalised."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Derivations compute the scalings, not a projection of the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "The scaling identities are non-trivial Q(q) equalities."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Self-conjugacy (kappa_lambda=0) is the genuine hypothesis distinguishing the Wenzl-bridge case."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Sympy simplify-to-0, not decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "y_lambda=tilde-w_lambda only on self-conjugate lambda is correct and explicitly bounded; off-stratum ratios 0.14-2.54 confirm distinctness — no false universal identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive consolidation of three weight conventions."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Grounded in Wedderburn-Artin + Wenzl closed form, not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Explicitly corrects the would-be overclaim: y_lambda is NOT a sign multiple of tilde-w_lambda off the self-conjugate stratum."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "h=q-q^{-1} and the 1/2 Wigner doubling are disclosed structural factors, not hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "FRT q-hook dimension -> tilde-w_lambda -> named scalings chain is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean ref present; weight definition matches the md formula."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "jones1985, wenzl1988, kassel1995, halverson-1998 cited appropriately for Markov weights / Hecke representation theory."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "dim_q(lambda), [n]_q!, kappa_lambda, self-conjugate stratum all precisely defined; symmetric q-integer convention explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Ratios 0.14-2.54 are exact algebraic values at q0, demonstrating distinctness — not a fragile match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Algebraic weight statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "minor",
+        "evidence": "wedderburn-weight-canonical.ts:25: \"script: \\\"computations/_deprecated/bw_wenzl_shadow_equivalence.py\\\"\"",
+        "notes": "Witnesses are referenced on a feature branch (claude/audit-plancherel-usage-a6DgI/...) and the producer script is in computations/_deprecated/, so the canonical reproducibility path is a stale/feature-branch URL rather than a main-branch witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d9f44aba914b",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Careful, correctly-scoped consolidation of the BW/LP/Wenzl weight conventions with the self-conjugate caveat made explicit; only the witness/producer provenance (feature-branch URLs, _deprecated script) is a hygiene concern."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

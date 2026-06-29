@@ -894,7 +894,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "z-Habiro brane-tower regularisation is the mass-binding closure thread; in-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Phi_q(0.989)~6.7e5 / Phi_q(1)~9e5 magnitudes and the Yekutieli error figures (D ~22%, T ~17000%) are witness-backed; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive conjecture with two distinct claims and a large empirical record."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Falsifiability protocol compares against fixed AME values without per-atom retuning — explicitly non-circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Six n_star families 'refuted' is correctly scoped: scope-limited negatives (exceed 5% threshold), with the algebraic Cauchy-limit half explicitly still open; not an unjustified structural exclusion."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "n_star is the open level-selection rule, explicitly the open part — no smuggled parameter; per-atom retuning explicitly disallowed as 'not progress'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Sign-flip-at-k=2 and shell-closure observations are presented as observations, not over-derived."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Sibling .lean records the six refutations as witness-driven theorems (nStar_all_probed_forms_refuted) and the convergence half (quantumDilog_multipliable sorry-free); consistent with md split status."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Refuted-ansatz audit and mass-endomorphism conjecture referenced correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "z-Habiro ring, Trunc_{<n}, n_star, cyclotomic projection pi_n^{(z)} all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Reports AME comparison values explicitly ({2.224566,8.481798,7.71806}) and the He3 overshoot honestly; not a cherry-picked match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "tr_M(sigma_pp)=tr_M(sigma_nn)=0.0622 (Z<->N isospin) is internally consistent; the 1.326x asymmetry correctly attributed to a product-volume artifact."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Multiple witnesses/audits cited; the convergence half is Lean sorry-free."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "84fe49409870",
+          "ts": "c44e1aa79ce0",
+          "lean": "cd81e4479e2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Exemplary (a)/(b)-disciplined conjecture: refutations scoped as scope-limited negatives, surviving claims clearly separated, Lean and witnesses aligned."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

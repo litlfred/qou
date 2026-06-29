@@ -1046,7 +1046,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement is the chirality/non-chirality split with definitions of c_lambda and chirality cells; no physical interpretation embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Refines the unified mass formula; core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "minor",
+        "evidence": "chirality-residue-mass-term.md:29: \"w_lambda · log| int over A_lambda rho(beta_K) · T |\"",
+        "notes": "Statement uses log|integral over A_lambda| and the q-Dirac D_q^2(lambda)=0 condition; the log|.| is an archimedean (real) construct embedded in an otherwise categorical decomposition."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No narrative Proof. body in this block (decomposition is definitional refinement of the cited unified formula)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "chirality-residue-mass-term.ts:8: \"validation: \\\"not_checked\\\"\"",
+        "notes": "ts declares lean ref chirality_residue_mass_term (validation not_checked); cannot confirm the Lean reproduces the chir/non-chir split as stated."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement is a definitional split (m = m^chir + m^not-chir); the non-chir part is the remainder — well-posed."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Not a self-projection; it partitions an existing formula."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Non-trivial decomposition keyed on signed-content-zero blocks."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Relies on the unified curvature-rank formula, a genuine upstream result."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "The chirality-cell condition (c_lambda=0 / D_q^2=0) is used to define the split."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No Lean proof body inspected here."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "A sum split into signed-content-zero blocks plus remainder is well-defined; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive: identifies chirality channel with c_lambda=0 cells."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Definitional refinement, not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Modest: it defines a split, no numerical claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "alpha_k are the on-menu stratum coefficients; no new DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Split follows directly from partitioning the stratum sum."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "chirality-residue-mass-term.ts:6: \"ref: \\\"qou:QOU.WedderburnMass.chirality_residue_mass_term\\\"\"",
+        "notes": "Lean ref not_checked; chir/non-chir split unverified against the Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "References confinement-categorical / curvature-rank remarks correctly."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "c_lambda (signed Young content) and chirality cells (D_q^2=0) are precisely defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numerical match in this definitional split."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Chirality channel = signed-content-zero blocks is internally consistent with the framework."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No witness attached."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "42b87c25ce7c",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Well-posed definitional refinement of the mass formula; the only gap is the unverified (not_checked) Lean ref."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

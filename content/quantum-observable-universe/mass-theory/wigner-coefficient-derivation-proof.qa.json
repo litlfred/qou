@@ -25,6 +25,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Wigner/isospin-Casimir coefficient derivation belongs squarely in mass-theory."
       }
     ],
     "da-false-claim": [
@@ -41,6 +56,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "[5]_q!·m_e = 67.10 MeV verified (symmetric q-int at q0); the stated arithmetic is correct."
       }
     ],
     "da-vacuous": [
@@ -57,6 +87,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive content (Casimir centrality, Markov-trace expansion); not content-free."
       }
     ],
     "da-circular": [
@@ -73,6 +118,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Does not back-fit q0; uses the fitted 68.9 MeV only as an external comparison, labelled 'fitted'."
       }
     ],
     "da-overclaim": [
@@ -89,6 +149,23 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation-proof.md:27: \"= [5]_q! · m_e ≈ 67.1 MeV, matching the fitted value 68.9 MeV to within 2.6%\"",
+        "notes": "Presented as a proof (□) yielding an exact [k]_q!·m_e law, but the conclusion is a 2.6% approximate match to a fitted value; derivation strength < claim."
       }
     ],
     "da-hidden-dof": [
@@ -105,6 +182,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No off-menu constant; coefficient is [k]_q!·m_e from canonical chain (m_e=CAL-1, q0 substrate)."
       }
     ],
     "da-non-sequitur": [
@@ -121,6 +213,23 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation-proof.md:16: \"The coefficient is set by the Hecke-level scale at k = 5: [5]_q!\"",
+        "notes": "Jump from 'Frobenius reciprocity, eigenvalue T(T+1) weighted by dim_q^2' to 'coefficient = [5]_q!·m_e' is asserted; the link to the q-factorial is stated, not derived."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -137,6 +246,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No sibling .lean for this proof block."
       }
     ],
     "da-citation-misuse": [
@@ -153,6 +277,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Refers to wedderburn-trace-identity prop internally; no external citation misuse."
       }
     ],
     "da-definitional-ambiguity": [
@@ -169,6 +308,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Terms (T^2, c_lambda, [5]_q!) are standard and defined; q-integer convention is the symmetric one consistent with the chapter."
       }
     ],
     "da-empirical-fragility": [
@@ -185,6 +339,23 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation-proof.md:28: \"matching the fitted value 68.9 MeV to within 2.6%\"",
+        "notes": "2.6% agreement with a fitted value 68.9 MeV is well outside the framework's precision goals and reads as a near-match rather than a derived prediction."
       }
     ],
     "da-physical-implausibility": [
@@ -201,6 +372,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Isospin Casimir / Wigner coefficient framing is dimensionally sound (MeV via m_e)."
       }
     ],
     "da-reproducibility": [
@@ -217,6 +403,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "[5]_q!·m_e = 67.10 MeV reproduced independently at q0; matches stated 67.1 MeV."
       }
     ],
     "da-referee-verdict": [
@@ -233,6 +434,23 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ff432d95425c",
+          "ts": "afbe7f9803c7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "major",
+        "evidence": "wigner-coefficient-derivation-proof.md:27: \"matching the fitted value 68.9 MeV to within 2.6%\"",
+        "notes": "Sound q-factorial arithmetic but the structural-derivation framing overreaches a 2.6% fit to an externally-fitted Wigner scale; reciprocity-to-[k]_q! step is hand-waved."
       }
     ],
     "voice-status-leak": [
@@ -988,5 +1206,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

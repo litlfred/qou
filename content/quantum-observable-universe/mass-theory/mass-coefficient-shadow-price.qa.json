@@ -1046,7 +1046,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement is the bare claim 'each coefficient is the shadow price of the partition's Frobenius positivity constraint'; no interpretation embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Mass-formula-coefficient = LP shadow price is core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement is algebraic (LP dual variable of a Frobenius constraint); no archimedean construct in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean derivations (shadow_price_weight_form, normalization, coefficient_nuclear_independent) are pure field algebra (rw/mul_div), no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean class MassCoefficientShadowPrice axiomatises the LP-duality content (C_eq, factor, cited to prop:operator-selection-lp) and derives the algebraic consequences sorry-free — faithful to the one-line md claim under §3b-cond."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Signature stable; the coefficient=shadow-price claim is the factor field, honestly axiomatised, not silently weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "factor/C_eq are cited LP-duality hypotheses (strong duality + complementary slackness), and the THEOREMS derive distinct algebraic consequences — not a verbatim projection of the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Derived theorems (uStar = w·(h/2)·S etc.) are non-trivial equalities, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Field hypotheses are genuine; no False."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "hS hypotheses used in normalization / coefficient_nuclear_independent."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Proofs are rw-based, no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Shadow-price = mass coefficient is the cited LP-duality result; not false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Not vacuous — the class fields carry genuine LP-duality content, theorems derive consequences."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Coefficient identity grounded in operator-selection-lp strong duality, not self-assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "authorNote candidly flags S_lambda charge-type scaling is only ~118% (right order) via the Reeb-phase crack, not a closed match."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "S_lambda is the nuclear-datum factor (Z,N,A), C_lambda partition-only; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "u_lambda = C_lambda·S_lambda factorisation is the cited complementary-slackness result."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean faithfully encodes the claim as a conditional class with derived consequences; validation 'validated'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "wedderburn1908, hoefsmit1974, jones1985 cited correctly for the block-decomposition / weight theory."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "C_lambda, S_lambda, contentSum, h=q-q^{-1} all defined in the Lean class."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numerical match in the statement; the 22.6x/118% figures in the authorNote are presented as a GAP-A-4 obstruction, not a win."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "LP-dual shadow-price-as-binding-coefficient is dimensionally consistent (×m_e to MeV)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "p1-3a-bw-equivalence witness referenced; algebraic, reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cee442c93673",
+          "ts": "66918f5320a8",
+          "lean": "8b4e981ab0b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Clean §3b-cond conditional-class formalisation: LP-duality axiomatised, algebraic consequences derived sorry-free; honest authorNote on the remaining S_lambda charge-scaling gap."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

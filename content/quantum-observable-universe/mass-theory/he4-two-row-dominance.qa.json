@@ -1048,7 +1048,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Statement is the >=80% two-row dominance bound; the Structural interpretation section is separate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "He4 Wedderburn-block fingerprint is core mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "md notes the Lean sibling is the archimedean (R) specialisation while the combinatorial content stays generic — wall correctly placed; the statement's ratio bound is at q0 (a numerical evaluation), appropriately archimedean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Proposition is empirical-witness-conditional (numerical evaluation at q0); the archimedean evaluation is the intended regime, not a misplaced algebraic proof."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "§3b-cond: Lean axiomatises the witness-verified 86.6% as class HasHe4TwoRowDominance; the >=80% bound is the conditional claim — faithful."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Bound (>=0.80, 86.6% empirically) stable and witness-anchored; not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Conditional-class instance encodes the empirical figure; downstream consumes [HasHe4TwoRowDominance] — the §3b-cond hypothesis pattern, not a self-projection of an unconditional conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "The >=80% ratio bound is a substantive numeric claim, not True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Witness premise is genuine empirical data."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "The witness/class hypothesis is the load-bearing input."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No decide masking; numeric content is in the witness."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Top-5 blocks (9,3),(8,4),(10,2),(7,5),(11,1) sum to 86.5-86.6%, all two-row; arithmetic in the table is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Substantive empirical structural result."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Independent of the Delta_lambda route yet matches it — a cross-check, not circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "States >=80% (proved-bound shape) with 86.6% empirical; honest about being witness-conditional."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No free parameter; y_lambda and chi^lambda are canonical."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Two-row = SU(2) Schur-Weyl image interpretation coheres with spin-1/2 pairing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean class encodes the same 86.6% figure as the conditional instance; consistent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No external citation; relies on internal Hoefsmit/Wenzl machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lambda^2(12) two-row stratum and c_lambda explicitly enumerated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "86.6% is comfortably above the 80% bound; not a knife-edge match; tr_M=0.05534835 witness-reported."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "He4 as q-symmetric spin-pairing magic shell is physically reasonable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "probe_he4_canonical_tr_m_fingerprint.py + witness, status verified, requires listed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a10634fdc46e",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Solid witness-backed Wedderburn fingerprint with an honest >=80% bound vs 86.6% empirical, cross-confirmed by the independent Delta_lambda route."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

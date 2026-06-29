@@ -875,7 +875,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Wenzl A-operator (LR branching payload) underpins the per-isotope binding tower; in mass-theory scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Definition is over H_n(q) / End(V_mu (x) V_nu) — categorical/algebraic, no archimedean construct in the definition."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Faithfully names Wenzl 1988 Sub-lemma 2.1 operator data and the LR decomposition; correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Names genuine operator-valued data with downstream consumers; not a True-stub."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Definitional, no derivation to be circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Honest that H_9+ extracts are least-squares fits and a universal A-operator remains research-grade open."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No hidden constant; LR coefficients are fixed combinatorics."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Role identity chi^lambda(b1 I b2)=sum c^lambda_{mu nu} Tr(...) is the cited sub-lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Lean class WenzlAOperator names the per-(lambda,mu,nu,I) block + LR multiplicity; md states it is a naming/structure block with no semantic claim beyond existence, consistent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "wenzl1988, hoefsmit1974 cited correctly for the branching representation theory."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Interface generator I=sigma_{n1}, blocks, LR coefficient all specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numeric match; honest about H_9+ extracts being least-squares fits."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Algebraic operator definition."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "severity": "minor",
+        "evidence": "wenzl-A-operator.md:54: \"the H_{9+} extracts are least-squares fits over the inner-test family\"",
+        "notes": "ts cites a single witness A-operator-extract-h9-pn.witness.json with status verified, but md says the H_9+ extracts are least-squares fits over an inner-test family (not full-rank) — 'verified' status overstates that fit-level provenance."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8ba4dc099f3b",
+          "ts": "0a0c5a3d6aa2",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Honest definitional block with correct Wenzl attribution; only a mild witness-status vs fit-provenance nuance."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }

@@ -894,7 +894,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "KVC bridges algebraic quantum volume to hyperbolic volume — the archimedean realisation used by the mass machinery; in-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "KVC statement and 'open in general, proved for figure-8/some torus/pretzel' is the standard correct status."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Genuine open conjecture, axiomatised as a content-bearing class (kvc_holds field), not an empty marker."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No circularity; the class makes downstream results conditional on KVC."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Explicitly 'no claim of proof is made by introducing the class'; remains open at pi_0."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Typeclass-vs-axiom rationale (locality/compositionality/no axiom pollution) is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "class VolumeConjecture fields (hypVolume, kashaevLimit, kvc_holds, nonneg) faithfully encode the narrative conjecture."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "kashaev1997, murakami-murakami2001, zagier1986, neumann-zagier1985 correctly attributed (conjecture origin, cJones reformulation, regulator/Bloch-group framing)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Kashaev limit, colored Jones at root of unity, non-hyperbolic-vanishing convention all stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No numerical match asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Number-theoretic/topological conjecture."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "No witness; conjecture block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f40c9b9d6a25",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:40:02.477Z",
+        "reviewed_sha": "d8104f37c1c6cde86d60f15640d7c631fa19a01e",
+        "notes": "Accurate statement of a famous open conjecture with honest open status and a well-formed conditional Lean class; the superseded-rho_q banner correctly fences the deprecated ansatz."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:40:02.477Z"
 }
