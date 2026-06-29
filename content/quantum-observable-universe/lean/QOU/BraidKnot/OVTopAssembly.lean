@@ -4,6 +4,7 @@ import QOU.BraidKnot.JucysMurphy
 import QOU.BraidKnot.WedderburnSn
 import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.SpechtFinrankWired
 
 /-!
 # QOU.BraidKnot.OVTopAssembly — the TOP / capstone of the Okounkov–Vershik tower
@@ -32,7 +33,7 @@ residual) and per-field consumption of the proved/stubbed bricks.
 | `ω i` | brick 5 `((contentSqSum i.diagram : ℤ) : R)` (the JM eigenvalue `Σ_{c∈λ} c²`) | **sorry-free** (the *definition*; `decomp` carries the action-identity) |
 | `p i`, `proj i` | the `λ`-isotypic projections (Wedderburn `∏ Matrix` blocks, brick `WedderburnSn`) re-indexed by partition (brick 3), via `snBlocks` | `sorryAx`-via-`snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed`) |
 | `isProj i` | `LinearMap.IsProj` of the isotypic projection, via `snBlocks` | `sorryAx`-via-`snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed`) |
-| `rank i` | brick 2 `specht_finrank_eq_numSYT` + `WedderburnSn.sn_block_finrank_sq` (`dim block = dim(λ)²`) | `sorryAx`-via-`Specht.specht_finrank_eq_numSYT` (load-bearing `rw`) + `snBlocks` block-size |
+| `rank i` | brick 4 `SpechtFinrankWired.specht_finrank_eq_numSYT_wired` (`dim Sᵘ = #SYT`, sourced from the **proved** independence core `SpechtTriangularCore.standardPolytabloid_triangular'`) + `WedderburnSn.sn_block_finrank_sq` (`dim block = dim(λ)²`) | `sorryAx`-via-`SpechtFinrankWired.specht_finrank_eq_numSYT_wired` (load-bearing `rw`; sorry-path = **spanning/straightening only**) + `snBlocks` block-size |
 | `decomp` | brick 5 `centralC2_acts_by_contentSqSum` + `centralC2_eq_sum_jucysMurphy_sq` (`C₂` acts by `ω_λ` on `Sᵘ`) | `sorryAx`-via-`JucysMurphy.centralC2_acts_by_contentSqSum`; the rfl bridge `centralC2_eq_sum_jucysMurphy_sq` is consumed sorry-free |
 | `complete` | `WedderburnSn.sn_wedderburnArtin_algClosed` `Σ proj = id` + brick 3 `card_irreducibles_eq_card_partitions` | `sorryAx`-via-`snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed`) |
 
@@ -43,9 +44,26 @@ abstract Wedderburn block count `N` of `WedderburnSn.sn_wedderburnArtin_algClose
 SYT count and its `C₂` eigenvalue with `contentSqSum`.  That residual is **isolated in the single
 named glue lemma `snBlocks`** (the only data-producing `sorry`), whose `-- Ref:` cites the precise
 bricks.  Two further fields then *consume their named bricks load-bearingly* on top of `snBlocks`:
-`rank` rewrites with `Specht.specht_finrank_eq_numSYT`, and `decomp` aligns the central element with
+`rank` rewrites with the brick-4 **wired** finrank
+`SpechtFinrankWired.specht_finrank_eq_numSYT_wired`, and `decomp` aligns the central element with
 the rfl-proved `JucysMurphy.centralC2_eq_sum_jucysMurphy_sq` and cites the eigenvalue punchline
 `JucysMurphy.centralC2_acts_by_contentSqSum`.
+
+### `rank` re-route (brick-4 finrank → proved independence)
+
+The `rank` field formerly rewrote with the **opaque brick-2 stub**
+`Specht.specht_finrank_eq_numSYT` (a bare `sorry : finrank Sᵘ = numSYT μ`).  It now rewrites with
+`SpechtFinrankWired.specht_finrank_eq_numSYT_wired`, which rebuilds the same `dim Sᵘ = #SYT` identity
+from the standard polytabloid basis but **sources linear independence from the proved triangular
+core** `SpechtTriangularCore.standardPolytabloid_triangular'` (sorry-free — its dominance core
+`SpechtDominanceCore.dominance_relation_exists` is discharged on the pinned oleans) instead of the
+independence stub.  Consequently the `rank` sorry-path no longer contains the independence stub
+`SpechtStandardBasis.standardPolytabloid_triangular` **nor** the opaque brick-2 finrank stub; its
+**only** remaining `sorry` is the spanning / straightening stub
+`SpechtStandardBasis.standardPolytabloid_straightening` (via `standardPolytabloid_span`).  The basis-
+building + `finrank` machinery itself is sorry-free (demonstrated: a `Basis.mk` whose independence and
+spanning are *both* supplied as hypotheses depends only on `[propext, Classical.choice, Quot.sound]`),
+so the spanning stub is genuinely the sole residual.
 
 `identityB_general n` is the payoff: it feeds `(sn_spectralData_exists n).some` into
 `RegularRepBlockTrace.identityB_conditional`, yielding the Identity-(B) trace equation
@@ -155,8 +173,12 @@ We construct the keystone's `SnWedderburnSpectralData R n` by wiring each field 
 * the projection data `p` / `proj` / `isProj` / `complete` are obtained from the single OV-reindexing
   residual `snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed` +
   `SpechtClassification.card_irreducibles_eq_card_partitions`).
-* `rank i` additionally consumes brick 2 `Specht.specht_finrank_eq_numSYT` load-bearingly (a `rw`
-  turning `snBlocks`' block-size `(dim Sᵘⁱ)²` into the field's `(numSYT λ_i)²`).
+* `rank i` additionally consumes the brick-4 **wired** finrank
+  `SpechtFinrankWired.specht_finrank_eq_numSYT_wired` load-bearingly (a `rw` turning `snBlocks`'
+  block-size `(dim Sᵘⁱ)²` into the field's `(numSYT λ_i)²`).  This wired finrank sources independence
+  from the **proved** core `SpechtTriangularCore.standardPolytabloid_triangular'`, so the `rank`
+  sorry-path is the **spanning / straightening stub only** — not the independence stub and not the
+  opaque brick-2 finrank stub `Specht.specht_finrank_eq_numSYT`.
 * `decomp` is `c2_eigen_on_blocks` for the `snBlocks` projection family — a genuine consumer of
   brick 5 (`centralC2_eq_sum_jucysMurphy_sq` sorry-free + `centralC2_acts_by_contentSqSum` cited). -/
 noncomputable def snSpectralData (n : ℕ) :
@@ -178,9 +200,11 @@ noncomputable def snSpectralData (n : ℕ) :
     -- `proj i` is the projection onto `p i` (from `snBlocks`).
     isProj := pf.1
     -- `dim_R (p i) = (dim Sᵘⁱ)² = numSYT(λ_i)²`: `snBlocks` gives the block size `(dim Sᵘⁱ)²`, and
-    -- brick 2 `specht_finrank_eq_numSYT` (`dim Sᵘ = #SYT`) rewrites `dim Sᵘⁱ → numSYT λ_i`.
+    -- the brick-4 **wired** finrank `specht_finrank_eq_numSYT_wired` (`dim Sᵘ = #SYT`, sourced from
+    -- the *proved* independence core `triangular'`) rewrites `dim Sᵘⁱ → numSYT λ_i`.  Its sorry-path
+    -- is the spanning/straightening stub only — no independence sorry, no opaque brick-2 finrank stub.
     rank := fun i => by
-      rw [pf.2.1 i, Specht.specht_finrank_eq_numSYT (k := R) i.diagram]
+      rw [pf.2.1 i, SpechtFinrankWired.specht_finrank_eq_numSYT_wired (k := R) i.diagram]
     -- **Block spectral decomposition** `mulLeft C₂ = Σ_i ω_i · proj_i` — `c2_eigen_on_blocks` for
     -- the `snBlocks` projection family (consumes brick 5; see that lemma).
     decomp := c2_eigen_on_blocks (R := R) n (snBlocks (R := R) n).choose_spec.choose
@@ -206,7 +230,7 @@ theorem sn_spectralData_exists (n : ℕ) :
 for **all `n`** — where `ω_i` is the Jucys–Murphy content-square eigenvalue and `dim(λ_i)` the SYT
 dimension of block `i`.  This is the unconditional general-`n` Identity (B): the only residual inputs
 are the bricks' own honest `sorry`s (the isotypic-projection identification, the OV eigenvalue
-theorem, the standard-basis dimension theorem), all wired in `snSpectralData`.
+theorem, the standard-basis dimension theorem's spanning core), all wired in `snSpectralData`.
 
 (The statement is stated exactly as the keystone's `identityB_conditional` concludes, against the
 assembled `W := (sn_spectralData_exists n).some`.) -/
