@@ -17,6 +17,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.torus_knot_shell_binding",
     validation: "not_checked",
   },
+  uses: ["def:inter-shell-operator", "def:chebyshev-torus-coefficients"],
   examples: [
     "rem:shell-construction-rules",
   ],

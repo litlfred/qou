@@ -1,80 +1,13 @@
-## Intra-shell vs. inter-shell crossings
-
-The inductive construction
-([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))
-builds the nucleus one nucleon at a time. Within a shell, each
-new nucleon crosses existing nucleons via **bare transfer
-matrices** $T(c, d)$ with crossing coefficients pp, nn, or mix
-([transfer matrix operator](#def:transfer-matrix-operator)).
-
-At a shell boundary, the situation changes. The closed shell's
-nucleons form a tightly intertwined braid — its normal form
-fills the Bruhat lattice symmetrically. A new nucleon crossing
-this closed shell does not see individual nucleons; it sees the
-**collective torus knot** $T_{2, n_s}$ where $n_s$ is the
-shell occupancy.
-
-**Definition (inter-shell operator).**
-Let shell $\ell$ contain $n_s$ nucleons and be closed
-(palindromic histogram). The crossing of a new nucleon
-(starting shell $\ell + 1$) with the closed shell $\ell$ is
-encoded by the torus knot transfer matrix:
-
-$$
-  \Phi_{\mathrm{shell}}^{(\ell)}
-   : 
-  H_A(q) \to H_{A+1}(q),
-  \qquad
-  \bar{\mathcal{N}}_A
-  \mapsto
-  r\!\bigl(
-    \bar{\mathcal{N}}_A \cdot (c_{n_s}\sigma + d_{n_s}),
-    G
-  \bigr)
-$$
-
-where $(c_{n_s}, d_{n_s})$ are the **Chebyshev crossing
-coefficients** of $T_{2, n_s}$ (see below), and $r(\cdot, G)$
-is the Gröbner--Shirshov division algorithm.
-
-## Chebyshev recurrence for torus knot coefficients
-
-The torus knot $T_{2,n}$ is the closure of $\sigma^n$ in $H_2(q)$.
-Its crossing coefficients $(c_n, d_n)$ in the $2 \times 2$
-transfer matrix satisfy the **Chebyshev recurrence**:
-
-$$
-  \boxed{
-    c_n = U_{n-1}(\tfrac{q - q^{-1}}{2}),
-    \qquad
-    d_n = -\frac{c_n \cdot qs_q}{1 + c_n}
-  }
-$$
-
-where $U_k$ is the Chebyshev polynomial of the second kind and
-$s_q = q^{1/2} - q^{-1/2}$.
-
-Equivalently, from the matrix power
-$T(1,0)^n = \bigl(\begin{smallmatrix} a_n & c_n \\ c_n & d_n \end{smallmatrix}\bigr)$:
-
-$$
-  c_1 = 1, \quad d_1 = 0
-  \qquad\text{(bare crossing)}
-$$
-
-$$
-  c_{n+1} = c_n(q - q^{-1}) + c_n + d_n, \qquad
-  d_{n+1} = c_n
-$$
-
-The first few values at $q \approx 1.110$:
-
-See [Table 1](#tbl:torus-knot-shell-binding-table1-data).
-
 ## Proposition: magic numbers from torus knot shell sizes
 
 **Let $q > 1$ and let the nucleus be built by the inductive
-construction with Gröbner--Shirshov reduction at each step.**
+construction with Gröbner--Shirshov reduction at each step.** The
+shell-boundary crossing is mediated by the inter-shell torus-knot
+operator $\Phi_{\mathrm{shell}}^{(\ell)}$
+([inter-shell operator](#def:inter-shell-operator)), whose crossing
+element uses the Chebyshev crossing coefficients
+([Chebyshev crossing coefficients](#def:chebyshev-torus-coefficients))
+of $T_{2, n_s}$.
 
 **(i) Shell closure triggers inter-shell operator.**
 When the word-length histogram of $\bar{\mathcal{N}}(p, n)$ is

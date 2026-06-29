@@ -15,8 +15,8 @@ export default proposition({
     "groebner-basis",
   ],
   lean: {
-    ref: "qou:QOU.OptimalNF.optimal_nf_is_standard_basis",
-    validation: "stub",
+    ref: "qou:QOU.Archimedean.sequential_build_always_normal_form",
+    validation: "not_checked",
   },
   uses: ["prop:skein-polynomial-transfer-matrix"],
 });
