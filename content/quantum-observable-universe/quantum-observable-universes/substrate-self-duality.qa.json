@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Statement is the bare quasi-iso A ≃ ω_A• plus its corollaries; appropriate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Self-duality of the Frobenius-Hopf substrate via the rigid dualizing complex; core substrate chapter content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Derived-category/Frobenius statement; categorical, no archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Lean is category-theoretic (snake identities); no archimedean leak."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "substrate-self-duality.lean: \"theorem substrate_self_duality ... := substrate_self_duality_axiom C S\"",
+        "notes": "Lean proves IsIso(selfDualityMorphism) but discharges it via an external axiom; the .md presents a fully-proved quasi-iso with Serre-duality corollaries. The Lean covers only the iso, not the corollaries, and via an axiom."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Signature (IsIso of the explicit selfDualityMorphism) is non-trivial and matches the narrative's 'specific morphism is invertible' content."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "critical",
+        "evidence": "substrate-self-duality.lean: \"axiom substrate_self_duality_axiom ... : IsIso (selfDualityMorphism S)\" then \"theorem := substrate_self_duality_axiom C S\"",
+        "notes": "The theorem is a verbatim projection of an axiom whose statement IS the theorem's own conclusion; honestly labelled §3b-cond external-axiom, but it is the self-assuming pattern at the axiom level (no derivation)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "IsIso(selfDualityMorphism S) is a substantive goal, not True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "FrobeniusHopfSubstrate hypothesis is inhabitable; no False premise. The axiom is an admitted gap, not a false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "S is used as the axiom's argument; no spurious hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "No decide/trivial; the gap is an explicit axiom, not masked."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "substrate-self-duality.lean: \"theorem substrate_self_duality ... := substrate_self_duality_axiom C S\"",
+        "notes": "Lean content reduces to an axiom asserting the conclusion; the formalization is not independently verified (admitted via axiom), though honestly disclosed in the docstring."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "substrate-self-duality.lean: axiom-backed IsIso vs .md's full quasi-iso + Serre/trace/uniqueness corollaries",
+        "notes": "Lean only states the iso (via axiom) and omits the three corollaries the .md derives; the narrative is stronger than the formalization."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean: the self-duality is admitted as an external axiom (§3b-cond), not proved; corollaries (Serre duality, canonical trace, uniqueness) are narrative-only. Math is plausible/standard for Frobenius algebras."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "substrate-self-duality: Lean discharges the theorem via an axiom asserting its own conclusion",
+        "notes": "The result is standard for Frobenius algebras and honestly labelled, but it is not actually proved in Lean."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

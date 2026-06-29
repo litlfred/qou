@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Peter-Weyl / Wick / q-heat / base-ring realisations of the categorical Fourier transform; interprets the def in-chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Peter-Weyl heat eigenvalue λ_j(q)=[j]_q[j+1]_q(1-q⁻¹)² and the F_p/Q_p/C_p semisimplicity conditions; all standard quantum-group facts, no numerical fit involved."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "974010930e5a",
+          "ts": "4ba12b739ce9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Correct survey of Fourier realisations; the eigenvalue and base-ring claims are standard."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

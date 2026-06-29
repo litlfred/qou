@@ -1046,7 +1046,451 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering.md: \"defines 'positive crossing' — forward time.\"",
+        "notes": "Statement is mostly bare, but the 'forward time' interpretive aside and embedded Definitions could move to a remark; minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Braiding-induced admissible ordering on the Hecke basis; belongs in the substrate/QOU chapter feeding the GS reduction."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Generic-ring/categorical statement (well-ordering on Hecke monomial basis); no archimedean construct in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Lean proof uses well-founded order machinery (Prod.Lex, List.Lex), purely combinatorial; no archimedean leak."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.lean: \"def braiding_induced_ordering : Prop := ∀ n, WellFounded (DegLex (α := Fin n))\"",
+        "notes": "Lean alias proves only well-foundedness of degree-lex on List(Fin n); the narrative's braiding-determination and admissibility (concatenation-compatibility) of ≺_c are not in the top-level decl (admissibility is separate lemmas, not the alias)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "No statement-weakening vs prior commit evident; the alias and helper lemmas are honestly named."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "degLex_wellOrdered is a genuine Subrelation.wf proof, not a field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "WellFounded (DegLex ...) is a substantive goal, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "No False/contradictory hypothesis; lemmas hold unconditionally."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.md: \"whose braiding c_{V,V} ... is non-symmetric (c_{V,V}^2 ≠ id)\"",
+        "notes": "The narrative non-symmetry hypothesis plays no role in the Lean (DegLex/well-foundedness is independent of the braiding); the order exists for symmetric braidings too."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Proof uses omega/simp/induction on genuine goals, no decide masking an empty state."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.md: \"c_{V,V} determines a canonical admissible well-ordering\"",
+        "notes": "'Canonical' and 'induced by braiding' overstate: degree-lex on generator indices is a standard fixed choice independent of the braiding; the braiding only fixes which crossing is 'positive'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.lean: alias = ∀ n, WellFounded (DegLex ...)",
+        "notes": "Lean top-level decl proves strictly less (well-foundedness only) than the .md claim that the braiding *determines* a canonical admissible ordering; admissibility lemmas exist but the alias does not bundle them."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the order-theory: degree-lex is well-founded and admissible (concatenation-compatible) as proved in the lemmas; the divergence is that the top-level alias and the non-symmetry premise are under-used."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b0a02c7679d6",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering.md: top-level Lean alias narrower than the narrative claim",
+        "notes": "Math is correct, but a referee would object that the braiding plays no real role and the Lean alias proves only well-foundedness."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

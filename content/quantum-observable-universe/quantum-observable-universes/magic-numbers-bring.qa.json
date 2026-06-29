@@ -894,7 +894,265 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Magic numbers as S_5-stable Bring period-sublattice ranks; an algebraic-substrate conjecture appropriately in the substrate chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "magic-numbers-bring.md: \"Tensoring with the τ̂-character ... and scoring by brane-tower rank gives candidate sub-lattices\"",
+        "notes": " The 'scoring by brane-tower rank' step that converts S_5 irrep dims {1,1,4,4,5,5,6} into {2,8,20,28,50,82,126} is unspecified; the rank-assignment is an undisclosed free choice that the conjecture defers to Phase 2."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "magic-numbers-bring.md: \"the seven sub-lattice ranks {2,8,20,28,50,82,126} match — under this conjecture — the seven distinct irreducible Q[S_5×⟨τ̂⟩]-modules\"",
+        "notes": " The match is asserted at the level of a target sequence; S_5 irrep dims are {1,1,4,4,5,5,6} (not the magic numbers), so the bijection requires an unspecified 'brane-tower rank scoring' to reach {2,8,20,28,50,82,126} — a hidden degree of freedom in the matching, honestly flagged as conjectural/deferred."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "This is a conjecture block (kind=conjecture), so the deferred match is in-scope. Verified S_5 has 7 irreps of dims {1,1,4,4,5,5,6} (Σdim²=120=5!); these are NOT the magic numbers, so the 'rank scoring' map is load-bearing and unspecified — appropriately flagged as the conjectural content. The Lean instance 'canonical' uses s5_stable:=True, tau_stable:=True (a tautological skeleton, honestly disclosed)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b20ac2c5c2d3",
+          "ts": "47faa237d53d",
+          "lean": "2eb0837b7cd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "magic-numbers-bring: the rank-{2,8,20,28,50,82,126}-from-S_5 map is unspecified (S_5 irrep dims are {1,1,4,4,5,5,6})",
+        "notes": "As a conjecture this is acceptable, but the central 'brane-tower rank scoring' that yields the magic sequence is undefined, so the empirical match currently rests on an unstated degree of freedom."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

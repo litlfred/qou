@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Tannaka-Krein pointwise realisation of the quantum gauge group; interprets def:quantum-gauge-group in-chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the O_q(SU(2)) ↔ Rep(SU_q(2)) reconstruction via End⊗(τ) and the fibrewise functoriality square; standard Tannakian duality, correctly stated."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3648a182a73e",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Correct fibrewise Tannaka-Krein remark; no overclaims."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

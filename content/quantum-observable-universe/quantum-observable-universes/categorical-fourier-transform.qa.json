@@ -873,7 +873,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Definition of the categorical Fourier transform as Hopf pairing with the unitary grouplike; in-chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Defined over R_q; the Lean uses Complex.I only in the optional fromLaplace Wick-rotation helper, and the algebraic Fourier is base-ring independent. Wall respected."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "minor",
+        "evidence": "categorical-fourier-transform.md: \"ξ ranges over the categorical spectrum Hom_C(1, A^∨) — the Pontryagin dual of the Reeb-translation object\"",
+        "notes": "'Pontryagin dual of the Reeb-translation object' is asserted as the index set without a definition cross-link; mild ambiguity for the spectral parameter."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked F[f](ξ)=tr_M(exp_q(iξ·)·f) and the Wick-rotation relation to the Laplace def; consistent. Lean structure carries a genuine monoidal field."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e151177d4975",
+          "ts": "78ee7266a3c6",
+          "lean": "832061dd82e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Coherent companion to the Laplace definition; the spectral-parameter index set is lightly under-specified but cross-referenced in the properties remark."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

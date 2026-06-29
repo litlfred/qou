@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Base-ring independence of exp_q and its char-p obstruction; interprets def:q-exponential in this chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the [n]_q = (1-q^n)/(1-q) vanishing condition (q^n=1 in F_p^x), the formal-group analogy, and the truncated/Witt-lift claims; all standard and correctly stated."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ffb8e41098d2",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "A correct and well-framed char-p obstruction remark; no overclaims."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

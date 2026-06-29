@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Li_2^q over F_p/Q_p/C_p convergence; interprets def:q-dilogarithm in-chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the F_p failure loci (n=p and n=ord(q)), the Q_p valuation bound v_p(x^n/(n[n]_q)) ≥ n-2v_p(n)-v_p(n!)/(p-1), and the C_p radius v_p(x)>1/(p-1). The Coleman/Kontsevich-Zagier identifications are standard. Plausible and correctly framed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b0810a4c03d2",
+          "ts": "3c4fd9e64056"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Correct three-context convergence survey for Li_2^q; the extra n-in-denominator effect is correctly handled."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

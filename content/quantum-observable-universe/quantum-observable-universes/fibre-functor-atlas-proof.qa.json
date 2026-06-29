@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Tannaka-Krein atlas/torsor argument; fits the QOU foundations chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the standard Tannakian facts: fibre functors are torsors under Aut⊗(τ), connected+simply-transitive ⇒ gerbe; the cocycle = associativity of composition. Sound, no lean to diverge from."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9e53fa82a138",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Textbook Tannaka-Krein torsor/gerbe argument, correctly applied."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

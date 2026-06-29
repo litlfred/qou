@@ -816,7 +816,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Reeb-flow Turing-completeness inherited from the contact structure; interprets def:categorical-reeb-derivation in-chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "reeb-contact-universal-computer.md: \"every fibre S_p inherits ... the structural capacity to embed a Turing-complete Reeb flow\"",
+        "notes": " Cardona et al. prove existence of SOME contact form on a 3-manifold with a Turing-complete Reeb field; the remark's leap to 'every fibre inherits' the specific QOU contact form Θ being Turing-complete is asserted, not the cited theorem (which is an existence/embeddability result)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the Cardona-Miranda-Peralta-Salas-Presas citation: it establishes a contact-embeddable plug giving a Turing-complete Reeb flow on any contact 3-manifold; the remark uses it correctly for capacity/embeddability but hedges appropriately ('inherits the structural capacity to embed')."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b6058feb5792",
+          "ts": "60085eb9dc6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Citation is used correctly for the embeddability claim; the 'inherits the capacity to embed' phrasing is appropriately hedged, avoiding a stronger 'the Reeb flow IS universal' overclaim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

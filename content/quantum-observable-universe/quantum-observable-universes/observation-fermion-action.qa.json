@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Eigenspace/idempotent decomposition of the Hecke generator and the Ad-action on fermions; interprets def:observation in-chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Verified the Hecke idempotents e_± = (σ+q⁻¹)/(q+q⁻¹), (q-σ)/(q+q⁻¹) project onto the q and -q⁻¹ eigenspaces; consistent with the (σ-q)(σ+q⁻¹)=0 convention. Physical-interpretation prose is appropriately hedged."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d119f07f78c8",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Eigenspace algebra is correct; the boson/fermion + non-commuting-observation picture is interpretive but grounded in the cited propositions."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Short bare uniqueness statement; the Peter-Weyl identification is a clarifying clause, acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Uniqueness of the categorical Fourier transform; sits with the integral-transform defs in this chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Statement is categorical/Tannakian (monoidal functor, Peter-Weyl); no archimedean machinery in the claim itself."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Lean proof is structural (cases + subst + rfl); no archimedean leak."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "categorical-fourier-transform-unique.lean: \"theorem CategoricalFourier.unique ... (hproj : F₁.project = F₂.project) : F₁ = F₂\"",
+        "notes": "Lean proves extensionality (same projection family ⇒ equal), NOT the narrative's 'unique monoidal functor agreeing with L[f](-iξ)'; the docstring itself admits Subsingleton is false."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "categorical-fourier-transform-unique.lean docstring: \"The previous version asserted axiom Subsingleton ... which is false\"",
+        "notes": "Statement was honestly weakened from a (false) global uniqueness to conditional extensionality; flagged because the .md still reads as global uniqueness."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Proof is cases/subst/rfl on a genuine equality goal, not a field projection of its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "F₁ = F₂ under hproj is a real structural goal, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "hproj is a normal hypothesis, satisfiable; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "hproj is used (subst hproj); project_const uses F.monoidal."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "No decide/trivial masking; rfl after subst is legitimate."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "categorical-fourier-transform-unique.md: \"is the unique monoidal functor agreeing with L[f](-iξ)\"",
+        "notes": "Narrative claims global uniqueness; the Lean only supports conditional extensionality (and notes Subsingleton is false), so the .md overclaims."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "categorical-fourier-transform-unique.lean: extensionality, not uniqueness",
+        "notes": "Lean proves a weaker statement (same project ⇒ equal) than the .md 'unique monoidal functor'; explicitly noted in the file's honest-statement section."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Read the Lean and docstring: the extensionality theorem is correct but does not establish the narrative's global uniqueness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e347032ac211",
+          "ts": "9d2cfd1935c9",
+          "lean": "3acf34da2179"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "major",
+        "evidence": "categorical-fourier-transform-unique: narrative claims global uniqueness, Lean proves extensionality",
+        "notes": "Honestly documented but the .md still overclaims relative to the formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

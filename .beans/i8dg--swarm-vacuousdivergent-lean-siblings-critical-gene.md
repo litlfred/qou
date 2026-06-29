@@ -118,3 +118,8 @@ updated_at: 2026-06-29T20:07:58Z
 - spectral-decomposition-qvalue.lean:90-97 (exists Q_q=RHS rfl trivial existential)
 - optimal-normal-form-valley.lean:46-56 (vacuous existential, hq/hval unused)
 - parity-violation-skein.lean:53-54 (3 theorem sigs commented + orphan := by; mk arity mismatch; does not compile)
+
+## More instances (batch 61, quantum-observable-universes)
+- braiding-induced-ordering.lean (proves only WellFounded DegLex; braiding/c^2!=id unused)
+- categorical-fourier-transform-unique.lean (proves only extensionality; audit note concedes Subsingleton uniqueness is false)
+- substrate-self-duality (axiom substrate_self_duality_axiom statement=conclusion; honest 3b-cond)

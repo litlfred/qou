@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Abelian C_5 / q=1 degeneration to the classical DFT and Briggs-Klein smoothness; interprets def:categorical-fourier in-chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the C_5 characters χ_k(j)=ζ^{kj}, the Lagrange-resolvent identification F[x](k)=Σζ^{kj}x_j=w_k, and the 'distinct isotypic blocks ⇒ smoothness' argument; the resolvents are pairwise distinct as they live in different irreps. Sound."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e4425f140c4c",
+          "ts": "2472d69d52c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Correct abelian specialisation; the smoothness-via-spectral-separation argument is a clean DFT fact."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

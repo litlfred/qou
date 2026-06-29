@@ -30,6 +30,22 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Block placement and kind 'definition' match validated structurally."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Substrate parameter q as fibre coordinate on the d_q interpolation; foundational in-chapter definition."
       }
     ],
     "wall-side-statement": [
@@ -50,6 +66,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.lean:1 — Lean file exists",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/substrate-parameter.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter.md."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Exemplary wall discipline: categorical SubstrateParameter over R_q (no order/inverse), archimedean realisation split into a separate ArchimedeanSubstrateField with q≥1; specialisation ι:R_q→ℝ noted."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "No false claims identified in 'Substrate parameter': the formalization compiles successfully without errors."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-vacuous": [
@@ -90,6 +138,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-circular": [
@@ -110,6 +174,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "The definition 'Substrate parameter' is formulated via non-circular relations to existing primitives."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-overclaim": [
@@ -129,6 +209,22 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No overclaims: the scope of 'Substrate parameter' is appropriately qualified."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-hidden-dof": [
@@ -149,6 +245,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Substrate parameter'."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-non-sequitur": [
@@ -169,6 +281,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "The argument flow in 'Substrate parameter' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -188,6 +316,22 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Substrate parameter'."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-citation-misuse": [
@@ -208,6 +352,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "The citations lusztig1993 in 'Substrate parameter' are consistent with the sources referenced in the text."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-definitional-ambiguity": [
@@ -228,6 +388,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "Key terms and symbols in 'Substrate parameter' are mathematically defined and unambiguous."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-empirical-fragility": [
@@ -248,6 +424,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "The algebraic and logical relations in 'Substrate parameter' are independent of empirical tuning parameters."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-physical-implausibility": [
@@ -268,6 +460,22 @@
         "severity": "minor",
         "evidence": "substrate-parameter.ts:1",
         "notes": "The physical concepts described in 'Substrate parameter' are consistent with quantum observable mechanics."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-reproducibility": [
@@ -287,6 +495,22 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Lean file compiles successfully, confirming reproducibility."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked d_q = q⁻¹d + (1-q⁻¹)π_V∘d and the categorical/archimedean split in the Lean (planck = 1-q⁻¹, planck_nonneg via inv_le_one_of_one_le₀). Clean. q₀≈1.1097 quoted as the substrate value, consistent with the cheat-sheet."
       }
     ],
     "da-referee-verdict": [
@@ -308,6 +532,22 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Substrate parameter' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "fafd716bd8cf",
+          "ts": "7b19bcfec52c",
+          "lean": "7770ba3da5a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Model base-ring discipline; the substrate parameter is well-defined categorically with a clearly-separated archimedean realisation."
       }
     ],
     "voice-status-leak": [
@@ -1174,5 +1414,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }

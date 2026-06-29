@@ -873,7 +873,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Iterated-primitive categorical q-dilogarithm with pentagon identity; in-chapter Hopf-algebra def."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Defined Hopf-algebraically over R_q (Laurent polynomials); the Kirillov series is flagged as the archimedean realisation. Correct wall placement."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "severity": "minor",
+        "evidence": "q-dilogarithm.lean: \"axiom QDilogarithm.unique_up_to_shift_axiom ...\" then theorem projecting it",
+        "notes": "The uniqueness is admitted via an external axiom (§3b-cond) rather than proved; the QDilogarithm structure itself is content-bearing (pentagon field), so the definition is not vacuous, but its uniqueness lemma is axiom-backed."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Checked the level-2 primitive characterisation, the five-term pentagon (correctly stated), and the one-dimensionality claim. The structure carries a real pentagon field; uniqueness is an admitted axiom."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8889f0212fa2",
+          "ts": "ac840c305cc4",
+          "lean": "83a1afad9cc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:39:00.617Z",
+        "reviewed_sha": "445aad3cc2d660a65fac2d5e9600c65f79cfa5cd",
+        "notes": "Well-formed categorical definition; uniqueness is axiomatized (disclosed §3b-cond) rather than proved, but the definition is content-bearing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:39:00.617Z"
 }
