@@ -197,3 +197,32 @@ quantum-dim sum (no low-order kernel); the kernel-bearing object is the crossing
 moment (`BindingQHermiteOscillator`, #2800). **Decision for z2bn:** higher-order
 `R(q,x)` for `Σ dim_q`, or adopt the crossing moment as the physical binding
 object. The bare `[n−1]_q`-bracket shortcut is pruned. Full audit: #2822.
+
+---
+
+## 8. Report-back from #3089 (2026-06-29) — `10A-5` slope test + bar-odd Z-correction (mirror cancellation Lean-proved)
+
+Branch `claude/categorical-derivation-10a-5-85e945`. On the trace-canonical
+residual `Delta_lambda = B_AME/B_pred` (`binding_canonical.py`, 7Li/7Be added;
+probe `delta_lambda_z_coefficient_and_slope.py`). Audit
+`2026-06-29-delta-lambda-z-correction-writhe.md`.
+
+- **Slope test: `10A-5` is a light-nucleus (A<=4) artifact — REFUTED at A>=5
+  (scope-(a)).** 6Li `log_q0 Delta = 36.1`, not the predicted 55; the slope
+  collapses ~10->0.4 at the 4He shell (`B_pred` saturates ~0.7-0.8 while `B_AME`
+  ~linear => `log Delta` logarithmic). Same saturation §4/#2089 flagged (linear
+  `Dtr` bounded), seen from the residual side. Coordinated with **#3087**
+  (chain-topology derivation of the integer `5(2A-1)` — arithmetic unaffected,
+  only the global-law reading refuted).
+- **Bar-parity split.** Symmetric sum `sigma+sigma^-1=10A-2` (bar-even, A-only)
+  = leading; writhe `sigma-sigma^-1=4Z` (bar-odd, Z-only) = the Z-correction;
+  decomposes `4Z = intra(3Z+N) + interface(Z-N)`.
+- **Z-correction CONFIRMED at a 2nd mirror pair.** Proton-excess penalty -1.34
+  (3He/T), -1.77 (7Be/7Li); SIGN derived from the p!=n intra-writhe seed (proton
+  +3 > neutron +1), magnitude O(-1.5) open (no fit). Survives the leading-law
+  collapse — independent parity channels.
+- **Mirror cancellation Lean-proved** (`QOU.BraidKnot.mirror_baseline_cancels` +
+  `crossing_sum_mirror_invariant`/`writhe_mirror_difference`, sorry-free): the
+  bar-even baseline cancels exactly in a mirror difference given the additive
+  `baseline(A)+zCorr(Z-N)` form (the only ansatz). Paper:
+  `prop:mirror-baseline-cancellation` (mba sidecar). Not wired (near-match tier).
