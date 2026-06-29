@@ -1,0 +1,16 @@
+**Definition (Frobenius dual).**
+*Let $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ be the non-degenerate
+Frobenius Gram matrix on the NF basis $\{b_i\}$ of $H_3(q)$
+([prop:frobenius-gram-matrix](#prop:frobenius-gram-matrix)). For a
+state $K = \sum_i c_i b_i$ in NF, the **Frobenius dual**
+is the unique element $K^\vee \in H_3(q)$ satisfying
+$\langle K^\vee, b_j \rangle_F = c_j$ for all $j$.
+Explicitly:*
+
+$$
+  K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j.
+$$
+
+*The dual exists and is unique by non-degeneracy of $G$: the pairing
+$\langle K^\vee, b_j \rangle_F = \sum_{i,k} c_i (G^{-1})_{ik} G_{kj}
+= \sum_i c_i \delta_{ij} = c_j$ follows from $G^{-1} G = I$.*

@@ -1,3 +1,27 @@
+**Proposition (proton tower residual = Frobenius co-Casimir trace).**
+*Let $\mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)$ be the
+pure-tower proton mass and $m_{\mathfrak{p}}^{\mathrm{CODATA}}$ the
+experimental proton mass. The proton tower residual equals the
+electron-scaled Frobenius co-Casimir trace at $n = 3$:*
+
+$$
+  \boxed{
+    \Delta m_{\mathfrak{p}}
+    \;:=\;
+    m_{\mathfrak{p}}^{\mathrm{CODATA}}
+    - \mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)
+    \;=\;
+    m_e \cdot \mathrm{tr}_M\bigl(C_{\mathrm{Frob}}^{(n=3)}\bigr)
+    \;=\;
+    m_e\Bigl(2 + \frac{1}{[2]_q}\Bigr),
+  }
+$$
+
+*where $C_{\mathrm{Frob}}$ is the Frobenius co-Casimir central
+element defined below.*
+
+---
+
 Let $\mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)$ be the
 pure-tower proton mass computed via the
 [mass endomorphism tower](#prop:mass-endomorphism-tower) at
