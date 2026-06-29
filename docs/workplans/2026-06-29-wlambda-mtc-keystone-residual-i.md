@@ -64,6 +64,31 @@ Candidate decomposition (to be refined by the in-flight corpus map):
 *derive* the same number, not tune to it. Scope every negative as (a) unless a
 proved invariant licenses (b). Coordinate on #2722 / #2744 before constructing.
 
+## Increment 1 (2026-06-29) — MTC-matching obligation formalized, sorry-free
+
+[`QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean)
+(lean-direct verified, exit 0, sorry-free; generic `{R : Type*} [Field R]` per §7c).
+
+- `class BeasleyWittenLocalization R` carries residual (i)'s **matching obligation** as its single
+  unproved field: `loc p = d_q(p)² / D²`, `D² = Σ_λ d_q(λ)²` — exactly what the owner-gated gauge
+  datum on `S³/2I` must deliver. The gauge datum is **not** constructed; it is the hypothesis.
+- Derived (non-tautological, §3b-cond):
+  - **C1** `loc_isProbabilityMeasure : Σ_λ loc λ = 1` — the genuine Plancherel `D²` normaliser
+    forces `Σ = 1` (the 2026-06-20 C1 normalization, now a theorem for any matching localization).
+  - **C2** `loc_conj_eq : loc λ′ = loc λ` — transports the corpus-proved `qDim_conj`
+    (`KeystoneC2QDimTranspose`, sorry-free) onto the gauge-theory weight via the matching.
+- Non-vacuity: `instance localization_two : BeasleyWittenLocalization ℚ` (n=2 blocks, `d_q≡1`,
+  `loc≡1/2`) — confirms the conditional theorems are not conditional-on-`False`.
+
+**What this buys:** C1 + C2 are now **necessary conditions any gauge datum must satisfy** — a
+falsifiable constraint on the owner-gated search (a localization whose weight is unnormalized or
+chirality-asymmetric cannot be the Hecke Plancherel measure). It does **not** close residual (i).
+
+**Coupling found:** the `D² = Σ d_q² = [n]_q!` identity (`wedderburn_trace_identity`) is itself a
+`sorry` pending the q-Wedderburn–Artin layer (sibling #2743) — residual (i)'s normalization leg
+depends on it. Carried here abstractly via `globalDim_ne` (`D² ≠ 0`).
+
 ## Open log
 
 - 2026-06-29: branch + intent; corpus map of residual (i) dispatched.
+- 2026-06-29: Increment 1 — MTC-matching obligation class + C1/C2 derived, sorry-free (lean-direct).
