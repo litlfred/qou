@@ -446,4 +446,62 @@ theorem betaNat_removeCorner_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c
     rw [he, Nat.cast_sub (by omega : 1 ≤ l.length - 1 - j), Nat.cast_one]
   rw [h1]; push_cast; ring
 
+
+/-! ## Row-drop per-corner ratios (factorial side `∏_{j<c} βⱼ` and Vandermonde side) -/
+
+theorem betaNatVal_c_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) : betaNatVal l c = 1 := by
+  have hclast := rowdrop_c_last l c hc hpos hone
+  unfold betaNatVal; omega
+
+theorem length_eq_succ_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) : l.length = c + 1 := by
+  have hclast := rowdrop_c_last l c hc hpos hone
+  have := hc.1; omega
+
+theorem betaFactProd_ratio_rowdrop (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) :
+    ((betaFactProd l : ℕ) : ℚ)
+      = (∏ i ∈ range c, (betaNatVal l i : ℚ)) * ((betaFactProd (removeCorner l c) : ℕ) : ℚ) := by
+  have hlen := length_eq_succ_rowdrop l c hc hpos hone
+  have hlenrc_c : (removeCorner l c).length = c := by
+    rw [removeCorner_length_rowdrop l c hc hpos hone, hlen]; omega
+  rw [betaFactProd_cast l, betaFactProd_cast (removeCorner l c), hlen, hlenrc_c]
+  rw [Finset.prod_range_succ, betaNatVal_c_rowdrop l c hc hpos hone]
+  simp only [Nat.factorial_one, Nat.cast_one, mul_one]
+  rw [← Finset.prod_mul_distrib]
+  apply Finset.prod_congr rfl
+  intro i hi
+  rw [mem_range] at hi
+  rw [betaNatVal_removeCorner_rowdrop l c hc hpos hone i hi]
+  -- (betaNatVal l i)! = betaNatVal l i * (betaNatVal l i - 1)!
+  have hbi : 1 ≤ betaNatVal l i := by unfold betaNatVal; omega
+  rw [← Nat.cast_mul, Nat.mul_factorial_pred (by omega)]
+
+theorem betaProdGap_ratio_rowdrop (l : List ℕ) (c : ℕ) (hl : List.Sorted (· ≥ ·) l)
+    (hc : IsCorner l c) (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) :
+    ((betaProdGap l : ℕ) : ℚ)
+      = (∏ i ∈ range c, (betaNat l i - betaNat l c))
+        * ((betaProdGap (removeCorner l c) : ℕ) : ℚ) := by
+  have hlen := length_eq_succ_rowdrop l c hc hpos hone
+  have hlenrc_c : (removeCorner l c).length = c := by
+    rw [removeCorner_length_rowdrop l c hc hpos hone, hlen]; omega
+  rw [betaProdGap_cast l hl, betaProdGap_cast (removeCorner l c) (sorted_removeCorner l c hl hc),
+      hlen, hlenrc_c]
+  simp only [Nat.add_sub_cancel]
+  rw [Finset.prod_range_succ, Nat.sub_self, Finset.range_zero,
+      Finset.prod_empty, mul_one, ← Finset.prod_mul_distrib]
+  apply Finset.prod_congr rfl
+  intro i hi
+  rw [mem_range] at hi
+  rw [show c - i = (c - 1 - i) + 1 from by omega, Finset.prod_range_succ,
+      show i + 1 + (c - 1 - i) = c from by omega, mul_comm]
+  congr 1
+  apply Finset.prod_congr rfl
+  intro m hm
+  rw [mem_range] at hm
+  rw [betaNat_removeCorner_rowdrop l c hc hpos hone i (by omega),
+      betaNat_removeCorner_rowdrop l c hc hpos hone (i + 1 + m) (by omega)]
+  ring
+
 end QOU.Mathlib.SYTBetaLagrange
