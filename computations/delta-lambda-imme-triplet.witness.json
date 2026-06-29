@@ -1,8 +1,8 @@
 {
   "engine": "python+canonical-binding",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T16:19:55.708711+00:00",
-  "commitSha": "20ffe92dc3378a2804d7bcc0178ad55fce43444a",
+  "computedAt": "2026-06-29T16:42:00.411240+00:00",
+  "commitSha": "6063392ca67eebc082567ea64951bcf53a1ee608",
   "assertions": [
     {
       "name": "quadratic_c_nonzero",
@@ -17,14 +17,21 @@
       "expected": true,
       "passed": true,
       "source": "f(+1)−f(−1)=2b exactly (consistency with PR #3089 mirror method)"
+    },
+    {
+      "name": "c_sameT_small_and_A_independent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "clean same-T (IAS-corrected) quadratic |c|<0.3 and spread<0.1 across A=6,8 (≈−0.1) — raw growth was T=0/T=1 contamination"
     }
   ],
   "allPassed": true,
-  "durationMs": 18810,
+  "durationMs": 17858,
   "computation": "delta-lambda-imme-triplet",
   "scriptFile": "delta_lambda_imme_triplet.py",
-  "scriptHash": "2fa1ae995a62",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5e5f961ac148",
+  "scriptCommitSha": "db146a918d5b3b69f53e8d288eca0ff8183dd4ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +44,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Isobaric-triplet (IMME) decomposition of the canonical residual log_q0 Δ_λ = a + b·T₃ + c·T₃². Mirror PAIRS (PR #3089) measure only the bar-odd b; the bar-even QUADRATIC c is invisible to them (it cancels in the mirror difference, Lean mirror_baseline_cancels) and needs a TRIPLET. A=6 (⁶He/⁶Li/⁶Be): a=36.12, b=−1.73 (consistent with the mirror b's −1.34@A3,−1.77@A7), c=−1.24 NONZERO. Askey: body-order b-ladder is continuous q-Hermite (3-term recurrence); IMME is the degree-2 T₃ truncation (Wigner rank-≤2 isotensor = Askey–Racah cutoff). CAVEAT: T₃=0 ground states are T=0 (not the T=1 analog), so c mixes the IMME quadratic with T=0/T=1 structure; robust claim = residual has a nonzero bar-even quadratic. Not wired; near-match; no fit.",
+  "description": "Isobaric-triplet (IMME) decomposition of the canonical residual log_q0 Δ_λ = a + b·T₃ + c·T₃². Mirror PAIRS (PR #3089) measure only the bar-odd b; the bar-even QUADRATIC c is invisible to them (it cancels in the mirror difference, Lean mirror_baseline_cancels) and needs a TRIPLET. A=6 (⁶He/⁶Li/⁶Be): a=36.12, b=−1.73 (consistent with the mirror b's −1.34@A3,−1.77@A7), c=−1.24 NONZERO. Askey: body-order b-ladder is continuous q-Hermite (3-term recurrence); IMME is the degree-2 T₃ truncation (Wigner rank-≤2 isotensor = Askey–Racah cutoff). SAME-T RESOLUTION: correcting the T₃=0 member to its T=1 isobaric analog state (IAS: ⁶Li 3.563, ⁸Be 16.626 MeV) COLLAPSES the quadratic c: A=6 −1.24→−0.11, A=8 −3.44→−0.10 — small and A-independent. The raw growth was T=0/T=1 structure (Wigner energy), NOT the IMME quadratic; the genuine same-T c≈−0.1 is small vs the linear b, so the cleaned residual is linear(writhe)-dominated. Not wired; near-match; no fit.",
   "data": {
     "q0": 1.1099785955573347,
     "triplets": [
@@ -70,7 +77,10 @@
         "imme_b_linear": -1.727,
         "imme_c_quadratic": -1.241,
         "mirror_diff_2b": -3.453,
-        "triplet_2nd_diff_2c": -2.482
+        "triplet_2nd_diff_2c": -2.482,
+        "ias_ex_MeV": 3.563,
+        "imme_a_sameT": 34.992,
+        "imme_c_quadratic_sameT": -0.109
       },
       {
         "A": 8,
@@ -101,7 +111,10 @@
         "imme_b_linear": -1.795,
         "imme_c_quadratic": -3.437,
         "mirror_diff_2b": -3.59,
-        "triplet_2nd_diff_2c": -6.873
+        "triplet_2nd_diff_2c": -6.873,
+        "ias_ex_MeV": 16.626,
+        "imme_a_sameT": 38.325,
+        "imme_c_quadratic_sameT": -0.096
       }
     ],
     "imme_form": "log_q0 Δ_λ(T₃) = a(A) + b(A)·T₃ + c(A)·T₃²,  T₃=(Z−N)/2",
@@ -118,6 +131,21 @@
       "body_order_n": "b-ladder a(n+2)=2cosh(10η)a(n+1)−a(n): continuous q-Hermite / Al-Salam–Chihara three-term recurrence (Askey q-scheme)",
       "isospin_T3": "IMME degree-2 in T₃ = Wigner rank-≤2 isotensor truncation (Askey–Racah cutoff; no d·T₃³)"
     },
-    "caveat_same_T": "T₃=0 ground states (⁶Li,⁸Be) are T=0, not the T=1 isobaric analog; c mixes IMME-c with T=0/T=1 structure"
+    "same_T_resolution": {
+      "method": "T₃=0 member corrected to its T=1 IAS (measured E_x, not a fit)",
+      "ias_ex_MeV": {
+        "6": 3.563,
+        "8": 16.626
+      },
+      "c_raw_T0_contaminated": {
+        "6": -1.241,
+        "8": -3.437
+      },
+      "c_sameT_clean": {
+        "6": -0.109,
+        "8": -0.096
+      },
+      "finding": "raw c (−1.24,−3.44, growing) was mostly T=0/T=1 Wigner-energy structure; the clean same-T c≈−0.1 is SMALL and A-INDEPENDENT — the residual is linear(writhe)-dominated once same-T"
+    }
   }
 }
