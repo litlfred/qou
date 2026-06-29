@@ -44,7 +44,6 @@ cannot import this file — the standard one-way dependency).
 -/
 
 open QOU.BraidKnot.Specht
-open scoped BigOperators
 
 namespace QOU.BraidKnot.SpechtIrreducible
 
@@ -80,7 +79,7 @@ orthonormal for the form. -/
   rw [Finsupp.single_apply]
   by_cases h : d = e
   · simp [h]
-  · rw [if_neg h, if_neg (fun he => h he.symm), mul_zero]
+  · rw [if_neg h, if_neg (Ne.symm h), mul_zero]
 
 /-- The form equals its flip — the bilinear-map form of symmetry.  Proved by
 reducing to basis pairs via `Finsupp.lhom_ext` and `mul_comm`. -/
@@ -91,7 +90,7 @@ theorem bilinM_eq_flip (μ : YoungDiagram) :
   rw [LinearMap.flip_apply, bilinM_single_single, bilinM_single_single]
   by_cases h : d = e
   · simp [h, mul_comm]
-  · rw [if_neg h, if_neg (fun he => h he.symm)]
+  · rw [if_neg h, if_neg (Ne.symm h)]
 
 /-- The form is **symmetric**: `⟨f, g⟩ = ⟨g, f⟩`. -/
 theorem bilinM_symm (μ : YoungDiagram) (f g : Mtab (k := k) μ) :
@@ -109,7 +108,7 @@ theorem bilinM_isSymm (μ : YoungDiagram) : (bilinM (k := k) μ).IsSymm :=
 /-- **`S_n`-invariance.** The representation `Mtab.rep` preserves the form:
 `⟨rep σ f, rep σ g⟩ = ⟨f, g⟩`.  (The action permutes the orthonormal tabloid
 basis.) -/
-theorem bilinM_rep_invariant (μ : YoungDiagram) (σ : Equiv.Perm (Fin (nOf μ)))
+@[simp] theorem bilinM_rep_invariant (μ : YoungDiagram) (σ : Equiv.Perm (Fin (nOf μ)))
     (f g : Mtab (k := k) μ) :
     bilinM (k := k) μ (Mtab.rep μ σ f) (Mtab.rep μ σ g) = bilinM (k := k) μ f g := by
   -- Reduce to basis pairs via a bilinear ext.  Define the two bilinear maps
