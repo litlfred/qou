@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "(q,z)-bicompletion rationale + open questions; mass-element / Habiro scope in mass-theory."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Remark; the bicompletion is defined elsewhere, this records rationale + open questions. No false mathematical assertion (everything flagged conjectural/open)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Substantive structural motivation (two cyclotomic completions, mass-element lift); not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No derivation claimed; the Volume-Conjecture-as-consequence is stated as a conditional ('if such m-hat exists')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Explicit: 'neither the existence of m-hat nor the level-selection rule are claimed proved'; offered as a target structure. Correctly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No parameter; n_star(H) level-selection explicitly open."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Rationale (need single ambient ring for both cyclotomic structures) coherent; the bicompletion-VC implication marked as conditional and strictly stronger than classical VC."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Remark; no Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Volume Conjecture, Habiro ring referenced consistently; no mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "q-only/z-only/joint completions tabled; mass-element conjectural status explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Structural/conjectural remark; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Pure algebra; p-adic-mass interpretation flagged open."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No witness backing a conjectural target structure."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e6ef0007a8a2",
+          "ts": "266ecf1bb4d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Honest target-structure remark with clearly enumerated open questions and no overclaim. Verdict: accept."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

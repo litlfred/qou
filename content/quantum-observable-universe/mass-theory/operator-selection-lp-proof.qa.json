@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Operator-selection LP proof (strong duality, complementary slackness, confinement as n=3 special case); mass-theory SDP/LP scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "LP strong duality for feasible bounded programs + complementary slackness y_i*(G x)_i=0 are standard and correctly stated; active-set = {i: y_i*>0} correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Substantive LP duality + active-set identification; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Duality derived from LP theory; confinement recovered as n=3 instance, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "d=n! growth + physical-regime table (tetraquark/pentaquark) are labelled generalizations; well-posedness (G non-degenerate for q!=0,1) stated with condition. No over-claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "M (boundedness bound) and n_target are LP inputs, disclosed; no hidden fit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Feasibility -> strong duality -> complementary slackness -> active set chain is rigorous; LP<->spectral change-of-basis P relation stated correctly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Proof block; no relevant .lean equivalence claim surfaced."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "LP strong-duality theorem invoked generically; knot-operator-selection / confinement-LP internal refs consistent."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Gram matrix G, basis, active set, n_target, NF basis all defined; n=3,d=6 confinement instantiation tabled."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Targets ~1.000 (proton)/~0.811 (neutron) and NF(B_3) vertex are LP outputs, not experimental fits; no fragile match claimed in the proof."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Three strands = three quark colors, active demand channels = saturated sub-braids; physically coherent. The tetraquark/pentaquark d=n! table is speculative-but-labelled."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Confinement instantiation values (active set {sigma_0,L_-}, NF vertex) consistent with the LP-dual discipline; primal+dual both present per repo LP/SDP rule."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ada15502fcae",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Standard, correct LP duality proof with a clean confinement special case and dual variables emitted per repo discipline. Verdict: accept."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

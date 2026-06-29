@@ -1048,7 +1048,450 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Statement is the boxed alpha_0..alpha_3 closed forms; significance/open in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Explicit H_3 stratum prefactors; core mass-formula machinery, in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "q-algebraic closed forms over generic field R with formal v^2=q; pre-archimedean. Wall-correct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": ".lean over [Field R] with abstract v (no Real power); the prior R-forced q^(1/2:R) was removed. §7c-clean."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "evidence": "explicit-alpha-k-h3.lean:62-66: \"theorem explicit_alpha_k_h3 ... : exists a0 a1 a2 a3, a0=1 and ... a3=Q.h*Q.z^2+Q.z := <1,0,Q.z^2,Q.h*Q.z^2+Q.z, rfl,...>\"",
+        "notes": "The .md claims these ARE the curvature-rank prefactors of the unified mass formula; the Lean proves only the trivial existence of values equal to the named expressions (existential closed by rfl). The Lean is a naming stub, strictly weaker than the narrative's identification of these as the alpha_k. Verified alpha_3=h z^2+z=z(1+q^1/2-q^-1/2) is algebraically correct, but Lean does not establish the mass-formula linkage."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Signature is an honest existential of the closed forms; it does not falsely assert the mass-formula derivation (which lives in the narrative + procedure block)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No structure-field-as-conclusion projection; the existential is over fresh witnesses equal to z^2 etc."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "explicit-alpha-k-h3.lean:66: \"<1, 0, Q.z^2, Q.h*Q.z^2+Q.z, rfl, rfl, rfl, rfl>\"",
+        "notes": "The goal 'exists a_i equal to these expressions' is discharged by supplying the expressions themselves and rfl — a near-tautological existential. Not literally `:True`, but content-light: it asserts the expressions exist, not that they equal the mass-formula alpha_k. Borderline."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "HeckeQ structure fields (v^2=q, z_def, h_def) are consistent, not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "explicit-alpha-k-h3.lean:62-66: existential proof uses only the names Q.z, Q.h; the HeckeQ relational fields (v_sq, z_def, h_def) are not consumed",
+        "notes": "The HeckeQ relational fields (v_sq:v^2=q, z_def, h_def) are carried but unused by the rfl-existential — consistent with the proof being a naming stub rather than a derivation that would need those relations."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Uses explicit term + rfl, not decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Verified alpha_3 = h z^2 + z = z(1+q^1/2-q^-1/2) algebraically (h z^2 = (v-1/v)/(v+1/v)*... reduces correctly); alpha_0..2 standard. Values correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "explicit-alpha-k-h3.lean:66: existential discharged by the named expressions + rfl",
+        "notes": "The Lean formalization is content-light (an existential of the named closed forms); the substantive claim (these are the mass-formula prefactors) lives only in the narrative and the procedure block, not in Lean. Same root as the proof-narrative-lean-equiv warn."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "alpha_k derived from the procedure (Markov pairing); not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "alpha_1 disambiguation (spectral-vanishing vs Plancherel depth-1) handled carefully; n>=6 marked open. No over-claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No fitting; alpha_2 verified to 1e-17 (compute precision)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "alpha_1=0 by Markov cyclicity / HH^>=1 vanishing; argument sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "evidence": "explicit-alpha-k-h3.lean:62-66: existential-with-rfl vs .md claim that these are the unified-mass-formula curvature-rank prefactors",
+        "notes": "Lean proves a strictly weaker statement (existence of values equal to the closed forms) than the narrative (these specific expressions ARE the alpha_k of the mass formula). The mass-formula linkage is unformalized. Same finding as proof-narrative-lean-equiv."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Jones 1987 cited for the Markov trace; correct."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "z, h, v=sqrt(q), depth-k strata all defined; alpha_1 dual-meaning explicitly disambiguated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Residuals are L1 compute precision, not experimental fits."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Algebraic prefactors; no direct physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Witness alpha-k-jones-markov-h3 named with alpha_2,alpha_3 verified."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "49a55491d5bc",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "notes": "Closed forms are correct and well-scoped, but the .lean is a naming stub (existential closed by rfl) that does not formalize the load-bearing claim — that these ARE the mass-formula alpha_k. A referee would ask the Lean to derive the prefactors via the Markov pairing, not merely name them. Verdict: accept the math; strengthen or re-label the Lean."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

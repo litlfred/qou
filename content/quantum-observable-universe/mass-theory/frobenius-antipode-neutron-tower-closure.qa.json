@@ -816,7 +816,254 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Frobenius-antipode neutron-tower closure (chirality + neutron mass); mass-theory scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "det(sigma_i)=-1=det(sigma_i^-1), (V+S(V))/2 antipode-invariant — correct; arithmetic-mean improving neutron from -56% to -13% reported as symbolic verification. Remark kind."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Substantive (two antipode invariants, blend closure); not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "alpha* is fitted to close the neutron tower (acknowledged); the G/3 identification is then offered as a derived approximation — flagged open, not presented as a closed derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "evidence": "frobenius-antipode-neutron-tower-closure.md:73-77: \"all six terms are not only derived but produce sub-ppm-accurate masses ... The remaining task — deriving alpha* exactly — is geometric\"",
+        "notes": "The 'sub-ppm-accurate' / 'all six terms derived' claim relies on the FITTED alpha*=0.305807 (chosen to zero the neutron error); G/3=0.305322 is only a 100 ppm near-match, and alpha* exact is OPEN. Calling the masses 'derived' to sub-ppm while the closing parameter is fitted overstates the derivation status. Remark, but the 'derived' framing is too strong for a fitted closure."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "evidence": "frobenius-antipode-neutron-tower-closure.md:45-47: \"Optimal alpha* = 0.305807 closes the neutron tower error to zero. Approximation alpha = G/3 = 0.305322\"",
+        "notes": "alpha is a single continuous mixing parameter tuned to close the neutron tower; G/3 is a post-hoc near-match (off by ~1600 ppm => 100 ppm err only after the fit). This is an off-menu DOF used to reach sub-ppm. The block discloses it as open, so warn not fail, but a referee reads alpha* as a fitted 4th-handle on the neutron mass."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "The antipode-invariance of (V+S(V))/2 and det M is correct; the blend is a definitional construction, the alpha* value an empirical optimum (stated as such)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Remark; no Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Catalan constant G, chirality-dual-space prop referenced; no mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "V-hat, S(antipode), blend, alpha all defined; the two antipode invariants identified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "evidence": "frobenius-antipode-neutron-tower-closure.md:45-47: alpha*=0.305807 fitted; G/3=0.305322 differs by ~1600 ppm yet 'gives err_n=100 ppm'",
+        "notes": "The headline 'closes to zero / 100 ppm' is a single-parameter fit followed by a numerological near-match (alpha* vs G/3 agree to ~3 sig figs only). The sub-ppm proton/neutron masses are achieved only at the fitted alpha*. This is the classic near-match-inside-fit-freedom pattern; honestly flagged open (alpha* exact unresolved) so warn."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Neutron tower undershoot and antipode-symmetrization are framework-internal; no broken conservation or wrong units."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "frobenius-antipode-neutron-tower-closure.md:1-3,26-27: 'the formal derivation' placeholders instead of a named witness/script",
+        "notes": "The block cites 'the formal derivation' as the source of the m_p/m_n/err table but names no concrete witness JSON or script path; the alpha*=0.305807 optimum is not traceable to a reproducible artifact in the .md. Minor — values may live in a sibling, but the citation is a placeholder."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0237bf6ffda9",
+          "ts": "8e9b1d3c5126"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "notes": "Honest about alpha* being open, but the 'derived sub-ppm' framing + G/3 numerology need re-scoping; strongest objection is the hidden continuous DOF closing the neutron mass."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

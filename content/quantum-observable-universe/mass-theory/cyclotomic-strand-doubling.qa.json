@@ -67,6 +67,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No hypotheses; unconditional."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -87,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:21.670Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Statement is the bare Phi_8(X)=Phi_4(X^2) identity; empirical context / refutation history are in separate sections."
       }
     ],
     "fit-section-chapter": [
@@ -107,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:22.041Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Cyclotomic identity for the Q_beta Habiro prefactor; in mass-theory scope (also a foundational lemma)."
       }
     ],
     "wall-side-statement": [
@@ -127,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:56:22.508Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Pure Z[X] polynomial identity; pre-archimedean, generic ring. Wall-correct."
       }
     ],
     "wall-side-proof": [
@@ -147,6 +211,22 @@
         "reviewed_at": "2026-06-22T02:56:22.909Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": ".lean proves via cyclotomic_prime_pow_eq_geom_sum + comp over CommRing/Z; no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -167,6 +247,22 @@
         "reviewed_at": "2026-06-22T02:56:23.269Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Lean cyclotomic_8_eq_cyclotomic_4_comp_X_sq = the .md Phi_8(X)=Phi_4(X^2) identity exactly."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -415,6 +511,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Signature is the cyclotomic composition identity over Z; not weakened."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -435,6 +547,22 @@
         "reviewed_at": "2026-06-22T02:56:25.378Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Proof rewrites both sides to X^4+1 / (X^2+1).comp(X^2); no projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -455,6 +583,22 @@
         "reviewed_at": "2026-06-22T02:56:25.779Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Genuine polynomial identity, not True/x=x."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -511,6 +655,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -549,6 +709,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Uses cyclotomic lemmas + simp/ring, not decide masking."
       }
     ],
     "da-false-claim": [
@@ -568,6 +744,22 @@
         "notes": "Checked mathematical consistency of the claim 'Proof' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Phi_8(X)=X^4+1, Phi_4(X^2)=(X^2)^2+1=X^4+1; identity correct (textbook Phi_2n(X)=Phi_n(X^2) for n even)."
       }
     ],
     "da-vacuous": [
@@ -586,6 +778,22 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Standard but non-vacuous algebraic identity; novelty correctly self-rated low in the .md."
       }
     ],
     "da-circular": [
@@ -605,6 +813,22 @@
         "notes": "Traced dependencies ['prop:habiro-pochhammer-bridge'] for 'prop:cyclotomic-strand-doubling' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Pure identity, no target back-fit."
       }
     ],
     "da-overclaim": [
@@ -623,6 +847,22 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:cyclotomic-strand-doubling' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "The strand-doubling categorical interpretation is explicitly marked REFUTED/FALSIFIED with audit cross-refs; only the algebraic identity retained. Exemplary honesty."
       }
     ],
     "da-hidden-dof": [
@@ -642,6 +882,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No parameter."
       }
     ],
     "da-non-sequitur": [
@@ -661,6 +917,22 @@
         "notes": "Logical transitions in the derivation of 'Proof' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Identity and its refuted-interpretation cleanly separated; the pre-m=8 Phi_8 appearance noted as OPEN, not asserted as proven mechanism."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -679,6 +951,22 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Lean proves exactly the retained algebraic identity; the refuted categorical claim is not formalized (correctly)."
       }
     ],
     "da-citation-misuse": [
@@ -698,6 +986,22 @@
         "notes": "All references and uses ['prop:habiro-pochhammer-bridge'] cited in 'prop:cyclotomic-strand-doubling' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Habiro 2000, Washington 1997 cited for the Habiro ring / cyclotomic table; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -717,6 +1021,22 @@
         "notes": "All terms and algebraic structures in 'prop:cyclotomic-strand-doubling' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Phi_n, composition, the Habiro element context all defined/referenced."
       }
     ],
     "da-empirical-fragility": [
@@ -736,6 +1056,22 @@
         "notes": "The algebraic statements in 'prop:cyclotomic-strand-doubling' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "The Phi_8^2 prefactor observation reported as convention-invariant with the doubling-tower extrapolation explicitly FALSIFIED — fragility owned."
       }
     ],
     "da-physical-implausibility": [
@@ -792,6 +1128,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:1 — content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Identity by hand; audit docs cross-referenced for the empirical observations."
       }
     ],
     "da-referee-verdict": [
@@ -812,6 +1164,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Correct foundational lemma with an exemplary refuted-interpretation disclosure. Verdict: accept."
       }
     ],
     "voice-status-leak": [
@@ -1853,5 +2221,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

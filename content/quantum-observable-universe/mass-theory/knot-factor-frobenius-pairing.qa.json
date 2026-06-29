@@ -892,7 +892,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Binding-as-Markov-trace-defect + Skein knot factor; central mass-theory binding scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Verified a_K=1-h^2=4-[3]_q (1-h^2=3-q^2-q^-2 = 4-(q^2+1+q^-2)). Correct. S^2=id on Hecke gens (S(sigma)=sigma^-1) correct. Conjecture kind."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Substantive binding=mass-defect-of-Markov-traces construction; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Single E_0 calibration (free-neutron Q) is one reference; binding then predicted. Not circular (E_0 is explicitly the one calibration)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Explicitly SINGLE-LEVEL only; ratio-form vs Skein-product distinction documented (ratio 6-17x off); crossing-sign assignment + A>=5 + a_K-as-canonical-factor flagged conjectural. Correctly scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "One calibration E_0=0.782 MeV (the CAL-2 Q-value); no hidden extra parameter — a_K is parameter-free product over crossings."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Steps 1-4 (mass identity -> defect -> Yekutieli -> Skein factor) coherent; the a_K-as-product claim is explicitly marked conjectural where it would otherwise be a leap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Conjecture; no .lean equivalence claim surfaced."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Yekutieli 2015 (nonabelian Stokes) and categorical-mass-markov used consistently; the S^2=id Frobenius-Hopf argument is standard."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "knot-factor-frobenius-pairing.md:116-122: \"'Skein eigenvalue of 4_1' denotes this reduced quantity ... not the literal figure-eight Jones polynomial V(4_1)\"",
+        "notes": "a_K is called the 'Skein eigenvalue of 4_1' but the block must add a paragraph clarifying it is the h-content reduction, NOT V(4_1); the term is genuinely overloaded and was disambiguated only by an inline caveat. Minor — the clarification is present but the naming invites confusion."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "The competing ratio-form's 6-17x miss is openly reported (a-K-via-lp-dual witness); a_K Skein values are exact closed forms, not fits. Fragility owned."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Binding = mass defect of free vs bound braid is the physically correct mass-defect picture; base-ring/archimedean |.| handled."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Witnesses atom_markov_trace + binding_from_frobenius_pairing named; knot-factor-skein-verification witness + audit cross-referenced."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4dc88748396a",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Careful single-level binding conjecture with honest scope (ratio-vs-product, conjectural crossing-signs, single-level caveat). Strongest objection: the 'Skein eigenvalue' naming overload. Verdict: accept as conjecture."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

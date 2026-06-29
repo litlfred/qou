@@ -892,7 +892,264 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Canonical lepton-mass tower replacing the superseded rho_q scalar; mass-theory lepton scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Conjecture: direct tr_M ratio ~0.273 vs CODATA 206.77 reported honestly (3 orders off), confirming Skein is a Kashaev-limit identity not a direct ratio. No false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Lean has a sorry-stubbed conjectural def + im-q-invariance theorem (sorry, -- Ref cited); the .md content is substantive (identifies the open xi_l factor). Not vacuous (honest sorry per §3b)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "lepton-mass-tower-canonical.md:121-125: \"F_mu(q_0) = 206.7683 matches CODATA\" while xi_l form is OPEN and path C = keep the Skein formula",
+        "notes": "Property 4's 'F_mu(q_0)=206.7683 matches CODATA' is achieved only because the operative form is still the Skein identity (path C, current state) whose dimensional factor was itself muon-anchored; with xi_l OPEN, 'matches CODATA' is the calibration tautology, not an independent prediction of the canonical formula. Conjecture-scoped + honestly flagged OPEN -> warn."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "lepton-mass-tower-canonical.md:121-125: \"F_mu(q_0) = 206.7683 matches CODATA\"",
+        "notes": "Listing F_mu matching CODATA as a 'property of the conjectural formula' overstates: the canonical F_l (with xi_l OPEN) does not yet predict it; the match is via the superseded Skein formula. The tau prediction is correctly flagged OPEN. Minor overclaim in framing the muon match as a property."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "xi_l is explicitly OPEN/unknown, not a hidden parameter; the block's whole point is that the dimensional factor is underived. Disclosed."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "F_l = xi_l * Vol_q^tower structure with Kashaev-limit recovery argued coherently; derivation paths A/B/C laid out without overstated inference."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Lean def lepton_mass_ratio := sorry and im-q-invariance theorem := sorry both carry -- Ref [manuscript]; honest stated-not-proved markers matching the conjecture status (§3b/§1)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Kashaev volume conjecture, skein-mass-relation, categorical-mass-markov, bar-involution all cited consistently; audit docs referenced."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "K_l braid reps explicit (electron sigma_1^3 in H_2, muon (sigma_1 sigma_2^-1)^2 in H_3), Vol_q^tower, xi_l (OPEN) all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "The direct-ratio 0.273 vs CODATA 206.77 mismatch is reported, not hidden; the block does NOT claim a fitted canonical match — it flags the canonical factor as unresolved. Fragility owned."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Lepton mass = q-volume * dimensional factor is structurally consistent with the framework; the superseded 1/hbar_q^2's non-bar-covariance is correctly given as a reason to replace it."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "tr_M values (0.1995 muon, 0.7302 electron conv A) sourced to the m_mu/m_e operator-rederivation audit; reproducible algebraic reductions."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a076c94ad56b",
+          "ts": "78feee8b0aa0",
+          "lean": "5ad9087f92d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "notes": "Sound conjecture with clear open-work paths; only the muon-match framing in Property 4 needs softening."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

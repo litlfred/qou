@@ -892,7 +892,266 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "BW-emergence / liquid-drop coefficients-as-q-integers belongs in mass-theory; explicitly framed as derivative phenomenology not production formula."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Checked a_asym=(3/2)lambda_V 'exactly' (3[2]_q[7]_q vs 2[2]_q[7]_q -> 3/2), correct; [n]_q identities consistent. No false algebraic claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Conjecture, not a discharged proof; no vacuous Lean term."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "q-integer-mass-formula.md:18-26: \"$[7]_q$: related to the proton's internal crossing count (7 crossings...)\"",
+        "notes": "The q-integer exponents {2,4,6,7} are post-hoc matched to coefficient values (crossing-count rationalizations); the conjecture is honestly labelled BW-emergence conjecture (not derivation), so a warn, not fail — the exponent assignment reads partly reverse-engineered to the MAE~0.02% fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Self-labels 'BW-emergence result, not a definition of QOU's mass framework' and defers precision to the six-term production formula; 'zero fitted parameters' claim is scoped to the q-integer products. No over-claim of finality."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "q-integer-mass-formula.md:35-53: seven coefficients each assigned a distinct [n]_q product (n in {2,3,4,6,7}) plus integer prefactors {2,3}",
+        "notes": "Seven coefficients matched to ~5 distinct q-integers with chosen integer prefactors gives effective discrete fit freedom; the 'zero parameters' claim hides the combinatorial choice of which [n]_q product per coefficient. Conjecture-scoped, conditional on two conjectures, so warn not fail."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Derivation sections are explicitly partial ('-1.3%', '+3.0%' residuals shown); logical chain is sketch-level but no claimed 'therefore' without support."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "lean.ref points to a library decl (QIntegerMassFormula), validation not_checked; conjecture kind, no equivalence claim to audit here."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "No external -- Ref / cites in the .md beyond internal block links."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "[n]_q defined inline; q_0 referenced; magic-number set explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "evidence": "q-integer-mass-formula.md:55-59: \"MAE ~ 0.020% (32 isotopes)\" with per-coefficient errors +0.7%,+0.2%,-2.1%,+0.9%,-1.2%",
+        "notes": "Per-coefficient errors are ~0.2-2.1% yet the aggregate MAE is quoted at 0.020%; the headline 0.02% MAE on the full 7-term mass is dominated by the exact Z m_p + N m_n bulk term, masking the coefficient-level ~1% scatter. Match precision is presented in the most favorable framing. Conjecture-scoped -> warn."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Recovering liquid-drop coefficients to ~1% is physically reasonable as an emergence claim; units consistent (MeV via m_e)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Algorithm steps 1-5 are explicit and deterministic from q_0; no stale-witness drift claim made in the .md."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3a8f57a419fb",
+          "ts": "650a541ff25a",
+          "lean": "f5bb7bbdacb1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "major",
+        "notes": "Honest, well-scoped BW-emergence conjecture, but a referee would press the 'zero fitted parameters' framing: the assignment of which [n]_q product to each of 7 coefficients is a discrete fit choice, and the 0.02% MAE headline is bulk-term-dominated relative to ~1% coefficient errors. Verdict: accept as conjecture, soften the zero-parameter / MAE framing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }

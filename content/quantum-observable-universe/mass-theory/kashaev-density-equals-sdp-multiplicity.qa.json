@@ -894,7 +894,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "rho_F = nu_SDP Wedderburn-multiplicity conjecture for binding density; mass-theory/SDP scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Conjecture (conditional on Kashaev VC + joint-tower SDP completeness); rho_F=nu_SDP exact on D/T/3He per table. No false assertion (claim is conjectural)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Lean class carries genuine fields (nu_sdp, identity); not an empty marker. Content-bearing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "nu_SDP is an independent SDP-multiplicity count; identity rho_F=nu_SDP is a substantive claim, not assuming its conclusion. The 3-atom agreement is evidence, not the definition of rho_F."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "He-4 nu_SDP explicitly marked EXTRAPOLATED (rho_F=2 assumed); identity verified on 3 census atoms only. Conditional-on-class structure honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "rho_F is integer-valued (in {1,2}); the conjecture removes it from the Rule-14 escalation by tying it to nu_SDP — addresses, not hides, the prior off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Driver-(x) MacMahon partition-algebra placement and the conditional-on-SDP-completeness structure follow coherently."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Lean class KashaevDensityEqualsSDPMultiplicity with nu_sdp/identity fields matches the .md conjecture; sole sorry is the class instance (R5-full SDP). Consistent §3b."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Kashaev volume conjecture invoked as a named conditional hypothesis; not mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "nu_SDP, rho_F, rho_K explicitly disambiguated (## Notation hazard resolved); knot/link assignments tabled."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.md:26-41: identity verified on only 3 atoms (D/T/3He), He-4 extrapolated",
+        "notes": "rho_F in {1,2} matched to nu_SDP on only 3 data points with He-4 assumed — a small-N integer match; the conjecture is honestly flagged as conditional/extrapolated, so warn not fail. Robustness awaits R5-full SDP on A in {4,5,6,7}."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Integer Wedderburn multiplicity as a binding-density prefactor is structurally reasonable; no units/conservation issue."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "References atom-knot-mass-derivation line 265 and the rho_factor->nu_sdp rename; values internally consistent, R5-full SDP flagged as pending."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5e675ad6d007",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:38:09.430Z",
+        "reviewed_sha": "1985e2a0330c527ff198e92092d3fe3cd9d4cccb",
+        "notes": "Owner-authorised Rule-14 conditional adoption; well-structured conjecture-conditional class. Strongest objection is the 3-point integer match for He-4 extrapolation, which the block discloses. Verdict: accept as conjecture."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:38:09.430Z"
 }
