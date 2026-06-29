@@ -10,7 +10,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.mirror_baseline_cancels",
   },
   computation: {
-    engine: "python+canonical-binding",
+    engine: "python+mpmath",
     script: "computations/delta_lambda_z_coefficient_and_slope.py",
     witness: "computations/delta-lambda-z-coefficient-and-slope.witness.json",
     status: "verified",
