@@ -504,4 +504,99 @@ theorem betaProdGap_ratio_rowdrop (l : List ℕ) (c : ℕ) (hl : List.Sorted (·
       betaNat_removeCorner_rowdrop l c hc hpos hone (i + 1 + m) (by omega)]
   ring
 
+
+/-! ## Row-drop per-corner ratio = β-Lagrange term (matching the middle-corner form) -/
+
+-- reindex: products over univ.erase (last node) ↔ products over range c
+theorem prod_erase_last_eq_range (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) (f : ℚ → ℚ) :
+    ∏ j ∈ univ.erase (⟨c, hc.1⟩ : Fin l.length), f (betaVec l j)
+      = ∏ i ∈ range c, f (betaNat l i) := by
+  have hlen := length_eq_succ_rowdrop l c hc hpos hone
+  apply Finset.prod_nbij (fun (j : Fin l.length) => (j : ℕ))
+  · intro j hj
+    rw [mem_erase] at hj
+    rw [mem_range]
+    have hjl : (j : ℕ) < l.length := j.2
+    have : (j : ℕ) ≠ c := fun e => hj.1 (Fin.ext e)
+    omega
+  · intro a _ b _ hab; exact Fin.ext hab
+  · intro i hi
+    simp only [Finset.coe_range, Set.mem_Iio] at hi
+    refine ⟨⟨i, by omega⟩, ?_, rfl⟩
+    simp only [Finset.mem_coe, mem_erase]
+    exact ⟨Fin.ne_of_val_ne (Nat.ne_of_lt hi), mem_univ _⟩
+  · intro j _
+    rw [betaVec_eq_betaNat]
+
+theorem betaNat_c_rowdrop_one (l : List ℕ) (c : ℕ) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) : betaNat l c = 1 := by
+  have hclast := rowdrop_c_last l c hc hpos hone
+  unfold betaNat
+  have : l.length - 1 - c = 0 := by omega
+  rw [this, hone]; norm_num
+
+-- ∏ (-(f i)) = (-1)^c · ∏ f i  over range c
+theorem prod_neg_range (c : ℕ) (f : ℕ → ℚ) :
+    ∏ i ∈ range c, (-(f i)) = (-1)^c * ∏ i ∈ range c, f i := by
+  induction c with
+  | zero => simp
+  | succ n ih => rw [Finset.prod_range_succ, Finset.prod_range_succ, ih, pow_succ]; ring
+
+set_option maxRecDepth 8000 in
+theorem per_corner_ratio_rowdrop (l : List ℕ) (c : ℕ)
+    (hl : List.Sorted (· ≥ ·) l) (hc : IsCorner l c)
+    (hpos : ∀ a ∈ l, 0 < a) (hone : l.getD c 0 = 1) :
+    (prodHooks l : ℚ) / (prodHooks (removeCorner l c) : ℚ)
+      = betaVec l ⟨c, hc.1⟩
+          * (∏ j ∈ univ.erase (⟨c, hc.1⟩ : Fin l.length), (betaVec l ⟨c, hc.1⟩ - 1 - betaVec l j))
+          / vWeight (betaVec l) ⟨c, hc.1⟩ := by
+  have hlen := length_eq_succ_rowdrop l c hc hpos hone
+  set cF : Fin l.length := ⟨c, hc.1⟩ with hcF
+  have hlc_sorted := sorted_removeCorner l c hl hc
+  have hbc1 : betaVec l cF = 1 := by
+    rw [hcF, betaVec_eq_betaNat]; exact betaNat_c_rowdrop_one l c hc hpos hone
+  have hvwdef : vWeight (betaVec l) cF = ∏ j ∈ univ.erase cF, (betaVec l cF - betaVec l j) := rfl
+  have he1 : ∏ j ∈ univ.erase cF, (betaVec l cF - 1 - betaVec l j)
+      = ∏ i ∈ range c, (betaVec l cF - 1 - betaNat l i) :=
+    prod_erase_last_eq_range l c hc hpos hone (fun x => betaVec l cF - 1 - x)
+  have he2 : ∏ j ∈ univ.erase cF, (betaVec l cF - betaVec l j)
+      = ∏ i ∈ range c, (betaVec l cF - betaNat l i) :=
+    prod_erase_last_eq_range l c hc hpos hone (fun x => betaVec l cF - x)
+  rw [hvwdef, he1, he2, hbc1]
+  have h1q : (prodHooks l : ℚ) * (betaProdGap l : ℚ) = (betaFactProd l : ℚ) := by
+    exact_mod_cast prodHooks_mul_betaProdGap l hl
+  have h2q : (prodHooks (removeCorner l c) : ℚ) * (betaProdGap (removeCorner l c) : ℚ)
+      = (betaFactProd (removeCorner l c) : ℚ) := by
+    exact_mod_cast prodHooks_mul_betaProdGap (removeCorner l c) hlc_sorted
+  have hfac := betaFactProd_ratio_rowdrop l c hc hpos hone
+  have hvand := betaProdGap_ratio_rowdrop l c hl hc hpos hone
+  have hbnc : betaNat l c = 1 := betaNat_c_rowdrop_one l c hc hpos hone
+  rw [hbnc] at hvand
+  have hphc : (prodHooks (removeCorner l c) : ℚ) ≠ 0 := by
+    have := prodHooks_pos (removeCorner l c) hlc_sorted (removeCorner_pos l c); positivity
+  have hbpc : (betaProdGap (removeCorner l c) : ℚ) ≠ 0 := by
+    have := betaProdGap_pos (removeCorner l c) hlc_sorted; positivity
+  have hinj : Function.Injective (betaVec l) := betaVec_injective l hl
+  have hden : ∀ i ∈ range c, (1 : ℚ) - betaNat l i ≠ 0 := by
+    intro i hi; rw [mem_range] at hi
+    have hiv : betaVec l (⟨i, by omega⟩ : Fin l.length) = betaNat l i := betaVec_eq_betaNat l _
+    have hfne : (⟨i, by omega⟩ : Fin l.length) ≠ cF := Fin.ne_of_val_ne (Nat.ne_of_lt hi)
+    have hbne : betaNat l i ≠ 1 := by
+      rw [← hiv, ← hbc1]; exact fun e => hfne (hinj e)
+    intro e; apply hbne; linarith
+  have hP : (∏ i ∈ range c, ((1:ℚ) - betaNat l i)) ≠ 0 := Finset.prod_ne_zero_iff.mpr hden
+  rw [one_mul, div_eq_div_iff hphc hP]
+  have hsn : (∏ i ∈ range c, ((1:ℚ) - 1 - betaNat l i)) = (-1)^c * ∏ i ∈ range c, betaNat l i := by
+    rw [← prod_neg_range]; apply Finset.prod_congr rfl; intro i _; ring
+  have hsd : (∏ i ∈ range c, ((1:ℚ) - betaNat l i)) = (-1)^c * ∏ i ∈ range c, (betaNat l i - 1) := by
+    rw [← prod_neg_range]; apply Finset.prod_congr rfl; intro i _; ring
+  rw [hsn, hsd]
+  have hcast : (∏ i ∈ range c, (betaNatVal l i : ℚ)) = ∏ i ∈ range c, betaNat l i := by
+    apply Finset.prod_congr rfl; intro i _; unfold betaNat betaNatVal; push_cast; ring
+  rw [hcast] at hfac
+  refine mul_right_cancel₀ hbpc ?_
+  linear_combination (-((-1:ℚ)^c * prodHooks l)) * hvand + ((-1:ℚ)^c) * h1q
+    + ((-1:ℚ)^c) * hfac - ((-1:ℚ)^c * ∏ i ∈ range c, betaNat l i) * h2q
+
 end QOU.Mathlib.SYTBetaLagrange
