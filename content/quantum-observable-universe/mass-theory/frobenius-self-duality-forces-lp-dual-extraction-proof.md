@@ -5,10 +5,10 @@ $\tau : H_n(R,q) \to R$ satisfies
 $\tau(ab) = \tau(ba)$ for all $a,b \in H_n$, and is
 non-degenerate: if $\tau(ab) = 0$ for all $b$, then $a = 0$.
 Non-degeneracy is the content of the
-[Wedderburn trace identity](#prop:wedderburn-trace-identity)
-$\sum_{\lambda \vdash n} \dim_q(\lambda)^2 = [n]_q!$, which
-expresses $\tau$ as a strictly positive linear combination of
-characters $\chi_\lambda$ on each Wedderburn block.
+[Markov-trace normalization](#prop:wedderburn-trace-identity)
+$\sum_{\lambda \vdash n} d_\lambda\, y_\lambda(q) = 1$ with every
+$y_\lambda(q) \neq 0$, which expresses $\tau$ as a strictly positive
+linear combination of characters $\chi_\lambda$ on each Wedderburn block.
 
 The pairing $\langle a, b \rangle_\tau := \tau(ab)$ is
 therefore a non-degenerate symmetric bilinear form, making

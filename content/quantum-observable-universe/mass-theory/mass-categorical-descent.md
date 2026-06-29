@@ -36,10 +36,11 @@ $\lambda \vdash n$:
 | Pairing ($\pm \lambda_P / \sqrt{A}$) | $k = 3$       | $[n-1,1]$ (standard)            | $A^{-1/2}$ |
 | Wigner ($\lambda_W \cdot T(T+1)/A$)  | $k = 5$       | $[n-2,2] + [n-2,1^2]$           | $T(T+1)/A$ |
 
-Their coefficients are quantum factorials $[n]_q!$ by the
-[Wedderburn trace identity](#prop:wedderburn-trace-identity):
-the sum $\sum_\lambda \dim_q(\lambda)^2 = [n]_q!$ partitions the
-total Markov weight among the irreducible representations.
+Their coefficients are the Hecke-level quantum factorials $[n]_q!$
+(evaluated directly as the $q$-factorial product); the
+[Markov-trace normalization](#prop:wedderburn-trace-identity)
+$\sum_\lambda d_\lambda\, y_\lambda(q) = 1$ partitions the total
+Markov weight among the irreducible representations.
 
 **Transient (exceptional divisor) terms.**
 
