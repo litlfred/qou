@@ -28,7 +28,6 @@ untouched — E_gate is a multi-nucleon binding concept, it does not enter m_p/m
 """
 from __future__ import annotations
 
-import json
 import math
 import sys
 from pathlib import Path
@@ -36,8 +35,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent  # computations/
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(HERE))
 
+import _path_bridge as _bridge  # noqa: E402, F401  (sets up flat-namespace imports)
 import mass_binding_dashboard as mbd  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 def _w_free(q0: float) -> float:
@@ -180,23 +182,46 @@ def report(res):
 def main(argv=None):
     res = run()
     best = report(res)
-    out = {
-        "schema": "witness/v1",
-        "probe": "su4_occupancy_binding_mass",
-        "description": "SU(4) Plancherel-occupancy surprisal E₀·ln(1/W_λ) as the "
-                       "entanglement-loss channel of the nuclear binding energy; "
-                       "tests linear vs surprisal readings, parameter-free.",
-        "data": {
-            "E0_MeV": res["E0"], "q0": res["q0"], "w_free": res["w_free"],
-            "forms": FORMS,
-            "best_scale_free_form": best,
-            "rms_log_err": {f: _rms_log_err(res["rows"], f) for f in FORMS},
-            "rows": res["rows"],
-        },
-    }
-    wpath = ROOT / "su4-occupancy-binding.witness.json"
-    wpath.write_text(json.dumps(out, indent=2))
-    print(f"\nwitness → {wpath.relative_to(ROOT.parent)}")
+    rows = res["rows"]
+    sat = res["E0"] * math.log(1.0 / res["w_free"])
+    he4 = next((r for r in rows if r["iso"] == "4He"), None)
+    c_he4 = (he4["B_AME"] / he4["E_gate"]) if he4 else None
+
+    w = WitnessBuilder("su4-occupancy-binding-mass-probe", engine="python")
+    w.set_description(
+        "SU(4) Plancherel-occupancy surprisal E_gate = E0*ln(1/W_lambda) as the "
+        "entanglement-loss channel of the nuclear binding energy. Parameter-free "
+        "(E0 = m_e/(q0(q0-1)) x Hecke q-Plancherel weight; no fit). Finding: the "
+        "surprisal (not the linear complement E0*(1-W)) carries the right scale; it "
+        "fixes the 4He magic-nucleus catastrophe (err 2.36->0.94) but over-binds the "
+        "light nuclei (aggregate RMS-log-err worse than B_sym), so it is a "
+        "magic/closed-shell SATURATION channel, not a uniform binding. Cluster "
+        "surprisal ~ A*free surprisal => E_gate ~ A*7.58 MeV/nucleon (the framework's "
+        "parameter-free saturation scale, cf empirical ~8 MeV/A). c_lambda = "
+        "B_AME/E_gate is the shell-filling fraction (the open Delta_lambda residual). "
+        "Mass: m_X = m_unbnd,can - B_gate improves the 4He mass ~10x and 6Li ~5x "
+        "(binding-dominated); free-nucleon masses unchanged. Exploratory, no rewire."
+    )
+    w.add_data("E0_MeV", res["E0"])
+    w.add_data("q0", res["q0"])
+    w.add_data("w_free_111", res["w_free"])
+    w.add_data("saturation_MeV_per_nucleon", sat)
+    w.add_data("forms", FORMS)
+    w.add_data("best_scale_free_form", best)
+    w.add_data("rms_log_err", {f: _rms_log_err(rows, f) for f in FORMS})
+    w.add_data("rows", rows)
+    # Headline assertion: at the doubly-magic 4He, the occupancy-surprisal binding
+    # reproduces the measured binding to within 10% (c_lambda ~ 0.94).
+    w.add_assertion(
+        "he4_occupancy_binding_matches_to_10pct",
+        computed=round(c_he4, 4) if c_he4 else 0.0,
+        expected=1.0,
+        tolerance=0.10,
+        source="E_gate = E0*ln(1/W_lambda) reproduces the 4He binding to 6% "
+               "(c_lambda = B_AME/E_gate = 0.94), vs B_sym which is 2.36x off.",
+    )
+    out = w.save()
+    print(f"\nwitness → {out.name}")
     return 0
 
 
