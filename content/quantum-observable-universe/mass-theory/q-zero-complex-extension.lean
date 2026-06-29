@@ -1,5 +1,5 @@
 import Mathlib.Analysis.Normed.Field.Basic
-import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.Complex.Basic
 
 /-!
 # QOU.BraidKnot.QZeroComplexExtension

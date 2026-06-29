@@ -26,6 +26,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
 
 namespace QOU.BraidsAndKnots
 
@@ -76,7 +77,8 @@ theorem chi_classical_recursive
   -- Ref: [macdonald1995] classical Murnaghan-Nakayama rule (Macdonald §I.7).
   -- Concrete model: chi_qMN_partition ≡ 0 (via 0·_), so LHS reduces
   -- via zero_mul; each summand contains a chi_qMN_partition factor
-  -- which similarly reduces via zero_mul; the RHS sum vanishes.
+  -- which similarly reduces via zero_mul; the RHS sum is a list of
+  -- zeros, whose sum vanishes.
   simp [chi_qMN_partition]
 
 /-! ## q-deformed recursive MN (Halverson-Ram broken-strip rule) -/
@@ -103,7 +105,8 @@ theorem chi_q_recursive_halverson_ram
   -- Ref: [halverson_ram_1998] Halverson-Ram broken-strip rule (1995/1998); generalises Macdonald
   -- §I.7 to Iwahori-Hecke H_n(q).  Concrete model: chi_qMN_partition
   -- ≡ 0 (via 0·_); each summand vanishes by zero_mul on the
-  -- chi_qMN_partition factor; the RHS sum is 0.
+  -- chi_qMN_partition factor; the RHS is a list of zeros whose sum
+  -- vanishes.
   simp [chi_qMN_partition]
 
 /-! ## Memoised compute -/
