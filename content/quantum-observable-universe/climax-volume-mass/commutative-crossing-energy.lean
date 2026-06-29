@@ -100,22 +100,18 @@ axiom ord_u_zero_trM_eq (Z N : ℕ) : ord_u_zero_trM Z N = 18 * Z + 21 * N + 1
 /-- **Proton** ($Z=1$, $N=0$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M) = 19$. -/
 theorem ord_u_zero_proton : ord_u_zero_trM 1 0 = 19 := by
   rw [ord_u_zero_trM_eq]
-  norm_num
 
 /-- **Deuteron** ($Z=1$, $N=1$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M) = 40$. -/
 theorem ord_u_zero_deuteron : ord_u_zero_trM 1 1 = 40 := by
   rw [ord_u_zero_trM_eq]
-  norm_num
 
 /-- **Tritium** ($Z=1$, $N=2$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M) = 61$. -/
 theorem ord_u_zero_tritium : ord_u_zero_trM 1 2 = 61 := by
   rw [ord_u_zero_trM_eq]
-  norm_num
 
 /-- **Helium-3** ($Z=2$, $N=1$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M) = 58$. -/
 theorem ord_u_zero_helium3 : ord_u_zero_trM 2 1 = 58 := by
   rw [ord_u_zero_trM_eq]
-  norm_num
 
 /-- **Per-nucleon scaling**: at fixed mass number $A = Z + N$, the
 pole-order increases monotonically with the neutron count $N$
