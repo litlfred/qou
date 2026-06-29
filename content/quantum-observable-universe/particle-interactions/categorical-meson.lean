@@ -34,6 +34,6 @@ structure CategoricalMeson where
   /-- Valence is 2 (quark + antiquark). -/
   valence : Nat := 2
   /-- The valence is exactly 2. -/
-  valence_eq : valence = 2 := rfl
+  valence_eq : valence = 2 := by rfl
 
 end QOU.Torsion

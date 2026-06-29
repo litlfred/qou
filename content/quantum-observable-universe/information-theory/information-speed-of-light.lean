@@ -1,4 +1,6 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -35,6 +37,14 @@ theorem speedOfLight_eq_ratio {k : Type*} [Field k] (q : k)
   -- 1/(q-1) = q⁻¹ · q/(q-1) = q⁻¹/((q-1)/q) = q⁻¹/(1 - q⁻¹).
   unfold speedOfLight
   have hq_sub : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
-  field_simp
+  have hsub_inv : 1 - q⁻¹ ≠ 0 := by
+    rw [sub_ne_zero]
+    intro h
+    apply hq_sub
+    -- from 1 = q⁻¹ we get q = 1, so q - 1 = 0
+    have : q * 1 = q * q⁻¹ := by rw [h]
+    rw [mul_one, mul_inv_cancel₀ hq0] at this
+    rw [this]; ring
+  field_simp [hq0, hq_sub, hsub_inv]
 
 end QOU.Information

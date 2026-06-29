@@ -1,4 +1,6 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -55,10 +57,10 @@ noncomputable def neutron_mass (q : ℝ) : ℝ :=
   let skein_asymmetry := (1 / 2) * (q - q⁻¹)  -- crossing energy asymmetry
   vol_borromean / hbar_q ^ 2 + skein_asymmetry
 
-/-- The neutron mass derived from the substrate parameter q₀.
+/- The neutron mass derived from the substrate parameter q₀.
     At the CODATA value q₀, the Borromean volume formula plus
-    the Skein asymmetry correction yields m_𝔫(q₀) ≈ 939.565 MeV. -/
--- Ref: [manuscript] Ch. 5, §Categorical neutron
+    the Skein asymmetry correction yields m_𝔫(q₀) ≈ 939.565 MeV.
+    Ref: [manuscript] Ch. 5, §Categorical neutron -/
 /-- **External axiom (§3b-cond pattern): neutron_mass_from_substrate.**
 
     Auto-extracted from the single-sorry theorem body in this file.
