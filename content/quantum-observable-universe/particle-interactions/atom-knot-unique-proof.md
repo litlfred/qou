@@ -17,8 +17,6 @@ are isotopic.  $\square$*
 
 **Scope.**
 *Uniqueness is up to **isotopy**, not up to NF strict equality.
-Two non-isotopic atom-knots with $(Z_1, N_1) = (Z_2, N_2)$ are
-**isotopes** of each other ([isotope-knot](#def:isotope-knot)) only
-if they share the proton-quark block $w_{q^Z}$. Different $w_{q^Z}$
+Different $w_{q^Z}$
 realisations yield distinct categorical isotopy classes in the abstract
 braid representation.*

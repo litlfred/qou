@@ -32,22 +32,3 @@ pure shell contribution.*
 
 See [Table 2](#tbl:compound-beta-shell-calibration-table2-data).
 
-**First-cut naïve formula (for comparison only).**
-
-*Ignoring the knot-operator difference:*
-
-$$
-  y_{\mathrm{target}}^{\mathrm{naïve}}(A_{\mathrm{magic}})
-  \;=\;
-  \frac{\mathfrak{Q}_\beta}{E_0 \cdot A_{\mathrm{magic}} \cdot m_p}.
-$$
-
-*Numerical check at $q_0$:*
-
-See [Table 3](#tbl:compound-beta-shell-calibration-table3-data).
-
-*The naïve ratios are all $\ll 1$, confirming that $\mathfrak{Q}_\beta$ directly
-**does not give** $y_{\mathrm{target}}$ — the missing piece is the
-**knot-operator transition** between parent and daughter.*
-
-*Note: This numerical approach is flagged for post-hoc curve fitting and a unit mismatch in the naïve formula. It is retained here for audit purposes until the core theory formalizes the structural derivation.*

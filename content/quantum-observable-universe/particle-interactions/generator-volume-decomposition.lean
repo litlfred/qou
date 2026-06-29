@@ -25,18 +25,12 @@ namespace QOU.Archimedean
 noncomputable def transferStep (q : ℝ) (a b c d : ℝ) : ℝ × ℝ :=
   (a * c * (q - 1/q) + a * d + b * c, a * c + b * d)
 
-/-- The generator volume: V_i = |a_i| + |b_i| after reducing all
+/-- The generator volume: V_i = log|z a_i + b_i| after reducing all
     crossings at generator σ_i. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
-noncomputable def generatorVolume (a b : ℝ) : ℝ :=
-  |a| + |b|
-
-/-- The generator volume is non-negative. -/
--- Ref: [manuscript] §6/generator-volume-decomposition
-theorem generatorVolume_nonneg (a b : ℝ) :
-    0 ≤ generatorVolume a b := by
-  unfold generatorVolume
-  positivity
+noncomputable def generatorVolume (q a b : ℝ) : ℝ :=
+  let z := 1 / (Real.sqrt q + 1 / Real.sqrt q)
+  Real.log |z * a + b|
 
 /-- The total nuclear energy is the sum of generator volumes. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
@@ -57,12 +51,12 @@ def crossingPP : ℝ × ℝ := (1, 0)
 /-- Crossing coefficients for neutron-neutron pair. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def crossingNN (q : ℝ) : ℝ × ℝ :=
-  (q^2, -q * (q_half - 1 / q_half))
+  (1, -(q - 1/q))
 
 /-- Crossing coefficients for proton-neutron (mixed) pair. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def crossingMixed (q : ℝ) : ℝ × ℝ :=
-  ((1 + q^2) / 2, -q * (q_half - 1 / q_half) / 2)
+  (1, -(q - 1/q) / 2)
 
 /-- The chain reduction at one generator: start with (0, 1) (identity),
     multiply by each crossing's coefficients, reduce via transfer step. -/
@@ -118,7 +112,7 @@ noncomputable def generator_volume_decomposition (q : ℝ)
     (crossings_per_gen : List (List (ℝ × ℝ))) : ℝ :=
   let volumes := crossings_per_gen.map fun cs =>
     let ⟨a, b⟩ := chainReduce q cs
-    generatorVolume a b
+    generatorVolume q a b
   nuclearEnergy volumes
 
 /-- **PROPOSITION.** The nuclear binding energy decomposes as a sum of generator volumes.
