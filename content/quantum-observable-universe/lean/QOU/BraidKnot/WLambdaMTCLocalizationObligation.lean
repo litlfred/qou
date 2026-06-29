@@ -155,8 +155,12 @@ is `rfl`), and — the point of the strengthening — the `qDim_conj` field is d
 abstractly. So `loc_isProbabilityMeasure` (C1) and `loc_conj_eq` (C2) hold for the *actual* Hecke
 Plancherel measure of the blocks `P`, modulo only the structural inputs (conj-closure, `D² ≠ 0`).
 
-`D² ≠ 0` is the sole remaining hypothesis; it is downstream of the still-open
-`Σ_λ d_q² = [n]_q!` (`wedderburn_trace_identity`, sibling #2743) — the honest open input. -/
+`D² ≠ 0` is the sole remaining hypothesis. It does **not** depend on any Wedderburn sum identity:
+`D² = Σ_λ d_q²` is its own q-polynomial and is **not** `[n]_q!` (the claim
+`Σ d_q² = [n]_q!` is false at generic q — see
+[`docs/audits/2026-06-29-wedderburn-trace-identity-false-at-generic-q.md`](../../../../../docs/audits/2026-06-29-wedderburn-trace-identity-false-at-generic-q.md)).
+For `1 < q` it is discharged directly from positivity (`qBracket_pos`/`qFactorial_pos` ⇒
+`d_q > 0` ⇒ `Σ d_q² > 0`) — a clean follow-up; carried as a hypothesis here. -/
 noncomputable def heckeLocalization
     (q : ℝ) (P : Finset (List ℕ))
     (hsorted : ∀ l ∈ P, l.Sorted (· ≥ ·))
