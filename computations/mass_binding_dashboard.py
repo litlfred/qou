@@ -411,24 +411,27 @@ def _print_legend() -> None:
 | `err m_can⁰ (ppb)` | mass error (m_can⁰ − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; ~0 for p anchor; genuine prediction for n) |
 | `err m_qCLT (ppb)` | same, for the colour-weighted q-CLT binding |
 
-**Calibration anchors — principled (ideal) vs experimental pin**
+**Calibration anchors — the experimental ideal (numerical proxy) the dashboard uses**
 
-The three calibrations have a *principled* form (decay-width / weak-sector
-observables, h-graded) and an *experimental numerical pin* (best-measured
-ratio). q₀ is pinned on the most precise ratio so the theory residual lands
-where it is least significant; the principled observable is kept as the
-conceptual calibration + cross-check.
+Per `observations/three-calibration-discipline.md` §3, each calibration is
+*read off its most precise experimental proxy* — the **experimental ideal**.
+The underlying canonical observable is a decay-width / weak-sector quantity (the
+*mathematical* ideal); the dashboard calibrates on the experimental proxy, which
+is what q₀ and the mass scale are actually pinned to here.
 
-| CAL | Principled (ideal) | h-order | Experimental pin (σ) |
+| CAL | DOF (h-order) | Canonical observable (math ideal) | Experimental ideal (proxy, σ) |
 |---|---|---|---|
-| CAL-1 | m_e — dimensional unit | h⁰ | m_e CODATA (0.31 ppb) |
-| CAL-2 | 𝔇_β neutron β-decay width (τ_n = ℏ/𝔇_β) | h² | m_p/m_e (0.06 ppb) · alt m_μ/m_e (22 ppb) · m_n/m_e (0.48 ppb) |
-| CAL-3 | 𝔇_π pion decay width (τ_π = ℏ/𝔇_π) | h³ | m_π = 139.57 MeV |
+| CAL-1 | W-plane scale (h⁰) | m_e — leptonic mass scale | **m_e, CODATA (0.31 ppb)** |
+| CAL-2 | W-plane modulus (h²) | 𝔇_β — neutron β-decay width (τ_n=ℏ/𝔇_β) | **m_μ/m_e (22 ppb)** via m_μ/m_e = Vol(4₁)/ℏ_q² (Q_β=ℏ/𝔇_β = decay proxy) |
+| CAL-3 | orthogonal meson (h³) | 𝔇_π — pion decay width (τ_π=ℏ/𝔇_π) | **m_π = 139.57 MeV, PDG** |
 
-𝔇_β as a *numerical* pin is poor (~780 ppb, dlnQ_β/dlnq≈11 → σ(q₀)≈68 ppb),
-so it stays conceptual; q₀ is pinned on the proton ratio m_p/m_e (0.06 ppb).
-Source: `observations/substrate-anchor-alternatives.md`,
-`particle-interactions/meson-scale-independence.md`.
+This dashboard's q₀ is the **canonical 3-CAL (muon-anchored) value** — the CAL-2
+experimental ideal m_μ/m_e (q₀ ≈ 1.10998), so masses/binding are the
+canonical-derivation numbers. The proton re-pin m_p/m_e (0.06 ppb) is a
+*precision substitution* in the separate Physical-Observations layer — not a 4th
+calibration, not used here. Source:
+`observations/three-calibration-discipline.md` §3,
+`observations/epistemic-status-of-calibrations.md`.
 
 **Mass constituents (Table 2):** `m_unbnd,can` = framework unbound sum
 Z·m_p,can + N·m_n,can via the canonical muon-anchored Hecke energy
