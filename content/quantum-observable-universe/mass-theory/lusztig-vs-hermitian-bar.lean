@@ -22,7 +22,7 @@ parameter-level claim proved here.
 
 namespace QOU.BraidKnot.LusztigVsHermitianBar
 
-open Complex
+open Complex ComplexConjugate
 
 /-- For nonzero `q : ℂ`, the Lusztig involution `q ↦ q⁻¹` and the
     Hermitian involution `q ↦ (conj q)⁻¹` agree on the parameter
