@@ -92,4 +92,74 @@ theorem detAmat_lt (β : Fin (k + 1) → ℚ) (d : ℕ) (hd : d < k) : (Amat β 
   intro r
   simp [Amat, hne, vandermonde_apply]
 
+/-! ## The crux: the Vandermonde cofactor product-split -/
+
+/-- **The Vandermonde cofactor product-split (crux).**  `cofᵢ · vWeightᵢ = det V`.
+
+The cofactor along the last column equals `(−1)^(i+k) · det(V.submatrix iᵒ lastᵒ)`, and that
+submatrix is the Vandermonde on `β ∘ i.succAbove` (the nodes with `βᵢ` deleted).  Writing
+`det V = ∏_{p<q}(β q − β p)` (`det_vandermonde`) and splitting the pair set at the pivot row `i`
+via `Fin.prod_univ_succAbove`:
+
+* pairs `(p,q)` with `p,q ≠ i` reassemble the sub-Vandermonde determinant `det(sub)`;
+* pairs `(i,q)` with `q > i` give `∏_{q>i}(β q − β i) = (−1)^(k−i) ∏_{j>i}(β i − β j)`;
+* pairs `(p,i)` with `p < i` give `∏_{p<i}(β i − β p)`.
+
+The last two products are exactly `vWeightᵢ = ∏_{j≠i}(β i − β j)` up to the sign `(−1)^(k−i)`, so
+`det V = (−1)^(k−i) · det(sub) · vWeightᵢ`.  Since `(−1)^(i+k) = (−1)^(k−i)` (parities agree, `i ≤ k`),
+`cofᵢ · vWeightᵢ = (−1)^(i+k) · det(sub) · vWeightᵢ = det V`.
+
+This is the single remaining gap of the determinant route; it replaces the sibling's
+hand-rolled `SYTLagrangeInterp.interp_leadingCoeff` (PR #2986). -/
+theorem cof_mul_vWeight (β : Fin (k + 1) → ℚ) (i : Fin (k + 1)) :
+    cof β i * vWeight β i = (vandermonde β).det := by
+  -- Ref: [manuscript] divided-difference leading-coefficient keystone, scope doc
+  -- docs/workplans/2026-06-28-syt-hlf-branching-bijection-scope.md §"Update (2026-06-29)".
+  sorry
+
+/-! ## The power-sum keystone and its polynomial lift (sorry-free given the crux) -/
+
+/-- `det (vandermonde β) ≠ 0` for injective nodes. -/
+theorem vandermonde_det_ne_zero (β : Fin (k + 1) → ℚ) (hβ : Function.Injective β) :
+    (vandermonde β).det ≠ 0 := by
+  rw [det_vandermonde, Finset.prod_ne_zero_iff]; intro a _
+  rw [Finset.prod_ne_zero_iff]; intro b hb
+  rw [Finset.mem_Ioi] at hb
+  exact sub_ne_zero.mpr (fun h => (ne_of_lt hb) (hβ h).symm)
+
+/-- **Power-sum form of the keystone.** `∑ᵢ (βᵢ)ᵈ / vWeightᵢ = [d = k]` for `d ≤ k`. -/
+theorem powSum (β : Fin (k + 1) → ℚ) (hβ : Function.Injective β) (d : ℕ) (hdk : d ≤ k) :
+    ∑ i, (β i) ^ d / vWeight β i = if d = k then 1 else 0 := by
+  have hV := vandermonde_det_ne_zero β hβ
+  have hstep : ∑ i, (β i) ^ d / vWeight β i = (Amat β d).det / (vandermonde β).det := by
+    rw [eq_div_iff hV, detAmat_laplace, Finset.sum_mul]
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    have hc : (vandermonde β).det / vWeight β i = cof β i := by
+      rw [← cof_mul_vWeight β i, mul_div_assoc, div_self (vWeight_ne_zero β hβ i), mul_one]
+    rw [div_mul_eq_mul_div, mul_div_assoc, hc, mul_comm]
+  rw [hstep]
+  by_cases hd : d = k
+  · subst hd; rw [Amat_top, div_self hV, if_pos rfl]
+  · rw [detAmat_lt β d (by omega), zero_div, if_neg hd]
+
+/-- **The keystone**, matching the type of `SYTLagrangeInterp.interp_leadingCoeff` (PR #2986):
+the divided-difference combination of `f` over the nodes returns its leading coefficient
+`f.coeff k` whenever `f.natDegree ≤ k`.  Proved by linearity from `powSum`, no interpolation. -/
+theorem interp_leadingCoeff (β : Fin (k + 1) → ℚ) (hβ : Function.Injective β)
+    (f : ℚ[X]) (hf : f.natDegree ≤ k) :
+    ∑ i, f.eval (β i) / vWeight β i = f.coeff k := by
+  have hexp : ∀ i, f.eval (β i) = ∑ d ∈ Finset.range (k + 1), f.coeff d * (β i) ^ d := by
+    intro i; rw [eval_eq_sum_range' (by omega : f.natDegree < k + 1)]
+  simp_rw [hexp, div_eq_mul_inv, Finset.sum_mul]
+  rw [Finset.sum_comm]
+  have hper : ∀ d ∈ Finset.range (k + 1),
+      ∑ i, (f.coeff d * (β i) ^ d) * (vWeight β i)⁻¹ = f.coeff d * (if d = k then 1 else 0) := by
+    intro d hd
+    rw [Finset.mem_range] at hd
+    rw [← powSum β hβ d (by omega), Finset.mul_sum]
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    rw [div_eq_mul_inv]; ring
+  rw [Finset.sum_congr rfl hper]
+  simp
+
 end QOU.Mathlib.SYTVandermonde
