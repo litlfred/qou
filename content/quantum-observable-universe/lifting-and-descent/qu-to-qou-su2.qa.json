@@ -762,7 +762,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "SU(2) verification of the main theorem sits in sec:yekutieli-lifting-construction next to thm:qu-to-qou — on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "kappa_0 = c_1(Hopf) = 1, chi(CP^1)=2, observability via irreducible Ad(SU(2))≅V_1 are all correct; the only tension is the d=1-vs-ramification mismatch flagged under da-non-sequitur."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Block carries genuine content (definitions/steps), not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No back-fitted target or smuggled calibration; argument does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "minor",
+        "evidence": "qu-to-qou-su2.md:81: \"All five properties of the main theorem are verified for SU(2)\"",
+        "notes": "'All five properties verified' (lines 81-82) overstates item (4), whose ramification count (e=2 at 2 points) is incompatible with the stated degree-1 covering."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No undisclosed free parameter or off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "qu-to-qou-su2.md:51: \"has degree $d = 1$ (the identity covering)\"",
+        "notes": "Item (4): the descent map CP^1->CP^1 is taken as degree d=1 (identity), yet R_tot=2d+|chi|=4 is read off with B=2 branch points of ramification e=2. A degree-1 map has no genuine ramification (Sigma(e_p-1)=0), so the e=2 branch points are inconsistent with d=1 — the example illustrates the theorem's nonstandard R_tot formula rather than the classical Riemann-Hurwitz count."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No Lean sibling drives this block, or Lean matches the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Cited references are used for results they actually contain."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Key terms are defined or referenced; base ring / regime is clear from chapter context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No numerical-fit claim; block is structural, no q0-pin sensitivity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Physical readings are interpretive and consistent with the categorical model; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No backing compute/witness invoked; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "qu-to-qou-su2.md:51: \"has degree $d = 1$ (the identity covering)\"",
+        "notes": "Mostly-correct SU(2) worked example, but item (4)'s branch-point/ramification data (d=1 yet two e=2 branch points, R_tot=4) is internally inconsistent with a degree-1 covering — it follows the theorem's nonstandard 2d+|chi| formula, not the classical Riemann-Hurwitz ramification count."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:21:56.238Z"
 }

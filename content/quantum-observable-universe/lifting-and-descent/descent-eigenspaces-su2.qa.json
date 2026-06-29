@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "SU(2) descent-eigenspaces worked example sits in ssec:descent — on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "6-dim End(J^1 O(SU(2))) = 3 desc (+ ⊕ 3 trans), desc≅su(2) weight 0, trans weights ±1: consistent with the Hopf/Reeb U(1) splitting. Line 28 'act non-by definition' is a typo, not a math error."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Block carries genuine content (definitions/steps), not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No back-fitted target or smuggled calibration; argument does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Conclusions are scoped to what the argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No undisclosed free parameter or off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "The weight-0 vs weight-±1 distinction of the two V_1 copies is the correct U(1)-refinement of the idempotent splitting."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No Lean sibling drives this block, or Lean matches the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Cited references are used for results they actually contain."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "minor",
+        "evidence": "descent-eigenspaces-su2.md:28: \"endomorphisms that act non-by definition on the fibre directions\"",
+        "notes": "Line 28 reads 'act non-by definition on the fibre directions' — garbled phrasing obscures the intended 'act non-trivially'; minor legibility defect, not a math error."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No numerical-fit claim; block is structural, no q0-pin sensitivity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Physical readings are interpretive and consistent with the categorical model; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No backing compute/witness invoked; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "821526725506",
+          "ts": "0d6654509ea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Correct SU(2) computation of the descent eigenspaces; minor prose typo at line 28 ('non-by definition'). Math is sound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:21:56.238Z"
 }

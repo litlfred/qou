@@ -873,7 +873,277 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Motivic Galois character sits in sec:yekutieli-lifting-kummer-motivic alongside motivic-substrate — its declared home (detangler P34)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Definition is arithmetic/motivic (cyclotomic Galois, Aut of motivic class); ℝ appears only as the rho_infty realization target, correctly placed."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No mathematically false statement found; claims align with standard categorical/arithmetic facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Lean MotivicGaloisCharacter class carries content fields (frobenius_at, almost_everywhere_nontrivial); not an empty Prop marker."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No back-fitted target or smuggled calibration; argument does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Conclusions are scoped to what the argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No undisclosed free parameter or off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Each step follows from the prior; cited lemmas bridge the gaps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No Lean sibling drives this block, or Lean matches the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "yekutieli2010 (obstruction theory) and tate1967 (adelic/local decomposition) are apt for the cyclotomic-place character construction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "chi^mot_A is defined as a homomorphism Gal(Q(mu_inf)/Q)->Aut([A]); local components and the HKR image are specified; class-axiomatized in Lean per §3b."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No numerical-fit claim; block is structural, no q0-pin sensitivity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Physical readings are interpretive and consistent with the categorical model; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No backing compute/witness invoked; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "78c5f3307141",
+          "ts": "73676e727738",
+          "lean": "e6d21f954c62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Well-formed axiomatic definition; the motivic-Galois layer is honestly scoped as a substrate axiom (§3b class) with non-trivial fields. Strongest objection: heavy machinery (motivic class Aut) for a single character, but it is a definition, not a proved claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:21:56.238Z"
 }

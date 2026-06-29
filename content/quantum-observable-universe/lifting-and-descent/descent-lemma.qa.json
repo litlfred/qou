@@ -1046,7 +1046,451 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Statement is the bare descent-lemma claim (restriction yields QOU; descent hom is surjective, intertwines G_q); no physical interpretation embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Descent lemma sits in ssec:descent-prelim — its declared home."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Generic categorical statement (End_C algebra homomorphism); the archimedean *-homomorphism is explicitly named as 'the archimedean realisation', correctly walled."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Lemma block; proof is in prf:descent."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "descent-lemma.lean:34: \"descentMap : endAlgN →ₗ[R] endAlgPrev\"",
+        "notes": "Lean DescentLemma carries descentMap as a plain R-linear map (`→ₗ[R]`) with surjectivity only; the .md claims a surjective ALGEBRA homomorphism that intertwines the G_q-actions — the algebra-hom and equivariance content is dropped from the Lean."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "descent-lemma.lean:36: \"surjective : Function.Surjective descentMap\"",
+        "notes": "The Lean structure encodes a weaker object (linear surjection) than the lemma states (surjective algebra hom + G_q-intertwiner); no equivariance field present."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "minor",
+        "evidence": "descent-lemma.lean:41: \"Function.Surjective dl.descentMap := dl.surjective\"",
+        "notes": "descent_surjective := dl.surjective is a verbatim projection of the structure field; the surjectivity 'theorem' restates an assumed field rather than deriving it."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Goal Function.Surjective dl.descentMap is not True/x=x; it is a genuine (if assumed-as-field) proposition."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Hypotheses [CommRing R], (dl : DescentLemma R) are inhabitable, not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "dl is used; the CommRing instance supports the module structure."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No decide/trivial; surjectivity is projected from the field."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No mathematically false statement found; claims align with standard categorical/arithmetic facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "descent-lemma.lean:41: \"theorem descent_surjective ... := dl.surjective\"",
+        "notes": "The Lean lemma `descent_surjective` projects the structure's own `surjective` field, so it asserts nothing beyond the DescentLemma record's assumptions; the narrative proof (prf:descent) carries the real content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No back-fitted target or smuggled calibration; argument does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Conclusions are scoped to what the argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No undisclosed free parameter or off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Each step follows from the prior; cited lemmas bridge the gaps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "descent-lemma.lean:34: \"descentMap : endAlgN →ₗ[R] endAlgPrev\"",
+        "notes": "Lean models the descent map as a surjective linear map and proves surjectivity by projection; .md claims a surjective algebra homomorphism intertwining G_q — strictly stronger."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Cited references are used for results they actually contain."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Key terms are defined or referenced; base ring / regime is clear from chapter context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No numerical-fit claim; block is structural, no q0-pin sensitivity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Physical readings are interpretive and consistent with the categorical model; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No backing compute/witness invoked; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "150df920d02d",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "descent-lemma.lean:25: \"structure DescentLemma (R : Type*) [CommRing R] where\"",
+        "notes": "Lemma statement and narrative proof are sound, but the Lean sibling under-models it (linear-map + projected surjectivity, no algebra-hom or G_q-equivariance), so the formalization is weaker than the claim."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:21:56.238Z"
 }

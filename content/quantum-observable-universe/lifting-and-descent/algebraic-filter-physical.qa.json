@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Physical reading of the fermion/boson filter sits in sec:betti-harmonic alongside algebraic-filter-classification — on-topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No mathematically false statement found; claims align with standard categorical/arithmetic facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Block carries genuine content (definitions/steps), not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No back-fitted target or smuggled calibration; argument does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Conclusions are scoped to what the argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "The '-6 index' references the SO(3) holonomy fixed-point index from the classification, not a new free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Each step follows from the prior; cited lemmas bridge the gaps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No Lean sibling drives this block, or Lean matches the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Cited references are used for results they actually contain."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Key terms are defined or referenced; base ring / regime is clear from chapter context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No numerical-fit claim; block is structural, no q0-pin sensitivity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Fermionic ([F_A,alpha]≠0, trapped/spiralling geodesics, -6 index) vs bosonic ([F_A,alpha]=0, straight geodesics) reading is an interpretive gloss on the commutator classification it interprets; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No backing compute/witness invoked; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a6c48ad67726",
+          "ts": "eacdaab57710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Interpretive physical remark on the two commutator classes; consistent with prop:algebraic-filter-classification."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:21:56.238Z"
 }

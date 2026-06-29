@@ -1052,7 +1052,451 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Statement lists the five structural QOU properties (the claim content); the 'Lean formalization' paragraph is a meta note, not physical interpretation in the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Main QU->QOU theorem sits in sec:yekutieli-lifting-construction — the natural home for the chapter's headline result."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Over a Noetherian ring R; statement is categorical/arithmetic (Krull dim, Euler class, Riemann-Hurwitz). No premature archimedean leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Theorem block; proof lives in prf:qu-to-qou, not this block."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "qu-to-qou.lean:94: \"theorem qu_to_qou_exists : ∃ (q : QuToQou), True := sorry\"",
+        "notes": "Lean qu_to_qou_exists : ∃ (q : QuToQou), True := sorry asserts only existence of a QuToQou record, with no tie to an input quantum universe or observability hypothesis; the .md states a conditional implication with five properties."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "qu-to-qou.md:37: \"currently encodes an existence stub (∃ q, True) pending a faithful statement\"",
+        "notes": "The Lean signature is an existence stub (`∃ q, True`) weaker than the narrative theorem; the .md itself discloses this (line 37). Honest 'queued' disposition (sorry + -- Ref), but the stated Lean goal is weaker than the claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "qu_to_qou_exists is `sorry`, not a projection of a self-asserting field."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "minor",
+        "evidence": "qu-to-qou.lean:94: \"∃ (q : QuToQou), True := sorry\"",
+        "notes": "The Lean goal `∃ (q : QuToQou), True` carries a vacuous `True` conjunct; the QuToQou structure has real fields, but the existence claim itself asserts nothing about those fields. Gated by sorry and disclosed, so not an audit-dodge."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No false/contradictory premise; the structure fields (trace_map, perpetual, riemann_hurwitz) are satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Lean theorem takes no hypotheses (existence stub); no hypotheses to leave unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Proof is `sorry`, not decide/trivial masking; honestly marks the gap."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No mathematically false statement found; claims align with standard categorical/arithmetic facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "qu-to-qou.lean:94: \"∃ (q : QuToQou), True := sorry\"",
+        "notes": "Lean `∃ (q : QuToQou), True := sorry` is content-thin (True conjunct, no input QU), though disclosed in the .md and the underlying QuToQou structure is non-trivial. Narrative argument itself is substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No back-fitted target or smuggled calibration; argument does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "The .md explicitly tempers the claim by noting the Lean is a stub; the narrative properties are derived from cited results (Yekutieli, Riemann-Hurwitz)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No undisclosed free parameter or off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Each step follows from the prior; cited lemmas bridge the gaps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "qu-to-qou.md:37: \"the structural proof above is the intended content, deferred via sorry\"",
+        "notes": "Lean proves (will prove, via sorry) only existence of a QuToQou record; the .md asserts a QU-with-observability => QOU implication with five named properties. Divergence is openly disclosed."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Cited references are used for results they actually contain."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Key terms are defined or referenced; base ring / regime is clear from chapter context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No numerical-fit claim; block is structural, no q0-pin sensitivity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Physical readings are interpretive and consistent with the categorical model; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No backing compute/witness invoked; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "qu-to-qou.lean:94: \"theorem qu_to_qou_exists : ∃ (q : QuToQou), True := sorry\"",
+        "notes": "Substantive, well-structured main theorem whose narrative is sound, but the Lean formalization is an honest stub (`∃ q, True := sorry`) far weaker than the stated claim — the headline result is not yet machine-certified."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:21:56.238Z"
 }

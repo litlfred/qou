@@ -1048,7 +1048,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Statement is the bare cosimplicial-crossed-groupoid claim with its coface/codegen/crossed structure; no physical-interpretation prose."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Cosimplicial crossed groupoid sits in its own section ssec:cosimplicial-crossed-groupoid — on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Generic-ring chapter; statement is categorical (simplex category -> 2-category of gerbes), no premature archimedean specialization."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Proof is categorical (Cech nerve, descent homomorphism, conjugation action); no archimedean machinery on an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "cosimplicial-crossed-groupoid.lean:106: \"(coface (n + 1) (coface n t)).level = (coface n (coface n t)).level\"",
+        "notes": "Lean cosimplicial_crossed_groupoid_exists proves Nonempty(CosimplicialCrossedGroupoid M) with a trivial witness whose cosimplicial-identity fields (coface_coface, codegen_codegen, retraction) constrain only `.level : ℕ`, not the morphism data the .md claim describes."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "cosimplicial-crossed-groupoid.lean:125: \"tripleAt := fun n => ⟨n, id, fun _ => 1, fun _ => 1, fun _ => one_ne_zero⟩\"",
+        "notes": "The Lean existence target is weaker than the narrative: the coherence axioms are stated as ℕ-level equalities, so `Nonempty` is provable by an identity/constant witness rather than genuine cosimplicial maps from jet prolongation/descent."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "cosimplicial_crossed_groupoid_exists builds an explicit witness; it is not a projection of a field whose type is the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Goal is Nonempty(CosimplicialCrossedGroupoid M), not True/x=x; the structure has non-trivial fields (though identity-level coherence is weak)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Only hypothesis is [Nonempty M]; not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "[Nonempty M] is used (obtain ⟨p⟩) to build the witness."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Proof uses simp/explicit construction, no decide/trivial masking a substantive goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No mathematically false statement found; claims align with standard categorical/arithmetic facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "cosimplicial-crossed-groupoid.lean:128: \"retraction := fun n t => by simp [Nat.add_sub_cancel]\"",
+        "notes": "The Lean witness sets every triple to (n, id, const 1, const 1) and the coherence identities only equate `.level` values, so Nonempty is discharged by a degenerate witness rather than the structured maps the narrative asserts."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No back-fitted target or smuggled calibration; argument does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Conclusions are scoped to what the argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No undisclosed free parameter or off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Each step follows from the prior; cited lemmas bridge the gaps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "cosimplicial-crossed-groupoid.lean:119: \"theorem cosimplicial_crossed_groupoid_exists ... Nonempty (CosimplicialCrossedGroupoid M)\"",
+        "notes": "Lean proves Nonempty via a trivial witness with level-only coherence; narrative asserts coface=jet-prolongation, codegen=descent, crossed=Ad(SU_q(2)) conjugation — strictly more content."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Cited references are used for results they actually contain."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Key terms are defined or referenced; base ring / regime is clear from chapter context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No numerical-fit claim; block is structural, no q0-pin sensitivity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "Physical readings are interpretive and consistent with the categorical model; no unit/conservation error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "notes": "No backing compute/witness invoked; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d00c5c494ec8",
+          "ts": "7e8a7e796a9e",
+          "lean": "0bb18cbb4fa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:21:56.238Z",
+        "reviewed_sha": "efe5e7f4534d7635506c42a5d9287cee4ee28b62",
+        "severity": "major",
+        "evidence": "cosimplicial-crossed-groupoid.lean:101: \"retraction : ... (codegeneracy n (coface n t)).level = t.level\"",
+        "notes": "Narrative proposition is plausible and well-sourced (Yekutieli), but the Lean formalization is an under-powered existence statement: coherence identities are ℕ-level proxies satisfied by a degenerate witness, so it does not certify the actual cosimplicial structure."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:21:56.238Z"
 }
