@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.A8Partition.a_8_eq_partition_sum",
   },
   uses: [
-    "lemma:cyclotomic-strand-doubling",
+    "prop:cyclotomic-strand-doubling",
   ],
   cites: [
     "habiro2000",

@@ -3,7 +3,7 @@ import Mathlib.Data.Nat.Notation
 /-!
 # B1 at additional hyperbolic-knot rows
 
-Compiled formalisation of `prop:b1-hyperbolic-rows-theorem`.
+Compiled formalisation of `conj:b1-hyperbolic-rows-theorem`.
 Sibling docstub at `appendix-surreals/b1-hyperbolic-rows-theorem.lean`.
 
 The B1 keystone holds unconditionally at Borromean rings,
@@ -13,7 +13,7 @@ together with van der Veen et al.'s Volume-Conjecture extensions.
 
 namespace QOU.AppendixSurreals.B1HyperbolicRowsTheorem
 
-/-- **Conjecture (`prop:b1-hyperbolic-rows-theorem`).**
+/-- **Conjecture (`conj:b1-hyperbolic-rows-theorem`).**
     B1 holds at least at 3 hyperbolic rows (Borromean, Whitehead, twist-knot family)
     conditional on the Bloch-Suslin regulator condition and van der Veen's Volume Conjecture extensions. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md

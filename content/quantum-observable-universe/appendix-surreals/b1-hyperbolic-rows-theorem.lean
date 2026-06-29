@@ -1,4 +1,4 @@
--- Sibling docstub for `prop:b1-hyperbolic-rows-theorem`.
+-- Sibling docstub for `conj:b1-hyperbolic-rows-theorem`.
 --
 -- This file is documentation only.  The compiled formalisation
 -- lives in the Lake-built tree at:
@@ -13,7 +13,7 @@
 namespace QOU.AppendixSurreals.B1HyperbolicRowsTheorem
 
 /-- **CONJECTURE.** B1 at additional hyperbolic-knot rows (Borromean, Whitehead, twist knots) conditionally reduces to Volume Conjecture. -/
--- Ref: [manuscript] prop:b1-hyperbolic-rows-theorem
+-- Ref: [manuscript] conj:b1-hyperbolic-rows-theorem
 axiom b1_hyperbolic_rows
     (n_hyperbolic_rows_verified : ℕ)
     (bloch_suslin van_der_veen : Prop) :

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:b1-hyperbolic-rows-theorem",
+export default conjecture({
+  label: "conj:b1-hyperbolic-rows-theorem",
   title:
     "B1 conditionally reduces to Volume Conjecture at Borromean rings, Whitehead link, and twist knots",
   lean: {
