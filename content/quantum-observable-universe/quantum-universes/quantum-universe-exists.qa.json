@@ -1048,7 +1048,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Statement is the bare existence claim ('There exists a triple ... satisfying the four axioms'); no physical interpretation or motivation prose embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Existence of a quantum universe sits squarely in §The Quantum Universe of the foundational Ch1; the chapter manifest lists this block in that section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Generic-ring/categorical regime; statement quantifies over the categorical triple (C,A,tau) with no archimedean (Real.*, 0<q, ordering) construct — correctly on the substrate side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Proof block uses purely categorical witnesses (R-Mod with A=R; Rep(SU_q(2))); no linarith/IVT/continuity archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": ".md claims existence of a triple satisfying the four QU axioms; Lean states Nonempty (QuantumUniverse k) for every field k — same existence claim (QuantumUniverse bundles the axioms)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Lean signature is the genuine existence proposition Nonempty (QuantumUniverse k); not weakened to True nor a smuggled-conclusion field."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Proof is exists_instance_axiom, an explicitly-named external axiom with -- Ref: [kassel1995], not a projection of a structure field whose type is the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Conclusion is Nonempty (QuantumUniverse k), a substantive existence claim — not True, not x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Only premise is [Field k]; no False/0=1/uninhabited-type hypothesis."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "[Field k] is the base over which QuantumUniverse k is parametrized; used by the type, not an idle hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No decide/trivial; the gap is honestly carried by a cited axiom (sorry-to-axiom honest-queue disposition)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Existence of a QU instance is true: R-Mod (A=R) and Rep(SU_q(2)) are standard witnesses; claim is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Lean discharges via a named axiom (exists_instance_axiom) carrying the real proposition Nonempty (QuantumUniverse k) + -- Ref:; this is the honest open-construction queue, not a ': True := trivial' or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No back-fit: existence is established by exhibiting witnesses, no calibration target or self-reference involved."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Claim is just existence; the Lean honestly marks the construction pending (axiom) rather than overclaiming a finished proof in the manifest (validation: not_checked)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No numerical parameter or calibration; pure categorical existence statement."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Witness-to-existence inference is direct; no missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Lean Nonempty (QuantumUniverse k) matches the .md 'there exists a triple satisfying the four axioms'; no weaker/divergent Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "kassel1995 §XI (Quantum Groups) genuinely constructs Rep(SU_q(2)) as the richer witness; citation apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "The triple (C,A,tau) and 'four axioms' resolve to def:quantum-universe; base ring R/field k explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Pure existence proposition; no numerical match or q0-pinned value."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Categorical existence claim; no physics prediction with units/conservation to check."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No backing compute/witness JSON; existence established by literature witnesses."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3887ffc75397",
+          "ts": "7955d967219f",
+          "lean": "908692a1b22e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Accept; strongest objection is the axiom-discharged Lean, which is honest and citation-backed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:42:10.612Z"
 }

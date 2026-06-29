@@ -780,7 +780,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Fundamental object V and emergent gauge group are core Ch1 categorical content; manifest places it in the SU(2)-realisation section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "rank(Lambda^2 V)=n(n-1)/2 reasoning is correct: n=1 gives 0, n=2 gives 1, n>=3 gives >=3, so a non-degenerate epi to rank-1 unit forces rank(V)=2."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Prose carries real content (rank-2 forcing argument, tensor-generation); not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Dimension-2 of V is derived from the volume constraint, not assumed; non-circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Claims (uniqueness up to iso of the dim-2 simple, tensor generation) are standard for Rep(SU(2)) and stated within the rigid-category setting."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No numerical parameter; rank is forced, not a free choice."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "The rank-forcing chain (rank1 -> Lambda^2=0; rank>=3 -> rank Lambda^2>=3) is a complete argument, no gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Prose block; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No cites[] and no -- Ref: in this prose block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "'categorical dimension 2' is explicitly tied to tau(V) being a rank-2 free R-module; G=Aut^otimes(tau) defined; no ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "46f5ed90091d",
+          "ts": "95d7a4dd2802"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Accept; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:42:10.612Z"
 }

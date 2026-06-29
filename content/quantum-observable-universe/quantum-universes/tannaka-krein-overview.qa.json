@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Tannaka-Krein reconstruction interprets the fibre functor; belongs in Ch1 Consequences scope; remark interprets def:quantum-universe."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "G=Aut^otimes(tau), C ~= Rep(G), fibre-functor uniqueness, and Deligne/Woronowicz attributions are all standard and correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Substantive interpretive content (4 numbered consequences); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Origin-of-q paragraph derives q as a c_{V,V} eigenvalue from the Hecke relation — categorical, not back-fitted to a numerical target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Claims (reconstruction/equivalence/rigidity) are exactly what Tannaka-Krein/Deligne/Woronowicz give; constraint-propagation (det=1 forces SL, pos-def forces SU) is correctly hedged 'in our case'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "q is explicitly stated to emerge categorically, not imposed; no hidden free parameter introduced here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Each step (reconstruct G, equivalence, q from Hecke eigenvalue) follows; full q derivation deferred to a named section."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Remark block; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "deligne1990 (algebraic Tannakian over a field/affine group scheme), tannaka1939 (compact-group classical case), woronowicz1988 (q!=1 / SU_q(2)) are each correctly attributed to the claim they back."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Hecke relation (T-q)(T+q^{-1})=0 fixes the q-convention; Aut^otimes(tau) defined; no ambiguous 'the unique X' without justification."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No numerical value or q0-pinned match in this remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Categorical reconstruction statement; no physical prediction to falsify."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a076ac4d5645",
+          "ts": "3417846a26ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Accept; no substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:42:10.612Z"
 }

@@ -798,7 +798,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Worked SU(2) verification of the QU axioms; example interprets def:quantum-universe, placed in the SU(2)-realisation section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Each axiom check (Rep(SU(2)) rigid monoidal; O(SU(2)) Frobenius-Hopf with Haar pairing positive-definite; forgetful tau exact/faithful/monoidal; left-invariant Omega^1 with su(2) structure constants) is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Substantive axiom-by-axiom verification; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Direct verification against the definition; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Claims only that SU(2) satisfies the four axioms; standard and correct."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No free parameter; concrete example."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Each axiom verification is self-contained; Haar-positivity => non-degenerate Frobenius pairing is a correct step."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "lean.ref qou:QOU.Examples.su2QuantumUniverse (validation: not_checked) is an example term matching the worked narrative; no proof claim to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No cites[] / -- Ref: in the example narrative."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "su(2) basis with [e_a,e_b]=epsilon_{abc}e_c and Omega^1 dual basis are specified; Haar measure named; no ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No q0-pinned numerical match; structural example."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Mathematical example; no physical prediction with units to check."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No compute/witness; references Table 1 data block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d31f0f5a2595",
+          "ts": "eb93ca5a463f",
+          "lean": "33a3f8144f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Accept."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:42:10.612Z"
 }

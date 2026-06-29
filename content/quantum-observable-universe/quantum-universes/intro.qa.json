@@ -780,7 +780,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Chapter intro previewing QU axioms and onward to Ch2 QOU; correctly the opening prose of Ch1."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Overview statements (QU = rigid braided monoidal + Frobenius-Hopf + fibre functor + calculus; volume constraint forces SU_2(R) in Ch2) are consistent with the definitions in this chapter."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Roadmap prose with real content; appropriate for an intro."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No derivation; roadmap only."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Defers the SU_2-forcing claim to Ch2 ('is the subject of Chapter 2') rather than asserting it here."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No parameters introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Sectional roadmap; no inferential claims."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Prose intro; no .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Terms are forward-referenced to their defining sections; appropriate for an intro."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "No compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9049769b2d23",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:42:10.612Z",
+        "reviewed_sha": "519ea9210a425ec99922579227fc0c8ac1b7ea3d",
+        "notes": "Accept."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:42:10.612Z"
 }
