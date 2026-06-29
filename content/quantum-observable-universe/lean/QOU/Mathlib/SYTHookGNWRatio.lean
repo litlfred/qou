@@ -117,4 +117,30 @@ theorem betaNat_ne (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) {i j : ℕ}
     (hij : i < j) (hj : j < l.length) : betaNat l i - betaNat l j ≠ 0 := by
   have := betaNat_lt l hl hij hj; intro h; linarith [sub_eq_zero.mp h]
 
+/-!
+## Remaining design — the gap ratio, row-drop, and assembly (next pieces)
+
+All scaffolding above is sorry-free.  The remaining route to `gnwHookIdentity`:
+
+**(R1) Gap ratio (non-row-drop)** — `betaProdGap (l.set c (l[c]−1)) = betaProdGap l ·
+∏_{j∈(range k).erase c} (β_c−1−β_j)/(β_c−β_j)`.  Via the pairs form: factor each term
+`β'ᵢ−β'ⱼ = (βᵢ−βⱼ)·rᵢⱼ` (`mul_div_cancel₀`, gaps nonzero by `betaNat_ne`), so
+`betaProdGap(l∖c) = betaProdGap(l)·∏ᵢ∏ⱼ rᵢⱼ` (`prod_mul_distrib`).  Evaluate the inner
+ratio product: `inner_i = 1` for `i>c`; `inner_c = ∏_{j∈Ioo c k}(β_c−1−β_j)/(β_c−β_j)`;
+`inner_i = r_{i,c} = (βᵢ−β_c+1)/(βᵢ−β_c)` for `i<c` (`prod_eq_single c`, others `=1`).
+Pull out `i=c` (`mul_prod_erase`), restrict the rest to `range c` (`prod_subset`, `i>c`
+terms `=1`), and use the sign flip `(βᵢ−β_c+1)/(βᵢ−β_c) = (β_c−1−βᵢ)/(β_c−βᵢ)` (`ring`).
+Split `erase c = range c ∪ Ioo c k`.
+
+**(R2) Factorial × gap ⇒ per-corner ratio** — combine `betaFactProd_ratio` (= β_c) with
+(R1) through identity (i) `prodHooks·betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`,
+`betaProdGap_pos`): `prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.
+
+**(R3) Row-drop corner** (`l[c]=1`, last row, `k→k−1`) — separate but the same product
+formula holds (β shifts uniformly; the βNat algebra still gives the same per-corner value).
+
+**(R4) Assembly** — sum over `corners l`; non-corner rows vanish (`β_c−1 = β_{c+1}`); bridge
+`corners ↔ Fin k` and apply `betaLagrange (betaVec l)` + `sum_betaVec_sub` (`= sz l`).
+-/
+
 end QOU.Mathlib.SYTBetaLagrange
