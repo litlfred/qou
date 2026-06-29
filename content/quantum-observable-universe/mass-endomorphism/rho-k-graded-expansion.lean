@@ -1,4 +1,5 @@
-import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
 # Graded expansion of the categorical density ρ_K
