@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-28T16:08:42.432026+00:00",
-  "commitSha": "696ca45116725cfa2dd3bdf2c9e9389da0a50105",
+  "computedAt": "2026-06-29T00:11:19.448565+00:00",
+  "commitSha": "95a4b605560ee7e3c784b2d15212a5d3c2d2bdd5",
   "assertions": [
     {
       "name": "Vol + Vol*(1/hbar^2 - 1) - Vol/hbar^2 == 0 in Q(q) (symbolic)",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 157,
+  "durationMs": 188,
   "computation": "probe-topological-mass-formula",
   "scriptFile": "probe_topological_mass_formula.py",
-  "scriptHash": "e3dfece52056",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "40b71481b09f",
+  "scriptCommitSha": "703c9f90a01cf1e5fd178a9561310fb57ef75dd9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

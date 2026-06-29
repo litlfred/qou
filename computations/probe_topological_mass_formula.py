@@ -183,11 +183,51 @@ def main() -> int:
     )
     path = w.save()
 
-    all_passed = all(a.passed for a in w.assertions)
+    # Dedicated witness for the algebraic sibling so it is discoverable as a
+    # first-class contentBlock (not only the `also_verifies_block` data field
+    # on the archimedean witness above — the integration-watcher scans
+    # contentBlock, so the algebraic block was being classed I1 despite being
+    # verified here). Same algebraic-side checks, distinct contentBlock.
+    wa = WitnessBuilder("probe-topological-mass-formula-algebraic", engine="mpmath")
+    wa.set_description(
+        "Algebraic-side topological mass identity mass_alg = Phi_1/hbar_sq "
+        "(prop:topological-mass-formula-algebraic, Lean AlgebraicMassFormula): "
+        "exact in Q(q) given the AlgebraicMassFormula hypothesis phi1 = "
+        "mass_alg*hbar_sq, plus a 50-dps numerical recovery at q0 with "
+        "phi1 = Vol(4_1). Companion to probe-topological-mass-formula."
+    )
+    wa.set_content_block("prop:topological-mass-formula-algebraic")
+    wa.add_parameter("q0", Q_50_DIGIT_STR)
+    wa.add_parameter("hbar_q_def", "1 - 1/q0")
+    wa.add_assertion(
+        "mass_alg - phi1/hbar_sq == 0 given phi1 = mass_alg*hbar_sq (symbolic)",
+        computed=str(alg_diff),
+        expected="0",
+        source="sympy.simplify (AlgebraicMassFormula, exact in Q(q))",
+    )
+    wa.add_assertion(
+        "mass_alg == phi1/hbar_sq at q0 (phi1 = Vol(4_1))",
+        computed=mp.nstr(recon, 6),
+        expected="0",
+        tolerance=float(TOL),
+        source="algebraic-side numerical check",
+    )
+    wa.add_data("symbolic_algebraic_exact", bool(alg_exact))
+    wa.add_data("hbar_q_sq_at_q0", mp.nstr(hbar_sq, OUTPUT_DPS))
+    wa.add_caveat(
+        "Verifies only the algebraic combine mass_alg = phi1/hbar_sq the "
+        "proposition proves; the geometric inputs (Vol_q, tau_arch) are "
+        "imported hypotheses, not derived. Not the canonical absolute nucleon "
+        "mass (that is the muon-anchored Hecke energy via canonical_mass.py)."
+    )
+    path_a = wa.save()
+
+    all_passed = all(a.passed for a in w.assertions) and all(a.passed for a in wa.assertions)
     print(f"symbolic combine exact in Q(q): {sym_exact}")
     print(f"symbolic algebraic-side exact in Q(q): {alg_exact}")
     print(f"max numerical residual at q0: {mp.nstr(max_resid, 6)}")
     print(f"witness: {path}")
+    print(f"algebraic witness: {path_a}")
     print("ALL PASSED" if all_passed else "FAILURES PRESENT")
     return 0 if all_passed else 1
 
