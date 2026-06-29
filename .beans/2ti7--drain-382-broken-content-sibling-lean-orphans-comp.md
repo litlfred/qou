@@ -129,3 +129,19 @@ no sorry); `categorical-coordinate-ring` REPLACED a fabricated `axiom …_univer
 audit-dodge with the real theorem + one honest cited sorry; the rest were import-scoping /
 `noncomputable section`-docstring / `end`-balance / type-correct-composite repairs with
 content preserved. **Re-derive-first works** — wave-3 should continue per-chapter the same way.
+
+## 2026-06-29 wave-3 swarm (9 agents × 2 files, quantum-observable-universes next 18)
+
+Continued the same chapter (re-derived: 18 fixed by wave-2, 45 remaining). Swarmed the
+next **18** (reeb/torus/q-dilogarithm/q-exponential/frobenius-hopf cluster). Outcome:
+**18/18 genuinely repaired, all independently re-verified `fail=0`** (parallel sweep), 0
+flagged. Quality gate clean: no `: True`/`native_decide`/trivial-field; **0 new sorries**;
+**axioms scrutinised** — `categorical-reeb-unique` axiom count 3→3 (pre-existing, cited
+`[witten1988]`, §3b-cond external-axiom pattern), `q-dilogarithm` 2→1 (agent *reduced*
+axioms; remaining cited `[manuscript]`) — no fabricated audit-dodges. Repairs: §7c
+base-ring generalisation to `[Field R]`/`[LinearOrder R][IsStrictOrderedRing R]` where the
+file used division/order on `R_q` (contact-affine-chart, heisenberg-commutator); inlined
+faithful sibling-structure copies for out-of-scope `extends` (reeb cluster) cited
+`[kock2004]`; type-correct monoidal Frobenius law (frobenius-hopf-substrate); `HEq` for
+heterogeneous equalities; conclusion restated as honest `∃`-Prop (categorical-self-duality);
+dead-`ring` / `No goals` cleanups. **27/63 of the chapter now drained across waves 2+3.**
