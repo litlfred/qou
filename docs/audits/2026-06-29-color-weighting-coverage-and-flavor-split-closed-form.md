@@ -128,6 +128,49 @@ Until one of these is done, `(1 + ℏ_q³)` must not be cited as a derived
 result, and its 0.0305% Δm_pn residual must not be cited as the framework's
 achieved accuracy on the splitting.
 
+## Part D — 3-strand derivation attempt: the second-order self-interaction form
+
+Probe: `computations/probes/flavor_split_3strand_derivation_probe.py` (+ witness).
+Built the flavor split as an H₃ Markov-trace object with the spectator strand
+*braiding* (the passive spectator factor is exactly 1.0 — confirmed — so the
+correction must come from braiding). Findings:
+
+- **Raw 3-strand trace ratios badly overshoot** (10–85% corrections; the
+  per-nucleon H₃ traces differ by 2.1% — 15× too large and *opposite sign*).
+  So the split is **not** a raw trace ratio; the bulk cancels (a self-energy /
+  difference structure).
+- **The working parameter-free object is the second-order self-interaction
+  form** `full = leading·(1 + leading)` (⟺ `leading/(1−leading)` ⟺
+  `[2]_q → [2]_q·(1+leading)`):
+
+  | form | err vs CODATA | derivable? |
+  |---|---|---|
+  | leading (proven) | 0.128% | ✓ proven |
+  | leading·(1+ℏ_q³) (posited, production-old) | 0.0305% | ✗ posited, 76% |
+  | **leading·(1+leading)** (3-strand 2nd-order) | **0.0097%** | **parameter-free** |
+
+  - **13× better than leading**, 3× better than the posited factor.
+  - **Parameter-free**: the correction scale *is* the derived leading split,
+    NOT a posited `ℏ_q`-power. Anchor-stable to ~1e-13.
+  - Categorical reading: a 3-quark baryon has 3 quark *pairs* — leading
+    accounts for the swapped `u↔d` pair; the `leading²` term is the
+    spectator-pair (self-interaction) contribution.
+
+- **Honest caveat (why this is scope-(a), not a closure):** the *exact*
+  factor is `(C_true−1)/leading = 0.929`, not 1.000 — `leading·(1+leading)`
+  over-supplies by ~7.6%. The second-order **structure** is strongly
+  indicated and is the right direction, but the exact 0.929 coefficient is
+  **not** closed. Per the anti-flip-flop discipline the probe did **not** fit
+  0.929 to a clean form.
+
+**Verdict.** `leading·(1+leading)` **supersedes `(1+ℏ_q³)`** on every axis
+(accuracy, parameter-freeness, anchor-stability, a structural story) — it is
+the right derivation target. It is **not yet a rigorous derivation** (the
+0.929 coefficient is open). So the production de-wire to the *proven leading*
+stands as the honest baseline; `leading·(1+leading)` is the leading candidate
+to wire **once the second-order coefficient is closed** (3-strand
+self-interaction normalisation — open Archimedean-mass-functor work).
+
 ## Recommendations (follow-ups, not done here)
 
 - **Doc-currency gap (owner-review):** the content block
