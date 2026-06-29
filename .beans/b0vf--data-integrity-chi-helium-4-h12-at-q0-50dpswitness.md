@@ -35,3 +35,14 @@ pyhecke-native; I reverted rather than commit engine-drifted values. Remaining b
 version-matched regen of the partial (data-integrity), no longer a hard block. The ~2.8 h estimate
 was also wrong (it was the deprecated pure-Python producer; the Rust producer is ~3 s).
 
+## ROOT CAUSE of the 1e-7 drift (2026-06-29) — q₀ PIN, not the engine (corrects "dev-engine≠canonical")
+
+Chased it fully. NOT a pyhecke-native version issue: both engine builds (clarabel-default AND
+`--no-default-features`) give the SAME `tr_M=0.885616920128525`; they differ from the committed witness
+ONLY via q₀: committed `q_0_50dps=1.1099785827513808…` vs current `Q_50_DIGIT_STR=1.1099785955573347…`
+(muon). Δq₀≈1.3e-8 = the muon↔proton ~11.5 ppb spread; χ(q₀) amplifies it to ~1e-7 (all 77 chi differ,
+all 77 y_lambda identical). So the engine is canonical + consistent; the He4 χ cache is a
+**q₀-convention witness refresh** (tnjb/z5vu owner-gated class), NOT engine-blocked. Do NOT regen this
+one witness to the other pin in isolation (silent-q₀-flip hazard). No regen committed; tree clean.
+Audit: `docs/audits/2026-06-29-b0vf-chi-drift-is-q0-pin-not-engine.md`.
+
