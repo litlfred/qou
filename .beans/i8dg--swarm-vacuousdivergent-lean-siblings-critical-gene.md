@@ -100,3 +100,6 @@ updated_at: 2026-06-29T20:07:58Z
 ## More instances (batch 55, predicted-spectra)
 - noble-gas-characterization.lean:62 (:= a.claim_noble_iff_curls projects conclusion; critical)
 - gauge-coupling-uniqueness.lean:24-25 (:= d.exists_lambda; GaugeCouplingUniquenessData defined nowhere; critical)
+
+## More instances (batch 59, q-geometric-langlands)
+- cyclotomic-l-value-decomposition.lean:32 (beta_3_from_jonquiere : True := trivial shadow stub; real proof in QOU/BraidKnot/CyclotomicLValueDecomposition.lean; critical sec0a; beta(3)=pi^3/32 correct)

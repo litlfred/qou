@@ -892,7 +892,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Listed in the chapter's 'Reconnected orphan blocks (Phase 7)' section; a quantum-Langlands-duality conjecture belongs in the q-geometric-langlands chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Type A_{n-1} self-Langlands-dual with parameter inversion, and B<->C swap for non-simply-laced types, are correct Langlands-dual facts; framed as conjecture."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Conjecture block; Lean carrier class QuantumLanglandsDual{holds:Prop} is the accepted axiom-class witness per AGENTS.md 3b, and the .md content is non-trivial."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No derivation of a calibrated observable; it proposes a duality structure, not a back-fitted number."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Explicitly tagged research-grade / open-problem; matter<->antimatter and CPT links are flagged as Open R&D, not claimed results."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Parameter inversion q->q^{-1} is structural, not a tunable free parameter; no 4th calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Distinctions (Langlands vs bar involution; algebra-level vs parameter-level) are coherent; speculative links are marked as open."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Lean is a conjecture carrier class (sorry=conjecture per 3b); divergence criterion is structurally satisfied for a conjecture block — no provable claim being weakened."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Macdonald 1971 / Lusztig 1989 / Frenkel-Reshetikhin 2002 are appropriate references for quantum-Langlands / Hecke-algebra duality."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "H_n(q), bar involution, reverse-limit and folding are each defined/cross-linked (def:bar-involution, conj:reverse-limit, D22)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No numerical prediction or witness in this conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "The matter/antimatter and CPT links are speculative but flagged Open R&D, not asserted physics; nothing contradicts a measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c8f276ffb154",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Honest research-grade conjecture; strongest objection is the speculative CPT/antimatter reading, but it is explicitly confined to Open R&D and not claimed."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:32:17.828Z"
 }

@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Block is listed in section sec:q-gl-weil-bound-stability ('Geometric stability via the Weil bound'); a Weil-RH proof sketch is squarely in scope there."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Castelnuovo-Severi / Hodge-index route to |alpha_i|^2=q is the standard Weil RH-for-curves argument; functional equation forcing equality is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Genuine proof sketch with substantive mathematical steps (diagonal correspondence, CS inequality, functional equation); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No back-fitting; the argument derives the eigenvalue bound from classical intersection theory, not from any QOU calibration target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Claim 'unconditional theorem, not a conjecture, established by Weil' is accurate for RH over finite fields; no overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Pure geometry-over-finite-field proof; no parameters, no calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Each step follows: CS inequality -> |alpha_i|^2 <= q; functional equation pairs eigenvalues -> >= q; together equality."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Proof block has no Lean sibling of its own; the formalization lives on hasse-weil-bound.lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Attributes the bound to Weil's finite-field algebraic-geometry work; correct provenance."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "B (Bring's curve), Fr_q^n, Delta, ample H, P(t) all standard and contextually clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No numerical match / witness; pure exact algebraic-geometry argument."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No physics claim in this proof sketch."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No compute/witness backing this proof block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3efb279d2977",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Sound classical proof sketch of RH-for-curves; strongest objection is only that the CS inequality is stated in paraphrase form rather than the exact (D.D)<=2 d1 d2 shape, which is acceptable for a sketch."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:32:17.828Z"
 }

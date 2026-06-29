@@ -1048,7 +1048,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Statement is the bare claim |alpha_i|=q^{1/2}; the only non-claim line is the AGENTS.md 7c base-ring annotation, which is a technical scope note, not physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "In sec:q-gl-weil-bound-stability ('Geometric stability via the Weil bound'); Frobenius eigenvalue bound for Bring's curve is the section's subject."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Genuinely archimedean/geometric content (|alpha_i| as complex absolute value, q^{1/2}); .md explicitly declares the R-specialisation per 7c. ℝ/ℂ is appropriate here."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Lean proof uses Real.sqrt/rpow legitimately — the statement is itself archimedean (eigenvalue norm = q^{1/2}), not an algebraic identity proved by archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": ".md '|alpha_i|=q^{1/2} for i=1..8' matches Lean 'Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1/2)' over (i : Fin 8); quantifier and conclusion align."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Signature hasse_weil_bound (Z) (i : Fin 8) : Complex.abs ... = rpow q (1/2) is the genuine statement; not weakened to True and no injected axiom in the conclusion."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Final proof combines three lemmas (functional eq, CS bound, norm-sq equality) via rw/congr; it is not a projection of a structure field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Conclusion is a substantive equality of reals, not True / x=x; proof uses hypotheses h_cs, h_fe."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No False/contradictory hypothesis; q_pos and abs.nonneg are true facts used to extract the square root."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Both binders Z and i are used (passed to the three lemmas); intermediate h_cs/h_fe feed eigenvalue_norm_sq."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No decide/native_decide; closes via rw [Real.sqrt_eq_rpow], Real.sqrt_sq, congr, exact h_sq."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Bring's curve has genus 4, so 2g=8 Frobenius eigenvalues with |alpha_i|=q^{1/2}; the count and bound are correct (Weil RH)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Substantive theorem; Lean proof is non-vacuous though it rests on three honestly-labeled external axioms."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No QOU calibration involved; classical result, no back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "The Lean is explicitly axiom-backed (Castelnuovo-Severi etc. as cited axioms), not claimed as a from-scratch formalization; honest."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No free parameters; q is the field size, not a tunable constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "|alpha|^2=q with abs>=0 and q>0 gives |alpha|=sqrt(q)=q^{1/2}; the rw chain is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Lean conclusion matches the .md claim element-by-element; no weaker/vacuous substitute."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "weil1948/rosen2002/milne2013 genuinely contain the functional equation and Castelnuovo-Severi / RH-for-curves results invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "'8 fundamental eigenvalues' is pinned by Fin 8 = 2g for genus-4 Bring's curve; LocalQZetaFunction supplies q and eigenvalues."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Exact algebraic statement; no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No witness/compute backing; pure Lean + cited axioms."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0b3f6ce31922",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Correct, cleanly-formalized statement; strongest objection is that the substance rests on three external axioms, but each is properly cited (Weil/Rosen/Milne) and standard."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:32:17.828Z"
 }

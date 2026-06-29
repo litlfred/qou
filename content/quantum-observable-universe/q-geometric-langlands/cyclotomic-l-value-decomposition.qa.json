@@ -1050,7 +1050,455 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "minor",
+        "evidence": "cyclotomic-l-value-decomposition.md:10: \"This bridges the graded-Mikusinski framework directly to classical analytic number theory.\"",
+        "notes": "Interpretive 'bridges' aside sits inside the proposition statement region; minor — belongs in a follow-on remark, but it is a single motivational sentence, not heavy interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Listed in 'Reconnected orphan blocks (Phase 7)'; an explicit reconnection section, so placement is by design."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Content is genuinely archimedean analytic number theory (Dirichlet L-values, pi^3, polylogs); ℝ/ℂ is the correct regime, not a generic-ring claim mis-specialised."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Proof of beta(3)=pi^3/32 is intrinsically archimedean (special values of polylogs); archimedean machinery is appropriate, not a wall violation."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "major",
+        "evidence": "cyclotomic-l-value-decomposition.lean:32: \"theorem beta_3_from_jonquiere : True := by ... trivial\"",
+        "notes": "The lean.ref resolves sibling-first (AGENTS.md 0a) to a ': True := trivial' stub; the .md proves beta(3)=pi^3/32. A substantive library proof exists (QOU/BraidKnot/CyclotomicLValueDecomposition.lean), but the shadowing stub means the resolved Lean does not express the .md claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "major",
+        "evidence": "cyclotomic-l-value-decomposition.lean:32: \"theorem beta_3_from_jonquiere : True := by\"",
+        "notes": "Resolved sibling weakens the statement to True (a shadowing stub per 0a). Downgraded fail->warn because the genuine ring proof exists in the library file and the lean.ref decl name matches; defect is the shadow stub, not a missing proof."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Sibling is ': True := trivial' — not a structure-field projection; the (separate) self-assuming pattern does not apply."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "critical",
+        "evidence": "cyclotomic-l-value-decomposition.lean:32: \"theorem beta_3_from_jonquiere : True := by\"",
+        "notes": "The sibling .lean (resolved first per 0a) concludes ': True := trivial', a tautology discharging vacuously — exactly the no-shadowing-stub violation; align the file to the real library decl so the ref resolves to it."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No False premise; the (vacuous) sibling proof has no hypotheses at all."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Sibling theorem has no hypotheses to use; (the real library decl also takes none)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Closed by 'trivial', not decide/native_decide; though vacuous, it is flagged under proof-no-trivial-true rather than decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "beta(3)=Im Li_3(i)=pi^3/32 is a correct classical identity; Jonquiere at (n,K)=(3,4) gives (K-1)(K-2)pi^3/(3K^3)=6pi^3/192=pi^3/32. Math is sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "major",
+        "evidence": "cyclotomic-l-value-decomposition.lean:32: \"theorem beta_3_from_jonquiere : True := by\"",
+        "notes": "The .md is non-vacuous, but the resolved Lean sibling is a content-free ': True := trivial' shadow stub; the formalization advertised by lean.ref is vacuous as resolved."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Classical L-value identity derived from Theorem A (Jonquiere); no QOU calibration target back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "minor",
+        "evidence": "cyclotomic-l-value-decomposition.md:98: \"Classical L-value identities are theorems of our framework\"",
+        "notes": "The library Lean proves only the arithmetic core (imLi3ZetaPredicted 4 = beta3); the full chain beta(3)=L(chi_4,3)=Im Li_3(i)=pi^3/32 is conditional-on-class (steps 2-4 behind LValueDecomposition). The 'theorems of our framework' phrasing slightly overstates what is formalized, though the .md proof itself is honest about Theorem A."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No free parameters; all quantities (K, n, characters) are fixed integers / standard objects."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Jonquiere instance -> Im Li_3(i)=pi^3/32 -> equals beta(3) via the Dirichlet series; each step follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "major",
+        "evidence": "cyclotomic-l-value-decomposition.lean:32: \"theorem beta_3_from_jonquiere : True := by\"",
+        "notes": "Resolved Lean (': True') is vacuously-implied vs the substantive .md claim; classic narrative/Lean divergence caused by the shadowing stub."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "bloch2000 / zagier1986 are appropriate for polylog / L-value special-value identities."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "chi_4, beta function, Cl_n, Gauss sum G(chi) all defined or standard; parity condition chi(-1)=(-1)^n stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "The 50-dps witness gives an exact (residual 0) match of an exact closed form pi^3/32, not a fragile fit inside noise."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Pure number theory; no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Compute (cl_n_l_value_decomposition.py) + witness cited; the asserted value pi^3/32 ~ 0.968946146259... is the correct exact constant, matching prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "major",
+        "evidence": "cyclotomic-l-value-decomposition.lean:32: \"theorem beta_3_from_jonquiere : True := by\"",
+        "notes": "Mathematically correct, well-cited proposition; the one substantive defect is the ': True := trivial' sibling stub shadowing the real library proof (0a no-shadowing-stub rule) — fix by aligning the sibling to the library decl."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:32:17.828Z"
 }

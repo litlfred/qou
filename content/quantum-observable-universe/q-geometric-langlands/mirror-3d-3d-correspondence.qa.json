@@ -892,7 +892,261 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Listed in 'Reconnected orphan blocks (Phase 7)'; a 3d-3d / Langlands-flavored duality conjecture is acceptable in this reconnect section."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "States the Dimofte-Gaiotto-Gukov 3d-3d correspondence correctly (T[M^3], S^3_b partition function = state-integral from Phi_q); framed as conjecture."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Conjecture block; Lean carrier class is the accepted axiom-class witness, and the .md proposes a substantive (if unverified) identification."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Identification of the h^4=-3/4 coefficient with a 4-loop gauge-theory contribution is proposed as Open R&D item 2 (a cross-check to be done), not asserted as a derived match."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Tagged research-grade / long-horizon; the gauge-theory realisation is presented as a conjecture with explicit open items, not a proved correspondence."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "h^4=-3/4 is a named Markov-trace coefficient with canonical-chain origin (appears in Borromean trace computes), not an off-menu free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "The correspondence-table mapping and the Volume-Conjecture-as-leading-order remark are internally consistent; gaps are flagged as open."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Lean is a conjecture carrier class (sorry=conjecture); no provable claim being silently weakened."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Dimofte-Gaiotto-Gukov 2014, Terashima-Yamazaki 2011, Neumann-Zagier 1985 are the correct references for the 3d-3d correspondence and state-integral invariants."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "M^3, T[M^3], S^3_b, Phi_q, B_3 complement all standard / cross-linked; the squashing parameter b is named."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No numerical fit asserted; the h^4=-3/4 matching is an open cross-check, not a claimed fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.md:21: \"m_p = m_e * VolDensity(B_3, q_0) | partition function Z_{T[B_3]}(q_0)\"",
+        "notes": "The illustrative m_p = m_e*VolDensity(B_3) row uses the deprecated-for-absolute-mass VolDensity form (canonical-mass guardrail routes absolute nucleon mass through canonical_mass facade). Minor: it is an illustrative correspondence entry in a research-grade conjecture, not a mass compute, but the form is the guardrailed one."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "No witness/compute backing this conjecture."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2eb588650167",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:32:17.828Z",
+        "reviewed_sha": "1fe5c476ab52fc8318cec96afdfbc8671e4631a0",
+        "notes": "Honest long-horizon research-grade conjecture; strongest objection is the VolDensity mass row (deprecated absolute-mass form) used illustratively, which is a minor framing nit, not a content defect."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:32:17.828Z"
 }
