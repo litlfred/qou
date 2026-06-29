@@ -165,13 +165,30 @@ theorem residPoly_natDegree_lt (β : Fin k → ℚ) (hk : 0 < k) :
       ring
   exact lt_of_le_of_lt hle (by omega)
 
-/-- **(Vieta, residual leading coefficient)** `R.coeff (k−1) = C(k,2) − ∑ⱼ βⱼ`.  Computed from the
-degree-`(k−1)` and degree-`(k−2)` coefficients of `G` and `Q` via Vieta and the `βⱼ ↦ βⱼ+1` shift of
-the second elementary symmetric polynomial. -/
+/-- **(Vieta, residual leading coefficient)** `R.coeff (k−1) = C(k,2) − ∑ⱼ βⱼ`.
+The **last** open step of the β-Lagrange identity; everything else in this file and `SYTLagrangeInterp`
+is sorry-free.
+
+**Exact remaining proof.**  With `coeff_X_mul`/`coeff_C_mul` (as in `residPoly_natDegree_lt`),
+`R.coeff (k−1) = shiftPoly.coeff (k−2) − nodePoly.coeff (k−2) + k · nodePoly.coeff (k−1)` for `k ≥ 2`
+(and `k = 1` is the direct computation `R = −C(β₀)`, `R.coeff 0 = −β₀ = C(1,2) − β₀`).  By Vieta
+(`prod_X_sub_C_coeff` at index `k−2`), `nodePoly.coeff (k−2) = e₂(β)` and
+`shiftPoly.coeff (k−2) = e₂(β+1)`.  Since `shiftPoly = nodePoly.comp (X − 1)`, the `e₂` **cancels**:
+`e₂(β+1) − e₂(β) = (k−1)·(∑β) + C(k,2)` (the `βⱼ ↦ βⱼ+1` shift of the 2nd elementary symmetric
+polynomial), and with `nodePoly.coeff (k−1) = −∑β` the result is `(k−1)∑β + C(k,2) − k∑β = C(k,2) − ∑β`.
+
+The single missing lemma is the `e₂` shift, equivalently Newton `2·e₂ = (∑β)² − ∑β²` reducing it to the
+trivial `∑(βⱼ+1) = ∑β + k` and `∑(βⱼ+1)² = ∑β² + 2∑β + k`.  **Blocked in this build:** the pinned
+Mathlib supplies no olean for `RingTheory.MvPolynomial.NewtonIdentities`, `Algebra.Polynomial.Taylor`,
+or `Algebra.Polynomial.HasseDeriv` (verified absent), and there is no Mathlib *source* to build them; so
+the `e₂` shift must be proved from the raw `Multiset.powersetCard 2` definition of `esymm` — a
+self-contained `Multiset` step deferred to a follow-up.
+
+Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001 (Vieta + the `e₂(β+1)` shift;
+§I.2). -/
 theorem residPoly_coeff (β : Fin k → ℚ) (hk : 0 < k) :
     (residPoly β).coeff (k - 1) = (k.choose 2 : ℚ) - ∑ j, β j := by
-  -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001 (Vieta + esymm shift
-  -- e₂(β+1) = e₂(β) + (k−1)e₁(β) + C(k,2); §I.2).
+  -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
   sorry
 
 /-- Removing the `j = i` factor from `∏ⱼ(βᵢ − 1 − βⱼ)` flips a sign (that factor is `βᵢ−1−βᵢ = −1`). -/
