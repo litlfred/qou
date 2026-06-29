@@ -26,7 +26,7 @@ relation and far commutativity.
    $i \le p$ (the formalised `beta_decay_locality`), the higher
    generators cancelling exactly — the 1-jet variation.
 
-The Lean sibling proves `generatorVolume_nonneg`, `energy_additive` and
+The Lean sibling proves `energy_additive` and
 `beta_decay_locality` outright and assembles
 `generator_volume_decomposition_prop`, whose closing step is deferred via
 `sorry` (`-- Ref: [manuscript]`). $\square$
