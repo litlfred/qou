@@ -17,7 +17,8 @@ Pure `ℕ`/`ℚ` combinatorics; nothing archimedean; no fit.
 namespace QOU.Mathlib.SYTBetaLagrange
 
 open Finset
-open QOU.BraidKnot.IdentityI (prodHooks colLen)
+open QOU.BraidKnot.IdentityI (prodHooks colLen sz)
+open QOU.Mathlib.SYTVandermonde (vWeight)
 
 /-- `betaNatVal (l.set c v)` agrees with `l` off index `c`. -/
 theorem betaNatVal_set_ne (l : List ℕ) (c v : ℕ) {i : ℕ} (hi : i ≠ c) :
@@ -341,8 +342,135 @@ theorem prodHooks_removeCorner (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (
   rw [QOU.Mathlib.SYTEnum.removeCorner]
   exact prodHooks_filter_zero_sorted _ (QOU.Mathlib.SYTEnum.sorted_set_corner l c hl hcorner)
 
+/-! ## (R4) Assembly: sum over corners ⇒ β-Lagrange ⇒ `sz l`, closing `gnwHookIdentity` -/
+
+/-- Reindex a product over `univ.erase i` (Fin) as a product over `(range k).erase i.val` (ℕ),
+through `Fin.val`. -/
+theorem prod_betaNat_erase (l : List ℕ) (i : Fin l.length) (h : ℚ → ℚ) :
+    ∏ j ∈ univ.erase i, h (betaVec l j)
+      = ∏ j ∈ (Finset.range l.length).erase (i : ℕ), h (betaNat l j) := by
+  refine Finset.prod_bij' (fun (a : Fin l.length) _ => (a : ℕ))
+    (fun (b : ℕ) (hb : b ∈ (Finset.range l.length).erase (i : ℕ)) =>
+      (⟨b, Finset.mem_range.mp (Finset.mem_of_mem_erase hb)⟩ : Fin l.length))
+    ?_ ?_ ?_ ?_ ?_
+  · intro a ha
+    rw [Finset.mem_erase] at ha ⊢
+    exact ⟨fun hc => ha.1 (Fin.val_injective hc), Finset.mem_range.mpr a.2⟩
+  · intro b hb
+    rw [Finset.mem_erase] at hb ⊢
+    refine ⟨?_, Finset.mem_univ _⟩
+    intro hc; exact hb.1 (by rw [← hc])
+  · intro a _; rfl
+  · intro b _; rfl
+  · intro a _; rfl
+
+/-- **β-Lagrange in `range`/`betaNat` form, evaluating to `sz l`.** The `Fin`-indexed `betaLagrange`
+identity reindexed to a `range` sum over the ℕ-valued `betaNat`, with the ratio split as
+(numerator product)/(denominator product = `vWeight`). -/
+theorem betaLagrange_range (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hk : 0 < l.length) :
+    ∑ c ∈ range l.length,
+        betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+          / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j))
+      = (sz l : ℚ) := by
+  have hbl2 : (∑ i, betaVec l i * (∏ j ∈ univ.erase i, (betaVec l i - 1 - betaVec l j))
+      / vWeight (betaVec l) i) = (sz l : ℚ) := by
+    rw [betaLagrange (betaVec l) (betaVec_injective l hl) hk, sum_betaVec_sub]
+  rw [← hbl2, ← Fin.sum_univ_eq_sum_range
+    (fun c => betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+      / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j))) l.length]
+  apply Finset.sum_congr rfl
+  intro i _
+  unfold vWeight
+  rw [prod_betaNat_erase l i (fun x => betaVec l i - 1 - x),
+      prod_betaNat_erase l i (fun x => betaVec l i - x)]
+  rfl
+
+/-- `((List.range k).map g).sum = ∑ c ∈ Finset.range k, g c`. -/
+theorem list_range_sum (k : ℕ) (g : ℕ → ℚ) :
+    ((List.range k).map g).sum = ∑ c ∈ Finset.range k, g c := by
+  induction k with
+  | zero => simp
+  | succ n ih =>
+    rw [List.range_succ, List.map_append, List.sum_append, Finset.sum_range_succ, ih]
+    simp
+
+/-- List filter→map→sum equals the `if`-guarded map→sum over the whole list. -/
+theorem filter_map_sum (L : List ℕ) (p : ℕ → Prop) [DecidablePred p] (f : ℕ → ℚ) :
+    ((L.filter (fun x => decide (p x))).map f).sum
+      = (L.map (fun x => if p x then f x else 0)).sum := by
+  induction L with
+  | nil => rfl
+  | cons a t ih =>
+    rw [List.map_cons, List.sum_cons]
+    by_cases h : p a
+    · rw [List.filter_cons_of_pos (by simpa using h), List.map_cons, List.sum_cons, ih, if_pos h]
+    · rw [List.filter_cons_of_neg (by simpa using h), ih, if_neg h, zero_add]
+
+/-- **(R4) The per-corner term in `range`/`betaNat` form.** For a corner `c`, the hook ratio equals the
+β-Lagrange summand (R3 to drop the filter, R2 for the ratio, `prod_div_distrib` to split). -/
+theorem gnw_corner_term (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    (prodHooks l : ℚ) / (prodHooks (QOU.Mathlib.SYTEnum.removeCorner l c) : ℚ)
+      = betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+          / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j)) := by
+  rw [prodHooks_removeCorner l hl c hcorner, prodHooks_ratio l hl c hcorner,
+      Finset.prod_div_distrib]
+  ring
+
+/-- **(R4) Non-corner rows vanish.** For `c < k` that is *not* a corner, the consecutive rows are equal
+(`l[c]=l[c+1]`), so `β_c − 1 = β_{c+1}` and the `j = c+1` numerator factor is `0`. -/
+theorem gnw_noncorner_vanish (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
+    (c : ℕ) (hc : c < l.length) (hnc : ¬ QOU.Mathlib.SYTEnum.IsCorner l c) :
+    betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+      / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j)) = 0 := by
+  have hnlt : ¬ (l.getD (c + 1) 0 < l.getD c 0) := fun h => hnc ⟨hc, h⟩
+  have hge : l.getD c 0 ≤ l.getD (c + 1) 0 := le_of_not_lt hnlt
+  have hle : l.getD (c + 1) 0 ≤ l.getD c 0 :=
+    QOU.BraidKnot.IdentityI.getD_antitone l hl (Nat.le_succ c)
+  have heq : l.getD (c + 1) 0 = l.getD c 0 := le_antisymm hle hge
+  have hcpos : 0 < l.getD c 0 := by
+    rw [QOU.Mathlib.SYTEnum.getD_eq_getElem' l c hc]
+    exact hpos _ (List.getElem_mem hc)
+  have hclast : c + 1 < l.length := by
+    rcases Nat.lt_or_ge (c + 1) l.length with h | h
+    · exact h
+    · exfalso
+      have h0 : l.getD (c + 1) 0 = 0 := by
+        rw [List.getD_eq_getElem?_getD, List.getElem?_eq_none h]; rfl
+      omega
+  have hbv : betaNatVal l c = betaNatVal l (c + 1) + 1 := by
+    unfold betaNatVal; omega
+  have hfac : betaNat l c - 1 - betaNat l (c + 1) = 0 := by
+    rw [betaNat_eq l c, betaNat_eq l (c + 1), hbv]; push_cast; ring
+  have hmem : (c + 1) ∈ (range l.length).erase c :=
+    Finset.mem_erase.mpr ⟨Nat.succ_ne_self c, Finset.mem_range.mpr hclast⟩
+  rw [Finset.prod_eq_zero hmem hfac, mul_zero, zero_div]
+
+/-- **(R4 / `gnwHookIdentity`) The GNW hook-summation identity, sorry-free.** Bridges the corner
+list-sum to a `range` Finset sum (`filter_map_sum` + `list_range_sum`), replaces each term by the
+β-Lagrange summand (corner: `gnw_corner_term`; non-corner: vanishes via `gnw_noncorner_vanish`), and
+evaluates via `betaLagrange_range = sz l`. -/
+theorem gnwHookIdentity_proof (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
+    (hne : l ≠ []) :
+    ((QOU.Mathlib.SYTEnum.corners l).map
+        (fun c => (prodHooks l : ℚ) / (prodHooks (QOU.Mathlib.SYTEnum.removeCorner l c) : ℚ))).sum
+      = (sz l : ℚ) := by
+  have hk : 0 < l.length := by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons _ _ => simp
+  rw [show QOU.Mathlib.SYTEnum.corners l
+        = (List.range l.length).filter (fun i => decide (QOU.Mathlib.SYTEnum.IsCorner l i)) from rfl,
+      filter_map_sum, list_range_sum, ← betaLagrange_range l hl hk]
+  apply Finset.sum_congr rfl
+  intro c hc
+  rw [Finset.mem_range] at hc
+  by_cases hcorner : QOU.Mathlib.SYTEnum.IsCorner l c
+  · rw [if_pos hcorner]; exact gnw_corner_term l hl c hcorner
+  · rw [if_neg hcorner]; exact (gnw_noncorner_vanish l hl hpos c hc hcorner).symm
+
 /-!
-## Remaining design — the gap ratio, row-drop, and assembly (next pieces)
+## Remaining design — the gap ratio, row-drop, and assembly (DONE)
 
 All scaffolding above is sorry-free.  The remaining route to `gnwHookIdentity`:
 
@@ -367,8 +495,10 @@ Split `erase c = range c ∪ Ioo c k`.
 (`prodHooks_filter_zero_sorted`, via the trailing-zero lemma `prodHooks_append_zero`), so
 `prodHooks(removeCorner l c) = prodHooks(l.set c (l[c]−1))` and (R2) applies directly.
 
-**(R4) Assembly** — sum over `corners l`; non-corner rows vanish (`β_c−1 = β_{c+1}`); bridge
-`corners ↔ Fin k` and apply `betaLagrange (betaVec l)` + `sum_betaVec_sub` (`= sz l`).
+**(R4) Assembly** — DONE (`gnwHookIdentity_proof`). Sum over `corners l`; non-corner rows vanish
+(`β_c−1 = β_{c+1}`, `gnw_noncorner_vanish`); bridge the corner list-sum to a `range` Finset sum
+(`filter_map_sum` + `list_range_sum` + `prod_betaNat_erase`) and apply `betaLagrange (betaVec l)` +
+`sum_betaVec_sub` (`= sz l`) via `betaLagrange_range`. This discharges `SYTHookGNW.gnwHookIdentity`.
 -/
 
 end QOU.Mathlib.SYTBetaLagrange

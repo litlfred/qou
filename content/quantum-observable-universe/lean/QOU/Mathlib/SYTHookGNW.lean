@@ -1,6 +1,7 @@
 import QOU.Mathlib.SYTHookFormulaGeneral
 import QOU.Mathlib.SYTListCorner
 import QOU.Mathlib.SYTCornerListConnection
+import QOU.Mathlib.SYTHookGNWRatio
 
 /-!
 # QOU.Mathlib.SYTHookGNW — corner-recursion route for the general HLF (GNW)
@@ -58,26 +59,22 @@ hook-product ratios over the removable corners gives the cell count: `∑_{corne
 This is the partial-fractions / telescoping core of the Greene–Nijenhuis–Wilf proof — the rational
 identity that turns the count recursion into the hook-length formula.
 
-**Closure route (scoped).**  Via the *already-proved* β-number identity (i)
+**Closure (PROVED, sorry-free).**  Via the *already-proved* β-number identity (i)
 (`SYTHookFormulaGeneral.prodHooks_mul_betaProdGap`: `∏h_λ · betaProdGap = betaFactProd`,
 `β_i = λ_i + (k−1−i)`), each ratio rewrites as a β-ratio, reducing this to the **β-Lagrange identity**
 
     ∑_i β_i · ∏_{j≠i} (β_i − 1 − β_j) / (β_i − β_j) = (∑_i β_i) − C(k,2)   ( = sz l ),
 
 a self-contained `ℚ` partial-fractions identity over the distinct `β_i` (non-corner `i` drop out because
-`β_i − 1 = β_{i+1}` there).  Two hurdles remain: (a) proving that β-Lagrange identity — it is a
-divided-difference / residue statement `∑_i P(β_i)/Q'(β_i)` for `P(x)=x·Q(x−1)`, `Q=∏(x−β_j)`, and
-Mathlib's `LinearAlgebra.Lagrange` interpolation is **not in the build cache** (needs building or a
-hand-rolled proof); (b) the **row-drop corner** (last row `λ_{k−1}=1` vanishes, `k → k−1`, shifting every
-`β`) needs separate handling from the middle corners.  A fresh multi-session effort. -/
+`β_i − 1 = β_{i+1}` there).  The β-Lagrange identity is proved in `SYTBetaLagrange.betaLagrange` via the
+Vandermonde/`det_vandermonde` keystone (`SYTVandermonde.interp_leadingCoeff`); the per-corner hook ratio
+(`SYTHookGNWRatio.prodHooks_ratio`/`prodHooks_removeCorner`, incl. the row-drop corner) and the assembly
+over corners (`SYTHookGNWRatio.gnwHookIdentity_proof`) discharge this identity outright. -/
 theorem gnwHookIdentity (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
     (hne : l ≠ []) :
     ((corners l).map (fun c => (prodHooks l : ℚ) / (prodHooks (removeCorner l c) : ℚ))).sum
-      = (sz l : ℚ) := by
-  -- Ref: [sagan2001] https://doi.org/10.1007/978-1-4757-6804-6 (Greene–Nijenhuis–Wilf hook walk; the
-  -- corner hook-ratio sum equals n — §3.x, partial fractions).  Reduces via β-identity (i) to the
-  -- β-Lagrange identity ∑_i β_i ∏_{j≠i}(β_i−1−β_j)/(β_i−β_j) = ∑β − C(k,2) (see docstring).
-  sorry
+      = (sz l : ℚ) :=
+  QOU.Mathlib.SYTBetaLagrange.gnwHookIdentity_proof l hl hpos hne
 
 /-! ## The sorry-free reduction: corner recursion + GNW hook identity ⟹ HLF
 
