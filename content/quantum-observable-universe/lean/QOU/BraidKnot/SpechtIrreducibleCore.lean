@@ -13,47 +13,51 @@ cores via the `M^μ` bilinear form (James's submodule theorem):
 * `specht_form_nondegenerate` — `S^μ ⊓ (S^μ)ᗮ = ⊥` in char 0 (the Gram form).
 
 This module is an **independent** further reduction of the **dichotomy** core. It
-imports `SpechtIrreducible` and `SpechtClassification` read-only and modifies
-neither. It builds the **column antisymmetrizer** endomorphism `κ_t` on `M^μ`
-sorry-free, isolates the irreducible James content as a single
-**sign-lemma** core, and derives the full dichotomy `sorry`-free from it:
+imports `SpechtIrreducible`, `SpechtClassification` and `SpechtTriangularCore`
+read-only and modifies none. It builds the **column antisymmetrizer** `κ_t`
+sorry-free, proves James's sign lemma `κ_t u = ⟨u, e_t⟩·e_t` **sorry-free apart
+from a single elementary combinatorial existence lemma** (`sdr_core`), and derives
+the full dichotomy from it.
 
-> `james_kernel_core` — for every tableau `t` and every `u ∈ M^μ`,
-> `κ_t u = ⟨u, e_t⟩ · e_t`. This is James's §4 sign lemma: applying the column
-> antisymmetrizer to any tabloid yields `0` (when two same-row labels share a
-> column of `t`) or `±e_t`; assembled over the tabloid basis this is the stated
-> scalar identity. It is the genuine combinatorial heart of the submodule
-> theorem.
+## The remaining core is now elementary
 
-Everything around it is `sorry`-free: the antisymmetrizer is a finite signed sum
-of the representation operators (`κ_t u ∈ U` whenever `U` is `S_n`-stable and
-`u ∈ U`), the `S^μ ≤ U` half is the orbit argument (`e_t ∈ U` ⟹ all `e_s ∈ U` via
-transitivity of `S_n` on tableaux + `rep_polytabloid`), and the `U ≤ (S^μ)ᗮ` half
-is the kernel-of-the-flipped-form argument.
+The James sign lemma `james_kernel_core` is no longer an opaque
+representation-theory `sorry`. It is reduced — sorry-free — to one
+self-contained finite-combinatorics fact:
 
-The **char-0 Gram** core (`specht_form_nondegenerate`) is reused verbatim from
-`SpechtIrreducible`. So this module reduces brick-2 irreducibility from *two* deep
-cores to **one** deep core (`james_kernel_core`) plus the already-stated Gram core.
-The **diagonal** of that Gram core is discharged sorry-free here
-(`polytabloid_self_pairing` : `⟨e_t,e_t⟩ = |C_t|`, hence `e_t ∉ (S^μ)ᗮ` in char 0).
+> `sdr_core` — if a tabloid `d` is *not* in the column-orbit of `t`, then some
+> transposition lies in `C_t` and fixes `d` (equivalently: two labels share a row
+> of `d` and a column of `t`). A system-of-distinct-representatives / Hall-type
+> existence statement, with **no** representation theory.
+
+From `sdr_core` the sign lemma follows sorry-free: the per-tabloid identity
+`combId` splits into the column-orbit case (a sign-preserving reindex against
+`polytabloid_coeff`) and the off-orbit case (a sign-reversing involution
+`π ↦ π·τ` whose summand cancels, `Finset.sum_involution`), and `k`-linearity in
+`u` (`james_kernel_core'` ⇒ `james_kernel_core`) lifts it to all of `M^μ`.
 
 ## sorry-free ↔ stubbed map
 
 | Declaration | Status |
 |---|---|
-| `colAntisym`, `colAntisym_mem` (the antisymmetrizer + stability) | **sorry-free** |
-| `tableau_exists_smul` (transitivity of `S_n` on tableaux) | **sorry-free** |
-| `james_kernel_core` (James §4 sign lemma) | **STUB** `sorry` — `-- Ref: [james1984representation]` §4 |
-| `specht_submodule_dichotomy'` (verbatim dichotomy target) | **sorry-free MODULO `james_kernel_core`** |
-| `bilinM_apply_of`, `mk_smul_eq_iff`, `polytabloid_coeff` (Gram plumbing) | **sorry-free** |
-| `polytabloid_self_pairing` (`⟨e_t,e_t⟩ = |C_t|`) | **sorry-free** |
-| `polytabloid_not_mem_spechtPerp` (`e_t ∉ (S^μ)ᗮ`, char 0) | **sorry-free** |
-| `specht_isSimple'` (the reduction) | **sorry-free MODULO `james_kernel_core` + `specht_form_nondegenerate`** |
+| `colAntisym`, `colAntisym_mem`, `tableau_exists_smul` | **sorry-free** |
+| `bilinM_apply_of`, `bilinM_single_left`, `mk_smul_eq_iff`, `polytabloid_coeff`, `poly_kcast` | **sorry-free** |
+| `sdr_core` (the SDR / Hall existence — the elementary residual core) | **STUB** `sorry` — `-- Ref: [james1984representation]` §4 / `[sagan2001]` §2.4 |
+| `combId`, `colAntisym_zero`, `colAntisym_add`, `james_kernel_core'` | **sorry-free MODULO `sdr_core`** |
+| `james_kernel_core` (James §4 sign lemma) | **sorry-free MODULO `sdr_core`** |
+| `specht_submodule_dichotomy'` (verbatim dichotomy target) | **sorry-free MODULO `sdr_core`** |
+| `polytabloid_self_pairing` (`⟨e_t,e_t⟩ = |C_t|`), `polytabloid_not_mem_spechtPerp` | **sorry-free** |
+| `specht_isSimple'` (the reduction) | **sorry-free MODULO `sdr_core` + `specht_form_nondegenerate`** |
+
+The **char-0 Gram** core (`specht_form_nondegenerate`) is reused verbatim from
+`SpechtIrreducible`; its **diagonal** is discharged sorry-free here
+(`polytabloid_self_pairing`).
 
 ## References
 - [james1984representation] James, *The Representation Theory of the Symmetric
   Groups* — §4 (the sign lemma), §8 (the submodule theorem, the Gram form).
-- [sagan2001] Sagan, *The Symmetric Group*, §2.4 (κ_t and the bilinear form).
+- [sagan2001] Sagan, *The Symmetric Group*, §2.4 (κ_t, the bilinear form, the sign
+  lemma / SDR existence).
 -/
 
 open scoped BigOperators
@@ -99,82 +103,19 @@ theorem tableau_exists_smul (s t : Tableau μ) :
   refine ⟨(s.trans t.symm).symm, Equiv.ext fun l => ?_⟩
   rw [Tableau.smul_apply, Equiv.symm_symm, Equiv.trans_apply, Equiv.apply_symm_apply]
 
-/-! ## 3. The single James sign-lemma core (one cited `sorry`) -/
-
-omit [CharZero k] in
-/-- **STUB — James's §4 sign lemma (the irreducible dichotomy core).** Applying
-the column antisymmetrizer `κ_t` to any `u ∈ M^μ` yields a scalar multiple of the
-polytabloid `e_t`, with scalar the form pairing `⟨u, e_t⟩`:
-`κ_t u = ⟨u, e_t⟩ · e_t`.
-
-On a tabloid `{s}`, `κ_t {s}` is `0` (when two labels of the same row of `s` lie
-in one column of `t`) or `± e_t` (when `{s}` is in the column-orbit of `{t}`);
-the orthonormality of tabloids gives the scalar as `⟨{s}, e_t⟩`, and the identity
-extends `k`-linearly. The single combinatorial heart of the submodule theorem. -/
-theorem james_kernel_core (t : Tableau μ) (u : Mtab (k := k) μ) :
-    colAntisym (k := k) t u
-      = bilinM (k := k) μ u (Specht.polytabloid (k := k) t) • Specht.polytabloid (k := k) t := by
-  -- Ref: [james1984representation] §4 (the sign lemma: κ_t u = ⟨u,e_t⟩ e_t). See
-  -- also [sagan2001] §2.4. The irreducible combinatorial core of James's
-  -- submodule theorem, with the basis assembly bundled in.
-  sorry
-
-/-! ## 4. The dichotomy (sorry-free modulo the single core) -/
-
-omit [CharZero k] in
-/-- **James's submodule theorem (the dichotomy), reduced.** Verbatim restatement
-of `SpechtIrreducible.specht_submodule_dichotomy`, proved **sorry-free modulo**
-the single core `james_kernel_core`. -/
-theorem specht_submodule_dichotomy' (μ : YoungDiagram)
-    (U : Submodule k (Mtab (k := k) μ))
-    (hU : ∀ σ : Perm (Fin (nOf μ)), ∀ x ∈ U, Mtab.rep μ σ x ∈ U) :
-    Specht.SpechtSubmodule (k := k) μ ≤ U ∨ U ≤ spechtPerp (k := k) μ := by
-  classical
-  by_cases h : ∃ u ∈ U, ∃ t : Tableau μ,
-      bilinM (k := k) μ u (Specht.polytabloid (k := k) t) ≠ 0
-  · -- some `u ∈ U` is not orthogonal to some `e_t` ⟹ `e_t ∈ U` ⟹ `S^μ ≤ U`
-    left
-    obtain ⟨u, huU, t, hbil⟩ := h
-    have hmem : colAntisym (k := k) t u ∈ U := colAntisym_mem hU t huU
-    rw [james_kernel_core] at hmem
-    have het : Specht.polytabloid (k := k) t ∈ U := by
-      have := U.smul_mem (bilinM (k := k) μ u (Specht.polytabloid (k := k) t))⁻¹ hmem
-      rwa [smul_smul, inv_mul_cancel₀ hbil, one_smul] at this
-    rw [Specht.SpechtSubmodule, Submodule.span_le]
-    rintro _ ⟨s, rfl⟩
-    obtain ⟨σ, hσ⟩ := tableau_exists_smul s t
-    have hrep : Specht.polytabloid (k := k) s
-        = Mtab.rep μ σ (Specht.polytabloid (k := k) t) := by
-      rw [SpechtClassification.rep_polytabloid, hσ]
-    rw [SetLike.mem_coe, hrep]
-    exact hU σ _ het
-  · -- no `u ∈ U` pairs with any `e_t` ⟹ `U ≤ (S^μ)ᗮ`
-    right
-    push_neg at h
-    intro x hx
-    rw [mem_spechtPerp_iff]
-    intro y hy
-    have hsub : Specht.SpechtSubmodule (k := k) μ
-        ≤ LinearMap.ker ((bilinM (k := k) μ).flip x) := by
-      rw [Specht.SpechtSubmodule, Submodule.span_le]
-      rintro _ ⟨t, rfl⟩
-      rw [SetLike.mem_coe, LinearMap.mem_ker, LinearMap.flip_apply, bilinM_symm]
-      exact h x hx t
-    have := hsub hy
-    rwa [LinearMap.mem_ker, LinearMap.flip_apply] at this
-
-/-! ## 5. A sorry-free advance on the char-0 Gram core: the diagonal self-pairing
-
-The full Gram core `specht_form_nondegenerate` (`S^μ ⊓ (S^μ)ᗮ = ⊥`) needs the
-Gram **determinant** (a product of hook lengths, nonzero in char 0). Its
-**diagonal** is provable sorry-free here: `⟨e_t, e_t⟩ = |C_t|`, so `e_t ∉ (S^μ)ᗮ`
-in char 0 — the easy "form is not identically zero on `S^μ`" half. -/
+/-! ## 3. Form / column-orbit plumbing (sorry-free) -/
 
 omit [CharZero k] in
 /-- `⟨f, ⟦d⟧⟩ = f ⟦d⟧`: pairing a vector with a basis tabloid reads its coefficient. -/
 theorem bilinM_apply_of (f : Mtab (k := k) μ) (d : Tableau μ) :
     bilinM (k := k) μ f (Mtab.of (k := k) d) = f (Tabloid.mk d) := by
   rw [bilinM_symm, bilinM_apply, Mtab.of, Finsupp.sum_single_index (by rw [zero_mul]), one_mul]
+
+omit [CharZero k] in
+/-- `⟨single d c, g⟩ = c · g d`. -/
+theorem bilinM_single_left (d : Tabloid μ) (c : k) (g : Mtab (k := k) μ) :
+    bilinM (k := k) μ (Finsupp.single d c) g = c * g d := by
+  rw [bilinM_apply, Finsupp.sum_single_index (by rw [zero_mul])]
 
 omit [CharZero k] in
 /-- For `π, ρ ∈ C_t`, `⟦π•t⟧ = ⟦ρ•t⟧ ↔ π = ρ` (column-orbit injectivity; the
@@ -218,6 +159,188 @@ theorem polytabloid_coeff (t : Tableau μ) (ρ : colStab t) :
   rw [Finset.sum_ite_eq' Finset.univ ρ, if_pos (Finset.mem_univ _)]
 
 omit [CharZero k] in
+/-- `e_t` written with `k`-cast signs and `single`-of-tabloid form. -/
+theorem poly_kcast (t : Tableau μ) :
+    Specht.polytabloid (k := k) t
+      = ∑ ν : colStab t, ((Equiv.Perm.sign (ν : Perm (Fin (nOf μ))) : ℤ) : k) •
+          Finsupp.single ((ν : Perm (Fin (nOf μ))) • (Tabloid.mk t)) (1 : k) := by
+  rw [Specht.polytabloid]
+  apply Finset.sum_congr rfl
+  intro ν _
+  rw [← Int.cast_smul_eq_zsmul k, Mtab.of, ← Tabloid.smul_mk]
+
+/-! ## 4. James's sign lemma — sorry-free modulo the single SDR core -/
+
+omit [CharZero k] in
+/-- **STUB — the SDR / Hall existence (the elementary residual core).** If tabloid
+`d` is not in the column-orbit of `t`, then two labels in a common row of `d` share
+a column of `t` — i.e. there is a transposition in `C_t` fixing `d`. A
+system-of-distinct-representatives / Hall-type existence statement, with no
+representation theory; this is the single remaining sorry of the James sign lemma. -/
+theorem sdr_core (t : Tableau μ) (d : Tabloid μ)
+    (hd : ∀ σ : colStab t, (σ : Perm (Fin (nOf μ))) • (Tabloid.mk t) ≠ d) :
+    ∃ a b : Fin (nOf μ), a ≠ b ∧ Equiv.swap a b ∈ colStab t ∧ (Equiv.swap a b) • d = d := by
+  -- Ref: [james1984representation] §4 (the sign lemma's SDR step) / [sagan2001] §2.4.
+  -- Mathlib has no Hall's-marriage theorem and QOU no column-length tableau infra,
+  -- so this finite-combinatorics existence is the irreducible residual core.
+  sorry
+
+omit [CharZero k] in
+/-- The per-tabloid identity `Σ_{π∈C_t} sgn(π)·{π·d} = (e_t d)·e_t`, reduced
+sorry-free-modulo-`sdr_core`. -/
+theorem combId (t : Tableau μ) (d : Tabloid μ) :
+    (∑ π : colStab t, ((Equiv.Perm.sign (π : Perm (Fin (nOf μ))) : ℤ) : k) •
+        Finsupp.single ((π : Perm (Fin (nOf μ))) • d) (1 : k))
+      = (Specht.polytabloid (k := k) t d) • Specht.polytabloid (k := k) t := by
+  classical
+  by_cases hA : ∃ σ : colStab t, (σ : Perm (Fin (nOf μ))) • (Tabloid.mk t) = d
+  · -- Case A: `d = σ·{t}` for some `σ ∈ C_t`
+    obtain ⟨σ, rfl⟩ := hA
+    have hcoeff : Specht.polytabloid (k := k) t ((σ : Perm (Fin (nOf μ))) • (Tabloid.mk t))
+        = ((Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) : k) := by
+      rw [Tabloid.smul_mk, polytabloid_coeff]
+    rw [hcoeff, poly_kcast, Finset.smul_sum]
+    rw [← Equiv.sum_comp (Equiv.mulRight σ⁻¹)
+      (fun i : colStab t => ((Equiv.Perm.sign (i : Perm (Fin (nOf μ))) : ℤ) : k) •
+        Finsupp.single ((i : Perm (Fin (nOf μ))) • ((σ : Perm (Fin (nOf μ))) • Tabloid.mk t)) (1 : k))]
+    apply Finset.sum_congr rfl
+    intro i _
+    rw [show (Equiv.mulRight σ⁻¹) i = i * σ⁻¹ from rfl]
+    have hidx : ((i * σ⁻¹ : colStab t) : Perm (Fin (nOf μ))) •
+          ((σ : Perm (Fin (nOf μ))) • Tabloid.mk t)
+        = (i : Perm (Fin (nOf μ))) • Tabloid.mk t := by
+      rw [Subgroup.coe_mul, Subgroup.coe_inv, mul_smul, inv_smul_smul]
+    have hsgn : ((Equiv.Perm.sign ((i * σ⁻¹ : colStab t) : Perm (Fin (nOf μ))) : ℤ) : k)
+        = ((Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) : k) *
+            ((Equiv.Perm.sign (i : Perm (Fin (nOf μ))) : ℤ) : k) := by
+      rw [Subgroup.coe_mul, Subgroup.coe_inv, map_mul, map_inv]
+      rcases Int.units_eq_one_or (Equiv.Perm.sign (σ : Perm (Fin (nOf μ)))) with hσ | hσ <;>
+        rcases Int.units_eq_one_or (Equiv.Perm.sign (i : Perm (Fin (nOf μ)))) with hi | hi <;>
+        rw [hσ, hi] <;> norm_num
+    rw [hidx, hsgn, smul_smul]
+  · -- Case B: `d` not in the column orbit ⟹ both sides vanish
+    push_neg at hA
+    have hcoeff : Specht.polytabloid (k := k) t d = 0 := by
+      rw [poly_kcast, Finsupp.finset_sum_apply]
+      apply Finset.sum_eq_zero
+      intro ν _
+      rw [Finsupp.smul_apply, Finsupp.single_apply, if_neg (hA ν), smul_zero]
+    rw [hcoeff, zero_smul]
+    obtain ⟨a, b, hab, hmem, hfix⟩ := sdr_core t d hA
+    set τ : colStab t := ⟨Equiv.swap a b, hmem⟩ with hτ
+    refine Finset.sum_involution (fun π _ => π * τ) ?_ ?_ (fun π _ => Finset.mem_univ _) ?_
+    · intro π _
+      have hsign : (Equiv.Perm.sign ((π * τ : colStab t) : Perm (Fin (nOf μ))) : ℤ)
+          = - (Equiv.Perm.sign (π : Perm (Fin (nOf μ))) : ℤ) := by
+        rw [Subgroup.coe_mul, map_mul]
+        show ((Equiv.Perm.sign (π : Perm (Fin (nOf μ))) * Equiv.Perm.sign (Equiv.swap a b)) : ℤ) = _
+        rw [Equiv.Perm.sign_swap hab]
+        push_cast
+        ring
+      have hsmul : ((π * τ : colStab t) : Perm (Fin (nOf μ))) • d = (π : Perm (Fin (nOf μ))) • d := by
+        rw [Subgroup.coe_mul, mul_smul, hτ]
+        show (π : Perm (Fin (nOf μ))) • ((Equiv.swap a b) • d) = _
+        rw [hfix]
+      rw [hsmul, hsign]
+      rw [Int.cast_neg, neg_smul, add_neg_cancel]
+    · intro π _ _ hcontra
+      have hτ1 : τ = 1 := mul_left_cancel (a := π) (by rw [mul_one]; exact hcontra)
+      have hswap : Equiv.swap a b = 1 := by
+        have h : ((τ : colStab t) : Perm (Fin (nOf μ))) = 1 := by
+          rw [hτ1]; exact OneMemClass.coe_one _
+        simpa [hτ] using h
+      exact hab (Equiv.swap_eq_one_iff.mp hswap)
+    · intro π _
+      ext1
+      rw [Subgroup.coe_mul, Subgroup.coe_mul, hτ]
+      show (π : Perm (Fin (nOf μ))) * (Equiv.swap a b) * (Equiv.swap a b) = (π : Perm (Fin (nOf μ)))
+      rw [mul_assoc, Equiv.swap_mul_self, mul_one]
+
+omit [CharZero k] in
+theorem colAntisym_zero (t : Tableau μ) : colAntisym (k := k) t 0 = 0 := by
+  simp only [colAntisym, map_zero, smul_zero, Finset.sum_const_zero]
+
+omit [CharZero k] in
+theorem colAntisym_add (t : Tableau μ) (u v : Mtab (k := k) μ) :
+    colAntisym (k := k) t (u + v) = colAntisym (k := k) t u + colAntisym (k := k) t v := by
+  simp only [colAntisym, map_add, smul_add, Finset.sum_add_distrib]
+
+omit [CharZero k] in
+/-- **James's sign lemma `κ_t u = ⟨u, e_t⟩ · e_t`** — `k`-linear-in-`u` lift of the
+per-tabloid identity `combId`. Sorry-free modulo `sdr_core`. -/
+theorem james_kernel_core (t : Tableau μ) (u : Mtab (k := k) μ) :
+    colAntisym (k := k) t u
+      = bilinM (k := k) μ u (Specht.polytabloid (k := k) t) • Specht.polytabloid (k := k) t := by
+  refine Finsupp.induction_linear u ?_ ?_ ?_
+  · rw [colAntisym_zero, map_zero, LinearMap.zero_apply, zero_smul]
+  · intro u v hu hv
+    rw [colAntisym_add, hu, hv, ← add_smul, ← LinearMap.add_apply, ← map_add]
+  · intro d c
+    rw [bilinM_single_left]
+    simp only [colAntisym, Mtab.rep_single]
+    have hterm : ∀ π : colStab t,
+        ((Equiv.Perm.sign (π : Perm (Fin (nOf μ))) : ℤ)) •
+            Finsupp.single ((π : Perm (Fin (nOf μ))) • d) c
+          = c • (((Equiv.Perm.sign (π : Perm (Fin (nOf μ))) : ℤ) : k) •
+              Finsupp.single ((π : Perm (Fin (nOf μ))) • d) (1 : k)) := by
+      intro π
+      rw [show Finsupp.single ((π : Perm (Fin (nOf μ))) • d) c
+            = c • Finsupp.single ((π : Perm (Fin (nOf μ))) • d) (1 : k) by
+            rw [Finsupp.smul_single, smul_eq_mul, mul_one],
+        ← Int.cast_smul_eq_zsmul k, smul_comm]
+    rw [Finset.sum_congr rfl (fun π _ => hterm π), ← Finset.smul_sum, combId, smul_smul]
+
+/-! ## 5. The dichotomy (sorry-free modulo `sdr_core`) -/
+
+omit [CharZero k] in
+/-- **James's submodule theorem (the dichotomy), reduced.** Verbatim restatement
+of `SpechtIrreducible.specht_submodule_dichotomy`, proved **sorry-free modulo**
+the single elementary core `sdr_core` (via `james_kernel_core`). -/
+theorem specht_submodule_dichotomy' (μ : YoungDiagram)
+    (U : Submodule k (Mtab (k := k) μ))
+    (hU : ∀ σ : Perm (Fin (nOf μ)), ∀ x ∈ U, Mtab.rep μ σ x ∈ U) :
+    Specht.SpechtSubmodule (k := k) μ ≤ U ∨ U ≤ spechtPerp (k := k) μ := by
+  classical
+  by_cases h : ∃ u ∈ U, ∃ t : Tableau μ,
+      bilinM (k := k) μ u (Specht.polytabloid (k := k) t) ≠ 0
+  · -- some `u ∈ U` is not orthogonal to some `e_t` ⟹ `e_t ∈ U` ⟹ `S^μ ≤ U`
+    left
+    obtain ⟨u, huU, t, hbil⟩ := h
+    have hmem : colAntisym (k := k) t u ∈ U := colAntisym_mem hU t huU
+    rw [james_kernel_core] at hmem
+    have het : Specht.polytabloid (k := k) t ∈ U := by
+      have := U.smul_mem (bilinM (k := k) μ u (Specht.polytabloid (k := k) t))⁻¹ hmem
+      rwa [smul_smul, inv_mul_cancel₀ hbil, one_smul] at this
+    rw [Specht.SpechtSubmodule, Submodule.span_le]
+    rintro _ ⟨s, rfl⟩
+    obtain ⟨σ, hσ⟩ := tableau_exists_smul s t
+    have hrep : Specht.polytabloid (k := k) s
+        = Mtab.rep μ σ (Specht.polytabloid (k := k) t) := by
+      rw [SpechtClassification.rep_polytabloid, hσ]
+    rw [SetLike.mem_coe, hrep]
+    exact hU σ _ het
+  · -- no `u ∈ U` pairs with any `e_t` ⟹ `U ≤ (S^μ)ᗮ`
+    right
+    push_neg at h
+    intro x hx
+    rw [mem_spechtPerp_iff]
+    intro y hy
+    have hsub : Specht.SpechtSubmodule (k := k) μ
+        ≤ LinearMap.ker ((bilinM (k := k) μ).flip x) := by
+      rw [Specht.SpechtSubmodule, Submodule.span_le]
+      rintro _ ⟨t, rfl⟩
+      rw [SetLike.mem_coe, LinearMap.mem_ker, LinearMap.flip_apply, bilinM_symm]
+      exact h x hx t
+    have := hsub hy
+    rwa [LinearMap.mem_ker, LinearMap.flip_apply] at this
+
+/-! ## 6. The diagonal of the char-0 Gram core (sorry-free)
+
+The full Gram core `specht_form_nondegenerate` needs the Gram **determinant**
+(a product of hook lengths, nonzero in char 0). Its **diagonal** is sorry-free
+here: `⟨e_t, e_t⟩ = |C_t|`, so `e_t ∉ (S^μ)ᗮ` in char 0. -/
+
+omit [CharZero k] in
 /-- **Diagonal self-pairing `⟨e_t, e_t⟩ = |C_t|`** (sorry-free). Expanding the
 second polytabloid, each cross term reads off a coefficient `sgn ρ` (the others
 vanish by column-orbit injectivity) and `(sgn ρ)² = 1`, leaving `|C_t|` ones. -/
@@ -251,11 +374,11 @@ theorem polytabloid_not_mem_spechtPerp (t : Tableau μ) :
   rw [polytabloid_self_pairing]
   exact_mod_cast (Nat.cast_ne_zero (R := k)).mpr Fintype.card_ne_zero
 
-/-! ## 6. The reduction: `specht_isSimple` from the dichotomy core + the Gram core -/
+/-! ## 7. The reduction: `specht_isSimple` from the dichotomy core + the Gram core -/
 
-/-- **Irreducibility of `S^μ` (char 0)** — reduced `sorry`-free to
-`james_kernel_core` (the dichotomy) and `SpechtIrreducible.specht_form_nondegenerate`
-(the char-0 Gram core). Reproduces the brick-2 statement
+/-- **Irreducibility of `S^μ` (char 0)** — reduced `sorry`-free to `sdr_core`
+(through the dichotomy) and `SpechtIrreducible.specht_form_nondegenerate` (the
+char-0 Gram core). Reproduces the brick-2 statement
 `QOU.BraidKnot.Specht.specht_isSimple` verbatim. -/
 theorem specht_isSimple' (μ : YoungDiagram) (hμ : μ.card ≠ 0) :
     ∀ N : Submodule k (Mtab (k := k) μ),
