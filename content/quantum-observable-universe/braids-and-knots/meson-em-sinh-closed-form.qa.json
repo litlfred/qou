@@ -1048,7 +1048,446 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proposition statement is the bare four-way rational-function equality; m_K^2/m_pi^2 significance and Bring reading are in separate later sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Substrate hbar_q rational identity feeding the meson EM correction; braids-and-knots substrate algebra scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Statement is 'Let R be a field and q in R^x' — generic ring; the halving-by-2 needs char != 2 but that is field-generic, not archimedean. No Real/ordering leak in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "meson-em-sinh-closed-form.lean:40: \"noncomputable def hbarQ (q : ℝ) : ℝ\" — sibling Lean fixes the base ring to ℝ for an identity the .md states over a generic field",
+        "notes": "The .md statement is generic-field (q in R^x), but the sibling .lean specialises to ℝ. The Lean docstring justifies it (division by literal 2 => char != 2) and labels it archimedean-side. ring/field_simp would work over any field of char != 2, so ℝ is stronger than needed; the proof itself is algebraic (no linarith/IVT). Minor over-specialisation, not an archimedean-proof-of-algebraic-claim violation."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": ".md states the 4-way equality; .lean meson_EM_closed_form + _inverse + _planck cover the chain (1+hbar-hbar^2/2 = (3q^2-1)/(2q^2) = (3-q^-2)/2 = 1+(1-q^-2)/2). Equivalent modulo the R->ℝ specialisation noted under wall-side-proof."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean signature states the genuine rational identity with hq:q!=0; no weakening, no axiom, sorry-free."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proof is field_simp;ring on a concrete identity, not a class-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Goal is a non-trivial rational-function equality, not `: True` or x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Only premise is q!=0; no False/contradiction."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "hq:q!=0 is required by field_simp to clear the q^2 denominator; used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Uses field_simp;ring, not decide/trivial; genuine algebraic discharge."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Verified the 4-way identity symbolically at several q with hbar_q=(q-1)/q; exact. The m_K^2/m_pi^2=[3]_q[4]_q+(alpha/pi)(3q^2-1)/(2q^2) form is presented as the closure, consistent with the qcg + force-carrier blocks."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Genuine identity with substantive physical packaging; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Identity is parameter-free algebra; the m_K^2/m_pi^2 assembly cites independently-derived pieces ([3][4], alpha_em=q[9][10]), not back-fit to the meson ratio."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "meson-em-sinh-closed-form.md:30: \"Both pieces are framework-derived (no fitted integers)\"",
+        "notes": "The block itself flags the truncation order hbar_q - hbar_q^2/2 as needing 'a rigorous first-principles derivation' (md:54), i.e. the SHAPE of the correction is not yet derived. 'No fitted integers' is true of the coefficients but the choice of truncating at hbar_q^2/2 is the open piece; calling the whole m_K^2/m_pi^2 'a single closed-form derived expression' slightly outruns that caveat. Honestly caveated in the same block, so warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "meson-em-sinh-closed-form.md:53: \"modulo a rigorous first-principles derivation of the $\\hbar_q - \\hbar_q^2/2$ truncation order\"",
+        "notes": "The truncation order (which/how many terms of 1+log(1+hbar_q) to keep) is an implicit modelling choice not yet pinned by the canonical chain — a potential hidden DOF in the meson EM correction. The block discloses it as open, so it is not concealed; flagged as warn for visibility."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The closed form follows by direct algebra; the structural (Bring 3-generation) reading is offered as interpretation, not a logical inference step in the proof."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The sibling .lean proves exactly the algebraic identity that is the proposition's statement; the physical significance prose has no Lean counterpart and claims none."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "kassel1995 (Quantum Groups) is an appropriate q-integer/Hecke reference for the algebraic identity."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "hbar_q=(q-1)/q defined; field with q in R^x. The '3=number of saturating-genus generation torus knots' reading defers to the force-carrier Diophantine block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "This block states the exact identity and the symbolic m_K^2/m_pi^2 form; the numerical residual/substrate evaluation is deferred to the 2026-05-28 audit, so no fragile fit is asserted here."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "(alpha_em/pi) EM correction on m_K^2/m_pi^2 with a Casimir self-energy halving is dimensionally/physically reasonable as a correction term."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Identity reproducible by ring; numerical claims explicitly delegated to the cited audit doc, not asserted with a stale witness here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d2cde9a38c7e",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "notes": "Exact identity is sound; the surrounding 'fully derived m_K^2/m_pi^2 closure' framing rests on an admittedly-open truncation-order derivation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:02:06.060Z"
 }

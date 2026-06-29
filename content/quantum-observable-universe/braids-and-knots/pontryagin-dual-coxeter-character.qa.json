@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Theorem statement is the bare Pontryagin self-duality claim on S_n^ab; the Discussion/Rationale/Diagnostics are separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Coxeter-group abelianisation duality; sits with the braids-and-knots Hecke/Coxeter material and the duality tracker."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Statement is finite-group/ZMod 2 algebra; C^x appears only as character target, no archimedean ordering/Real leak."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean proof uses Equiv.Perm.sign, ZMod 2 fin_cases/omega — finite algebra, no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "pontryagin-dual-coxeter-character.lean:98: theorem proves (char determined by value at 1) AND (sign(swap)= -1), not Hom(Z/2,C^x) ~= Z/2",
+        "notes": "Lean proves the two structural witnesses (self-duality-via-value-at-1, surjectivity-via-swap); the narrative's full 'canonically isomorphic ... via sign' embedding into C^x is acknowledged in the docstring as 'standard but tangential', not formalised. Faithful in spirit but the Lean is a witness-pair, not the literal iso; degenerate block, downgraded to warn."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean theorem signature states genuine ZMod 2 / sign facts; not weakened to True, no injected axiom; sorry-free."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The class PontryaginDualCoxeterCharacter.holds is discharged by the independently-proved structural theorem, not by projecting a field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Goals are real (phi=psi from value at 1; sign(swap 0 1)=-1), not `: True`; class field carries the genuine conjunction, not a bare True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Hypothesis 2<=n is satisfiable; no False/contradiction premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "hn:2<=n is used to construct Fin n elements 0,1 (the by omega proofs) in signHom_surjective_witness; not dead."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No `decide`/`trivial` masking a substantive goal; fin_cases+simp and omega discharge concrete finite facts legitimately."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "S_n^ab=Z/2 (n>=2), Z/2 self-Pontryagin-dual, and swap 0 1 odd are all true; theorem correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Block explicitly self-describes as 'degenerate / low priority' yielding 'no new information beyond sign', but the Lean facts are genuine, not `: True`; honest."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Standard finite-abelian duality; no smuggled target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Block under-claims rather than over-claims — explicitly says the closure 'carries no new framework derivation'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Parameter-independent (h^0) abelian duality; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Composition (S_n^ab=Z/2; Z/2 self-dual => S_n^ab self-dual) is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "pontryagin-dual-coxeter-character.lean:34: \"The full embedding step is standard but tangential\"",
+        "notes": "Lean discharges the two structural witnesses, not the literal C^x iso the .md headline asserts; the embedding is left informal. Minor given the block is explicitly degenerate."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Pontryagin 1934 / Hewitt-Ross 1979 are the correct sources for LCA Pontryagin duality."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "S_n^ab, character group, sign hom all standard and stated; n>=2 fixed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Pure finite-group algebra, no numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No physical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Sorry-free Lean; reproducible by building the module."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2f7b30078bb5",
+          "ts": "3def03d54601",
+          "lean": "3359b4352bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Correct, honestly-degenerate closure of a tracker entry; only quibble is the unformalised C^x embedding."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:02:06.060Z"
 }

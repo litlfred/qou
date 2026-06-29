@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean Braid/Link types, Markov closure, Hopf link — core braids-and-knots material."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "closure of sigma^2 = Hopf link and J_Hopf(1)=-2 are standard (Alexander-Markov; Jones); 2-strand claims correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "2-strand theorems closed by rfl on explicit defs are honest (not :True); remark is interpretive infrastructure."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "c_3=-2 chain is a knot-theory composition, not back-fitted to a calibration target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Block is explicit that the n-strand (B_3) case is OPEN; only the 2-strand chain is claimed FULLY LEAN-PROVED, which matches the rfl-closed theorems."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No free parameter introduced; the c_3 identification is a topological value, not a fitted coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The 5-step B_3 outline is flagged as open (Step 3 sub-braid extraction unformalised), not asserted as completed; no false 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Quoted Lean theorem names (closure2_at_two_crossings_eq_hopf etc.) match the 2-strand claims; remark honestly separates proved vs open."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "jones1985 cited for J_Hopf=-2; Alexander-Markov 1923/1936 named inline for closure; attributions standard."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Braid2:=Z, closure2, jonesAtOne all explicitly defined; terms unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Topological/combinatorial content, no numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No physical claim; pure Lean infrastructure remark."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean theorems named and rfl-closed; reproducible by building the stated decls."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4d2efab733fe",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Honest, well-scoped infrastructure remark; proved part is genuinely proved, open part clearly marked."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:02:06.060Z"
 }

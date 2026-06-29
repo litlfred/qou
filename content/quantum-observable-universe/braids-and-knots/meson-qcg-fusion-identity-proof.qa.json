@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proof of a q-integer ring identity ([3][4]=[2]+[4]+[6]); squarely braids-and-knots / Hecke combinatorics."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Verified the cleared-denominator identity (q^3-q^-3)(q^4-q^-4)=(q-q^-1)((q^2-q^-2)+(q^4-q^-4)+(q^6-q^-6)) symbolically at several q; holds."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Genuine ring-identity proof closed by `ring`; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Pure algebraic expansion; no back-fitted target or smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proof claims only the ring identity it discharges; no physics overreach in this proof block."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No free parameters; identity holds for all q in any field."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Each step (clear denominators, expand, ring) follows from the previous."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Narrative cites `ring` in the Lean formalisation; the identity is exactly a ring fact, faithful."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proof block carries no cites; the cleared-denominator computation needs none."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "[n]_q defined inline; q in a field with q!=0; unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Exact symbolic identity, no numerical match involved."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Pure algebra; no physical claim in the proof body."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No witness backing; identity re-derivable by hand/ring."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0b6e20331d43",
+          "ts": "21df9ebcd97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Sound elementary proof of a true q-CG identity; no objections."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:02:06.060Z"
 }

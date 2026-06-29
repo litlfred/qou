@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "frobenius-lepton-meson-bridge.md:10: \"*The meson sector's sole mass-carrying partition is the **entangled** lepton spectrum.*\"",
+        "notes": "The proposition statement (the V_(2,1)↓=V_(2)⊕V_(1,1) branching) is bare, but the italicised second sentence appended to the statement is interpretive (entanglement/mass-carrying) — belongs in the following remark sections, not the statement. Minor."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "H_3↓H_2 branching of the standard rep; braids-and-knots/Hecke representation theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Branching statement is generic representation theory; no archimedean leak in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proof is Pieri/Frobenius-reciprocity combinatorics + the Hoefsmit off-diagonal algebra; Lean is ℕ Artin-Wedderburn + finite branching table by rfl/omega — no archimedean machinery on an algebraic claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "frobenius-lepton-meson-bridge.lean:44: \"def branchingH3H2 ... | 1, 0 => 1 | 1, 1 => 1\" then theorem ...=1 by rfl",
+        "notes": "Lean encodes the branching as a hand-coded table and proves the (2,1)->{(2),(1,1)} multiplicities equal the table's own entries (rfl); it does not derive the Pieri rule. The narrative direct-sum claim is mathematically correct, but the Lean witnesses it by fiat rather than proving it. Faithful at the value level; downgraded to warn."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean theorems state genuine multiplicity/dimension facts; no axiom injection, no weakening to True."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "frobenius-lepton-meson-bridge.lean:53: \"standard_restricts_to_both_leptons := by constructor <;> rfl\"",
+        "notes": "Not the structure-field projection anti-pattern, but adjacent: the 'theorem' restates entries of the same-file `def branchingH3H2` by rfl, so the rep-theoretic content (that these ARE the Pieri multiplicities) is asserted in the def, not proved. frobenius_reciprocity_standard merely aliases standard_restricts_to_both_leptons. Mild."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Goals are concrete equalities (multiplicities, 1^2+2^2+1^2=3!), not `: True`; non-vacuous as stated."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No false premise; Artin-Wedderburn identities and branching entries are true."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "two_unique_sum_of_squares uses ha,hb,hab via omega; branching theorems are hypothesis-free equalities."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Uses rfl/omega/simp on genuine finite facts; no `decide`/`trivial` masking a substantive gap."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "V_(2,1)↓H_2 = V_(2)⊕V_(1,1) is the correct standard-rep branching; b=sqrt(a_rho a_-rho +1) is the Hoefsmit off-diagonal; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Narrative content is substantive; the Lean's rfl-table is data-restatement but the block's claim is non-vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Branching + Frobenius reciprocity are standard; the lepton/meson interpretation is layered on top, not used to justify the branching."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Identifying the entanglement of two channels with the standard rep is interpretive but framed as such; the rep-theory core is correct and not overstated."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "b and a_rho are defined in terms of h,q (no free parameter); no 4th calibration introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The branching => entanglement => C-vs-bar divergence narrative is coherent given the Hoefsmit block structure cited."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "frobenius-lepton-meson-bridge.lean:82: frobenius_reciprocity_standard := standard_restricts_to_both_leptons",
+        "notes": "Lean proves the multiplicity values (by rfl on a hand-coded table) and ℕ dimension identities, but does NOT formalise Frobenius reciprocity or the Hoefsmit binding amplitude b that the .md leans on. Lean is a partial, data-level witness of the narrative; not a contradiction, hence warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "wenzl1988c / jones1987 are Hecke Markov-trace / branching sources; appropriate. (references.ts flags wenzl1988c DOI as a placeholder to resolve, but attribution of the result is correct.)"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "V_(2,1), V_(2), V_(1,1), a_rho, b all defined; 'entangled' is given a precise meaning (off-diagonal b!=0)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Block states no numerical match here; m_mu/m_e and m_K/m_pi are referenced qualitatively, not fitted in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Mapping lepton/meson channels to Hecke irreps is the framework's interpretation; no broken conservation or unit error in this block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean (omega/rfl) is reproducible; no external witness claimed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "78098c458900",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "notes": "Rep-theory core correct; Lean under-formalises (hand-coded branching table by rfl, no Frobenius reciprocity / Hoefsmit b)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:02:06.060Z"
 }

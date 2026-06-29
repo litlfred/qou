@@ -1048,7 +1048,446 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Statement is the bare arg-equality claim plus the squaring identity; half-rotation/decay interpretation is in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Pion braid vs sigma1 sigma2^-1 eigenvalue phases on V_(2,1); braids-and-knots/Hecke scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Statement is an eigenvalue-phase/char-poly claim; the Lean states it over generic [CommRing R] in parameter h — no archimedean leak in the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean proof is linear_combination/ring over generic R (char-poly identity); pion_det_one uses decide on (-1)^6=1, a finite integer fact, not archimedean."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.lean:32: theorem takes `tr = -(h^2+1)` and `det = 1` as hypotheses rather than computing the pion's trace",
+        "notes": "The .md claims arg-equality of the two operators' eigenvalues; the .lean proves the conditional 'if tr=-(h^2+1) and det=1 then lam satisfies the shared char poly'. The equality of traces/determinants (the load-bearing rep-theory input) is assumed, not derived — the formalization-note block honestly says so. Lean witnesses the spectral consequence, not the full statement; warn."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Lean theorem states a genuine conditional char-poly identity; not weakened to True, no axiom; sorry-free."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proof is linear_combination on the hypothesis hlam, not a projection of a field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Goal lam^2+(h^2+1)lam+1=0 is substantive; figure_eight_is_square_of_half:(1)^2=1 and the det lemmas are trivially-true side facts but the main theorem is not."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Hypotheses tr=-(h^2+1), det=1, lam a char-poly root are jointly satisfiable; no False premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "htr, hdet, hlam are all rewritten/used in deriving the target via linear_combination."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "decide on (-1)^6=1 and (-1)^2=1 are genuine finite integer computations (det parity), not masking a substantive structural goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "For 2x2 matrices, equal trace+det => equal char poly => equal eigenvalues (hence equal arg); the squaring 4_1=(s1 s2^-1)^2 is standard. Claim correct given the trace/det inputs."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Statement is a genuine spectral claim; the Lean conditional is non-vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No back-fit; the muon-anchor identity m_mu/m_e=Vol(4_1)/hbar_q^2 is referenced, not re-derived circularly here."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.md:8: \"have identical eigenvalue phases\"",
+        "notes": "The headline asserts identical eigenvalue phases, but this rests on the assumed equality of traces (chi^{(2,1)}(M+)=-(h^2+1)), which the companion note flags as an assumed hypothesis. The claim is conditional on that representation-theoretic input; presenting it as an established identity slightly overstates the formalised content. Honestly disclosed in the sibling note, so warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Only parameter is h (substrate); no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Same det+trace => same char poly is valid for 2x2; the half-rotation/square narrative follows from 4_1=(s1 s2^-1)^2."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.lean:33: \"∀ (tr : R), tr = -(h ^ 2 + 1) → ...\"",
+        "notes": "Lean proves the spectral consequence GIVEN equal trace/det; the .md asserts the operators DO have equal trace/det (and hence equal phases). The trace-equality input is not formalised, so the Lean is conditional relative to the narrative's unconditional claim. Mirrors proof-narrative-lean-equiv; warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "wenzl1988c / jones1987 (Hecke / standard rep) are appropriate for the V_(2,1) representation context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "M_+=(s1 s2)^2 s2 s1, half-figure-eight s1 s2^-1, V_(2,1), arg(lambda) all defined; readable."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Spectral/algebraic claim; no numerical fit in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Pion-as-Reeb-rotation-generator and figure-eight-as-square is a framework interpretation; no broken conservation/units."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Sorry-free Lean conditional identity; reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "00a0a74b30ca",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "notes": "Spectral identity is correct conditional on the assumed trace equality; the Lean formalises the consequence, not the trace input."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:02:06.060Z"
 }

@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:21.220Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Statement is the reconciliation claim + the three labelled identities; the Reconciliation discussion is a clearly-separated section."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:21.550Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Markov locality vs GS non-locality via Wenzl factorisation; braids-and-knots/Hecke scope (issue #649)."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:21.962Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Statement is algebraic (Markov trace over H_n(R,q), GS normal form, product factorisation); z=1/(q^{1/2}+q^{-1/2}) uses a square root but as a formal Markov parameter, no archimedean ordering/IVT in the claim."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:22.372Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Proof is algebraic (Markov property, GS reduction, Wenzl product factorisation); no linarith/IVT/Real machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:56:22.790Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "trace-locality-meets-gs-nonlocality.lean:19: \"theorem HasReconciliation : True := by ... trivial\" (sibling stub)",
+        "notes": "The lean.ref resolves (sibling-first per §0a) to a `: True := trivial` shadow stub. The genuine class HasReconciliation (with real fields markovLocality/vertexVolume_local/productFactorisation, no sorry) lives in lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean. The stub is documented and points there, but the resolved decl does not match the narrative's three-identity claim — it is `: True`. Warn: the real content exists but the ref target is vacuous."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,22 @@
         "reviewed_at": "2026-06-22T02:56:24.522Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The genuine class in the library tree carries the three structural identities as real fields; the proposition's content is captured there (conditional class), not weakened to True except in the disclosed shadow stub."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:56:24.849Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The library class fields encode hypotheses (Markov locality, factorisation) as inputs; there is no theorem projecting a field equal to its own conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,24 @@
         "reviewed_at": "2026-06-22T02:56:25.218Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "major",
+        "evidence": "trace-locality-meets-gs-nonlocality.lean:19: \"theorem HasReconciliation : True := by ... trivial\"",
+        "notes": "The decl the content block's lean.ref points to IS `: True := trivial`. It is a disclosed shadow stub deferring to the real library class, so per the shadow-stub carve-out it is not an audit-dodge; but a reader resolving the ref lands on a vacuous `: True`. The substantive content is the separate `class HasReconciliation` (real fields). Flagging warn because the ref target itself is the trivial-True form rather than the content-bearing class."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +395,22 @@
         "reviewed_at": "2026-06-22T02:56:25.655Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No False/contradictory premise; the class hypotheses are standard Hecke/Markov-trace properties."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +431,22 @@
         "reviewed_at": "2026-06-22T02:56:26.020Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "The reconciliation is packaged as a class (the conditional-class pattern); there is no theorem body consuming hypotheses to assess unused-hypothesis status."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +467,24 @@
         "reviewed_at": "2026-06-22T02:56:26.448Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "trace-locality-meets-gs-nonlocality.lean:19: \"trivial\" discharges `: True`",
+        "notes": "The sibling stub uses `trivial` to close a `: True` goal. It masks no substantive goal in itself (the real content is the library class), but the ref-target proof is `trivial` on a vacuous goal. Disclosed shadow stub; warn for transparency."
       }
     ],
     "da-false-claim": [
@@ -322,6 +504,22 @@
         "notes": "Checked mathematical consistency of the claim '**Proposition (locality–non-locality reconciliation).**' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Markov locality tr(x sigma_n)=z tr(x), GS non-locality, and Wenzl product factorisation tr_M(NF)=prod V_i are correct; the reconciliation (digestion into local coefficients) is sound."
       }
     ],
     "da-vacuous": [
@@ -340,6 +538,24 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:trace-locality-meets-gs-non-locality'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "trace-locality-meets-gs-nonlocality.lean:19: \"theorem HasReconciliation : True := by ... trivial\"",
+        "notes": "The narrative proposition is content-bearing and the library class is genuine, but the lean.ref-resolved decl is a `: True := trivial` stub. Per the shadow-stub policy this is permitted only because the real formalisation exists elsewhere; flagged warn since the cited Lean object is itself vacuous."
       }
     ],
     "da-circular": [
@@ -359,6 +575,22 @@
         "notes": "Traced dependencies ['thm:jones-markov-trace', 'rem:non-commutative-probability-dictionary'] for 'prop:trace-locality-meets-gs-non-locality' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Reconciliation derives locality-after-normalisation from Wenzl factorisation; not self-referential."
       }
     ],
     "da-overclaim": [
@@ -377,6 +609,22 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:trace-locality-meets-gs-non-locality' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Claims only that the two stances are sequential/complementary, bridged by a cited factorisation; authorNote calls it 'provable from existing infrastructure, no new mathematics' — calibrated."
       }
     ],
     "da-hidden-dof": [
@@ -396,6 +644,22 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "z and the vertex volumes V_i(q) are determined by q and the GS coefficients; no free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -415,6 +679,22 @@
         "notes": "Logical transitions in the derivation of '**Proposition (locality–non-locality reconciliation).**' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Step 1 (non-local GS reduction) then Step 2 (local Markov evaluation) is a coherent sequential argument; factorisation bridge is the cited Wenzl result."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -433,6 +713,24 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "minor",
+        "evidence": "trace-locality-meets-gs-nonlocality.lean:19: ref-target is `: True := trivial`, narrative asserts three concrete identities",
+        "notes": "Same root as proof-no-trivial-true: the lean.ref decl is `: True`, weaker than the .md's three identities. The genuine class with matching fields exists in the library tree, so the divergence is a ref-resolution artifact rather than a missing formalisation; warn."
       }
     ],
     "da-citation-misuse": [
@@ -452,6 +750,22 @@
         "notes": "All references and uses ['thm:jones-markov-trace', 'rem:non-commutative-probability-dictionary'] cited in 'prop:trace-locality-meets-gs-non-locality' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "wenzl1988 cited for the product/vertex-volume factorisation, the result the proof leans on; appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -471,6 +785,22 @@
         "notes": "All terms and algebraic structures in 'prop:trace-locality-meets-gs-non-locality' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "NF_GS, vertex volume V_i, Markov parameter z, modified coefficients (a_i,b_i) all defined; H_n(R,q) regime clear."
       }
     ],
     "da-empirical-fragility": [
@@ -490,6 +820,22 @@
         "notes": "The algebraic statements in 'prop:trace-locality-meets-gs-non-locality' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Structural reconciliation, no numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -509,6 +855,22 @@
         "notes": "Physical dimensions and units in 'prop:trace-locality-meets-gs-non-locality' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "No physical observable; algebraic locality statement."
       }
     ],
     "da-reproducibility": [
@@ -528,6 +890,22 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "notes": "Library class builds via lake build QOU; no external witness."
       }
     ],
     "da-referee-verdict": [
@@ -548,6 +926,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T20:02:06.060Z",
+        "reviewed_sha": "fcc3565d2c3f966ebb2b566e123d1339b61da5bf",
+        "severity": "major",
+        "notes": "Proposition is mathematically sound and the genuine library class encodes it; but the content block's lean.ref resolves to a `: True := trivial` shadow stub rather than the content-bearing class."
       }
     ],
     "voice-status-leak": [
@@ -1585,5 +1980,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T20:02:06.060Z"
 }
