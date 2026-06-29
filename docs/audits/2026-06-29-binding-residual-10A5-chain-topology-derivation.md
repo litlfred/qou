@@ -55,9 +55,15 @@ sub-leading term — quantifying it exactly is the open sub-task.
 
 - **Derived (exact, Lean sorry-free):** `2A−1 = nucleons + bonds`; `len(W_free)=11A`;
   `interfaces = bonds = A−1`; `10A−5 = 5·(2A−1)`.
-- **Open (reduced):** the per-unit weight `5`. Candidate structural origin: the **5 A₅-irreps** of
-  the Bring/icosahedral substrate — the same five-fold the **s5-so3 keystone** (`s5bb`) W_λ index
-  runs over. Whether the `5` is a **confinement-SDP** shadow-price / active-channel count is the next
-  probe (owner-asked).
+- **Open (reduced):** the per-unit weight `5`. **SDP-confinement probe (owner-asked):** the nucleus
+  confinement SDP ([`nucleus_operator_selection_sdp.py`](../../computations/nucleus_operator_selection_sdp.py),
+  `min t·x s.t. Σx=|tr_M(W_atom)|, Gx⪰0`) has active set `= {γ}` (size **1**) for every nucleus
+  D/T/³He/⁴He — so the `5` is **not** the active-channel count (that reading is refuted by the witness
+  `nucleus-operator-selection-sdp`). What survives: the confinement operator **basis** is the **6
+  Bring generators** `(γ, σ₀, σ₁, L₊, L₋, e⁻)` (χ(Bring)=−6), of which **5 are strong-sector** (all
+  but the electron `e⁻`). So the candidate origin of the per-unit `5` is the **dimension of the
+  strong-confinement operator space** (6 Bring generators − electron) = the **5 A₅-irreps** of the
+  **s5-so3 keystone** (`s5bb`) W_λ index. The SDP does not *independently* derive the `5` (its active
+  set is 1); it **reduces** it to the keystone's five-fold — the same lock as `{46,4,29}` / `c_k`.
 - **Not claimed:** a closure of binding; a derivation of the `5`; production wiring. Near-match tier,
   no fit, Δ_λ gate untouched.
