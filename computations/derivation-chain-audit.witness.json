@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-06-29T15:34:50.083647+00:00",
-  "commitSha": "647d83d6d39755d2bace98e8f798d73fef1f9794",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-29T15:42:13.916481+00:00",
+  "commitSha": "343097319c75ba744a10fa36f38c9f955350583d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -571,12 +571,10 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2447,6 +2445,7 @@
         "delta-lambda-qlommel-recurrence-precheck.witness.json",
         "delta-lambda-sign-rule-proof.witness.json",
         "delta-lambda-two-factor-phase2.witness.json",
+        "delta-lambda-z-coefficient-and-slope.witness.json",
         "delta-lambda-z4N-phase4.witness.json",
         "delta-n2-lp-dual-extraction.witness.json",
         "delta-q-decoration.witness.json",
