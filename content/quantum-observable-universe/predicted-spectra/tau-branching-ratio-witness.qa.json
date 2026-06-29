@@ -816,7 +816,248 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Nuclear-stability/decay section, tau decay; branching-ratio witness in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Phase-space ratio f(m_e²/m_τ²)/f(m_μ²/m_τ²)≈1.028 verified; PDG 1.025±0.003 correct; product model correctly stated excluded."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Concrete two-model comparison with PDG; substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Factorized model = standard lepton universality; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Reports 0.34% agreement for the factorized model and openly EXCLUDES the product model — no over-claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Both models parameter-free given masses; no hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Model→ratio→PDG comparison is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "remark/witness, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "PDG 2024 values quoted correctly; lepton-universality ref consistent."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Factorized vs product model, |W|², net all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "1.028 vs 1.025 is the standard phase-space ratio, not a fitted near-match; product model honestly excluded."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Phase-space function and lepton universality are standard; correct."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "tau-branching-ratio-witness.md:82: \"recorded in tau-leptonic-decay.witness.json\"",
+        "notes": "The cited witness does not exist at computations/tau-leptonic-decay.witness.json; the only match is computations/_deprecated/tau-leptonic-decay.witness.json (producer deprecated). The prose's NF/trace numbers may be stale relative to the deprecated producer; the .ts carries no live computation field."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d2b7238e0e4d",
+          "ts": "7c075790ea35"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "notes": "Physics is correct and honestly reported (product model excluded). Strongest objection: the backing witness 'tau-leptonic-decay.witness.json' lives only under computations/_deprecated/, so the quoted NF coefficients / traces are not pinned to a live, reproducible producer."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }

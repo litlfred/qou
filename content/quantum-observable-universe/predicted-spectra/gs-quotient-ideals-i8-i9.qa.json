@@ -873,7 +873,279 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Atomic-shells foundations / optimal-NF section; quotient-ideal definitions for the GS normal form are in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Definition is generic-ring combinatorics; Lean is over LaurentPolynomial ℤ (NOT ℝ), correctly substrate-side. The sibling-header line 'specialisation over ℝ' is boilerplate-inaccurate but the actual Lean is generic — minor, not a wall violation."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Absorption rules for I8/I9 are definitional; no falsifiable assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Definition block (structure with predicate fields over ℤ[q,q⁻¹]); not a vacuous proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Naming a construction; no derivation to be circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Modest definitional scope; no claim beyond the absorption rule."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Structural coefficient = transfer-matrix off-diagonal entry; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Definitional; no inferential gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Lean structure GSQuotientIdealsI8I9 mirrors the .md absorbedI8/absorbedI9 + structCoeff; consistent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Only [manuscript] self-ref."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "gs-quotient-ideals-i8-i9.md:1: \"Lean sibling: archimedean specialisation over ℝ\"",
+        "notes": "Header line claims ℝ specialisation but the Lean ground ring is LaurentPolynomial ℤ (R_q); minor inconsistency in the regime annotation. The ideal definitions themselves are clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Definition, no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Combinatorial definition, no physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Definitional; Lean structure present."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a94e3ce2a5ca",
+          "ts": "046f803c4075",
+          "lean": "a0245767c31d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Acceptable definition. Strongest objection: the 'specialisation over ℝ' header line is wrong (Lean is over ℤ[q,q⁻¹]) — a cosmetic annotation fix."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }

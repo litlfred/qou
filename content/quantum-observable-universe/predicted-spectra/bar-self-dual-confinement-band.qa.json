@@ -1046,7 +1046,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Statement is the bare maximal-bar-invariant-band claim with an equivalent reformulation; no physical interpretation injected."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "PL-SW duality / golden-node section; the bar-self-dual confinement band is in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Archimedean chapter; ℝ_{>0} band with golden ratio (Real.sqrt) correctly archimedean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Proof is ℝ ordering/inverse algebra (inv_lt_inv₀, linarith, nlinarith) — appropriate for an archimedean interval statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "bar-self-dual-confinement-band.md:6: \"the maximal connected ι-invariant open subinterval ... that excludes both golden nodes\"",
+        "notes": "Lean bar_self_dual_confinement_band proves bar-invariance + endpoint pairing (qGold·qGoldDual=1) + 1∈ℬ + the iff, which encodes maximality via the bar-paired endpoints, but the literal word 'maximal' is not a standalone Lean theorem. Substantively equivalent; minor."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Lean conjunction faithfully encodes the band's bar-invariance and endpoint structure; no weakening/axiom injection."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "All sub-lemmas derived from sqrt5_sq; no field projecting its own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Goals are genuine ordering/inverse facts (qGold<qGoldDual, bar-invariance iff)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No false premise; 0<q hypotheses genuine."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "bar_invariant_confBand uses hq:0<q throughout the inv-monotonicity steps."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "positivity/linarith/nlinarith with explicit hypotheses; no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Verified: 1/φ²≈0.382, φ²≈2.618, product=1, bar-invariant, 1∈ℬ. Correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Substantive interval/involution result, sorry-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Pure real-analysis; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Maximality follows from endpoint bar-pairing; claim matches the structure."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Band endpoints fixed by golden nodes; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Deconfinement criterion + bar conjugate → band is exact."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Lean proves bar-invariance/endpoints/non-emptiness; the only gap is the literal 'maximal' label, which the endpoint-pairing encodes."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Self-refs to golden-skew-dual-node / deconfinement-threshold consistent."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "ι, ℬ, golden nodes all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Exact real-analysis result; no experimental comparison."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Deconfinement-band reading is a model statement; no physics violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Self-contained Lean, sorry-free."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0a0c9790a296",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Correct, sorry-free real-analysis proposition. Strongest objection: 'maximal' is encoded by endpoint bar-pairing rather than stated as a Lean theorem (minor)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }

@@ -816,7 +816,252 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Atomic-shells per-element section; francium extremal-metal instance is in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "francium-extremal-metal.md:46: \"The lowest ionization energy of any element (E_ion ≈ 4.07 eV)\"",
+        "notes": "Caesium's first IE (≈3.89 eV) is lower than francium's (≈4.07 eV, the value the block itself cites); claiming Fr has 'the lowest IE of any element' contradicts measurement and the block's own relativistic-uptick caveat (l.59-64)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Substantive (if interpretive) extremality argument."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No back-fitting; |R| and shell-depth extremisation argued from the metallic-character proposition."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "francium-extremal-metal.md:47: \"The highest electropositive character\"",
+        "notes": "Same root as the IE issue: Fr is not actually the most electropositive alkali (Cs is, by IE/electronegativity); the block partly hedges with the relativistic-contraction note but the superlative claims overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Filling fraction |R|/2n² is the single invariant; no hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "|R|=1 + maximal n → weakest binding follows from the model's E∝1/n²."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Self-references to noble-gas/crossing-energy blocks; no external citation misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "|R|, filling fraction, residual sub-link defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No precision-fitting; the IE number 4.07 eV is roughly correct, the issue is the 'lowest' superlative not fragility."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "francium-extremal-metal.md:46: \"lowest ionization energy of any element\"",
+        "notes": "A chemistry referee would reject 'Fr has the lowest IE': caesium is the established minimum; relativistic stabilisation actually raises Fr's IE above Cs's (the block elsewhere acknowledges this)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Companion table block referenced; no irreproducible witness claim in prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "354874e4695e",
+          "ts": "baf2a38018c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "notes": "Sound topological framing, but the superlative chemistry claims (Fr 'lowest IE / highest electropositive character of any element') are factually wrong — caesium holds those records — and clash with the block's own relativistic-uptick caveat. Strongest objection: replace 'of any element' with 'among the heaviest alkalis' or cite the Cs/Fr inversion."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }

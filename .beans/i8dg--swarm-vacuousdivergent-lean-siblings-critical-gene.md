@@ -108,3 +108,7 @@ updated_at: 2026-06-29T20:07:58Z
 - quantum-dilogarithm-volume.lean:63-66 (bindingEnergy:=Phi_q/hbar_q^2; theorem =def by unfold;rfl; hyps unused; critical)
 - alpha-em-shift-multiplicative-chain.lean:69 (proves [9,10]=[9,10]; never mentions alpha_EM^-1/q/product)
 - categorical-neutron-exists.lean:39,44 (Nonempty zero-witness on constraint-free record; proof.md admits weak proxy)
+
+## More instances (batch 58, predicted-spectra)
+- hadron-q-self-correction.lean:61,90,122 (substantive inequality theorems commented out + dangling bodies; file does not compile; .md admits structure broken)
+- gauge-conformal-invariance.lean (proves (a*lam^n)/(a*lam^m)=lam^n/lam^m tautology; q_baseline unused; critical)

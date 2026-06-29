@@ -816,7 +816,250 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "EM-completeness/gauge-coupling section; α_EM derivation open problems are in scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Numbers verified (bare 136.823, -0.155% vs CODATA); ruled-out paths labelled scope-limited; no false assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Detailed open-problem catalogue with explicit residuals; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Bare formula not back-fitted; the additive 2/3π is independently derived (photon-ir-zero-mode-bring)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Forms A/B explicitly demoted to conjectures; PSLQ null result reported as 'ruled out at this degree/basis' (correct (a)-scoping)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-open-problems.md:204: \"The next-order term α/(4π) is suggestive of a Schwinger-like 1-loop self-coupling\"",
+        "notes": "The additive +α/(4π) term that closes the residual to 5.7e-8 is acknowledged as not-yet-derived ('suggestive', coefficient open); honestly flagged but it functions as an undisclosed-magnitude fitted summand until derived. Disclosure is honest so warn, not fail."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Each ruled-out path and the Gram-deformation argument follow logically."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "remark block, no Lean sibling claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "suslin1991/bloch2000 Bloch-Suslin pentagon-uniqueness invoked consistently."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Forms A/B, κ, A-framing-correction all defined; R specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-open-problems.md:182: \"+ α/(4π) (self-consistent) | 137.036007 | +5.7×10⁻⁸\"",
+        "notes": "The smoothly-converging additive ladder (-1.55e-3→-4.2e-6→+5.7e-8) is partly driven by the still-open α/(4π) term; block discloses this honestly, but the headline 5.7e-8 match should be read as conditional on an underived coefficient."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "α/(4π) Schwinger-style self-energy analogy is physically standard; no violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Cited witness (alpha-em-correction-derivation-attempts) is a hash-anchor; the derived 2/3π is reproduced by the verified photon-ir witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "927c595a7b81",
+          "ts": "e3841b8feb15"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "notes": "Honest, well-scoped open-problem remark. Strongest objection: the front-runner additive form's 5.7e-8 match leans on the still-underived α/(4π) coefficient — disclosed but easy for a reader to over-read as a closure."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }

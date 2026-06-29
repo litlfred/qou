@@ -1046,7 +1046,441 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Statement gives the F_q(Z,E) enhancement factor and η_q; a labelled Derivation follows. No stray physical-meaning prose in the statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Hadron half-life section; Skein-Coulomb (Fermi-function) enhancement of beta decay in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Statement is the archimedean Fermi function (exp, Γ-phase); Lean explicitly ground-ring ℝ, geometric/analytic. Correct archimedean side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Proof uses Real.exp bounds (add_one_le_exp), appropriate for an analytic ℝ statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "skein-coulomb-enhancement.lean:33: \"sommerfeldParam (q) (lambda_alpha) ... := (q - 1/q) * lambda_alpha * Z / beta_e\"",
+        "notes": "Lean proves the F-function properties (≥1, limit 1, monotone) for a generic η built from a free lambda_alpha; the .md's specific η_q=α_EM(q)·Z/β_e with α_EM=q⁻¹/([9]_q[10]_q) is not what the Lean instantiates. The core enhancement-factor claim matches; the α parametrisation differs (parametric, not contradictory)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Lean signatures (F≥1, limit, monotone, η>0) are faithful refinements of the .md claim; no weakening of the headline F_q form."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "All theorems proved from exp inequalities; no self-projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Goals (F≥1, ε-δ limit, strict monotonicity) are non-trivial analytic facts."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Hypotheses (0<η, 1<q, 0<β_e) genuine and satisfiable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "sommerfeldParam_pos consumes hq, hla, hZ, hb; monotone uses h1,h2; no idle hypothesis."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Analytic tactics (linarith, nlinarith, exp bounds); no decide masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "F_q is the standard Sommerfeld/Fermi factor 2πη/(1-e^{-2πη}); F≥1 and limit→1 correctly proven."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Substantive analytic results, sorry-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Fermi function derived analytically; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Claims the standard enhancement-factor structure; no over-reach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "α_EM cited from em-coupling-projection; β_e physical; no off-menu parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Crossing weights→coherent product→Sommerfeld factor→|ψ(0)|² rate is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Lean proves the F-function properties the narrative needs; the parametric α differs but does not contradict the claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "em-coupling-projection / crossing-asymmetry refs consistent."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "η_q, β_e, α_EM(q), phase shift δ_ℓ defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Analytic factor; no experimental precision match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "The Fermi/Sommerfeld Coulomb correction for beta decay is textbook-correct physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Lean sibling sorry-free; F-function reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e2a3d90cc15a",
+          "ts": "d6cd3da4b0bd",
+          "lean": "91ee8acb2cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Correct, sorry-free derivation of the standard Coulomb enhancement factor. Strongest objection: the Lean's η uses a generic lambda_alpha rather than the narrative's specific α_EM=q⁻¹/([9]_q[10]_q), so the specific η_q is cited not formalised (minor)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }

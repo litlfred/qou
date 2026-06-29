@@ -1046,7 +1046,456 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Proposition states δq=ℓ_net/A²·ℏ_q² with the signed-crossing definition; physical readings are in labelled follow-on paragraphs."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Hadron half-life / Gröbner-NF section; q-self-correction of the substrate by a nucleus is in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "δq formula is generic ring data (ℓ_net integer, ℏ_q); Lean uses LaurentPolynomial ℤ. Substrate-side, appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "hadron-q-self-correction.lean:62: \"deltaQ q₀ p n ≤ 0 := by ... omega ... positivity\"",
+        "notes": "The inequality proofs (deltaQ≤0 etc.) are archimedean ordering statements but are written against R_q=ℤ[q,q⁻¹], which has no usable order — the theorem HEADERS are commented out and only the bodies remain, so the wall-side intent (separate ℝ instantiation) is acknowledged-broken rather than realised."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "hadron-q-self-correction.lean:61: \"-- theorem deltaQ_neg_neutron_rich ... (archimedean; not meaningful over R_q)\"",
+        "notes": "The .md proposition asserts δq<0 for neutron-rich, Δq_eff>0, q_eff>1; the Lean theorems establishing these have their headers COMMENTED OUT (lines 61, 90, 122), leaving dangling proof bodies. Only hadron_q_self_correction (a rfl unfolding of the definition) survives, which proves none of the stated inequalities. The .md (l.128) itself admits 'the Lean file structure is technically broken'."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "hadron-q-self-correction.lean:131: \"theorem hadron_q_self_correction (q₀ : R_q) (p n : ℕ) : deltaQ ... = ... := rfl\"",
+        "notes": "The only live top-level theorem matching the manifest is a definitional rfl restatement of deltaQ; the substantive content of the proposition (the sign/positivity results) is carried by commented-out, non-compiling theorems. The live signature is far weaker than the .md claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No structure-field-projects-own-conclusion pattern; the issue is commented headers, not self-assumption."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "hadron-q-self-correction.lean:132: \":= rfl\"",
+        "notes": "The surviving alias hadron_q_self_correction is a definitional rfl (true by unfolding deltaQ), content-thin relative to the proposition's substantive inequality claims — borderline trivial."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No false/contradictory premise; differentialShift_small uses genuine A≥1, q0 numeric."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "hadron-q-self-correction.lean:122: \"-- theorem qEff_gt_one (q₀ : R_q) (hq : 1 < q₀) ...\"",
+        "notes": "Because the inequality theorem headers are commented out, their would-be hypotheses (hq:0<q₀, 1<q₀, hsmall) are detached from any live declaration; the live rfl alias uses none of the order hypotheses the proposition relies on."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No decide masking; the issue is structural (commented headers), not decide/trivial abuse."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Math is correct: δq=ℓ_net/A²·ℏ_q², Δq_eff=(A-1)/A²·ℏ_q², ³H value 0.00218 reproduces; ℏ_q≈0.099. No false numerical claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "hadron-q-self-correction.lean:131: \"theorem hadron_q_self_correction ... := rfl\"",
+        "notes": "The manifest-matching Lean theorem is a vacuous definitional rfl; the substantive proofs are disabled. Content-thin as the formal backing of the proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "δq derived from crossing counts; not back-fitted to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "hadron-q-self-correction.md:128: \"the Lean file structure is technically broken ... closing this gap is highly plausible\"",
+        "notes": "The .md presents the inequalities as proposition content while the Lean does not establish them; the 'highly plausible to close' framing slightly over-states the current formal status (the headers are non-compiling, not merely a routine gap)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "δq fully determined by p,n,A,q0; A² normalisation justified as linking density; no hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Crossing-imbalance→δq→Δq_eff→Sargent-rule chain is internally consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "hadron-q-self-correction.lean:90: \"-- theorem differentialShift_nonneg ... -- (archimedean; not meaningful over R_q)\"",
+        "notes": "Lean proves strictly less than the .md: the sign/positivity/q_eff>1 claims are in commented-out non-theorems; the live rfl proves only the definitional identity. The narrative's substantive results are not formally backed."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Sargent rule f(Q)∝Q⁵ used correctly; self-refs consistent."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "ℓ_net, ℏ_q, q_eff, Δq_eff all defined; A² normalisation explained."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "|δq/q0|<0.1% magnitudes are model outputs, not fitted experimental matches."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Daughter-with-more-protons→higher q→larger Q→shorter half-life via Sargent is a self-consistent model claim; no conservation/unit violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "³H Δq_eff=0.00218 reproduces by hand; no external witness cited in prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e34b2a0d9e0b",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "notes": "The mathematics is correct but the formalisation is broken: the proposition's substantive inequalities live in COMMENTED-OUT Lean theorem headers (lines 61, 90, 122) with dangling proof bodies, and the only live manifest-matching theorem is a definitional rfl. The .md openly admits the Lean file is 'technically broken'. Strongest objection: the proposition is not formally backed — restore the theorem headers over a proper ℝ instantiation (or restate the proposition's claims as the live content)."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }

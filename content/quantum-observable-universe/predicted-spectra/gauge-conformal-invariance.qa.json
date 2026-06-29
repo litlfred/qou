@@ -1048,7 +1048,460 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Statement is the bare eigenspace-ratio invariance claim; no interpretive prose appended."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "JWST/eigenspace-invariance section; gauge conformal invariance of the transfer-matrix eigenspaces in scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Archimedean section; ℝ eigenvalues (Real.sqrt) appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "gauge-conformal-invariance.lean:31: \"exact mul_div_mul_left (lam_loc^n) (lam_loc^m) hα_ne_zero\"",
+        "notes": "The proof is pure ℝ field cancellation (mul_div_mul_left); the wall side is technically fine, but the proof does not engage the substrate-deformation content the statement claims (see proof-narrative-lean-equiv / da-vacuous)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance.lean:28: \"(α * lam_loc^n) / (α * lam_loc^m) = lam_loc^n / lam_loc^m\"",
+        "notes": "The .md Theorem claims the eigenspace ratio is INVARIANT under continuous deformation q→q' up to a conformal factor; the Lean proves only that α cancels in (α·λ^n)/(α·λ^m). The baseline q' (q_baseline) never enters the conclusion, and λ being an eigenvalue is irrelevant — the Lean is a trivially-true cancellation strictly weaker than the stated invariance."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "critical",
+        "evidence": "gauge-conformal-invariance.lean:26: \"theorem gauge_conformal_invariance (q_local q_baseline : ℝ) (n m : ℕ) (α : ℝ) (hα : α > 0)\"",
+        "notes": "The Lean signature does not derive the .md claim: it concludes (α·λ^n)/(α·λ^m)=λ^n/λ^m, an α-cancellation true for ANY α≠0 and ANY λ, independent of the substrate deformation. The theorem name asserts 'gauge conformal invariance' but the goal is a content-free algebraic identity — a passing-by-weakening."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Not a self-assuming projection; it is a (vacuous) algebraic cancellation, a different defect."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "critical",
+        "evidence": "gauge-conformal-invariance.lean:28: \"(α * lam_loc^n) / (α * lam_loc^m) = lam_loc^n / lam_loc^m\"",
+        "notes": "The goal is a tautology discharged by mul_div_mul_left for any α≠0, ignoring the substrate/eigenvalue content the statement is about; it is the 'true but content-free' pattern this criterion targets."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Premise α>0 is fine and satisfiable; no False-elim."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance.lean:26: \"(q_local : ℝ) (q_baseline : ℝ) (n m : ℕ)\"",
+        "notes": "q_baseline is entirely unused; q_local enters only as λ=eigenvalue_plus q_local but its eigenvalue nature is irrelevant to the cancellation; n,m are arbitrary. The invariance-under-q→q' content (q_baseline) is never exercised."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No decide; the defect is vacuity/cancellation, not decide-masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "The eigenvalue formula λ±=½[h±√(h²+4)] (char poly λ²−hλ−1) is correct; no false mathematical assertion (the issue is the Lean not proving the claim, recorded under da-vacuous)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance.lean:31: \"exact mul_div_mul_left (lam_loc^n) (lam_loc^m) hα_ne_zero\"",
+        "notes": "The theorem backing this 'Theorem (Gauge conformal invariance)' is the content-free identity (α·x)/(α·y)=x/y; it proves nothing about eigenspace ratios being invariant under substrate deformation. Genuinely vacuous relative to its title/statement."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No circular derivation (there is essentially no derivation)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance.md:2: \"invariant under continuous deformations of the substrate q → q', up to a global conformal scaling factor α(q,q')\"",
+        "notes": "A 'Theorem' of substrate-deformation invariance is asserted, but only an α-cancellation is proven; the conclusion is far stronger than the (vacuous) argument supports — conditional/structural claim presented as a proved theorem."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "α is the disclosed conformal factor; not a hidden calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance.lean:28: \"= lam_loc^n / lam_loc^m\"",
+        "notes": "From 'α cancels in a ratio of powers of one fixed λ' it does NOT follow that 'the eigenspace ratio is invariant under q→q''; the deformation q_local→q_baseline is never related. The theorem's conclusion does not follow from its (trivial) proof."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "evidence": "gauge-conformal-invariance.lean:26: \"theorem gauge_conformal_invariance ... (α * lam_loc^n)/(α * lam_loc^m) = lam_loc^n/lam_loc^m\"",
+        "notes": "Lean proves something strictly weaker/vacuous vs the .md claim of substrate-deformation invariance — the canonical proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No external citations in block or Lean."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "minor",
+        "evidence": "gauge-conformal-invariance.md:2: \"the relative ratio of their eigenspaces is invariant ... up to a global conformal scaling factor α(q,q')\"",
+        "notes": "'relative ratio of eigenspaces', 'conformal scaling factor α(q,q')', and 'topological partitions corresponding to emission poles n and m' are never made precise enough to pin the intended claim; the Lean's interpretation (ratio of powers λ^n/λ^m of a single q-local eigenvalue) is one of several incompatible readings."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "No specific physical prediction to contradict measurement; the defect is formal vacuity."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "notes": "Lean compiles to a trivial identity; reproducible, just not the claimed result."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "93d09e531d4d",
+          "ts": "e92822081216",
+          "lean": "302fd60d8ba4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:36:44.696Z",
+        "reviewed_sha": "b44266a4adb967fe9adb64944ddbc4ce5d8a4f30",
+        "severity": "major",
+        "notes": "This 'Theorem' is backed by a vacuous Lean: gauge_conformal_invariance proves only (α·λ^n)/(α·λ^m)=λ^n/λ^m (mul_div_mul_left), with q_baseline unused and λ's eigenvalue nature irrelevant. The narrative claim — eigenspace ratios invariant under substrate deformation q→q' up to a conformal factor — is not established at all. Strongest objection: either prove genuine q→q' invariance (relating eigenvalue_plus q_local and q_baseline) or demote to a conjecture/remark; the current state is a passing-by-trivialisation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:36:44.696Z"
 }
