@@ -117,6 +117,86 @@ theorem betaNat_ne (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) {i j : ℕ}
     (hij : i < j) (hj : j < l.length) : betaNat l i - betaNat l j ≠ 0 := by
   have := betaNat_lt l hl hij hj; intro h; linarith [sub_eq_zero.mp h]
 
+/-- **The gap-ratio crux (R1 core).** The product of per-term ratios `(β'ᵢ−β'ⱼ)/(βᵢ−βⱼ)` over all
+pairs `i<j<k` equals the GAP product `∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.  Inner ratios are `1` off the
+index-`c` factors (`hr1`); `i>c` columns vanish to `1`, `i<c` columns collapse to the single `j=c`
+factor (sign-flipped to GAP shape), and the `i=c` column is GAP's `Ioo c k` part. -/
+theorem gap_ratio_prod (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hc : c < l.length) (hpos : 1 ≤ l.getD c 0) :
+    (∏ i ∈ Finset.range l.length, ∏ j ∈ Finset.Ioo i l.length,
+        (betaNat (l.set c (l.getD c 0 - 1)) i - betaNat (l.set c (l.getD c 0 - 1)) j)
+          / (betaNat l i - betaNat l j))
+      = ∏ j ∈ (Finset.range l.length).erase c,
+          (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+  set k := l.length with hk
+  set lc := l.set c (l.getD c 0 - 1) with hlc
+  -- the per-term ratio value
+  have hne : ∀ i j, i < j → j < k → betaNat l i - betaNat l j ≠ 0 :=
+    fun i j hij hj => betaNat_ne l hl hij hj
+  -- ratio(i,j) = 1 when i ≠ c and j ≠ c
+  have hr1 : ∀ i j, i ≠ c → j ≠ c → i < j → j < k →
+      (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j) = 1 := by
+    intro i j hi hj hij hjk
+    rw [betaNat_set_ne l c _ hi, betaNat_set_ne l c _ hj, div_self (hne i j hij hjk)]
+  -- inner_i = 1 for i > c
+  have hgt : ∀ i ∈ Finset.range k, c < i →
+      (∏ j ∈ Finset.Ioo i k, (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j)) = 1 := by
+    intro i _ hci
+    apply Finset.prod_eq_one
+    intro j hj
+    rw [Finset.mem_Ioo] at hj
+    exact hr1 i j (by omega) (by omega) hj.1 hj.2
+  -- inner_i = ratio(i,c) for i < c
+  have hlt : ∀ i ∈ Finset.range k, i < c →
+      (∏ j ∈ Finset.Ioo i k, (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j))
+        = (betaNat l c - 1 - betaNat l i) / (betaNat l c - betaNat l i) := by
+    intro i _ hic
+    rw [Finset.prod_eq_single c]
+    · rw [betaNat_set_ne l c _ (by omega : i ≠ c), betaNat_set_self l c hc hpos]
+      have h1 := hne i c hic hc
+      have h2 : betaNat l c - betaNat l i ≠ 0 := by
+        rw [sub_ne_zero] at h1 ⊢; exact h1.symm
+      rw [div_eq_div_iff h1 h2]; ring
+    · intro j hj hjc
+      rw [Finset.mem_Ioo] at hj
+      exact hr1 i j (by omega) hjc hj.1 hj.2
+    · intro h; rw [Finset.mem_Ioo] at h; omega
+  -- inner_c
+  have heqc :
+      (∏ j ∈ Finset.Ioo c k, (betaNat lc c - betaNat lc j) / (betaNat l c - betaNat l j))
+        = ∏ j ∈ Finset.Ioo c k, (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+    apply Finset.prod_congr rfl
+    intro j hj
+    rw [Finset.mem_Ioo] at hj
+    rw [betaNat_set_self l c hc hpos, betaNat_set_ne l c _ (by omega : j ≠ c)]
+  -- assemble: pull out i=c, restrict rest to range c, split erase c
+  rw [← Finset.mul_prod_erase (Finset.range k) _ (Finset.mem_range.mpr hc), heqc]
+  have hrest :
+      (∏ i ∈ (Finset.range k).erase c, ∏ j ∈ Finset.Ioo i k,
+          (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j))
+        = ∏ i ∈ Finset.range c, (betaNat l c - 1 - betaNat l i) / (betaNat l c - betaNat l i) := by
+    rw [← Finset.prod_subset (s₁ := Finset.range c) (s₂ := (Finset.range k).erase c)]
+    · apply Finset.prod_congr rfl
+      intro i hi
+      rw [Finset.mem_range] at hi
+      exact hlt i (Finset.mem_range.mpr (by omega)) hi
+    · intro i hi
+      rw [Finset.mem_range] at hi
+      rw [Finset.mem_erase, Finset.mem_range]; omega
+    · intro i hi hni
+      rw [Finset.mem_erase, Finset.mem_range] at hi
+      rw [Finset.mem_range] at hni
+      exact hgt i (Finset.mem_range.mpr hi.2) (by omega)
+  rw [hrest]
+  -- GAP over erase c = range c ∪ Ioo c k
+  have hsplit : (Finset.range k).erase c = Finset.range c ∪ Finset.Ioo c k := by
+    ext x; rw [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_range, Finset.mem_Ioo]
+    omega
+  rw [hsplit, Finset.prod_union (by
+    rw [Finset.disjoint_left]; intro a ha hb
+    rw [Finset.mem_range] at ha; rw [Finset.mem_Ioo] at hb; omega)]
+  ring
+
 /-!
 ## Remaining design — the gap ratio, row-drop, and assembly (next pieces)
 
