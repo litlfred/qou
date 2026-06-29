@@ -96,6 +96,32 @@ PRODUCER_CONVENTION: dict[str, str] = {
     # averaged / Hoefsmit full atom_braid_word_3A
     "chi_at_q0_via_hoefsmit_mpfr.py": AVERAGED,
     "chi_at_q_inv_via_native_mpfr.py": AVERAGED,
+    # symbolic + numeric catalogue (same full-canonical-word as Hoefsmit):
+    # value-confirmed averaged — deuteron symbolic χ^(6) @q0 = 1.5598
+    # matches the averaged numerical cache (1.5599), NOT sign-only (11.02).
+    "delta_lambda_empirical_tabulation.py": AVERAGED,
+    # FREE-config χ via LR induction-product of the averaged proton/neutron
+    # h3 caches — the LR product of averaged characters IS the averaged free
+    # character; chi_free_via_lr validates against these existing caches.
+    "chi_free_via_lr.py": AVERAGED,
+}
+
+# Witnesses that are NOT atom-braid χ caches — they evaluate a *different*
+# braid object, so the sign-only/averaged crossing dichotomy does not apply.
+# Reported as `not-applicable`, never stamped. Keyed on computation-id stem.
+CONVENTION_NOT_APPLICABLE: dict[str, str] = {
+    "chi-content-eigenbasis":
+        "twist-eigenbasis rewrite of the Lean-proved H₃ χ relations — "
+        "not a braid-word evaluation",
+    "chi-content-single-mode":
+        "isolates the c=0 (2,1)-block winding tower (q-Bessel test) — "
+        "not a full atom-braid character",
+    "chi-lambda-he4-full-partition-table":
+        "heuristic 4·Borromean tensor template, not atom_braid_word_3A — "
+        "different braid",
+    "chi-lambda-multi-block-first-measurement":
+        "exploratory multi-block first-measurement (pyhecke chi_lambda_braid); "
+        "no per-partition atom-braid cache",
 }
 
 # Fallback when a witness records no usable producer field: infer from the
@@ -105,10 +131,16 @@ COMPUTATION_PATTERNS: list[tuple[re.Pattern, str]] = [
     (re.compile(r"-at-q0-50dps-matrix-m$"), SIGN_ONLY),
     (re.compile(r"^chi-at-q0-matrix-m-"), SIGN_ONLY),
     (re.compile(r"rust-lossless"), SIGN_ONLY),
-    # Hoefsmit q_0 family: plain -at-q0-50dps, NOT -matrix-m, NOT -free-.
-    (re.compile(r"^chi-(?!.*-free-).*-at-q0-50dps$"), AVERAGED),
-    # native bar-image q_0^{-1} family: -at-qinv-50dps, NOT -free-.
-    (re.compile(r"^chi-(?!.*-free-).*-at-qinv-50dps$"), AVERAGED),
+    # Hoefsmit q_0 family (incl. the FREE-config LR partner): plain
+    # -at-q0-50dps, NOT -matrix-m. Free caches are the averaged free
+    # character (LR product of the averaged nucleon caches).
+    (re.compile(r"^chi-.*-at-q0-50dps$"), AVERAGED),
+    # native bar-image q_0^{-1} family (incl. free): -at-qinv-50dps.
+    (re.compile(r"^chi-.*-at-qinv-50dps$"), AVERAGED),
+    # symbolic catalogue `chi-{atom}-h{n}` with no producer field (the he4
+    # sibling lacks one): same full-canonical-word family — value-confirmed
+    # averaged (he4 symbolic [12] @q0 = 2.41966 = the averaged numeric cache).
+    (re.compile(r"^chi-[a-z0-9-]+-h\d+$"), AVERAGED),
 ]
 
 # Computation ids that are NOT chi value-witnesses (audits / meta) — skip.
@@ -119,17 +151,17 @@ def _producer_field(w: dict) -> str:
     return str(w.get("producer") or w.get("scriptFile") or "")
 
 
-def expected_convention(w: dict) -> tuple[str | None, str]:
+def expected_convention(w: dict, comp: str) -> tuple[str | None, str]:
     """Return (expected_convention | None, basis) for a witness dict.
 
-    `basis` explains how the expectation was derived: 'producer',
-    'computation-id', or 'none'.
+    `comp` is the computation id (falls back to the clean filename stem when
+    the witness carries no `computation` field). `basis` explains how the
+    expectation was derived: 'producer', 'computation-id', or 'none'.
     """
     prod = _producer_field(w)
     for key, conv in PRODUCER_CONVENTION.items():
         if key and key in prod:
             return conv, f"producer:{key}"
-    comp = str(w.get("computation", ""))
     for pat, conv in COMPUTATION_PATTERNS:
         if pat.search(comp):
             return conv, f"computation-id:/{pat.pattern}/"
@@ -142,9 +174,20 @@ def classify(path: Path) -> dict:
     except Exception as e:  # noqa: BLE001
         return {"path": path.name, "status": "parse-error", "error": str(e)}
 
-    comp = str(w.get("computation", path.stem))
+    stem = path.stem.replace(".witness", "")
+    comp = str(w.get("computation") or stem)
     declared = w.get("convention")
-    expected, basis = expected_convention(w)
+
+    na_reason = CONVENTION_NOT_APPLICABLE.get(comp) or CONVENTION_NOT_APPLICABLE.get(stem)
+    if na_reason is not None:
+        return {
+            "path": path.name, "computation": comp, "declared": declared,
+            "expected": None, "expected_basis": "not-applicable",
+            "producer": _producer_field(w), "status": "not-applicable",
+            "reason": na_reason,
+        }
+
+    expected, basis = expected_convention(w, comp)
 
     if declared is not None:
         if declared not in KNOWN_CONVENTIONS:
@@ -230,6 +273,7 @@ def main() -> int:
     unknown = by_status.get("unknown-convention", [])
     missing_inferable = by_status.get("missing-inferable", [])
     missing_ambiguous = by_status.get("missing-ambiguous", [])
+    not_applicable = by_status.get("not-applicable", [])
     parse_error = by_status.get("parse-error", [])
 
     print()
@@ -240,6 +284,7 @@ def main() -> int:
     print(f"  unknown-convention        : {len(unknown)}")
     print(f"  missing-inferable         : {len(missing_inferable)}")
     print(f"  missing-ambiguous (manual): {len(missing_ambiguous)}")
+    print(f"  not-applicable (diff braid): {len(not_applicable)}")
     print(f"  parse-error               : {len(parse_error)}")
     if args.fix:
         print(f"  stamped this run          : {len(fixed)}")
@@ -267,6 +312,7 @@ def main() -> int:
         "unknown_convention": len(unknown),
         "missing_inferable": len(missing_inferable),
         "missing_ambiguous": len(missing_ambiguous),
+        "not_applicable": len(not_applicable),
         "parse_error": len(parse_error),
     })
     if args.fix:
