@@ -762,7 +762,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Bar-involution / Lusztig-vs-Hermitian content is squarely in the Mass Analysis chapter's algebraic-face scope (q-involution structure)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "q^{-1}=conj(q)^{-1} iff q=conj(q) iff Im(q)=0 is correct; the three-regime table and decomposition β_H=β_C∘β_L check out."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Proof has genuine content: reduces involution comparison to parameter action and resolves it."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No back-fitting; pure algebraic involution identity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Conclusion (collapse on real axis) matches the argument; 'general' regime explicitly labelled uncharted."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Each step follows; the decomposition law is verified case-by-case."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Proof block with no .lean sibling; nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No external citations invoked in this proof body."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "β_L, β_H, β_C each explicitly defined; regimes pinned by Im/abs conditions."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Pure algebra; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No backing witness/compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4903472f0014",
+          "ts": "b74e975f7712"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Sound elementary involution proof; strongest possible objection is only that the 'general' regime is unexplored, which the block flags itself."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

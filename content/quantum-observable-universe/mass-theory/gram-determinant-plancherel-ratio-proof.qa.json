@@ -781,7 +781,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Gram-determinant Plancherel ratio is Mass Analysis algebraic-face content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Block-diagonal Markov Gram with entry dim_q V_λ·dim V_λ/[n]_q! and q→1 limit are standard Plancherel facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Genuine proof: block-diagonalisation + rank-2 projection + ratio."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No conclusion-assuming."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Conclusion is the displayed ratio formula; matches the substitution argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Character coefficients c_λ^{(s)}, c_λ^{(w)} are the braid-data, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Projection onto rank-2 sublattice and Wedderburn factorisation follow from block-diagonality."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Proof block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No external cites in proof body; internal cross-link to gram-spectral-connection."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "G^q_{λμ}, the (β_s,β_w) configuration, and the rank-2 projection are specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Algebraic determinant ratio."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No witness backing this proof."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Concise, correct block-diagonal Gram/Plancherel ratio proof."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

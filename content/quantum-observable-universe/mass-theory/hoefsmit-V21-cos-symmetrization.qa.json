@@ -1009,7 +1009,417 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement carries the Hoefsmit matrices + cos character; the empirical anchor / Markov-symmetrization context follows in later sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Hoefsmit V_(2,1) construction is squarely Mass Analysis algebraic face."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "cos((z-1)h/2) is a genuine archimedean construct; the .md flags the Lean sibling as ℝ-archimedean per §7c — justified."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Trace/det reductions are algebraic (Cayley-Hamilton over R^{2x2}); the cos factor's archimedean part is legitimately on the ℝ side."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean HoefsmitV21CosSymmetrization.lean proves the trace/det/Hecke-quadratic identities matching the .md table; the cos statement is conditional, consistent with the conj:borromean-quark banner."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Hoefsmit matrices and the matrix-Hecke quadratic are stated genuinely; named lemmas hoefsmit_sigma1_trace_eq etc. carry real content."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Hecke-quadratic theorems are computed entry-wise, not projected from class fields."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "det=−1, trace=h, M²=(q-q^{-1})M+I are non-trivial matrix identities (verified: d_1+d_2=q-q^{-1}, d_1d_2-b²=-1)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No contradictory premise; b²=d_1d_2+1 is the genuine Hecke constraint."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "q≠0 hypotheses are used in the field-simp of the trace/det identities."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No decide; identities discharged by computation/ring."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Verified: d_1+d_2=(q^4-1)/(q(q^2+1))=q-q^{-1}; d_1d_2-b²=-1 given b²=d_1d_2+1. Matrix identities correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Real algebraic content + Lean-proved Hecke quadratic."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Matrices are substrate-derivable closed forms (no empirical input), as authorNotes states."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The cos resummation is explicitly conditional on prop:q-beta-cos-resummation and conj:borromean-quark; not claimed unconditionally."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Eigenphase α=(z-1)h/2 traces to prop:beta-decay-transfer-matrix; no off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Symmetrization (e^{±iα} average = cos α) is correct; decomposition into 1-d + 2-d irreps follows Wedderburn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean proves the algebraic matrix identities; the cos theorem is conditional matching the .md banner."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "hoefsmit1974, wenzl1988, jones1985 correctly back the seminormal/Markov content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "d_1,d_2,b, z, h, α all explicitly defined; gauge choice c=b flagged."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "hoefsmit-V21-cos-symmetrization.md:115: \"(305 ppm residual against CODATA)\"",
+        "notes": "The 305 ppm Q_β residual is a single anchor figure; the underlying cos-resummation is conditional and the witness is marked 'experimental' in the .ts. Disclosed, but the precision claim is anchor-dependent — minor fragility flag."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Q_β cos-resummation is internally consistent with the canonical c_k tiered framing."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "authorNotes cites probe_q_beta_three_irrep_closed_form.py / 1d_irrep_universal.py with 50-dps bit-exact verification; matrices are explicit closed forms."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "41ebfe34aa74",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Solid Lean-backed Hoefsmit V_(2,1) algebra; the cos-resummation and 305 ppm anchor are honestly flagged conditional/experimental."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

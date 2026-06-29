@@ -857,7 +857,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Track-C typed-B_3 sub-braid extraction (c_3=-2 Lean infrastructure) is Mass Analysis (Q_β/c_k) content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The chain dominant-sub-braid→σ²∈B_2→Hopf→J(q=1)=-2 is correct (Jones of Hopf at q=1 is -2); claims are conditional on the single named axiom."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Substantive reduction of the open content to one focused combinatorial axiom; the rest is genuinely Lean-closed (authorNotes: no sorrys, conditional on the axiom)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The c_3=-2 target is the Hopf-Jones anchor (independent), reached via the sub-braid chain; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Carefully scoped: 'closed conditionally' on DominantSubBraidAtEps6; the remaining axiom is labelled 'empirically verified / open Lean-engineering', not proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "β_p (uud), β_n (udd) are fixed 11-crossing canonical words; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The composed_track_C theorem chains correctly via closure2_jones_at_one (already proved); steps 1,2,4 mechanical, step 3 the substantive axiom."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "authorNotes states the Lean stub has no sorrys and is conditional on the single axiom — consistent with the remark's 'closed conditionally' framing."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "jones1985 appropriately backs the Jones-of-Hopf-at-q=1 content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "TypedBraidWord3, beta_p/n_typed, subBraid, DominantSubBraidAtEps6 all defined; the open axiom stated precisely."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "F_3's ε^6 leading coeff = exactly -3√3/4 = -2·b(1)³ (exact symbolic, not a fit); the residual −0.0066 ppm is a tightening check, corroborative."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Combinatorial Lean-infrastructure remark; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Witness q-beta-operator-valued-N3.witness.json referenced; script probe_q_beta_operator_valued_N3.py named; status experimental."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "905996219fb0",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Honest narrowing of Track-C to one focused combinatorial axiom; the conditional Lean closure and exact ε^6 coefficient are sound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

@@ -1050,7 +1050,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the Habiro-ring membership + cyclotomic expansion; empirical-regime discussion is in a follow-on section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Habiro-completion pole structure of the mass trace is Mass Analysis geometric/archimedean content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Habiro ring over R=Z[q^{±1/2},(q-q^{-1})^{-1}] is algebraic/cyclotomic; the q_0>1 tail-control discussion is a genuine archimedean part handled by the Lean ℝ-shim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "habiro_truncation_bound_supercrit lives on ℝ for the q>1 monotonicity (genuine ordering construct); the cyclotomic-membership content stays algebraic — correct split."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean qPochhammer / habiro_truncation_bound(_supercrit) match the .md's tail-control claim; the (q;q)_N dual-Pochhammer monotonicity bridge corresponds to the stated identity."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the genuine Habiro-membership + tail bound; no weakening detected."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean defines qPochhammer/qPochhammerPoly and proves bounds; not a class-field projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The truncation bound (q^{-1};q^{-1})_N non-increasing for q>1 is a real analytic claim."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Scope q∈(0,1) for the base lemma is correctly stated; supercrit version handles q>1 via the dual sequence."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The q-regime hypotheses are used in the monotonicity bounds."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No decide-masking evident."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Identity (q^{-1};q^{-1})_N=(-1)^N q^{-N(N+1)/2}(q;q)_N is the standard Habiro/Pochhammer dual relation; the natural-boundary/dense-roots-of-unity framing is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Substantive recasting of the trace pole structure into the Habiro ring with a Lean tail bound."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No back-fit; cyclotomic completion is a fixed construction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Correctly retracts the misleading Mittag-Leffler/C-meromorphic picture; the supercritical q_0>1 caveat is handled, not glossed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "a_m(T_w) are determined cyclotomic coefficients; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Roots-of-unity vanishing, truncation suppression, and confinement-level termination follow from the cyclotomic structure."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean tail bound matches the .md's q_0>1 tail-control claim via the bar involution."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "habiro2004 correctly cited for the q↔q^{-1} involution identity."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Habiro ring, (q;q)_m, cyclotomic expansion, m_max all defined/cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Structural/analytic statement; no numerical-match claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Algebraic completion statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean corollary habiro_truncation_bound_supercrit named; identity is standard."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7dfb71cebe24",
+          "ts": "2f9d1e3e746d",
+          "lean": "48d89d55b481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Careful, correct recasting into the Habiro ring with the supercritical tail handled via the bar involution and a Lean bound."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

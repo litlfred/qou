@@ -1050,7 +1050,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the telescope Z_n=((1-X)/(1-Q))^n + y_λ closed form; justification/crystal interpretation in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Macdonald hook-content telescope (Wenzl bridge y_λ) is Mass Analysis archimedean-face (Wenzl bridge) content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Identity over Q(X,Q) is algebraic; principal-specialisation is pre-archimedean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Justification via Stanley's principal-specialisation (regular-rep Frobenius identity) is algebraic; conditional-class Lean over Q(X,Q)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean macdonald_hook_telescope states Z_n=((1-X)/(1-Q))^n as a §3b-cond conditional-on-class (StanleyHookTelescope) identity, matching the .md banner; the single sorry is honestly cited [stanley1999]."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the genuine telescope identity; conditional-class structure follows §3b-cond with opaque wenzlNormalizationOfShape to keep the field substantive."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The class axiomatises the principal-specialisation INPUT (Stanley's identity), and the theorem derives Z_n from it — not a projection of the conclusion (the opaque value prevents tautology, per the .md note)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Z_n=((1-X)/(1-Q))^n is a substantive telescoping identity, not a tautology; macdonald_hook_telescope_witness_scope's decide is on a true arithmetic fact (Σp(n)=30)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "StanleyHookTelescope class is the genuine principal-specialisation hypothesis; not contradictory."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The class instance discharges telescope_holds; hypothesis is used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "decide on 1+1+2+3+5+7+11=30 is a legitimate true arithmetic check (witness scope), not masking a substantive goal."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Σ_λ f_λ s_λ = p_1^n (regular-rep Frobenius) and its principal specialisation p_1↦(1-q^r)/(1-q) giving ((1-X)/(1-Q))^n is correct (Stanley EC II Cor 7.12.5)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Substantive closed-form collapse with symbolic cross-check to 10^{-51} at 191 samples; opaque field prevents vacuous class."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Closes a prior 'open structural project' by naming the classical identity; not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The fractional-r analytic-extension argument is correctly justified; the Lean sorry is acknowledged pending a Mathlib Schur lift."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "X=Q^r and the Wenzl substitution are fixed; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Regular-rep identity → principal specialisation → telescope is a valid classical chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean identity (over Q(X,Q)) matches the .md boxed telescope; conditional-class structure is the intended formalisation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "stanley1999 Cor 7.12.5 and Macdonald I.3 ex.1 correctly attribute the principal-specialisation identity."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Q, X, f_λ, s_{λ,X}, Z_n, n(λ), c(x), h(x) all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Symbolic exact verification (sympy.cancel to 0) + 10^{-51} MPFR cross-check; not a fit-noise match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Pure symmetric-function identity."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Witness y-lambda-macdonald-telescope.witness.json referenced; symbolic verification through n=8 and 191-sample MPFR cross-check documented."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4ca958be3c82",
+          "ts": "2a549aa1748c",
+          "lean": "47ea9471d526"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Strong result: recognises a hand-derived 'open project' as a classical principal-specialisation identity, with conditional-class Lean and exact symbolic backing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

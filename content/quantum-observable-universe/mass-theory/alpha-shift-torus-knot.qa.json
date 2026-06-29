@@ -1048,7 +1048,453 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Proposition statement is the bare α_shift=k(p-1) claim; cross-links/witness summary are in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Torus-knot character pole-order belongs to Mass Analysis (Hoefsmit/seminormal, force-carrier) scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is over Q(q) characters; pole order at q=0 is algebraic-Laurent, pre-archimedean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No '**Proof.**' body in the .md (witness summary only); proof reasoning lives in the .ts docstring and is algebraic."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "alpha-shift-torus-knot.lean:5: \"def alphaShift (p k : ℕ) : ℕ := k * (p - 1)\"",
+        "notes": "The .md claims α_shift:=max_λ ord_{q=0} χ_λ(β_{p,k}) = k(p-1) with maximizer V_{(1^p)}; the Lean DEFINES alphaShift as k*(p-1) and proves the equality by rfl, so the Lean asserts nothing about the actual max-pole-order. Lean is strictly weaker than the narrative claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "alpha-shift-torus-knot.lean:7: \"theorem alpha_shift_torus_knot (p k : ℕ) : alphaShift p k = k * (p - 1) := by rfl\"",
+        "notes": "The Lean signature does not encode the genuine pole-order maximisation; the substantive claim has been replaced by its answer-as-definition. Honest about it in the library docstring, but the sibling does not capture the proposition."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Not a class-field projection — it is a definitional rfl (a distinct anti-pattern, captured under proof-no-trivial-true)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "critical",
+        "evidence": "alpha-shift-torus-knot.lean:8-10: \"alphaShift p k = k * (p - 1) := by ... rfl\"",
+        "notes": "alphaShift is defined as k*(p-1), so the theorem reduces to k*(p-1)=k*(p-1) — a tautology that proves none of the proposition's mathematical content (pole order, maximizer channel)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No false/contradictory premise; gcd hypotheses are genuine (though unused in the rfl)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "alpha-shift-torus-knot.lean:7: \"theorem alpha_shift_torus_knot (p k : ℕ) : ... := rfl\"",
+        "notes": "The coprimality / range hypotheses present in the .md statement are absent from the sibling theorem; the library version retains an unused [HasAlphaShiftTorus] instance. Symptom of the definitional-collapse above."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No decide; rfl is the issue (covered under proof-no-trivial-true)."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "α_shift(T_{p,k})=k(p-1) on V_{(1^p)} is correct: the antisymmetric channel acts by (-q^{-1})^{k(p-1)}, pole order k(p-1); test bench (2,9)->9,(3,5)->10 verified by sympy witness."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "alpha-shift-torus-knot.lean:5-10: \"def alphaShift := k*(p-1) ... := rfl\"",
+        "notes": "The .md claim is genuine and witness-backed, but its Lean realisation is vacuous (answer-as-definition + rfl). Flagging the Lean-side vacuity; the narrative itself is not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No calibration smuggled; pole order is a fixed combinatorial quantity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": ".md does not claim the Lean proves the maximisation; the .ts docstring is explicit the Lean elevates the witnessed closed form to a definition."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No free parameter; α_shift is determined by (p,k)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Cross-link to α_EM^{-1}=q[9]_q[10]_q via α_shift(T_{2,9})=9, α_shift(T_{3,5})=10 is consistent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "alpha-shift-torus-knot.lean:5: \"def alphaShift (p k : ℕ) : ℕ := k * (p - 1)\"",
+        "notes": "Lean proves a definitional tautology, not the .md's pole-order maximisation claim — a clear narrative/Lean divergence (statement-integrity)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No cites[] on the .ts; references are internal cross-links."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "ord_{q=0}^{(-)} defined as negative Laurent valuation; β_{p,k}, χ_λ specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Six exact integer test-bench matches (all k(p-1)); not a precision-noise match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Combinatorial pole-order statement; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Witness computations/alpha/alpha-shift-torus.witness.json exists; sympy script alpha_shift_torus.py named."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "357dbe53acff",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "alpha-shift-torus-knot.lean:5: \"def alphaShift := k * (p - 1)\"",
+        "notes": "Mathematics is correct and witness-backed, but the Lean sibling is an answer-as-definition rfl that proves none of the pole-order content — strongest objection: the formalisation does not formalise the proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

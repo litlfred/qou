@@ -1046,7 +1046,443 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the a_K product formula + per-crossing decomposition; the categorical-content discussion is in follow-on sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Chirality-factor (Term 5) derivation is core Mass Analysis six-term-formula content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "a_K=∏(1+sign(c)·h) with h=q-q^{-1} is algebraic; the ℝ Lean is incidental (CrossingSign.toReal), no archimedean construct in the claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Derivation uses Hecke relation + Wedderburn trace deviations (algebraic); the Lean proves via simp/ring/induction over a List, no archimedean lemma."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean deuteron_factor=1+h, pn_pair_factor=1-h², he4_factor=(1-h²)² reproduce the .md's three paper assignments {1+h,1-h²,(1-h²)²}; equivalent for the verified cases."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The substantive per-isotope factors are stated as genuine theorems (deuteron/pn/he4), not weakened."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "deuteron_factor etc. are proved by simp/ring on the actual definition, not field projections."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "chirality-dual-space-derivation.lean:243-246: \"theorem chirality_dual_space_derivation ... := rfl\"",
+        "notes": "The headline theorem matching the lean.ref is a definitional rfl (chiralityFactor IS the product), so it restates the definition. Mitigated: the substantive content (deuteron/pn/he4 = correct closed forms) is proved in named theorems, so the block is not vacuous overall."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No false premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Per-isotope theorems use their crossing-list arguments."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No decide; simp/ring/induction."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "σ-σ^{-1}=h·1 (Hecke inverse identity), per-channel trace deviations (sym=h, std=2h via dim), and the product reproducing {1+h,1-h²,(1-h²)²} are all correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Real derivation; Lean carries genuine per-isotope content (despite the definitional headline)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Derives a_K from the Hecke/Wedderburn structure; explicitly fixes the prior writhe-ribbon coefficient via per-crossing factorisation — no target back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "chirality-dual-space-derivation.md:124: \"all six terms of the unified mass formula are algebraically derived\"",
+        "notes": "'Six of six ... Paper-side completeness achieved' is a strong rollup; several upstream terms (e.g. via conj:knot-factor-frobenius-pairing) remain conjectural per other blocks. Term-5 derivation itself is sound; the global completeness banner slightly over-reaches."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Per-crossing factor 1+sign·h has no free parameter; sign(c) is the crossing data."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Per-channel deviation → +1 identity contribution → multiplicativity chain is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Named Lean theorems match the .md per-isotope values; the definitional headline is benign."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "kassel1995 (Hecke) appropriately invoked in the Lean -- Ref."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "τ_sym/τ_std/τ_alt channels, δ_sym, the per-crossing factor all defined; sign convention explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Exact symbolic match to paper assignments; not a numerical fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Chirality factor → 1 at h=0 (q→1) is the correct classical limit (chirality_at_h_zero theorem)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean theorems are concrete and checkable; symbolic verification referenced."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4f840a427dca",
+          "ts": "f07a17747bd8",
+          "lean": "5bf97dd6e929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Sound Term-5 derivation with genuine Lean per-isotope theorems; minor over-reach in the 'six-of-six completeness' rollup banner."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

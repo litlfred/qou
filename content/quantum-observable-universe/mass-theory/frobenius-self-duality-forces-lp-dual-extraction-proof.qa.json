@@ -25,6 +25,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Frobenius self-duality / LP-dual extraction is Mass Analysis archimedean-face (LP-dual) content."
       }
     ],
     "da-false-claim": [
@@ -41,6 +56,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Markov-trace non-degeneracy ⇒ Frobenius algebra ⇒ canonical self-duality H_n≅H_n* are standard; strong duality correctly gated on Slater/regularity."
       }
     ],
     "da-vacuous": [
@@ -57,6 +87,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Substantive 5-step structural argument tying τ-extraction to the dual map."
       }
     ],
     "da-circular": [
@@ -73,6 +118,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Non-degeneracy is established from the Wedderburn trace identity (y_λ≠0), not assumed from the conclusion."
       }
     ],
     "da-overclaim": [
@@ -89,6 +149,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Strong duality explicitly conditioned on standard LP regularity ('whenever ... met'); the block does not claim duality holds unconditionally."
       }
     ],
     "da-hidden-dof": [
@@ -105,6 +180,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Cost operator Θ and idempotents π_λ are canonical-chain objects; no free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -121,6 +211,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Φ_τ-isomorphism of primal/dual cones + cost-functional identification follow from non-degeneracy; the corollary chains correctly."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -137,6 +242,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Proof block, no Lean sibling."
       }
     ],
     "da-citation-misuse": [
@@ -153,6 +273,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Frobenius (1903) / Nakayama (1939) appropriately invoked for the Frobenius-algebra structure."
       }
     ],
     "da-definitional-ambiguity": [
@@ -169,6 +304,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Φ_τ, Obs_τ, ⪯_τ partial order, primal/dual programs all explicitly defined."
       }
     ],
     "da-empirical-fragility": [
@@ -185,6 +335,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Structural proof; no numerical match."
       }
     ],
     "da-physical-implausibility": [
@@ -201,6 +366,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Mass-formula-as-sum-of-LP-duals is consistent with the AGENTS.md LP/SDP shadow-price discipline."
       }
     ],
     "da-reproducibility": [
@@ -217,6 +397,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No witness drives this structural proof."
       }
     ],
     "da-referee-verdict": [
@@ -233,6 +428,21 @@
         },
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "14ac14972c92",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Sound structural proof; correctly hedges strong duality on standard LP regularity rather than over-asserting it."
       }
     ],
     "voice-status-leak": [
@@ -988,5 +1198,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

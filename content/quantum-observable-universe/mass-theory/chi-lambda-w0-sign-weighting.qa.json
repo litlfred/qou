@@ -1052,7 +1052,445 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the S_k^{(w0)}=c_k^{(3)}-c_k^{(1,1,1)} sign-agreement claim; the w0-vs-(-I) discussion is a follow-on section."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Per-Wedderburn-block c_k sign weighting (α_k derivation) is Mass Analysis archimedean-face content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Character-weighted ε-expansion coefficients are algebraic/combinatorial; the ε=q-1 Taylor extraction is fibre-level, not archimedean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean S_w0_at_k5/k6 use ring/norm_num on witnessed rationals; sign lemmas by norm_num. No misuse of archimedean machinery on an algebraic statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "chi-lambda-w0-sign-weighting.lean:143-146: \"theorem chi_lambda_w0_sign_weighting ... := by sorry\"",
+        "notes": "The general ∀k sign-agreement theorem is a `sorry`; only the k=5,6 instances (S_w0_at_k5_neg, _k6_neg) are proved. The .md's claim is scoped to k=5,6, so the proved part matches — but the general decl over-reaches the proved content. Sorry lacks an immediate -- Ref: on the same line (the manuscript ref is on line 141)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "k=5,6 sign theorems state the genuine numeric claims; the general theorem is honestly a sorry."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "S_w0_simp and the k=5,6 lemmas are proved by ring/norm_num, not field projections."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "S_w0=c3-c111 (since χ_(2,1)(w0)=0) and the negativity lemmas are substantive numeric facts."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No false premise; witnessed c_k^{(λ)} values are concrete rationals."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Concrete lemmas have no spurious hypotheses; the general theorem's hypotheses feed the (sorry'd) iff."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "norm_num used legitimately on numeric inequalities; no masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "χ_λ(w0)=(1,0,-1) for S_3 irreps is correct (trivial=1, standard reflection trace=0, sign=-1); S_k=c_k^{(3)}-c_k^{(1,1,1)} follows."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Real finding (sign governed by long-element character) with Lean-proved k=5,6 instances."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Sign weighting is read off character theory; not back-fitted to the empirical c_k."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Explicitly states the w0 weights are 'necessary but not sufficient' for magnitude (1.49x at k=5, 95.3x at k=6); magnitude closure is openly deferred. No over-claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "χ_λ(w0) are fixed character values; no free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Sign agreement at k=5,6 is verified; the residual cross-block-coupling explanation is offered as conjecture, not asserted."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean proves exactly the k=5,6 signs the .md claims; the general sorry is disclosed as open."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "wenzl1988 verified-clean per bib-qa; appropriate for the Hecke Markov-trace context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Block clarifies the informal '-I' vs the canonical longest element w0 explicitly; c_k^{(λ)}, S_k^{(w0)} defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "chi-lambda-w0-sign-weighting.md:63: \"$6$ ... $-477.25$ | $-45485$ ... yes\"",
+        "notes": "Only SIGN agrees; magnitude ratio is 95.3x at k=6 — this is the empirical-c_k chain (the flip-flop saga). The sign claim is exact-arithmetic and robust, and the .md honestly flags the magnitude gap as open, so warn not fail: a referee would note the weighting is far from a magnitude derivation."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Combinatorial sign-weighting claim; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "per-wedderburn-block-ck.witness.json referenced with concrete c_k^{(λ)} values matching the Lean defs."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "chi-lambda-w0-sign-weighting.lean:146: \"sorry\"",
+        "notes": "Sign-agreement claim is exact and Lean-proved at k=5,6; but it only fixes the sign (95.3x magnitude miss at k=6) and the general theorem is a sorry. Honest disclosure keeps it at warn, not fail."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

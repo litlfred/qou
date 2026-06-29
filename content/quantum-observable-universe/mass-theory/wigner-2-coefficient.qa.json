@@ -1048,7 +1048,453 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the C_λ=w_λ·h/2 identity with the [3,2,1] specialisation; no embedded physical interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Wigner-2 / BW coefficient from self-conjugate trace pairing fits Mass Analysis algebraic/LP-dual scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Per-generator trace = h/2 and C_λ closed form are rational functions of q; the .md flags ℝ-archimedean Lean per §7c but the content is generic — acceptable."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Narrative proof (paired-sum a_ρ+a_{-ρ}=h, conjugation pairing) is algebraic; no archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "lean/QOU/BraidKnot/wigner2_coefficient.lean:124-127: \"def wigner2_coefficient ... := ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩\"",
+        "notes": "The .md gives a genuine algebraic proof, but the Lean 'def' projects the two conclusions verbatim from class fields claim_i/claim_ii that ARE the conclusions — the Lean proves nothing the .md proves. Narrative is strictly stronger than the Lean."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "critical",
+        "evidence": "lean/QOU/BraidKnot/wigner2_coefficient.lean:45-50: \"claim_i_per_generator_trace : ∀ lam, per_gen_trace lam = h/2 ... claim_ii_BW_closed_form\"",
+        "notes": "The conclusion is carried as class fields and projected; the Lean statement is the proposition assuming itself (§3b-cond non-degeneracy clause violated: class fields ARE the conclusion, not the sub-hypotheses)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "critical",
+        "evidence": "lean/QOU/BraidKnot/wigner2_coefficient.lean:126-127: \":= ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩\"",
+        "notes": "Textbook self-assuming projection: theorem body is ⟨ctx.claim_i, ctx.claim_ii⟩ where each field's type equals a conjunct of the declaration's own conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "lean/QOU/BraidKnot/wigner2_coefficient.lean:124: \"def wigner2_coefficient\"",
+        "notes": "Declared as `def` (not theorem) — disguising the self-assuming projection from the vacuity audit (§1a def-disguised pattern). The conclusion is not literally `True` but is content-free relative to the class hypotheses."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No false premise; the class is inhabitable (any model satisfying the fields)."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Both class fields are projected/used; trivially 'used' but only because they ARE the conclusion."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No decide used."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The .md math is correct: a_ρ+a_{-ρ}=h (verified — num and denom both 2-(q^{2ρ}+q^{-2ρ})); h/2 per-generator trace for self-conjugate λ via conjugation pairing is sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "lean/QOU/BraidKnot/wigner2_coefficient.lean:124-127: \"def wigner2_coefficient ... := ⟨ctx.claim_i_..., ctx.claim_ii_...⟩\"",
+        "notes": "Lean realisation is a vacuous self-assuming projection (the .md narrative is NOT vacuous; the Lean is). The class fields posit the very conclusions the 'def' returns."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The .md derivation is non-circular (derives h/2 from seminormal axial-distance pairing). Circularity is only on the Lean side (captured under self-assuming-projection)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": ".md does not claim the Lean proves it; the .ts docstring marks it a placeholder pending per-block translation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "C_[3,2,1]=[2][4][6]h/(2[3]²[5]) is fully determined; no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": ".md steps (paired-sum, conjugation pairing, simplification) chain correctly."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "lean/QOU/BraidKnot/wigner2_coefficient.lean:28-50: \"class Wigner2CoefficientContext ... claim_i_per_generator_trace ... claim_ii_BW_closed_form\"",
+        "notes": "Lean assumes the .md's two conclusions as class fields and returns them — it proves something vacuously-implied, diverging from the genuine narrative proof."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No cites[] on the .ts; uses internal props."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Self-conjugate λ, per-generator trace, w_λ, dim_q all defined; axial distance ρ specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Exact algebraic identity; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Algebraic BW coefficient."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No external witness backing this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fb208c17df14",
+          "ts": "db8adeaf0d05",
+          "lean": "8c82d083ffcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "major",
+        "evidence": "lean/QOU/BraidKnot/wigner2_coefficient.lean:126: \":= ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩\"",
+        "notes": "Block math sound; Lean is a self-assuming projection — restructure so the class carries the seminormal sub-hypotheses and the theorem derives h/2."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

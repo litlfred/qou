@@ -1048,7 +1048,448 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the closed-form y_target identity; the 'no Q_β' directive discussion is in separate sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Shell-magnitude / magic-number derivation fits Mass Analysis binding scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "y_target is a ratio of Wedderburn coefficients / characters / Markov trace at q_0 — categorical observables, algebraic in form."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Derivation steps are Wedderburn/Schur-decomposition algebra; no archimedean machinery proving an algebraic statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "sigma-shell-from-beta-chain-derivation.lean:74: \"theorem sigma_shell_from_beta_chain\"",
+        "notes": "Lean states the pointwise equation; the .md is a multi-input categorical-observable derivation proved only at A_magic=2. The conditional/partial scope (A=2 only; open for A≥8) should be reflected — equivalence holds for the A=2 case the Lean targets."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the genuine closed-form y_target; no weakening detected vs prior commit."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "y_target is assembled from independently-derived inputs (C_λ, y_λ, χ^λ, tr_M), not projected from a field equal to the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The y_target ratio is a substantive identity (Δm_shell/(m_e·|tr_M|)), not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No contradictory premise; the corrected frame replaces a prior off-by-2.3e7 formulation transparently."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Each of the four inputs (C_λ, y_λ, χ^λ, tr_M) enters the y_target formula."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No decide masking in evidence."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Staircase (3,2,1) is the unique self-conjugate partition of 6 with distinct rows — correct; self-conjugacy ⇒ self-duality fixed point is sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Non-trivial categorical reconstruction of the shell magnitude."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Block explicitly removes Q_β/AME chain inputs; calibration stays at (m_e,m_p,m_n) assembly level — no smuggled target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "sigma-shell-from-beta-chain-derivation.md:176: \"the closed form is **proved at $A_{\\mathrm{magic}} = 2$**\"",
+        "notes": "'proved at A=2' is reasonable, but Δ_{λ_shell}(K)=C_{λ_shell} identifies a per-block binding fraction with the Wedderburn coefficient against the Δ_λ-gate context (six closure ansätze failed); the 12% benchmark agreement (order-of-magnitude) should temper 'closed form'. Honestly disclosed as order-of-magnitude though."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "All inputs trace to named witnesses/props; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Steps 1-3 (categorical identification → mass contribution → dimensionless ratio) chain coherently."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "sigma-shell-from-beta-chain-derivation.ts:9: \"validation: \\\"not_checked\\\"\"",
+        "notes": "Lean sibling exists but is not validation-checked and targets the pointwise A=2 case; the .md's general multi-input claim is broader. Minor scope gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "wenzl1988, kassel1995 back the Wenzl-bridge / Hecke content; audit docs cross-linked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Staircase partition, C_λ, y_λ, χ^λ all defined with witness pointers; A=2 values given numerically."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "sigma-shell-from-beta-chain-derivation.md:46: \"12 % agreement is consistent\"",
+        "notes": "Only 12% agreement against an order-of-magnitude benchmark at the single A=2 case; the closed-form's accuracy is weakly constrained. Disclosed, hence warn not fail."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Magic-number shell structure mapping to staircase partitions is internally coherent; A≥8 left open."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Witness sigma-shell-from-beta-chain.witness.json and sigma-shell-A2-closed-form.derivation.json exist; status 'experimental'."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f1ac6136a969",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "notes": "Coherent categorical reframe avoiding Q_β, but the A=2 'proof' rests on a 12% order-of-magnitude benchmark and the Δ_λ↔C_λ identification touches the gated Δ_λ axis; honest disclosure keeps it at warn."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

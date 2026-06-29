@@ -1052,7 +1052,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Statement is the q=1 shadow constraint (c_2→-1, c_3→-2); the gate-role / checklist discussion is in follow-on sections."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Q_β c_k formalize-first gate is Mass Analysis (Q_β / α_k) content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "q=1 limit of c_k coefficients is a fibre-level Taylor statement (per the AGENTS.md Im(q) fibre-vs-observable note); the ℝ Lean is for the limit evaluation, appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean reject lemmas are field/logic arguments (rw + contradiction); hopfJonesAtQOne=-2 by rfl. No archimedean machinery misused."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean q_eq_one_shadow_gate_reject_c2/c3 prove the contrapositive (wrong shadow ⇒ ¬class), matching the .md's 'candidate failing either shadow is REFUTED'; the forward _anchors def restates the class fields (acknowledged as routine)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The reject lemmas carry genuine logical content (non-instantiability from a mismatched coefficient); the class fields encode the anchor HYPOTHESES, not the proposition's conclusion."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "qbeta_q_eq_one_shadow_anchors IS a class-field projection (forward direction), but it is the routine restatement; the SUBSTANTIVE theorems are the reject lemmas, which derive ¬class non-trivially. Net: not a vacuous self-assuming proof of the proposition."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Reject lemmas conclude ¬QOneShadowGateClass (substantive); not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Hypotheses (c2 1 = a, a ≠ -1) are realistic; the class is inhabitable by genuine candidates."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Both h_candidate and h_mismatch are used to derive the contradiction in the reject lemmas."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No decide; rfl on hopfJonesAtQOne=-2 is a genuine definitional unfold."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "c_2=-1 Taylor-exact and c_3→J_Hopf(1)=-2 are the canonical anchors per the cheat-sheet/registry; consistent with the c_k tiered framing."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The reject lemmas carry real content; the gate is a genuine formalize-first filter, not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The shadow anchors are upstream-established (c_2 Taylor-exact PR#1786, c_3 Hopf-Jones registry); not back-fitted to Q_β."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "'Structurally REFUTED' is a legitimate (b)-scope exclusion citing a proved invariant (the q=1 classical-limit shadow; c_2=-1 Taylor-exact). The cited invariant justifies (b) per the (a)/(b) discipline."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Gate parametric over candidate (c2,c3) per Gemini review; no global axiom hides a parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Independence of gates (a)-(d) is correctly argued; a candidate can pass (a)+(b) yet fail (c)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean reject lemmas match the .md's refutation gate; forward projection is the routine restatement, acknowledged."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "PR#1786 (c_2 Taylor-exact) and the cheat-sheet registry §3 (c_3=J_Hopf) are correctly referenced for the two anchors."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Ladder factorisation, u=b·ℏ_q², the four §4 invariants, and the q=1 shadows are all explicitly defined/cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The gate is structural (q=1 integer shadows), not a precision-noise match; consistent with the canonical c_k tiered framing (c_3 a near-match, used here only as a q=1 anchor)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Formalize-first gate; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean lemmas are concrete; the c_2/c_3 anchors trace to named PRs/registry."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b5a9de64ecfe",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Sound formalize-first gate; the 'REFUTED' language is a legitimate (b)-scope structural exclusion backed by the Taylor-exact c_2 invariant, with substantive reject lemmas."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

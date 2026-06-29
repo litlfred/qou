@@ -762,7 +762,247 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Frobenius co-Casimir (Σ 1/dim_q) universal proof is Mass Analysis algebraic/Frobenius content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "τ(C_{dim_q})=Σ_λ 1/dim_q(λ); ≥2 bound (levels 0,n-1 give dim_q=1); n=3 value 2+1/[2]_q all check out (dim_q of (3),(1,1,1)=1, (2,1)=[2]_q)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Substantive proof (linearity + non-degeneracy forcing uniqueness) plus TQFT/handle-element interpretation and explicit Lean closures n=3..8."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Element is forced by non-degeneracy of τ on Z(A), not assumed; explicitly argued 'forced by structure, not ad-hoc'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Vortex-independence is explicitly framed as both feature AND limitation; mass differences attributed to other tiers — careful, not over-claimed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "C_{dim_q} is canonically constructed (central idempotents + duality); no free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Uniqueness → categoricity → TQFT handle interpretation → GB-filtration decomposition chain is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean closures (hecke_n6/n7/n8_frobenius_codim) are described as Fin.sum decompositions + per-partition dim_q unfolding + ring — matching the .md's explicit closures."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Abrams 1996 / Kock 2004 §2 (Frobenius-algebra↔2D-TQFT) correctly invoked for the handle-element interpretation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "C_{dim_q}, p_λ, τ(p_λ), handle element HE_A, quantum hook-length dim_q all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "severity": "minor",
+        "evidence": "frobenius-codim-universal-proof.md:171: \"τ(C_{dim_q}) = 2 + 1/[2]_q matching proton residual to $0.14\\%$ at $q_0 \\approx 1.11$\"",
+        "notes": "The 0.14% proton-residual match is a single-anchor numerical claim used to motivate the additive offset; it is a 0.14% agreement (not a precision result) presented as 'matching'. Minor — it is corroborative context, the proof itself is structural."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Vortex-independent additive offset (2+1/[2]_q)·m_e for any H_3 trefoil is internally consistent; differences pushed to other structural terms."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "phase5-n8-dim-q-table.json committed; Lean closure theorems named per n."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "41ef040669e3",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Solid Frobenius co-Casimir proof with uniqueness, TQFT interpretation, and explicit n≤8 Lean closures; the 0.14% proton-residual is corroborative, not load-bearing."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }

@@ -896,7 +896,259 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Shared-denominator cusp-holonomy (Φ_q / Thurston gluing) is Mass Analysis geometric-face / open-problems content."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "(x;q)_n has n simple zeros at x=q^{-k}; Thurston cusp completeness Hol_μ=Hol_λ=1 is standard. Conjectural bijection clearly hedged."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Substantive conjecture with a four-step proof sketch and a concrete Newton-Raphson seeding consequence."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "No back-fit; the pole↔cusp bijection is the conjectured content, not assumed elsewhere."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The strong (literal q_0^{-k}=z_k) form is explicitly REFUTED by the SnapPy witness (distance 0.4-0.9) and downgraded to a label bijection — honest scoping, not over-claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The shape-function τ_arch(q_0^{-k}) is openly flagged as further work, not a hidden fitted parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Steps 1-4 (algebraic poles → Li_2 branch → cusp completeness → bridge) are conditioned on the named upstream conjectures."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Lean is a class instance (shared_denominator_cusp_holonomy), consistent with the conjecture kind; no over-strong Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "thurston1978, neumann-zagier1985 correctly back the gluing-equation / cusp-completeness content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "(x;q)_n, Φ_n, shape parameter z_k, meridian/longitude holonomy all defined/cross-linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "The two witnesses honestly bracket the conjecture: color-tube cubic succeeds (≲10^{-13}), SnapPy bounds the strong form (distance 0.4-0.9) — disclosure, not a cherry-picked match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Algebraic-pole ↔ geometric-cusp correspondence is geometrically sensible; no physical contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "q-pochhammer-seed.witness.json and snappy-cusp-seeding.witness.json named with concrete residuals/distances for m003/m004/L6a4."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ffec6fef1943",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T22:53:34.172Z",
+        "reviewed_sha": "56fa865a7c1d8da437f9100378e04d78bdfd75cc",
+        "notes": "Well-scoped conjecture; the strong canonical form is explicitly bounded/refuted by the SnapPy witness and retained only as a label bijection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T22:53:34.172Z"
 }
